@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/DialogueEditor/DialogueEditorWindow.uss?fileID=7433441132597879392&amp;guid=c8991047733f50a4d8592b653e537315&amp;type=3#DialogueEditorWindow" />
+    <uie:Toolbar />
+    <SplitView fixed-pane-initial-dimension="300" usage-hints="None" focusable="true" style="background-color: rgb(61, 61, 61);">
+        <ui:VisualElement name="left-panel" style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <SplitView orientation="Vertical" fixed-pane-initial-dimension="173" focusable="true">
+                <ui:VisualElement name="inspector-container" style="flex-grow: 1;">
+                    <ui:ScrollView style="visibility: visible; overflow: visible; position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+                        <ui:Label tabindex="-1" text="Inspector" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(53, 53, 53); color: rgb(255, 255, 255); -unity-font: initial; flex-wrap: nowrap; flex-direction: column; flex-grow: 0; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; font-size: 12px;" />
+                        <com.absence.dialoguesystem.editor.InspectorView />
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement name="blackboard-container" style="flex-grow: 1;">
+                    <ui:ScrollView style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+                        <ui:Label tabindex="-1" text="Blackboard" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(53, 53, 53); color: rgb(255, 255, 255); -unity-font: initial; flex-wrap: nowrap; flex-direction: column; flex-grow: 0; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; font-size: 12px;" />
+                        <ui:IMGUIContainer />
+                    </ui:ScrollView>
+                </ui:VisualElement>
+            </SplitView>
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Label tabindex="-1" text="Graph View" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(53, 53, 53); color: rgb(255, 255, 255); -unity-font: initial; flex-wrap: nowrap; flex-direction: column; flex-grow: 0; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; font-size: 12px;" />
+            <com.absence.dialoguesystem.editor.DialogueGraphView focusable="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>

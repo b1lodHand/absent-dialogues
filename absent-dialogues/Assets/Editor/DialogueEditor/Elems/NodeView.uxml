@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/DialogEditor/Elems/NodeViewStyle.uss?fileID=7433441132597879392&amp;guid=b58717021f98a4b41bd35bbd70c6872e&amp;type=3#NodeViewStyle" />
+    <ui:VisualElement name="node-border" style="min-width: auto;">
+        <ui:VisualElement name="contents" style="flex-direction: column;">
+            <ui:VisualElement name="title">
+                <ui:Label name="title-label" text="FastSpeechNode" class="unity-text-element unity-label" />
+                <ui:VisualElement name="title-button-container">
+                    <ui:VisualElement name="collapse-button">
+                        <ui:VisualElement name="icon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="divider" picking-mode="Ignore" class="horizontal" style="height: 1px;" />
+            <ui:VisualElement name="top" style="flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; align-self: auto; justify-content: space-between; align-items: stretch;">
+                <ui:VisualElement name="input" style="-unity-font-style: normal;" />
+                <ui:VisualElement name="output" />
+            </ui:VisualElement>
+            <ui:TextField value="..." focusable="true" name="speech" picking-mode="Ignore" multiline="true" class="speech" style="flex-grow: 1; justify-content: flex-start; align-items: center; width: auto; min-width: auto; margin-bottom: 8px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="selection-border" picking-mode="Ignore" />
+    <ui:VisualElement name="state-border" picking-mode="Ignore" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; overflow: hidden;" />
+</ui:UXML>

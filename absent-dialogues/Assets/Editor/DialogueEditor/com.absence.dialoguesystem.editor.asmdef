@@ -1,0 +1,16 @@
+{
+    "name": "com.absence.dialoguesystem.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8a8bb035882446e4f8bee0ae181ccdfe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

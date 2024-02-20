@@ -1,0 +1,271 @@
+#selection-border {
+    border-left-color: rgb(255, 192, 0);
+    border-right-color: rgb(255, 192, 0);
+    border-top-color: rgb(255, 192, 0);
+    border-bottom-color: rgb(255, 192, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#node-border {
+    background-color: rgb(56, 56, 56);
+    border-left-color: rgb(31, 31, 31);
+    border-right-color: rgb(31, 31, 31);
+    border-top-color: rgb(31, 31, 31);
+    border-bottom-color: rgb(31, 31, 31);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    flex-grow: 1;
+}
+
+#input {
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    -unity-text-align: upper-left;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#output {
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#title {
+    -unity-font-style: bold;
+}
+
+.optionNode {
+    min-width: 230px;
+    width: auto;
+    max-width: 350px;
+}
+
+.decisionSpeechNode {
+    width: var(--decisionSpeechNodeWidth);
+}
+
+.fastSpeechNode {
+    min-width: 230px;
+    width: auto;
+    max-width: 350px;
+}
+
+.rootNode {
+    width: 80px;
+    height: 53px;
+}
+
+.dialogPartNode {
+    height: auto;
+    width: auto;
+    min-width: 115px;
+    min-height: 72px;
+}
+
+.conditionNode {
+    min-width: 138px;
+    width: auto;
+    height: auto;
+    -unity-font-style: normal;
+    min-height: 90px;
+}
+
+:hover > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(255, 170, 0);
+    border-right-color: rgb(255, 170, 0);
+    border-top-color: rgb(255, 170, 0);
+    border-bottom-color: rgb(255, 170, 0);
+}
+
+:selected > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(255, 170, 0);
+    border-right-color: rgb(255, 170, 0);
+    border-top-color: rgb(255, 170, 0);
+    border-bottom-color: rgb(255, 170, 0);
+}
+
+:hover:selected > #selection-border {
+    border-left-color: rgb(255, 170, 0);
+    border-right-color: rgb(255, 170, 0);
+    border-top-color: rgb(255, 170, 0);
+    border-bottom-color: rgb(255, 170, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.extraPort {
+    opacity: 0.6;
+    background-color: rgba(38, 38, 38, 0);
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.decisionSpeechNode #output {
+    align-self: center;
+    margin-left: 0;
+    margin-bottom: 4px;
+}
+
+.optionNode #input {
+    align-self: flex-start;
+    -unity-text-align: upper-left;
+    align-items: stretch;
+    flex-direction: column;
+    visibility: visible;
+    display: flex;
+}
+
+#divider {
+    height: 1px;
+    background-color: rgb(204, 204, 204);
+}
+
+#title {
+    margin-top: 4px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+#speech {
+    display: none;
+    flex-grow: 1;
+    overflow: visible;
+    visibility: visible;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    -unity-text-align: upper-left;
+    white-space: normal;
+    text-overflow: clip;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    height: auto;
+}
+
+.decisionSpeechNode #speech {
+    display: flex;
+    flex-grow: 1;
+    height: auto;
+    min-height: auto;
+}
+
+.optionNode #speech {
+    display: flex;
+    height: auto;
+}
+
+.fastSpeechNode #speech {
+    display: flex;
+    height: auto;
+}
+
+.past #state-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(108, 108, 108);
+    border-right-color: rgb(108, 108, 108);
+    border-top-color: rgb(108, 108, 108);
+    border-bottom-color: rgb(108, 108, 108);
+}
+
+.current #state-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(171, 68, 63);
+    border-right-color: rgb(171, 68, 63);
+    border-top-color: rgb(171, 68, 63);
+    border-bottom-color: rgb(171, 68, 63);
+}
+
+#option {
+    display: none;
+}
+
+.decisionSpeechNode #option {
+    display: flex;
+}
+
+.decisionSpeechNode .optionDivider {
+    height: 1px;
+    background-color: rgb(45, 45, 45);
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.decisionSpeechNode .optionBottom {
+    flex-direction: row;
+    align-items: stretch;
+    align-self: stretch;
+    width: var(--decisionSpeechNodeWidth);
+    margin-right: 10px;
+}
+
+.decisionSpeechNode .optionPort {
+    width: var(--optionPortWidth);
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 10px;
+}
+
+.decisionSpeechNode .optionField {
+    width: 180px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+    white-space: normal;
+}
+
+:root {
+    --decisionSpeechNodeWidth: 350px;
+    --optionPortWidth: 34px;
+}
