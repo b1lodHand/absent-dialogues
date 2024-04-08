@@ -1,11 +1,18 @@
 {
   "dependencies": {
+    "com.absence.editor": {
+      "version": "https://github.com/b1lodHand/absent-editor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "480cd33d1e4ad56bab01df2d0bb8a32214aaf523"
+    },
     "com.absence.utilities": {
       "version": "https://github.com/b1lodHand/absent-utilities.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9e3eb4cfa5b71582c047ff01ee7db03641862c80"
+      "hash": "6f2ada3be2166573150298fe915d440791674ee2"
     },
     "com.absence.variablesystem": {
       "version": "https://github.com/b1lodHand/absent-variables.git",

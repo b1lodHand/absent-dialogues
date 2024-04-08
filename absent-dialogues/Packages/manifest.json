@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.absence.editor": "https://github.com/b1lodHand/absent-editor.git",
     "com.absence.utilities": "https://github.com/b1lodHand/absent-utilities.git",
     "com.absence.variablesystem": "https://github.com/b1lodHand/absent-variables.git",
     "com.unity.collab-proxy": "2.2.0",
