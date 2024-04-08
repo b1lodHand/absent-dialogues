@@ -1,3 +1,4 @@
+using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace com.absence.dialoguesystem
 {
     public class ActionNode : Node
     {
-        public List<NodeGameVariableSetter> GVActions = new List<NodeGameVariableSetter>();
+        public List<VariableSetter> GVActions = new List<VariableSetter>();
         public UnityEvent UnityActions;
         public event Action CustomAction;
 
@@ -43,11 +44,6 @@ namespace com.absence.dialoguesystem
         protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
         {
             if (Next != null) result.Add((0, Next));
-        }
-
-        private void OnEnable()
-        {
-            GVActions.ForEach(action => action.Initialize(MasterDialogue));
         }
     }
 

@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8905424598614146506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: DialoguePartNode
+  m_EditorClassIdentifier: 
+  Guid: 484f9e6f71858474496791b34a203e4a
+  Position: {x: 19.499985, y: 79.30003}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  Next: {fileID: -7128887067038950444}
+  DialogPartName: a
+--- !u!114 &-8570237213173099237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8f909998c702b458d8fc35ddfc6786, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  Guid: 133172ee7729e034caa9af0cd793c334
+  Position: {x: 48.25002, y: -10.400015}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  Next: {fileID: -7128887067038950444}
+--- !u!114 &-7128887067038950444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9f7023a40bb04bb535da999424361, type: 3}
+  m_Name: FastSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 15ae9fdcbdc1ac94a97e173d2c3d22e6
+  Position: {x: 200.50002, y: -5.2500024}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  Next: {fileID: 6602897084972744239}
+  Speech: key
+--- !u!114 &-6500224830323563992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13eb0d4c28dc8541980f8c6a6d20d03, type: 3}
+  m_Name: StickyNoteNode
+  m_EditorClassIdentifier: 
+  Guid: 3b31be2fc8dc8f443b1454241a168e72
+  Position: {x: 262, y: 92}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  Speech: 'This is a sample
+
+    sticky note.'
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue
+  m_EditorClassIdentifier: 
+  RootNode: {fileID: -8570237213173099237}
+  LastOrCurrentNode: {fileID: -8570237213173099237}
+  LastOrCurrentSpeechNode: {fileID: 6602897084972744239}
+  AllNodes:
+  - {fileID: -8570237213173099237}
+  - {fileID: -7128887067038950444}
+  - {fileID: 213386342176865088}
+  - {fileID: 6602897084972744239}
+  - {fileID: -6500224830323563992}
+  - {fileID: -8905424598614146506}
+--- !u!114 &213386342176865088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: 50a33d63bb2e4d14c9cfac0c08c0c9b4
+  Position: {x: 920.74896, y: -3.7490065}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  TargetDialogPartName: a
+--- !u!114 &6602897084972744239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 872a5b3568556db48acf51f552bdd985
+  Position: {x: 486, y: -14}
+  MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  Options:
+  - Speech: A
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 213386342176865088}
+  - Speech: B
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 213386342176865088}
+  - Speech: C
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 0}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 213386342176865088}
+  Speech: S

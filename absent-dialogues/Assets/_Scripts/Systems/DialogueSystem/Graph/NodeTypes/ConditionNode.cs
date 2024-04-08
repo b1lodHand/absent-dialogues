@@ -1,3 +1,4 @@
+using com.absence.variablesystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
         public ProcessType Processor = ProcessType.All;
-        public List<NodeGameVariableComparer> Comparers = new List<NodeGameVariableComparer>();
+        public List<VariableComparer> Comparers = new List<VariableComparer>();
 
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition Checker";
@@ -75,11 +76,6 @@ namespace com.absence.dialoguesystem
             }
 
             return result;
-        }
-
-        private void OnEnable()
-        {
-            Comparers.ForEach(c => c.Initialize(MasterDialogue));
         }
     }
 }

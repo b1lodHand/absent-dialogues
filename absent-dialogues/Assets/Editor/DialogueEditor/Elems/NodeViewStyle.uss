@@ -206,6 +206,20 @@
     height: auto;
 }
 
+.stickyNoteNode #speech {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    align-self: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: auto;
+    opacity: 1;
+}
+
 .past #state-border {
     border-top-width: 2px;
     border-right-width: 2px;
@@ -268,4 +282,27 @@
 :root {
     --decisionSpeechNodeWidth: 350px;
     --optionPortWidth: 34px;
+}
+
+.stickyNoteNode {
+    min-width: 170px;
+    min-height: 40px;
+    max-height: none;
+    max-width: none;
+    display: flex;
+    visibility: visible;
+    opacity: 0.7;
+}
+
+.stickyNoteNode:selected {
+    opacity: 1;
+    visibility: visible;
+}
+
+.stickyNoteNode:hover {
+    opacity: 0.85;
+}
+
+.stickyNoteNode:hover:selected {
+    opacity: 1;
 }

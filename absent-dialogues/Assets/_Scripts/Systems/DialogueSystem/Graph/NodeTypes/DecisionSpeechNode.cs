@@ -1,3 +1,4 @@
+using com.absence.variablesystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -55,11 +56,6 @@ namespace com.absence.dialoguesystem
 
         public string GetSpeech() => Speech;
         public string[] GetOptionSpeeches() => Options.ToList().ConvertAll(n => n.Speech).ToArray();
-
-        private void OnEnable()
-        {
-            Options.ForEach(option => option.ShowIf.Initialize(MasterDialogue));
-        }
     }
 
     [System.Serializable]
@@ -67,7 +63,7 @@ namespace com.absence.dialoguesystem
     {
         public string Speech;
         public bool UseShowIf = false;
-        public NodeGameVariableComparer ShowIf;
+        public VariableComparer ShowIf;
         public Node LeadsTo;
     }
 }

@@ -90,7 +90,6 @@ namespace com.absence.dialoguesystem.editor
                     }
                 });
 
-                Refresh();
             }
 
             if (graphViewChange.edgesToCreate != null)
@@ -102,8 +101,9 @@ namespace com.absence.dialoguesystem.editor
                     outputView.Node.AddNextNode(inputView.Node, outputView.Outputs.IndexOf(edge.output));
                 });
 
-                Refresh();
             }
+
+            Refresh();
 
             return graphViewChange;
         }

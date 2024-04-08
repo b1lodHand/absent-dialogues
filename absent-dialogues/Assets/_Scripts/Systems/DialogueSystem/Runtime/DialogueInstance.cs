@@ -7,6 +7,7 @@ namespace com.absence.dialogsystem.runtime
     public class DialogueInstance : MonoBehaviour
     {
         [SerializeField] private Dialogue m_dialogue;
+        [SerializeField] private bool m_startOnAwake = false;
 
         Node m_displayedSpeechNode;
         bool m_inDialogue = false;
@@ -14,8 +15,7 @@ namespace com.absence.dialogsystem.runtime
         private void Start()
         {
             Initialize();
-            //!!!
-            EnterDialog();
+            if(m_startOnAwake) EnterDialog();
         }
 
         private void Update()
@@ -29,6 +29,8 @@ namespace com.absence.dialogsystem.runtime
                     m_displayedSpeechNode = null;
                     m_dialogue.LastOrCurrentNode.Pass();
                 }
+
+                return;
             }
 
             var currentNode = m_dialogue.LastOrCurrentNode;
