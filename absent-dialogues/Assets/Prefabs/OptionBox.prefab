@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3909074183510936103}
+  - component: {fileID: 6817177061115473699}
   - component: {fileID: 2674326911427940154}
   - component: {fileID: 7497196676771814259}
   - component: {fileID: 1700304859214899284}
   - component: {fileID: 8377401489302420796}
-  - component: {fileID: 6817177061115473699}
   - component: {fileID: 1382563131901215830}
   m_Layer: 5
   m_Name: OptionBox
@@ -42,6 +42,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &6817177061115473699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577298549297669058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585783776df98bc48af096696fed2fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_text: {fileID: 2080016558698697401}
 --- !u!222 &2674326911427940154
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -110,19 +123,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7882353}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!114 &6817177061115473699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3577298549297669058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585783776df98bc48af096696fed2fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_text: {fileID: 2080016558698697401}
 --- !u!114 &1382563131901215830
 MonoBehaviour:
   m_ObjectHideFlags: 0
