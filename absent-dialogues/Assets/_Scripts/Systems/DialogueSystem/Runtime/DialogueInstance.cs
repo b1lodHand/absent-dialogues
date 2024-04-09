@@ -1,8 +1,9 @@
 
 using com.absence.dialoguesystem;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.absence.dialogsystem.runtime
+namespace com.absence.dialoguesystem
 {
     public class DialogueInstance : MonoBehaviour
     {
@@ -14,7 +15,7 @@ namespace com.absence.dialogsystem.runtime
 
         private void Start()
         {
-            Initialize();
+            Initialize(null);
             if(m_startOnAwake) EnterDialog();
         }
 
@@ -48,10 +49,10 @@ namespace com.absence.dialogsystem.runtime
             m_displayedSpeechNode = currentNode;
         }
 
-        public void Initialize(/* will get people info */)
+        public void Initialize(List<PersonProfile> people)
         {
             if (m_dialogue == null) return;
-            m_dialogue.Bind();
+            m_dialogue.Bind(people);
         }
 
         private void OnApplicationQuit()
@@ -69,6 +70,7 @@ namespace com.absence.dialogsystem.runtime
 
         public void ExitDialog()
         {
+            m_dialogue.Cleanup();
             m_inDialogue = false;
             DialogueDisplayer.Instance.ExitDialog();
         }

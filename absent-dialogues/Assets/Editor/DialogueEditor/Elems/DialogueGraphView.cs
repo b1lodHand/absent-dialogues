@@ -75,7 +75,7 @@ namespace com.absence.dialoguesystem.editor
                     {
                         if (nodeView.Node.Equals(m_dialogue.RootNode)) return;
 
-                        m_dialogue.DeleteNode(nodeView.Node);
+                        DeleteNode(nodeView);
                         return;
                     }
 
@@ -85,8 +85,9 @@ namespace com.absence.dialoguesystem.editor
                         NodeView outputView = edge.output.node as NodeView;
                         NodeView inputView = edge.input.node as NodeView;
 
+                        Undo.RecordObject(outputView.Node, "Dialog (Remove Child)");
                         outputView.Node.RemoveNextNode(outputView.Outputs.IndexOf(edge.output));
-                        //m_dialog.RemoveNext(outputView.Node, inputView.Node, outputView.Outputs.IndexOf(edge.output));
+                        EditorUtility.SetDirty(outputView.Node);
                     }
                 });
 
@@ -98,7 +99,10 @@ namespace com.absence.dialoguesystem.editor
                 {
                     NodeView outputView = edge.output.node as NodeView;
                     NodeView inputView = edge.input.node as NodeView;
+
+                    Undo.RecordObject(outputView.Node, "Dialog (Add Child)");
                     outputView.Node.AddNextNode(inputView.Node, outputView.Outputs.IndexOf(edge.output));
+                    EditorUtility.SetDirty(outputView.Node);
                 });
 
             }
@@ -166,7 +170,15 @@ namespace com.absence.dialoguesystem.editor
         }
         Node CreateNode(System.Type type, Vector2? atPosition = null)
         {
+            Undo.RecordObject(m_dialogue, "Dialog (Create Node)");
+
             Node node = m_dialogue.CreateNode(type);
+
+            AssetDatabase.AddObjectToAsset(node, m_dialogue);
+            Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
+
+            AssetDatabase.SaveAssets();
+
             if (atPosition.HasValue) node.Position = atPosition.Value;
             CreateNodeView(node);
 
@@ -174,6 +186,15 @@ namespace com.absence.dialoguesystem.editor
 
             return node;
         }
+
+        void DeleteNode(NodeView view)
+        {
+            Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
+            m_dialogue.DeleteNode(view.Node);
+            Undo.DestroyObjectImmediate(view.Node);
+            AssetDatabase.SaveAssets();
+        }
+
         NodeView CreateNodeView(Node node)
         {
             NodeView nodeView = new NodeView(node);

@@ -3,7 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace com.absence.dialogsystem.runtime
+namespace com.absence.dialoguesystem
 {
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {

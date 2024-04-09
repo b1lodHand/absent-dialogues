@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -29,15 +28,11 @@ namespace com.absence.dialoguesystem
 
         public void AddNextNode(Node nextWillBeAdded, int atPort)
         {
-            Undo.RecordObject(this, "Dialog (Add Child)");
             AddNextNode_Inline(nextWillBeAdded, atPort);
-            EditorUtility.SetDirty(this);
         }
         public void RemoveNextNode(int atPort)
         {
-            Undo.RecordObject(this, "Dialog (Remove Child)");
             RemoveNextNode_Inline(atPort);
-            EditorUtility.SetDirty(this);
         }
         public List<(int portIndex, Node node)> GetNextNodes()
         {

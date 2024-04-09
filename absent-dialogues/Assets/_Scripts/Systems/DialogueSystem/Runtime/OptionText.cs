@@ -1,9 +1,8 @@
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace com.absence.dialogsystem.runtime
+namespace com.absence.dialoguesystem
 {
     public class OptionText : MonoBehaviour
     {

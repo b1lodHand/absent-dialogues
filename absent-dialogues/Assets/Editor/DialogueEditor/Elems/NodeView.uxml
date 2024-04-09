@@ -15,9 +15,9 @@
                 <ui:VisualElement name="input" style="-unity-font-style: normal;" />
                 <ui:VisualElement name="output" />
             </ui:VisualElement>
-            <ui:TextField value="..." focusable="true" name="speech" picking-mode="Ignore" multiline="true" class="speech" style="flex-grow: 1; justify-content: flex-start; align-items: center; width: auto; min-width: auto; margin-bottom: 8px;" />
+            <ui:TextField value="INSERT TEXT" focusable="true" name="speech" picking-mode="Ignore" multiline="true" usage-hints="None" class="speech" style="flex-grow: 1; justify-content: flex-start; align-items: center; width: auto; min-width: auto; margin-bottom: 8px;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="selection-border" picking-mode="Ignore" />
-    <ui:VisualElement name="state-border" picking-mode="Ignore" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; overflow: hidden;" />
+    <ui:VisualElement name="state-border" picking-mode="Ignore" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; overflow: hidden;" />
 </ui:UXML>

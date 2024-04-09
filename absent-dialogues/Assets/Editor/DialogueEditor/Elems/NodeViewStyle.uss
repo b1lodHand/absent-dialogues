@@ -1,8 +1,13 @@
+:root {
+    --decisionSpeechNodeWidth: 350px;
+    --optionPortWidth: 34px;
+}
+
 #selection-border {
-    border-left-color: rgb(255, 192, 0);
-    border-right-color: rgb(255, 192, 0);
-    border-top-color: rgb(255, 192, 0);
-    border-bottom-color: rgb(255, 192, 0);
+    border-left-color: rgb(255, 170, 0);
+    border-right-color: rgb(255, 170, 0);
+    border-top-color: rgb(255, 170, 0);
+    border-bottom-color: rgb(255, 170, 0);
     border-top-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
@@ -12,10 +17,10 @@
     top: 0;
     right: 0;
     bottom: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 #node-border {
@@ -28,10 +33,10 @@
     border-right-width: 2px;
     border-bottom-width: 2px;
     border-left-width: 2px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -65,111 +70,19 @@
 }
 
 #title {
-    -unity-font-style: bold;
-}
-
-.optionNode {
-    min-width: 230px;
-    width: auto;
-    max-width: 350px;
-}
-
-.decisionSpeechNode {
-    width: var(--decisionSpeechNodeWidth);
-}
-
-.fastSpeechNode {
-    min-width: 230px;
-    width: auto;
-    max-width: 350px;
-}
-
-.rootNode {
-    width: 80px;
-    height: 53px;
-}
-
-.dialogPartNode {
-    height: auto;
-    width: auto;
-    min-width: 115px;
-    min-height: 72px;
-}
-
-.conditionNode {
-    min-width: 138px;
-    width: auto;
-    height: auto;
     -unity-font-style: normal;
-    min-height: 90px;
+    -unity-text-align: upper-center;
 }
 
-:hover > #selection-border {
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-left-color: rgb(255, 170, 0);
-    border-right-color: rgb(255, 170, 0);
-    border-top-color: rgb(255, 170, 0);
-    border-bottom-color: rgb(255, 170, 0);
-}
-
-:selected > #selection-border {
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-left-color: rgb(255, 170, 0);
-    border-right-color: rgb(255, 170, 0);
-    border-top-color: rgb(255, 170, 0);
-    border-bottom-color: rgb(255, 170, 0);
-}
-
-:hover:selected > #selection-border {
-    border-left-color: rgb(255, 170, 0);
-    border-right-color: rgb(255, 170, 0);
-    border-top-color: rgb(255, 170, 0);
-    border-bottom-color: rgb(255, 170, 0);
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-}
-
-.extraPort {
-    opacity: 0.6;
-    background-color: rgba(38, 38, 38, 0);
-    margin-right: 0;
-    margin-top: 0;
-}
-
-.decisionSpeechNode #output {
-    align-self: center;
-    margin-left: 0;
-    margin-bottom: 4px;
-}
-
-.optionNode #input {
-    align-self: flex-start;
-    -unity-text-align: upper-left;
-    align-items: stretch;
-    flex-direction: column;
-    visibility: visible;
-    display: flex;
+#option {
+    display: none;
 }
 
 #divider {
     height: 1px;
-    background-color: rgb(204, 204, 204);
-}
-
-#title {
-    margin-top: 4px;
-    margin-right: 0;
-    margin-bottom: 4px;
-    margin-left: 6px;
-    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.16);
+    visibility: visible;
+    display: flex;
 }
 
 #speech {
@@ -189,35 +102,48 @@
     height: auto;
 }
 
-.decisionSpeechNode #speech {
-    display: flex;
-    flex-grow: 1;
-    height: auto;
-    min-height: auto;
+#speech > TextInput {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-.optionNode #speech {
-    display: flex;
-    height: auto;
+#title {
+    margin-top: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    margin-left: 6px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.fastSpeechNode #speech {
-    display: flex;
-    height: auto;
+:hover > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
 }
 
-.stickyNoteNode #speech {
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: stretch;
-    display: flex;
-    visibility: visible;
-    overflow: visible;
-    align-self: stretch;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    min-height: auto;
-    opacity: 1;
+:selected > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+:hover:selected > #selection-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.extraPort {
+    opacity: 0.6;
+    background-color: rgba(38, 38, 38, 0);
+    margin-right: 0;
+    margin-top: 0;
 }
 
 .past #state-border {
@@ -242,12 +168,69 @@
     border-bottom-color: rgb(171, 68, 63);
 }
 
-#option {
-    display: none;
+.conditionNode {
+    min-width: 138px;
+    width: auto;
+    height: auto;
+    -unity-font-style: normal;
+    min-height: 90px;
+}
+
+.gotoNode #title {
+    -unity-text-align: upper-right;
+}
+
+.fastSpeechNode {
+    min-width: 230px;
+    width: auto;
+    max-width: 350px;
+}
+
+.fastSpeechNode #speech {
+    display: flex;
+    height: auto;
+}
+
+.dialogPartNode {
+    height: auto;
+    width: auto;
+    min-width: 115px;
+    min-height: 72px;
+}
+
+.dialogPartNode #title {
+    -unity-text-align: upper-left;
+}
+
+.rootNode {
+    width: 80px;
+    height: 53px;
+}
+
+.rootNode #title {
+    -unity-text-align: upper-left;
+    -unity-font-style: bold;
+}
+
+.decisionSpeechNode {
+    width: var(--decisionSpeechNodeWidth);
+}
+
+.decisionSpeechNode #speech {
+    display: flex;
+    flex-grow: 1;
+    height: auto;
+    min-height: auto;
 }
 
 .decisionSpeechNode #option {
     display: flex;
+}
+
+.decisionSpeechNode #output {
+    align-self: center;
+    margin-left: 0;
+    margin-bottom: 4px;
 }
 
 .decisionSpeechNode .optionDivider {
@@ -279,9 +262,16 @@
     white-space: normal;
 }
 
-:root {
-    --decisionSpeechNodeWidth: 350px;
-    --optionPortWidth: 34px;
+.decisionSpeechNode .optionField > TextInput {
+    border-radius: 0;
+}
+
+.decisionSpeechNode .addNewOptionButton {
+    border-radius: 0;
+}
+
+.decisionSpeechNode .removeOptionButton {
+    border-radius: 0;
 }
 
 .stickyNoteNode {
@@ -294,6 +284,24 @@
     opacity: 0.7;
 }
 
+.stickyNoteNode #title {
+    -unity-font-style: italic;
+}
+
+.stickyNoteNode #speech {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    align-self: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: auto;
+    opacity: 1;
+}
+
 .stickyNoteNode:selected {
     opacity: 1;
     visibility: visible;
@@ -304,5 +312,123 @@
 }
 
 .stickyNoteNode:hover:selected {
+    opacity: 1;
+}
+
+.titleNode #node-border {
+    visibility: hidden;
+    opacity: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.titleNode #divider {
+    display: flex;
+    padding-top: 20px;
+    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&guid=632390af60ae8524da8e889a9fccfd28&type=3#arrow-down');
+    -unity-slice-left: 1;
+    -unity-slice-top: 1;
+    -unity-slice-right: 1;
+    -unity-slice-bottom: 1;
+    -unity-slice-scale: 1px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    width: 20px;
+    align-self: center;
+    opacity: 0;
+    height: 20px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    overflow: hidden;
+}
+
+.titleNode #speech {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: upper-center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0;
+    font-size: 30px;
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    -unity-font-style: bold;
+    color: rgba(27, 27, 27, 0);
+}
+
+.titleNode #speech > TextInput {
+    background-color: rgba(255, 0, 0, 0);
+    border-width: 0;
+    visibility: visible;
+    opacity: 1;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+.titleNode #title {
+    display: none;
+}
+
+.titleNode #top {
+    display: none;
+}
+
+.titleNode #contents {
+    align-self: center;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.titleNode #selection-border {
+    opacity: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}
+
+.stickyNoteNode #selection-border {
+    opacity: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}
+
+.titleNode:hover #divider {
+    opacity: 0.6;
+}
+
+.titleNode:hover:selected #divider {
+    opacity: 1;
+}
+
+.titleNode:selected #divider {
     opacity: 1;
 }

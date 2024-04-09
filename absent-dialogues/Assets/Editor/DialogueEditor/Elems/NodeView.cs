@@ -27,6 +27,7 @@ namespace com.absence.dialoguesystem.editor
         public NodeView(Node node) : base("Assets/Editor/DialogueEditor/Elems/NodeView.uxml")
         {
             this.Node = node;
+            node.Guid = GUID.Generate().ToString();
             this.viewDataKey = node.Guid;
 
             style.left = node.Position.x;
@@ -77,6 +78,7 @@ namespace com.absence.dialoguesystem.editor
         {
             m_createNewOptionButton = new Button(CreateOption_DialogPartNode);
             m_createNewOptionButton.text = "Add New Option";
+            m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
 
             RefreshOptions_DialogPartNode();
@@ -223,6 +225,7 @@ namespace com.absence.dialoguesystem.editor
                 Master.Refresh();
             });
             removeButton.text = "X";
+            removeButton.AddToClassList("removeOptionButton");
 
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
@@ -240,6 +243,10 @@ namespace com.absence.dialoguesystem.editor
             });
 
             showIfContainer.SetEnabled(showIfToggle.value);
+
+            removeButton.tooltip = "Remove this option.";
+            showIfToggle.tooltip = "If this checkbox is checked, the show if panel on the right will get enabled. For more details, hover it.";
+            showIfContainer.tooltip = "When enabled, the visibility of this option will depend on this condition.";
 
             top.Add(removeButton);
             top.Add(showIfToggle);

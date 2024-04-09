@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem
 {
     public class ActionNode : Node
     {
-        public List<VariableSetter> GVActions = new List<VariableSetter>();
+        public List<VariableSetter> VBActions = new List<VariableSetter>();
         public UnityEvent UnityActions;
         public event Action CustomAction;
 
@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem
         {
             if (Next == null) return;
 
-            GVActions.ForEach(action => action.Perform());
+            VBActions.ForEach(action => action.Perform());
             UnityActions?.Invoke();
             CustomAction?.Invoke();
 

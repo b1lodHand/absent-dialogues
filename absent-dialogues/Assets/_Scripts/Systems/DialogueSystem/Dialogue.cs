@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
-    [CreateAssetMenu()]
     public class Dialogue : ScriptableObject
     {
         public RootNode RootNode;
@@ -14,32 +12,27 @@ namespace com.absence.dialoguesystem
         public Node LastOrCurrentSpeechNode;
 
         public List<Node> AllNodes = new List<Node>();
-        [HideInInspector] public Blackboard Blackboard = new Blackboard();
+        public List<PersonProfile> People = new List<PersonProfile>();
+        public Blackboard Blackboard;
+
+        bool m_preAssignedPlayers = true;
 
         public Node CreateNode(System.Type type)
         {
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
-            node.Guid = GUID.Generate().ToString();
 
             node.Blackboard = Blackboard;
             node.MasterDialogue = this;
 
-            Undo.RecordObject(this, "Dialog (Create Node)");
             AllNodes.Add(node);
-            AssetDatabase.AddObjectToAsset(node, this);
-            Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
-
-            AssetDatabase.SaveAssets();
             return node;
         }
+
         public void DeleteNode(Node node)
         {
-            Undo.RecordObject(this, "Dialog (Delete Node)");
             AllNodes.Remove(node);
             node.OnRemoval();
-            Undo.DestroyObjectImmediate(node);
-            AssetDatabase.SaveAssets();
         }
 
         public Dialogue Clone()
@@ -72,6 +65,13 @@ namespace com.absence.dialoguesystem
 
         public void Bind(params object[] data)
         {
+            List<PersonProfile> people = (List<PersonProfile>)data[0];
+            if(people != null)
+            {
+                m_preAssignedPlayers = false;
+                People = people;
+            }
+
             AllNodes.ForEach(n =>
             {
                 n.Blackboard = Blackboard;
@@ -80,6 +80,13 @@ namespace com.absence.dialoguesystem
 
             RootNode.Reach();
         }
+
+        public void Cleanup()
+        {
+            if(!m_preAssignedPlayers) People.Clear();
+            m_preAssignedPlayers = true;
+        }
+
         public void ResetProgress()
         {
             AllNodes.ForEach(n => n.SetState(Node.NodeState.Unreached));
