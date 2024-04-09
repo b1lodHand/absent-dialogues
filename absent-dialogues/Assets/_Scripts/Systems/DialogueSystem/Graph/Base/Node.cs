@@ -23,6 +23,7 @@ namespace com.absence.dialoguesystem
         public event Action<Node.NodeState> OnSetState;
         public event Action OnRemove;
         public virtual bool DisplayState => true;
+        public virtual bool ShowInMinimap => true;
         public abstract string GetClassName();
         public abstract string GetTitle();
 

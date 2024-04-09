@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public string Speech;
 
         public override bool DisplayState => false;
+        public override bool ShowInMinimap => false;
 
         public override string GetClassName() => "titleNode";
 

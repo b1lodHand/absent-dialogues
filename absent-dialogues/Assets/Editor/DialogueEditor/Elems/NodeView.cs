@@ -29,6 +29,7 @@ namespace com.absence.dialoguesystem.editor
             this.Node = node;
             node.Guid = GUID.Generate().ToString();
             this.viewDataKey = node.Guid;
+            this.showInMiniMap = node.ShowInMinimap;
 
             style.left = node.Position.x;
             style.top = node.Position.y;

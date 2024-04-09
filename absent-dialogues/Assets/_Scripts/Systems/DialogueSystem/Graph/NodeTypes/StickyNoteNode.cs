@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public string Speech;
 
         public override bool DisplayState => false;
+        public override bool ShowInMinimap => false;
 
         public override string GetClassName() => "stickyNoteNode";
 
@@ -40,7 +41,7 @@ namespace com.absence.dialoguesystem
         }
 
         public override string GetInputPortNameForCreation() => null;
-        public override List<string> GetOutputPortNamesForCreation() => new List<string>();
+        public override List<string> GetOutputPortNamesForCreation() => new();
     }
 
 }
