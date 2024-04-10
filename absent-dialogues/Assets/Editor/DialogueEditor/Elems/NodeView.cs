@@ -5,6 +5,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using UnityEditor;
 using UnityEditor.UIElements;
+using System.Linq;
+using UnityEditor.IMGUI.Controls;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -38,6 +40,7 @@ namespace com.absence.dialoguesystem.editor
             this.title = node.GetTitle();
 
             SetupNodeForSerialization();
+            SetupPersonDropdownIfExists();
 
             DrawElems();
             CreateInputPort();
@@ -47,6 +50,25 @@ namespace com.absence.dialoguesystem.editor
 
             node.OnSetState -= UpdateState;
             node.OnSetState += UpdateState;
+        }
+
+        private void SetupPersonDropdownIfExists()
+        {
+            if (Node is not ISpeechNode speechNode) return;
+
+            DropdownField personDropdown = this.Q<DropdownField>("person-field");
+            Image personPreview = new Image();
+            personPreview.name = "person-icon-preview";
+            personPreview.AddToClassList("personPreview");
+            personDropdown.parent.Insert(0, personPreview);
+
+            personDropdown.RegisterValueChangedCallback(evt =>
+            {
+                Person targetPerson = Node.MasterDialogue.People.Where(p => p.Name == (string)evt.newValue).FirstOrDefault();
+                speechNode.PersonIndex = Node.MasterDialogue.People.IndexOf(targetPerson);
+
+                personPreview.sprite = targetPerson.Icon;
+            });
         }
 
         private void SetupNodeForSerialization()
@@ -64,9 +86,49 @@ namespace com.absence.dialoguesystem.editor
         private void DrawElems()
         {
             if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
+            else if (Node is FastSpeechNode) RefreshPersonDropdown();
             else if (Node is GotoNode) DrawElems_GotoNode();
             else if (Node is DialoguePartNode) DrawElems_DialogPartNode();
         }
+
+        private void RefreshPersonDropdown()
+        {
+            DropdownField personDropdown = this.Q<DropdownField>("person-field");
+
+            List<string> peopleNameList = Node.MasterDialogue.People.ConvertAll(p =>
+            {
+                if (p) return p.Name;
+
+                return null;
+            });
+
+            if (peopleNameList.Count == 0)
+            {
+                personDropdown.choices = new List<string>();
+                personDropdown.SetValueWithoutNotify("No person exists in this dialogue.");
+                return;
+            }
+
+            personDropdown.choices = new List<string>(peopleNameList);
+            ISpeechNode speechNode = Node as ISpeechNode;
+
+            if(speechNode.PersonIndex < 0 || speechNode.PersonIndex > Node.MasterDialogue.People.Count - 1)
+            {
+                personDropdown.SetValueWithoutNotify("Missing person...");
+                return;
+            }
+
+            if (Node.MasterDialogue.People[speechNode.PersonIndex])
+            {
+                personDropdown.SetValueWithoutNotify(Node.MasterDialogue.People[speechNode.PersonIndex].Name);
+                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+                personIconPreview.sprite = Node.MasterDialogue.People[speechNode.PersonIndex].Icon;
+            }
+            else
+                personDropdown.SetValueWithoutNotify("Select a person...");
+
+        }
+
         private void DrawElems_DialogPartNode()
         {
             Label nameLabel = new Label();
@@ -83,6 +145,7 @@ namespace com.absence.dialoguesystem.editor
             mainContainer.Add(m_createNewOptionButton);
 
             RefreshOptions_DialogPartNode();
+            RefreshPersonDropdown();
         }
         private void DrawElems_GotoNode()
         {
@@ -154,6 +217,8 @@ namespace com.absence.dialoguesystem.editor
         private void CreateOption_DialogPartNode()
         {
             Option option = new Option();
+
+            Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
             m_nodeAsDecisive.Options.Add(option);
 
             Master.Refresh();
@@ -218,8 +283,11 @@ namespace com.absence.dialoguesystem.editor
             Button removeButton = new Button(() =>
             {
                 var target = m_nodeAsDecisive.Options[index];
+
+                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
                 m_nodeAsDecisive.RemoveNextNode(Outputs.IndexOf(optionElem.Q<Port>()));
                 m_nodeAsDecisive.Options.Remove(target);
+
                 m_optionElems.Remove(optionElem);
                 mainContainer.Remove(optionElem);
 

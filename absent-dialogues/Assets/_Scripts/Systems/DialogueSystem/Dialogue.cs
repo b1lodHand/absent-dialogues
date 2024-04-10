@@ -7,21 +7,22 @@ namespace com.absence.dialoguesystem
 {
     public class Dialogue : ScriptableObject
     {
-        public RootNode RootNode;
-        public Node LastOrCurrentNode;
-        public Node LastOrCurrentSpeechNode;
+        [HideInInspector] public RootNode RootNode;
+        [HideInInspector] public Node LastOrCurrentNode;
+        [HideInInspector] public Node LastOrCurrentSpeechNode;
+        [HideInInspector] public List<Node> AllNodes = new List<Node>();
 
-        public List<Node> AllNodes = new List<Node>();
-        public List<PersonProfile> People = new List<PersonProfile>();
         public Blackboard Blackboard;
+        public List<Person> People = new List<Person>();
 
-        bool m_preAssignedPlayers = true;
+        private List<Person> m_tempPeople;
 
         public Node CreateNode(System.Type type)
         {
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
 
+            if (node is ISpeechNode speechNode) speechNode.PersonIndex = 0;
             node.Blackboard = Blackboard;
             node.MasterDialogue = this;
 
@@ -65,11 +66,11 @@ namespace com.absence.dialoguesystem
 
         public void Bind(params object[] data)
         {
-            List<PersonProfile> people = (List<PersonProfile>)data[0];
+            List<Person> people = (List<Person>)data[0];
             if(people != null)
             {
-                m_preAssignedPlayers = false;
-                People = people;
+                m_tempPeople = new List<Person>(People);
+                People = new List<Person>(people);
             }
 
             AllNodes.ForEach(n =>
@@ -83,8 +84,8 @@ namespace com.absence.dialoguesystem
 
         public void Cleanup()
         {
-            if(!m_preAssignedPlayers) People.Clear();
-            m_preAssignedPlayers = true;
+            if(m_tempPeople != null) People = m_tempPeople;
+            m_tempPeople = null;
         }
 
         public void ResetProgress()

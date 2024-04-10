@@ -94,6 +94,8 @@ namespace com.absence.dialoguesystem
 
     public interface ISpeechNode
     {
+        public int PersonIndex { get; set; }
+        public Person Person { get; }
         public string GetSpeech();
         public string[] GetOptionSpeeches();
     }

@@ -10,6 +10,9 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
+            <ui:VisualElement name="person-selector" style="flex-grow: 1; flex-direction: row; justify-content: center; align-items: stretch; align-self: center;">
+                <ui:DropdownField index="-1" name="person-field" class="personField" />
+            </ui:VisualElement>
             <ui:VisualElement name="divider" picking-mode="Ignore" class="horizontal" style="height: 1px;" />
             <ui:VisualElement name="top" style="flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; align-self: auto; justify-content: space-between; align-items: stretch;">
                 <ui:VisualElement name="input" style="-unity-font-style: normal;" />

@@ -43,13 +43,13 @@ namespace com.absence.dialoguesystem
                 return;
             }
 
-            if (currentNode is FastSpeechNode) DialogueDisplayer.Instance.WriteFast(speechNode.GetSpeech());
-            else if (currentNode is DecisionSpeechNode) DialogueDisplayer.Instance.WriteDecisive(speechNode.GetSpeech(), speechNode.GetOptionSpeeches());
+            if (currentNode is FastSpeechNode f) DialogueDisplayer.Instance.WriteFast(f.Person, speechNode.GetSpeech());
+            else if (currentNode is DecisionSpeechNode d) DialogueDisplayer.Instance.WriteDecisive(d.Person, speechNode.GetSpeech(), speechNode.GetOptionSpeeches());
 
             m_displayedSpeechNode = currentNode;
         }
 
-        public void Initialize(List<PersonProfile> people)
+        public void Initialize(List<Person> people)
         {
             if (m_dialogue == null) return;
             m_dialogue.Bind(people);

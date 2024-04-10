@@ -1,0 +1,29 @@
+.iconPreview {
+	width: 64px;
+	height: 64px;
+	align-self: center;
+}
+
+.field {
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 20px;
+	padding-right: 5px;
+}
+
+.iconField {
+	opacity: 0.7;
+}
+
+.iconField:hover {
+	opacity: 1;
+}
+
+.descriptionField {
+	white-space: normal;
+}
+
+.field > #label {
+	-unity-text-align: upper-center;
+	-unity-font-style: bold;
+}

@@ -2,12 +2,15 @@ using com.absence.utilities;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace com.absence.dialoguesystem
 {
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
         [SerializeField] TMP_Text m_speechText;
+        [SerializeField] TMP_Text m_personNameText;
+        [SerializeField] Image m_iconImage;
         [SerializeField] OptionText m_optionTextPrefab;
         [SerializeField] Transform m_optionBank;
         [SerializeField] GameObject m_panel;
@@ -18,12 +21,15 @@ namespace com.absence.dialoguesystem
 
         public event Action<int> OnOptionPicked;
 
-        public void WriteDecisive(string speech, string[] options)
+        public void WriteDecisive(Person person, string speech, string[] options)
         {
             ClearDisplay();
             m_optionTexts = new OptionText[options.Length];
 
             m_speechText.text = speech;
+            m_iconImage.sprite = person.Icon;
+            m_personNameText.text = person.Name;
+
             for (int i = 0; i < options.Length; i++)
             {
                 var createdOption = Instantiate(m_optionTextPrefab, m_optionBank);
@@ -32,10 +38,13 @@ namespace com.absence.dialoguesystem
                 createdOption.OnClickAction = OnOptionPicked;
             }
         }
-        public void WriteFast(string speech)
+        public void WriteFast(Person person, string speech)
         {
             ClearDisplay();
             m_speechText.text = speech;
+            m_iconImage.sprite = person.Icon;
+            m_personNameText.text = person.Name;
+
         }
 
         public void EnterDialog(DialogueInstance instance)

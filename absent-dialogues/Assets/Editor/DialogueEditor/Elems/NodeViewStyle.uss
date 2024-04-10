@@ -191,6 +191,10 @@
     height: auto;
 }
 
+.fastSpeechNode #person-field {
+    display: flex;
+}
+
 .dialogPartNode {
     height: auto;
     width: auto;
@@ -231,6 +235,10 @@
     align-self: center;
     margin-left: 0;
     margin-bottom: 4px;
+}
+
+.decisionSpeechNode #person-field {
+    display: flex;
 }
 
 .decisionSpeechNode .optionDivider {
@@ -431,4 +439,18 @@
 
 .titleNode:selected #divider {
     opacity: 1;
+}
+
+#person-field {
+    display: none;
+}
+
+.personPreview {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+}
+
+.personField .unity-popup-field__input {
+    border-radius: 0;
 }
