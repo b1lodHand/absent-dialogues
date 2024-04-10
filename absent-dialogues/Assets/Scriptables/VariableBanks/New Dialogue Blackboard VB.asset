@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
   m_Name: New Dialogue Blackboard VB
   m_EditorClassIdentifier: 
-  Ints: []
-  Floats: []
-  Strings: []
-  Booleans: []
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans: []

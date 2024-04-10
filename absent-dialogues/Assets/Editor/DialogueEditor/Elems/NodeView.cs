@@ -276,9 +276,11 @@ namespace com.absence.dialoguesystem.editor
 
             Toggle showIfToggle = new Toggle();
             showIfToggle.BindProperty(useShowIfProp);
+            showIfToggle.AddToClassList("optionShowIfToggle");
 
             PropertyField showIfContainer = new PropertyField(showIfProp, "Show If");
             showIfContainer.Bind(m_serializedNode);
+            showIfContainer.AddToClassList("optionShowIf");
 
             Button removeButton = new Button(() =>
             {

@@ -26,9 +26,9 @@ namespace com.absence.dialoguesystem
             ClearDisplay();
             m_optionTexts = new OptionText[options.Length];
 
-            m_speechText.text = speech;
-            m_iconImage.sprite = person.Icon;
-            m_personNameText.text = person.Name;
+            if (m_speechText) m_speechText.text = speech;
+            if (m_iconImage) m_iconImage.sprite = person.Icon;
+            if (m_personNameText) m_personNameText.text = person.Name;
 
             for (int i = 0; i < options.Length; i++)
             {
@@ -41,10 +41,9 @@ namespace com.absence.dialoguesystem
         public void WriteFast(Person person, string speech)
         {
             ClearDisplay();
-            m_speechText.text = speech;
-            m_iconImage.sprite = person.Icon;
-            m_personNameText.text = person.Name;
-
+            if (m_speechText) m_speechText.text = speech;
+            if (m_iconImage) m_iconImage.sprite = person.Icon;
+            if (m_personNameText) m_personNameText.text = person.Name;
         }
 
         public void EnterDialog(DialogueInstance instance)

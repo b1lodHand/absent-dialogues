@@ -454,3 +454,11 @@
 .personField .unity-popup-field__input {
     border-radius: 0;
 }
+
+.optionShowIf .unity-popup-field__input {
+    border-radius: 0;
+}
+
+.optionShowIf #comparison {
+    border-radius: 0;
+}
