@@ -12,8 +12,8 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public Node LastOrCurrentSpeechNode;
         [HideInInspector] public List<Node> AllNodes = new List<Node>();
 
-        public Blackboard Blackboard;
         public List<Person> People = new List<Person>();
+        public Blackboard Blackboard;
 
         private List<Person> m_tempPeople;
 
