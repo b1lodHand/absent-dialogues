@@ -6,6 +6,7 @@ namespace com.absence.dialoguesystem
     [System.Serializable]
     public class Blackboard
     {
-        public VariableBank Bank;
+        [HideInInspector] public VariableBank Bank;
+        [HideInInspector] public Dialogue MasterDialogue;
     }
 }

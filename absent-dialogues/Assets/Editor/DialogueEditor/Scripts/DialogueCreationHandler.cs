@@ -43,6 +43,8 @@ namespace com.absence.dialoguesystem.editor
                 AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
 
                 blackboard.Bank = blackboardBank;
+                blackboard.MasterDialogue = itemCreated;
+
                 itemCreated.Blackboard = blackboard;
 
                 AssetDatabase.SaveAssets();

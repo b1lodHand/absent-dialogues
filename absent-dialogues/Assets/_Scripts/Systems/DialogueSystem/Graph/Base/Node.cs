@@ -22,6 +22,8 @@ namespace com.absence.dialoguesystem.internals
 
         public event Action<Node.NodeState> OnSetState;
         public event Action OnRemove;
+        public event Action OnValidation;
+
         public virtual bool DisplayState => true;
         public virtual bool ShowInMinimap => true;
         public abstract string GetClassName();
@@ -89,6 +91,11 @@ namespace com.absence.dialoguesystem.internals
         public virtual Node Clone()
         {
             return Instantiate(this);
+        }
+
+        private void OnValidate()
+        {
+            OnValidation?.Invoke();
         }
     }
 

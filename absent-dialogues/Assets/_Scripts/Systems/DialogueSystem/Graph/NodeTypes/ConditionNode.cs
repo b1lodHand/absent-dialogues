@@ -19,7 +19,7 @@ namespace com.absence.dialoguesystem.internals
         public List<VariableComparer> Comparers = new List<VariableComparer>();
 
         public override string GetClassName() => "conditionNode";
-        public override string GetTitle() => "Condition Checker";
+        public override string GetTitle() => "Condition";
 
         protected override void Pass_Inline(params object[] passData)
         {

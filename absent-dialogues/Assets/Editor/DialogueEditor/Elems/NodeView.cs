@@ -47,9 +47,19 @@ namespace com.absence.dialoguesystem.editor
             CreateOutputPorts();
 
             SetupSpeechFieldIfExists();
+            RefreshNodeIcon();
 
             node.OnSetState -= UpdateState;
             node.OnSetState += UpdateState;
+
+            node.OnValidation -= RefreshNodeIcon;
+            node.OnValidation += RefreshNodeIcon;
+        }
+
+        private void RefreshNodeIcon()
+        {
+            if (Node.ExitDialogAfterwards) AddToClassList("exit");
+            else RemoveFromClassList("exit");
         }
 
         private void SetupPersonDropdownIfExists()
@@ -61,6 +71,8 @@ namespace com.absence.dialoguesystem.editor
             personPreview.name = "person-icon-preview";
             personPreview.AddToClassList("personPreview");
             personDropdown.parent.Insert(0, personPreview);
+
+            personDropdown.tooltip = "The person who speaks.";
 
             personDropdown.RegisterValueChangedCallback(evt =>
             {

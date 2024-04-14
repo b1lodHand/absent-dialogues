@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.internals
+namespace com.absence.dialoguesystem.internals 
 {
     public class DecisionSpeechNode : Node, ISpeechNode
     {
-        public List<Option> Options = new List<Option>();
+        [HideInInspector] public List<Option> Options = new List<Option>();
         [HideInInspector] public string Speech;
 
         public int PersonIndex { get; set; }

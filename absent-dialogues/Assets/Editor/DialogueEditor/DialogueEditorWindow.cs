@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
+using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -20,19 +21,22 @@ namespace com.absence.dialoguesystem.editor
         static Toolbar m_toolbar;
         static ToolbarMenu m_dialogPartFinder;
 
+        Vector2 m_blackboardViewScrollPos;
+        Editor m_blackboardBankEditor;
+
         static SerializedObject m_dialogueObject;
         static SerializedProperty m_blackboardProperty;
 
         static Dialogue m_targetDialogue;
 
-        [MenuItem("Game/Dialogue Editor")]
+        [MenuItem("absence/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
             DialogueEditorWindow wnd = GetWindow<DialogueEditorWindow>();
             wnd.titleContent = new GUIContent()
             {
-                image = EditorGUIUtility.IconContent("d_BlendTree Icon").image,
-                text = "Dialogue Editor"
+                image = EditorGUIUtility.IconContent("d_Tile Icon").image,
+                text = "Dialogue Graph"
             };
         }
 
@@ -96,7 +100,7 @@ namespace com.absence.dialoguesystem.editor
                 if (m_dialogueObject == null) return;
 
                 m_dialogueObject.Update();
-                EditorGUILayout.PropertyField(m_blackboardProperty);
+                DrawBlackboardView(m_blackboardProperty);
                 m_dialogueObject.ApplyModifiedProperties();
             };
 
@@ -104,6 +108,47 @@ namespace com.absence.dialoguesystem.editor
             m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
             PopulateDialogView(m_targetDialogue);
         }
+
+        private void DrawBlackboardView(SerializedProperty property)
+        {
+            EditorGUILayout.PropertyField(m_blackboardProperty);
+
+            SerializedProperty bankProp = property.FindPropertyRelative("Bank");
+            SerializedProperty masterDialogueProp = property.FindPropertyRelative("MasterDialogue");
+
+            VariableBank bank = bankProp.objectReferenceValue as VariableBank;
+            Dialogue dialogue = masterDialogueProp.objectReferenceValue as Dialogue;
+
+            SerializedObject dialogueSO = new SerializedObject(dialogue);
+            SerializedObject bankSO = new SerializedObject(bank);
+
+            Undo.RecordObject(dialogue, "Dialogue");
+
+            if (bank == null)
+            {
+                EditorGUILayout.ObjectField(bankProp);
+                EditorGUILayout.HelpBox("There is no bank to edit here. Pick one to continue.", MessageType.Warning);
+            }
+
+            dialogueSO.ApplyModifiedProperties();
+
+            if (bank == null) return;
+
+            EditorGUILayout.Space(10);
+            EditorGUILayout.LabelField("Blackboard Bank: ");
+
+            Undo.RecordObject(bank, "Blackboard Bank");
+
+            m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
+
+            if (!m_blackboardBankEditor) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            else m_blackboardBankEditor.OnInspectorGUI();
+
+            EditorGUILayout.EndScrollView();
+
+            bankSO.ApplyModifiedProperties();
+        }
+
         private void SetupToolbar(VisualElement root)
         {
             Create_DialogPartFinder();

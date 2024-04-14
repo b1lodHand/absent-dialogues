@@ -17,6 +17,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   Next: {fileID: -7128887067038950444}
@@ -38,6 +39,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   Next: {fileID: -7128887067038950444}
@@ -54,10 +56,11 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 5ef3a9c7a77b2b540ac7ed62fb3b2447
-  Position: {x: 212, y: 3}
+  Position: {x: 215, y: 2}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   Next: {fileID: 6602897084972744239}
@@ -79,8 +82,9 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogAfterwards: 1
   Speech: 'This is a sample
 
     sticky note.'
@@ -107,11 +111,15 @@ MonoBehaviour:
   - {fileID: -6500224830323563992}
   - {fileID: -8905424598614146506}
   - {fileID: 2437883358674257813}
+  - {fileID: 4288233897331555536}
+  - {fileID: 345333829215211219}
+  - {fileID: 2218299684729963074}
   People:
   - {fileID: 11400000, guid: 51314ca2212de414ea471788da803d40, type: 2}
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 11400000}
 --- !u!114 &213386342176865088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,13 +133,63 @@ MonoBehaviour:
   m_Name: GotoNode
   m_EditorClassIdentifier: 
   Guid: 0db28394480c1874d9bdb545ac334299
-  Position: {x: 837, y: 5}
+  Position: {x: 1227.4382, y: 144.68788}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   TargetDialogPartName: main
+--- !u!114 &345333829215211219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  Guid: 930cc3dc5357ed44faef588cc6a51fa0
+  Position: {x: 888.2561, y: 252.95006}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
+  State: 0
+  ExitDialogAfterwards: 0
+  TrueNext: {fileID: 4288233897331555536}
+  FalseNext: {fileID: 2218299684729963074}
+  Processor: 0
+  Comparers: []
+--- !u!114 &2218299684729963074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 614439c9666a87845a7d88ac7e9b32cc
+  Position: {x: 1074, y: 281}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
+  State: 0
+  ExitDialogAfterwards: 0
+  VBActions: []
+  UnityActions:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: 213386342176865088}
 --- !u!114 &2437883358674257813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,9 +207,35 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   Speech: This is a title.
+--- !u!114 &4288233897331555536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 5c47d2fec08b919498e8180c3c3bf34f
+  Position: {x: 1075.8, y: 200.95003}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
+  State: 0
+  ExitDialogAfterwards: 0
+  VBActions: []
+  UnityActions:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: 213386342176865088}
 --- !u!114 &6602897084972744239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +249,11 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: 6cd30e4f7c7705148b2822b061bd1d63
-  Position: {x: 454, y: 3}
+  Position: {x: 455, y: 5}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   Options:
@@ -193,7 +278,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
-    LeadsTo: {fileID: 213386342176865088}
+    LeadsTo: {fileID: 4288233897331555536}
   - Speech: option 3.
     UseShowIf: 0
     ShowIf:
@@ -204,5 +289,5 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
-    LeadsTo: {fileID: 213386342176865088}
+    LeadsTo: {fileID: 345333829215211219}
   Speech: decisive speech example
