@@ -37,8 +37,7 @@ namespace com.absence.dialoguesystem.editor
                 blackboardBank.name = $"{itemCreated.name} Blackboard VB";
                 blackboardBank.OnDestroyAction += () =>
                 {
-                    VariableSetterDrawer.RefreshBanks();
-                    VariableComparerDrawer.RefreshBanks();
+                    VariableBankDatabase.Refresh();
                 };
 
                 AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
@@ -48,9 +47,7 @@ namespace com.absence.dialoguesystem.editor
 
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
-
-                VariableSetterDrawer.RefreshBanks();
-                VariableComparerDrawer.RefreshBanks();
+                VariableBankDatabase.Refresh();
 
                 Selection.activeObject = itemCreated;
             }

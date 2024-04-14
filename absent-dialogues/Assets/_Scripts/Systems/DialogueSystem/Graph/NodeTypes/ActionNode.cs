@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.internals
 {
     public class ActionNode : Node
     {

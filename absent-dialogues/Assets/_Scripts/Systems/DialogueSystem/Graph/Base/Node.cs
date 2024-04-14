@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.internals
 {
     public abstract class Node : ScriptableObject
     {

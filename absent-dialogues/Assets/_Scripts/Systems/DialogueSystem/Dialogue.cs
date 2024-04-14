@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using com.absence.dialoguesystem.internals;
 
 namespace com.absence.dialoguesystem
 {
@@ -80,6 +81,16 @@ namespace com.absence.dialoguesystem
             });
 
             RootNode.Reach();
+        }
+
+        public void Enable()
+        {
+
+        }
+
+        public void Disable()
+        {
+
         }
 
         public void Cleanup()

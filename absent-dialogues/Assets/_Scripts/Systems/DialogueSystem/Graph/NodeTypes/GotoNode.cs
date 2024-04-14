@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.internals
 {
     public class GotoNode : Node
     {

@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 using UnityEditor;
 using UnityEditor.UIElements;
 using System.Linq;
-using UnityEditor.IMGUI.Controls;
+using com.absence.dialoguesystem.internals;
+using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -29,7 +30,6 @@ namespace com.absence.dialoguesystem.editor
         public NodeView(Node node) : base("Assets/Editor/DialogueEditor/Elems/NodeView.uxml")
         {
             this.Node = node;
-            node.Guid = GUID.Generate().ToString();
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 

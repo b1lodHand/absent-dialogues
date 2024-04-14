@@ -7,13 +7,14 @@ using UnityEngine.UI;
 namespace com.absence.dialoguesystem
 {
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
-    {
-        [SerializeField] TMP_Text m_speechText;
-        [SerializeField] TMP_Text m_personNameText;
-        [SerializeField] Image m_iconImage;
-        [SerializeField] OptionText m_optionTextPrefab;
-        [SerializeField] Transform m_optionBank;
+    { 
         [SerializeField] GameObject m_panel;
+        [SerializeField] TMP_Text m_speechText;
+        [SerializeField] Image m_iconImage;
+        [SerializeField] TMP_Text m_personNameText;
+        [SerializeField] Transform m_optionBank;
+        [SerializeField] OptionText m_optionTextPrefab;
+
         [SerializeField] private bool m_inDialog = false;
 
         OptionText[] m_optionTexts;

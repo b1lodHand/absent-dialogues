@@ -1,5 +1,4 @@
-
-using com.absence.dialoguesystem;
+using com.absence.dialoguesystem.internals;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1091,12 +1091,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6151e674d6897374c80697a0e26518c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speechText: {fileID: 1363931373}
-  m_personNameText: {fileID: 1412829685}
-  m_iconImage: {fileID: 375494021}
-  m_optionTextPrefab: {fileID: 6817177061115473699, guid: 0dc931cdc186b0e42a50d841afb2bbbb, type: 3}
-  m_optionBank: {fileID: 1578477568}
   m_panel: {fileID: 873511972}
+  m_speechText: {fileID: 1363931373}
+  m_iconImage: {fileID: 375494021}
+  m_personNameText: {fileID: 1412829685}
+  m_optionBank: {fileID: 1578477568}
+  m_optionTextPrefab: {fileID: 6817177061115473699, guid: 0dc931cdc186b0e42a50d841afb2bbbb, type: 3}
   m_inDialog: 0
 --- !u!1 &1363931371
 GameObject:

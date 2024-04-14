@@ -4,6 +4,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
+using com.absence.dialoguesystem.internals;
+using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -168,7 +170,13 @@ namespace com.absence.dialoguesystem.editor
             });
         }
 
-        private void FrameToNode(Node node)
+        public void FrameToNode(Node node)
+        {
+            SelectNode(node);
+            m_dialogueGraphView.FrameSelection();
+        }
+
+        public void SelectNode(Node node)
         {
             ISelectable selectableNode = m_dialogueGraphView.FindNodeView(node).GetFirstOfType<ISelectable>();
 
@@ -176,7 +184,6 @@ namespace com.absence.dialoguesystem.editor
 
             m_dialogueGraphView.ClearSelection();
             m_dialogueGraphView.AddToSelection(selectableNode);
-            m_dialogueGraphView.FrameSelection();
         }
 
         private void OnNodeSelectionChanged(NodeView node)

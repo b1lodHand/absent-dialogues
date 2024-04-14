@@ -5,6 +5,8 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
+using com.absence.dialoguesystem.internals;
+using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -91,6 +93,7 @@ namespace com.absence.dialoguesystem.editor
                     }
                 });
 
+                Refresh();
             }
 
             if (graphViewChange.edgesToCreate != null)
@@ -105,12 +108,17 @@ namespace com.absence.dialoguesystem.editor
                     EditorUtility.SetDirty(outputView.Node);
                 });
 
+                //Refresh();
             }
 
-            Refresh();
+            //if(graphViewChange.movedElements != null && graphViewChange.movedElements.Any(e => e is NodeView))
+            //{
+            //    Refresh();
+            //}
 
             return graphViewChange;
         }
+
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
         {
             evt.menu.AppendAction("Refresh", v => Refresh());
@@ -122,7 +130,6 @@ namespace com.absence.dialoguesystem.editor
                 if (type.Equals(typeof(RootNode))) continue;
                 evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", a => CreateNode(type, evt.originalMousePosition));
             }
-
         }
 
         internal void PopulateView(Dialogue dialog)
@@ -173,6 +180,7 @@ namespace com.absence.dialoguesystem.editor
             Undo.RecordObject(m_dialogue, "Dialog (Create Node)");
 
             Node node = m_dialogue.CreateNode(type);
+            node.Guid = GUID.Generate().ToString();
 
             AssetDatabase.AddObjectToAsset(node, m_dialogue);
             Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
@@ -180,9 +188,11 @@ namespace com.absence.dialoguesystem.editor
             AssetDatabase.SaveAssets();
 
             if (atPosition.HasValue) node.Position = atPosition.Value;
-            CreateNodeView(node);
+            NodeView viewOfNodeCreated = CreateNodeView(node);
 
             Refresh();
+            ClearSelection();
+            AddToSelection(viewOfNodeCreated);
 
             return node;
         }
