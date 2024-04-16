@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 5ef3a9c7a77b2b540ac7ed62fb3b2447
-  Position: {x: 215, y: 2}
+  Position: {x: 236, y: 5.9600067}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: 6cd30e4f7c7705148b2822b061bd1d63
-  Position: {x: 455, y: 5}
+  Position: {x: 486, y: 6.4000015}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}

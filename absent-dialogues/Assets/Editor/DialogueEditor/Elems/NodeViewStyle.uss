@@ -475,6 +475,8 @@
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
+    width: 16px;
+    height: 16px;
 }
 
 .gotoNode #node-icon {

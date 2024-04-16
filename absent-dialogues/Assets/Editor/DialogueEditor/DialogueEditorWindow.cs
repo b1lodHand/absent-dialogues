@@ -4,9 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
-using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -17,16 +15,13 @@ namespace com.absence.dialoguesystem.editor
 
         static DialogueGraphView m_dialogueGraphView;
         static InspectorView m_inspectorView;
-        static IMGUIContainer m_blackboardView;
+        static BlackboardView m_blackboardView;
         static Toolbar m_toolbar;
         static ToolbarMenu m_dialogPartFinder;
 
-        Vector2 m_blackboardViewScrollPos;
-        Editor m_blackboardBankEditor;
-
-        static SerializedObject m_dialogueObject;
         static SerializedProperty m_blackboardProperty;
 
+        static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
         [MenuItem("absence/absent-dialogues/Open Dialogue Graph Window")]
@@ -56,13 +51,21 @@ namespace com.absence.dialoguesystem.editor
 
         private static bool PopulateDialogView(Dialogue dialogue)
         {
-            if (dialogue == null) return false;
+            if (dialogue == null)
+            {
+                m_blackboardView.Clear();
+                m_inspectorView.Clear();
+                m_dialogueGraphView.ClearViewWithoutNotification();
+                return false;
+            }
 
             if (Application.isPlaying) m_dialogueGraphView.PopulateView(dialogue);
             else if (AssetDatabase.CanOpenAssetInEditor(dialogue.GetInstanceID())) m_dialogueGraphView.PopulateView(dialogue);
 
             m_dialogueObject = new SerializedObject(dialogue);
             m_blackboardProperty = m_dialogueObject.FindProperty("Blackboard");
+
+            m_blackboardView.Initialize(() => m_blackboardProperty);
 
             return true;
         }
@@ -91,62 +94,15 @@ namespace com.absence.dialoguesystem.editor
             /* FIND VIEWS*/
             m_dialogueGraphView = root.Q<DialogueGraphView>();
             m_inspectorView = root.Q<InspectorView>();
-            m_blackboardView = root.Q<IMGUIContainer>();
+            m_blackboardView = root.Q<BlackboardView>();
             m_toolbar = root.Q<Toolbar>();
 
             /* SETUP VIEWS*/
-            m_blackboardView.onGUIHandler += () =>
-            {
-                if (m_dialogueObject == null) return;
-
-                m_dialogueObject.Update();
-                DrawBlackboardView(m_blackboardProperty);
-                m_dialogueObject.ApplyModifiedProperties();
-            };
+            m_blackboardView.Initialize(() => m_blackboardProperty);
 
             m_dialogueGraphView.OnNodeSelected -= OnNodeSelectionChanged;
             m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
             PopulateDialogView(m_targetDialogue);
-        }
-
-        private void DrawBlackboardView(SerializedProperty property)
-        {
-            EditorGUILayout.PropertyField(m_blackboardProperty);
-
-            SerializedProperty bankProp = property.FindPropertyRelative("Bank");
-            SerializedProperty masterDialogueProp = property.FindPropertyRelative("MasterDialogue");
-
-            VariableBank bank = bankProp.objectReferenceValue as VariableBank;
-            Dialogue dialogue = masterDialogueProp.objectReferenceValue as Dialogue;
-
-            SerializedObject dialogueSO = new SerializedObject(dialogue);
-            SerializedObject bankSO = new SerializedObject(bank);
-
-            Undo.RecordObject(dialogue, "Dialogue");
-
-            if (bank == null)
-            {
-                EditorGUILayout.ObjectField(bankProp);
-                EditorGUILayout.HelpBox("There is no bank to edit here. Pick one to continue.", MessageType.Warning);
-            }
-
-            dialogueSO.ApplyModifiedProperties();
-
-            if (bank == null) return;
-
-            EditorGUILayout.Space(10);
-            EditorGUILayout.LabelField("Blackboard Bank: ");
-
-            Undo.RecordObject(bank, "Blackboard Bank");
-
-            m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
-
-            if (!m_blackboardBankEditor) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-            else m_blackboardBankEditor.OnInspectorGUI();
-
-            EditorGUILayout.EndScrollView();
-
-            bankSO.ApplyModifiedProperties();
         }
 
         private void SetupToolbar(VisualElement root)
@@ -185,6 +141,12 @@ namespace com.absence.dialoguesystem.editor
                 dialogObjectField.objectType = typeof(Dialogue);
                 dialogObjectField.RegisterValueChangedCallback(p =>
                 {
+                    if (p.newValue == null)
+                    {
+                        PopulateDialogView(null);
+                        return;
+                    }
+
                     if (!p.newValue.Equals(p.previousValue))
                     {
                         m_targetDialogue = (Dialogue)p.newValue;

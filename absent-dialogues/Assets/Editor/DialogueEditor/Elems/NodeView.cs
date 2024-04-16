@@ -225,6 +225,12 @@ namespace com.absence.dialoguesystem.editor
             OnNodeSelected?.Invoke(this);
         }
 
+        public override void OnUnselected()
+        {
+            base.OnUnselected();
+            OnNodeSelected?.Invoke(null);
+        }
+
         #region Decision Speech Node
         private void CreateOption_DialogPartNode()
         {

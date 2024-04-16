@@ -16,8 +16,10 @@ namespace com.absence.dialoguesystem.editor
         internal void UpdateSelection(NodeView nodeView)
         {
             Clear();
-
             UnityEngine.Object.DestroyImmediate(editor);
+
+            if (nodeView == null) return;
+
             editor = Editor.CreateEditor(nodeView.Node);
             IMGUIContainer container = new IMGUIContainer(() =>
             {

@@ -13,7 +13,7 @@
                 <ui:VisualElement name="blackboard-container" style="flex-grow: 1;">
                     <ui:ScrollView style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
                         <ui:Label tabindex="-1" text="Blackboard" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(53, 53, 53); color: rgb(255, 255, 255); -unity-font: initial; flex-wrap: nowrap; flex-direction: column; flex-grow: 0; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; font-size: 12px;" />
-                        <ui:IMGUIContainer />
+                        <BlackboardView />
                     </ui:ScrollView>
                 </ui:VisualElement>
             </SplitView>

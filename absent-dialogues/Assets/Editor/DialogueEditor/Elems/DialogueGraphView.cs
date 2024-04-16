@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
+using System.Text.RegularExpressions;
+using com.absence.utilities;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -128,17 +130,23 @@ namespace com.absence.dialoguesystem.editor
             foreach (var type in types)
             {
                 if (type.Equals(typeof(RootNode))) continue;
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", a => CreateNode(type, evt.originalMousePosition));
+
+                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a => CreateNode(type, evt.originalMousePosition));
             }
+        }
+
+        internal void ClearViewWithoutNotification()
+        {
+            graphViewChanged -= OnGraphViewChanged;
+            DeleteElements(graphElements);
+            graphViewChanged += OnGraphViewChanged;
         }
 
         internal void PopulateView(Dialogue dialog)
         {
             this.m_dialogue = dialog;
 
-            graphViewChanged -= OnGraphViewChanged;
-            DeleteElements(graphElements);
-            graphViewChanged += OnGraphViewChanged;
+            ClearViewWithoutNotification();
 
             if (m_dialogue == null) return;
             if (m_dialogue.RootNode == null)
@@ -175,7 +183,7 @@ namespace com.absence.dialoguesystem.editor
         {
             return GetNodeByGuid(node.Guid) as NodeView;
         }
-        Node CreateNode(System.Type type, Vector2? atPosition = null)
+        Node CreateNode(System.Type type, Vector2 atPosition)
         {
             Undo.RecordObject(m_dialogue, "Dialog (Create Node)");
 
@@ -187,7 +195,7 @@ namespace com.absence.dialoguesystem.editor
 
             AssetDatabase.SaveAssets();
 
-            if (atPosition.HasValue) node.Position = atPosition.Value;
+            node.Position = atPosition;
             NodeView viewOfNodeCreated = CreateNodeView(node);
 
             Refresh();
