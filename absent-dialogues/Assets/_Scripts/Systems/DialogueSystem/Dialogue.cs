@@ -23,7 +23,8 @@ namespace com.absence.dialoguesystem
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
 
-            if (node is ISpeechNode speechNode) speechNode.PersonIndex = 0;
+            node.PersonIndex = 0;
+
             node.Blackboard = Blackboard;
             node.MasterDialogue = this;
 

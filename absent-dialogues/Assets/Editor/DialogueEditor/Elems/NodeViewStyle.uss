@@ -12,15 +12,15 @@
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 #node-border {
@@ -37,10 +37,6 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
     flex-grow: 1;
 }
 
@@ -169,11 +165,8 @@
 }
 
 .conditionNode {
-    min-width: 138px;
-    width: auto;
-    height: auto;
-    -unity-font-style: normal;
-    min-height: 90px;
+    width: 138px;
+    height: 85px;
 }
 
 .gotoNode #title {
@@ -189,10 +182,6 @@
 .fastSpeechNode #speech {
     display: flex;
     height: auto;
-}
-
-.fastSpeechNode #person-field {
-    display: flex;
 }
 
 .dialogPartNode {
@@ -235,10 +224,6 @@
     align-self: center;
     margin-left: 0;
     margin-bottom: 4px;
-}
-
-.decisionSpeechNode #person-field {
-    display: flex;
 }
 
 .decisionSpeechNode .optionDivider {
@@ -537,4 +522,12 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+#person-field {
+    display: none;
+}
+
+.personDependent #person-field {
+    display: flex;
 }

@@ -61,7 +61,7 @@ public class BlackboardView : VisualElement
         if (bank == null) return;
 
         EditorGUILayout.Space(10);
-        EditorGUILayout.LabelField("Blackboard Bank: ");
+        EditorGUILayout.LabelField("Bank: ");
 
         Undo.RecordObject(bank, "Blackboard Bank");
 

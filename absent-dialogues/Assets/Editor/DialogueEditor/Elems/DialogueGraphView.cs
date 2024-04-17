@@ -131,7 +131,8 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (type.Equals(typeof(RootNode))) continue;
 
-                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a => CreateNode(type, evt.originalMousePosition));
+                Debug.Log(evt.localMousePosition);
+                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a => CreateNode(type, evt.localMousePosition));
             }
         }
 
@@ -189,13 +190,14 @@ namespace com.absence.dialoguesystem.editor
 
             Node node = m_dialogue.CreateNode(type);
             node.Guid = GUID.Generate().ToString();
+            node.Position.x = atPosition.x;
+            node.Position.y = atPosition.y;
 
             AssetDatabase.AddObjectToAsset(node, m_dialogue);
             Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
 
             AssetDatabase.SaveAssets();
 
-            node.Position = atPosition;
             NodeView viewOfNodeCreated = CreateNodeView(node);
 
             Refresh();

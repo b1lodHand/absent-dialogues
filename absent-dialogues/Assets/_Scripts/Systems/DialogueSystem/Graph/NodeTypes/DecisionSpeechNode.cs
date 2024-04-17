@@ -10,8 +10,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public List<Option> Options = new List<Option>();
         [HideInInspector] public string Speech;
 
-        public int PersonIndex { get; set; }
-        public Person Person { get => MasterDialogue.People[PersonIndex]; }
+        public override bool PersonDependent => true;
 
         public override string GetClassName() => "decisionSpeechNode";
         public override string GetTitle() => "Decisive Speech";

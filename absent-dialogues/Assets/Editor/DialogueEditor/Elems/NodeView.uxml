@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/Editor/DialogueEditor/Elems/NodeViewStyle.uss?fileID=7433441132597879392&amp;guid=b58717021f98a4b41bd35bbd70c6872e&amp;type=3#NodeViewStyle" />
-    <ui:VisualElement name="node-border" style="min-width: auto;">
+    <ui:VisualElement name="node-border">
         <ui:VisualElement name="contents" style="flex-direction: column;">
             <ui:VisualElement name="node-icon" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0.71);" />
             <ui:VisualElement name="title">

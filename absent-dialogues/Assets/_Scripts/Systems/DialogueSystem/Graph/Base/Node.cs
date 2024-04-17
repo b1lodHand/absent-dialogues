@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         [HideInInspector] public string Guid;
-        [HideInInspector] public Vector2 Position;
+        [HideInInspector] public Vector2 Position = new();
         [HideInInspector] public Dialogue MasterDialogue;
         [HideInInspector] public Blackboard Blackboard;
         [HideInInspector] public NodeState State = NodeState.Unreached;
@@ -24,8 +24,12 @@ namespace com.absence.dialoguesystem.internals
         public event Action OnRemove;
         public event Action OnValidation;
 
+        [HideInInspector] public int PersonIndex;
+        [HideInInspector] public Person Person { get => MasterDialogue.People[PersonIndex]; }
+
         public virtual bool DisplayState => true;
         public virtual bool ShowInMinimap => true;
+        public virtual bool PersonDependent => false;
         public abstract string GetClassName();
         public abstract string GetTitle();
 
@@ -101,8 +105,6 @@ namespace com.absence.dialoguesystem.internals
 
     public interface ISpeechNode
     {
-        public int PersonIndex { get; set; }
-        public Person Person { get; }
         public string GetSpeech();
         public string[] GetOptionSpeeches();
     }

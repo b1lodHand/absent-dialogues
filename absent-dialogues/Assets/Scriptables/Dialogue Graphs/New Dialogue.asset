@@ -20,6 +20,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   Next: {fileID: -7128887067038950444}
   DialogPartName: main
 --- !u!114 &-8570237213173099237
@@ -42,6 +43,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   Next: {fileID: -7128887067038950444}
 --- !u!114 &-7128887067038950444
 MonoBehaviour:
@@ -56,13 +58,14 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 5ef3a9c7a77b2b540ac7ed62fb3b2447
-  Position: {x: 236, y: 5.9600067}
+  Position: {x: 245.32254, y: 6.0650125}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 1
   Next: {fileID: 6602897084972744239}
   Speech: fast speech example (press space)
 --- !u!114 &-6500224830323563992
@@ -85,6 +88,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 1
+  PersonIndex: 0
   Speech: 'This is a sample
 
     sticky note.'
@@ -140,6 +144,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   TargetDialogPartName: main
 --- !u!114 &345333829215211219
 MonoBehaviour:
@@ -161,6 +166,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   TrueNext: {fileID: 4288233897331555536}
   FalseNext: {fileID: 2218299684729963074}
   Processor: 0
@@ -185,6 +191,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   VBActions: []
   UnityActions:
     m_PersistentCalls:
@@ -210,6 +217,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   Speech: This is a title.
 --- !u!114 &4288233897331555536
 MonoBehaviour:
@@ -231,6 +239,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   VBActions: []
   UnityActions:
     m_PersistentCalls:
@@ -256,6 +265,7 @@ MonoBehaviour:
     MasterDialogue: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
+  PersonIndex: 0
   Options:
   - Speech: option 1.
     UseShowIf: 0

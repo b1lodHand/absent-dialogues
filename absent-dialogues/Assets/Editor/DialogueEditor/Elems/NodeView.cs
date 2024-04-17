@@ -13,6 +13,8 @@ namespace com.absence.dialoguesystem.editor
 {
     public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
+        public static string K_PERSONDEPENDENT_CLASSNAME = "personDependent";
+
         public Action<NodeView> OnNodeSelected;
         public Node Node;
 
@@ -37,6 +39,8 @@ namespace com.absence.dialoguesystem.editor
             style.top = node.Position.y;
 
             AddToClassList(node.GetClassName());
+            if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
+
             this.title = node.GetTitle();
 
             SetupNodeForSerialization();
@@ -64,7 +68,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void SetupPersonDropdownIfExists()
         {
-            if (Node is not ISpeechNode speechNode) return;
+            if (!Node.PersonDependent) return;
 
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
             Image personPreview = new Image();
@@ -76,8 +80,12 @@ namespace com.absence.dialoguesystem.editor
 
             personDropdown.RegisterValueChangedCallback(evt =>
             {
-                Person targetPerson = Node.MasterDialogue.People.Where(p => p.Name == (string)evt.newValue).FirstOrDefault();
-                speechNode.PersonIndex = Node.MasterDialogue.People.IndexOf(targetPerson);
+                Undo.RecordObject(Node, "Node (Person Modified)");
+
+                Person targetPerson = Node.MasterDialogue.People.Where(p => p.Name == evt.newValue).FirstOrDefault();
+                Node.PersonIndex = Node.MasterDialogue.People.IndexOf(targetPerson);
+
+                EditorUtility.SetDirty(Node);
 
                 personPreview.sprite = targetPerson.Icon;
             });
@@ -98,9 +106,10 @@ namespace com.absence.dialoguesystem.editor
         private void DrawElems()
         {
             if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
-            else if (Node is FastSpeechNode) RefreshPersonDropdown();
             else if (Node is GotoNode) DrawElems_GotoNode();
             else if (Node is DialoguePartNode) DrawElems_DialogPartNode();
+
+            if (Node.PersonDependent) RefreshPersonDropdown();
         }
 
         private void RefreshPersonDropdown()
@@ -122,19 +131,18 @@ namespace com.absence.dialoguesystem.editor
             }
 
             personDropdown.choices = new List<string>(peopleNameList);
-            ISpeechNode speechNode = Node as ISpeechNode;
 
-            if(speechNode.PersonIndex < 0 || speechNode.PersonIndex > Node.MasterDialogue.People.Count - 1)
+            if(Node.PersonIndex < 0 || Node.PersonIndex > Node.MasterDialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
                 return;
             }
 
-            if (Node.MasterDialogue.People[speechNode.PersonIndex])
+            if (Node.MasterDialogue.People[Node.PersonIndex])
             {
-                personDropdown.SetValueWithoutNotify(Node.MasterDialogue.People[speechNode.PersonIndex].Name);
+                personDropdown.SetValueWithoutNotify(Node.MasterDialogue.People[Node.PersonIndex].Name);
                 Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.sprite = Node.MasterDialogue.People[speechNode.PersonIndex].Icon;
+                personIconPreview.sprite = Node.MasterDialogue.People[Node.PersonIndex].Icon;
             }
             else
                 personDropdown.SetValueWithoutNotify("Select a person...");
@@ -157,7 +165,6 @@ namespace com.absence.dialoguesystem.editor
             mainContainer.Add(m_createNewOptionButton);
 
             RefreshOptions_DialogPartNode();
-            RefreshPersonDropdown();
         }
         private void DrawElems_GotoNode()
         {
