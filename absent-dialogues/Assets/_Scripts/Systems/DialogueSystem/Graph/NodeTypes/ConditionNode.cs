@@ -25,7 +25,6 @@ namespace com.absence.dialoguesystem.internals
         {
             var targetNext = Process() ? TrueNext : FalseNext;
             if (targetNext != null) targetNext.Reach();
-            SetState(NodeState.Past);
         }
         protected override void Reach_Inline()
         {

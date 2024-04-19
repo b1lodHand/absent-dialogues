@@ -1,85 +1,56 @@
-using com.absence.dialoguesystem.internals;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
+    /// <summary>
+    /// Use to manage a single dialogue player.
+    /// </summary>
     public class DialogueInstance : MonoBehaviour
     {
-        [SerializeField] private Dialogue m_dialogue;
         [SerializeField] private bool m_startOnAwake = false;
-
-        Node m_displayedSpeechNode;
+        [SerializeField] private Dialogue m_dialogue;
+        [SerializeField] private List<Person> m_overridePeople;
+        private DialoguePlayer m_player;
         bool m_inDialogue = false;
+        bool m_drawn = false;
 
-        private void Start()
+        private void Awake()
         {
-            Initialize(null);
-            if(m_startOnAwake) EnterDialog();
+            if(m_dialogue != null) m_player = new DialoguePlayer(m_dialogue);
+            if (m_startOnAwake) EnterDialogue();
         }
 
         private void Update()
         {
-            if (!m_inDialogue) return;
-            if (m_displayedSpeechNode != null)
-            {
-                if (m_displayedSpeechNode is FastSpeechNode && Input.GetKeyDown(KeyCode.Space))
-                {
-                    if (m_dialogue.LastOrCurrentNode.ExitDialogAfterwards) ExitDialog();
-                    m_displayedSpeechNode = null;
-                    m_dialogue.LastOrCurrentNode.Pass();
-                }
 
-                return;
-            }
-
-            var currentNode = m_dialogue.LastOrCurrentNode;
-            var speechNode = currentNode as ISpeechNode;
-            if (speechNode == null)
-            {
-                if (m_dialogue.LastOrCurrentNode.ExitDialogAfterwards) ExitDialog();
-                m_dialogue.LastOrCurrentNode.Pass();
-                return;
-            }
-
-            if (currentNode is FastSpeechNode f) DialogueDisplayer.Instance.WriteFast(f.Person, speechNode.GetSpeech());
-            else if (currentNode is DecisionSpeechNode d) DialogueDisplayer.Instance.WriteDecisive(d.Person, speechNode.GetSpeech(), speechNode.GetOptionSpeeches());
-
-            m_displayedSpeechNode = currentNode;
         }
 
-        public void Initialize(List<Person> people)
+        private bool CheckSkipInput()
         {
-            if (m_dialogue == null) return;
-            m_dialogue.Bind(people);
+            return Input.GetKeyDown(KeyCode.Space);
+        }
+
+        public void EnterDialogue()
+        {
+            if (m_overridePeople.Count > 0) m_player.OverridePeople(m_overridePeople);
+            m_inDialogue = true;
+
+            DialogueDisplayer.Instance.Occupy(m_player);
+        }
+
+        public void ExitDialogue()
+        {
+            m_inDialogue = false;
+            m_player.RevertPeople();
+
+            DialogueDisplayer.Instance.Release();
         }
 
         private void OnApplicationQuit()
         {
-#if UNITY_EDITOR
-            m_dialogue.ResetProgress();
-#endif
-        }
-
-        public void EnterDialog()
-        {
-            m_inDialogue = true;
-            DialogueDisplayer.Instance.EnterDialog(this);
-        }
-
-        public void ExitDialog()
-        {
-            m_dialogue.Cleanup();
-            m_inDialogue = false;
-            DialogueDisplayer.Instance.ExitDialog();
-        }
-
-        public void OptionReceived(int index)
-        {
-            if (m_dialogue.LastOrCurrentNode.ExitDialogAfterwards) ExitDialog();
-            m_dialogue.LastOrCurrentNode.Pass(index);
-            m_displayedSpeechNode = null;
+            ExitDialogue();
         }
     }
-
 }

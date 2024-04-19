@@ -106,6 +106,6 @@ namespace com.absence.dialoguesystem.internals
     public interface ISpeechNode
     {
         public string GetSpeech();
-        public string[] GetOptionSpeeches();
+        public string[] GetOptions();
     }
 }

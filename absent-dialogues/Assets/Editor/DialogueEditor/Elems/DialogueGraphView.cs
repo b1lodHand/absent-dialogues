@@ -131,8 +131,11 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (type.Equals(typeof(RootNode))) continue;
 
-                Debug.Log(evt.localMousePosition);
-                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a => CreateNode(type, evt.localMousePosition));
+                var mousePos = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
+                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a =>
+                {
+                    CreateNode(type, mousePos);
+                });
             }
         }
 
@@ -201,8 +204,7 @@ namespace com.absence.dialoguesystem.editor
             NodeView viewOfNodeCreated = CreateNodeView(node);
 
             Refresh();
-            ClearSelection();
-            AddToSelection(viewOfNodeCreated);
+            SelectNode(node);
 
             return node;
         }
@@ -223,6 +225,16 @@ namespace com.absence.dialoguesystem.editor
             AddElement(nodeView);
 
             return nodeView;
+        }
+
+        internal void SelectNode(Node node)
+        {
+            ISelectable selectableNode = FindNodeView(node).GetFirstOfType<ISelectable>();
+
+            if (selectableNode == null) return;
+
+            ClearSelection();
+            AddToSelection(selectableNode);
         }
     }
 

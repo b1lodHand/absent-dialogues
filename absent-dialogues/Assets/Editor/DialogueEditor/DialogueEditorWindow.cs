@@ -185,12 +185,7 @@ namespace com.absence.dialoguesystem.editor
 
         public void SelectNode(Node node)
         {
-            ISelectable selectableNode = m_dialogueGraphView.FindNodeView(node).GetFirstOfType<ISelectable>();
-
-            if (selectableNode == null) return;
-
-            m_dialogueGraphView.ClearSelection();
-            m_dialogueGraphView.AddToSelection(selectableNode);
+            m_dialogueGraphView.SelectNode(node);
         }
 
         private void OnNodeSelectionChanged(NodeView node)

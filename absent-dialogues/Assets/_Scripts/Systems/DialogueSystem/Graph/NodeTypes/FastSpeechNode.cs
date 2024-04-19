@@ -46,7 +46,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public string GetSpeech() => Speech;
-        public string[] GetOptionSpeeches() => null;
+        public string[] GetOptions() => null;
     }
 
 }

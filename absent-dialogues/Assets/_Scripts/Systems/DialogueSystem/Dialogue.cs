@@ -18,6 +18,8 @@ namespace com.absence.dialoguesystem
 
         private List<Person> m_tempPeople;
 
+        public bool HasSpeech => LastOrCurrentNode is ISpeechNode;
+
         public Node CreateNode(System.Type type)
         {
             Node node = ScriptableObject.CreateInstance(type) as Node;
@@ -61,20 +63,14 @@ namespace com.absence.dialoguesystem
 
             return check.ConvertAll(n => (n as DialoguePartNode)).ToList();
         }
+
         public List<DialoguePartNode> GetAllDialogParts()
         {
             return AllNodes.Where(n => n is DialoguePartNode).ToList().ConvertAll(n => (n as DialoguePartNode)).ToList();
         }
 
-        public void Bind(params object[] data)
+        public void Bind()
         {
-            List<Person> people = (List<Person>)data[0];
-            if(people != null)
-            {
-                m_tempPeople = new List<Person>(People);
-                People = new List<Person>(people);
-            }
-
             AllNodes.ForEach(n =>
             {
                 n.Blackboard = Blackboard;
@@ -84,19 +80,24 @@ namespace com.absence.dialoguesystem
             RootNode.Reach();
         }
 
-        public void Enable()
+        public void OverridePeople(List<Person> overridePeople)
         {
+            if (overridePeople != null)
+            {
+                m_tempPeople = new List<Person>(People);
+                People = new List<Person>(overridePeople);
+            }
 
         }
 
-        public void Disable()
+        public void Continue(params object[] passData)
         {
-
+            if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(passData);
         }
 
-        public void Cleanup()
+        public void ResetPeopleList()
         {
-            if(m_tempPeople != null) People = m_tempPeople;
+            if(m_tempPeople != null) People = new(m_tempPeople);
             m_tempPeople = null;
         }
 
