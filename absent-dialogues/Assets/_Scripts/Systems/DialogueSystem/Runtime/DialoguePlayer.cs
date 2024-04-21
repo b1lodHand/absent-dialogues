@@ -1,4 +1,5 @@
 using com.absence.dialoguesystem.internals;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace com.absence.dialoguesystem
         DialoguePlayerState m_state;
         public DialoguePlayerState State => m_state;
 
+        public event Action<DialoguePlayerState> OnContinue;
+
         public Person Speaker => m_dialogue.LastOrCurrentNode.Person;
         public string Speech => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetSpeech();
         public string[] Options => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetOptions();
@@ -36,14 +39,11 @@ namespace com.absence.dialoguesystem
         {
             m_dialogue.Continue(passData);
 
-            if (!m_dialogue.HasSpeech)
-            {
-                m_state = DialoguePlayerState.Idle;
-                return;
-            }
-
-            if (m_dialogue.LastOrCurrentNode is FastSpeechNode) m_state = DialoguePlayerState.WaitingForSkip;
+            if (!m_dialogue.HasSpeech) m_state = DialoguePlayerState.Idle;
+            else if (m_dialogue.LastOrCurrentNode is FastSpeechNode) m_state = DialoguePlayerState.WaitingForSkip;
             else if (m_dialogue.LastOrCurrentNode is DecisionSpeechNode) m_state = DialoguePlayerState.WaitingForOption;
+
+            OnContinue?.Invoke(m_state);
         }
 
         public void OverridePeople(List<Person> overridePeople)
@@ -54,6 +54,8 @@ namespace com.absence.dialoguesystem
 
         public void RevertPeople()
         {
+            if (!m_overriden) return;
+
             m_dialogue.ResetPeopleList();
             m_overriden = false;
         }

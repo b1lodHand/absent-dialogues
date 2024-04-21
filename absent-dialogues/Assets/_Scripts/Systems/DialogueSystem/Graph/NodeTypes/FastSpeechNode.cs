@@ -5,6 +5,7 @@ namespace com.absence.dialoguesystem.internals
 {
     public class FastSpeechNode : Node, ISpeechNode
     {
+        public AudioClip AudioClip;
         [HideInInspector] public Node Next;
         [HideInInspector] public string Speech;
 
@@ -47,6 +48,7 @@ namespace com.absence.dialoguesystem.internals
 
         public string GetSpeech() => Speech;
         public string[] GetOptions() => null;
+        public AudioClip GetAudioClip() => AudioClip;
     }
 
 }

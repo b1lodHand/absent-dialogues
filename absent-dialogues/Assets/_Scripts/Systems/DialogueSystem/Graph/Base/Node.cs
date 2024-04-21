@@ -107,5 +107,6 @@ namespace com.absence.dialoguesystem.internals
     {
         public string GetSpeech();
         public string[] GetOptions();
+        public AudioClip GetAudioClip();
     }
 }

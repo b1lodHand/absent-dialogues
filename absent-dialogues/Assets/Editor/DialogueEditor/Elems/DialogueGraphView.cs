@@ -38,8 +38,9 @@ namespace com.absence.dialoguesystem.editor
         }
         private void AddMiniMap()
         {
-            var mapFoldout = new Foldout() { focusable = false, value = true, text = "MiniMap" };
+            var mapFoldout = new Foldout() { focusable = false, value = true, text = "Minimap" };
             var miniMap = new MiniMap() { anchored = true };
+            miniMap.name = "mini-map";
 
             mapFoldout.Add(miniMap);
             this.Add(mapFoldout);

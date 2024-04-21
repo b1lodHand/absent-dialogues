@@ -602,8 +602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce7c63bb373f0d45b6919b3f2b6f256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dialogue: {fileID: 11400000, guid: ffcfa23bc0339f749a9e30e5449979e5, type: 2}
   m_startOnAwake: 1
+  m_dialogue: {fileID: 11400000, guid: ffcfa23bc0339f749a9e30e5449979e5, type: 2}
+  m_overridePeople: []
 --- !u!1 &673667125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,13 +1092,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6151e674d6897374c80697a0e26518c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_panel: {fileID: 873511972}
+  m_speakerIcon: {fileID: 375494021}
+  m_speakerNameText: {fileID: 1412829685}
   m_speechText: {fileID: 1363931373}
-  m_iconImage: {fileID: 375494021}
-  m_personNameText: {fileID: 1412829685}
-  m_optionBank: {fileID: 1578477568}
-  m_optionTextPrefab: {fileID: 6817177061115473699, guid: 0dc931cdc186b0e42a50d841afb2bbbb, type: 3}
-  m_inDialog: 0
+  m_panel: {fileID: 873511972}
+  m_optionContainer: {fileID: 1578477568}
+  m_optionPrefab: {fileID: 6817177061115473699, guid: 0dc931cdc186b0e42a50d841afb2bbbb, type: 3}
 --- !u!1 &1363931371
 GameObject:
   m_ObjectHideFlags: 0

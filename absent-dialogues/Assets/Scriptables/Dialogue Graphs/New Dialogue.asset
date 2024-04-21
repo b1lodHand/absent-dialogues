@@ -66,6 +66,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 1
+  AudioClip: {fileID: 0}
   Next: {fileID: 6602897084972744239}
   Speech: fast speech example (press space)
 --- !u!114 &-6500224830323563992
@@ -266,6 +267,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
+  AudioClip: {fileID: 0}
   Options:
   - Speech: option 1.
     UseShowIf: 0
@@ -278,6 +280,7 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 213386342176865088}
+    AudioClip: {fileID: 0}
   - Speech: option 2.
     UseShowIf: 0
     ShowIf:
@@ -289,6 +292,7 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 4288233897331555536}
+    AudioClip: {fileID: 0}
   - Speech: option 3.
     UseShowIf: 0
     ShowIf:
@@ -300,4 +304,5 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 345333829215211219}
+    AudioClip: {fileID: 0}
   Speech: decisive speech example

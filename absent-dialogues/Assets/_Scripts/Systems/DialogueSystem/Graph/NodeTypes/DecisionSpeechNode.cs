@@ -7,7 +7,8 @@ namespace com.absence.dialoguesystem.internals
 {
     public class DecisionSpeechNode : Node, ISpeechNode
     {
-        [HideInInspector] public List<Option> Options = new List<Option>();
+        public AudioClip AudioClip;
+        public List<Option> Options = new List<Option>();
         [HideInInspector] public string Speech;
 
         public override bool PersonDependent => true;
@@ -59,6 +60,7 @@ namespace com.absence.dialoguesystem.internals
 
         public string GetSpeech() => Speech;
         public string[] GetOptions() => Options.ToList().ConvertAll(n => n.Speech).ToArray();
+        public AudioClip GetAudioClip() => AudioClip;
     }
 
     [System.Serializable]
@@ -68,5 +70,6 @@ namespace com.absence.dialoguesystem.internals
         public bool UseShowIf = false;
         public VariableComparer ShowIf;
         public Node LeadsTo;
+        public AudioClip AudioClip;
     }
 }

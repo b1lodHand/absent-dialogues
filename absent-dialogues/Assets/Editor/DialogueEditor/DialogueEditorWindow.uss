@@ -4,3 +4,13 @@ GridBackground {
     --thick-line-color: rgba(0, 0, 0, 0.5);
     --spacing: 15;
 }
+
+#mini-map {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.18);
+    padding-top: 2px;
+}
+
+#mini-map .unity-label {
+    display: none;
+}

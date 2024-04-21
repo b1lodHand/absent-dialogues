@@ -10,9 +10,12 @@ namespace com.absence.dialoguesystem.internals
     {
         public List<VariableSetter> VBActions = new List<VariableSetter>();
         public UnityEvent UnityActions;
-        public event Action CustomAction;
 
         [HideInInspector] public Node Next;
+        protected virtual void CustomAction()
+        {
+
+        }
 
         public override string GetClassName() => "actionNode";
         public override string GetTitle() => "Action";
@@ -23,7 +26,7 @@ namespace com.absence.dialoguesystem.internals
 
             VBActions.ForEach(action => action.Perform());
             UnityActions?.Invoke();
-            CustomAction?.Invoke();
+            CustomAction();
 
             Next.Reach();
             SetState(NodeState.Past);
