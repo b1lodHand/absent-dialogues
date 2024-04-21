@@ -19,6 +19,7 @@ namespace com.absence.dialoguesystem
         private List<Person> m_tempPeople;
 
         public bool HasSpeech => LastOrCurrentNode is ISpeechNode;
+        public bool WillExit => LastOrCurrentNode.ExitDialogAfterwards;
 
         public Node CreateNode(System.Type type)
         {

@@ -14,14 +14,14 @@ namespace com.absence.dialoguesystem
         [SerializeField] private GameObject m_panel;
         [SerializeField] private Transform m_optionContainer;
         [SerializeField] private OptionText m_optionPrefab;
-        DialoguePlayer m_player;
+        DialogueInstance m_instance;
 
-        public bool Occupy(DialoguePlayer player)
+        public bool Occupy(DialogueInstance instance)
         {
-            if (m_player != null) return false;
+            if (m_instance != null) return false;
 
-            m_player = player;
-            m_player.OnContinue += OnPlayerContinue;
+            m_instance = instance;
+            m_instance.Player.OnContinue += OnPlayerContinue;
 
             m_panel.SetActive(true);
             return true;
@@ -29,10 +29,10 @@ namespace com.absence.dialoguesystem
 
         public void Release()
         {
-            if (m_player == null) return;
+            if (m_instance == null) return;
 
-            m_player.OnContinue -= OnPlayerContinue;
-            m_player = null;
+            m_instance.Player.OnContinue -= OnPlayerContinue;
+            m_instance = null;
 
             Clear();
         }
@@ -56,7 +56,7 @@ namespace com.absence.dialoguesystem
                 var o = Instantiate(m_optionPrefab, m_optionContainer);
                 o.OnClickAction += i =>
                 {
-                    m_player.Continue(i);
+                    m_instance.Player.Continue(i);
                 };
             }
         }
@@ -73,21 +73,26 @@ namespace com.absence.dialoguesystem
 
         private void OnPlayerContinue(DialoguePlayer.DialoguePlayerState state)
         {
+            var player = m_instance.Player;
+
             switch (state)
             {
                 case DialoguePlayer.DialoguePlayerState.Idle:
                     break;
 
                 case DialoguePlayer.DialoguePlayerState.WaitingForOption:
-                    Display(m_player.Speaker, m_player.Speech, m_player.Options);
+                    Display(player.Speaker, player.Speech, player.Options);
                     break;
 
                 case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
-                    Display(m_player.Speaker, m_player.Speech);
+                    Display(player.Speaker, player.Speech);
+                    break;
+
+                case DialoguePlayer.DialoguePlayerState.WillExit:
                     break;
 
                 default:
-                    Release();
+                    m_instance.ExitDialogue();
                     break;
             }
         }

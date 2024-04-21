@@ -17,7 +17,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
-  State: 0
+    MasterDialogue: {fileID: 11400000}
+  State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 1
   AudioClip: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 1
   PersonIndex: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   RootNode: {fileID: -8570237213173099237}
-  LastOrCurrentNode: {fileID: -8570237213173099237}
+  LastOrCurrentNode: {fileID: -7128887067038950444}
   LastOrCurrentSpeechNode: {fileID: -7128887067038950444}
   AllNodes:
   - {fileID: -8570237213173099237}
@@ -142,8 +142,8 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
-  State: 0
+    MasterDialogue: {fileID: 11400000}
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   TargetDialogPartName: main
@@ -164,7 +164,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
+    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -263,9 +263,9 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
-    MasterDialogue: {fileID: 0}
-  State: 0
-  ExitDialogAfterwards: 0
+    MasterDialogue: {fileID: 11400000}
+  State: 2
+  ExitDialogAfterwards: 1
   PersonIndex: 0
   AudioClip: {fileID: 0}
   Options:

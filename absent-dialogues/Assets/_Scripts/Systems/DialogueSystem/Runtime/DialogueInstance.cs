@@ -12,7 +12,10 @@ namespace com.absence.dialoguesystem
         [SerializeField] private bool m_startOnAwake = false;
         [SerializeField] private Dialogue m_dialogue;
         [SerializeField] private List<Person> m_overridePeople;
+
         private DialoguePlayer m_player;
+        public DialoguePlayer Player => m_player;
+
         bool m_inDialogue = false;
 
         private void Start()
@@ -27,6 +30,10 @@ namespace com.absence.dialoguesystem
 
             switch (m_player.State)
             {
+                case DialoguePlayer.DialoguePlayerState.Idle:
+                    m_player.Continue();
+                    break;
+
                 case DialoguePlayer.DialoguePlayerState.WaitingForOption:
                     break;
 
@@ -34,8 +41,12 @@ namespace com.absence.dialoguesystem
                     if (CheckSkipInput()) m_player.Continue();
                     break;
 
+                case DialoguePlayer.DialoguePlayerState.WillExit:
+                    ExitDialogue();
+                    break;
+
                 default:
-                    m_player.Continue();
+                    ExitDialogue();
                     break;
             }
         }
@@ -47,7 +58,7 @@ namespace com.absence.dialoguesystem
 
         public bool EnterDialogue()
         {
-            if (!DialogueDisplayer.Instance.Occupy(m_player)) return false;
+            if (!DialogueDisplayer.Instance.Occupy(this)) return false;
 
             if (m_overridePeople.Count > 0) m_player.OverridePeople(m_overridePeople);
             m_inDialogue = true;

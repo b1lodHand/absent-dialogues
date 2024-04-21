@@ -13,6 +13,7 @@ namespace com.absence.dialoguesystem
             Idle = 0,
             WaitingForOption = 1,
             WaitingForSkip = 2,
+            WillExit = 3,
         }
 
         Dialogue m_dialogue;
@@ -37,6 +38,13 @@ namespace com.absence.dialoguesystem
 
         public void Continue(params object[] passData)
         {
+            if (m_dialogue.WillExit)
+            {
+                m_state = DialoguePlayerState.WillExit;
+                m_dialogue.Continue(passData);
+                return;
+            }
+
             m_dialogue.Continue(passData);
 
             if (!m_dialogue.HasSpeech) m_state = DialoguePlayerState.Idle;
