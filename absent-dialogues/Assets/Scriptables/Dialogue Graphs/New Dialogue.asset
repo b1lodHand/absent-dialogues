@@ -63,7 +63,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
     MasterDialogue: {fileID: 11400000}
-  State: 1
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 1
   AudioClip: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
     MasterDialogue: {fileID: 11400000}
   State: 0
-  ExitDialogAfterwards: 1
+  ExitDialogAfterwards: 0
   PersonIndex: 0
   Speech: 'This is a sample
 
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   RootNode: {fileID: -8570237213173099237}
-  LastOrCurrentNode: {fileID: -7128887067038950444}
-  LastOrCurrentSpeechNode: {fileID: -7128887067038950444}
+  LastOrCurrentNode: {fileID: 6602897084972744239}
+  LastOrCurrentSpeechNode: {fileID: 6602897084972744239}
   AllNodes:
   - {fileID: -8570237213173099237}
   - {fileID: -7128887067038950444}
@@ -264,8 +264,8 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
     MasterDialogue: {fileID: 11400000}
-  State: 2
-  ExitDialogAfterwards: 1
+  State: 1
+  ExitDialogAfterwards: 0
   PersonIndex: 0
   AudioClip: {fileID: 0}
   Options:

@@ -77,22 +77,12 @@ namespace com.absence.dialoguesystem
 
             switch (state)
             {
-                case DialoguePlayer.DialoguePlayerState.Idle:
-                    break;
-
                 case DialoguePlayer.DialoguePlayerState.WaitingForOption:
                     Display(player.Speaker, player.Speech, player.Options);
                     break;
 
                 case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
                     Display(player.Speaker, player.Speech);
-                    break;
-
-                case DialoguePlayer.DialoguePlayerState.WillExit:
-                    break;
-
-                default:
-                    m_instance.ExitDialogue();
                     break;
             }
         }

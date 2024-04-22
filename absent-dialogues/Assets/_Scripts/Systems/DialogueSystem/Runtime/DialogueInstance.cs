@@ -34,18 +34,11 @@ namespace com.absence.dialoguesystem
                     m_player.Continue();
                     break;
 
-                case DialoguePlayer.DialoguePlayerState.WaitingForOption:
-                    break;
-
                 case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
                     if (CheckSkipInput()) m_player.Continue();
                     break;
 
                 case DialoguePlayer.DialoguePlayerState.WillExit:
-                    ExitDialogue();
-                    break;
-
-                default:
                     ExitDialogue();
                     break;
             }
