@@ -25,6 +25,7 @@ namespace com.absence.dialoguesystem
         public event Action<DialoguePlayerState> OnContinue;
 
         public Person Speaker => m_dialogue.LastOrCurrentNode.Person;
+        public AudioClip AudioClip => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetAudioClip();
         public string Speech => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetSpeech();
         public string[] Options => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetOptions();
 

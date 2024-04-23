@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7166074055174135580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: New Dialogue 1 Blackboard VB
+  m_EditorClassIdentifier: 
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans: []
+--- !u!114 &-4656332074447337066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
+  m_Name: TitleNode
+  m_EditorClassIdentifier: 
+  Guid: 686ae10dacc68684ba0be9092d14ce15
+  Position: {x: 266, y: -219}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Speech: OW
+--- !u!114 &-4528373880991072867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: DialoguePartNode
+  m_EditorClassIdentifier: 
+  Guid: 941b9577ac3875a4b9259dff05957475
+  Position: {x: 393, y: 327}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Next: {fileID: 4850300311685465336}
+  DialogPartName: nein
+--- !u!114 &-1826461155667665588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 15623a6bb44c97647b731244a3a9446e
+  Position: {x: 121, y: -39}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  AudioClip: {fileID: 0}
+  Options:
+  - Speech: 
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: -7166074055174135580}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 3888669470877309151}
+    AudioClip: {fileID: 0}
+  Speech: seeeeesh
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue 1
+  m_EditorClassIdentifier: 
+  RootNode: {fileID: 0}
+  LastOrCurrentNode: {fileID: 0}
+  LastOrCurrentSpeechNode: {fileID: 0}
+  AllNodes:
+  - {fileID: 0}
+  - {fileID: -1826461155667665588}
+  - {fileID: -4656332074447337066}
+  - {fileID: 3888669470877309151}
+  - {fileID: -4528373880991072867}
+  - {fileID: 4850300311685465336}
+  People: []
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+--- !u!114 &3888669470877309151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: c622fee175cda2c439abe97c6beb1a23
+  Position: {x: 604, y: 86}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TargetDialogPartName: nein
+--- !u!114 &4850300311685465336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 807721a708ae5ce47b55dff4ccad7e3b
+  Position: {x: 591, y: 337}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: -7166074055174135580}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  VBActions: []
+  UnityActions:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: 0}

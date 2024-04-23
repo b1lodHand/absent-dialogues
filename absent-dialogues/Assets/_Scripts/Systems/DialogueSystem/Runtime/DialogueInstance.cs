@@ -10,6 +10,11 @@ namespace com.absence.dialoguesystem
     public class DialogueInstance : MonoBehaviour
     {
         [SerializeField] private bool m_startOnAwake = false;
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] [Range(0f, 1f)] private float m_audioVolume;
+
+        [Space(10)]
+
         [SerializeField] private Dialogue m_dialogue;
         [SerializeField] private List<Person> m_overridePeople;
 
@@ -56,6 +61,8 @@ namespace com.absence.dialoguesystem
             if (m_overridePeople.Count > 0) m_player.OverridePeople(m_overridePeople);
             m_inDialogue = true;
 
+            m_player.OnContinue += OnPlayerContinue;
+
             return true;
         }
 
@@ -65,12 +72,24 @@ namespace com.absence.dialoguesystem
             m_player.RevertPeople();
 
             DialogueDisplayer.Instance.Release();
+
+            m_player.OnContinue -= OnPlayerContinue;
+        }
+
+        private void OnPlayerContinue(DialoguePlayer.DialoguePlayerState state)
+        {
+            if (m_audioSource == null) return;
+
+            if (m_audioSource.isPlaying) m_audioSource.Stop();
+            if (m_player.AudioClip != null) m_audioSource.PlayOneShot(m_player.AudioClip, m_audioVolume);
         }
 
         private void OnApplicationQuit()
         {
             m_inDialogue = false;
             m_player.RevertPeople();
+
+            m_player.OnContinue -= OnPlayerContinue;
         }
     }
 }

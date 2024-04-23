@@ -241,7 +241,14 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  VBActions: []
+  VBActions:
+  - m_setType: 0
+    m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
+    m_targetVariableName: 'null: null'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
   UnityActions:
     m_PersistentCalls:
       m_Calls: []
