@@ -1,6 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7383173765774930015
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue 2
+  m_EditorClassIdentifier: 
+  RootNode: {fileID: 7644622267951835188}
+  LastOrCurrentNode: {fileID: 0}
+  LastOrCurrentSpeechNode: {fileID: 0}
+  AllNodes:
+  - {fileID: 7644622267951835188}
+  People: []
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+--- !u!114 &7644622267951835188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16,13 +37,13 @@ MonoBehaviour:
   Position: {x: 0, y: 0}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
-    Bank: {fileID: -5163736431018240990}
+    Bank: {fileID: 9119565299750511387}
     MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   Next: {fileID: 0}
---- !u!114 &-5163736431018240990
+--- !u!114 &9119565299750511387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,34 +53,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
-  m_Name: New Dialogue 1 Blackboard VB
+  m_Name: New Dialogue 2 Blackboard VB
   m_EditorClassIdentifier: 
-  m_ints:
-  - m_name: 
-    m_value: 0
-  - m_name: 
-    m_value: 0
+  m_ints: []
   m_floats: []
   m_strings: []
   m_booleans: []
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
-  m_Name: New Dialogue 1
-  m_EditorClassIdentifier: 
-  RootNode: {fileID: -7383173765774930015}
-  LastOrCurrentNode: {fileID: 0}
-  LastOrCurrentSpeechNode: {fileID: 0}
-  AllNodes:
-  - {fileID: -7383173765774930015}
-  People: []
-  Blackboard:
-    Bank: {fileID: -5163736431018240990}
-    MasterDialogue: {fileID: 11400000}

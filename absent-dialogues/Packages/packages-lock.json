@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "480cd33d1e4ad56bab01df2d0bb8a32214aaf523"
     },
+    "com.absence.personsystem": {
+      "version": "file:absent-people",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.absence.utilities": {
       "version": "https://github.com/b1lodHand/absent-utilities.git",
       "depth": 0,

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 5ef3a9c7a77b2b540ac7ed62fb3b2447
-  Position: {x: 245.32254, y: 6.0650125}
+  Position: {x: 244, y: 6}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -66,7 +66,8 @@ MonoBehaviour:
   State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 1
-  AudioClip: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_animation: {fileID: 0}
   Next: {fileID: 6602897084972744239}
   Speech: fast speech example (press space)
 --- !u!114 &-6500224830323563992
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 5c47d2fec08b919498e8180c3c3bf34f
-  Position: {x: 1075.8, y: 200.95003}
+  Position: {x: 1074, y: 202}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -274,7 +275,8 @@ MonoBehaviour:
   State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  AudioClip: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_animation: {fileID: 0}
   Options:
   - Speech: option 1.
     UseShowIf: 0
@@ -288,6 +290,7 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 213386342176865088}
     AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
   - Speech: option 2.
     UseShowIf: 0
     ShowIf:
@@ -300,6 +303,7 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 4288233897331555536}
     AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
   - Speech: option 3.
     UseShowIf: 0
     ShowIf:
@@ -312,4 +316,5 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 345333829215211219}
     AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
   Speech: decisive speech example
