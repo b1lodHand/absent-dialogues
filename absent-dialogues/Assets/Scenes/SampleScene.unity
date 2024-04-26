@@ -647,10 +647,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce7c63bb373f0d45b6919b3f2b6f256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startOnAwake: 1
+  m_startOnAwake: 0
   m_animator: {fileID: 0}
   m_audioSource: {fileID: 1317103382}
-  m_audioVolume: 0.362
+  m_audioVolume: 1
   m_dialogue: {fileID: 11400000, guid: ffcfa23bc0339f749a9e30e5449979e5, type: 2}
   m_overridePeople: []
 --- !u!1 &673667125

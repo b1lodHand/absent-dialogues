@@ -1,3 +1,4 @@
+using com.absence.attributes;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace com.absence.dialoguesystem
 
         [Space(10)]
 
-        [SerializeField] private Dialogue m_dialogue;
+        [SerializeField] [Required] private Dialogue m_dialogue;
         [SerializeField] private List<Person> m_overridePeople;
 
         private DialoguePlayer m_player;

@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.absence.attributes": {
+      "version": "file:absent-attributes",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",
       "depth": 0,
@@ -25,7 +31,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "8f7ec2ded10618dc22ab8f214dfd418e87e523a3"
+      "hash": "a9a08808f430e15329fc68a7a511941fa952acc6"
     },
     "com.unity.2d.animation": {
       "version": "9.0.4",

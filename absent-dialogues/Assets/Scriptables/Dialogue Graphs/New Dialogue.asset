@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: ConditionNode
   m_EditorClassIdentifier: 
   Guid: 930cc3dc5357ed44faef588cc6a51fa0
-  Position: {x: 888.2561, y: 252.95006}
+  Position: {x: 911, y: 276}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 5c47d2fec08b919498e8180c3c3bf34f
-  Position: {x: 1074, y: 202}
+  Position: {x: 1072.485, y: 208.74251}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -242,14 +242,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  VBActions:
-  - m_setType: 0
-    m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
-    m_targetVariableName: 'null: null'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
+  VBActions: []
   UnityActions:
     m_PersistentCalls:
       m_Calls: []
@@ -281,9 +274,9 @@ MonoBehaviour:
   - Speech: option 1.
     UseShowIf: 0
     ShowIf:
-      m_comparisonType: 3
-      m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
-      m_targetVariableName: 'null: null'
+      m_comparisonType: 0
+      m_targetBank: {fileID: -5163736431018240990, guid: 35c89c1a802c9264aa14f22664d418b8, type: 2}
+      m_targetVariableName: 'int: '
       m_intValue: 0
       m_floatValue: 0
       m_stringValue: 
