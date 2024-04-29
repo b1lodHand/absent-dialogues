@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.attributes
@@ -14,7 +12,7 @@ namespace com.absence.attributes
             EnableDisable = 1,
         }
 
-        public string propertyName { get; private set; }
+        public string controlPropertyName { get; private set; }
         public object targetValue { get; private set; }
         public bool directBool { get; private set; }
         public bool invert { get; protected set; }
@@ -22,7 +20,7 @@ namespace com.absence.attributes
 
         public BaseIfAttribute(string comparedPropertyName)
         {
-            this.propertyName = comparedPropertyName;
+            this.controlPropertyName = comparedPropertyName;
             this.targetValue = null;
 
             directBool = true;
@@ -30,7 +28,7 @@ namespace com.absence.attributes
 
         public BaseIfAttribute(string comparedPropertyName, object targetValue)
         {
-            this.propertyName = comparedPropertyName;
+            this.controlPropertyName = comparedPropertyName;
             this.targetValue = targetValue;
 
             directBool = false;

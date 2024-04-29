@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace com.absence.attributes.Editor
 {
+    /// <summary>
+    /// Used to manipulate the drawing process of a property with a control. (do NOT use with custom class drawers.)
+    /// </summary>
     [CustomPropertyDrawer(typeof(BaseIfAttribute), true)]
     public class BaseIfPropertyDrawer : PropertyDrawer
     {
@@ -12,16 +15,14 @@ namespace com.absence.attributes.Editor
             if (!Check(property) && (attribute as BaseIfAttribute).outputMethod == BaseIfAttribute.OutputMethod.ShowHide)
                 return 0f;
 
-            return base.GetPropertyHeight(property, label);
+            return EditorGUI.GetPropertyHeight(property, label, true);
         }
 
         bool Check(SerializedProperty property)
         {
-            bool result = true;
-
             var baseIf = attribute as BaseIfAttribute;
-            string path = property.propertyPath.Contains(".") ? System.IO.Path.ChangeExtension(property.propertyPath, baseIf.propertyName) :
-                baseIf.propertyName;
+            string path = property.propertyPath.Contains(".") ? System.IO.Path.ChangeExtension(property.propertyPath, baseIf.controlPropertyName) :
+                baseIf.controlPropertyName;
 
             var comparedField = property.serializedObject.FindProperty(path);
 
@@ -33,7 +34,7 @@ namespace com.absence.attributes.Editor
 
             if (baseIf.directBool) return baseIf.invert ? comparedField.boolValue : !comparedField.boolValue;
 
-            result = Process();
+            bool result = Process();
 
             return baseIf.invert ? !result : result;
 
@@ -78,12 +79,12 @@ namespace com.absence.attributes.Editor
             switch ((attribute as BaseIfAttribute).outputMethod)
             {
                 case BaseIfAttribute.OutputMethod.ShowHide:
-                    if(Check(property)) EditorGUI.PropertyField(position, property);
+                    if(Check(property)) EditorGUI.PropertyField(position, property, label, true);
                     break;
 
                 case BaseIfAttribute.OutputMethod.EnableDisable:
                     if (!Check(property)) GUI.enabled = false;
-                    EditorGUI.PropertyField(position, property);
+                    EditorGUI.PropertyField(position, property, label, true);
                     GUI.enabled = true;
                     break;
 

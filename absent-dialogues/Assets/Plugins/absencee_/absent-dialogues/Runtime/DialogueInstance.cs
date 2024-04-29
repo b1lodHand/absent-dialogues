@@ -1,5 +1,6 @@
 using com.absence.attributes;
 using com.absence.personsystem;
+using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,11 +17,11 @@ namespace com.absence.dialoguesystem
         [SerializeField] private Animator m_animator;
 
         [SerializeField] private AudioSource m_audioSource;
-        [SerializeField] [HideIf(nameof(m_audioSource), null)] [Range(0f, 1f)] private float m_audioVolume;
+        [SerializeField, HideIf(nameof(m_audioSource), null), Range(0f, 1f)] private float m_audioVolume;
 
         [Space(10)]
 
-        [SerializeField] [Required] private Dialogue m_dialogue;
+        [SerializeField, Required] private Dialogue m_dialogue;
         [SerializeField] private List<Person> m_overridePeople;
 
         private DialoguePlayer m_player;

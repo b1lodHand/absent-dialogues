@@ -1,5 +1,4 @@
 using com.absence.personsystem;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
