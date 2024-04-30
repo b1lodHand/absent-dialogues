@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "com.absence.attributes": {
-      "version": "file:absent-attributes",
+      "version": "https://github.com/b1lodHand/absent-attributes.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "a0b303993a68d22340b37f8eb45c6bc09865dfe7"
     },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",
