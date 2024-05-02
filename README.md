@@ -38,7 +38,9 @@ So, you've installed all the things necessary to run this tool. Now, it is the t
 This step is prettymuch straightforward:
 
 1 - Go to: https://github.com/b1lodHand/absent-dialogues/releases
+
 2 - Find the the best release for you (I'd recommend the latest).
+
 3 - Download the ".unitypackage" file in that release by clicking it.
 
 AND YOU HAVE IT!!! So now, how you use it? Let's see...
