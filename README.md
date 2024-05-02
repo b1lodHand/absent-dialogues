@@ -51,3 +51,15 @@ AND YOU HAVE IT! So now, how you use it? Let's see...
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
 ![Giphy](https://media.giphy.com/media/nA6X4OuHaBtddIaE7p/giphy.gif)
 ![Giphy](https://media.giphy.com/media/V3S5NK9HTbMNMhFAz9/giphy.gif)
+
+
+![Imgur Image](https://imgur.com/FwGmUyj.png)
+![Imgur Image](https://imgur.com/ETY999l.png)
+![Imgur Image](https://imgur.com/3g168Py.png)
+![Imgur Image](https://imgur.com/PmbBsqx.png)
+![Imgur Image](https://imgur.com/4BmngHT.png)
+![Imgur Image](https://imgur.com/TkUgZ4I.png)
+![Imgur Image](https://imgur.com/oeW8wXF.png)
+![Imgur Image](https://imgur.com/jBtwkVz.png)
+![Imgur Image](https://imgur.com/1Zx5oKb.png)
+![Imgur Image](https://imgur.com/fhoK3Zd.png)
