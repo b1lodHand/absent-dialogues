@@ -35,7 +35,7 @@ YOU NEED TextMeshPro package installed! The legacy Unity UI without TMP is not s
 ### Installing
 So, you've installed all the things necessary to run this tool. Now, it is the time of installing the tool itself.
 
-This step is prettymuch straightforward:
+This step is pretty much straightforward:
 
 1 - Go to: https://github.com/b1lodHand/absent-dialogues/releases
 
@@ -43,7 +43,7 @@ This step is prettymuch straightforward:
 
 3 - Download the ".unitypackage" file in that release by clicking it.
 
-AND YOU HAVE IT!!! So now, how you use it? Let's see...
+AND YOU HAVE IT! So now, how you use it? Let's see...
 
 ## Usage <a name = "usage"></a>
-Hurrah!
+...
