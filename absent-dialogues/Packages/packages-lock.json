@@ -15,24 +15,25 @@
       "hash": "480cd33d1e4ad56bab01df2d0bb8a32214aaf523"
     },
     "com.absence.personsystem": {
-      "version": "file:absent-people",
+      "version": "https://github.com/b1lodHand/absent-people.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "1269e455b8f904616898d1f6f29a521339f96675"
     },
     "com.absence.utilities": {
       "version": "https://github.com/b1lodHand/absent-utilities.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b7feb9fdc550c578f47c05e7b18937d9f809c479"
+      "hash": "26b91eb4291366fcb86fea6a12cad4d22c500bc1"
     },
     "com.absence.variablesystem": {
       "version": "https://github.com/b1lodHand/absent-variables.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a9a08808f430e15329fc68a7a511941fa952acc6"
+      "hash": "650f14e3158f1d48999092951035a2304847c552"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

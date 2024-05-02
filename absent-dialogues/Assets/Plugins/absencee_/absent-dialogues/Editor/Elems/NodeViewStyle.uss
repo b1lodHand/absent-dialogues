@@ -500,10 +500,6 @@
     background-image: resource('node-icon-root');
     left: 84px;
     top: 3px;
-    border-left-color: rgb(139, 119, 190);
-    border-right-color: rgb(139, 119, 190);
-    border-top-color: rgb(139, 119, 190);
-    border-bottom-color: rgb(139, 119, 190);
 }
 
 .actionNode #node-icon {
