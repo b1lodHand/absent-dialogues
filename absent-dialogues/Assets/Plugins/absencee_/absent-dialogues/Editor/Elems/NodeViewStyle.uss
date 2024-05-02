@@ -318,7 +318,7 @@
 .titleNode #divider {
     display: flex;
     padding-top: 20px;
-    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&guid=632390af60ae8524da8e889a9fccfd28&type=3#arrow-down');
+    background-image: resource('node-icon-title');
     -unity-slice-left: 1;
     -unity-slice-top: 1;
     -unity-slice-right: 1;
@@ -473,12 +473,12 @@
 }
 
 .decisionSpeechNode #node-icon {
-    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&guid=632390af60ae8524da8e889a9fccfd28&type=3#check-dash@2x');
+    background-image: none;
     position: absolute;
 }
 
 .fastSpeechNode #node-icon {
-    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&guid=632390af60ae8524da8e889a9fccfd28&type=3#check-dash@2x');
+    background-image: none;
     position: absolute;
     top: 1px;
 }
