@@ -462,31 +462,29 @@
     border-left-width: 0;
     width: 16px;
     height: 16px;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.76);
 }
 
 .gotoNode #node-icon {
     position: absolute;
-    background-image: url('project://database/Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKCCD%20On.png?fileID=2800000&guid=40ca859210cd04b62bbfe0e0d5696d3b&type=3#Animation.IKCCD On');
-    background-color: rgba(0, 0, 0, 0);
-    -unity-background-image-tint-color: rgb(255, 255, 255);
-    top: 2px;
+    top: 4px;
     left: 3px;
+    background-image: resource('node-icon-goto');
 }
 
 .decisionSpeechNode #node-icon {
-    background-image: url('project://database/Packages/com.unity.2d.psdimporter/Editor/Assets/Icons/Selected/Layers%20Collapsed@1x.png?fileID=2800000&guid=2870bda067c0e4d58911767e41709dd2&type=3#Layers Collapsed@1x');
+    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&guid=632390af60ae8524da8e889a9fccfd28&type=3#check-dash@2x');
     position: absolute;
-    top: 3px;
 }
 
 .fastSpeechNode #node-icon {
-    background-image: url('project://database/Packages/com.unity.2d.psdimporter/Editor/Assets/Icons/Selected/Layers%20Mixed@1x.png?fileID=2800000&guid=332959a914fc9470abaa066b876b0dcc&type=3#Layers Mixed@1x');
+    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&guid=632390af60ae8524da8e889a9fccfd28&type=3#check-dash@2x');
     position: absolute;
     top: 1px;
 }
 
 .rootNode #node-icon {
-    background-image: url('project://database/Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/d_Animation.SpriteResolver.png?fileID=2800000&guid=a1585a67bdb5741a6bc69877b78cdcd3&type=3#d_Animation.SpriteResolver');
+    background-image: resource('node-icon-root');
     opacity: 1;
     position: absolute;
     left: 51px;
@@ -494,11 +492,12 @@
     border-right-color: rgb(139, 119, 190);
     border-top-color: rgb(139, 119, 190);
     border-bottom-color: rgb(139, 119, 190);
+    -unity-background-image-tint-color: rgb(173, 144, 242);
 }
 
 .dialogPartNode #node-icon {
     position: absolute;
-    background-image: url('project://database/Packages/com.unity.2d.tilemap/Editor/Icons/d_Tilemap.ActiveTargetLayers.png?fileID=2800000&guid=99c3717808acc0f43b394ab3e10da8bb&type=3#d_Tilemap.ActiveTargetLayers');
+    background-image: resource('node-icon-root');
     left: 84px;
     top: 3px;
     border-left-color: rgb(139, 119, 190);
@@ -508,11 +507,17 @@
 }
 
 .actionNode #node-icon {
-    background-image: url('project://database/Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKLimb%20On.png?fileID=2800000&guid=4f5364a9fe7e04741862d2af49136835&type=3#Animation.IKLimb On');
+    background-image: resource('node-icon-action');
+    left: 3px;
+    top: 3px;
+    position: absolute;
 }
 
 .conditionNode #node-icon {
-    background-image: url('project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/d_iconbranch.png?fileID=2800000&guid=612c5e166a121e3449dad067fbdc37a4&type=3#d_iconbranch');
+    background-image: resource('node-icon-condition');
+    left: 5px;
+    top: 3px;
+    position: absolute;
 }
 
 .exit #node-icon {

@@ -11,7 +11,7 @@ namespace com.absence.dialoguesystem.editor
     {
         private static readonly string k_createPath = "Assets/Scriptables/Dialogue Graphs";
 
-        [MenuItem("absence/absent-dialogues/Create Dialogue Graph", priority = 0)]
+        [MenuItem("absencee_/absent-dialogues/Create Dialogue Graph", priority = 0)]
         static void CreateDialogue()
         {
             CreateDialogueEndNameEditAction create = ScriptableObject.CreateInstance<CreateDialogueEndNameEditAction>();

@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.editor
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
-        [MenuItem("absence/absent-dialogues/Open Dialogue Graph Window")]
+        [MenuItem("absencee_/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
             DialogueEditorWindow wnd = GetWindow<DialogueEditorWindow>();
