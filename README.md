@@ -68,8 +68,7 @@ You can add a person to a dialogue by selecting the dialogue and adding the peop
 Now you know the basics. But there are a few more you need to know. This tool is based on **nodes**. Below, you'll find descriptions of every node.
 
 ### Root Node
-![Imgur Image](https://imgur.com/FwGmUyj.png)
-**Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
+![Imgur Image](https://imgur.com/FwGmUyj.png)**Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
 
 ### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
