@@ -67,6 +67,8 @@ You can add a person to a dialogue by selecting the dialogue and adding the peop
 
 Now you know the basics. But there are a few more you need to know. This tool is based on **nodes**. Below, you'll find descriptions of every node.
 
+</br>
+
 ### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
 
@@ -100,20 +102,52 @@ Now you know the basics. But there are a few more you need to know. This tool is
 ### Fast Speech Node
 ![Imgur Image](https://imgur.com/PmbBsqx.png)
 
+**Fast Speech Node** is one of the two speech nodes in this tool. This node is used to display a speech that has no options.
+
+**Properties:**
+- (Person) Person: *The person who speaks.*
+- (str.) Speech: *Speech will be displayed.*
+- (AdditionalSpeechData) Additional Speech Data: *This property contains one AudioClip and one Animation which can be used when the speech gets displayed.*
+
+</br>
+
 ### Decision Speech Node
 ![Imgur Image](https://imgur.com/4BmngHT.png)
+
+**Decision Speech Node** does the asme thing with the **Fast Speech Node**. The only difference between them is that the **Decision Speech Node** also has options the player acn choose from.
+
+**Properties:**
+- (Person) Person: *The person who speaks.*
+- (str.) Speech: *Speech will be displayed.*
+- (AdditionalSpeechData) Additional Speech Data: *This property contains one AudioClip and one Animation which can be used when the speech gets displayed.*
+- (List<Option>) Options: *Options will be displayed.*
+
+</br>
 
 ### Option Block
 ![Imgur Image](https://imgur.com/TkUgZ4I.png)
 
+**Option Block** is not a Node itself. It is used to display the options of a **Decision Speech Node**. Text written in the text field of this block will be displayed as an option.
+
+> [!TIP]
+> The panel above the text field is an integrated version of the **VariableComparer** from one of my other tools. For more details, you can hover it in the Dialogue Editor or go to: https://github.com/b1lodHand/absent-variables
+
+</br>
+
 ### Condition Node
 ![Imgur Image](https://imgur.com/oeW8wXF.png)
+
+</br>
 
 ### Action Node
 ![Imgur Image](https://imgur.com/jBtwkVz.png)
 
+</br>
+
 ### StickyNote Node
 ![Imgur Image](https://imgur.com/1Zx5oKb.png)
+
+</br>
 
 ### Title Node
 ![Imgur Image](https://imgur.com/fhoK3Zd.png)
