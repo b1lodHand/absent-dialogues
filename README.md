@@ -22,10 +22,10 @@ All you need to do is copying the URLs above and pasting them into you package m
 
 ![Imgur Image](https://imgur.com/cX3OF72.png)
 
-You can open the Package Manager via selecting Window/Package Manager options on the toolbar of Unity itself. Also, you can find the documentation of these tools in the same links above.
+You can open the Package Manager via the: **'Window/Package Manager'** menu on the toolbar of Unity itself. Also, you can find the documentation of these tools in the same links above.
 
 > [!WARNING]
-> YOU NEED TextMeshPro package installed! You can also find the TextMeshPro via the Package Manager, under the Unity Registry panel.
+> **YOU NEED TextMeshPro package installed! You can also find the TextMeshPro via the Package Manager, under the Unity Registry panel.**
 
 ### Installing
 So, you've installed all the things necessary to run this tool. Now, it is the time of installing the tool itself.
@@ -38,32 +38,32 @@ This step is pretty much straightforward:
 
 3. Download the ".unitypackage" file in that release by clicking it.
 
-AND YOU HAVE IT! So now, how you use it? Let's see...
+**AND YOU HAVE IT!** So now, how you use it? Let's see...
 
 ## Usage <a name = "usage"></a>
 
 ### Opening up the window
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
 
-You can open up the window via the: 'absencee_/absent-dialogues/Open Dialogue Graph Window' menu option on the Unity's toolbar.
+You can open up the window via the: **'absencee_/absent-dialogues/Open Dialogue Graph Window'** menu option on the Unity's toolbar.
 
 
 ### Creating a graph
 ![Giphy](https://media.giphy.com/media/nA6X4OuHaBtddIaE7p/giphy.gif)
 
-You can create a dialogue graph via the: 'absencee_/absent-dialogues/Create Dialogue Graph' menu option on the Unity's toolbar.
+You can create a dialogue graph via the: **'absencee_/absent-dialogues/Create Dialogue Graph'** menu option on the Unity's toolbar.
 
 
 ### Adding people to the conversation
 ![Giphy](https://media.giphy.com/media/V3S5NK9HTbMNMhFAz9/giphy.gif)
 
-You can add a person to a dialogue by selecting the dialogue and adding the people to the list on the inspector.
+You can add a person to a dialogue by selecting the dialogue and adding the people to the list in the inspector.
 
 >[!TIP]
 > You can find more information about my person system at: (https://github.com/b1lodHand/absent-people)
 </br>
 </br>
-Now you know how to open up the window and create a new dialogue. But there's one more thing you need to know: NODES!
+Now you know how to open up the window and create a new dialogue. But there's one more thing you need to know: **NODES!**
 
 > [!NOTE]
 > You can create nodes by right clicking the graph view.
