@@ -45,13 +45,23 @@ AND YOU HAVE IT! So now, how you use it? Let's see...
 ### Opening up the window
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
 
-You can open up
+You can open up the window via the: 'absencee_/absent-dialogues/Open Dialogue Graph Window' menu option on the Unity's toolbar.
+
 
 ### Creating a graph
 ![Giphy](https://media.giphy.com/media/nA6X4OuHaBtddIaE7p/giphy.gif)
 
+You can create a dialogue graph via the: 'absencee_/absent-dialogues/Create Dialogue Graph' menu option on the Unity's toolbar.
+
+
 ### Adding people to the conversation
 ![Giphy](https://media.giphy.com/media/V3S5NK9HTbMNMhFAz9/giphy.gif)
+
+You can add a person to a dialogue by selecting the dialogue and adding the people to the list on the inspector.
+
+>[!TIP]
+> You can find more information about my person system at: (https://github.com/b1lodHand/absent-people)
+
 
 Now you know how to open up the window and create a new dialogue. But there's one more thing you need to know: NODES!
 
