@@ -1,11 +1,5 @@
 # absent-dialogues
 
-## Table of Contents
-+ [About](#about)
-+ [Getting Started](#getting_started)
-+ [Usage](#usage)
-+ [Contributing](../CONTRIBUTING.md)
-
 ## About <a name = "about"></a>
 Hello dear! You just stepped onto a completely free and open-source dialogue system for unity. With this tool, your dream game character dialogues can come true.  Well, I hear you saying "I love that, Tell me how to get it!". Scroll down, I'll be there to guide you.
 
@@ -47,31 +41,47 @@ This step is pretty much straightforward:
 AND YOU HAVE IT! So now, how you use it? Let's see...
 
 ## Usage <a name = "usage"></a>
-...
 
+### Opening up the window
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
 
+### Creating a graph
 ![Giphy](https://media.giphy.com/media/nA6X4OuHaBtddIaE7p/giphy.gif)
 
+### Adding people to the conversation
 ![Giphy](https://media.giphy.com/media/V3S5NK9HTbMNMhFAz9/giphy.gif)
 
+Now you know how to open up the window and create a new dialogue. But there's one more thing you need to know: NODES!
 
+> [!NOTE]
+> You can create nodes by right clicking the graph view.
+
+### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
 
+### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
 
+### Goto Node
 ![Imgur Image](https://imgur.com/3g168Py.png)
 
+### Fast Speech Node
 ![Imgur Image](https://imgur.com/PmbBsqx.png)
 
+### Decision Speech Node
 ![Imgur Image](https://imgur.com/4BmngHT.png)
 
+### Option Block
 ![Imgur Image](https://imgur.com/TkUgZ4I.png)
 
+### Condition Node
 ![Imgur Image](https://imgur.com/oeW8wXF.png)
 
+### Action Node
 ![Imgur Image](https://imgur.com/jBtwkVz.png)
 
+### StickyNote Node
 ![Imgur Image](https://imgur.com/1Zx5oKb.png)
 
+### Title Node
 ![Imgur Image](https://imgur.com/fhoK3Zd.png)
