@@ -45,6 +45,8 @@ AND YOU HAVE IT! So now, how you use it? Let's see...
 ### Opening up the window
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
 
+You can open up
+
 ### Creating a graph
 ![Giphy](https://media.giphy.com/media/nA6X4OuHaBtddIaE7p/giphy.gif)
 
