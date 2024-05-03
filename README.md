@@ -31,7 +31,7 @@ All you need to do is copying the URLs above and pasting them into you package m
 You can open the Package Manager via selecting Window/Package Manager options on the toolbar of Unity itself. Also, you can find the documentation of these tools in the same links above.
 
 > [!WARNING]
-> YOU NEED TextMeshPro package installed! The legacy Unity UI without TMP is not supported by this tool at the moment. You can also import the TextMesPro via the Package Manager.
+> YOU NEED TextMeshPro package installed! You can also find the TextMeshPro via the Package Manager, under the Unity Registry panel.
 
 ### Installing
 So, you've installed all the things necessary to run this tool. Now, it is the time of installing the tool itself.
