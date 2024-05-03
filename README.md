@@ -69,15 +69,28 @@ Now you know the basics. But there are a few more you need to know. This tool is
 
 ### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
+**Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
 
 ### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
+**Dialogue Part Node** works similar to the **Root Node**. This is also a starting point node **BUT** it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to.
 
-### Goto Node
+**Properties:**
+- (str.) Dialogue Part Name: *This property is used by the **Goto Node** in order to find and teleport to this node. Read [Goto Node](#goto-node) for more details.*
+
+### Goto Node <a name = "goto-node"></a>
 ![Imgur Image](https://imgur.com/3g168Py.png)
+**Goto Node** is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target **Dialogue Part Node** and teleport to it.
+
+**Properties:**
+- (str.) Target Dialogue Part Name: ***Goto Node** finds a **Dialogue Part Node** which has it's target property matchin to this property and teleports to it.*
+
+> [!IMPORTANT]
+> The relation between the **Goto Node** and **Dialogue Part Node** is *string prone* for now. So, be careful while using them.
 
 ### Fast Speech Node
 ![Imgur Image](https://imgur.com/PmbBsqx.png)
+
 
 ### Decision Speech Node
 ![Imgur Image](https://imgur.com/4BmngHT.png)
