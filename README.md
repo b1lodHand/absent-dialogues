@@ -40,7 +40,7 @@ This step is pretty much straightforward:
 
 **AND YOU HAVE IT!** So now, how you use it? Let's see...
 
-## Usage <a name = "usage"></a>
+## Basics <a name = "basics"></a>
 
 ### Opening up the window
 ![Giphy](https://media.giphy.com/media/iTEnCOlThoCPMKfbeD/giphy.gif)
@@ -62,7 +62,10 @@ You can add a person to a dialogue by selecting the dialogue and adding the peop
 >[!TIP]
 > You can find more information about my person system at: https://github.com/b1lodHand/absent-people
 
+
 ## Fundamentals <a name = "fund"></a>
+
+Now you know the basics. But there are a few more you need to know. This tool is based on **nodes**. Below, you'll find descriptions of every node.
 
 ### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
