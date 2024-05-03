@@ -72,6 +72,8 @@ Now you know the basics. But there are a few more you need to know. This tool is
 
 **Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
 
+</br>
+
 ### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
 
@@ -79,6 +81,8 @@ Now you know the basics. But there are a few more you need to know. This tool is
 
 **Properties:**
 - (str.) Dialogue Part Name: *This property is used by the **Goto Node** in order to find and teleport to this node. Read [Goto Node](#goto-node) for more details.*
+
+</br>
 
 ### Goto Node <a name = "goto-node"></a>
 ![Imgur Image](https://imgur.com/3g168Py.png)
@@ -91,9 +95,10 @@ Now you know the basics. But there are a few more you need to know. This tool is
 > [!IMPORTANT]
 > The relation between the **Goto Node** and **Dialogue Part Node** is *string prone* for now. So, be careful while using them.
 
+</br>
+
 ### Fast Speech Node
 ![Imgur Image](https://imgur.com/PmbBsqx.png)
-
 
 ### Decision Speech Node
 ![Imgur Image](https://imgur.com/4BmngHT.png)
