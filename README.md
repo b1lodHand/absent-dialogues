@@ -60,13 +60,9 @@ You can create a dialogue graph via the: **'absencee_/absent-dialogues/Create Di
 You can add a person to a dialogue by selecting the dialogue and adding the people to the list in the inspector.
 
 >[!TIP]
-> You can find more information about my person system at: (https://github.com/b1lodHand/absent-people)
-</br>
-</br>
-Now you know how to open up the window and create a new dialogue. But there's one more thing you need to know: **NODES!**
+> You can find more information about my person system at: https://github.com/b1lodHand/absent-people
 
-> [!NOTE]
-> You can create nodes by right clicking the graph view.
+## Fundamentals <a name = "fund"></a>
 
 ### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
