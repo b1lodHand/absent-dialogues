@@ -68,10 +68,13 @@ You can add a person to a dialogue by selecting the dialogue and adding the peop
 Now you know the basics. But there are a few more you need to know. This tool is based on **nodes**. Below, you'll find descriptions of every node.
 
 ### Root Node
-![Imgur Image](https://imgur.com/FwGmUyj.png)**Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
+![Imgur Image](https://imgur.com/FwGmUyj.png)
+
+**Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
 
 ### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
+
 **Dialogue Part Node** works similar to the **Root Node**. This is also a starting point node **BUT** it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to.
 
 **Properties:**
@@ -79,6 +82,7 @@ Now you know the basics. But there are a few more you need to know. This tool is
 
 ### Goto Node <a name = "goto-node"></a>
 ![Imgur Image](https://imgur.com/3g168Py.png)
+
 **Goto Node** is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target **Dialogue Part Node** and teleport to it.
 
 **Properties:**
