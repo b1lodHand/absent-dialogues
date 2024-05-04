@@ -2,7 +2,7 @@
 
 ## Welcome
 
-Welcome to the documentation. Here I will teach you how to use the tool in a basic way. The code itself is also documented with the *summary* feature of C#. So, you can find some advanced information on using the **internal code** of the tool. Now, let's start.
+Welcome to the documentation. Here I will teach you how to use the tool in a basic way. The code itself is also documented with the *summary* feature of C#. So, you can find some advanced information about using the **internal code** of the tool there. Now, let's start.
 
 ## Nodes
 
