@@ -1,7 +1,7 @@
 # absent-dialogues
 
 ## About <a name = "about"></a>
-Hello dear! You just stepped onto a completely free and open-source dialogue system for unity. With this tool, your dream game character dialogues can come true.  Well, I hear you saying "I love that, Tell me how to get it!". Scroll down, I'll be there to guide you.
+Hello dear! You just stepped onto a completely free and open-source dialogue system for unity. With this tool, your dream game character dialogues can come true.  Well, I hear you saying "I love that! how do I get it?". Scroll down, I'll be there to guide you.
 
 ## Getting Started <a name = "getting_started"></a>
 Well, in order have this tool working properly you'll need to do a few things. For example: Unity... I'm just kidding. The instructions below will lead you on the way.
