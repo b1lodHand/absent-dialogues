@@ -1,8 +1,10 @@
-# absent-dialogues
+# Documentation of absent-dialogues
 
-## Documentation
+## Welcome
 
-Welcome to the documentation. Here I will teach you how to use the tool in a basic way. The code itself is also documented with the *summery* feature of C#. So, you can find some advanced information on using the **internal code** of the tool.
+Welcome to the documentation. Here I will teach you how to use the tool in a basic way. The code itself is also documented with the *summery* feature of C#. So, you can find some advanced information on using the **internal code** of the tool. Now, let's start.
+
+## Nodes
 
 ### Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
