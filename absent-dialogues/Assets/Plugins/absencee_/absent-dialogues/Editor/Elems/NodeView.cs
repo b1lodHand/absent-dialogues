@@ -39,7 +39,7 @@ namespace com.absence.dialoguesystem.editor
             style.left = node.Position.x;
             style.top = node.Position.y;
 
-            AddToClassList(node.GetClassName());
+            if (node.GetClassName() != null) AddToClassList(node.GetClassName());
             if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
 
             this.title = node.GetTitle();
@@ -153,7 +153,7 @@ namespace com.absence.dialoguesystem.editor
         private void DrawElems_DialogPartNode()
         {
             Label nameLabel = new Label();
-            nameLabel.bindingPath = "DialogPartName";
+            nameLabel.bindingPath = "DialoguePartName";
             nameLabel.Bind(m_serializedNode);
 
             this.Insert(0, nameLabel);

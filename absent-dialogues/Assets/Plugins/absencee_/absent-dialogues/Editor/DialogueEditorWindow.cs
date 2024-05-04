@@ -164,7 +164,7 @@ namespace com.absence.dialoguesystem.editor
 
             m_targetDialogue.GetAllDialogParts().ForEach(dialogPartNode =>
             {
-                m_dialogPartFinder.menu.AppendAction(dialogPartNode.DialogPartName, action =>
+                m_dialogPartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
                 {
                     FrameToNode(dialogPartNode);
                 });

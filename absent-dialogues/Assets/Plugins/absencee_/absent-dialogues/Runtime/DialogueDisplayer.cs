@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 namespace com.absence.dialoguesystem
 {
+    /// <summary>
+    /// A singleton with the duty of displaying the current dialogue context.
+    /// </summary>
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
         [SerializeField] private Image m_speakerIcon;
@@ -15,6 +19,7 @@ namespace com.absence.dialoguesystem
         [SerializeField] private GameObject m_panel;
         [SerializeField] private Transform m_optionContainer;
         [SerializeField] private OptionText m_optionPrefab;
+
         DialogueInstance m_instance;
 
         public bool Occupy(DialogueInstance instance)

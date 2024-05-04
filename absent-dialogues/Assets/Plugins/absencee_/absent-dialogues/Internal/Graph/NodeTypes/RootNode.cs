@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class RootNode : Node
+    public sealed class RootNode : Node
     {
         [HideInInspector] public Node Next;
         public override bool DisplayState => false;

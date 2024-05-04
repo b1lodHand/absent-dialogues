@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialoguePartNode
   m_EditorClassIdentifier: 
   Guid: b6142789a643f71408a58c05de925814
-  Position: {x: 44, y: 63}
+  Position: {x: 53, y: 71}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -22,7 +22,7 @@ MonoBehaviour:
   ExitDialogAfterwards: 0
   PersonIndex: 0
   Next: {fileID: -7128887067038950444}
-  DialogPartName: main
+  DialoguePartName: main
 --- !u!114 &-8570237213173099237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: c6b81edb3fcfccb4da0b8d55b66288b8
-  Position: {x: 77.25006, y: -2.2500162}
+  Position: {x: 31.235003, y: -20.097483}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -65,9 +65,12 @@ MonoBehaviour:
     MasterDialogue: {fileID: 11400000}
   State: 2
   ExitDialogAfterwards: 0
-  PersonIndex: 1
-  m_audioClip: {fileID: 0}
-  m_animation: {fileID: 0}
+  PersonIndex: 0
+  m_additionalData:
+    AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
+    Sprite: {fileID: 0}
+    Keyword: 
   Next: {fileID: 6602897084972744239}
   Speech: fast speech example (press space)
 --- !u!114 &-6500224830323563992
@@ -120,7 +123,7 @@ MonoBehaviour:
   - {fileID: 4288233897331555536}
   - {fileID: 345333829215211219}
   - {fileID: 2218299684729963074}
-  People:
+  m_people:
   - {fileID: 11400000, guid: 51314ca2212de414ea471788da803d40, type: 2}
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
   Blackboard:
@@ -194,8 +197,15 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  VBActions: []
-  UnityActions:
+  VBActions:
+  - m_setType: 2
+    m_targetBank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
+    m_targetVariableName: 'float: '
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  UnityEvents:
     m_PersistentCalls:
       m_Calls: []
   Next: {fileID: 213386342176865088}
@@ -234,7 +244,7 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 5c47d2fec08b919498e8180c3c3bf34f
-  Position: {x: 1072.485, y: 208.74251}
+  Position: {x: 1077, y: 213}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -243,7 +253,7 @@ MonoBehaviour:
   ExitDialogAfterwards: 0
   PersonIndex: 0
   VBActions: []
-  UnityActions:
+  UnityEvents:
     m_PersistentCalls:
       m_Calls: []
   Next: {fileID: 213386342176865088}
@@ -267,9 +277,12 @@ MonoBehaviour:
     MasterDialogue: {fileID: 11400000}
   State: 1
   ExitDialogAfterwards: 0
-  PersonIndex: 0
-  m_audioClip: {fileID: 0}
-  m_animation: {fileID: 0}
+  PersonIndex: 1
+  m_additionalData:
+    AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
+    Sprite: {fileID: 0}
+    Keyword: 
   Options:
   - Speech: option 1.
     UseShowIf: 0
@@ -282,8 +295,11 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 213386342176865088}
-    AudioClip: {fileID: 0}
-    Animation: {fileID: 0}
+    AdditionalData:
+      AudioClip: {fileID: 0}
+      Animation: {fileID: 0}
+      Sprite: {fileID: 0}
+      Keyword: 
   - Speech: option 2.
     UseShowIf: 0
     ShowIf:
@@ -295,8 +311,11 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 4288233897331555536}
-    AudioClip: {fileID: 0}
-    Animation: {fileID: 0}
+    AdditionalData:
+      AudioClip: {fileID: 0}
+      Animation: {fileID: 0}
+      Sprite: {fileID: 0}
+      Keyword: 
   - Speech: option 3.
     UseShowIf: 0
     ShowIf:
@@ -308,6 +327,9 @@ MonoBehaviour:
       m_stringValue: 
       m_boolValue: 0
     LeadsTo: {fileID: 345333829215211219}
-    AudioClip: {fileID: 0}
-    Animation: {fileID: 0}
+    AdditionalData:
+      AudioClip: {fileID: 0}
+      Animation: {fileID: 0}
+      Sprite: {fileID: 0}
+      Keyword: 
   Speech: decisive speech example

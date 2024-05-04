@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class DialoguePartNode : Node
+    public sealed class DialoguePartNode : Node
     {
         [HideInInspector] public Node Next;
-        public string DialogPartName;
+        public string DialoguePartName;
         public override bool DisplayState => false;
         public override string GetClassName() => "dialogPartNode";
-        public override string GetTitle() => $"Dialog Part";
+        public override string GetTitle() => $"Dialogue Part";
 
         protected override void Pass_Inline(params object[] passData)
         {

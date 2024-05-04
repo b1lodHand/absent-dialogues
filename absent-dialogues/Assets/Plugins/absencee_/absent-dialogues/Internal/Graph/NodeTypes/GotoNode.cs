@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class GotoNode : Node
+    public sealed class GotoNode : Node
     {
         public string TargetDialogPartName;
         public override string GetClassName() => "gotoNode";

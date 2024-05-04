@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class StickyNoteNode : Node
+    public sealed class StickyNoteNode : Node
     {
         [HideInInspector] public string Speech;
 

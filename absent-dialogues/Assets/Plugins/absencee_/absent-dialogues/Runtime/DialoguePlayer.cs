@@ -7,8 +7,14 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
+    /// <summary>
+    /// Lets you progress in a dialogue easily.
+    /// </summary>
     public class DialoguePlayer
     {
+        /// <summary>
+        /// Shows what state the dialogue is in.
+        /// </summary>
         public enum DialoguePlayerState
         {
             Idle = 0,
@@ -26,10 +32,14 @@ namespace com.absence.dialoguesystem
         public event Action<DialoguePlayerState> OnContinue;
 
         public Person Speaker => m_dialogue.LastOrCurrentNode.Person;
-        public AdditionalSpeechData AdditionalSpeechData => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetAdditionalSpeechData();
-        public string Speech => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetSpeech();
-        public string[] Options => (m_dialogue.LastOrCurrentNode as ISpeechNode).GetOptions();
+        public AdditionalSpeechData AdditionalSpeechData => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetAdditionalSpeechData();
+        public string Speech => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetSpeech();
+        public string[] Options => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetOptions();
 
+        /// <summary>
+        /// Use to create a new <see cref="DialoguePlayer"/>.
+        /// </summary>
+        /// <param name="dialogue"></param>
         public DialoguePlayer(Dialogue dialogue)
         {
             m_dialogue = dialogue;
@@ -38,30 +48,42 @@ namespace com.absence.dialoguesystem
             m_state = DialoguePlayerState.Idle;
         }
 
+        /// <summary>
+        /// Use to progress in the target dialogue wih some optional data.
+        /// </summary>
+        /// <param name="passData"></param>
         public void Continue(params object[] passData)
         {
-            if (m_dialogue.WillExit)
+            if (m_dialogue.LastOrCurrentNode.ExitDialogAfterwards)
             {
                 m_state = DialoguePlayerState.WillExit;
-                m_dialogue.Continue(passData);
+                m_dialogue.Pass(passData);
                 return;
             }
 
-            m_dialogue.Continue(passData);
+            m_dialogue.Pass(passData);
 
-            if (!m_dialogue.HasSpeech) m_state = DialoguePlayerState.Idle;
+            if (!(m_dialogue.LastOrCurrentNode is IContainSpeech)) m_state = DialoguePlayerState.Idle;
             else if (m_dialogue.LastOrCurrentNode is FastSpeechNode) m_state = DialoguePlayerState.WaitingForSkip;
             else if (m_dialogue.LastOrCurrentNode is DecisionSpeechNode) m_state = DialoguePlayerState.WaitingForOption;
 
             OnContinue?.Invoke(m_state);
         }
 
+        /// <summary>
+        /// Overrides the people in the target dialogue. Won't work if it is already overriden.
+        /// </summary>
+        /// <param name="overridePeople"></param>
         public void OverridePeople(List<Person> overridePeople)
         {
             if (m_overriden) return;
             m_dialogue.OverridePeople(overridePeople);
         }
 
+
+        /// <summary>
+        /// Reverts any overriding process.
+        /// </summary>
         public void RevertPeople()
         {
             if (!m_overriden) return;

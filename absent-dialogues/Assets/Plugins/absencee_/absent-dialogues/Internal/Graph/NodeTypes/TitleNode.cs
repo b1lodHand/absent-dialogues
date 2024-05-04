@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class TitleNode : Node
+    public sealed class TitleNode : Node
     {
         [HideInInspector] public string Speech;
 

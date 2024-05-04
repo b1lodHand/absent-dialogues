@@ -59,7 +59,7 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>() { "True", "False" };
         }
 
-        private bool Process()
+        protected virtual bool Process()
         {
             if (Comparers.Count == 0) return true;
 

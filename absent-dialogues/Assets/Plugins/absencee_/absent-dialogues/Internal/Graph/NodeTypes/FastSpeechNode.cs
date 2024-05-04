@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class FastSpeechNode : Node, ISpeechNode
+    public sealed class FastSpeechNode : Node, IContainSpeech
     {
-        [SerializeField] private AudioClip m_audioClip;
-        [SerializeField] private Animation m_animation;
+        [SerializeField] private AdditionalSpeechData m_additionalData;
 
         [HideInInspector] public Node Next;
         [HideInInspector] public string Speech;
@@ -50,7 +49,7 @@ namespace com.absence.dialoguesystem.internals
 
         public string GetSpeech() => Speech;
         public string[] GetOptions() => null;
-        public AdditionalSpeechData GetAdditionalSpeechData() => new() { AudioClip = m_audioClip, Animation = m_animation };
+        public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
     }
 
 }

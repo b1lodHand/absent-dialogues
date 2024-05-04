@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals 
 {
-    public class DecisionSpeechNode : Node, ISpeechNode
+    public sealed class DecisionSpeechNode : Node, IContainSpeech
     {
-        [SerializeField] private AudioClip m_audioClip;
-        [SerializeField] private Animation m_animation;
+        [SerializeField] private AdditionalSpeechData m_additionalData;
+
+        [Space(10)]
 
         public List<Option> Options = new List<Option>();
         [HideInInspector] public string Speech;
@@ -16,7 +17,7 @@ namespace com.absence.dialoguesystem.internals
         public override bool PersonDependent => true;
 
         public override string GetClassName() => "decisionSpeechNode";
-        public override string GetTitle() => "Decisive Speech";
+        public override string GetTitle() => "Decision Speech";
 
         protected override void Pass_Inline(params object[] passData)
         {
@@ -52,7 +53,6 @@ namespace com.absence.dialoguesystem.internals
         public override Node Clone()
         {
             DecisionSpeechNode node = Instantiate(this);
-            //node.Options.ConvertAll(n => n.Clone());
             return node;
         }
         public override List<string> GetOutputPortNamesForCreation()
@@ -62,7 +62,7 @@ namespace com.absence.dialoguesystem.internals
 
         public string GetSpeech() => Speech;
         public string[] GetOptions() => Options.ToList().ConvertAll(n => n.Speech).ToArray();
-        public AdditionalSpeechData GetAdditionalSpeechData() => new() { AudioClip = m_audioClip, Animation = m_animation };
+        public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
     }
 
     [System.Serializable]
@@ -72,7 +72,6 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public bool UseShowIf = false;
         [HideInInspector] public VariableComparer ShowIf;
         [HideInInspector] public Node LeadsTo;
-        public AudioClip AudioClip;
-        public Animation Animation;
+        public AdditionalSpeechData AdditionalData;
     }
 }

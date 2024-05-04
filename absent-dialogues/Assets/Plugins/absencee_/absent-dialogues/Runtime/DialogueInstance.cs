@@ -8,8 +8,9 @@ using UnityEngine;
 namespace com.absence.dialoguesystem
 {
     /// <summary>
-    /// Use to manage a single dialogue player.
+    /// Lets you manage a single <see cref="DialoguePlayer"/> in the scene easily.
     /// </summary>
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
     public class DialogueInstance : MonoBehaviour
     {
         [SerializeField] private bool m_startOnAwake = false;
