@@ -20,29 +20,39 @@ namespace com.absence.dialoguesystem
         [SerializeField] private Transform m_optionContainer;
         [SerializeField] private OptionText m_optionPrefab;
 
-        DialogueInstance m_instance;
+        bool m_occupied = false;
 
-        public bool Occupy(DialogueInstance instance)
+        /// <summary>
+        /// Let's you occupy the sinleton. If it is occuppied by any other scripts about dialogues, you can't occupy.
+        /// </summary>
+        /// <returns>Returns false if the displayer is already occupied. Returns true otherwise.</returns>
+        public bool Occupy()
         {
-            if (m_instance != null) return false;
+            if (m_occupied) return false;
 
-            m_instance = instance;
-            m_instance.Player.OnContinue += OnPlayerContinue;
+            EnableView();
 
-            m_panel.SetActive(true);
+            m_occupied = true;
             return true;
         }
 
+        /// <summary>
+        /// Removes the occupience of the displayer. CAUTION! <see cref="DialogueDisplayer"/> does not hold a reference to the
+        /// current occupier. Because of that, be careful calling this function.
+        /// </summary>
         public void Release()
         {
-            if (m_instance == null) return;
+            if (!m_occupied) return;
 
-            m_instance.Player.OnContinue -= OnPlayerContinue;
-            m_instance = null;
-
-            Clear();
+            ClearOptionContainer();
+            DisableView();
         }
 
+        /// <summary>
+        /// Displays a speech with no options.
+        /// </summary>
+        /// <param name="speaker"></param>
+        /// <param name="speech"></param>
         public void Display(Person speaker, string speech)
         {
             ClearOptionContainer();
@@ -52,7 +62,14 @@ namespace com.absence.dialoguesystem
             m_speechText.text = speech;
         }
 
-        public void Display(Person speaker, string speech, string[] options)
+        /// <summary>
+        /// Displays a speech with options.
+        /// </summary>
+        /// <param name="speaker"></param>
+        /// <param name="speech"></param>
+        /// <param name="options"></param>
+        /// <param name="optionPressAction"></param>
+        public void Display(Person speaker, string speech, string[] options, Action<int> optionPressAction)
         {
             ClearOptionContainer();
 
@@ -60,37 +77,24 @@ namespace com.absence.dialoguesystem
             for (int i = 0; i < options.Length; i++)
             {
                 var o = Instantiate(m_optionPrefab, m_optionContainer);
-                o.OnClickAction += i =>
-                {
-                    m_instance.Player.Continue(i);
-                };
+                o.OnClickAction += optionPressAction;
             }
         }
 
-        public void Clear()
+        void EnableView()
+        {
+            m_panel.SetActive(true);
+        }
+
+        void DisableView()
         {
             m_panel.SetActive(false);
         }
 
-        public void ClearOptionContainer()
+        void ClearOptionContainer()
         {
             m_optionContainer.DestroyChildren();
         }
 
-        private void OnPlayerContinue(DialoguePlayer.DialoguePlayerState state)
-        {
-            var player = m_instance.Player;
-
-            switch (state)
-            {
-                case DialoguePlayer.DialoguePlayerState.WaitingForOption:
-                    Display(player.Speaker, player.Speech, player.Options);
-                    break;
-
-                case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
-                    Display(player.Speaker, player.Speech);
-                    break;
-            }
-        }
     }
 }

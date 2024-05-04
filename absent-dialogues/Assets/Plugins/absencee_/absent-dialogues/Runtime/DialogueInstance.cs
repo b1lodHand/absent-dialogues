@@ -15,8 +15,6 @@ namespace com.absence.dialoguesystem
     {
         [SerializeField] private bool m_startOnAwake = false;
 
-        [SerializeField] private Animator m_animator;
-
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField, HideIf(nameof(m_audioSource), null), Range(0f, 1f)] private float m_audioVolume;
 
@@ -40,20 +38,8 @@ namespace com.absence.dialoguesystem
         {
             if (!m_inDialogue) return;
 
-            switch (m_player.State)
-            {
-                case DialoguePlayer.DialoguePlayerState.Idle:
-                    m_player.Continue();
-                    break;
-
-                case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
-                    if (CheckSkipInput()) m_player.Continue();
-                    break;
-
-                case DialoguePlayer.DialoguePlayerState.WillExit:
-                    ExitDialogue();
-                    break;
-            }
+            if(Player.State == DialoguePlayer.DialoguePlayerState.WaitingForSkip)
+                if (CheckSkipInput()) Player.Continue();
         }
 
         private bool CheckSkipInput()
@@ -63,18 +49,22 @@ namespace com.absence.dialoguesystem
 
         public bool EnterDialogue()
         {
-            if (!DialogueDisplayer.Instance.Occupy(this)) return false;
+            m_inDialogue = false;
+            if (!DialogueDisplayer.Instance.Occupy()) return false;
 
             if (m_overridePeople.Count > 0) m_player.OverridePeople(m_overridePeople);
             m_inDialogue = true;
 
             m_player.OnContinue += OnPlayerContinue;
+            OnPlayerContinue(m_player.State);
 
             return true;
         }
 
         public void ExitDialogue()
         {
+            if (!m_inDialogue) return;
+
             m_inDialogue = false;
             m_player.RevertPeople();
 
@@ -84,6 +74,34 @@ namespace com.absence.dialoguesystem
         }
 
         private void OnPlayerContinue(DialoguePlayer.DialoguePlayerState state)
+        {
+            HandleAdditionalData();
+
+            switch (state)
+            {
+                case DialoguePlayer.DialoguePlayerState.Idle:
+                    Player.Continue();
+                    break;
+
+                case DialoguePlayer.DialoguePlayerState.WaitingForOption:
+                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech, Player.Options, i => Player.Continue(i));
+                    break;
+
+                case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
+                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech);
+                    break;
+
+                case DialoguePlayer.DialoguePlayerState.WillExit:
+                    ExitDialogue();
+                    break;
+
+                default:
+                    ExitDialogue();
+                    throw new Exception("An unknown error occurred while displaying the dialogue.");
+            }
+        }
+
+        protected virtual void HandleAdditionalData()
         {
             if (m_audioSource == null) return;
 

@@ -40,6 +40,7 @@ namespace com.absence.dialoguesystem.editor
             OpenWindow();
 
             m_targetDialogue = Selection.activeObject as Dialogue;
+            //m_targetDialogue.hideFlags = HideFlags.DontSave;
 
             var dialogObjectField = m_toolbar.Q<ObjectField>();
             dialogObjectField.SetValueWithoutNotify(m_targetDialogue);
