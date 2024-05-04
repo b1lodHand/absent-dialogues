@@ -63,7 +63,7 @@ You can add a person to a dialogue by selecting the dialogue and adding the peop
 > You can find more information about my person system at: https://github.com/b1lodHand/absent-people
 
 ## Documentation <a name = "fund"></a>
-You can find a more detailed documentation here: [Documentation](.Documentation.md)
+You can find a more detailed documentation here: [Documentation](DOCUMENTATION.md)
 
 ## Wrapping up
 
