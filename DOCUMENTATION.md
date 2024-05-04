@@ -11,6 +11,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 
 **Root Node** is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its **UNDESTROYABLE!!!**.
 
+</br>
+
 ### Dialogue Part Node
 ![Imgur Image](https://imgur.com/ETY999l.png)
 
@@ -18,6 +20,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 
 **Properties:**
 - *(str.)* **Dialogue Part Name:** This property is used by the **Goto Node** in order to find and teleport to this node. Read [Goto Node](#goto-node) for more details.
+
+</br>
 
 ### Goto Node <a name = "goto-node"></a>
 ![Imgur Image](https://imgur.com/3g168Py.png)
@@ -30,6 +34,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 > [!IMPORTANT]
 > The relation between the **Goto Node** and **Dialogue Part Node** is *string prone* for now. So, be careful while using them.
 
+</br>
+
 ### Fast Speech Node
 ![Imgur Image](https://imgur.com/PmbBsqx.png)
 
@@ -39,6 +45,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 - *(Person)* **Person:** The person who speaks.
 - *(str.)* **Speech:** Speech will be displayed.
 - *(AdditionalSpeechData)* **Additional Speech Data:** This property contains some extra data that can be used when the speech gets displayed.
+
+</br>
 
 ### Decision Speech Node
 ![Imgur Image](https://imgur.com/4BmngHT.png)
@@ -61,6 +69,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 > [!TIP]
 > The panel above the text field is an integrated version of the **VariableComparer** from one of my other tools. For more details, you can hover the block in the Dialogue Editor or go to: https://github.com/b1lodHand/absent-variables
 
+</br>
+
 ### Condition Node
 ![Imgur Image](https://imgur.com/oeW8wXF.png)
 
@@ -69,6 +79,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 **Properties:**
 - *(ProcessorType)* **Processor:** Lets you select the way comparers work.
 - *(List<VariableComparer>)* **Comparers:** List of the entire comparers used to process the output boolean.
+
+</br>
 
 ### Action Node
 ![Imgur Image](https://imgur.com/jBtwkVz.png)
@@ -82,10 +94,14 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 >[!TIP]
 >There is also a property of **Action Node** called **CustomAction()** which is a virtual method. And also **Action Node** one of the two node subtypes which you can derive new subtypes from (they aren't *sealed*). So, you can derive from **Action Node** to have a node that has some more specific actions to perform.
 
+</br>
+
 ### StickyNote Node
 ![Imgur Image](https://imgur.com/1Zx5oKb.png)
 
 **StickyNote** is not really a node. It is derived from the node base type and that's all. It has no effect on the dialogue flow. But you can use it to leave some useful notes in the graph view. 
+
+</br>
 
 ### Title Node
 ![Imgur Image](https://imgur.com/fhoK3Zd.png)
