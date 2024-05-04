@@ -171,6 +171,8 @@ Now you know the basics. But there are a few more you need to know. This tool is
 
 **Title Node** is nearly the same as **StickyNote**. It is just bigger and easy to see.
 
+</br>
+
 ## Wrapping up
 
 Thank you for reading this all the way to down here. If you are interested in this project, please consider branching to it. I'd be welcome working with you! I hope this tool helps you on the journey of gamedev. Have a nice day!
