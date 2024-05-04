@@ -82,7 +82,7 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Dialogue Part Node** works similar to the **Root Node**. This is also a starting point node **BUT** it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to.
 
 **Properties:**
-- *(str.)* ***Dialogue Part Name:*** This property is used by the **Goto Node** in order to find and teleport to this node. Read [Goto Node](#goto-node) for more details.
+- *(str.)* **Dialogue Part Name:** This property is used by the **Goto Node** in order to find and teleport to this node. Read [Goto Node](#goto-node) for more details.
 
 </br>
 
@@ -92,7 +92,7 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Goto Node** is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target **Dialogue Part Node** and teleport to it.
 
 **Properties:**
-- *(str.)* ***Target Dialogue Part Name:*** **Goto Node** finds a **Dialogue Part Node** which has it's target property matchin to this property and teleports to it.
+- *(str.)* **Target Dialogue Part Name:** **Goto Node** finds a **Dialogue Part Node** which has it's target property matchin to this property and teleports to it.
 
 > [!IMPORTANT]
 > The relation between the **Goto Node** and **Dialogue Part Node** is *string prone* for now. So, be careful while using them.
@@ -105,9 +105,9 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Fast Speech Node** is one of the two speech nodes in this tool. This node is used to display a speech that has no options.
 
 **Properties:**
-- *(Person)* ***Person:*** The person who speaks.
-- *(str.)* ***Speech:*** Speech will be displayed.
-- *(AdditionalSpeechData)* ***Additional Speech Data:*** This property contains some extra data that can be used when the speech gets displayed.
+- *(Person)* **Person:** The person who speaks.
+- *(str.)* **Speech:** Speech will be displayed.
+- *(AdditionalSpeechData)* **Additional Speech Data:** This property contains some extra data that can be used when the speech gets displayed.
 
 </br>
 
@@ -117,10 +117,10 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Decision Speech Node** does the same thing with the **Fast Speech Node**. The only difference between them is that the **Decision Speech Node** also has options the player acn choose from.
 
 **Properties:**
-- *(Person)* ***Person:*** The person who speaks.
-- *(str.)* ***Speech:*** Speech will be displayed.
-- *(AdditionalSpeechData)* ***Additional Speech Data:*** This property contains some extra data that can be used when the speech gets displayed.
-- *(List<Option>)* ***Options:*** Options will be displayed.
+- *(Person)* **Person:** The person who speaks.
+- *(str.)* **Speech:** Speech will be displayed.
+- *(AdditionalSpeechData)* **Additional Speech Data:** This property contains some extra data that can be used when the speech gets displayed.
+- *(List<Option>)* **Options:** Options will be displayed.
 
 </br>
 
@@ -140,8 +140,8 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Condition Node** lets you to progress in different ways in the dialogue depending on some conditions. The conditions are based on the **Variable Comparers** like the ones in the **Option Block**.
 
 **Properties:**
-- *(ProcessorType)* ***Processor:*** Lets you select the way comparers work.
-- *(List<VariableComparer>)* ***Comparers:*** List of the entire comparers used to process the output boolean.
+- *(ProcessorType)* **Processor:** Lets you select the way comparers work.
+- *(List<VariableComparer>)* **Comparers:** List of the entire comparers used to process the output boolean.
 
 </br>
 
@@ -151,8 +151,8 @@ Now you know the basics. But there are a few more you need to know. This tool is
 **Action Node** is pretty self explanatory. It invokes some actions when it gets *reached* by the dialogue.
 
 **Properties:**
-- *(List<VariableSetter>)* ***VB Actions:*** Actions that depend on my **absent-variables** package. These can be used to set some variables which can be used troughout the game.
-- *(UnityEvent)* ***Unity Events:*** UnityEvents that **DO NOT** accept scene objects.
+- *(List<VariableSetter>)* **VB Actions:** Actions that depend on my **absent-variables** package. These can be used to set some variables which can be used troughout the game.
+- *(UnityEvent)* **Unity Events:** UnityEvents that **DO NOT** accept scene objects.
 
 >[!TIP]
 >There is also a property of **Action Node** called **CustomAction()** which is a virtual method. And also **Action Node** one of the two node subtypes which you can derive new subtypes from (they aren't *sealed*). So, you can derive from **Action Node** to have a node that has some more specific actions to perform.
@@ -170,3 +170,7 @@ Now you know the basics. But there are a few more you need to know. This tool is
 ![Imgur Image](https://imgur.com/fhoK3Zd.png)
 
 **Title Node** is nearly the same as **StickyNote**. It is just bigger and easy to see.
+
+## Wrapping up
+
+Thank you for reading this all the way to down here. If you are interested in this project, please consider branching to it. I'd be welcome working with you! I hope this tool helps you on the journey of gamedev. Have a nice day!
