@@ -108,3 +108,8 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 
 **Title Node** is nearly the same as **StickyNote**. It is just bigger and easy to see.
 
+</br>
+
+## OOPS!
+
+Rest of the documentation is still in progress. Thank you for your patience!
