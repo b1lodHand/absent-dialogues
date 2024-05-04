@@ -603,10 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
-  m_animator: {fileID: 0}
   m_audioSource: {fileID: 0}
   m_audioVolume: 0
-  m_dialogue: {fileID: 11400000, guid: ffcfa23bc0339f749a9e30e5449979e5, type: 2}
+  m_dialogue: {fileID: 0}
   m_overridePeople: []
 --- !u!1 &673667125
 GameObject:
