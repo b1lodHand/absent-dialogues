@@ -1,3 +1,4 @@
+using com.absence.attributes;
 using com.absence.personsystem;
 using com.absence.utilities;
 using System;
@@ -8,17 +9,18 @@ using UnityEngine.UI;
 namespace com.absence.dialoguesystem
 {
     /// <summary>
-    /// A singleton with the duty of displaying the current dialogue context.
+    /// A singleton with the duty of displaying the current dialogue context. Written for the Unity UI package. Not compatible with
+    /// the UI Toolkit.
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
-        [SerializeField] private Image m_speakerIcon;
-        [SerializeField] private TMP_Text m_speakerNameText;
-        [SerializeField] private TMP_Text m_speechText;
-        [SerializeField] private GameObject m_panel;
-        [SerializeField] private Transform m_optionContainer;
-        [SerializeField] private OptionText m_optionPrefab;
+        [SerializeField, Tooltip("The image used to display look of the speaker. This field is optional.")] private Image m_speakerIcon;
+        [SerializeField, Tooltip("The text used to display name of the speaker. This field is optional.")] private TMP_Text m_speakerNameText;
+        [SerializeField, Tooltip("The Image used to display the speech.")] private TMP_Text m_speechText;
+        [SerializeField, Required, Tooltip("The panel that gets activated/deactivated with the dialogue state.")] private GameObject m_panel;
+        [SerializeField, Required, Tooltip("The container for option boxes.")] private Transform m_optionContainer;
+        [SerializeField, Required, Tooltip("The prefab of the option box.")] private OptionText m_optionPrefab;
 
         bool m_occupied = false;
 

@@ -1,3 +1,4 @@
+using com.absence.attributes;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Option Text")]
     public class OptionText : MonoBehaviour
     {
-        [SerializeField] private TMP_Text m_text;
+        [SerializeField, Required, Tooltip("The text that will show the option speech.")] private TMP_Text m_text;
         int m_index;
 
         public Action<int> OnClickAction;

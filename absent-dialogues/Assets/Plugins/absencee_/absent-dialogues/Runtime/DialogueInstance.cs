@@ -13,15 +13,19 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
     public class DialogueInstance : MonoBehaviour
     {
-        [SerializeField] private bool m_startOnAwake = false;
+        [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
+        private bool m_startOnAwake = false;
 
-        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField, Tooltip("The audio source to play dialogue audios. This field is optional.")] private AudioSource m_audioSource;
+
         [SerializeField, HideIf(nameof(m_audioSource), null), Range(0f, 1f)] private float m_audioVolume;
 
         [Space(10)]
 
         [SerializeField, Required] private Dialogue m_dialogue;
-        [SerializeField] private List<Person> m_overridePeople;
+
+        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. Leave empty if you won't use it.")] 
+        private List<Person> m_overridePeople;
 
         private DialoguePlayer m_player;
         public DialoguePlayer Player => m_player;
