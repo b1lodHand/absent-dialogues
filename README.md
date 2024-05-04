@@ -67,4 +67,4 @@ You can find a more detailed documentation here: [Documentation](DOCUMENTATION.m
 
 ## Wrapping up
 
-Thank you for reading this all the way to down here. If you are interested in this project, please consider branching to it. I'd be happy to work with you! I hope this tool helps you on the journey of gamedev. Have a nice day!
+Thank you for reading this all the way to down here. If you are interested in this project, please consider **contributing** to it. I'd be happy to work with you! I hope this tool helps you on the journey of gamedev. Have a nice day!
