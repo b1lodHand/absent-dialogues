@@ -110,4 +110,4 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 
 ## The API Documentation
 
-Thank you for reading this far, dear! These were everything you needed to know about the nodes. For further information, visit: [Documentation](https://b1lodhand.github.io/absent-dialogues/)
+Thank you for reading this far, dear! These were everything you needed to know about the nodes. For further information, visit: [API Documentation](https://b1lodhand.github.io/absent-dialogues/)
