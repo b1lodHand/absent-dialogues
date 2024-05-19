@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  commentId: T:com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  id: ConditionNode.ProcessType
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.ConditionNode.ProcessType.All
+  - com.absence.dialoguesystem.internals.ConditionNode.ProcessType.Any
+  langs:
+  - csharp
+  - vb
+  name: ConditionNode.ProcessType
+  nameWithType: ConditionNode.ProcessType
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ProcessType
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public enum ConditionNode.ProcessType
+    content.vb: Public Enum ConditionNode.ProcessType
+- uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.All
+  commentId: F:com.absence.dialoguesystem.internals.ConditionNode.ProcessType.All
+  id: All
+  parent: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: ConditionNode.ProcessType.All
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.All
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: All
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: All = 0
+    return:
+      type: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+- uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.Any
+  commentId: F:com.absence.dialoguesystem.internals.ConditionNode.ProcessType.Any
+  id: Any
+  parent: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  langs:
+  - csharp
+  - vb
+  name: Any
+  nameWithType: ConditionNode.ProcessType.Any
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.Any
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Any
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Any = 1
+    return:
+      type: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  commentId: T:com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.ConditionNode.html
+  name: ConditionNode.ProcessType
+  nameWithType: ConditionNode.ProcessType
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.ConditionNode
+    name: ConditionNode
+    href: com.absence.dialoguesystem.internals.ConditionNode.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+    name: ProcessType
+    href: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.ConditionNode
+    name: ConditionNode
+    href: com.absence.dialoguesystem.internals.ConditionNode.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+    name: ProcessType
+    href: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.html

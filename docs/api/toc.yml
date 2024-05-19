@@ -1,0 +1,72 @@
+### YamlMime:TableOfContent
+items:
+- uid: com.absence.dialoguesystem
+  name: com.absence.dialoguesystem
+  items:
+  - uid: com.absence.dialoguesystem.Blackboard
+    name: Blackboard
+  - uid: com.absence.dialoguesystem.Dialogue
+    name: Dialogue
+  - uid: com.absence.dialoguesystem.DialogueDisplayer
+    name: DialogueDisplayer
+  - uid: com.absence.dialoguesystem.DialogueInstance
+    name: DialogueInstance
+  - uid: com.absence.dialoguesystem.DialoguePlayer
+    name: DialoguePlayer
+  - uid: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+    name: DialoguePlayer.DialoguePlayerState
+  - uid: com.absence.dialoguesystem.IExternalDialogueElement
+    name: IExternalDialogueElement
+  - uid: com.absence.dialoguesystem.OptionText
+    name: OptionText
+- uid: com.absence.dialoguesystem.editor
+  name: com.absence.dialoguesystem.editor
+  items:
+  - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow
+    name: DialogueEditorWindow
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
+    name: DialogueGraphView
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+    name: DialogueGraphView.UxmlFactory
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+    name: InspectorView.UxmlFactory
+  - uid: com.absence.dialoguesystem.editor.NodeView
+    name: NodeView
+  - uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
+    name: VariableBankCreationHandler
+- uid: com.absence.dialoguesystem.internals
+  name: com.absence.dialoguesystem.internals
+  items:
+  - uid: com.absence.dialoguesystem.internals.ActionNode
+    name: ActionNode
+  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+    name: AdditionalSpeechData
+  - uid: com.absence.dialoguesystem.internals.ConditionNode
+    name: ConditionNode
+  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+    name: ConditionNode.ProcessType
+  - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
+    name: DecisionSpeechNode
+  - uid: com.absence.dialoguesystem.internals.DialoguePartNode
+    name: DialoguePartNode
+  - uid: com.absence.dialoguesystem.internals.FastSpeechNode
+    name: FastSpeechNode
+  - uid: com.absence.dialoguesystem.internals.GotoNode
+    name: GotoNode
+  - uid: com.absence.dialoguesystem.internals.IContainSpeech
+    name: IContainSpeech
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+  - uid: com.absence.dialoguesystem.internals.Node.NodeState
+    name: Node.NodeState
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+  - uid: com.absence.dialoguesystem.internals.RootNode
+    name: RootNode
+  - uid: com.absence.dialoguesystem.internals.StickyNoteNode
+    name: StickyNoteNode
+  - uid: com.absence.dialoguesystem.internals.TitleNode
+    name: TitleNode
+memberLayout: SamePage

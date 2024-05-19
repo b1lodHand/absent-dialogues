@@ -1,0 +1,1359 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Node | absent-dialogues Documentation (test) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Node | absent-dialogues Documentation (test) ">
+      
+      <meta name="description" content="This is the base abstract class to derive from for any new node subtypes.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_Node.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.Node%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="absent-dialogues Documentation (test)">
+            absent-dialogues Documentation (test)
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="com.absence.dialoguesystem.internals.Node">
+
+
+
+  <h1 id="com_absence_dialoguesystem_internals_Node" data-uid="com.absence.dialoguesystem.internals.Node" class="text-break">
+Class Node  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="com.html">com</a>.<a class="xref" href="com.absence.html">absence</a>.<a class="xref" href="com.absence.dialoguesystem.html">dialoguesystem</a>.<a class="xref" href="com.absence.dialoguesystem.internals.html">internals</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This is the base abstract class to derive from for any new node subtypes.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Node : ScriptableObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">ScriptableObject</span></div>
+      <div><span class="xref">Node</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.ActionNode.html">ActionNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.ConditionNode.html">ConditionNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.DecisionSpeechNode.html">DecisionSpeechNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.DialoguePartNode.html">DialoguePartNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.FastSpeechNode.html">FastSpeechNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.GotoNode.html">GotoNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.RootNode.html">RootNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.StickyNoteNode.html">StickyNoteNode</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.TitleNode.html">TitleNode</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">ScriptableObject.SetDirty()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Blackboard" data-uid="com.absence.dialoguesystem.internals.Node.Blackboard">
+  Blackboard
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Blackboard Blackboard</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="com.absence.dialoguesystem.Blackboard.html">Blackboard</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards" data-uid="com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards">
+  ExitDialogAfterwards
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Toggling this on will make the dialogue exit right after this node getting passed.&quot;)]
+public bool ExitDialogAfterwards</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Guid" data-uid="com.absence.dialoguesystem.internals.Node.Guid">
+  Guid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public string Guid</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_MasterDialogue" data-uid="com.absence.dialoguesystem.internals.Node.MasterDialogue">
+  MasterDialogue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Dialogue MasterDialogue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_PersonIndex" data-uid="com.absence.dialoguesystem.internals.Node.PersonIndex">
+  PersonIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public int PersonIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Position" data-uid="com.absence.dialoguesystem.internals.Node.Position">
+  Position
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector2 Position</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_State" data-uid="com.absence.dialoguesystem.internals.Node.State">
+  State
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Node.NodeState State</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a>.<a class="xref" href="com.absence.dialoguesystem.internals.Node.NodeState.html">NodeState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_DisplayState_" data-uid="com.absence.dialoguesystem.internals.Node.DisplayState*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_DisplayState" data-uid="com.absence.dialoguesystem.internals.Node.DisplayState">
+  DisplayState
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DisplayState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Person_" data-uid="com.absence.dialoguesystem.internals.Node.Person*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Person" data-uid="com.absence.dialoguesystem.internals.Node.Person">
+  Person
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Person Person { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Person</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_PersonDependent_" data-uid="com.absence.dialoguesystem.internals.Node.PersonDependent*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_PersonDependent" data-uid="com.absence.dialoguesystem.internals.Node.PersonDependent">
+  PersonDependent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool PersonDependent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_ShowInMinimap_" data-uid="com.absence.dialoguesystem.internals.Node.ShowInMinimap*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_ShowInMinimap" data-uid="com.absence.dialoguesystem.internals.Node.ShowInMinimap">
+  ShowInMinimap
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ShowInMinimap { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_AddNextNode_" data-uid="com.absence.dialoguesystem.internals.Node.AddNextNode*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_AddNextNode_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.Node.AddNextNode(com.absence.dialoguesystem.internals.Node,System.Int32)">
+  AddNextNode(Node, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNextNode(Node nextWillBeAdded, int atPort)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nextWillBeAdded</code> <a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>atPort</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_AddNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.Node.AddNextNode_Inline*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.Node.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">
+  AddNextNode_Inline(Node, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to write the functionality of connecting a node to any port of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void AddNextNode_Inline(Node nextWillBeAdded, int atPort)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nextWillBeAdded</code> <a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>atPort</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Clone_" data-uid="com.absence.dialoguesystem.internals.Node.Clone*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Clone" data-uid="com.absence.dialoguesystem.internals.Node.Clone">
+  Clone()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to clone this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Node Clone()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetClassName_" data-uid="com.absence.dialoguesystem.internals.Node.GetClassName*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetClassName" data-uid="com.absence.dialoguesystem.internals.Node.GetClassName">
+  GetClassName()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use if you have a special USS class for this node. If you don't have any, return null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string GetClassName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Returns the USS class name of this node type as a string.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetInputPortNameForCreation_" data-uid="com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetInputPortNameForCreation" data-uid="com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation">
+  GetInputPortNameForCreation()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to describe the name of the input port of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string GetInputPortNameForCreation()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Returns the name as a string. Return null if you don't want any input ports.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetNextNodes_" data-uid="com.absence.dialoguesystem.internals.Node.GetNextNodes*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetNextNodes" data-uid="com.absence.dialoguesystem.internals.Node.GetNextNodes">
+  GetNextNodes()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;(int portIndex, Node node)&gt; GetNextNodes()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,com.absence.dialoguesystem.internals.node-.portindex">portIndex</a>, <a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,com.absence.dialoguesystem.internals.node-.node">node</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.Node.GetNextNodes_Inline*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.Node.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">
+  GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to describe the editor which nodes are the next nodes of this one in the chain by modifying the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,com.absence.dialoguesystem.internals.node-.portindex">portIndex</a>, <a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,com.absence.dialoguesystem.internals.node-.node">node</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetOutputPortNamesForCreation_" data-uid="com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetOutputPortNamesForCreation" data-uid="com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation">
+  GetOutputPortNamesForCreation()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to describe the dialogue editor how many output ports this node has and what are their names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual List&lt;string&gt; GetOutputPortNamesForCreation()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Returns the port names as a list of strings. Return an empty list if you want no output ports.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_GetTitle_" data-uid="com.absence.dialoguesystem.internals.Node.GetTitle*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_GetTitle" data-uid="com.absence.dialoguesystem.internals.Node.GetTitle">
+  GetTitle()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to  set the title of this node type in the graph view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string GetTitle()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The title as a string.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_OnRemoval_" data-uid="com.absence.dialoguesystem.internals.Node.OnRemoval*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnRemoval" data-uid="com.absence.dialoguesystem.internals.Node.OnRemoval">
+  OnRemoval()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRemoval()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Pass_" data-uid="com.absence.dialoguesystem.internals.Node.Pass*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Pass_System_Object___" data-uid="com.absence.dialoguesystem.internals.Node.Pass(System.Object[])">
+  Pass(params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Pass(params object[] passData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>passData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Pass_Inline_" data-uid="com.absence.dialoguesystem.internals.Node.Pass_Inline*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])">
+  Pass_Inline(params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Pass_Inline(params object[] passData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>passData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Reach_" data-uid="com.absence.dialoguesystem.internals.Node.Reach*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Reach" data-uid="com.absence.dialoguesystem.internals.Node.Reach">
+  Reach()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reach()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_Reach_Inline_" data-uid="com.absence.dialoguesystem.internals.Node.Reach_Inline*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.Node.Reach_Inline">
+  Reach_Inline()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to write what happens when the dialogue reaches this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Reach_Inline()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_RemoveNextNode_" data-uid="com.absence.dialoguesystem.internals.Node.RemoveNextNode*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_RemoveNextNode_System_Int32_" data-uid="com.absence.dialoguesystem.internals.Node.RemoveNextNode(System.Int32)">
+  RemoveNextNode(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveNextNode(int atPort)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>atPort</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_RemoveNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.Node.RemoveNextNode_Inline*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.Node.RemoveNextNode_Inline(System.Int32)">
+  RemoveNextNode_Inline(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to write the functionality of removing the next node of this one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void RemoveNextNode_Inline(int atPort)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>atPort</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_internals_Node_SetState_" data-uid="com.absence.dialoguesystem.internals.Node.SetState*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_SetState_com_absence_dialoguesystem_internals_Node_NodeState_" data-uid="com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)">
+  SetState(NodeState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to set the flow state of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetState(Node.NodeState newState)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newState</code> <a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a>.<a class="xref" href="com.absence.dialoguesystem.internals.Node.NodeState.html">NodeState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnPass" data-uid="com.absence.dialoguesystem.internals.Node.OnPass">
+  OnPass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnPass</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnReach" data-uid="com.absence.dialoguesystem.internals.Node.OnReach">
+  OnReach
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnReach</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnRemove" data-uid="com.absence.dialoguesystem.internals.Node.OnRemove">
+  OnRemove
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnRemove</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnSetState" data-uid="com.absence.dialoguesystem.internals.Node.OnSetState">
+  OnSetState
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Node.NodeState&gt; OnSetState</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a>.<a class="xref" href="com.absence.dialoguesystem.internals.Node.NodeState.html">NodeState</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="com_absence_dialoguesystem_internals_Node_OnValidation" data-uid="com.absence.dialoguesystem.internals.Node.OnValidation">
+  OnValidation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnValidation</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

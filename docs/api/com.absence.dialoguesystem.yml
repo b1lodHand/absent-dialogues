@@ -1,0 +1,122 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  id: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.Blackboard
+  - com.absence.dialoguesystem.Dialogue
+  - com.absence.dialoguesystem.DialogueDisplayer
+  - com.absence.dialoguesystem.DialogueInstance
+  - com.absence.dialoguesystem.DialoguePlayer
+  - com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+  - com.absence.dialoguesystem.IExternalDialogueElement
+  - com.absence.dialoguesystem.OptionText
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.DialoguePlayer
+  commentId: T:com.absence.dialoguesystem.DialoguePlayer
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialoguePlayer.html
+  name: DialoguePlayer
+  nameWithType: DialoguePlayer
+  fullName: com.absence.dialoguesystem.DialoguePlayer
+- uid: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+  commentId: T:com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialoguePlayer.html
+  name: DialoguePlayer.DialoguePlayerState
+  nameWithType: DialoguePlayer.DialoguePlayerState
+  fullName: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialoguePlayer
+    name: DialoguePlayer
+    href: com.absence.dialoguesystem.DialoguePlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+    name: DialoguePlayerState
+    href: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialoguePlayer
+    name: DialoguePlayer
+    href: com.absence.dialoguesystem.DialoguePlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
+    name: DialoguePlayerState
+    href: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.html
+- uid: com.absence.dialoguesystem.OptionText
+  commentId: T:com.absence.dialoguesystem.OptionText
+  href: com.absence.dialoguesystem.OptionText.html
+  name: OptionText
+  nameWithType: OptionText
+  fullName: com.absence.dialoguesystem.OptionText
+- uid: com.absence.dialoguesystem.IExternalDialogueElement
+  commentId: T:com.absence.dialoguesystem.IExternalDialogueElement
+  href: com.absence.dialoguesystem.IExternalDialogueElement.html
+  name: IExternalDialogueElement
+  nameWithType: IExternalDialogueElement
+  fullName: com.absence.dialoguesystem.IExternalDialogueElement
+- uid: com.absence.dialoguesystem.DialogueInstance
+  commentId: T:com.absence.dialoguesystem.DialogueInstance
+  href: com.absence.dialoguesystem.DialogueInstance.html
+  name: DialogueInstance
+  nameWithType: DialogueInstance
+  fullName: com.absence.dialoguesystem.DialogueInstance
+- uid: com.absence.dialoguesystem.DialogueDisplayer
+  commentId: T:com.absence.dialoguesystem.DialogueDisplayer
+  href: com.absence.dialoguesystem.DialogueDisplayer.html
+  name: DialogueDisplayer
+  nameWithType: DialogueDisplayer
+  fullName: com.absence.dialoguesystem.DialogueDisplayer
+- uid: com.absence.dialoguesystem.Blackboard
+  commentId: T:com.absence.dialoguesystem.Blackboard
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Blackboard.html
+  name: Blackboard
+  nameWithType: Blackboard
+  fullName: com.absence.dialoguesystem.Blackboard
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html

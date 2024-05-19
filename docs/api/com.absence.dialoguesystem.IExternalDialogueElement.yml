@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.IExternalDialogueElement
+  commentId: T:com.absence.dialoguesystem.IExternalDialogueElement
+  id: IExternalDialogueElement
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.IExternalDialogueElement.Initialize(com.absence.dialoguesystem.Dialogue)
+  langs:
+  - csharp
+  - vb
+  name: IExternalDialogueElement
+  nameWithType: IExternalDialogueElement
+  fullName: com.absence.dialoguesystem.IExternalDialogueElement
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/External/IExternalDialogueElement.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IExternalDialogueElement
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/External/IExternalDialogueElement.cs
+    startLine: 3
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public interface IExternalDialogueElement
+    content.vb: Public Interface IExternalDialogueElement
+- uid: com.absence.dialoguesystem.IExternalDialogueElement.Initialize(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.IExternalDialogueElement.Initialize(com.absence.dialoguesystem.Dialogue)
+  id: Initialize(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.IExternalDialogueElement
+  langs:
+  - csharp
+  - vb
+  name: Initialize(Dialogue)
+  nameWithType: IExternalDialogueElement.Initialize(Dialogue)
+  fullName: com.absence.dialoguesystem.IExternalDialogueElement.Initialize(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/External/IExternalDialogueElement.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Initialize
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/External/IExternalDialogueElement.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: void Initialize(Dialogue dialogue)
+    parameters:
+    - id: dialogue
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: Sub Initialize(dialogue As Dialogue)
+  overload: com.absence.dialoguesystem.IExternalDialogueElement.Initialize*
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.IExternalDialogueElement.Initialize*
+  commentId: Overload:com.absence.dialoguesystem.IExternalDialogueElement.Initialize
+  href: com.absence.dialoguesystem.IExternalDialogueElement.html#com_absence_dialoguesystem_IExternalDialogueElement_Initialize_com_absence_dialoguesystem_Dialogue_
+  name: Initialize
+  nameWithType: IExternalDialogueElement.Initialize
+  fullName: com.absence.dialoguesystem.IExternalDialogueElement.Initialize
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue

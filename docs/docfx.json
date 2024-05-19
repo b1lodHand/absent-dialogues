@@ -1,0 +1,47 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "D:\\UnityLibrary\\Other\\absent-dialogues\\absent-dialogues",
+          "files":[
+            "Assembly-CSharp-Editor-firstpass.csproj",
+            "Assembly-CSharp-firstpass.csproj"
+          ]
+        }
+      ],
+  
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "absent-dialogues Documentation (test)",
+      "_appTitle": "absent-dialogues Documentation (test)",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}

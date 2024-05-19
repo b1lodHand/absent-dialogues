@@ -1,0 +1,843 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  id: InspectorView.UxmlFactory
+  parent: com.absence.dialoguesystem.editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: InspectorView.UxmlFactory
+  nameWithType: InspectorView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: UxmlFactory
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: 'public class InspectorView.UxmlFactory : UxmlFactory<InspectorView, VisualElement.UxmlTraits>, IUxmlFactory, IBaseUxmlFactory'
+    content.vb: Public Class InspectorView.UxmlFactory Inherits UxmlFactory(Of InspectorView, VisualElement.UxmlTraits) Implements IUxmlFactory, IBaseUxmlFactory
+  inheritance:
+  - System.Object
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  - UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  implements:
+  - UnityEngine.UIElements.IUxmlFactory
+  - UnityEngine.UIElements.IBaseUxmlFactory
+  inheritedMembers:
+  - UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlName
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlNamespace
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlQualifiedName
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlType
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.canHaveAnyAttribute
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlAttributesDescription
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlChildElementsDescription
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeName
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeNamespace
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeQualifiedName
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  commentId: T:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  parent: UnityEngine.UIElements
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2
+  href: com.absence.dialoguesystem.editor.InspectorView.html
+  name: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits)
+  name.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: <
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  commentId: T:UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  parent: UnityEngine.UIElements
+  definition: UnityEngine.UIElements.UxmlFactory`2
+  href: com.absence.dialoguesystem.editor.InspectorView.html
+  name: UxmlFactory<InspectorView, VisualElement.UxmlTraits>
+  nameWithType: UxmlFactory<InspectorView, VisualElement.UxmlTraits>
+  fullName: UnityEngine.UIElements.UxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>
+  nameWithType.vb: UxmlFactory(Of InspectorView, VisualElement.UxmlTraits)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits)
+  name.vb: UxmlFactory(Of InspectorView, VisualElement.UxmlTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: <
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.IUxmlFactory
+  commentId: T:UnityEngine.UIElements.IUxmlFactory
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IUxmlFactory
+  nameWithType: IUxmlFactory
+  fullName: UnityEngine.UIElements.IUxmlFactory
+- uid: UnityEngine.UIElements.IBaseUxmlFactory
+  commentId: T:UnityEngine.UIElements.IBaseUxmlFactory
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IBaseUxmlFactory
+  nameWithType: IBaseUxmlFactory
+  fullName: UnityEngine.UIElements.IBaseUxmlFactory
+- uid: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  commentId: M:UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  parent: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.UxmlFactory`2.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  name: Create(IUxmlAttributes, CreationContext)
+  nameWithType: UxmlFactory<InspectorView, VisualElement.UxmlTraits>.Create(IUxmlAttributes, CreationContext)
+  fullName: UnityEngine.UIElements.UxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.Create(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  nameWithType.vb: UxmlFactory(Of InspectorView, VisualElement.UxmlTraits).Create(IUxmlAttributes, CreationContext)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).Create(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: Create
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: Create
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  commentId: M:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  name: AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: AcceptsAttributeBag
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: AcceptsAttributeBag
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlName
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlName
+  name: uxmlName
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlName
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlName
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlNamespace
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlNamespace
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlNamespace
+  name: uxmlNamespace
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlNamespace
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlNamespace
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlNamespace
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlNamespace
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlQualifiedName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlQualifiedName
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlQualifiedName
+  name: uxmlQualifiedName
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlQualifiedName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlQualifiedName
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlQualifiedName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlQualifiedName
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlType
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlType
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlType
+  name: uxmlType
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlType
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlType
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlType
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlType
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.canHaveAnyAttribute
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.canHaveAnyAttribute
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.canHaveAnyAttribute
+  name: canHaveAnyAttribute
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.canHaveAnyAttribute
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.canHaveAnyAttribute
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).canHaveAnyAttribute
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).canHaveAnyAttribute
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlAttributesDescription
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlAttributesDescription
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlAttributesDescription
+  name: uxmlAttributesDescription
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlAttributesDescription
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlAttributesDescription
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlAttributesDescription
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlAttributesDescription
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlChildElementsDescription
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.uxmlChildElementsDescription
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlChildElementsDescription
+  name: uxmlChildElementsDescription
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.uxmlChildElementsDescription
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.uxmlChildElementsDescription
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).uxmlChildElementsDescription
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).uxmlChildElementsDescription
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeName
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeName
+  name: substituteForTypeName
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.substituteForTypeName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.substituteForTypeName
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).substituteForTypeName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).substituteForTypeName
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeNamespace
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeNamespace
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeNamespace
+  name: substituteForTypeNamespace
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.substituteForTypeNamespace
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.substituteForTypeNamespace
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).substituteForTypeNamespace
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).substituteForTypeNamespace
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeQualifiedName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}.substituteForTypeQualifiedName
+  parent: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.InspectorView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeQualifiedName
+  name: substituteForTypeQualifiedName
+  nameWithType: BaseUxmlFactory<InspectorView, VisualElement.UxmlTraits>.substituteForTypeQualifiedName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits>.substituteForTypeQualifiedName
+  nameWithType.vb: BaseUxmlFactory(Of InspectorView, VisualElement.UxmlTraits).substituteForTypeQualifiedName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.InspectorView, UnityEngine.UIElements.VisualElement.UxmlTraits).substituteForTypeQualifiedName
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2
+  commentId: T:UnityEngine.UIElements.BaseUxmlFactory`2
+  isExternal: true
+  name: BaseUxmlFactory<TCreatedType, TTraits>
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits)
+  name.vb: BaseUxmlFactory(Of TCreatedType, TTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: <
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: )
+- uid: UnityEngine.UIElements
+  commentId: N:UnityEngine.UIElements
+  isExternal: true
+  name: UnityEngine.UIElements
+  nameWithType: UnityEngine.UIElements
+  fullName: UnityEngine.UIElements
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+- uid: UnityEngine.UIElements.UxmlFactory`2
+  commentId: T:UnityEngine.UIElements.UxmlFactory`2
+  isExternal: true
+  name: UxmlFactory<TCreatedType, TTraits>
+  nameWithType: UxmlFactory<TCreatedType, TTraits>
+  fullName: UnityEngine.UIElements.UxmlFactory<TCreatedType, TTraits>
+  nameWithType.vb: UxmlFactory(Of TCreatedType, TTraits)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of TCreatedType, TTraits)
+  name.vb: UxmlFactory(Of TCreatedType, TTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: <
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: )
+- uid: UnityEngine.UIElements.UxmlFactory`2.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  commentId: M:UnityEngine.UIElements.UxmlFactory`2.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  isExternal: true
+  name: Create(IUxmlAttributes, CreationContext)
+  nameWithType: UxmlFactory<TCreatedType, TTraits>.Create(IUxmlAttributes, CreationContext)
+  fullName: UnityEngine.UIElements.UxmlFactory<TCreatedType, TTraits>.Create(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  nameWithType.vb: UxmlFactory(Of TCreatedType, TTraits).Create(IUxmlAttributes, CreationContext)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of TCreatedType, TTraits).Create(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory`2.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: Create
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory`2.Create(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: Create
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  commentId: M:UnityEngine.UIElements.BaseUxmlFactory`2.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+  isExternal: true
+  name: AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).AcceptsAttributeBag(IUxmlAttributes, CreationContext)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes, UnityEngine.UIElements.CreationContext)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: AcceptsAttributeBag
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2.AcceptsAttributeBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)
+    name: AcceptsAttributeBag
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.IUxmlAttributes
+    name: IUxmlAttributes
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.CreationContext
+    name: CreationContext
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlName
+  isExternal: true
+  name: uxmlName
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlName
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlName
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlNamespace
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlNamespace
+  isExternal: true
+  name: uxmlNamespace
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlNamespace
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlNamespace
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlNamespace
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlNamespace
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlQualifiedName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlQualifiedName
+  isExternal: true
+  name: uxmlQualifiedName
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlQualifiedName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlQualifiedName
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlQualifiedName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlQualifiedName
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlType
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlType
+  isExternal: true
+  name: uxmlType
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlType
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlType
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlType
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlType
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.canHaveAnyAttribute
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.canHaveAnyAttribute
+  isExternal: true
+  name: canHaveAnyAttribute
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.canHaveAnyAttribute
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.canHaveAnyAttribute
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).canHaveAnyAttribute
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).canHaveAnyAttribute
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlAttributesDescription
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlAttributesDescription
+  isExternal: true
+  name: uxmlAttributesDescription
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlAttributesDescription
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlAttributesDescription
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlAttributesDescription
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlAttributesDescription
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.uxmlChildElementsDescription
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.uxmlChildElementsDescription
+  isExternal: true
+  name: uxmlChildElementsDescription
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.uxmlChildElementsDescription
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.uxmlChildElementsDescription
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).uxmlChildElementsDescription
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).uxmlChildElementsDescription
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeName
+  isExternal: true
+  name: substituteForTypeName
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeName
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeName
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeNamespace
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeNamespace
+  isExternal: true
+  name: substituteForTypeNamespace
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeNamespace
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeNamespace
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeNamespace
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeNamespace
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeQualifiedName
+  commentId: P:UnityEngine.UIElements.BaseUxmlFactory`2.substituteForTypeQualifiedName
+  isExternal: true
+  name: substituteForTypeQualifiedName
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeQualifiedName
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>.substituteForTypeQualifiedName
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeQualifiedName
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits).substituteForTypeQualifiedName
