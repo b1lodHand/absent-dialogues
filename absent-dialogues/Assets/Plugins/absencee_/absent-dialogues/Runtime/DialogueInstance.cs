@@ -1,6 +1,6 @@
 using com.absence.attributes;
+using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
-using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +16,6 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
-        [SerializeField, Tooltip("The audio source to play dialogue audios. This field is optional.")] private AudioSource m_audioSource;
-
-        [SerializeField, HideIf(nameof(m_audioSource), null), Range(0f, 1f)] private float m_audioVolume;
-
         [Space(10)]
 
         [SerializeField, Required] private Dialogue m_dialogue;
@@ -29,6 +25,8 @@ namespace com.absence.dialoguesystem
 
         private DialoguePlayer m_player;
         public DialoguePlayer Player => m_player;
+
+        public event Action<AdditionalSpeechData> OnHandleAdditionalData;
 
         bool m_inDialogue = false;
 
@@ -105,12 +103,9 @@ namespace com.absence.dialoguesystem
             }
         }
 
-        protected virtual void HandleAdditionalData()
+        private void HandleAdditionalData()
         {
-            if (m_audioSource == null) return;
-
-            if (m_audioSource.isPlaying) m_audioSource.Stop();
-            if (m_player.AdditionalSpeechData.AudioClip != null) m_audioSource.PlayOneShot(m_player.AdditionalSpeechData.AudioClip, m_audioVolume);
+            OnHandleAdditionalData?.Invoke(this.Player.AdditionalSpeechData);
         }
 
         private void OnApplicationQuit()
@@ -119,6 +114,17 @@ namespace com.absence.dialoguesystem
             m_player.RevertPeople();
 
             m_player.OnContinue -= OnPlayerContinue;
+        }
+
+        /// <summary>
+        /// Adds a <see cref="DialogueExtensionBase"/> to the target dialogue instance. Does not work runtime.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void AddExtension<T>() where T : DialogueExtensionBase
+        {
+            if (Application.isPlaying) return;
+
+            gameObject.AddComponent<T>();
         }
     }
 }

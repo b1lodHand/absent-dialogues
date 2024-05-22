@@ -603,8 +603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
-  m_audioSource: {fileID: 0}
-  m_audioVolume: 0
   m_dialogue: {fileID: 0}
   m_overridePeople: []
 --- !u!1 &673667125
@@ -1099,7 +1097,7 @@ MonoBehaviour:
   m_speechText: {fileID: 1363931373}
   m_panel: {fileID: 873511972}
   m_optionContainer: {fileID: 1578477568}
-  m_optionPrefab: {fileID: 6817177061115473699, guid: d52a7277da12cec44a8c837075a1b069, type: 3}
+  m_optionPrefab: {fileID: 6817177061115473699, guid: 496b77bceaf7fd6448ac85fa792367a8, type: 3}
 --- !u!1 &1363931371
 GameObject:
   m_ObjectHideFlags: 0

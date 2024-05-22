@@ -67,10 +67,10 @@ MonoBehaviour:
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
-    AudioClip: {fileID: 0}
-    Animation: {fileID: 0}
-    Sprite: {fileID: 0}
-    Keyword: 
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
   Next: {fileID: 6602897084972744239}
   Speech: fast speech example (press space)
 --- !u!114 &-6500224830323563992
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode: {fileID: -8570237213173099237}
   LastOrCurrentNode: {fileID: 6602897084972744239}
-  LastOrCurrentSpeechNode: {fileID: 6602897084972744239}
   AllNodes:
   - {fileID: -8570237213173099237}
   - {fileID: -7128887067038950444}
@@ -222,7 +221,7 @@ MonoBehaviour:
   m_Name: TitleNode
   m_EditorClassIdentifier: 
   Guid: 402b04d60ced4034c8b96f270e324a2c
-  Position: {x: 233.39565, y: 179.79124}
+  Position: {x: 238.99997, y: 204}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -279,10 +278,10 @@ MonoBehaviour:
   ExitDialogAfterwards: 0
   PersonIndex: 1
   m_additionalData:
-    AudioClip: {fileID: 0}
-    Animation: {fileID: 0}
-    Sprite: {fileID: 0}
-    Keyword: 
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
   Options:
   - Speech: option 1.
     UseShowIf: 0
@@ -296,10 +295,10 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 213386342176865088}
     AdditionalData:
-      AudioClip: {fileID: 0}
-      Animation: {fileID: 0}
-      Sprite: {fileID: 0}
-      Keyword: 
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
   - Speech: option 2.
     UseShowIf: 0
     ShowIf:
@@ -312,10 +311,10 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 4288233897331555536}
     AdditionalData:
-      AudioClip: {fileID: 0}
-      Animation: {fileID: 0}
-      Sprite: {fileID: 0}
-      Keyword: 
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
   - Speech: option 3.
     UseShowIf: 0
     ShowIf:
@@ -328,8 +327,8 @@ MonoBehaviour:
       m_boolValue: 0
     LeadsTo: {fileID: 345333829215211219}
     AdditionalData:
-      AudioClip: {fileID: 0}
-      Animation: {fileID: 0}
-      Sprite: {fileID: 0}
-      Keyword: 
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
   Speech: decisive speech example

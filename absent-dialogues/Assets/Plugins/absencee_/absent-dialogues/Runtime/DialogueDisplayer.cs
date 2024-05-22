@@ -15,12 +15,24 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
+        [Header("Speaker Fields")]
+
         [SerializeField, Tooltip("The image used to display look of the speaker. This field is optional.")] private Image m_speakerIcon;
         [SerializeField, Tooltip("The text used to display name of the speaker. This field is optional.")] private TMP_Text m_speakerNameText;
         [SerializeField, Tooltip("The Image used to display the speech.")] private TMP_Text m_speechText;
+
+        [Space(10)]
+
+        [Header("Utility Fields")]
+
         [SerializeField, Required, Tooltip("The panel that gets activated/deactivated with the dialogue state.")] private GameObject m_panel;
+
+        [Space(10)]
+
+        [Header("Option Fields")]
+
         [SerializeField, Required, Tooltip("The container for option boxes.")] private Transform m_optionContainer;
-        [SerializeField, Required, Tooltip("The prefab of the option box.")] private OptionText m_optionPrefab;
+        [SerializeField, Required, Tooltip("The prefab of the option box.")] private DialogueOptionText m_optionPrefab;
 
         bool m_occupied = false;
 
