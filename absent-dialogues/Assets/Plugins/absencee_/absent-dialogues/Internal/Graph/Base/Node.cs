@@ -165,7 +165,7 @@ namespace com.absence.dialoguesystem.internals
     public interface IContainSpeech
     {
         public string GetSpeech();
-        public string[] GetOptions();
+        public List<Option> GetOptions();
         public AdditionalSpeechData GetAdditionalSpeechData();
     }
 

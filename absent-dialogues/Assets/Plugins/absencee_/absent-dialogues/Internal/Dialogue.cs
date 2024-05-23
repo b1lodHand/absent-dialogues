@@ -167,6 +167,7 @@ namespace com.absence.dialoguesystem
         public void ResetProgress()
         {
             AllNodes.ForEach(n => n.SetState(Node.NodeState.Unreached));
+
             RootNode.Reach();
         }
     }

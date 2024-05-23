@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialoguePartNode
   m_EditorClassIdentifier: 
   Guid: b6142789a643f71408a58c05de925814
-  Position: {x: 53, y: 71}
+  Position: {x: 38.99996, y: 80}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: c6b81edb3fcfccb4da0b8d55b66288b8
-  Position: {x: 31.235003, y: -20.097483}
+  Position: {x: 6.9999313, y: -12.500012}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 5ef3a9c7a77b2b540ac7ed62fb3b2447
-  Position: {x: 244, y: 6}
+  Position: {x: 217, y: 14}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: StickyNoteNode
   m_EditorClassIdentifier: 
   Guid: 863afd05e6a4c2440bcfb46b14733098
-  Position: {x: 269.47913, y: 119.707726}
+  Position: {x: 256, y: 145}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}
@@ -174,7 +174,14 @@ MonoBehaviour:
   TrueNext: {fileID: 4288233897331555536}
   FalseNext: {fileID: 2218299684729963074}
   Processor: 0
-  Comparers: []
+  Comparers:
+  - m_comparisonType: 2
+    m_targetBank: {fileID: -5163736431018240990, guid: 35c89c1a802c9264aa14f22664d418b8, type: 2}
+    m_targetVariableName: 'null: null'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
 --- !u!114 &2218299684729963074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +250,7 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 5c47d2fec08b919498e8180c3c3bf34f
-  Position: {x: 1077, y: 213}
+  Position: {x: 1073, y: 210}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 11400000, guid: 2a629ebb132bc6f44b8f076f9992e7f7, type: 2}

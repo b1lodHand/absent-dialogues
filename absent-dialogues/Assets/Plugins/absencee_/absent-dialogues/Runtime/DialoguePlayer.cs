@@ -1,9 +1,7 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
@@ -34,7 +32,9 @@ namespace com.absence.dialoguesystem
         public Person Speaker => m_dialogue.LastOrCurrentNode.Person;
         public AdditionalSpeechData AdditionalSpeechData => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetAdditionalSpeechData();
         public string Speech => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetSpeech();
-        public string[] Options => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetOptions();
+        public List<Option> Options => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetOptions();
+
+        public bool HasSpeech => (m_dialogue.LastOrCurrentNode is IContainSpeech);
 
         /// <summary>
         /// Use to create a new <see cref="DialoguePlayer"/>.

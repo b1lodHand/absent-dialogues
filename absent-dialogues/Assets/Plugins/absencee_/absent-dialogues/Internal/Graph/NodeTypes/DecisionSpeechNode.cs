@@ -61,7 +61,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public string GetSpeech() => Speech;
-        public string[] GetOptions() => Options.ToList().ConvertAll(n => n.Speech).ToArray();
+        public List<Option> GetOptions() => Options;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
     }
 

@@ -16,6 +16,9 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
+        [SerializeField, Tooltip("When enabled, the progress will be saved even if you play the game in the Unity Editor.")]
+        private bool m_saveProgressInEditor = false;
+
         [Space(10)]
 
         [SerializeField, Required] private Dialogue m_dialogue;
@@ -105,7 +108,9 @@ namespace com.absence.dialoguesystem
 
         private void HandleAdditionalData()
         {
-            OnHandleAdditionalData?.Invoke(this.Player.AdditionalSpeechData);
+            if (!Player.HasSpeech) return;
+
+            OnHandleAdditionalData?.Invoke(Player.AdditionalSpeechData);
         }
 
         private void OnApplicationQuit()
@@ -114,6 +119,11 @@ namespace com.absence.dialoguesystem
             m_player.RevertPeople();
 
             m_player.OnContinue -= OnPlayerContinue;
+
+            if(Application.isEditor && !m_saveProgressInEditor)
+            {
+                m_dialogue.ResetProgress();
+            }
         }
 
         /// <summary>
