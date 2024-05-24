@@ -16,12 +16,9 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
-        [SerializeField, Tooltip("When enabled, the progress will be saved even if you play the game in the Unity Editor.")]
-        private bool m_saveProgressInEditor = false;
-
         [Space(10)]
 
-        [SerializeField, Required] private Dialogue m_dialogue;
+        [SerializeField, Required] private Dialogue m_referencedDialogue;
 
         [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. Leave empty if you won't use it.")] 
         private List<Person> m_overridePeople;
@@ -33,23 +30,19 @@ namespace com.absence.dialoguesystem
 
         bool m_inDialogue = false;
 
+        private void Awake()
+        {
+            if(m_referencedDialogue != null) m_player = new DialoguePlayer(m_referencedDialogue);
+        }
+
         private void Start()
         {
-            if(m_dialogue != null) m_player = new DialoguePlayer(m_dialogue);
             if (m_startOnAwake) EnterDialogue();
         }
 
         private void Update()
         {
             if (!m_inDialogue) return;
-
-            if(Player.State == DialoguePlayer.DialoguePlayerState.WaitingForSkip)
-                if (CheckSkipInput()) Player.Continue();
-        }
-
-        private bool CheckSkipInput()
-        {
-            return Input.GetKeyDown(KeyCode.Space);
         }
 
         public bool EnterDialogue()
@@ -119,11 +112,6 @@ namespace com.absence.dialoguesystem
             m_player.RevertPeople();
 
             m_player.OnContinue -= OnPlayerContinue;
-
-            if(Application.isEditor && !m_saveProgressInEditor)
-            {
-                m_dialogue.ResetProgress();
-            }
         }
 
         /// <summary>

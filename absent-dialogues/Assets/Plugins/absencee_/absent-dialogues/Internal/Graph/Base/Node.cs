@@ -148,9 +148,15 @@ namespace com.absence.dialoguesystem.internals
         }
 
         /// <summary>
-        /// Use to clone this node.
+        /// Use to clone this node. 
+        /// <br></br>
+        /// <br></br>
+        /// <b>CAUTION!</b> It works as a traverse function. If you clone any node,
+        /// it will automatically clone any node connected to it (forward-only). But the <see cref="GotoNode"/> won't clone
+        /// the <see cref="DialoguePartNode"/> referenced to it. Simply because they are not connected directly.
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public virtual Node Clone()
         {
             return Instantiate(this);

@@ -336,10 +336,10 @@ namespace com.absence.dialoguesystem.editor
 
             showIfToggle.RegisterValueChangedCallback(evt =>
             {
-                showIfContainer.SetEnabled(evt.newValue);
+                showIfContainer.visible = (evt.newValue);
             });
 
-            showIfContainer.SetEnabled(showIfToggle.value);
+            showIfContainer.visible = (showIfToggle.value);
 
             removeButton.tooltip = "Remove this option.";
             showIfToggle.tooltip = "If this checkbox is checked, the show if panel on the right will get enabled. For more details, hover it.";

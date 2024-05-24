@@ -466,7 +466,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.3243592, g: 0.33396375, b: 0.3490566, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 560826870}
   - component: {fileID: 560826871}
   - component: {fileID: 560826872}
+  - component: {fileID: 560826873}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -604,8 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
-  m_saveProgressInEditor: 0
-  m_dialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
+  m_referencedDialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
   m_overridePeople: []
 --- !u!114 &560826872
 MonoBehaviour:
@@ -617,6 +617,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 949126ff226a20a43a04353574b213e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_instance: {fileID: 560826871}
+--- !u!114 &560826873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560826869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb21d1fb152ee994c89557233f5c955b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}

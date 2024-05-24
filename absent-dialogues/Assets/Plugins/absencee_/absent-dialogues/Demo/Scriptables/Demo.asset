@@ -17,7 +17,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -39,7 +38,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -58,12 +56,11 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: 7d72d44870ddbd04abf36ec572209cd1
-  Position: {x: 768, y: -250.00002}
+  Position: {x: 792.00006, y: -581.0002}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
-  State: 0
+  State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -118,11 +115,10 @@ MonoBehaviour:
   m_Name: GotoNode
   m_EditorClassIdentifier: 
   Guid: cb9c55b9e89ca9e41bc40362f6ff788f
-  Position: {x: 1786, y: -373}
+  Position: {x: 1695.6478, y: -454.99994}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -140,12 +136,11 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 377939230d4fb0a4cb39f57545ec231b
-  Position: {x: 1393, y: -147}
+  Position: {x: 1417, y: -478.00018}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
-  State: 0
+  State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -172,7 +167,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -200,9 +194,8 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
-  ExitDialogAfterwards: 1
+  ExitDialogAfterwards: 0
   PersonIndex: 0
   TargetDialogPartName: loop
 --- !u!114 &-1399893973709126951
@@ -218,11 +211,10 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 534, y: 132.5}
+  Position: {x: 550.0001, y: 143.99995}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -249,7 +241,7 @@ MonoBehaviour:
       m_sprite: {fileID: 0}
       m_customInfo: []
   - Speech: I am working on it.
-    UseShowIf: 1
+    UseShowIf: 0
     ShowIf:
       m_comparisonType: 2
       m_targetBank: {fileID: 3482111983400843739}
@@ -282,7 +274,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -294,6 +285,13 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 1
+  - m_setType: 0
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
   UnityEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -311,7 +309,7 @@ MonoBehaviour:
   m_Name: Demo
   m_EditorClassIdentifier: 
   RootNode: {fileID: -9120434286002774121}
-  LastOrCurrentNode: {fileID: -9120434286002774121}
+  LastOrCurrentNode: {fileID: -3899366801720709168}
   AllNodes:
   - {fileID: -9120434286002774121}
   - {fileID: -8258285536222529687}
@@ -333,7 +331,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
 --- !u!114 &1239550416686042660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,21 +348,34 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
-  State: 0
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TrueNext: {fileID: 9119168445957565552}
-  FalseNext: {fileID: -3899366801720709168}
+  TrueNext: {fileID: -3899366801720709168}
+  FalseNext: {fileID: 9119168445957565552}
   Processor: 0
   Comparers:
   - m_comparisonType: 2
     m_targetBank: {fileID: 3482111983400843739}
-    m_targetVariableName: 'bool: b_tookMission'
+    m_targetVariableName: 'bool: b_missionPending'
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
-    m_boolValue: 1
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionDone'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionCommitted'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
 --- !u!114 &1326889792880528920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +393,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -405,7 +414,7 @@ MonoBehaviour:
   m_floats: []
   m_strings: []
   m_booleans:
-  - m_name: b_tookMission
+  - m_name: b_missionPending
     m_value: 0
   - m_name: b_missionDone
     m_value: 0
@@ -428,7 +437,6 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -456,8 +464,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
-  State: 0
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -487,7 +494,7 @@ MonoBehaviour:
     ShowIf:
       m_comparisonType: 2
       m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'bool: b_tookMission'
+      m_targetVariableName: 'bool: b_missionPending'
       m_intValue: 0
       m_floatValue: 0
       m_stringValue: 
@@ -498,7 +505,7 @@ MonoBehaviour:
       m_animMemberName: 
       m_sprite: {fileID: 0}
       m_customInfo: []
-  Speech: Hello mate! What do you want?
+  Speech: So, What do you want?
 --- !u!114 &7512322125377748830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,13 +519,12 @@ MonoBehaviour:
   m_Name: GotoNode
   m_EditorClassIdentifier: 
   Guid: ff39af66e057bbc46bba9a0cab5f57c0
-  Position: {x: 1184, y: 4}
+  Position: {x: 1208.0001, y: -327.00018}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
-  ExitDialogAfterwards: 1
+  ExitDialogAfterwards: 0
   PersonIndex: 0
   TargetDialogPartName: loop
 --- !u!114 &7901140551254700991
@@ -534,18 +540,17 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 041a83cc15b72f744a1842a686410a85
-  Position: {x: 1192, y: -115}
+  Position: {x: 1228.0001, y: -448.00018}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
-  State: 0
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   VBActions:
   - m_setType: 0
     m_targetBank: {fileID: 3482111983400843739}
-    m_targetVariableName: 'bool: b_tookMission'
+    m_targetVariableName: 'bool: b_missionPending'
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -567,13 +572,12 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: d3b46e06c6cbf8347868f38b7c31d4c3
-  Position: {x: 768.0002, y: -487.0501}
+  Position: {x: 784.00006, y: -214.00003}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-    MasterDialogue: {fileID: 11400000}
   State: 0
-  ExitDialogAfterwards: 1
+  ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -591,7 +595,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
-    LeadsTo: {fileID: -3621898333564505408}
+    LeadsTo: {fileID: 7512322125377748830}
     AdditionalData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 

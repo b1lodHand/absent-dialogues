@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
+using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem
 {
@@ -29,6 +30,7 @@ namespace com.absence.dialoguesystem
 
         [SerializeField] private List<Person> m_people = new List<Person>();
         private List<Person> m_tempPeople;
+        private VariableBank m_tempBank;
 
         /// <summary>
         /// People in this dialogue (might be overridden).
@@ -74,11 +76,13 @@ namespace com.absence.dialoguesystem
         /// while keeping the original unchanged.
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public Dialogue Clone()
         {
-            Dialogue dialog = Instantiate(this);
-            dialog.RootNode = this.RootNode.Clone() as RootNode;
-            return dialog;
+            Dialogue dialogue = Instantiate(this);
+            dialogue.Blackboard.Bank = ScriptableObject.Instantiate(dialogue.Blackboard.Bank);
+
+            return dialogue;
         }
 
         /// <summary>
@@ -124,6 +128,8 @@ namespace com.absence.dialoguesystem
                 n.MasterDialogue = this;
             });
 
+            m_tempBank = ScriptableObject.Instantiate(Blackboard.Bank);
+
             RootNode.Reach();
         }
 
@@ -167,7 +173,6 @@ namespace com.absence.dialoguesystem
         public void ResetProgress()
         {
             AllNodes.ForEach(n => n.SetState(Node.NodeState.Unreached));
-
             RootNode.Reach();
         }
     }

@@ -5,35 +5,35 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a2b8a1f0dd21c771929dc9301d30d51c39603545"
+      "hash": "ec4c315733fb2d66d5cd3f40f1285b63b6be1e23"
     },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "480cd33d1e4ad56bab01df2d0bb8a32214aaf523"
+      "hash": "fd70504babcfd71a26bca90f09617f3f0909768e"
     },
     "com.absence.personsystem": {
       "version": "https://github.com/b1lodHand/absent-people.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1269e455b8f904616898d1f6f29a521339f96675"
+      "hash": "54b2ac222c22edcd15aa96c6c99c3de3dee82f4f"
     },
     "com.absence.utilities": {
       "version": "https://github.com/b1lodHand/absent-utilities.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e5c8fedc824cd2151f2c8fb02fdd07978e14c87a"
+      "hash": "720d4e7d0f32230aa08230dfcc749a86fb7a1c73"
     },
     "com.absence.variablesystem": {
       "version": "https://github.com/b1lodHand/absent-variables.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "650f14e3158f1d48999092951035a2304847c552"
+      "hash": "7c8a2f24a6f0857c29d8e2e24479e4cd49df5e5d"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

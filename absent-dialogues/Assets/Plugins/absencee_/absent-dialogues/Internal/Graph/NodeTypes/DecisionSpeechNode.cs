@@ -53,6 +53,11 @@ namespace com.absence.dialoguesystem.internals
         public override Node Clone()
         {
             DecisionSpeechNode node = Instantiate(this);
+            Options.ForEach(opt =>
+            {
+                opt.LeadsTo = opt.LeadsTo.Clone();
+            });
+
             return node;
         }
         public override List<string> GetOutputPortNamesForCreation()

@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem
         }
 
         Dialogue m_dialogue;
-        bool m_overriden = false;
+        public Dialogue Dialogue => m_dialogue;
 
         DialoguePlayerState m_state;
         public DialoguePlayerState State => m_state;
@@ -33,8 +33,9 @@ namespace com.absence.dialoguesystem
         public AdditionalSpeechData AdditionalSpeechData => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetAdditionalSpeechData();
         public string Speech => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetSpeech();
         public List<Option> Options => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetOptions();
-
         public bool HasSpeech => (m_dialogue.LastOrCurrentNode is IContainSpeech);
+
+        bool m_overriden = false;
 
         /// <summary>
         /// Use to create a new <see cref="DialoguePlayer"/>.
@@ -42,9 +43,10 @@ namespace com.absence.dialoguesystem
         /// <param name="dialogue"></param>
         public DialoguePlayer(Dialogue dialogue)
         {
+            //m_dialogue = dialogue.Clone();
             m_dialogue = dialogue;
-            m_dialogue.Bind();
 
+            m_dialogue.Bind();
             m_state = DialoguePlayerState.Idle;
         }
 
