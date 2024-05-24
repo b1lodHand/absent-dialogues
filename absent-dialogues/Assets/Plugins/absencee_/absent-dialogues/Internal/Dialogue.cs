@@ -30,7 +30,6 @@ namespace com.absence.dialoguesystem
 
         [SerializeField] private List<Person> m_people = new List<Person>();
         private List<Person> m_tempPeople;
-        private VariableBank m_tempBank;
 
         /// <summary>
         /// People in this dialogue (might be overridden).
@@ -76,11 +75,66 @@ namespace com.absence.dialoguesystem
         /// while keeping the original unchanged.
         /// </summary>
         /// <returns></returns>
-        [Obsolete]
         public Dialogue Clone()
         {
             Dialogue dialogue = Instantiate(this);
-            dialogue.Blackboard.Bank = ScriptableObject.Instantiate(dialogue.Blackboard.Bank);
+            dialogue.Blackboard = Blackboard.Clone();
+            dialogue.AllNodes.ForEach(node =>
+            {
+                node.MasterDialogue = dialogue;
+                node.Blackboard = dialogue.Blackboard;
+            });
+
+            List<Node> allDialoguePartNodes = AllNodes.Where(node => node is DialoguePartNode).ToList();
+            List<Node> rootChain = new();
+            List<Node> clonedRootChain = new();
+            Dictionary<Node, int> includedDialoguePartNodes = new();
+            List<Node> seperateDialoguePartNodes = new();
+            List<Node> clonedIncludedDPNs = new();
+
+            RootNode.Traverse(node =>
+            {
+                rootChain.Add(node);
+            });
+
+            allDialoguePartNodes.ForEach(dpn =>
+            {
+                if (rootChain.Contains(dpn.GetNextNodes()[0].node)) 
+                    includedDialoguePartNodes.Add(dpn, rootChain.IndexOf(dpn.GetNextNodes()[0].node));
+                else 
+                    seperateDialoguePartNodes.Add(dpn);
+            });
+
+            dialogue.RootNode = (RootNode)RootNode.Clone();
+
+            dialogue.RootNode.Traverse(node =>
+            {
+                clonedRootChain.Add(node);
+            });
+
+            AllNodes.Where(node => node is DialoguePartNode).ToList().ForEach(dpn =>
+            {
+                if(seperateDialoguePartNodes.Contains(dpn))
+                {
+                    dpn = dpn.Clone();
+                    return;
+                }
+            });
+
+            seperateDialoguePartNodes.ForEach(node => node = node.Clone());
+            includedDialoguePartNodes.Keys.ToList().ForEach(dpn =>
+            {
+                int dpnIndex = includedDialoguePartNodes[dpn];
+                dpn = ScriptableObject.Instantiate(dpn);
+                (dpn as DialoguePartNode).Next = clonedRootChain[dpnIndex];
+
+                clonedIncludedDPNs.Add(dpn);
+            });
+
+            dialogue.AllNodes.Clear();
+            dialogue.AllNodes.AddRange(clonedRootChain);
+            dialogue.AllNodes.AddRange(seperateDialoguePartNodes);
+            dialogue.AllNodes.AddRange(clonedIncludedDPNs);
 
             return dialogue;
         }
@@ -127,8 +181,6 @@ namespace com.absence.dialoguesystem
                 n.Blackboard = Blackboard;
                 n.MasterDialogue = this;
             });
-
-            m_tempBank = ScriptableObject.Instantiate(Blackboard.Bank);
 
             RootNode.Reach();
         }

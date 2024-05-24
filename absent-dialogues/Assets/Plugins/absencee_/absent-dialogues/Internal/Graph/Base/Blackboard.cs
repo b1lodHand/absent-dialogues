@@ -17,7 +17,6 @@ namespace com.absence.dialoguesystem
         /// <b>CAUTION.</b> This function <b>DOES NOT</b> clone the <see cref="Blackboard.MasterDialogue"/>.
         /// </summary>
         /// <returns></returns>
-        [Obsolete]
         public Blackboard Clone()
         {
             Blackboard blackboard = new Blackboard();

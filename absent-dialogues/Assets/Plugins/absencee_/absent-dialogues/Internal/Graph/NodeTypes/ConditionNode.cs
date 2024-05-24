@@ -1,4 +1,5 @@
 using com.absence.variablesystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -49,11 +50,25 @@ namespace com.absence.dialoguesystem.internals
 
         public override Node Clone()
         {
-            ConditionNode node = Instantiate(this);
-            node.TrueNext = TrueNext.Clone();
-            node.FalseNext = FalseNext.Clone();
-            return node;
+            ConditionNode clone = Instantiate(this);
+
+            clone.Comparers = clone.Comparers.ConvertAll(comparer =>
+            {
+                return comparer.Clone(Blackboard.Bank);
+            });
+
+            clone.TrueNext = TrueNext.Clone();
+            clone.FalseNext = FalseNext.Clone();
+            return clone;
         }
+
+        public override void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            TrueNext.Traverse(action);
+            FalseNext.Traverse(action);
+        }
+
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>() { "True", "False" };

@@ -1,4 +1,5 @@
 using com.absence.variablesystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -53,13 +54,24 @@ namespace com.absence.dialoguesystem.internals
         public override Node Clone()
         {
             DecisionSpeechNode node = Instantiate(this);
-            Options.ForEach(opt =>
+            node.Options.ForEach(opt =>
             {
+                opt.ShowIf = opt.ShowIf.Clone(Blackboard.Bank);
                 opt.LeadsTo = opt.LeadsTo.Clone();
             });
 
             return node;
         }
+
+        public override void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            Options.ForEach(option =>
+            {
+                option.LeadsTo.Traverse(action);
+            });
+        }
+
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>();

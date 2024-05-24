@@ -43,8 +43,8 @@ namespace com.absence.dialoguesystem
         /// <param name="dialogue"></param>
         public DialoguePlayer(Dialogue dialogue)
         {
-            //m_dialogue = dialogue.Clone();
-            m_dialogue = dialogue;
+            m_dialogue = dialogue.Clone();
+            //m_dialogue = dialogue;
 
             m_dialogue.Bind();
             m_state = DialoguePlayerState.Idle;

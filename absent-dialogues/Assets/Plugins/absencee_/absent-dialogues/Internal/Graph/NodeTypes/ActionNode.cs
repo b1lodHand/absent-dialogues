@@ -48,6 +48,25 @@ namespace com.absence.dialoguesystem.internals
         {
             if (Next != null) result.Add((0, Next));
         }
+
+        public override Node Clone()
+        {
+            ActionNode clone = Instantiate(this);
+            clone.VBActions = clone.VBActions.ConvertAll(action =>
+            {
+               return action.Clone(Blackboard.Bank);
+            });
+
+            clone.Next = Next.Clone();
+
+            return clone;
+        }
+
+        public override void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            Next.Traverse(action);
+        }
     }
 
 }

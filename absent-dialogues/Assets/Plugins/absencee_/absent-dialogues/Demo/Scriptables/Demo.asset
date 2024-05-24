@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 
   Position: {x: 0, y: 0}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -35,9 +35,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 1df79d3e9f9718d4689e74e77c52884d
   Position: {x: -102.5, y: -147}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -57,10 +57,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 7d72d44870ddbd04abf36ec572209cd1
   Position: {x: 792.00006, y: -581.0002}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 1
+    Bank: {fileID: 0}
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: cb9c55b9e89ca9e41bc40362f6ff788f
   Position: {x: 1695.6478, y: -454.99994}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -137,9 +137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 377939230d4fb0a4cb39f57545ec231b
   Position: {x: 1417, y: -478.00018}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -164,10 +164,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 6f100eb26c145f149bde5f2b03877dc5
   Position: {x: 1058, y: 387.00003}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 0
+    Bank: {fileID: 0}
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -191,10 +191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 8d834be62b356db4f886d9a83844f6b9
   Position: {x: 1396.1504, y: 297.5}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 0
+    Bank: {fileID: 0}
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   TargetDialogPartName: loop
@@ -212,10 +212,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
   Position: {x: 550.0001, y: 143.99995}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 0
+    Bank: {fileID: 0}
+  State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -271,9 +271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 1b00f74471196944ebb0794b4dfc1216
   Position: {x: 935, y: 268}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: Demo
   m_EditorClassIdentifier: 
   RootNode: {fileID: -9120434286002774121}
-  LastOrCurrentNode: {fileID: -3899366801720709168}
+  LastOrCurrentNode: {fileID: 0}
   AllNodes:
   - {fileID: -9120434286002774121}
   - {fileID: -8258285536222529687}
@@ -345,9 +345,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: f929db99f4246614abf25f67c2e1df6e
   Position: {x: 542.0001, y: -343.47253}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -390,9 +390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
   Position: {x: -3, y: 63}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -434,9 +434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 6836458d7660a534dbc54e8b999cdf42
   Position: {x: 1081.3002, y: 223}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -461,10 +461,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: ba671a40893b8f04f9cdd1ddc116785f
   Position: {x: 138, y: -43}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 2
+    Bank: {fileID: 0}
+  State: 1
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -520,9 +520,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: ff39af66e057bbc46bba9a0cab5f57c0
   Position: {x: 1208.0001, y: -327.00018}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -541,9 +541,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 041a83cc15b72f744a1842a686410a85
   Position: {x: 1228.0001, y: -448.00018}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 2
   ExitDialogAfterwards: 0
   PersonIndex: 0
@@ -573,9 +573,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: d3b46e06c6cbf8347868f38b7c31d4c3
   Position: {x: 784.00006, y: -214.00003}
-  MasterDialogue: {fileID: 11400000}
+  MasterDialogue: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 3482111983400843739}
+    Bank: {fileID: 0}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0

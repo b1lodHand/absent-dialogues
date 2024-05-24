@@ -156,10 +156,17 @@ namespace com.absence.dialoguesystem.internals
         /// the <see cref="DialoguePartNode"/> referenced to it. Simply because they are not connected directly.
         /// </summary>
         /// <returns></returns>
-        [Obsolete]
         public virtual Node Clone()
         {
             return Instantiate(this);
+        }
+
+        /// <summary>
+        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
+        /// </summary>
+        public virtual void Traverse(Action<Node> action)
+        {
+
         }
 
         private void OnValidate()

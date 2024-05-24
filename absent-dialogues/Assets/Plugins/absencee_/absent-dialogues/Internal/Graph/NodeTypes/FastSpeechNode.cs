@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,6 +46,12 @@ namespace com.absence.dialoguesystem.internals
             FastSpeechNode node = Instantiate(this);
             node.Next = Next.Clone();
             return node;
+        }
+
+        public override void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            Next.Traverse(action);
         }
 
         public string GetSpeech() => Speech;
