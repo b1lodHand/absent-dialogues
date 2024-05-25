@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class ActionNode : Node
+    public class ActionNode : Node, IPerformDelayedClone
     {
         public List<VariableSetter> VBActions = new List<VariableSetter>();
         public UnityEvent UnityEvents;
@@ -49,17 +49,14 @@ namespace com.absence.dialoguesystem.internals
             if (Next != null) result.Add((0, Next));
         }
 
-        public override Node Clone()
+        public void DelayedClone(Dialogue originalDialogue)
         {
-            ActionNode clone = Instantiate(this);
-            clone.VBActions = clone.VBActions.ConvertAll(action =>
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+
+            VBActions = VBActions.ConvertAll(action =>
             {
-               return action.Clone(Blackboard.Bank);
+                return action.Clone(Blackboard.Bank);
             });
-
-            clone.Next = Next.Clone();
-
-            return clone;
         }
 
         public override void Traverse(Action<Node> action)

@@ -8,7 +8,6 @@ namespace com.absence.dialoguesystem
     public class Blackboard
     {
         [HideInInspector] public VariableBank Bank;
-        //[HideInInspector] public Dialogue MasterDialogue;
 
         /// <summary>
         /// Use to clone a blackboard.

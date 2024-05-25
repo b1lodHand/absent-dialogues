@@ -2,11 +2,12 @@ using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals 
 {
-    public sealed class DecisionSpeechNode : Node, IContainSpeech
+    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -51,18 +52,6 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
-        public override Node Clone()
-        {
-            DecisionSpeechNode node = Instantiate(this);
-            node.Options.ForEach(opt =>
-            {
-                opt.ShowIf = opt.ShowIf.Clone(Blackboard.Bank);
-                opt.LeadsTo = opt.LeadsTo.Clone();
-            });
-
-            return node;
-        }
-
         public override void Traverse(Action<Node> action)
         {
             action?.Invoke(this);
@@ -80,6 +69,16 @@ namespace com.absence.dialoguesystem.internals
         public string GetSpeech() => Speech;
         public List<Option> GetOptions() => Options;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Options = Options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
+
+            Options.ForEach(opt =>
+            {
+                opt.LeadsTo = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
+            });
+        }
     }
 
     [System.Serializable]
@@ -90,5 +89,17 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public VariableComparer ShowIf;
         [HideInInspector] public Node LeadsTo;
         public AdditionalSpeechData AdditionalData;
+
+        public Option Clone(VariableBank overrideBank)
+        {
+            Option clone = new Option();
+            clone.Speech = Speech;
+            clone.UseShowIf = UseShowIf;
+            clone.ShowIf = ShowIf.Clone(overrideBank);
+            clone.LeadsTo = LeadsTo;
+            clone.AdditionalData = AdditionalData;
+
+            return clone;
+        }
     }
 }

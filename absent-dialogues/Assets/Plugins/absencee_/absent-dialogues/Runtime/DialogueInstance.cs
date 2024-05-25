@@ -23,7 +23,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. Leave empty if you won't use it.")] 
         private List<Person> m_overridePeople;
 
-        private DialoguePlayer m_player;
+        [SerializeField, Readonly] private DialoguePlayer m_player;
         public DialoguePlayer Player => m_player;
 
         public event Action<AdditionalSpeechData> OnHandleAdditionalData;
@@ -77,7 +77,7 @@ namespace com.absence.dialoguesystem
 
             switch (state)
             {
-                case DialoguePlayer.DialoguePlayerState.Idle:
+                case DialoguePlayer.DialoguePlayerState.NoSpeech:
                     Player.Continue();
                     break;
 

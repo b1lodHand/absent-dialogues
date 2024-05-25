@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public sealed class RootNode : Node
+    public sealed class RootNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;
         public override bool DisplayState => false;
@@ -34,14 +34,6 @@ namespace com.absence.dialoguesystem.internals
         {
             if (Next != null) result.Add((0, Next));
         }
-
-        public override Node Clone()
-        {
-            RootNode node = Instantiate(this);
-            node.Next = Next.Clone();
-            return node;
-        }
-
         public override void Traverse(Action<Node> action)
         {
             action?.Invoke(this);
@@ -55,6 +47,11 @@ namespace com.absence.dialoguesystem.internals
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>() { "Start" };
+        }
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

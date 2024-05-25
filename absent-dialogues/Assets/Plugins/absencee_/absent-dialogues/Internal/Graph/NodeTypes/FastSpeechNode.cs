@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public sealed class FastSpeechNode : Node, IContainSpeech
+    public sealed class FastSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -41,13 +41,6 @@ namespace com.absence.dialoguesystem.internals
             if (Next != null) result.Add((0, Next));
         }
 
-        public override Node Clone()
-        {
-            FastSpeechNode node = Instantiate(this);
-            node.Next = Next.Clone();
-            return node;
-        }
-
         public override void Traverse(Action<Node> action)
         {
             action?.Invoke(this);
@@ -57,6 +50,11 @@ namespace com.absence.dialoguesystem.internals
         public string GetSpeech() => Speech;
         public List<Option> GetOptions() => null;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+        }
     }
 
 }

@@ -1,13 +1,17 @@
+using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
+using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
     /// <summary>
     /// Lets you progress in a dialogue easily.
     /// </summary>
+    [System.Serializable]
     public class DialoguePlayer
     {
         /// <summary>
@@ -15,17 +19,21 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public enum DialoguePlayerState
         {
-            Idle = 0,
+            NoSpeech = 0,
             WaitingForOption = 1,
             WaitingForSkip = 2,
             WillExit = 3,
         }
 
-        Dialogue m_dialogue;
+        [SerializeField, Readonly] private DialoguePlayerState m_state;
+        public DialoguePlayerState State => m_state;
+
+        [SerializeField, Readonly] private Dialogue m_dialogue;
         public Dialogue Dialogue => m_dialogue;
 
-        DialoguePlayerState m_state;
-        public DialoguePlayerState State => m_state;
+        [SerializeField, Readonly] private VariableBank m_blackboardBank;
+
+        [SerializeField, Readonly] private Blackboard m_blackboard;
 
         public event Action<DialoguePlayerState> OnContinue;
 
@@ -46,8 +54,11 @@ namespace com.absence.dialoguesystem
             m_dialogue = dialogue.Clone();
             //m_dialogue = dialogue;
 
-            m_dialogue.Bind();
-            m_state = DialoguePlayerState.Idle;
+            m_blackboard = m_dialogue.Blackboard;
+            m_blackboardBank = m_dialogue.Blackboard.Bank;
+
+            m_dialogue.Initialize();
+            m_state = DialoguePlayerState.NoSpeech;
         }
 
         /// <summary>
@@ -65,7 +76,7 @@ namespace com.absence.dialoguesystem
 
             m_dialogue.Pass(passData);
 
-            if (!(m_dialogue.LastOrCurrentNode is IContainSpeech)) m_state = DialoguePlayerState.Idle;
+            if (!(m_dialogue.LastOrCurrentNode is IContainSpeech)) m_state = DialoguePlayerState.NoSpeech;
             else if (m_dialogue.LastOrCurrentNode is FastSpeechNode) m_state = DialoguePlayerState.WaitingForSkip;
             else if (m_dialogue.LastOrCurrentNode is DecisionSpeechNode) m_state = DialoguePlayerState.WaitingForOption;
 

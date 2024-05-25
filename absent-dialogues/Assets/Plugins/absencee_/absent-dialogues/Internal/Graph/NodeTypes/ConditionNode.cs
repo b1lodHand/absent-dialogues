@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class ConditionNode : Node
+    public class ConditionNode : Node, IPerformDelayedClone
     {
         public enum ProcessType
         {
@@ -48,18 +48,15 @@ namespace com.absence.dialoguesystem.internals
             if (FalseNext != null) result.Add((1, FalseNext));
         }
 
-        public override Node Clone()
+        public void DelayedClone(Dialogue originalDialogue)
         {
-            ConditionNode clone = Instantiate(this);
+            TrueNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
+            FalseNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
 
-            clone.Comparers = clone.Comparers.ConvertAll(comparer =>
+            Comparers = Comparers.ConvertAll(comparer =>
             {
                 return comparer.Clone(Blackboard.Bank);
             });
-
-            clone.TrueNext = TrueNext.Clone();
-            clone.FalseNext = FalseNext.Clone();
-            return clone;
         }
 
         public override void Traverse(Action<Node> action)
