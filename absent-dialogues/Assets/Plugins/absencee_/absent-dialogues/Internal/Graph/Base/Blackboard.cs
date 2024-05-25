@@ -1,5 +1,4 @@
 using com.absence.variablesystem;
-using System;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem

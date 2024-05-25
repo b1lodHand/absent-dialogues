@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
-using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem
 {
