@@ -19,7 +19,7 @@ namespace com.absence.dialoguesystem.editor
         public Action<NodeView> OnNodeSelected;
         public Node Node;
 
-        public Port input;
+        public Port Input;
         public List<Port> Outputs = new List<Port>();
 
         private Button m_createNewOptionButton;
@@ -180,9 +180,9 @@ namespace com.absence.dialoguesystem.editor
         {
             if (Node.GetInputPortNameForCreation() == null) return;
 
-            input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
-            input.portName = Node.GetInputPortNameForCreation();
-            inputContainer.Add(input);
+            Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+            Input.portName = Node.GetInputPortNameForCreation();
+            inputContainer.Add(Input);
         }
         private void CreateOutputPorts()
         {

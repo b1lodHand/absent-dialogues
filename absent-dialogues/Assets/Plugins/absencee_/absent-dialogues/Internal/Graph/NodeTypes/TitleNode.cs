@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which is simply <see cref="StickyNoteNode"/> but bigger.
+    /// </summary>
     public sealed class TitleNode : Node
     {
         [HideInInspector] public string Speech;

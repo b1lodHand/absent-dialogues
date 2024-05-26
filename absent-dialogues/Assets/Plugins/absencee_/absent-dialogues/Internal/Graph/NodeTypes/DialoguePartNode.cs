@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which let's you create more and seperate routes.
+    /// </summary>
     public sealed class DialoguePartNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;

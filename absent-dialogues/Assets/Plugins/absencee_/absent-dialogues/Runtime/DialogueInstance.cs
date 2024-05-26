@@ -24,33 +24,49 @@ namespace com.absence.dialoguesystem
         private List<Person> m_overridePeople;
 
         [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
+
+        /// <summary>
+        /// <see cref="DialoguePlayer"/> of this instance.
+        /// </summary>
         public DialoguePlayer Player => m_player;
 
+        /// <summary>
+        /// The Action which will get invoked when <see cref="HandleAdditionalData"/> gets called.
+        /// </summary>
         public event Action<AdditionalSpeechData> OnHandleAdditionalData;
 
         bool m_inDialogue = false;
 
         private void Awake()
         {
-            if(m_referencedDialogue != null) m_player = new DialoguePlayer(m_referencedDialogue);
-        }
+            if (m_referencedDialogue == null)
+            {
+                Debug.LogWarning("DialogueInstance has no dialogue references. Disabling it.");
+                enabled = false;
+                return;
+            }
 
+            if(m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
+            else m_player = new DialoguePlayer(m_referencedDialogue);
+        }
         private void Start()
         {
             if (m_startOnAwake) EnterDialogue();
         }
-
         private void Update()
         {
             if (!m_inDialogue) return;
         }
 
+        /// <summary>
+        /// Use to enter dialogue.
+        /// </summary>
+        /// <returns><b>False</b> if the <see cref="DialogueDisplayer"/> is already occupied by any other script. Returns <b>true</b> otherwise.</returns>
         public bool EnterDialogue()
         {
             m_inDialogue = false;
             if (!DialogueDisplayer.Instance.Occupy()) return false;
 
-            if (m_overridePeople.Count > 0) m_player.OverridePeople(m_overridePeople);
             m_inDialogue = true;
 
             m_player.OnContinue += OnPlayerContinue;
@@ -59,37 +75,39 @@ namespace com.absence.dialoguesystem
             return true;
         }
 
+        /// <summary>
+        /// Use to exit current dialogue.
+        /// </summary>
         public void ExitDialogue()
         {
             if (!m_inDialogue) return;
 
             m_inDialogue = false;
-            m_player.RevertPeople();
 
             DialogueDisplayer.Instance.Release();
 
             m_player.OnContinue -= OnPlayerContinue;
         }
 
-        private void OnPlayerContinue(DialoguePlayer.DialoguePlayerState state)
+        private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
             HandleAdditionalData();
 
             switch (state)
             {
-                case DialoguePlayer.DialoguePlayerState.NoSpeech:
+                case DialoguePlayer.PlayerState.NoSpeech:
                     Player.Continue();
                     break;
 
-                case DialoguePlayer.DialoguePlayerState.WaitingForOption:
+                case DialoguePlayer.PlayerState.WaitingForOption:
                     DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech, Player.Options, i => Player.Continue(i));
                     break;
 
-                case DialoguePlayer.DialoguePlayerState.WaitingForSkip:
+                case DialoguePlayer.PlayerState.WaitingForSkip:
                     DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech);
                     break;
 
-                case DialoguePlayer.DialoguePlayerState.WillExit:
+                case DialoguePlayer.PlayerState.WillExit:
                     ExitDialogue();
                     break;
 
@@ -98,7 +116,6 @@ namespace com.absence.dialoguesystem
                     throw new Exception("An unknown error occurred while displaying the dialogue.");
             }
         }
-
         private void HandleAdditionalData()
         {
             if (!Player.HasSpeech) return;
@@ -106,16 +123,8 @@ namespace com.absence.dialoguesystem
             OnHandleAdditionalData?.Invoke(Player.AdditionalSpeechData);
         }
 
-        private void OnApplicationQuit()
-        {
-            m_inDialogue = false;
-            m_player.RevertPeople();
-
-            m_player.OnContinue -= OnPlayerContinue;
-        }
-
         /// <summary>
-        /// Adds a <see cref="DialogueExtensionBase"/> to the target dialogue instance. Does not work runtime.
+        /// Adds a <see cref="DialogueExtensionBase"/> to the target dialogue instance. <b>Does not work runtime.</b>
         /// </summary>
         /// <typeparam name="T"></typeparam>
         public void AddExtension<T>() where T : DialogueExtensionBase
@@ -124,5 +133,14 @@ namespace com.absence.dialoguesystem
 
             gameObject.AddComponent<T>();
         }
+
+        private void OnApplicationQuit()
+        {
+            m_inDialogue = false;
+            m_player.OnContinue -= OnPlayerContinue;
+
+            m_player = null;
+        }
+
     }
 }

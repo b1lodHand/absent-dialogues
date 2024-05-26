@@ -1,8 +1,6 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem;
 using com.absence.variablesystem;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DialogueInstance))]
@@ -20,9 +18,9 @@ public class Demo_GUI : MonoBehaviour
 
     private void Start()
     {
-        b_missionPending = m_instance.Player.Dialogue.Blackboard.Bank.GetBoolean(K_MISSIONPENDING);
-        b_missionDone = m_instance.Player.Dialogue.Blackboard.Bank.GetBoolean(K_MISSIONDONE);
-        b_missionCommitted = m_instance.Player.Dialogue.Blackboard.Bank.GetBoolean(K_MISSIONCOMMITTED);
+        b_missionPending = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONPENDING);
+        b_missionDone = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONDONE);
+        b_missionCommitted = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONCOMMITTED);
     }
 
     private void OnGUI()

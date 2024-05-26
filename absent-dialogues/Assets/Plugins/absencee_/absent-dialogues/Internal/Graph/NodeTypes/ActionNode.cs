@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which invokes some actions on the flow.
+    /// </summary>
     public class ActionNode : Node, IPerformDelayedClone
     {
         public List<VariableSetter> VBActions = new List<VariableSetter>();

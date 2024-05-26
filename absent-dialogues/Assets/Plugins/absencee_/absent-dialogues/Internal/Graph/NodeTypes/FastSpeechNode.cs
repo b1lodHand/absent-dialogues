@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which displays a speech without options.
+    /// </summary>
     public sealed class FastSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;

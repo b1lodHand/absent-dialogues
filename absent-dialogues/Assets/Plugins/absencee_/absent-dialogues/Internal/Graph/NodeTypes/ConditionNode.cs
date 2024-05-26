@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which re-routes the flow under some conditions.
+    /// </summary>
     public class ConditionNode : Node, IPerformDelayedClone
     {
         public enum ProcessType

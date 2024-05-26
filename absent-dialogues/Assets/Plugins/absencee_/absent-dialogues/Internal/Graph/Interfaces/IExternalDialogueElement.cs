@@ -1,4 +1,3 @@
-
 namespace com.absence.dialoguesystem
 { 
     public interface IExternalDialogueElement

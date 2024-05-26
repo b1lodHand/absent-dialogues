@@ -607,6 +607,12 @@ MonoBehaviour:
   m_startOnAwake: 1
   m_referencedDialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
   m_overridePeople: []
+  m_player:
+    m_state: 0
+    m_dialogue: {fileID: 0}
+    m_blackboardBank: {fileID: 0}
+    m_blackboard:
+      Bank: {fileID: 0}
 --- !u!114 &560826872
 MonoBehaviour:
   m_ObjectHideFlags: 0

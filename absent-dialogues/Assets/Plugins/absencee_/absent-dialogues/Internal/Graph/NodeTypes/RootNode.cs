@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which is essential if you want to have a dialogue graph.
+    /// </summary>
     public sealed class RootNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;

@@ -115,6 +115,8 @@ namespace com.absence.dialoguesystem.editor
 
             m_targetDialogue = dialogue;
 
+            if (m_dialogueGraphView == null) return false;
+
             if (Application.isPlaying) m_dialogueGraphView.PopulateView(dialogue);
             else if (AssetDatabase.CanOpenAssetInEditor(dialogue.GetInstanceID())) m_dialogueGraphView.PopulateView(dialogue);
 

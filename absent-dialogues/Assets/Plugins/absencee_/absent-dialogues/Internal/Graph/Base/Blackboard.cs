@@ -3,9 +3,15 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
+    /// <summary>
+    /// This is a class for holding any variables in the dialogues. It also contains a <see cref="VariableBank"/>.
+    /// </summary>
     [System.Serializable]
     public class Blackboard
     {
+        /// <summary>
+        /// Bank of this blackboard.
+        /// </summary>
         [HideInInspector] public VariableBank Bank;
 
         /// <summary>

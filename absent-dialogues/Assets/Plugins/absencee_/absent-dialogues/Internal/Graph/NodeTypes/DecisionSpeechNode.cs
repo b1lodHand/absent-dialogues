@@ -1,12 +1,12 @@
-using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals 
 {
+    /// <summary>
+    /// Node which displays a speech with options.
+    /// </summary>
     public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
@@ -78,28 +78,6 @@ namespace com.absence.dialoguesystem.internals
             {
                 opt.LeadsTo = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
             });
-        }
-    }
-
-    [System.Serializable]
-    public class Option
-    {
-        [HideInInspector] public string Speech;
-        [HideInInspector] public bool UseShowIf = false;
-        [HideInInspector] public VariableComparer ShowIf;
-        [HideInInspector] public Node LeadsTo;
-        public AdditionalSpeechData AdditionalData;
-
-        public Option Clone(VariableBank overrideBank)
-        {
-            Option clone = new Option();
-            clone.Speech = Speech;
-            clone.UseShowIf = UseShowIf;
-            clone.ShowIf = ShowIf.Clone(overrideBank);
-            clone.LeadsTo = LeadsTo;
-            clone.AdditionalData = AdditionalData;
-
-            return clone;
         }
     }
 }

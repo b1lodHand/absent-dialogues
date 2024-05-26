@@ -28,10 +28,8 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public List<Node> AllNodes = new List<Node>();
 
         [SerializeField] private List<Person> m_people = new List<Person>();
-        private List<Person> m_tempPeople;
-
         /// <summary>
-        /// People in this dialogue (might be overridden).
+        /// People in this dialogue (might be overridden on clones).
         /// </summary>
         public List<Person> People => m_people;
 
@@ -140,13 +138,15 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
         /// object's people list won't be affected by this.
+        /// <br></br>
+        /// <br></br>
+        /// <b>CAUTION!</b> The recommended way is to use this function on clones only.
         /// </summary>
         /// <param name="overridePeople"></param>
         public void OverridePeople(List<Person> overridePeople)
         {
             if (overridePeople != null)
             {
-                m_tempPeople = new List<Person>(m_people);
                 m_people = new List<Person>(overridePeople);
             }
         }
@@ -159,24 +159,6 @@ namespace com.absence.dialoguesystem
         public void Pass(params object[] passData)
         {
             if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(passData);
-        }
-
-        /// <summary>
-        /// Use to reset people list if you've overridden it before.
-        /// </summary>
-        public void ResetPeopleList()
-        {
-            if(m_tempPeople != null) m_people = new(m_tempPeople);
-            m_tempPeople = null;
-        }
-
-        /// <summary>
-        /// Use to reset all the progress has gotten in this dialogue.
-        /// </summary>
-        public void ResetProgress()
-        {
-            AllNodes.ForEach(n => n.SetState(Node.NodeState.Unreached));
-            RootNode.Reach();
         }
     }
 }
