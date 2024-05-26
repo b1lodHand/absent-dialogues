@@ -148,7 +148,12 @@ namespace com.absence.dialoguesystem.internals
         }
 
         /// <summary>
-        /// Use to clone this node.
+        /// Use to clone this node. 
+        /// <br></br>
+        /// <br></br>
+        /// <b>CAUTION!</b> It works as a traverse function. If you clone any node,
+        /// it will automatically clone any node connected to it (forward-only). But the <see cref="GotoNode"/> won't clone
+        /// the <see cref="DialoguePartNode"/> referenced to it. Simply because they are not connected directly.
         /// </summary>
         /// <returns></returns>
         public virtual Node Clone()
@@ -156,25 +161,17 @@ namespace com.absence.dialoguesystem.internals
             return Instantiate(this);
         }
 
+        /// <summary>
+        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
+        /// </summary>
+        public virtual void Traverse(Action<Node> action)
+        {
+
+        }
+
         private void OnValidate()
         {
             OnValidation?.Invoke();
         }
-    }
-
-    public interface IContainSpeech
-    {
-        public string GetSpeech();
-        public string[] GetOptions();
-        public AdditionalSpeechData GetAdditionalSpeechData();
-    }
-
-    [System.Serializable]
-    public class AdditionalSpeechData
-    {
-        public AudioClip AudioClip;
-        public Animation Animation;
-        public Sprite Sprite;
-        public string Keyword;
     }
 }

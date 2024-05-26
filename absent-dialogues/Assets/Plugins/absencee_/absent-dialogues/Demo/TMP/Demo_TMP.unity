@@ -466,7 +466,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.3243592, g: 0.33396375, b: 0.3490566, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -568,6 +568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 560826870}
   - component: {fileID: 560826871}
+  - component: {fileID: 560826872}
+  - component: {fileID: 560826873}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -603,10 +605,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
-  m_audioSource: {fileID: 0}
-  m_audioVolume: 0
-  m_dialogue: {fileID: 0}
+  m_referencedDialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
   m_overridePeople: []
+  m_player:
+    m_state: 0
+    m_dialogue: {fileID: 0}
+    m_blackboardBank: {fileID: 0}
+    m_blackboard:
+      Bank: {fileID: 0}
+--- !u!114 &560826872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560826869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949126ff226a20a43a04353574b213e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_instance: {fileID: 560826871}
+--- !u!114 &560826873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560826869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb21d1fb152ee994c89557233f5c955b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_instance: {fileID: 560826871}
 --- !u!1 &673667125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1131,7 @@ MonoBehaviour:
   m_speechText: {fileID: 1363931373}
   m_panel: {fileID: 873511972}
   m_optionContainer: {fileID: 1578477568}
-  m_optionPrefab: {fileID: 6817177061115473699, guid: d52a7277da12cec44a8c837075a1b069, type: 3}
+  m_optionPrefab: {fileID: 6817177061115473699, guid: 496b77bceaf7fd6448ac85fa792367a8, type: 3}
 --- !u!1 &1363931371
 GameObject:
   m_ObjectHideFlags: 0

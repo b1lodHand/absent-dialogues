@@ -1,0 +1,604 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9120434286002774121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8f909998c702b458d8fc35ddfc6786, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  Guid: 
+  Position: {x: 0, y: 0}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Next: {fileID: 6611807328144254293}
+--- !u!114 &-8258285536222529687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13eb0d4c28dc8541980f8c6a6d20d03, type: 3}
+  m_Name: StickyNoteNode
+  m_EditorClassIdentifier: 
+  Guid: 1df79d3e9f9718d4689e74e77c52884d
+  Position: {x: -102.5, y: -147}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Speech: "Welcome to the demo graph!\nHere you will see usages of every\nnode.\n\nYou
+    can get to fullscreen view \npressing SHIFT+SPACE."
+--- !u!114 &-3899366801720709168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 7d72d44870ddbd04abf36ec572209cd1
+  Position: {x: 792.00006, y: -581.0002}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Options:
+  - Speech: Sure, I'll be doing it.
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 7901140551254700991}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  - Speech: I'm not interested in that, actually.
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 7512322125377748830}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  Speech: I want you to bring me some apples, dude. Will you do that for me?
+--- !u!114 &-3621898333564505408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: cb9c55b9e89ca9e41bc40362f6ff788f
+  Position: {x: 1695.6478, y: -454.99994}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TargetDialogPartName: loop
+--- !u!114 &-2127933438961997456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9f7023a40bb04bb535da999424361, type: 3}
+  m_Name: FastSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 377939230d4fb0a4cb39f57545ec231b
+  Position: {x: 1417, y: -478.00018}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 1
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Next: {fileID: -3621898333564505408}
+  Speech: Alright! I'll be waiting for you.
+--- !u!114 &-1965666318695130335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9f7023a40bb04bb535da999424361, type: 3}
+  m_Name: FastSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 6f100eb26c145f149bde5f2b03877dc5
+  Position: {x: 1058, y: 387.00003}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Next: {fileID: -1633778966378657852}
+  Speech: Okay, buddy. Do your best. I believe in you.
+--- !u!114 &-1633778966378657852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: 8d834be62b356db4f886d9a83844f6b9
+  Position: {x: 1396.1504, y: 297.5}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TargetDialogPartName: loop
+--- !u!114 &-1399893973709126951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: abb4c09c08af7a84d88f489f5c7b8b72
+  Position: {x: 550.0001, y: 143.99995}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Options:
+  - Speech: I've done it.
+    UseShowIf: 1
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'bool: b_missionDone'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 1
+    LeadsTo: {fileID: -914008930283711827}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  - Speech: I am working on it.
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'bool: b_missionDone'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: -1965666318695130335}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  Speech: Oh yeah, I've totally forgotten about that! What have you done?
+--- !u!114 &-914008930283711827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 1b00f74471196944ebb0794b4dfc1216
+  Position: {x: 935, y: 268}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  VBActions:
+  - m_setType: 0
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionCommitted'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 1
+  - m_setType: 0
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  UnityEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: 6287193538585539002}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: Demo
+  m_EditorClassIdentifier: 
+  RootNode: {fileID: -9120434286002774121}
+  LastOrCurrentNode: {fileID: 1239550416686042660}
+  AllNodes:
+  - {fileID: -9120434286002774121}
+  - {fileID: -8258285536222529687}
+  - {fileID: 6611807328144254293}
+  - {fileID: 1326889792880528920}
+  - {fileID: -1399893973709126951}
+  - {fileID: -914008930283711827}
+  - {fileID: 6287193538585539002}
+  - {fileID: -1965666318695130335}
+  - {fileID: -1633778966378657852}
+  - {fileID: 1239550416686042660}
+  - {fileID: 9119168445957565552}
+  - {fileID: -3621898333564505408}
+  - {fileID: -3899366801720709168}
+  - {fileID: 7512322125377748830}
+  - {fileID: -2127933438961997456}
+  - {fileID: 7901140551254700991}
+  m_people:
+  - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+--- !u!114 &1239550416686042660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  Guid: f929db99f4246614abf25f67c2e1df6e
+  Position: {x: 542.0001, y: -343.47253}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 1
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TrueNext: {fileID: -3899366801720709168}
+  FalseNext: {fileID: 9119168445957565552}
+  Processor: 0
+  Comparers:
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionDone'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionCommitted'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+--- !u!114 &1326889792880528920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: DialoguePartNode
+  m_EditorClassIdentifier: 
+  Guid: 8dca50b7cca88114f9874835ec6fe676
+  Position: {x: -3, y: 63}
+  MasterDialogue: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Next: {fileID: 6611807328144254293}
+  DialoguePartName: loop
+--- !u!114 &3482111983400843739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: Demo Blackboard VB
+  m_EditorClassIdentifier: 
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans:
+  - m_name: b_missionPending
+    m_value: 0
+  - m_name: b_missionDone
+    m_value: 0
+  - m_name: b_missionCommitted
+    m_value: 0
+--- !u!114 &6287193538585539002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9f7023a40bb04bb535da999424361, type: 3}
+  m_Name: FastSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 6836458d7660a534dbc54e8b999cdf42
+  Position: {x: 1081.3002, y: 223}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Next: {fileID: -1633778966378657852}
+  Speech: Thank you so much!
+--- !u!114 &6611807328144254293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: ba671a40893b8f04f9cdd1ddc116785f
+  Position: {x: 138, y: -43}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 1
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Options:
+  - Speech: Do you have any missions for me?
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 1239550416686042660}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  - Speech: I am here for the mission.
+    UseShowIf: 1
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'bool: b_missionPending'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 1
+    LeadsTo: {fileID: -1399893973709126951}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  Speech: So, What do you want?
+--- !u!114 &7512322125377748830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: ff39af66e057bbc46bba9a0cab5f57c0
+  Position: {x: 1208.0001, y: -327.00018}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TargetDialogPartName: loop
+--- !u!114 &7901140551254700991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 041a83cc15b72f744a1842a686410a85
+  Position: {x: 1228.0001, y: -448.00018}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  VBActions:
+  - m_setType: 0
+    m_targetBank: {fileID: 3482111983400843739}
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 1
+  UnityEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: -2127933438961997456}
+--- !u!114 &9119168445957565552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: d3b46e06c6cbf8347868f38b7c31d4c3
+  Position: {x: 784.00006, y: -214.00003}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    m_audioClip: {fileID: 0}
+    m_animMemberName: 
+    m_sprite: {fileID: 0}
+    m_customInfo: []
+  Options:
+  - Speech: Okay.
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 7512322125377748830}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  Speech: No, I don't have anything for you right now.

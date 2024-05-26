@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public sealed class DialoguePartNode : Node
+    /// <summary>
+    /// Node which let's you create more and seperate routes.
+    /// </summary>
+    public sealed class DialoguePartNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;
         public string DialoguePartName;
@@ -33,15 +37,20 @@ namespace com.absence.dialoguesystem.internals
             if (Next != null) result.Add((0, Next));
         }
 
-        public override Node Clone()
+        public override void Traverse(Action<Node> action)
         {
-            DialoguePartNode node = Instantiate(this);
-            node.Next = Next.Clone();
-            return node;
+            action?.Invoke(this);
+            Next.Traverse(action);
         }
+
         public override string GetInputPortNameForCreation()
         {
             return null;
+        }
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

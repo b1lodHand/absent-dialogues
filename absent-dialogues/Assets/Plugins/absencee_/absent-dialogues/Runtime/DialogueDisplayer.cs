@@ -1,7 +1,9 @@
 using com.absence.attributes;
+using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using com.absence.utilities;
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,12 +17,24 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
+        [Header("Speaker Fields")]
+
         [SerializeField, Tooltip("The image used to display look of the speaker. This field is optional.")] private Image m_speakerIcon;
         [SerializeField, Tooltip("The text used to display name of the speaker. This field is optional.")] private TMP_Text m_speakerNameText;
-        [SerializeField, Tooltip("The Image used to display the speech.")] private TMP_Text m_speechText;
+        [SerializeField, Required, Tooltip("The text used to display the speech.")] private TMP_Text m_speechText;
+
+        [Space(10)]
+
+        [Header("Utility Fields")]
+
         [SerializeField, Required, Tooltip("The panel that gets activated/deactivated with the dialogue state.")] private GameObject m_panel;
+
+        [Space(10)]
+
+        [Header("Option Fields")]
+
         [SerializeField, Required, Tooltip("The container for option boxes.")] private Transform m_optionContainer;
-        [SerializeField, Required, Tooltip("The prefab of the option box.")] private OptionText m_optionPrefab;
+        [SerializeField, Required, Tooltip("The prefab of the option box.")] private DialogueOptionText m_optionPrefab;
 
         bool m_occupied = false;
 
@@ -71,15 +85,20 @@ namespace com.absence.dialoguesystem
         /// <param name="speech"></param>
         /// <param name="options"></param>
         /// <param name="optionPressAction"></param>
-        public void Display(Person speaker, string speech, string[] options, Action<int> optionPressAction)
+        public void Display(Person speaker, string speech, List<Option> options, Action<int> optionPressAction)
         {
             ClearOptionContainer();
 
             Display(speaker, speech);
-            for (int i = 0; i < options.Length; i++)
+            for (int i = 0; i < options.Count; i++)
             {
-                var o = Instantiate(m_optionPrefab, m_optionContainer);
-                o.OnClickAction += optionPressAction;
+                Option option = options[i];
+
+                if (option.UseShowIf && !option.ShowIf.GetResult()) continue;
+
+                DialogueOptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
+                optionText.Initialize(i, option.Speech);
+                optionText.OnClickAction += optionPressAction;
             }
         }
 

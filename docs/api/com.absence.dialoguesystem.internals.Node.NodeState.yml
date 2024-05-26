@@ -1,0 +1,173 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Node.NodeState
+  commentId: T:com.absence.dialoguesystem.internals.Node.NodeState
+  id: Node.NodeState
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Node.NodeState.Current
+  - com.absence.dialoguesystem.internals.Node.NodeState.Past
+  - com.absence.dialoguesystem.internals.Node.NodeState.Unreached
+  langs:
+  - csharp
+  - vb
+  name: Node.NodeState
+  nameWithType: Node.NodeState
+  fullName: com.absence.dialoguesystem.internals.Node.NodeState
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeState
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Describes the node's state on the flow. While progressing in the dialogue.
+  example: []
+  syntax:
+    content: public enum Node.NodeState
+    content.vb: Public Enum Node.NodeState
+- uid: com.absence.dialoguesystem.internals.Node.NodeState.Unreached
+  commentId: F:com.absence.dialoguesystem.internals.Node.NodeState.Unreached
+  id: Unreached
+  parent: com.absence.dialoguesystem.internals.Node.NodeState
+  langs:
+  - csharp
+  - vb
+  name: Unreached
+  nameWithType: Node.NodeState.Unreached
+  fullName: com.absence.dialoguesystem.internals.Node.NodeState.Unreached
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Unreached
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Unreached = 0
+    return:
+      type: com.absence.dialoguesystem.internals.Node.NodeState
+- uid: com.absence.dialoguesystem.internals.Node.NodeState.Current
+  commentId: F:com.absence.dialoguesystem.internals.Node.NodeState.Current
+  id: Current
+  parent: com.absence.dialoguesystem.internals.Node.NodeState
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: Node.NodeState.Current
+  fullName: com.absence.dialoguesystem.internals.Node.NodeState.Current
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Current
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Current = 1
+    return:
+      type: com.absence.dialoguesystem.internals.Node.NodeState
+- uid: com.absence.dialoguesystem.internals.Node.NodeState.Past
+  commentId: F:com.absence.dialoguesystem.internals.Node.NodeState.Past
+  id: Past
+  parent: com.absence.dialoguesystem.internals.Node.NodeState
+  langs:
+  - csharp
+  - vb
+  name: Past
+  nameWithType: Node.NodeState.Past
+  fullName: com.absence.dialoguesystem.internals.Node.NodeState.Past
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Past
+    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Past = 2
+    return:
+      type: com.absence.dialoguesystem.internals.Node.NodeState
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.Node.NodeState
+  commentId: T:com.absence.dialoguesystem.internals.Node.NodeState
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node.NodeState
+  nameWithType: Node.NodeState
+  fullName: com.absence.dialoguesystem.internals.Node.NodeState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.NodeState
+    name: NodeState
+    href: com.absence.dialoguesystem.internals.Node.NodeState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.NodeState
+    name: NodeState
+    href: com.absence.dialoguesystem.internals.Node.NodeState.html

@@ -19,7 +19,7 @@ namespace com.absence.dialoguesystem.editor
         public Action<NodeView> OnNodeSelected;
         public Node Node;
 
-        public Port input;
+        public Port Input;
         public List<Port> Outputs = new List<Port>();
 
         private Button m_createNewOptionButton;
@@ -180,9 +180,9 @@ namespace com.absence.dialoguesystem.editor
         {
             if (Node.GetInputPortNameForCreation() == null) return;
 
-            input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
-            input.portName = Node.GetInputPortNameForCreation();
-            inputContainer.Add(input);
+            Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+            Input.portName = Node.GetInputPortNameForCreation();
+            inputContainer.Add(Input);
         }
         private void CreateOutputPorts()
         {
@@ -336,10 +336,10 @@ namespace com.absence.dialoguesystem.editor
 
             showIfToggle.RegisterValueChangedCallback(evt =>
             {
-                showIfContainer.SetEnabled(evt.newValue);
+                showIfContainer.visible = (evt.newValue);
             });
 
-            showIfContainer.SetEnabled(showIfToggle.value);
+            showIfContainer.visible = (showIfToggle.value);
 
             removeButton.tooltip = "Remove this option.";
             showIfToggle.tooltip = "If this checkbox is checked, the show if panel on the right will get enabled. For more details, hover it.";

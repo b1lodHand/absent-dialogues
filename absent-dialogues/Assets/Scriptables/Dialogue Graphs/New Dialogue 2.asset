@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5584835444295602111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9f7023a40bb04bb535da999424361, type: 3}
+  m_Name: FastSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: d0d2263e79a5e294485dc60d710aacc7
+  Position: {x: 9, y: 32}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 2
+  ExitDialogAfterwards: 0
+  PersonIndex: 1
+  m_additionalData:
+    AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
+    Sprite: {fileID: 0}
+    Keyword: 
+  Next: {fileID: 4114144474421272441}
+  Speech: anani allahini sikeyim
+--- !u!114 &-3911757306365425986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: DialoguePartNode
+  m_EditorClassIdentifier: 
+  Guid: 7f46dcc1cfaec4f4d81b3c7a3c5c5eaa
+  Position: {x: -198, y: 166}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  Next: {fileID: -5584835444295602111}
+  DialoguePartName: main
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,14 +64,129 @@ MonoBehaviour:
   m_Name: New Dialogue 2
   m_EditorClassIdentifier: 
   RootNode: {fileID: 7644622267951835188}
-  LastOrCurrentNode: {fileID: 0}
-  LastOrCurrentSpeechNode: {fileID: 0}
+  LastOrCurrentNode: {fileID: 4114144474421272441}
   AllNodes:
   - {fileID: 7644622267951835188}
-  People: []
+  - {fileID: -5584835444295602111}
+  - {fileID: 4114144474421272441}
+  - {fileID: 8234346662896542542}
+  - {fileID: 3196261161464974181}
+  - {fileID: -3911757306365425986}
+  - {fileID: 5721538134596569560}
+  m_people:
+  - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
+  - {fileID: 11400000, guid: 51314ca2212de414ea471788da803d40, type: 2}
   Blackboard:
     Bank: {fileID: 9119565299750511387}
     MasterDialogue: {fileID: 11400000}
+--- !u!114 &3196261161464974181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: GotoNode
+  m_EditorClassIdentifier: 
+  Guid: 59434c0024b095149a1404619138d940
+  Position: {x: 1065, y: 110}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TargetDialogPartName: main
+--- !u!114 &4114144474421272441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a015a2110994b47a048bbb71f18f03, type: 3}
+  m_Name: DecisionSpeechNode
+  m_EditorClassIdentifier: 
+  Guid: 35e758c07183c7c48ae9852d82cc5bde
+  Position: {x: 273, y: 40}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 1
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  m_additionalData:
+    AudioClip: {fileID: 0}
+    Animation: {fileID: 0}
+    Sprite: {fileID: 0}
+    Keyword: 
+  Options:
+  - Speech: ":(\t"
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: -5163736431018240990, guid: 35c89c1a802c9264aa14f22664d418b8, type: 2}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 8234346662896542542}
+    AdditionalData:
+      AudioClip: {fileID: 0}
+      Animation: {fileID: 0}
+      Sprite: {fileID: 0}
+      Keyword: 
+  - Speech: niyekine
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: -5163736431018240990, guid: 35c89c1a802c9264aa14f22664d418b8, type: 2}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+    LeadsTo: {fileID: 5721538134596569560}
+    AdditionalData:
+      AudioClip: {fileID: 0}
+      Animation: {fileID: 0}
+      Sprite: {fileID: 0}
+      Keyword: 
+  Speech: :::D:D:D:DD:DD:DD:::D
+--- !u!114 &5721538134596569560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe446ed5d1a6c488865439994ca9d9, type: 3}
+  m_Name: ActionNode
+  m_EditorClassIdentifier: 
+  Guid: 7d09f4ca7450d6d4f814ca5929452e15
+  Position: {x: 741, y: 279}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  VBActions: []
+  UnityEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  Next: {fileID: 3196261161464974181}
 --- !u!114 &7644622267951835188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,7 +200,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 0, y: 0}
+  Position: {x: -156, y: 50}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 9119565299750511387}
@@ -42,7 +208,39 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  Next: {fileID: 0}
+  Next: {fileID: -5584835444295602111}
+--- !u!114 &8234346662896542542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  Guid: d5804967006c1be4fbb745ff8524a384
+  Position: {x: 733, y: 122}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 9119565299750511387}
+    MasterDialogue: {fileID: 11400000}
+  State: 0
+  ExitDialogAfterwards: 0
+  PersonIndex: 0
+  TrueNext: {fileID: 3196261161464974181}
+  FalseNext: {fileID: 3196261161464974181}
+  Processor: 0
+  Comparers:
+  - m_comparisonType: 2
+    m_targetBank: {fileID: 11400000, guid: ae09bb1ac05d5994bbfdc1846f154e6d, type: 2}
+    m_targetVariableName: 'null: null'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
 --- !u!114 &9119565299750511387
 MonoBehaviour:
   m_ObjectHideFlags: 0

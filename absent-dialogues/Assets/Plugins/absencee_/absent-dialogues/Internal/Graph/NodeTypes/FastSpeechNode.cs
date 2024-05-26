@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public sealed class FastSpeechNode : Node, IContainSpeech
+    /// <summary>
+    /// Node which displays a speech without options.
+    /// </summary>
+    public sealed class FastSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -40,16 +44,20 @@ namespace com.absence.dialoguesystem.internals
             if (Next != null) result.Add((0, Next));
         }
 
-        public override Node Clone()
+        public override void Traverse(Action<Node> action)
         {
-            FastSpeechNode node = Instantiate(this);
-            node.Next = Next.Clone();
-            return node;
+            action?.Invoke(this);
+            Next.Traverse(action);
         }
 
         public string GetSpeech() => Speech;
-        public string[] GetOptions() => null;
+        public List<Option> GetOptions() => null;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+        }
     }
 
 }

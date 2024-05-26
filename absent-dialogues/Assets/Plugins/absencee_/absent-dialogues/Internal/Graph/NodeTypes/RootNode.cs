@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public sealed class RootNode : Node
+    /// <summary>
+    /// Node which is essential if you want to have a dialogue graph.
+    /// </summary>
+    public sealed class RootNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;
         public override bool DisplayState => false;
@@ -33,13 +37,12 @@ namespace com.absence.dialoguesystem.internals
         {
             if (Next != null) result.Add((0, Next));
         }
-
-        public override Node Clone()
+        public override void Traverse(Action<Node> action)
         {
-            RootNode node = Instantiate(this);
-            node.Next = Next.Clone();
-            return node;
+            action?.Invoke(this);
+            Next.Traverse(action);
         }
+
         public override string GetInputPortNameForCreation()
         {
             return null;
@@ -47,6 +50,11 @@ namespace com.absence.dialoguesystem.internals
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>() { "Start" };
+        }
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

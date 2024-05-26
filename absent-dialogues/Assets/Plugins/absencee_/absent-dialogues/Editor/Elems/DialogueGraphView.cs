@@ -175,7 +175,7 @@ namespace com.absence.dialoguesystem.editor
                     NodeView startView = FindNodeView(n);
                     NodeView endView = FindNodeView(c.node);
 
-                    Edge edge = startView.Outputs[c.portIndex].ConnectTo(endView.input);
+                    Edge edge = startView.Outputs[c.portIndex].ConnectTo(endView.Input);
                     AddElement(edge);
                 });
             });

@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace com.absence.dialoguesystem.internals
 {
+    /// <summary>
+    /// Node which teleports the flow to a specific <see cref="DialoguePartNode"/>.
+    /// </summary>
     public sealed class GotoNode : Node
     {
         public string TargetDialogPartName;
@@ -12,7 +15,7 @@ namespace com.absence.dialoguesystem.internals
         protected override void Pass_Inline(params object[] passData)
         {
             var check = MasterDialogue.GetDialogPartNodesWithName(TargetDialogPartName);
-            if (check.Count == 0 || check.Count > 1) return;
+            //if (check.Count == 0 || check.Count > 1) return;
 
             SetState(NodeState.Past);
             check.FirstOrDefault().Reach();

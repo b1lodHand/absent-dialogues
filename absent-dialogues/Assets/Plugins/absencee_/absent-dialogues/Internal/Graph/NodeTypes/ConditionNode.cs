@@ -1,11 +1,15 @@
 using com.absence.variablesystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
-    public class ConditionNode : Node
+    /// <summary>
+    /// Node which re-routes the flow under some conditions.
+    /// </summary>
+    public class ConditionNode : Node, IPerformDelayedClone
     {
         public enum ProcessType
         {
@@ -47,13 +51,24 @@ namespace com.absence.dialoguesystem.internals
             if (FalseNext != null) result.Add((1, FalseNext));
         }
 
-        public override Node Clone()
+        public void DelayedClone(Dialogue originalDialogue)
         {
-            ConditionNode node = Instantiate(this);
-            node.TrueNext = TrueNext.Clone();
-            node.FalseNext = FalseNext.Clone();
-            return node;
+            TrueNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
+            FalseNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
+
+            Comparers = Comparers.ConvertAll(comparer =>
+            {
+                return comparer.Clone(Blackboard.Bank);
+            });
         }
+
+        public override void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            TrueNext.Traverse(action);
+            FalseNext.Traverse(action);
+        }
+
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>() { "True", "False" };
