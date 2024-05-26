@@ -1,6 +1,6 @@
+using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -8,6 +8,7 @@ using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
+    [InitializeOnLoad]
     public class DialogueEditorWindow : EditorWindow
     {
         [SerializeField]
@@ -22,15 +23,69 @@ namespace com.absence.dialoguesystem.editor
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
+        static event Action m_openDelayCall;
+
         [MenuItem("absencee_/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
             DialogueEditorWindow wnd = GetWindow<DialogueEditorWindow>();
+            LoadLastDialogue();
             wnd.titleContent = new GUIContent()
             {
                 image = EditorGUIUtility.IconContent("d_Tile Icon").image,
                 text = "Dialogue Graph"
             };
+        }
+
+        static DialogueEditorWindow()
+        {
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+
+            m_openDelayCall -= LoadLastDialogue;
+            m_openDelayCall += LoadLastDialogue;
+        }
+
+        private static void OnPlayModeStateChanged(PlayModeStateChange change)
+        {
+            switch (change)
+            {
+                case PlayModeStateChange.EnteredEditMode:
+                    LoadLastDialogue();
+                    break;
+
+                case PlayModeStateChange.ExitingEditMode:
+                    SaveLastDialogue();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private static void SaveLastDialogue()
+        {
+            if (m_targetDialogue != null)
+                EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", AssetDatabase.GetAssetPath(m_targetDialogue));
+        }
+
+        private static void LoadLastDialogue()
+        {
+            string lastDialoguePath = EditorPrefs.GetString("LastEditedDialogueBeforePlayMode_AssetPath", "");
+            if (string.IsNullOrWhiteSpace(lastDialoguePath)) return;
+
+            Dialogue lastDialogue = AssetDatabase.LoadAssetAtPath<Dialogue>(lastDialoguePath);
+            if (lastDialogue == null) return;
+
+            PopulateDialogView(lastDialogue);
+        }
+
+        [DidReloadScripts]
+        private static void OnScriptsReloaded()
+        {
+            if (Application.isPlaying) return;
+
+            if(m_dialogueGraphView != null) LoadLastDialogue();
         }
 
         [OnOpenAsset]
@@ -63,6 +118,12 @@ namespace com.absence.dialoguesystem.editor
             if (Application.isPlaying) m_dialogueGraphView.PopulateView(dialogue);
             else if (AssetDatabase.CanOpenAssetInEditor(dialogue.GetInstanceID())) m_dialogueGraphView.PopulateView(dialogue);
 
+            ObjectField dialogueObjectField = m_toolbar.Q<ObjectField>("dialogue-object-field");
+            if (dialogueObjectField == null) return true;
+
+            SaveLastDialogue();
+            dialogueObjectField.SetValueWithoutNotify(m_targetDialogue);
+
             return true;
         }
 
@@ -79,7 +140,10 @@ namespace com.absence.dialoguesystem.editor
             SetupToolbar(root);
 
             SetupEvents();
+
+            m_openDelayCall?.Invoke();
         }
+
         private void AddStyleSheets(VisualElement root)
         {
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.uss");
@@ -114,6 +178,7 @@ namespace com.absence.dialoguesystem.editor
 
                 m_toolbar.Add(m_dialogPartFinder);
             }
+
             void Create_FindRootButton()
             {
                 var findRootButton = new ToolbarButton(() =>
@@ -126,9 +191,11 @@ namespace com.absence.dialoguesystem.editor
                 findRootButton.text = "Quick Find Root";
                 m_toolbar.Add(findRootButton);
             }
+
             void Create_DialogObjectField()
             {
-                var dialogObjectField = new ObjectField("");
+                ObjectField dialogObjectField = new ObjectField("");
+                dialogObjectField.name = "dialogue-object-field";
                 dialogObjectField.label = "Current Dialogue: ";
 
                 dialogObjectField.objectType = typeof(Dialogue);

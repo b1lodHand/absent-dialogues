@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ec4c315733fb2d66d5cd3f40f1285b63b6be1e23"
+      "hash": "e4de58b6b09f533d74c0fc11cf00f2aa361b1710"
     },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",

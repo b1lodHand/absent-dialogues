@@ -38,7 +38,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
-        public Blackboard Blackboard;
+        [HideInInspector] public Blackboard Blackboard;
 
         /// <summary>
         /// Use to create new nodes. Using runtime is not recommended.
