@@ -108,6 +108,6 @@ Welcome to the documentation. Here I will teach you how to use the tool in a bas
 
 **Title Node** is nearly the same as **StickyNote**. It is just bigger and easy to see.
 
-## OOPS!
+## The API Documentation
 
-Rest of the documentation is still in progress. Thank you for your patience!
+Thank you for reading this far, dear! These were everything you needed to know about the nodes. For further information, visit: [API Documentation](https://b1lodhand.github.io/absent-dialogues/)
