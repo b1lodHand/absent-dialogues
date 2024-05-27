@@ -9,7 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which re-routes the flow under some conditions.
     /// </summary>
-    public class ConditionNode : Node, IPerformDelayedClone
+    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
         public enum ProcessType
         {
@@ -91,5 +91,8 @@ namespace com.absence.dialoguesystem.internals
 
             return result;
         }
+
+        public List<VariableComparer> GetComparers() => new(Comparers);
+        public List<VariableSetter> GetSetters() => null;
     }
 }

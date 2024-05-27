@@ -1,3 +1,4 @@
+using com.absence.dialoguesystem.internals;
 using com.absence.variablesystem;
 using com.absence.variablesystem.Editor;
 using System.IO;

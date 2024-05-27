@@ -1,7 +1,7 @@
 using com.absence.variablesystem;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.internals
 {
     /// <summary>
     /// This is a class for holding any variables in the dialogues. It also contains a <see cref="VariableBank"/>.

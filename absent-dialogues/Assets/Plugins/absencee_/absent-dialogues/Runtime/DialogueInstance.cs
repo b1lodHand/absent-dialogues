@@ -16,6 +16,9 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
+        [SerializeField, Tooltip("When enabled, last node stepped on the flow will get saved. For the next time you enter a dialogue with this instance.")]
+        private bool m_saveProgressOnExit = false;
+
         [Space(10)]
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
@@ -79,7 +82,17 @@ namespace com.absence.dialoguesystem
             m_inDialogue = true;
 
             m_player.OnContinue += OnPlayerContinue;
-            OnPlayerContinue(m_player.State);
+
+            if(!m_saveProgressOnExit)
+            {
+                m_player.TeleportToRoot();
+                m_player.Continue();
+            }
+
+            else
+            {
+                OnPlayerContinue(m_player.State);
+            }
 
             return true;
         }
@@ -140,7 +153,7 @@ namespace com.absence.dialoguesystem
 
             m_speaker = Player.Speaker;
             m_speech = Player.Speech;
-            m_options = new(Player.Options);
+            if (Player.HasOptions) m_options = new(Player.Options);
         }
         private void HandleAdditionalData()
         {

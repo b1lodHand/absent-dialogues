@@ -124,11 +124,7 @@ namespace com.absence.dialoguesystem
         }
 
         /// <summary>
-        /// Use to initialize the dialogue before using it.
-        /// <br></br>
-        /// <br></br>
-        /// <b>CAUTION!</b> To achieve the best results, call this only call this once (potentially at the start of a scene) and do not call it
-        /// again neither in runtime or non-runtime.
+        /// It teleports the flow back to the root node.
         /// </summary>
         public void Initialize()
         {
