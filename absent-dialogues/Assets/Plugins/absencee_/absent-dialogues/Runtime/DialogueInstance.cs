@@ -35,6 +35,15 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action<AdditionalSpeechData> OnHandleAdditionalData;
 
+        /// <summary>
+        /// Subscribe to this delegate to override any data will get displayed.
+        /// </summary>
+        public event BeforeSpeechEventHandler OnBeforeSpeech;
+        public delegate void BeforeSpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
+
+        Person m_speaker;
+        string m_speech;
+        List<Option> m_options;
         bool m_inDialogue = false;
 
         private void Awake()
@@ -91,6 +100,8 @@ namespace com.absence.dialoguesystem
 
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
+            GatherPlayerData();
+            InvokeBeforeSpeech();
             HandleAdditionalData();
 
             switch (state)
@@ -100,11 +111,11 @@ namespace com.absence.dialoguesystem
                     break;
 
                 case DialoguePlayer.PlayerState.WaitingForOption:
-                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech, Player.Options, i => Player.Continue(i));
+                    DialogueDisplayer.Instance.Display(m_speaker, m_speech, m_options, i => Player.Continue(i));
                     break;
 
                 case DialoguePlayer.PlayerState.WaitingForSkip:
-                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech);
+                    DialogueDisplayer.Instance.Display(m_speaker, m_speech);
                     break;
 
                 case DialoguePlayer.PlayerState.WillExit:
@@ -116,11 +127,32 @@ namespace com.absence.dialoguesystem
                     throw new Exception("An unknown error occurred while displaying the dialogue.");
             }
         }
+
+        private void GatherPlayerData()
+        {
+            if(!Player.HasSpeech)
+            {
+                m_speaker = null;
+                m_speech = null;
+                m_options = null;
+                return;
+            }
+
+            m_speaker = Player.Speaker;
+            m_speech = Player.Speech;
+            m_options = new(Player.Options);
+        }
         private void HandleAdditionalData()
         {
             if (!Player.HasSpeech) return;
 
             OnHandleAdditionalData?.Invoke(Player.AdditionalSpeechData);
+        }
+        private void InvokeBeforeSpeech()
+        {
+            if (!Player.HasSpeech) return;
+
+            OnBeforeSpeech?.Invoke(ref m_speaker, ref m_speech, ref m_options);
         }
 
         /// <summary>

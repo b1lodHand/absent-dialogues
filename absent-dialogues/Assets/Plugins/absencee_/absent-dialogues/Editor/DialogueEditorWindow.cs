@@ -1,4 +1,3 @@
-using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
@@ -8,7 +7,6 @@ using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [InitializeOnLoad]
     public class DialogueEditorWindow : EditorWindow
     {
         [SerializeField]
@@ -23,44 +21,15 @@ namespace com.absence.dialoguesystem.editor
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
-        static event Action m_openDelayCall;
-
         [MenuItem("absencee_/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
             DialogueEditorWindow wnd = GetWindow<DialogueEditorWindow>();
-            LoadLastDialogue();
             wnd.titleContent = new GUIContent()
             {
                 image = EditorGUIUtility.IconContent("d_Tile Icon").image,
                 text = "Dialogue Graph"
             };
-        }
-
-        static DialogueEditorWindow()
-        {
-            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
-            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
-
-            m_openDelayCall -= LoadLastDialogue;
-            m_openDelayCall += LoadLastDialogue;
-        }
-
-        private static void OnPlayModeStateChanged(PlayModeStateChange change)
-        {
-            switch (change)
-            {
-                case PlayModeStateChange.EnteredEditMode:
-                    LoadLastDialogue();
-                    break;
-
-                case PlayModeStateChange.ExitingEditMode:
-                    SaveLastDialogue();
-                    break;
-
-                default:
-                    break;
-            }
         }
 
         private static void SaveLastDialogue()
@@ -80,14 +49,6 @@ namespace com.absence.dialoguesystem.editor
             PopulateDialogView(lastDialogue);
         }
 
-        [DidReloadScripts]
-        private static void OnScriptsReloaded()
-        {
-            if (Application.isPlaying) return;
-
-            if(m_dialogueGraphView != null) LoadLastDialogue();
-        }
-
         [OnOpenAsset]
         public static bool OnOpenAsset(int instanceId, int line)
         {
@@ -100,6 +61,7 @@ namespace com.absence.dialoguesystem.editor
             var dialogObjectField = m_toolbar.Q<ObjectField>();
             dialogObjectField.SetValueWithoutNotify(m_targetDialogue);
 
+            SaveLastDialogue();
             return PopulateDialogView(m_targetDialogue);
         }
 
@@ -107,6 +69,7 @@ namespace com.absence.dialoguesystem.editor
         {
             if (dialogue == null)
             {
+                m_targetDialogue = null;
                 m_blackboardView.Clear();
                 m_inspectorView.Clear();
                 m_dialogueGraphView.ClearViewWithoutNotification();
@@ -123,7 +86,6 @@ namespace com.absence.dialoguesystem.editor
             ObjectField dialogueObjectField = m_toolbar.Q<ObjectField>("dialogue-object-field");
             if (dialogueObjectField == null) return true;
 
-            SaveLastDialogue();
             dialogueObjectField.SetValueWithoutNotify(m_targetDialogue);
 
             return true;
@@ -143,7 +105,7 @@ namespace com.absence.dialoguesystem.editor
 
             SetupEvents();
 
-            m_openDelayCall?.Invoke();
+            LoadLastDialogue();
         }
 
         private void AddStyleSheets(VisualElement root)
@@ -151,6 +113,7 @@ namespace com.absence.dialoguesystem.editor
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.uss");
             root.styleSheets.Add(styleSheet);
         }
+
         private void SetupViews(VisualElement root)
         {
             /* FIND VIEWS*/
@@ -206,6 +169,7 @@ namespace com.absence.dialoguesystem.editor
                     if (p.newValue == null)
                     {
                         PopulateDialogView(null);
+                        EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", " ");
                         return;
                     }
 
@@ -213,6 +177,7 @@ namespace com.absence.dialoguesystem.editor
                     {
                         m_targetDialogue = (Dialogue)p.newValue;
                         PopulateDialogView(m_targetDialogue);
+                        SaveLastDialogue();
                     }
                 });
 
