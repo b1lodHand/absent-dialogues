@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class DecisionSpeechNode | absent-dialogues Documentation (test) ">
       
-      
+      <meta name="description" content="Node which displays a speech with options.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -75,7 +75,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_internals_DecisionSpeechNode" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode" class="text-break">
-Class DecisionSpeechNode  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class DecisionSpeechNode  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -83,11 +83,12 @@ Class DecisionSpeechNode  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Node which displays a speech with options.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DecisionSpeechNode : Node, IContainSpeech</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators</code></pre>
   </div>
 
 
@@ -108,6 +109,7 @@ Class DecisionSpeechNode  <a class="header-action link-secondary" title="View so
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a></div>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a></div>
     </dd>
   </dl>
 
@@ -183,6 +185,9 @@ Class DecisionSpeechNode  <a class="header-action link-secondary" title="View so
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_SetState_com_absence_dialoguesystem_internals_Node_NodeState_">Node.SetState(Node.NodeState)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone">Node.Clone()</a>
     </div>
     <div>
       <span class="xref">ScriptableObject.SetDirty()</span>
@@ -357,7 +362,7 @@ Class DecisionSpeechNode  <a class="header-action link-secondary" title="View so
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Options" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Options">
   Options
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -388,7 +393,7 @@ public List&lt;Option&gt; Options</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Speech" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech">
   Speech
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -424,7 +429,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_PersonDependent" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.PersonDependent">
   PersonDependent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -459,7 +464,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">
   AddNextNode_Inline(Node, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write the functionality of connecting a node to any port of this node.</p>
@@ -489,27 +494,28 @@ public string Speech</code></pre>
 
 
 
-  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Clone_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone*"></a>
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone*"></a>
 
-  <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Clone" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone">
-  Clone()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)">
+  DelayedClone(Dialogue)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Use to clone this node.</p>
+  <div class="markdown level1 summary"><p>This method will get called right after the dialogue gets cloned.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Node Clone()</code></pre>
+    <pre><code class="lang-csharp hljs">public void DelayedClone(Dialogue originalDialogue)</code></pre>
   </div>
 
-
-  <h4 class="section">Returns</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a></dt>
-    <dd></dd>
+    <dt><code>originalDialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
+    <dd><p>This is the dialogue the cloned dialogue had cloned from.</p>
+</dd>
   </dl>
+
 
 
 
@@ -525,7 +531,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetAdditionalSpeechData" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData">
   GetAdditionalSpeechData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -556,7 +562,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetClassName" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName">
   GetClassName()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use if you have a special USS class for this node. If you don't have any, return null.</p>
@@ -585,11 +591,43 @@ public string Speech</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers">
+  GetComparers()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VariableComparer&gt; GetComparers()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">VariableComparer</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline*"></a>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">
   GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to describe the editor which nodes are the next nodes of this one in the chain by modifying the list.</p>
@@ -621,20 +659,20 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOptions" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions">
   GetOptions()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] GetOptions()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Option&gt; GetOptions()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -652,7 +690,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOutputPortNamesForCreation" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation">
   GetOutputPortNamesForCreation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to describe the dialogue editor how many output ports this node has and what are their names.</p>
@@ -681,11 +719,43 @@ public string Speech</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters">
+  GetSetters()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VariableSetter&gt; GetSetters()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">VariableSetter</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSpeech_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech*"></a>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSpeech" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech">
   GetSpeech()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -716,7 +786,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetTitle" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle">
   GetTitle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to  set the title of this node type in the graph view.</p>
@@ -749,7 +819,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(System.Object[])">
   Pass_Inline(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
@@ -781,7 +851,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline">
   Reach_Inline()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write what happens when the dialogue reaches this node.</p>
@@ -808,7 +878,7 @@ public string Speech</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.RemoveNextNode_Inline(System.Int32)">
   RemoveNextNode_Inline(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write the functionality of removing the next node of this one.</p>
@@ -836,11 +906,43 @@ public string Speech</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})">
+  Traverse(Action&lt;Node&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Traverse(Action&lt;Node&gt; action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

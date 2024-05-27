@@ -37,19 +37,6 @@ references:
   commentId: F:com.absence.dialoguesystem.Dialogue.AllNodes
   fullName: com.absence.dialoguesystem.Dialogue.AllNodes
   nameWithType: Dialogue.AllNodes
-- uid: com.absence.dialoguesystem.Dialogue.Bind
-  name: Bind()
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Bind
-  commentId: M:com.absence.dialoguesystem.Dialogue.Bind
-  fullName: com.absence.dialoguesystem.Dialogue.Bind()
-  nameWithType: Dialogue.Bind()
-- uid: com.absence.dialoguesystem.Dialogue.Bind*
-  name: Bind
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Bind_
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Bind
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.Dialogue.Bind
-  nameWithType: Dialogue.Bind
 - uid: com.absence.dialoguesystem.Dialogue.Blackboard
   name: Blackboard
   href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Blackboard
@@ -124,6 +111,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.Dialogue.GetDialogPartNodesWithName
   nameWithType: Dialogue.GetDialogPartNodesWithName
+- uid: com.absence.dialoguesystem.Dialogue.Initialize
+  name: Initialize()
+  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Initialize
+  commentId: M:com.absence.dialoguesystem.Dialogue.Initialize
+  fullName: com.absence.dialoguesystem.Dialogue.Initialize()
+  nameWithType: Dialogue.Initialize()
+- uid: com.absence.dialoguesystem.Dialogue.Initialize*
+  name: Initialize
+  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Initialize_
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.Initialize
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.Dialogue.Initialize
+  nameWithType: Dialogue.Initialize
 - uid: com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
   name: LastOrCurrentNode
   href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_LastOrCurrentNode
@@ -175,38 +175,49 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.Dialogue.People
   nameWithType: Dialogue.People
-- uid: com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  name: ResetPeopleList()
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetPeopleList
-  commentId: M:com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  fullName: com.absence.dialoguesystem.Dialogue.ResetPeopleList()
-  nameWithType: Dialogue.ResetPeopleList()
-- uid: com.absence.dialoguesystem.Dialogue.ResetPeopleList*
-  name: ResetPeopleList
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetPeopleList_
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  nameWithType: Dialogue.ResetPeopleList
-- uid: com.absence.dialoguesystem.Dialogue.ResetProgress
-  name: ResetProgress()
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetProgress
-  commentId: M:com.absence.dialoguesystem.Dialogue.ResetProgress
-  fullName: com.absence.dialoguesystem.Dialogue.ResetProgress()
-  nameWithType: Dialogue.ResetProgress()
-- uid: com.absence.dialoguesystem.Dialogue.ResetProgress*
-  name: ResetProgress
-  href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetProgress_
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.ResetProgress
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.Dialogue.ResetProgress
-  nameWithType: Dialogue.ResetProgress
 - uid: com.absence.dialoguesystem.Dialogue.RootNode
   name: RootNode
   href: api/com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_RootNode
   commentId: F:com.absence.dialoguesystem.Dialogue.RootNode
   fullName: com.absence.dialoguesystem.Dialogue.RootNode
   nameWithType: Dialogue.RootNode
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
+  name: DialogueAnimationsPlayer
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html
+  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer
+  nameWithType: DialogueAnimationsPlayer
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name: OnHandleAdditionalData(AdditionalSpeechData)
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html#com_absence_dialoguesystem_DialogueAnimationsPlayer_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
+  commentId: M:com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  nameWithType: DialogueAnimationsPlayer.OnHandleAdditionalData(AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData*
+  name: OnHandleAdditionalData
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html#com_absence_dialoguesystem_DialogueAnimationsPlayer_OnHandleAdditionalData_
+  commentId: Overload:com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.OnHandleAdditionalData
+  nameWithType: DialogueAnimationsPlayer.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  name: DialogueAnimationsPlayer.WorkMode
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html
+  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  nameWithType: DialogueAnimationsPlayer.WorkMode
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  name: CrossFade
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html#com_absence_dialoguesystem_DialogueAnimationsPlayer_WorkMode_CrossFade
+  commentId: F:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  nameWithType: DialogueAnimationsPlayer.WorkMode.CrossFade
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  name: SetTrigger
+  href: api/com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html#com_absence_dialoguesystem_DialogueAnimationsPlayer_WorkMode_SetTrigger
+  commentId: F:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  nameWithType: DialogueAnimationsPlayer.WorkMode.SetTrigger
 - uid: com.absence.dialoguesystem.DialogueDisplayer
   name: DialogueDisplayer
   href: api/com.absence.dialoguesystem.DialogueDisplayer.html
@@ -222,15 +233,15 @@ references:
   fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String)
   nameWithType: DialogueDisplayer.Display(Person, string)
   nameWithType.vb: DialogueDisplayer.Display(Person, String)
-- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
-  name: Display(Person, string, string[], Action<int>)
-  href: api/com.absence.dialoguesystem.DialogueDisplayer.html#com_absence_dialoguesystem_DialogueDisplayer_Display_com_absence_personsystem_Person_System_String_System_String___System_Action_System_Int32__
-  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
-  name.vb: Display(Person, String, String(), Action(Of Integer))
-  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, string[], System.Action<int>)
-  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, String(), System.Action(Of Integer))
-  nameWithType: DialogueDisplayer.Display(Person, string, string[], Action<int>)
-  nameWithType.vb: DialogueDisplayer.Display(Person, String, String(), Action(Of Integer))
+- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
+  name: Display(Person, string, List<Option>, Action<int>)
+  href: api/com.absence.dialoguesystem.DialogueDisplayer.html#com_absence_dialoguesystem_DialogueDisplayer_Display_com_absence_personsystem_Person_System_String_System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option__System_Action_System_Int32__
+  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
+  name.vb: Display(Person, String, List(Of Option), Action(Of Integer))
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>, System.Action<int>)
+  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option), System.Action(Of Integer))
+  nameWithType: DialogueDisplayer.Display(Person, string, List<Option>, Action<int>)
+  nameWithType.vb: DialogueDisplayer.Display(Person, String, List(Of Option), Action(Of Integer))
 - uid: com.absence.dialoguesystem.DialogueDisplayer.Display*
   name: Display
   href: api/com.absence.dialoguesystem.DialogueDisplayer.html#com_absence_dialoguesystem_DialogueDisplayer_Display_
@@ -264,12 +275,78 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueDisplayer.Release
   nameWithType: DialogueDisplayer.Release
+- uid: com.absence.dialoguesystem.DialogueExtensionBase
+  name: DialogueExtensionBase
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html
+  commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase
+  nameWithType: DialogueExtensionBase
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name: OnHandleAdditionalData(AdditionalSpeechData)
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  nameWithType: DialogueExtensionBase.OnHandleAdditionalData(AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*
+  name: OnHandleAdditionalData
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData
+  nameWithType: DialogueExtensionBase.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  name: m_instance
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_m_instance
+  commentId: F:com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  nameWithType: DialogueExtensionBase.m_instance
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy
+  name: DialogueInputHandler_Legacy
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html
+  commentId: T:com.absence.dialoguesystem.DialogueInputHandler_Legacy
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy
+  nameWithType: DialogueInputHandler_Legacy
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name: OnHandleAdditionalData(AdditionalSpeechData)
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
+  commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData(AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData*
+  name: OnHandleAdditionalData
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
+  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData
 - uid: com.absence.dialoguesystem.DialogueInstance
   name: DialogueInstance
   href: api/com.absence.dialoguesystem.DialogueInstance.html
   commentId: T:com.absence.dialoguesystem.DialogueInstance
   fullName: com.absence.dialoguesystem.DialogueInstance
   nameWithType: DialogueInstance
+- uid: com.absence.dialoguesystem.DialogueInstance.AddExtension*
+  name: AddExtension
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_AddExtension_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.AddExtension
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueInstance.AddExtension
+  nameWithType: DialogueInstance.AddExtension
+- uid: com.absence.dialoguesystem.DialogueInstance.AddExtension``1
+  name: AddExtension<T>()
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_AddExtension__1
+  commentId: M:com.absence.dialoguesystem.DialogueInstance.AddExtension``1
+  name.vb: AddExtension(Of T)()
+  fullName: com.absence.dialoguesystem.DialogueInstance.AddExtension<T>()
+  fullName.vb: com.absence.dialoguesystem.DialogueInstance.AddExtension(Of T)()
+  nameWithType: DialogueInstance.AddExtension<T>()
+  nameWithType.vb: DialogueInstance.AddExtension(Of T)()
+- uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  name: DialogueInstance.BeforeSpeechEventHandler
+  href: api/com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  commentId: T:com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  fullName: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  nameWithType: DialogueInstance.BeforeSpeechEventHandler
 - uid: com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   name: EnterDialogue()
   href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_EnterDialogue
@@ -296,19 +373,18 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
   nameWithType: DialogueInstance.ExitDialogue
-- uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  name: HandleAdditionalData()
-  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
-  commentId: M:com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  fullName: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData()
-  nameWithType: DialogueInstance.HandleAdditionalData()
-- uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData*
-  name: HandleAdditionalData
-  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData_
-  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  nameWithType: DialogueInstance.HandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  name: OnBeforeSpeech
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_OnBeforeSpeech
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  nameWithType: DialogueInstance.OnBeforeSpeech
+- uid: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  name: OnHandleAdditionalData
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_OnHandleAdditionalData
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  nameWithType: DialogueInstance.OnHandleAdditionalData
 - uid: com.absence.dialoguesystem.DialogueInstance.Player
   name: Player
   href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_Player
@@ -322,6 +398,47 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueInstance.Player
   nameWithType: DialogueInstance.Player
+- uid: com.absence.dialoguesystem.DialogueOptionText
+  name: DialogueOptionText
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html
+  commentId: T:com.absence.dialoguesystem.DialogueOptionText
+  fullName: com.absence.dialoguesystem.DialogueOptionText
+  nameWithType: DialogueOptionText
+- uid: com.absence.dialoguesystem.DialogueOptionText.Initialize(System.Int32,System.String)
+  name: Initialize(int, string)
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html#com_absence_dialoguesystem_DialogueOptionText_Initialize_System_Int32_System_String_
+  commentId: M:com.absence.dialoguesystem.DialogueOptionText.Initialize(System.Int32,System.String)
+  name.vb: Initialize(Integer, String)
+  fullName: com.absence.dialoguesystem.DialogueOptionText.Initialize(int, string)
+  fullName.vb: com.absence.dialoguesystem.DialogueOptionText.Initialize(Integer, String)
+  nameWithType: DialogueOptionText.Initialize(int, string)
+  nameWithType.vb: DialogueOptionText.Initialize(Integer, String)
+- uid: com.absence.dialoguesystem.DialogueOptionText.Initialize*
+  name: Initialize
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html#com_absence_dialoguesystem_DialogueOptionText_Initialize_
+  commentId: Overload:com.absence.dialoguesystem.DialogueOptionText.Initialize
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueOptionText.Initialize
+  nameWithType: DialogueOptionText.Initialize
+- uid: com.absence.dialoguesystem.DialogueOptionText.OnClick
+  name: OnClick()
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html#com_absence_dialoguesystem_DialogueOptionText_OnClick
+  commentId: M:com.absence.dialoguesystem.DialogueOptionText.OnClick
+  fullName: com.absence.dialoguesystem.DialogueOptionText.OnClick()
+  nameWithType: DialogueOptionText.OnClick()
+- uid: com.absence.dialoguesystem.DialogueOptionText.OnClick*
+  name: OnClick
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html#com_absence_dialoguesystem_DialogueOptionText_OnClick_
+  commentId: Overload:com.absence.dialoguesystem.DialogueOptionText.OnClick
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueOptionText.OnClick
+  nameWithType: DialogueOptionText.OnClick
+- uid: com.absence.dialoguesystem.DialogueOptionText.OnClickAction
+  name: OnClickAction
+  href: api/com.absence.dialoguesystem.DialogueOptionText.html#com_absence_dialoguesystem_DialogueOptionText_OnClickAction
+  commentId: E:com.absence.dialoguesystem.DialogueOptionText.OnClickAction
+  fullName: com.absence.dialoguesystem.DialogueOptionText.OnClickAction
+  nameWithType: DialogueOptionText.OnClickAction
 - uid: com.absence.dialoguesystem.DialoguePlayer
   name: DialoguePlayer
   href: api/com.absence.dialoguesystem.DialoguePlayer.html
@@ -337,6 +454,15 @@ references:
   fullName.vb: com.absence.dialoguesystem.DialoguePlayer.New(com.absence.dialoguesystem.Dialogue)
   nameWithType: DialoguePlayer.DialoguePlayer(Dialogue)
   nameWithType.vb: DialoguePlayer.New(Dialogue)
+- uid: com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})
+  name: DialoguePlayer(Dialogue, List<Person>)
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_System_Collections_Generic_List_com_absence_personsystem_Person__
+  commentId: M:com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})
+  name.vb: New(Dialogue, List(Of Person))
+  fullName: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayer(com.absence.dialoguesystem.Dialogue, System.Collections.Generic.List<com.absence.personsystem.Person>)
+  fullName.vb: com.absence.dialoguesystem.DialoguePlayer.New(com.absence.dialoguesystem.Dialogue, System.Collections.Generic.List(Of com.absence.personsystem.Person))
+  nameWithType: DialoguePlayer.DialoguePlayer(Dialogue, List<Person>)
+  nameWithType.vb: DialoguePlayer.New(Dialogue, List(Of Person))
 - uid: com.absence.dialoguesystem.DialoguePlayer.#ctor*
   name: DialoguePlayer
   href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer__ctor_
@@ -360,6 +486,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
   nameWithType: DialoguePlayer.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
+  name: ClonedDialogue
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
+  fullName: com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
+  nameWithType: DialoguePlayer.ClonedDialogue
+- uid: com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue*
+  name: ClonedDialogue
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue_
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
+  nameWithType: DialoguePlayer.ClonedDialogue
 - uid: com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
   name: Continue(params object[])
   href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___
@@ -406,6 +545,45 @@ references:
   commentId: F:com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.WillExit
   fullName: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.WillExit
   nameWithType: DialoguePlayer.DialoguePlayerState.WillExit
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasOptions
+  name: HasOptions
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasOptions
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasOptions
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasOptions
+  nameWithType: DialoguePlayer.HasOptions
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasOptions*
+  name: HasOptions
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasOptions_
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.HasOptions
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasOptions
+  nameWithType: DialoguePlayer.HasOptions
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasPerson
+  name: HasPerson
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasPerson
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasPerson
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasPerson
+  nameWithType: DialoguePlayer.HasPerson
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasPerson*
+  name: HasPerson
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasPerson_
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.HasPerson
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasPerson
+  nameWithType: DialoguePlayer.HasPerson
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  name: HasSpeech
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasSpeech
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  nameWithType: DialoguePlayer.HasSpeech
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasSpeech*
+  name: HasSpeech
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasSpeech_
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  nameWithType: DialoguePlayer.HasSpeech
 - uid: com.absence.dialoguesystem.DialoguePlayer.OnContinue
   name: OnContinue
   href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_OnContinue
@@ -425,35 +603,36 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialoguePlayer.Options
   nameWithType: DialoguePlayer.Options
-- uid: com.absence.dialoguesystem.DialoguePlayer.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  name: OverridePeople(List<Person>)
-  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__
-  commentId: M:com.absence.dialoguesystem.DialoguePlayer.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  name.vb: OverridePeople(List(Of Person))
-  fullName: com.absence.dialoguesystem.DialoguePlayer.OverridePeople(System.Collections.Generic.List<com.absence.personsystem.Person>)
-  fullName.vb: com.absence.dialoguesystem.DialoguePlayer.OverridePeople(System.Collections.Generic.List(Of com.absence.personsystem.Person))
-  nameWithType: DialoguePlayer.OverridePeople(List<Person>)
-  nameWithType.vb: DialoguePlayer.OverridePeople(List(Of Person))
-- uid: com.absence.dialoguesystem.DialoguePlayer.OverridePeople*
-  name: OverridePeople
-  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_OverridePeople_
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.OverridePeople
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.DialoguePlayer.OverridePeople
-  nameWithType: DialoguePlayer.OverridePeople
-- uid: com.absence.dialoguesystem.DialoguePlayer.RevertPeople
-  name: RevertPeople()
-  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_RevertPeople
-  commentId: M:com.absence.dialoguesystem.DialoguePlayer.RevertPeople
-  fullName: com.absence.dialoguesystem.DialoguePlayer.RevertPeople()
-  nameWithType: DialoguePlayer.RevertPeople()
-- uid: com.absence.dialoguesystem.DialoguePlayer.RevertPeople*
-  name: RevertPeople
-  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_RevertPeople_
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.RevertPeople
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.DialoguePlayer.RevertPeople
-  nameWithType: DialoguePlayer.RevertPeople
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  name: DialoguePlayer.PlayerState
+  href: api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html
+  commentId: T:com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  nameWithType: DialoguePlayer.PlayerState
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  name: NoSpeech
+  href: api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html#com_absence_dialoguesystem_DialoguePlayer_PlayerState_NoSpeech
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  nameWithType: DialoguePlayer.PlayerState.NoSpeech
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  name: WaitingForOption
+  href: api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html#com_absence_dialoguesystem_DialoguePlayer_PlayerState_WaitingForOption
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  nameWithType: DialoguePlayer.PlayerState.WaitingForOption
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  name: WaitingForSkip
+  href: api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html#com_absence_dialoguesystem_DialoguePlayer_PlayerState_WaitingForSkip
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  nameWithType: DialoguePlayer.PlayerState.WaitingForSkip
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  name: WillExit
+  href: api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html#com_absence_dialoguesystem_DialoguePlayer_PlayerState_WillExit
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  nameWithType: DialoguePlayer.PlayerState.WillExit
 - uid: com.absence.dialoguesystem.DialoguePlayer.Speaker
   name: Speaker
   href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Speaker
@@ -493,6 +672,38 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialoguePlayer.State
   nameWithType: DialoguePlayer.State
+- uid: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+  name: TeleportToRoot()
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot
+  commentId: M:com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+  fullName: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot()
+  nameWithType: DialoguePlayer.TeleportToRoot()
+- uid: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot*
+  name: TeleportToRoot
+  href: api/com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot_
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+  nameWithType: DialoguePlayer.TeleportToRoot
+- uid: com.absence.dialoguesystem.DialogueSoundsPlayer
+  name: DialogueSoundsPlayer
+  href: api/com.absence.dialoguesystem.DialogueSoundsPlayer.html
+  commentId: T:com.absence.dialoguesystem.DialogueSoundsPlayer
+  fullName: com.absence.dialoguesystem.DialogueSoundsPlayer
+  nameWithType: DialogueSoundsPlayer
+- uid: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name: OnHandleAdditionalData(AdditionalSpeechData)
+  href: api/com.absence.dialoguesystem.DialogueSoundsPlayer.html#com_absence_dialoguesystem_DialogueSoundsPlayer_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
+  commentId: M:com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  fullName: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  nameWithType: DialogueSoundsPlayer.OnHandleAdditionalData(AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData*
+  name: OnHandleAdditionalData
+  href: api/com.absence.dialoguesystem.DialogueSoundsPlayer.html#com_absence_dialoguesystem_DialogueSoundsPlayer_OnHandleAdditionalData_
+  commentId: Overload:com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData
+  nameWithType: DialogueSoundsPlayer.OnHandleAdditionalData
 - uid: com.absence.dialoguesystem.IExternalDialogueElement
   name: IExternalDialogueElement
   href: api/com.absence.dialoguesystem.IExternalDialogueElement.html
@@ -784,6 +995,12 @@ references:
   fullName.vb: com.absence.dialoguesystem.editor.NodeView.New
   nameWithType: NodeView.NodeView
   nameWithType.vb: NodeView.New
+- uid: com.absence.dialoguesystem.editor.NodeView.Input
+  name: Input
+  href: api/com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Input
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.Input
+  fullName: com.absence.dialoguesystem.editor.NodeView.Input
+  nameWithType: NodeView.Input
 - uid: com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
   name: K_PERSONDEPENDENT_CLASSNAME
   href: api/com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_K_PERSONDEPENDENT_CLASSNAME
@@ -860,12 +1077,6 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.editor.NodeView.SetPosition
   nameWithType: NodeView.SetPosition
-- uid: com.absence.dialoguesystem.editor.NodeView.input
-  name: input
-  href: api/com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_input
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.input
-  fullName: com.absence.dialoguesystem.editor.NodeView.input
-  nameWithType: NodeView.input
 - uid: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
   name: m_serializedNode
   href: api/com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_m_serializedNode
@@ -919,6 +1130,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ActionNode.CustomAction
   nameWithType: ActionNode.CustomAction
+- uid: com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: ActionNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.ActionNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.DelayedClone
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ActionNode.DelayedClone
+  nameWithType: ActionNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.ActionNode.GetClassName
   name: GetClassName()
   href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetClassName
@@ -932,6 +1156,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ActionNode.GetClassName
   nameWithType: ActionNode.GetClassName
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  name: GetComparers()
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetComparers()
+  nameWithType: ActionNode.GetComparers()
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetComparers*
+  name: GetComparers
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetComparers_
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  nameWithType: ActionNode.GetComparers
 - uid: com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
   name: GetNextNodes_Inline(ref List<(int portIndex, Node node)>)
   href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____
@@ -948,6 +1185,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline
   nameWithType: ActionNode.GetNextNodes_Inline
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  name: GetSetters()
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetSetters()
+  nameWithType: ActionNode.GetSetters()
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetSetters*
+  name: GetSetters
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetSetters_
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  nameWithType: ActionNode.GetSetters
 - uid: com.absence.dialoguesystem.internals.ActionNode.GetTitle
   name: GetTitle()
   href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetTitle
@@ -1012,6 +1262,22 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ActionNode.RemoveNextNode_Inline
   nameWithType: ActionNode.RemoveNextNode_Inline
+- uid: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: ActionNode.Traverse(Action<Node>)
+  nameWithType.vb: ActionNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.ActionNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ActionNode.Traverse
+  nameWithType: ActionNode.Traverse
 - uid: com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   name: UnityEvents
   href: api/com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_UnityEvents
@@ -1030,30 +1296,83 @@ references:
   commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
   fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
   nameWithType: AdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.Animation
-  name: Animation
-  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_Animation
-  commentId: F:com.absence.dialoguesystem.internals.AdditionalSpeechData.Animation
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.Animation
-  nameWithType: AdditionalSpeechData.Animation
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  name: AnimatorMemberName
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  nameWithType: AdditionalSpeechData.AnimatorMemberName
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName*
+  name: AnimatorMemberName
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AnimatorMemberName_
+  commentId: Overload:com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  nameWithType: AdditionalSpeechData.AnimatorMemberName
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
   name: AudioClip
   href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AudioClip
-  commentId: F:com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
+  commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
   fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
   nameWithType: AdditionalSpeechData.AudioClip
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.Keyword
-  name: Keyword
-  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_Keyword
-  commentId: F:com.absence.dialoguesystem.internals.AdditionalSpeechData.Keyword
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.Keyword
-  nameWithType: AdditionalSpeechData.Keyword
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip*
+  name: AudioClip
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AudioClip_
+  commentId: Overload:com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
+  nameWithType: AdditionalSpeechData.AudioClip
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo
+  name: CustomInfo
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_CustomInfo
+  commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo
+  nameWithType: AdditionalSpeechData.CustomInfo
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo*
+  name: CustomInfo
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_CustomInfo_
+  commentId: Overload:com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.CustomInfo
+  nameWithType: AdditionalSpeechData.CustomInfo
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
   name: Sprite
   href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_Sprite
-  commentId: F:com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
+  commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
   fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
   nameWithType: AdditionalSpeechData.Sprite
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite*
+  name: Sprite
+  href: api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_Sprite_
+  commentId: Overload:com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.Sprite
+  nameWithType: AdditionalSpeechData.Sprite
+- uid: com.absence.dialoguesystem.internals.Blackboard
+  name: Blackboard
+  href: api/com.absence.dialoguesystem.internals.Blackboard.html
+  commentId: T:com.absence.dialoguesystem.internals.Blackboard
+  fullName: com.absence.dialoguesystem.internals.Blackboard
+  nameWithType: Blackboard
+- uid: com.absence.dialoguesystem.internals.Blackboard.Bank
+  name: Bank
+  href: api/com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Bank
+  commentId: F:com.absence.dialoguesystem.internals.Blackboard.Bank
+  fullName: com.absence.dialoguesystem.internals.Blackboard.Bank
+  nameWithType: Blackboard.Bank
+- uid: com.absence.dialoguesystem.internals.Blackboard.Clone
+  name: Clone()
+  href: api/com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Clone
+  commentId: M:com.absence.dialoguesystem.internals.Blackboard.Clone
+  fullName: com.absence.dialoguesystem.internals.Blackboard.Clone()
+  nameWithType: Blackboard.Clone()
+- uid: com.absence.dialoguesystem.internals.Blackboard.Clone*
+  name: Clone
+  href: api/com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Clone_
+  commentId: Overload:com.absence.dialoguesystem.internals.Blackboard.Clone
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.Blackboard.Clone
+  nameWithType: Blackboard.Clone
 - uid: com.absence.dialoguesystem.internals.ConditionNode
   name: ConditionNode
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html
@@ -1076,25 +1395,25 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ConditionNode.AddNextNode_Inline
   nameWithType: ConditionNode.AddNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.ConditionNode.Clone
-  name: Clone()
-  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Clone
-  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.Clone
-  fullName: com.absence.dialoguesystem.internals.ConditionNode.Clone()
-  nameWithType: ConditionNode.Clone()
-- uid: com.absence.dialoguesystem.internals.ConditionNode.Clone*
-  name: Clone
-  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Clone_
-  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.Clone
-  isSpec: "True"
-  fullName: com.absence.dialoguesystem.internals.ConditionNode.Clone
-  nameWithType: ConditionNode.Clone
 - uid: com.absence.dialoguesystem.internals.ConditionNode.Comparers
   name: Comparers
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Comparers
   commentId: F:com.absence.dialoguesystem.internals.ConditionNode.Comparers
   fullName: com.absence.dialoguesystem.internals.ConditionNode.Comparers
   nameWithType: ConditionNode.Comparers
+- uid: com.absence.dialoguesystem.internals.ConditionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: ConditionNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.ConditionNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.DelayedClone
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.DelayedClone
+  nameWithType: ConditionNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.ConditionNode.FalseNext
   name: FalseNext
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_FalseNext
@@ -1114,6 +1433,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ConditionNode.GetClassName
   nameWithType: ConditionNode.GetClassName
+- uid: com.absence.dialoguesystem.internals.ConditionNode.GetComparers
+  name: GetComparers()
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.GetComparers
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.GetComparers()
+  nameWithType: ConditionNode.GetComparers()
+- uid: com.absence.dialoguesystem.internals.ConditionNode.GetComparers*
+  name: GetComparers
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetComparers_
+  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.GetComparers
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.GetComparers
+  nameWithType: ConditionNode.GetComparers
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
   name: GetNextNodes_Inline(ref List<(int portIndex, Node node)>)
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____
@@ -1143,6 +1475,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ConditionNode.GetOutputPortNamesForCreation
   nameWithType: ConditionNode.GetOutputPortNamesForCreation
+- uid: com.absence.dialoguesystem.internals.ConditionNode.GetSetters
+  name: GetSetters()
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.GetSetters
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.GetSetters()
+  nameWithType: ConditionNode.GetSetters()
+- uid: com.absence.dialoguesystem.internals.ConditionNode.GetSetters*
+  name: GetSetters
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetSetters_
+  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.GetSetters
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.GetSetters
+  nameWithType: ConditionNode.GetSetters
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetTitle
   name: GetTitle()
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetTitle
@@ -1238,6 +1583,22 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.ConditionNode.RemoveNextNode_Inline
   nameWithType: ConditionNode.RemoveNextNode_Inline
+- uid: com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: ConditionNode.Traverse(Action<Node>)
+  nameWithType.vb: ConditionNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.ConditionNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.Traverse
+  nameWithType: ConditionNode.Traverse
 - uid: com.absence.dialoguesystem.internals.ConditionNode.TrueNext
   name: TrueNext
   href: api/com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_TrueNext
@@ -1266,19 +1627,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.AddNextNode_Inline
   nameWithType: DecisionSpeechNode.AddNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone
-  name: Clone()
-  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_Clone
-  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone()
-  nameWithType: DecisionSpeechNode.Clone()
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone*
-  name: Clone
-  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_Clone_
-  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: DecisionSpeechNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.Clone
-  nameWithType: DecisionSpeechNode.Clone
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone
+  nameWithType: DecisionSpeechNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData
   name: GetAdditionalSpeechData()
   href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetAdditionalSpeechData
@@ -1305,6 +1666,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName
   nameWithType: DecisionSpeechNode.GetClassName
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers
+  name: GetComparers()
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers()
+  nameWithType: DecisionSpeechNode.GetComparers()
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers*
+  name: GetComparers
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers_
+  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers
+  nameWithType: DecisionSpeechNode.GetComparers
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
   name: GetNextNodes_Inline(ref List<(int portIndex, Node node)>)
   href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____
@@ -1347,6 +1721,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation
   nameWithType: DecisionSpeechNode.GetOutputPortNamesForCreation
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters
+  name: GetSetters()
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters()
+  nameWithType: DecisionSpeechNode.GetSetters()
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters*
+  name: GetSetters
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters_
+  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters
+  nameWithType: DecisionSpeechNode.GetSetters
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
   name: GetSpeech()
   href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSpeech
@@ -1443,6 +1830,22 @@ references:
   commentId: F:com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech
   nameWithType: DecisionSpeechNode.Speech
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: DecisionSpeechNode.Traverse(Action<Node>)
+  nameWithType.vb: DecisionSpeechNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse
+  nameWithType: DecisionSpeechNode.Traverse
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode
   name: DialoguePartNode
   href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html
@@ -1465,19 +1868,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.DialoguePartNode.AddNextNode_Inline
   nameWithType: DialoguePartNode.AddNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.DialoguePartNode.Clone
-  name: Clone()
-  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_Clone
-  commentId: M:com.absence.dialoguesystem.internals.DialoguePartNode.Clone
-  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.Clone()
-  nameWithType: DialoguePartNode.Clone()
-- uid: com.absence.dialoguesystem.internals.DialoguePartNode.Clone*
-  name: Clone
-  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_Clone_
-  commentId: Overload:com.absence.dialoguesystem.internals.DialoguePartNode.Clone
+- uid: com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: DialoguePartNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.Clone
-  nameWithType: DialoguePartNode.Clone
+  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.DelayedClone
+  nameWithType: DialoguePartNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode.DialoguePartName
   name: DialoguePartName
   href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_DialoguePartName
@@ -1603,6 +2006,22 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.DialoguePartNode.RemoveNextNode_Inline
   nameWithType: DialoguePartNode.RemoveNextNode_Inline
+- uid: com.absence.dialoguesystem.internals.DialoguePartNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.DialoguePartNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.DialoguePartNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: DialoguePartNode.Traverse(Action<Node>)
+  nameWithType.vb: DialoguePartNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.DialoguePartNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.DialoguePartNode.html#com_absence_dialoguesystem_internals_DialoguePartNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.DialoguePartNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.DialoguePartNode.Traverse
+  nameWithType: DialoguePartNode.Traverse
 - uid: com.absence.dialoguesystem.internals.FastSpeechNode
   name: FastSpeechNode
   href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html
@@ -1625,19 +2044,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.FastSpeechNode.AddNextNode_Inline
   nameWithType: FastSpeechNode.AddNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  name: Clone()
-  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Clone
-  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Clone()
-  nameWithType: FastSpeechNode.Clone()
-- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Clone*
-  name: Clone
-  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Clone_
-  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.Clone
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: FastSpeechNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  nameWithType: FastSpeechNode.Clone
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone
+  nameWithType: FastSpeechNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.FastSpeechNode.GetAdditionalSpeechData
   name: GetAdditionalSpeechData()
   href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_GetAdditionalSpeechData
@@ -1789,6 +2208,22 @@ references:
   commentId: F:com.absence.dialoguesystem.internals.FastSpeechNode.Speech
   fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Speech
   nameWithType: FastSpeechNode.Speech
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: FastSpeechNode.Traverse(Action<Node>)
+  nameWithType.vb: FastSpeechNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse
+  nameWithType: FastSpeechNode.Traverse
 - uid: com.absence.dialoguesystem.internals.GotoNode
   name: GotoNode
   href: api/com.absence.dialoguesystem.internals.GotoNode.html
@@ -1962,6 +2397,38 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
   nameWithType: IContainSpeech.GetSpeech
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  name: IContainVariableManipulators
+  href: api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html
+  commentId: T:com.absence.dialoguesystem.internals.IContainVariableManipulators
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  nameWithType: IContainVariableManipulators
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  name: GetComparers()
+  href: api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers()
+  nameWithType: IContainVariableManipulators.GetComparers()
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*
+  name: GetComparers
+  href: api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers_
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  nameWithType: IContainVariableManipulators.GetComparers
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  name: GetSetters()
+  href: api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters()
+  nameWithType: IContainVariableManipulators.GetSetters()
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters*
+  name: GetSetters
+  href: api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters_
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  nameWithType: IContainVariableManipulators.GetSetters
 - uid: com.absence.dialoguesystem.internals.Node
   name: Node
   href: api/com.absence.dialoguesystem.internals.Node.html
@@ -2358,6 +2825,22 @@ references:
   commentId: F:com.absence.dialoguesystem.internals.Node.State
   fullName: com.absence.dialoguesystem.internals.Node.State
   nameWithType: Node.State
+- uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: Node.Traverse(Action<Node>)
+  nameWithType.vb: Node.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.Node.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.Node.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse
+  nameWithType: Node.Traverse
 - uid: com.absence.dialoguesystem.internals.Option
   name: Option
   href: api/com.absence.dialoguesystem.internals.Option.html
@@ -2370,6 +2853,19 @@ references:
   commentId: F:com.absence.dialoguesystem.internals.Option.AdditionalData
   fullName: com.absence.dialoguesystem.internals.Option.AdditionalData
   nameWithType: Option.AdditionalData
+- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  name: Clone(VariableBank)
+  href: api/com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  nameWithType: Option.Clone(VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.Clone*
+  name: Clone
+  href: api/com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.Option.Clone
+  nameWithType: Option.Clone
 - uid: com.absence.dialoguesystem.internals.Option.LeadsTo
   name: LeadsTo
   href: api/com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_LeadsTo
@@ -2416,19 +2912,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.RootNode.AddNextNode_Inline
   nameWithType: RootNode.AddNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.RootNode.Clone
-  name: Clone()
-  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Clone
-  commentId: M:com.absence.dialoguesystem.internals.RootNode.Clone
-  fullName: com.absence.dialoguesystem.internals.RootNode.Clone()
-  nameWithType: RootNode.Clone()
-- uid: com.absence.dialoguesystem.internals.RootNode.Clone*
-  name: Clone
-  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Clone_
-  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.Clone
+- uid: com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: RootNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.RootNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.DelayedClone
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.internals.RootNode.Clone
-  nameWithType: RootNode.Clone
+  fullName: com.absence.dialoguesystem.internals.RootNode.DelayedClone
+  nameWithType: RootNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.RootNode.DisplayState
   name: DisplayState
   href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_DisplayState
@@ -2561,6 +3057,22 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.RootNode.RemoveNextNode_Inline
   nameWithType: RootNode.RemoveNextNode_Inline
+- uid: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name: Traverse(Action<Node>)
+  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  commentId: M:com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  name.vb: Traverse(Action(Of Node))
+  fullName: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  fullName.vb: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  nameWithType: RootNode.Traverse(Action<Node>)
+  nameWithType.vb: RootNode.Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.RootNode.Traverse*
+  name: Traverse
+  href: api/com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Traverse_
+  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.Traverse
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.RootNode.Traverse
+  nameWithType: RootNode.Traverse
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode
   name: StickyNoteNode
   href: api/com.absence.dialoguesystem.internals.StickyNoteNode.html

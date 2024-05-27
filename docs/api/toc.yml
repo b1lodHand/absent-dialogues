@@ -3,22 +3,30 @@ items:
 - uid: com.absence.dialoguesystem
   name: com.absence.dialoguesystem
   items:
-  - uid: com.absence.dialoguesystem.Blackboard
-    name: Blackboard
   - uid: com.absence.dialoguesystem.Dialogue
     name: Dialogue
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
+    name: DialogueAnimationsPlayer
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+    name: DialogueAnimationsPlayer.WorkMode
   - uid: com.absence.dialoguesystem.DialogueDisplayer
     name: DialogueDisplayer
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase
+    name: DialogueExtensionBase
+  - uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy
+    name: DialogueInputHandler_Legacy
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
+  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+    name: DialogueInstance.BeforeSpeechEventHandler
+  - uid: com.absence.dialoguesystem.DialogueOptionText
+    name: DialogueOptionText
   - uid: com.absence.dialoguesystem.DialoguePlayer
     name: DialoguePlayer
-  - uid: com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState
-    name: DialoguePlayer.DialoguePlayerState
-  - uid: com.absence.dialoguesystem.IExternalDialogueElement
-    name: IExternalDialogueElement
-  - uid: com.absence.dialoguesystem.OptionText
-    name: OptionText
+  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+    name: DialoguePlayer.PlayerState
+  - uid: com.absence.dialoguesystem.DialogueSoundsPlayer
+    name: DialogueSoundsPlayer
 - uid: com.absence.dialoguesystem.editor
   name: com.absence.dialoguesystem.editor
   items:
@@ -43,6 +51,8 @@ items:
     name: ActionNode
   - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
     name: AdditionalSpeechData
+  - uid: com.absence.dialoguesystem.internals.Blackboard
+    name: Blackboard
   - uid: com.absence.dialoguesystem.internals.ConditionNode
     name: ConditionNode
   - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
@@ -57,6 +67,8 @@ items:
     name: GotoNode
   - uid: com.absence.dialoguesystem.internals.IContainSpeech
     name: IContainSpeech
+  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
+    name: IContainVariableManipulators
   - uid: com.absence.dialoguesystem.internals.Node
     name: Node
   - uid: com.absence.dialoguesystem.internals.Node.NodeState

@@ -18,7 +18,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UxmlFactory
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
     startLine: 7
   assemblies:
   - Assembly-CSharp-Editor-firstpass

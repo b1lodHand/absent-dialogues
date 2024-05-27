@@ -6,7 +6,7 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.FastSpeechNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)
-  - com.absence.dialoguesystem.internals.FastSpeechNode.Clone
+  - com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
   - com.absence.dialoguesystem.internals.FastSpeechNode.GetAdditionalSpeechData
   - com.absence.dialoguesystem.internals.FastSpeechNode.GetClassName
   - com.absence.dialoguesystem.internals.FastSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
@@ -19,6 +19,7 @@ items:
   - com.absence.dialoguesystem.internals.FastSpeechNode.Reach_Inline
   - com.absence.dialoguesystem.internals.FastSpeechNode.RemoveNextNode_Inline(System.Int32)
   - com.absence.dialoguesystem.internals.FastSpeechNode.Speech
+  - com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   langs:
   - csharp
   - vb
@@ -32,11 +33,13 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FastSpeechNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 5
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Node which displays a speech without options.
+  example: []
   syntax:
     content: 'public sealed class FastSpeechNode : Node, IContainSpeech'
     content.vb: Public NotInheritable Class FastSpeechNode Inherits Node Implements IContainSpeech
@@ -72,6 +75,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation
   - com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
+  - com.absence.dialoguesystem.internals.Node.Clone
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -142,8 +146,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Next
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 9
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -179,8 +183,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -216,8 +220,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PersonDependent
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 12
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -247,8 +251,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 14
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -279,8 +283,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 15
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -311,8 +315,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 17
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -347,8 +351,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 24
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -376,8 +380,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 29
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -415,8 +419,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 33
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -451,8 +455,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 37
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 41
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -470,38 +474,41 @@ items:
   nameWithType.vb: FastSpeechNode.GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
   fullName.vb: com.absence.dialoguesystem.internals.FastSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List(Of (portIndex As Integer, node As com.absence.dialoguesystem.internals.Node)))
   name.vb: GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
-- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  id: Clone
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  id: Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   parent: com.absence.dialoguesystem.internals.FastSpeechNode
   langs:
   - csharp
   - vb
-  name: Clone()
-  nameWithType: FastSpeechNode.Clone()
-  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Clone()
+  name: Traverse(Action<Node>)
+  nameWithType: FastSpeechNode.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Clone
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 42
+    id: Traverse
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: Use to clone this node.
+  summary: Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
   example: []
   syntax:
-    content: public override Node Clone()
-    return:
-      type: com.absence.dialoguesystem.internals.Node
-      description: ''
-    content.vb: Public Overrides Function Clone() As Node
-  overridden: com.absence.dialoguesystem.internals.Node.Clone
-  overload: com.absence.dialoguesystem.internals.FastSpeechNode.Clone*
+    content: public override void Traverse(Action<Node> action)
+    parameters:
+    - id: action
+      type: System.Action{com.absence.dialoguesystem.internals.Node}
+    content.vb: Public Overrides Sub Traverse(action As Action(Of Node))
+  overridden: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  overload: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse*
+  nameWithType.vb: FastSpeechNode.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
 - uid: com.absence.dialoguesystem.internals.FastSpeechNode.GetSpeech
   commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.GetSpeech
   id: GetSpeech
@@ -519,8 +526,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSpeech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 49
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 52
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -550,17 +557,17 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOptions
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 50
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 53
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   example: []
   syntax:
-    content: public string[] GetOptions()
+    content: public List<Option> GetOptions()
     return:
-      type: System.String[]
-    content.vb: Public Function GetOptions() As String()
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+    content.vb: Public Function GetOptions() As List(Of [Option])
   overload: com.absence.dialoguesystem.internals.FastSpeechNode.GetOptions*
   implements:
   - com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
@@ -581,8 +588,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAdditionalSpeechData
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
-    startLine: 51
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 54
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -595,6 +602,38 @@ items:
   overload: com.absence.dialoguesystem.internals.FastSpeechNode.GetAdditionalSpeechData*
   implements:
   - com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  id: DelayedClone(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.internals.FastSpeechNode
+  langs:
+  - csharp
+  - vb
+  name: DelayedClone(Dialogue)
+  nameWithType: FastSpeechNode.DelayedClone(Dialogue)
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DelayedClone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/FastSpeechNode.cs
+    startLine: 56
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: This method will get called right after the dialogue gets cloned.
+  example: []
+  syntax:
+    content: public void DelayedClone(Dialogue originalDialogue)
+    parameters:
+    - id: originalDialogue
+      type: com.absence.dialoguesystem.Dialogue
+      description: This is the dialogue the cloned dialogue had cloned from.
+    content.vb: Public Sub DelayedClone(originalDialogue As Dialogue)
+  overload: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -1008,6 +1047,25 @@ references:
   - uid: com.absence.dialoguesystem.internals.Node.NodeState
     name: NodeState
     href: com.absence.dialoguesystem.internals.Node.NodeState.html
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.Clone
+  commentId: M:com.absence.dialoguesystem.internals.Node.Clone
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  name: Clone()
+  nameWithType: Node.Clone()
+  fullName: com.absence.dialoguesystem.internals.Node.Clone()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.Clone
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.Clone
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
@@ -3551,31 +3609,116 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: com.absence.dialoguesystem.internals.Node.Clone
-  commentId: M:com.absence.dialoguesystem.internals.Node.Clone
+- uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
-  name: Clone()
-  nameWithType: Node.Clone()
-  fullName: com.absence.dialoguesystem.internals.Node.Clone()
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse(Action<Node>)
+  nameWithType: Node.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  nameWithType.vb: Node.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Clone
-    name: Clone
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
   - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Clone
-    name: Clone
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
   - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
   - name: )
-- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Clone*
-  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.Clone
-  href: com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Clone
-  name: Clone
-  nameWithType: FastSpeechNode.Clone
-  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Clone
+  - name: )
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse*
+  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.Traverse
+  href: com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse
+  nameWithType: FastSpeechNode.Traverse
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.Traverse
+- uid: System.Action{com.absence.dialoguesystem.internals.Node}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.Node}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Node>
+  nameWithType: Action<Node>
+  fullName: System.Action<com.absence.dialoguesystem.internals.Node>
+  nameWithType.vb: Action(Of Node)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.Node)
+  name.vb: Action(Of Node)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: com.absence.dialoguesystem.internals.FastSpeechNode.GetSpeech*
   commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.GetSpeech
   href: com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_GetSpeech
@@ -3626,28 +3769,38 @@ references:
     href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetOptions
   - name: (
   - name: )
-- uid: System.String[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Option>
+  nameWithType: List<Option>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
+  nameWithType.vb: List(Of Option)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
+  name.vb: List(Of Option)
   spec.csharp:
-  - uid: System.String
-    name: string
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: '>'
   spec.vb:
-  - uid: System.String
-    name: String
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
   - name: )
 - uid: com.absence.dialoguesystem.internals.FastSpeechNode.GetAdditionalSpeechData*
   commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.GetAdditionalSpeechData
@@ -3681,3 +3834,46 @@ references:
   name: AdditionalSpeechData
   nameWithType: AdditionalSpeechData
   fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone*
+  commentId: Overload:com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone
+  href: com.absence.dialoguesystem.internals.FastSpeechNode.html#com_absence_dialoguesystem_internals_FastSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  name: DelayedClone
+  nameWithType: FastSpeechNode.DelayedClone
+  fullName: com.absence.dialoguesystem.internals.FastSpeechNode.DelayedClone
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html

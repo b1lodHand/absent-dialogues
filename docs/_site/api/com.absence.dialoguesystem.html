@@ -81,12 +81,14 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="com.absence.dialoguesystem.Blackboard.html">Blackboard</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
       <dd><p>The scriptable object derived type that holds all of the data which is essential for a dialogue.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueAnimationsPlayer.html">DialogueAnimationsPlayer</a></dt>
+      <dd><p>A small component which is responsible for playing the animations (if there is any) of the dialogue instance
+attached to the same game object.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -96,8 +98,23 @@ the UI Toolkit.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html">DialogueExtensionBase</a></dt>
+      <dd><p>This is the base class to derive from in order to handle some custom logic
+over the system.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueInputHandler_Legacy.html">DialogueInputHandler_Legacy</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html">DialogueInstance</a></dt>
       <dd><p>Lets you manage a single <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a> in the scene easily.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueOptionText.html">DialogueOptionText</a></dt>
+      <dd><p>A small component that manages the functionality of an option's drawing and input.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -106,24 +123,30 @@ the UI Toolkit.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="com.absence.dialoguesystem.OptionText.html">OptionText</a></dt>
-      <dd><p>A small component that manages the functionality of an option's drawing and input.</p>
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueSoundsPlayer.html">DialogueSoundsPlayer</a></dt>
+      <dd><p>A small component which is responsible for playing the sounds (if there is any) of the <a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html">DialogueInstance</a>
+attached to the same gameobject.</p>
 </dd>
-    </dl>
-    <h3 id="interfaces">
-Interfaces
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="com.absence.dialoguesystem.IExternalDialogueElement.html">IExternalDialogueElement</a></dt>
-      <dd></dd>
     </dl>
     <h3 id="enums">
 Enums
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.html">DialoguePlayer.DialoguePlayerState</a></dt>
-      <dd><p>Shows what state the dialogue is in.</p>
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html">DialogueAnimationsPlayer.WorkMode</a></dt>
+      <dd><p>Lets you select the way this extension uses the <a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AnimatorMemberName">AnimatorMemberName</a>.</p>
 </dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">DialoguePlayer.PlayerState</a></dt>
+      <dd><p>Shows what state the dialogue player is in.</p>
+</dd>
+    </dl>
+    <h3 id="delegates">
+Delegates
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html">DialogueInstance.BeforeSpeechEventHandler</a></dt>
+      <dd></dd>
     </dl>
 
 

@@ -6,7 +6,7 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.RootNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)
-  - com.absence.dialoguesystem.internals.RootNode.Clone
+  - com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
   - com.absence.dialoguesystem.internals.RootNode.DisplayState
   - com.absence.dialoguesystem.internals.RootNode.GetClassName
   - com.absence.dialoguesystem.internals.RootNode.GetInputPortNameForCreation
@@ -17,6 +17,7 @@ items:
   - com.absence.dialoguesystem.internals.RootNode.Pass_Inline(System.Object[])
   - com.absence.dialoguesystem.internals.RootNode.Reach_Inline
   - com.absence.dialoguesystem.internals.RootNode.RemoveNextNode_Inline(System.Int32)
+  - com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   langs:
   - csharp
   - vb
@@ -30,11 +31,13 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RootNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 5
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Node which is essential if you want to have a dialogue graph.
+  example: []
   syntax:
     content: 'public sealed class RootNode : Node'
     content.vb: Public NotInheritable Class RootNode Inherits Node
@@ -66,6 +69,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.Reach
   - com.absence.dialoguesystem.internals.Node.OnRemoval
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
+  - com.absence.dialoguesystem.internals.Node.Clone
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -136,8 +140,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Next
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 7
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -173,8 +177,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 8
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -204,8 +208,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 9
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -236,8 +240,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -268,8 +272,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 12
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -304,8 +308,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 18
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -333,8 +337,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 23
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -372,8 +376,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 27
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 31
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -408,8 +412,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 31
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 35
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -427,38 +431,41 @@ items:
   nameWithType.vb: RootNode.GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
   fullName.vb: com.absence.dialoguesystem.internals.RootNode.GetNextNodes_Inline(System.Collections.Generic.List(Of (portIndex As Integer, node As com.absence.dialoguesystem.internals.Node)))
   name.vb: GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
-- uid: com.absence.dialoguesystem.internals.RootNode.Clone
-  commentId: M:com.absence.dialoguesystem.internals.RootNode.Clone
-  id: Clone
+- uid: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  id: Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   parent: com.absence.dialoguesystem.internals.RootNode
   langs:
   - csharp
   - vb
-  name: Clone()
-  nameWithType: RootNode.Clone()
-  fullName: com.absence.dialoguesystem.internals.RootNode.Clone()
+  name: Traverse(Action<Node>)
+  nameWithType: RootNode.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Clone
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 36
+    id: Traverse
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 39
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: Use to clone this node.
+  summary: Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
   example: []
   syntax:
-    content: public override Node Clone()
-    return:
-      type: com.absence.dialoguesystem.internals.Node
-      description: ''
-    content.vb: Public Overrides Function Clone() As Node
-  overridden: com.absence.dialoguesystem.internals.Node.Clone
-  overload: com.absence.dialoguesystem.internals.RootNode.Clone*
+    content: public override void Traverse(Action<Node> action)
+    parameters:
+    - id: action
+      type: System.Action{com.absence.dialoguesystem.internals.Node}
+    content.vb: Public Overrides Sub Traverse(action As Action(Of Node))
+  overridden: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  overload: com.absence.dialoguesystem.internals.RootNode.Traverse*
+  nameWithType.vb: RootNode.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.RootNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
 - uid: com.absence.dialoguesystem.internals.RootNode.GetInputPortNameForCreation
   commentId: M:com.absence.dialoguesystem.internals.RootNode.GetInputPortNameForCreation
   id: GetInputPortNameForCreation
@@ -476,8 +483,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 42
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -508,8 +515,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
-    startLine: 46
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -523,6 +530,38 @@ items:
     content.vb: Public Overrides Function GetOutputPortNamesForCreation() As List(Of String)
   overridden: com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   overload: com.absence.dialoguesystem.internals.RootNode.GetOutputPortNamesForCreation*
+- uid: com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  id: DelayedClone(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.internals.RootNode
+  langs:
+  - csharp
+  - vb
+  name: DelayedClone(Dialogue)
+  nameWithType: RootNode.DelayedClone(Dialogue)
+  fullName: com.absence.dialoguesystem.internals.RootNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DelayedClone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/RootNode.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: This method will get called right after the dialogue gets cloned.
+  example: []
+  syntax:
+    content: public void DelayedClone(Dialogue originalDialogue)
+    parameters:
+    - id: originalDialogue
+      type: com.absence.dialoguesystem.Dialogue
+      description: This is the dialogue the cloned dialogue had cloned from.
+    content.vb: Public Sub DelayedClone(originalDialogue As Dialogue)
+  overload: com.absence.dialoguesystem.internals.RootNode.DelayedClone*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -891,6 +930,25 @@ references:
   - uid: com.absence.dialoguesystem.internals.Node.NodeState
     name: NodeState
     href: com.absence.dialoguesystem.internals.Node.NodeState.html
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.Clone
+  commentId: M:com.absence.dialoguesystem.internals.Node.Clone
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  name: Clone()
+  nameWithType: Node.Clone()
+  fullName: com.absence.dialoguesystem.internals.Node.Clone()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.Clone
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.Clone
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
@@ -3434,31 +3492,116 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: com.absence.dialoguesystem.internals.Node.Clone
-  commentId: M:com.absence.dialoguesystem.internals.Node.Clone
+- uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
-  name: Clone()
-  nameWithType: Node.Clone()
-  fullName: com.absence.dialoguesystem.internals.Node.Clone()
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse(Action<Node>)
+  nameWithType: Node.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  nameWithType.vb: Node.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Clone
-    name: Clone
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
   - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Clone
-    name: Clone
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
   - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
   - name: )
-- uid: com.absence.dialoguesystem.internals.RootNode.Clone*
-  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.Clone
-  href: com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Clone
-  name: Clone
-  nameWithType: RootNode.Clone
-  fullName: com.absence.dialoguesystem.internals.RootNode.Clone
+  - name: )
+- uid: com.absence.dialoguesystem.internals.RootNode.Traverse*
+  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.Traverse
+  href: com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse
+  nameWithType: RootNode.Traverse
+  fullName: com.absence.dialoguesystem.internals.RootNode.Traverse
+- uid: System.Action{com.absence.dialoguesystem.internals.Node}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.Node}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Node>
+  nameWithType: Action<Node>
+  fullName: System.Action<com.absence.dialoguesystem.internals.Node>
+  nameWithType.vb: Action(Of Node)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.Node)
+  name.vb: Action(Of Node)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation
   commentId: M:com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation
   parent: com.absence.dialoguesystem.internals.Node
@@ -3544,3 +3687,46 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: com.absence.dialoguesystem.internals.RootNode.DelayedClone*
+  commentId: Overload:com.absence.dialoguesystem.internals.RootNode.DelayedClone
+  href: com.absence.dialoguesystem.internals.RootNode.html#com_absence_dialoguesystem_internals_RootNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  name: DelayedClone
+  nameWithType: RootNode.DelayedClone
+  fullName: com.absence.dialoguesystem.internals.RootNode.DelayedClone
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html

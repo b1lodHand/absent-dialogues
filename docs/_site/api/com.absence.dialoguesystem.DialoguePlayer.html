@@ -75,7 +75,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_DialoguePlayer" data-uid="com.absence.dialoguesystem.DialoguePlayer" class="text-break">
-Class DialoguePlayer  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class DialoguePlayer  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -88,7 +88,8 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DialoguePlayer</code></pre>
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class DialoguePlayer</code></pre>
   </div>
 
 
@@ -143,7 +144,7 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue)">
   DialoguePlayer(Dialogue)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to create a new <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.</p>
@@ -157,7 +158,44 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>dialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
-    <dd></dd>
+    <dd><p>The original dialogue to clone from.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_DialoguePlayer__ctor_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor*"></a>
+
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_System_Collections_Generic_List_com_absence_personsystem_Person__" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})">
+  DialoguePlayer(Dialogue, List&lt;Person&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to create a new <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a> with an overridden people list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DialoguePlayer(Dialogue dialogue, List&lt;Person&gt; overridePeople)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
+    <dd><p>The original dialogue to clone from.</p>
+</dd>
+    <dt><code>overridePeople</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Person</span>&gt;</dt>
+    <dd><p>The list of new people.</p>
+</dd>
   </dl>
 
 
@@ -179,10 +217,11 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData" data-uid="com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData">
   AdditionalSpeechData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Additional data of the current node.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -206,18 +245,19 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
 
 
-  <a id="com_absence_dialoguesystem_DialoguePlayer_Options_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options*"></a>
+  <a id="com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue*"></a>
 
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Options" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options">
-  Options
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue" data-uid="com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue">
+  ClonedDialogue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The dialogue cloned from the original one from constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] Options { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dialogue ClonedDialogue { get; }</code></pre>
   </div>
 
 
@@ -226,7 +266,135 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_DialoguePlayer_HasOptions_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasOptions*"></a>
+
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasOptions" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasOptions">
+  HasOptions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to check if current node is a <a class="xref" href="com.absence.dialoguesystem.internals.FastSpeechNode.html">FastSpeechNode</a> or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasOptions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_DialoguePlayer_HasPerson_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasPerson*"></a>
+
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasPerson" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasPerson">
+  HasPerson
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to check if current node <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_PersonDependent">PersonDependent</a> or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPerson { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_DialoguePlayer_HasSpeech_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasSpeech*"></a>
+
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasSpeech" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasSpeech">
+  HasSpeech
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to check if current node is a <a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a> or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSpeech { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="com_absence_dialoguesystem_DialoguePlayer_Options_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options*"></a>
+
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Options" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options">
+  Options
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Options of the current node, if there is any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Option&gt; Options { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -241,10 +409,11 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_Speaker" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speaker">
   Speaker
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Person who speaks.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -272,10 +441,11 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_Speech" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speech">
   Speech
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Speech of the current node.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -303,14 +473,15 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_State" data-uid="com.absence.dialoguesystem.DialoguePlayer.State">
   State
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Current state of the player.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DialoguePlayer.DialoguePlayerState State { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DialoguePlayer.PlayerState State { get; }</code></pre>
   </div>
 
 
@@ -319,7 +490,7 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.html">DialoguePlayerState</a></dt>
+    <dt><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a></dt>
     <dd></dd>
   </dl>
 
@@ -338,7 +509,7 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___" data-uid="com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])">
   Continue(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to progress in the target dialogue wih some optional data.</p>
@@ -352,7 +523,8 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>passData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>Anything that you want to pass as data. (e.g. <a class="xref" href="com.absence.dialoguesystem.internals.DecisionSpeechNode.html">DecisionSpeechNode</a> uses the [0] element to get the selected option index.)</p>
+</dd>
   </dl>
 
 
@@ -366,51 +538,19 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
 
 
-  <a id="com_absence_dialoguesystem_DialoguePlayer_OverridePeople_" data-uid="com.absence.dialoguesystem.DialoguePlayer.OverridePeople*"></a>
+  <a id="com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot_" data-uid="com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot*"></a>
 
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__" data-uid="com.absence.dialoguesystem.DialoguePlayer.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})">
-  OverridePeople(List&lt;Person&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <h3 id="com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot" data-uid="com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot">
+  TeleportToRoot()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Overrides the people in the target dialogue. Won't work if it is already overriden.</p>
+  <div class="markdown level1 summary"><p>Teleports the flow to the <a class="xref" href="com.absence.dialoguesystem.internals.RootNode.html">RootNode</a> of the dialogue clone.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OverridePeople(List&lt;Person&gt; overridePeople)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>overridePeople</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Person</span>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="com_absence_dialoguesystem_DialoguePlayer_RevertPeople_" data-uid="com.absence.dialoguesystem.DialoguePlayer.RevertPeople*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_RevertPeople" data-uid="com.absence.dialoguesystem.DialoguePlayer.RevertPeople">
-  RevertPeople()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L87"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Reverts any overriding process.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RevertPeople()</code></pre>
+    <pre><code class="lang-csharp hljs">public void TeleportToRoot()</code></pre>
   </div>
 
 
@@ -432,14 +572,15 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h3 id="com_absence_dialoguesystem_DialoguePlayer_OnContinue" data-uid="com.absence.dialoguesystem.DialoguePlayer.OnContinue">
   OnContinue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Action which will get invoked when <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___">Continue(params object[])</a> gets called.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action&lt;DialoguePlayer.DialoguePlayerState&gt; OnContinue</code></pre>
+    <pre><code class="lang-csharp hljs">public event Action&lt;DialoguePlayer.PlayerState&gt; OnContinue</code></pre>
   </div>
 
 
@@ -449,7 +590,7 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.html">DialoguePlayerState</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -463,7 +604,7 @@ Class DialoguePlayer  <a class="header-action link-secondary" title="View source
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

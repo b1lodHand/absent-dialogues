@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/b1lod/Desktop/absence/absent-dialogues/docfx-test",
+  "source_base_path": "D:/UnityLibrary/Other/absent-dialogues/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -32,10 +32,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueAnimationsPlayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.DialogueDisplayer.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.DialogueDisplayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueExtensionBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueExtensionBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html"
         }
       },
       "version": ""
@@ -52,6 +102,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueOptionText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueOptionText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.DialoguePlayer.DialoguePlayerState.yml",
       "output": {
         ".html": {
@@ -62,10 +122,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialoguePlayer.PlayerState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.DialoguePlayer.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.DialoguePlayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueSoundsPlayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueSoundsPlayer.html"
         }
       },
       "version": ""
@@ -192,6 +272,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Blackboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Blackboard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.ConditionNode.ProcessType.yml",
       "output": {
         ".html": {
@@ -256,6 +346,16 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.IContainSpeech.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.IContainVariableManipulators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.IContainVariableManipulators.html"
         }
       },
       "version": ""

@@ -23,8 +23,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueEditorWindow
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -177,8 +177,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OpenWindow
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 24
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 23
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -215,8 +215,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnOpenAsset
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 35
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 51
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -261,8 +261,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateGUI
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 68
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 93
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -287,8 +287,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FrameToNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 176
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 210
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -316,8 +316,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SelectNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 182
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 216
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor

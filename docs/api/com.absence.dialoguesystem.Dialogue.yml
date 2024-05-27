@@ -6,19 +6,17 @@ items:
   parent: com.absence.dialoguesystem
   children:
   - com.absence.dialoguesystem.Dialogue.AllNodes
-  - com.absence.dialoguesystem.Dialogue.Bind
   - com.absence.dialoguesystem.Dialogue.Blackboard
   - com.absence.dialoguesystem.Dialogue.Clone
   - com.absence.dialoguesystem.Dialogue.CreateNode(System.Type)
   - com.absence.dialoguesystem.Dialogue.DeleteNode(com.absence.dialoguesystem.internals.Node)
   - com.absence.dialoguesystem.Dialogue.GetAllDialogParts
   - com.absence.dialoguesystem.Dialogue.GetDialogPartNodesWithName(System.String)
+  - com.absence.dialoguesystem.Dialogue.Initialize
   - com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
   - com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   - com.absence.dialoguesystem.Dialogue.Pass(System.Object[])
   - com.absence.dialoguesystem.Dialogue.People
-  - com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  - com.absence.dialoguesystem.Dialogue.ResetProgress
   - com.absence.dialoguesystem.Dialogue.RootNode
   langs:
   - csharp
@@ -33,7 +31,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Dialogue
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
     startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
@@ -119,7 +117,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RootNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
     startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
@@ -158,7 +156,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: LastOrCurrentNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
     startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
@@ -197,7 +195,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AllNodes
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
     startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
@@ -236,12 +234,12 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: People
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 35
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: People in this dialogue (might be overridden).
+  summary: People in this dialogue (might be overridden on clones).
   example: []
   syntax:
     content: public List<Person> People { get; }
@@ -267,18 +265,28 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Blackboard
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 40
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: The <xref href="com.absence.dialoguesystem.Dialogue.Blackboard" data-throw-if-not-resolved="false"></xref> of this dialogue.
   example: []
   syntax:
-    content: public Blackboard Blackboard
+    content: >-
+      [HideInInspector]
+
+      public Blackboard Blackboard
     return:
-      type: com.absence.dialoguesystem.Blackboard
-    content.vb: Public Blackboard As Blackboard
+      type: com.absence.dialoguesystem.internals.Blackboard
+    content.vb: >-
+      <HideInInspector>
+
+      Public Blackboard As Blackboard
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
+    arguments: []
 - uid: com.absence.dialoguesystem.Dialogue.CreateNode(System.Type)
   commentId: M:com.absence.dialoguesystem.Dialogue.CreateNode(System.Type)
   id: CreateNode(System.Type)
@@ -296,8 +304,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 47
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -331,8 +339,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DeleteNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 65
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 63
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -363,8 +371,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 76
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 74
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -397,8 +405,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetDialogPartNodesWithName
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 89
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 99
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -437,8 +445,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAllDialogParts
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 110
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 120
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -451,34 +459,34 @@ items:
       description: The entire list of <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s in the current dialogue.
     content.vb: Public Function GetAllDialogParts() As List(Of DialoguePartNode)
   overload: com.absence.dialoguesystem.Dialogue.GetAllDialogParts*
-- uid: com.absence.dialoguesystem.Dialogue.Bind
-  commentId: M:com.absence.dialoguesystem.Dialogue.Bind
-  id: Bind
+- uid: com.absence.dialoguesystem.Dialogue.Initialize
+  commentId: M:com.absence.dialoguesystem.Dialogue.Initialize
+  id: Initialize
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: Bind()
-  nameWithType: Dialogue.Bind()
-  fullName: com.absence.dialoguesystem.Dialogue.Bind()
+  name: Initialize()
+  nameWithType: Dialogue.Initialize()
+  fullName: com.absence.dialoguesystem.Dialogue.Initialize()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Bind
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 118
+    id: Initialize
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 128
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to initialize the dialogue before using it.
+  summary: It teleports the flow back to the root node.
   example: []
   syntax:
-    content: public void Bind()
-    content.vb: Public Sub Bind()
-  overload: com.absence.dialoguesystem.Dialogue.Bind*
+    content: public void Initialize()
+    content.vb: Public Sub Initialize()
+  overload: com.absence.dialoguesystem.Dialogue.Initialize*
 - uid: com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   commentId: M:com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   id: OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
@@ -496,8 +504,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OverridePeople
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 134
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 141
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -505,6 +513,8 @@ items:
     Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
 
     object's people list won't be affected by this.
+
+    <br /><br /><b>CAUTION!</b> The recommended way is to use this function on clones only.
   example: []
   syntax:
     content: public void OverridePeople(List<Person> overridePeople)
@@ -534,8 +544,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 149
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    startLine: 154
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -555,62 +565,6 @@ items:
   nameWithType.vb: Dialogue.Pass(ParamArray Object())
   fullName.vb: com.absence.dialoguesystem.Dialogue.Pass(ParamArray Object())
   name.vb: Pass(ParamArray Object())
-- uid: com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  commentId: M:com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  id: ResetPeopleList
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: ResetPeopleList()
-  nameWithType: Dialogue.ResetPeopleList()
-  fullName: com.absence.dialoguesystem.Dialogue.ResetPeopleList()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ResetPeopleList
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 157
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: Use to reset people list if you've overridden it before.
-  example: []
-  syntax:
-    content: public void ResetPeopleList()
-    content.vb: Public Sub ResetPeopleList()
-  overload: com.absence.dialoguesystem.Dialogue.ResetPeopleList*
-- uid: com.absence.dialoguesystem.Dialogue.ResetProgress
-  commentId: M:com.absence.dialoguesystem.Dialogue.ResetProgress
-  id: ResetProgress
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: ResetProgress()
-  nameWithType: Dialogue.ResetProgress()
-  fullName: com.absence.dialoguesystem.Dialogue.ResetProgress()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ResetProgress
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 166
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: Use to reset all the progress has gotten in this dialogue.
-  example: []
-  syntax:
-    content: public void ResetProgress()
-    content.vb: Public Sub ResetProgress()
-  overload: com.absence.dialoguesystem.Dialogue.ResetProgress*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -2940,13 +2894,13 @@ references:
   name: Blackboard
   nameWithType: Dialogue.Blackboard
   fullName: com.absence.dialoguesystem.Dialogue.Blackboard
-- uid: com.absence.dialoguesystem.Blackboard
-  commentId: T:com.absence.dialoguesystem.Blackboard
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.Blackboard.html
+- uid: com.absence.dialoguesystem.internals.Blackboard
+  commentId: T:com.absence.dialoguesystem.internals.Blackboard
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Blackboard.html
   name: Blackboard
   nameWithType: Blackboard
-  fullName: com.absence.dialoguesystem.Blackboard
+  fullName: com.absence.dialoguesystem.internals.Blackboard
 - uid: com.absence.dialoguesystem.Dialogue.CreateNode*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.CreateNode
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_CreateNode_System_Type_
@@ -3042,12 +2996,12 @@ references:
   name: GetAllDialogParts
   nameWithType: Dialogue.GetAllDialogParts
   fullName: com.absence.dialoguesystem.Dialogue.GetAllDialogParts
-- uid: com.absence.dialoguesystem.Dialogue.Bind*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Bind
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Bind
-  name: Bind
-  nameWithType: Dialogue.Bind
-  fullName: com.absence.dialoguesystem.Dialogue.Bind
+- uid: com.absence.dialoguesystem.Dialogue.Initialize*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.Initialize
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Initialize
+  name: Initialize
+  nameWithType: Dialogue.Initialize
+  fullName: com.absence.dialoguesystem.Dialogue.Initialize
 - uid: com.absence.dialoguesystem.Dialogue.OverridePeople*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.OverridePeople
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__
@@ -3090,15 +3044,3 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: (
   - name: )
-- uid: com.absence.dialoguesystem.Dialogue.ResetPeopleList*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.ResetPeopleList
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetPeopleList
-  name: ResetPeopleList
-  nameWithType: Dialogue.ResetPeopleList
-  fullName: com.absence.dialoguesystem.Dialogue.ResetPeopleList
-- uid: com.absence.dialoguesystem.Dialogue.ResetProgress*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.ResetProgress
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetProgress
-  name: ResetProgress
-  nameWithType: Dialogue.ResetProgress
-  fullName: com.absence.dialoguesystem.Dialogue.ResetProgress

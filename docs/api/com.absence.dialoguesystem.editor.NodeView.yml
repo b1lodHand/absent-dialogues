@@ -6,6 +6,7 @@ items:
   parent: com.absence.dialoguesystem.editor
   children:
   - com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.editor.NodeView.Input
   - com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
   - com.absence.dialoguesystem.editor.NodeView.Master
   - com.absence.dialoguesystem.editor.NodeView.Node
@@ -14,7 +15,6 @@ items:
   - com.absence.dialoguesystem.editor.NodeView.OnUnselected
   - com.absence.dialoguesystem.editor.NodeView.Outputs
   - com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
-  - com.absence.dialoguesystem.editor.NodeView.input
   - com.absence.dialoguesystem.editor.NodeView.m_serializedNode
   langs:
   - csharp
@@ -29,8 +29,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeView
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 14
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 15
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -203,8 +203,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: K_PERSONDEPENDENT_CLASSNAME
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 16
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 17
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -230,8 +230,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnNodeSelected
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 18
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -257,8 +257,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Node
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 19
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 20
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -267,33 +267,33 @@ items:
     return:
       type: com.absence.dialoguesystem.internals.Node
     content.vb: Public Node As Node
-- uid: com.absence.dialoguesystem.editor.NodeView.input
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.input
-  id: input
+- uid: com.absence.dialoguesystem.editor.NodeView.Input
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.Input
+  id: Input
   parent: com.absence.dialoguesystem.editor.NodeView
   langs:
   - csharp
   - vb
-  name: input
-  nameWithType: NodeView.input
-  fullName: com.absence.dialoguesystem.editor.NodeView.input
+  name: Input
+  nameWithType: NodeView.Input
+  fullName: com.absence.dialoguesystem.editor.NodeView.Input
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: input
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 21
+    id: Input
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 22
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   syntax:
-    content: public Port input
+    content: public Port Input
     return:
       type: UnityEditor.Experimental.GraphView.Port
-    content.vb: Public input As Port
+    content.vb: Public Input As Port
 - uid: com.absence.dialoguesystem.editor.NodeView.Outputs
   commentId: F:com.absence.dialoguesystem.editor.NodeView.Outputs
   id: Outputs
@@ -311,8 +311,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Outputs
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 22
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 23
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -338,8 +338,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_serializedNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 27
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 28
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -365,8 +365,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Master
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 30
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 31
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -394,8 +394,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 32
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -426,8 +426,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetPosition
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 221
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 232
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -459,8 +459,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelected
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 229
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 240
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -488,8 +488,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnUnselected
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 235
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 246
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor

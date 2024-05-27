@@ -6,7 +6,7 @@ items:
   parent: com.absence.dialoguesystem
   children:
   - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String)
-  - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
+  - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
   - com.absence.dialoguesystem.DialogueDisplayer.Occupy
   - com.absence.dialoguesystem.DialogueDisplayer.Release
   langs:
@@ -22,8 +22,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueDisplayer
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 14
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -190,8 +190,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Occupy
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 30
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    startLine: 44
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -221,8 +221,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Release
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 44
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    startLine: 58
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -252,8 +252,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 57
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    startLine: 71
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -273,16 +273,16 @@ items:
   nameWithType.vb: DialogueDisplayer.Display(Person, String)
   fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String)
   name.vb: Display(Person, String)
-- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
-  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
-  id: Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})
+- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
+  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
+  id: Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
   parent: com.absence.dialoguesystem.DialogueDisplayer
   langs:
   - csharp
   - vb
-  name: Display(Person, string, string[], Action<int>)
-  nameWithType: DialogueDisplayer.Display(Person, string, string[], Action<int>)
-  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, string[], System.Action<int>)
+  name: Display(Person, string, List<Option>, Action<int>)
+  nameWithType: DialogueDisplayer.Display(Person, string, List<Option>, Action<int>)
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>, System.Action<int>)
   type: Method
   source:
     remote:
@@ -290,15 +290,15 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 73
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    startLine: 87
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Displays a speech with options.
   example: []
   syntax:
-    content: public void Display(Person speaker, string speech, string[] options, Action<int> optionPressAction)
+    content: public void Display(Person speaker, string speech, List<Option> options, Action<int> optionPressAction)
     parameters:
     - id: speaker
       type: com.absence.personsystem.Person
@@ -307,16 +307,16 @@ items:
       type: System.String
       description: ''
     - id: options
-      type: System.String[]
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
       description: ''
     - id: optionPressAction
       type: System.Action{System.Int32}
       description: ''
-    content.vb: Public Sub Display(speaker As Person, speech As String, options As String(), optionPressAction As Action(Of Integer))
+    content.vb: Public Sub Display(speaker As Person, speech As String, options As List(Of [Option]), optionPressAction As Action(Of Integer))
   overload: com.absence.dialoguesystem.DialogueDisplayer.Display*
-  nameWithType.vb: DialogueDisplayer.Display(Person, String, String(), Action(Of Integer))
-  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, String(), System.Action(Of Integer))
-  name.vb: Display(Person, String, String(), Action(Of Integer))
+  nameWithType.vb: DialogueDisplayer.Display(Person, String, List(Of Option), Action(Of Integer))
+  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option), System.Action(Of Integer))
+  name.vb: Display(Person, String, List(Of Option), Action(Of Integer))
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -5020,28 +5020,38 @@ references:
   - uid: com.absence.personsystem
     name: personsystem
     isExternal: true
-- uid: System.String[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Option>
+  nameWithType: List<Option>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
+  nameWithType.vb: List(Of Option)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
+  name.vb: List(Of Option)
   spec.csharp:
-  - uid: System.String
-    name: string
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: '>'
   spec.vb:
-  - uid: System.String
-    name: String
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
   - name: )
 - uid: System.Action{System.Int32}
   commentId: T:System.Action{System.Int32}
@@ -5078,6 +5088,71 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Action`1
   commentId: T:System.Action`1
   isExternal: true

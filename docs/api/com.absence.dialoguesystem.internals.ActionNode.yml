@@ -7,13 +7,17 @@ items:
   children:
   - com.absence.dialoguesystem.internals.ActionNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)
   - com.absence.dialoguesystem.internals.ActionNode.CustomAction
+  - com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
   - com.absence.dialoguesystem.internals.ActionNode.GetClassName
+  - com.absence.dialoguesystem.internals.ActionNode.GetComparers
   - com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
+  - com.absence.dialoguesystem.internals.ActionNode.GetSetters
   - com.absence.dialoguesystem.internals.ActionNode.GetTitle
   - com.absence.dialoguesystem.internals.ActionNode.Next
   - com.absence.dialoguesystem.internals.ActionNode.Pass_Inline(System.Object[])
   - com.absence.dialoguesystem.internals.ActionNode.Reach_Inline
   - com.absence.dialoguesystem.internals.ActionNode.RemoveNextNode_Inline(System.Int32)
+  - com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   - com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   - com.absence.dialoguesystem.internals.ActionNode.VBActions
   langs:
@@ -29,19 +33,23 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ActionNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 8
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Node which invokes some actions on the flow.
+  example: []
   syntax:
-    content: 'public class ActionNode : Node'
-    content.vb: Public Class ActionNode Inherits Node
+    content: 'public class ActionNode : Node, IContainVariableManipulators'
+    content.vb: Public Class ActionNode Inherits Node Implements IContainVariableManipulators
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - com.absence.dialoguesystem.internals.Node
+  implements:
+  - com.absence.dialoguesystem.internals.IContainVariableManipulators
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
   - com.absence.dialoguesystem.internals.Node.Position
@@ -140,8 +148,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VBActions
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -167,8 +175,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UnityEvents
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 11
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -194,8 +202,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Next
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 13
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -231,8 +239,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CustomAction
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 14
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -257,8 +265,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 19
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -289,8 +297,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 20
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -321,8 +329,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 22
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -357,8 +365,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 33
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 36
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -386,8 +394,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 38
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 41
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -425,8 +433,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 42
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -461,8 +469,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 46
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -480,6 +488,139 @@ items:
   nameWithType.vb: ActionNode.GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
   fullName.vb: com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline(System.Collections.Generic.List(Of (portIndex As Integer, node As com.absence.dialoguesystem.internals.Node)))
   name.vb: GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
+- uid: com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  id: DelayedClone(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.internals.ActionNode
+  langs:
+  - csharp
+  - vb
+  name: DelayedClone(Dialogue)
+  nameWithType: ActionNode.DelayedClone(Dialogue)
+  fullName: com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DelayedClone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: This method will get called right after the dialogue gets cloned.
+  example: []
+  syntax:
+    content: public void DelayedClone(Dialogue originalDialogue)
+    parameters:
+    - id: originalDialogue
+      type: com.absence.dialoguesystem.Dialogue
+      description: This is the dialogue the cloned dialogue had cloned from.
+    content.vb: Public Sub DelayedClone(originalDialogue As Dialogue)
+  overload: com.absence.dialoguesystem.internals.ActionNode.DelayedClone*
+- uid: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  id: Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  parent: com.absence.dialoguesystem.internals.ActionNode
+  langs:
+  - csharp
+  - vb
+  name: Traverse(Action<Node>)
+  nameWithType: ActionNode.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Traverse
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 64
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
+  example: []
+  syntax:
+    content: public override void Traverse(Action<Node> action)
+    parameters:
+    - id: action
+      type: System.Action{com.absence.dialoguesystem.internals.Node}
+    content.vb: Public Overrides Sub Traverse(action As Action(Of Node))
+  overridden: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  overload: com.absence.dialoguesystem.internals.ActionNode.Traverse*
+  nameWithType.vb: ActionNode.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  id: GetComparers
+  parent: com.absence.dialoguesystem.internals.ActionNode
+  langs:
+  - csharp
+  - vb
+  name: GetComparers()
+  nameWithType: ActionNode.GetComparers()
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetComparers()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetComparers
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 70
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  example: []
+  syntax:
+    content: public List<VariableComparer> GetComparers()
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+      description: ''
+    content.vb: Public Function GetComparers() As List(Of VariableComparer)
+  overload: com.absence.dialoguesystem.internals.ActionNode.GetComparers*
+  implements:
+  - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  id: GetSetters
+  parent: com.absence.dialoguesystem.internals.ActionNode
+  langs:
+  - csharp
+  - vb
+  name: GetSetters()
+  nameWithType: ActionNode.GetSetters()
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetSetters()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetSetters
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 72
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  example: []
+  syntax:
+    content: public List<VariableSetter> GetSetters()
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+      description: ''
+    content.vb: Public Function GetSetters() As List(Of VariableSetter)
+  overload: com.absence.dialoguesystem.internals.ActionNode.GetSetters*
+  implements:
+  - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -551,6 +692,13 @@ references:
   name: Node
   nameWithType: Node
   fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  commentId: T:com.absence.dialoguesystem.internals.IContainVariableManipulators
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html
+  name: IContainVariableManipulators
+  nameWithType: IContainVariableManipulators
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -3522,4 +3670,277 @@ references:
     name: Node
     href: com.absence.dialoguesystem.internals.Node.html
   - name: )
+  - name: )
+- uid: com.absence.dialoguesystem.internals.ActionNode.DelayedClone*
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.DelayedClone
+  href: com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  name: DelayedClone
+  nameWithType: ActionNode.DelayedClone
+  fullName: com.absence.dialoguesystem.internals.ActionNode.DelayedClone
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  parent: com.absence.dialoguesystem.internals.Node
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse(Action<Node>)
+  nameWithType: Node.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  nameWithType.vb: Node.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
+  - name: )
+- uid: com.absence.dialoguesystem.internals.ActionNode.Traverse*
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.Traverse
+  href: com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse
+  nameWithType: ActionNode.Traverse
+  fullName: com.absence.dialoguesystem.internals.ActionNode.Traverse
+- uid: System.Action{com.absence.dialoguesystem.internals.Node}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.Node}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Node>
+  nameWithType: Action<Node>
+  fullName: System.Action<com.absence.dialoguesystem.internals.Node>
+  nameWithType.vb: Action(Of Node)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.Node)
+  name.vb: Action(Of Node)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetComparers*
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.GetComparers
+  href: com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetComparers
+  name: GetComparers
+  nameWithType: ActionNode.GetComparers
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetComparers
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  parent: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
+  name: GetComparers()
+  nameWithType: IContainVariableManipulators.GetComparers()
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+    name: GetComparers
+    href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+    name: GetComparers
+    href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<VariableComparer>
+  nameWithType: List<VariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableComparer>
+  nameWithType.vb: List(Of VariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableComparer)
+  name.vb: List(Of VariableComparer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableComparer
+    name: VariableComparer
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableComparer
+    name: VariableComparer
+    isExternal: true
+  - name: )
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+- uid: com.absence.dialoguesystem.internals.ActionNode.GetSetters*
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.GetSetters
+  href: com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_GetSetters
+  name: GetSetters
+  nameWithType: ActionNode.GetSetters
+  fullName: com.absence.dialoguesystem.internals.ActionNode.GetSetters
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  parent: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  name: GetSetters()
+  nameWithType: IContainVariableManipulators.GetSetters()
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+    name: GetSetters
+    href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+    name: GetSetters
+    href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  - name: (
   - name: )
