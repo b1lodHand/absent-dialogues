@@ -30,11 +30,13 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: StickyNoteNode
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 5
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Node which contains a user defined string.
+  example: []
   syntax:
     content: 'public sealed class StickyNoteNode : Node'
     content.vb: Public NotInheritable Class StickyNoteNode Inherits Node
@@ -66,6 +68,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.OnRemoval
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
   - com.absence.dialoguesystem.internals.Node.Clone
+  - com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -136,8 +139,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 7
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -173,8 +176,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 9
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -204,8 +207,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowInMinimap
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -235,8 +238,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 12
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -267,8 +270,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 14
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -299,8 +302,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 16
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -338,8 +341,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 21
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -374,8 +377,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 26
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -410,8 +413,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 31
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 34
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -439,8 +442,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 36
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 39
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -475,8 +478,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 41
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 44
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -507,8 +510,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 42
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -902,6 +905,49 @@ references:
     name: Clone
     href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
   - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  commentId: M:com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  parent: com.absence.dialoguesystem.internals.Node
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  name: Traverse(Action<Node>)
+  nameWithType: Node.Traverse(Action<Node>)
+  fullName: com.absence.dialoguesystem.internals.Node.Traverse(System.Action<com.absence.dialoguesystem.internals.Node>)
+  nameWithType.vb: Node.Traverse(Action(Of Node))
+  fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
+  name.vb: Traverse(Action(Of Node))
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+    name: Traverse
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty

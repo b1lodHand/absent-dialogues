@@ -75,7 +75,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_DialogueDisplayer" data-uid="com.absence.dialoguesystem.DialogueDisplayer" class="text-break">
-Class DialogueDisplayer  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Class DialogueDisplayer  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -481,7 +481,7 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
 
   <h3 id="com_absence_dialoguesystem_DialogueDisplayer_Display_com_absence_personsystem_Person_System_String_" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String)">
   Display(Person, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Displays a speech with no options.</p>
@@ -513,9 +513,9 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
 
   <a id="com_absence_dialoguesystem_DialogueDisplayer_Display_" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Display*"></a>
 
-  <h3 id="com_absence_dialoguesystem_DialogueDisplayer_Display_com_absence_personsystem_Person_System_String_System_String___System_Action_System_Int32__" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.String[],System.Action{System.Int32})">
-  Display(Person, string, string[], Action&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <h3 id="com_absence_dialoguesystem_DialogueDisplayer_Display_com_absence_personsystem_Person_System_String_System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option__System_Action_System_Int32__" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})">
+  Display(Person, string, List&lt;Option&gt;, Action&lt;int&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Displays a speech with options.</p>
@@ -523,7 +523,7 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Display(Person speaker, string speech, string[] options, Action&lt;int&gt; optionPressAction)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Display(Person speaker, string speech, List&lt;Option&gt; options, Action&lt;int&gt; optionPressAction)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -532,7 +532,7 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
     <dd></dd>
     <dt><code>speech</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</dt>
     <dd></dd>
     <dt><code>optionPressAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
     <dd></dd>
@@ -553,7 +553,7 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
 
   <h3 id="com_absence_dialoguesystem_DialogueDisplayer_Occupy" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Occupy">
   Occupy()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Let's you occupy the sinleton. If it is occuppied by any other scripts about dialogues, you can't occupy.</p>
@@ -586,7 +586,7 @@ public class DialogueDisplayer : Singleton&lt;DialogueDisplayer&gt;</code></pre>
 
   <h3 id="com_absence_dialoguesystem_DialogueDisplayer_Release" data-uid="com.absence.dialoguesystem.DialogueDisplayer.Release">
   Release()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the occupience of the displayer. CAUTION! <a class="xref" href="com.absence.dialoguesystem.DialogueDisplayer.html">DialogueDisplayer</a> does not hold a reference to the
@@ -614,7 +614,7 @@ current occupier. Because of that, be careful calling this function.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

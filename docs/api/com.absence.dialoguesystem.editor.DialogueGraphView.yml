@@ -25,7 +25,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueGraphView
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 14
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -229,7 +229,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnNodeSelected
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 19
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -256,7 +256,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnPopulateView
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 20
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -283,7 +283,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 22
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -312,7 +312,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetCompatiblePorts
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 62
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -351,7 +351,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BuildContextualMenu
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 124
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -384,7 +384,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Refresh
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 184
   assemblies:
   - Assembly-CSharp-Editor-firstpass
@@ -410,7 +410,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FindNodeView
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
     startLine: 190
   assemblies:
   - Assembly-CSharp-Editor-firstpass

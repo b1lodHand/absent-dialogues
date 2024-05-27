@@ -6,6 +6,7 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.Option.AdditionalData
+  - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
   - com.absence.dialoguesystem.internals.Option.LeadsTo
   - com.absence.dialoguesystem.internals.Option.ShowIf
   - com.absence.dialoguesystem.internals.Option.Speech
@@ -19,15 +20,17 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Option
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 67
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: The type to hold references to dialogue options.
+  example: []
   syntax:
     content: >-
       [Serializable]
@@ -64,15 +67,17 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 70
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Speech of this option.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -101,15 +106,17 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UseShowIf
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 71
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Boolean which decides if <xref href="com.absence.dialoguesystem.internals.Option.ShowIf" data-throw-if-not-resolved="false"></xref> will be used.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -138,15 +145,17 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIf
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 72
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: The condition checker which decides the visibility of the option.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -175,15 +184,17 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: LeadsTo
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 73
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: The node this option leads to.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -212,20 +223,57 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AdditionalData
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 74
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 34
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Additional speech data this option contains.
+  example: []
   syntax:
     content: public AdditionalSpeechData AdditionalData
     return:
       type: com.absence.dialoguesystem.internals.AdditionalSpeechData
     content.vb: Public AdditionalData As AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  id: Clone(com.absence.variablesystem.VariableBank)
+  parent: com.absence.dialoguesystem.internals.Option
+  langs:
+  - csharp
+  - vb
+  name: Clone(VariableBank)
+  nameWithType: Option.Clone(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 41
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to get a clone of this option.
+  example: []
+  syntax:
+    content: public Option Clone(VariableBank overrideBank)
+    parameters:
+    - id: overrideBank
+      type: com.absence.variablesystem.VariableBank
+      description: ''
+    return:
+      type: com.absence.dialoguesystem.internals.Option
+      description: ''
+    content.vb: Public Function Clone(overrideBank As VariableBank) As [Option]
+  overload: com.absence.dialoguesystem.internals.Option.Clone*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -513,6 +561,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf
+  commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_ShowIf
+  name: ShowIf
+  nameWithType: Option.ShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -575,3 +629,23 @@ references:
   name: AdditionalSpeechData
   nameWithType: AdditionalSpeechData
   fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.Option.Clone*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  name: Clone
+  nameWithType: Option.Clone
+  fullName: com.absence.dialoguesystem.internals.Option.Clone
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.dialoguesystem.internals.Option
+  commentId: T:com.absence.dialoguesystem.internals.Option
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option
+  nameWithType: Option
+  fullName: com.absence.dialoguesystem.internals.Option

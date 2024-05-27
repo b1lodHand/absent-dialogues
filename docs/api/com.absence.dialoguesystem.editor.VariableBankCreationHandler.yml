@@ -18,8 +18,8 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VariableBankCreationHandler
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCreationHandler.cs
-    startLine: 9
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCreationHandler.cs
+    startLine: 10
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor

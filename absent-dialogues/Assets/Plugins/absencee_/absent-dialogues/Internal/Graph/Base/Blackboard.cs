@@ -15,10 +15,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public VariableBank Bank;
 
         /// <summary>
-        /// Use to clone a blackboard.
-        /// <br></br>
-        /// <br></br>
-        /// <b>CAUTION.</b> This function <b>DOES NOT</b> clone the <see cref="Blackboard.MasterDialogue"/>.
+        /// Use to clone this blackboard.
         /// </summary>
         /// <returns></returns>
         public Blackboard Clone()

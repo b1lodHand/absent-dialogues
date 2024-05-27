@@ -1,0 +1,374 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  commentId: T:com.absence.dialoguesystem.internals.IContainVariableManipulators
+  id: IContainVariableManipulators
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  langs:
+  - csharp
+  - vb
+  name: IContainVariableManipulators
+  nameWithType: IContainVariableManipulators
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IContainVariableManipulators
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: >-
+    Any node subtype with this interface implemented will refresh its <xref href="com.absence.variablesystem.VariableComparer" data-throw-if-not-resolved="false"></xref>s and <xref href="com.absence.variablesystem.VariableSetter" data-throw-if-not-resolved="false"></xref>s
+
+    to have the correct reference to the <xref href="com.absence.dialoguesystem.internals.Blackboard.Bank" data-throw-if-not-resolved="false"></xref> of the current <xref href="com.absence.dialoguesystem.Dialogue" data-throw-if-not-resolved="false"></xref> everytime the
+
+    editor window refreshes.
+  example: []
+  syntax:
+    content: public interface IContainVariableManipulators
+    content.vb: Public Interface IContainVariableManipulators
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  id: GetComparers
+  parent: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  langs:
+  - csharp
+  - vb
+  name: GetComparers()
+  nameWithType: IContainVariableManipulators.GetComparers()
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetComparers
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  example: []
+  syntax:
+    content: List<VariableComparer> GetComparers()
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+      description: ''
+    content.vb: Function GetComparers() As List(Of VariableComparer)
+  overload: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  id: GetSetters
+  parent: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  langs:
+  - csharp
+  - vb
+  name: GetSetters()
+  nameWithType: IContainVariableManipulators.GetSetters()
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetSetters
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  example: []
+  syntax:
+    content: List<VariableSetter> GetSetters()
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+      description: ''
+    content.vb: Function GetSetters() As List(Of VariableSetter)
+  overload: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters*
+references:
+- uid: com.absence.variablesystem.VariableComparer
+  commentId: T:com.absence.variablesystem.VariableComparer
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: VariableComparer
+  nameWithType: VariableComparer
+  fullName: com.absence.variablesystem.VariableComparer
+- uid: com.absence.variablesystem.VariableSetter
+  commentId: T:com.absence.variablesystem.VariableSetter
+  isExternal: true
+  name: VariableSetter
+  nameWithType: VariableSetter
+  fullName: com.absence.variablesystem.VariableSetter
+- uid: com.absence.dialoguesystem.internals.Blackboard.Bank
+  commentId: F:com.absence.dialoguesystem.internals.Blackboard.Bank
+  href: com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Bank
+  name: Bank
+  nameWithType: Blackboard.Bank
+  fullName: com.absence.dialoguesystem.internals.Blackboard.Bank
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
+  name: GetComparers
+  nameWithType: IContainVariableManipulators.GetComparers
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
+- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<VariableComparer>
+  nameWithType: List<VariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableComparer>
+  nameWithType.vb: List(Of VariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableComparer)
+  name.vb: List(Of VariableComparer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableComparer
+    name: VariableComparer
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableComparer
+    name: VariableComparer
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters*
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  name: GetSetters
+  nameWithType: IContainVariableManipulators.GetSetters
+  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<VariableSetter>
+  nameWithType: List<VariableSetter>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableSetter>
+  nameWithType.vb: List(Of VariableSetter)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableSetter)
+  name.vb: List(Of VariableSetter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableSetter
+    name: VariableSetter
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableSetter
+    name: VariableSetter
+    isExternal: true
+  - name: )

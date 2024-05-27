@@ -1,0 +1,192 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  commentId: T:com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  id: DialoguePlayer.PlayerState
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  - com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  - com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  - com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  langs:
+  - csharp
+  - vb
+  name: DialoguePlayer.PlayerState
+  nameWithType: DialoguePlayer.PlayerState
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PlayerState
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Shows what state the dialogue player is in.
+  example: []
+  syntax:
+    content: public enum DialoguePlayer.PlayerState
+    content.vb: Public Enum DialoguePlayer.PlayerState
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  id: NoSpeech
+  parent: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  langs:
+  - csharp
+  - vb
+  name: NoSpeech
+  nameWithType: DialoguePlayer.PlayerState.NoSpeech
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.NoSpeech
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NoSpeech
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: NoSpeech = 0
+    return:
+      type: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  id: WaitingForOption
+  parent: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  langs:
+  - csharp
+  - vb
+  name: WaitingForOption
+  nameWithType: DialoguePlayer.PlayerState.WaitingForOption
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForOption
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: WaitingForOption
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: WaitingForOption = 1
+    return:
+      type: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  id: WaitingForSkip
+  parent: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  langs:
+  - csharp
+  - vb
+  name: WaitingForSkip
+  nameWithType: DialoguePlayer.PlayerState.WaitingForSkip
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WaitingForSkip
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: WaitingForSkip
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: WaitingForSkip = 2
+    return:
+      type: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  commentId: F:com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  id: WillExit
+  parent: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  langs:
+  - csharp
+  - vb
+  name: WillExit
+  nameWithType: DialoguePlayer.PlayerState.WillExit
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState.WillExit
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: WillExit
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: WillExit = 3
+    return:
+      type: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  commentId: T:com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialoguePlayer.html
+  name: DialoguePlayer.PlayerState
+  nameWithType: DialoguePlayer.PlayerState
+  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialoguePlayer
+    name: DialoguePlayer
+    href: com.absence.dialoguesystem.DialoguePlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+    name: PlayerState
+    href: com.absence.dialoguesystem.DialoguePlayer.PlayerState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialoguePlayer
+    name: DialoguePlayer
+    href: com.absence.dialoguesystem.DialoguePlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
+    name: PlayerState
+    href: com.absence.dialoguesystem.DialoguePlayer.PlayerState.html

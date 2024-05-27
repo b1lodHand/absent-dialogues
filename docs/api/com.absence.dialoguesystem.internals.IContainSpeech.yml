@@ -17,15 +17,17 @@ items:
   type: Interface
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IContainSpeech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 164
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Interface to use if any of your dialogue elements has a speech, has options or has <xref href="com.absence.dialoguesystem.internals.AdditionalSpeechData" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public interface IContainSpeech
     content.vb: Public Interface IContainSpeech
@@ -42,12 +44,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSpeech
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 166
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -70,20 +72,20 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOptions
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 167
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+    startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: string[] GetOptions()
+    content: List<Option> GetOptions()
     return:
-      type: System.String[]
-    content.vb: Function GetOptions() As String()
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+    content.vb: Function GetOptions() As List(Of [Option])
   overload: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions*
 - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
   commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
@@ -98,12 +100,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAdditionalSpeechData
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 168
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -114,6 +116,13 @@ items:
     content.vb: Function GetAdditionalSpeechData() As AdditionalSpeechData
   overload: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData*
 references:
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  name: AdditionalSpeechData
+  nameWithType: AdditionalSpeechData
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
   href: com.html
@@ -182,39 +191,107 @@ references:
   name: GetOptions
   nameWithType: IContainSpeech.GetOptions
   fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-- uid: System.String[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Option>
+  nameWithType: List<Option>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
+  nameWithType.vb: List(Of Option)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
+  name.vb: List(Of Option)
   spec.csharp:
-  - uid: System.String
-    name: string
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: '>'
   spec.vb:
-  - uid: System.String
-    name: String
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
   - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData*
   commentId: Overload:com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
   href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
   name: GetAdditionalSpeechData
   nameWithType: IContainSpeech.GetAdditionalSpeechData
   fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData

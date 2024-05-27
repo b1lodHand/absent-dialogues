@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IContainSpeech | absent-dialogues Documentation (test) ">
       
-      
+      <meta name="description" content="Interface to use if any of your dialogue elements has a speech, has options or has .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -75,7 +75,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_internals_IContainSpeech" data-uid="com.absence.dialoguesystem.internals.IContainSpeech" class="text-break">
-Interface IContainSpeech  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L165"><i class="bi bi-code-slash"></i></a>
+Interface IContainSpeech  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -83,7 +83,8 @@ Interface IContainSpeech  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Interface to use if any of your dialogue elements has a speech, has options or has <a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -110,7 +111,7 @@ Interface IContainSpeech  <a class="header-action link-secondary" title="View so
 
   <h3 id="com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData" data-uid="com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData">
   GetAdditionalSpeechData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -141,20 +142,20 @@ Interface IContainSpeech  <a class="header-action link-secondary" title="View so
 
   <h3 id="com_absence_dialoguesystem_internals_IContainSpeech_GetOptions" data-uid="com.absence.dialoguesystem.internals.IContainSpeech.GetOptions">
   GetOptions()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string[] GetOptions()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;Option&gt; GetOptions()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -172,7 +173,7 @@ Interface IContainSpeech  <a class="header-action link-secondary" title="View so
 
   <h3 id="com_absence_dialoguesystem_internals_IContainSpeech_GetSpeech" data-uid="com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech">
   GetSpeech()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -203,7 +204,7 @@ Interface IContainSpeech  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs/#L165" class="edit-link">Edit this page</a>
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -21,7 +21,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeState
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
     startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
@@ -48,7 +48,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Unreached
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
     startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
@@ -74,7 +74,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Current
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
     startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
@@ -100,7 +100,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Past
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
     startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass

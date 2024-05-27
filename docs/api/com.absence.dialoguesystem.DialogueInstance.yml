@@ -5,9 +5,11 @@ items:
   id: DialogueInstance
   parent: com.absence.dialoguesystem
   children:
+  - com.absence.dialoguesystem.DialogueInstance.AddExtension``1
   - com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   - com.absence.dialoguesystem.DialogueInstance.ExitDialogue
-  - com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+  - com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  - com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
   - com.absence.dialoguesystem.DialogueInstance.Player
   langs:
   - csharp
@@ -22,7 +24,7 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueInstance
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
     startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
@@ -182,11 +184,13 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Player
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 30
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: <xref href="com.absence.dialoguesystem.DialoguePlayer" data-throw-if-not-resolved="false"></xref> of this instance.
+  example: []
   syntax:
     content: public DialoguePlayer Player { get; }
     parameters: []
@@ -194,6 +198,64 @@ items:
       type: com.absence.dialoguesystem.DialoguePlayer
     content.vb: Public ReadOnly Property Player As DialoguePlayer
   overload: com.absence.dialoguesystem.DialogueInstance.Player*
+- uid: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  id: OnHandleAdditionalData
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: OnHandleAdditionalData
+  nameWithType: DialogueInstance.OnHandleAdditionalData
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnHandleAdditionalData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 38
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: The Action which will get invoked when <xref href="com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData" data-throw-if-not-resolved="false"></xref> gets called.
+  example: []
+  syntax:
+    content: public event Action<AdditionalSpeechData> OnHandleAdditionalData
+    return:
+      type: System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
+    content.vb: Public Event OnHandleAdditionalData As Action(Of AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  id: OnBeforeSpeech
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeSpeech
+  nameWithType: DialogueInstance.OnBeforeSpeech
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnBeforeSpeech
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 43
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Subscribe to this delegate to override any data will get displayed.
+  example: []
+  syntax:
+    content: public event DialogueInstance.BeforeSpeechEventHandler OnBeforeSpeech
+    return:
+      type: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+    content.vb: Public Event OnBeforeSpeech As DialogueInstance.BeforeSpeechEventHandler
 - uid: com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   commentId: M:com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   id: EnterDialogue
@@ -211,15 +273,18 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: EnterDialogue
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 53
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 76
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: Use to enter dialogue.
+  example: []
   syntax:
     content: public bool EnterDialogue()
     return:
       type: System.Boolean
+      description: <b>False</b> if the <xref href="com.absence.dialoguesystem.DialogueDisplayer" data-throw-if-not-resolved="false"></xref> is already occupied by any other script. Returns <b>true</b> otherwise.
     content.vb: Public Function EnterDialogue() As Boolean
   overload: com.absence.dialoguesystem.DialogueInstance.EnterDialogue*
 - uid: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
@@ -239,41 +304,51 @@ items:
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogue
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 67
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 102
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: Use to exit current dialogue.
+  example: []
   syntax:
     content: public void ExitDialogue()
     content.vb: Public Sub ExitDialogue()
   overload: com.absence.dialoguesystem.DialogueInstance.ExitDialogue*
-- uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  commentId: M:com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  id: HandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueInstance.AddExtension``1
+  commentId: M:com.absence.dialoguesystem.DialogueInstance.AddExtension``1
+  id: AddExtension``1
   parent: com.absence.dialoguesystem.DialogueInstance
   langs:
   - csharp
   - vb
-  name: HandleAdditionalData()
-  nameWithType: DialogueInstance.HandleAdditionalData()
-  fullName: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData()
+  name: AddExtension<T>()
+  nameWithType: DialogueInstance.AddExtension<T>()
+  fullName: com.absence.dialoguesystem.DialogueInstance.AddExtension<T>()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: HandleAdditionalData
-    path: D:/UnityLibrary/Other/absent-dialogues/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 107
+    id: AddExtension
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 174
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: Adds a <xref href="com.absence.dialoguesystem.DialogueExtensionBase" data-throw-if-not-resolved="false"></xref> to the target dialogue instance. <b>Does not work runtime.</b>
+  example: []
   syntax:
-    content: protected virtual void HandleAdditionalData()
-    content.vb: Protected Overridable Sub HandleAdditionalData()
-  overload: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData*
+    content: 'public void AddExtension<T>() where T : DialogueExtensionBase'
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub AddExtension(Of T As DialogueExtensionBase)()
+  overload: com.absence.dialoguesystem.DialogueInstance.AddExtension*
+  nameWithType.vb: DialogueInstance.AddExtension(Of T)()
+  fullName.vb: com.absence.dialoguesystem.DialogueInstance.AddExtension(Of T)()
+  name.vb: AddExtension(Of T)()
 references:
 - uid: com.absence.dialoguesystem.DialoguePlayer
   commentId: T:com.absence.dialoguesystem.DialoguePlayer
@@ -4666,6 +4741,114 @@ references:
   name: Player
   nameWithType: DialogueInstance.Player
   fullName: com.absence.dialoguesystem.DialogueInstance.Player
+- uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+  commentId: M:com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
+  name: HandleAdditionalData()
+  nameWithType: DialogueInstance.HandleAdditionalData()
+  fullName: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+    name: HandleAdditionalData
+    href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+    name: HandleAdditionalData
+    href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
+  - name: (
+  - name: )
+- uid: System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<AdditionalSpeechData>
+  nameWithType: Action<AdditionalSpeechData>
+  fullName: System.Action<com.absence.dialoguesystem.internals.AdditionalSpeechData>
+  nameWithType.vb: Action(Of AdditionalSpeechData)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name.vb: Action(Of AdditionalSpeechData)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+    name: AdditionalSpeechData
+    href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+    name: AdditionalSpeechData
+    href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  commentId: T:com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueInstance.html
+  name: DialogueInstance.BeforeSpeechEventHandler
+  nameWithType: DialogueInstance.BeforeSpeechEventHandler
+  fullName: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueInstance
+    name: DialogueInstance
+    href: com.absence.dialoguesystem.DialogueInstance.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+    name: BeforeSpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueInstance
+    name: DialogueInstance
+    href: com.absence.dialoguesystem.DialogueInstance.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+    name: BeforeSpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+- uid: com.absence.dialoguesystem.DialogueDisplayer
+  commentId: T:com.absence.dialoguesystem.DialogueDisplayer
+  href: com.absence.dialoguesystem.DialogueDisplayer.html
+  name: DialogueDisplayer
+  nameWithType: DialogueDisplayer
+  fullName: com.absence.dialoguesystem.DialogueDisplayer
 - uid: com.absence.dialoguesystem.DialogueInstance.EnterDialogue*
   commentId: Overload:com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_EnterDialogue
@@ -4689,9 +4872,16 @@ references:
   name: ExitDialogue
   nameWithType: DialogueInstance.ExitDialogue
   fullName: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
-- uid: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData*
-  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
-  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
-  name: HandleAdditionalData
-  nameWithType: DialogueInstance.HandleAdditionalData
-  fullName: com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueExtensionBase
+  commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html
+  name: DialogueExtensionBase
+  nameWithType: DialogueExtensionBase
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase
+- uid: com.absence.dialoguesystem.DialogueInstance.AddExtension*
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.AddExtension
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_AddExtension__1
+  name: AddExtension
+  nameWithType: DialogueInstance.AddExtension
+  fullName: com.absence.dialoguesystem.DialogueInstance.AddExtension

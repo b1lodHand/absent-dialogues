@@ -317,7 +317,7 @@ public List&lt;Node&gt; AllNodes</code></pre>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_Blackboard" data-uid="com.absence.dialoguesystem.Dialogue.Blackboard">
   Blackboard
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The <a class="xref" href="com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Blackboard">Blackboard</a> of this dialogue.</p>
@@ -325,7 +325,8 @@ public List&lt;Node&gt; AllNodes</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Blackboard Blackboard</code></pre>
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Blackboard Blackboard</code></pre>
   </div>
 
 
@@ -333,7 +334,7 @@ public List&lt;Node&gt; AllNodes</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.Blackboard.html">Blackboard</a></dt>
+    <dt><a class="xref" href="com.absence.dialoguesystem.internals.Blackboard.html">Blackboard</a></dt>
     <dd></dd>
   </dl>
 
@@ -417,10 +418,10 @@ public RootNode RootNode</code></pre>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_People" data-uid="com.absence.dialoguesystem.Dialogue.People">
   People
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>People in this dialogue (might be overridden).</p>
+  <div class="markdown level1 summary"><p>People in this dialogue (might be overridden on clones).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -449,38 +450,11 @@ public RootNode RootNode</code></pre>
 </h2>
 
 
-  <a id="com_absence_dialoguesystem_Dialogue_Bind_" data-uid="com.absence.dialoguesystem.Dialogue.Bind*"></a>
-
-  <h3 id="com_absence_dialoguesystem_Dialogue_Bind" data-uid="com.absence.dialoguesystem.Dialogue.Bind">
-  Bind()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L119"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Use to initialize the dialogue before using it.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Bind()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="com_absence_dialoguesystem_Dialogue_Clone_" data-uid="com.absence.dialoguesystem.Dialogue.Clone*"></a>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_Clone" data-uid="com.absence.dialoguesystem.Dialogue.Clone">
   Clone()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to clone the dialogue scriptable object. Useful to progress in a copy
@@ -513,7 +487,7 @@ while keeping the original unchanged.</p>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_CreateNode_System_Type_" data-uid="com.absence.dialoguesystem.Dialogue.CreateNode(System.Type)">
   CreateNode(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to create new nodes. Using runtime is not recommended.</p>
@@ -550,7 +524,7 @@ while keeping the original unchanged.</p>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_DeleteNode_com_absence_dialoguesystem_internals_Node_" data-uid="com.absence.dialoguesystem.Dialogue.DeleteNode(com.absence.dialoguesystem.internals.Node)">
   DeleteNode(Node)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to delete existing nodes. Using runtime is not recommended.</p>
@@ -582,7 +556,7 @@ while keeping the original unchanged.</p>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_GetAllDialogParts" data-uid="com.absence.dialoguesystem.Dialogue.GetAllDialogParts">
   GetAllDialogParts()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to get a list of all <a class="xref" href="com.absence.dialoguesystem.internals.DialoguePartNode.html">DialoguePartNode</a>s in this dialogue.</p>
@@ -615,7 +589,7 @@ while keeping the original unchanged.</p>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_GetDialogPartNodesWithName_System_String_" data-uid="com.absence.dialoguesystem.Dialogue.GetDialogPartNodesWithName(System.String)">
   GetDialogPartNodesWithName(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to find <a class="xref" href="com.absence.dialoguesystem.internals.DialoguePartNode.html">DialoguePartNode</a>s with a specific name.</p>
@@ -650,15 +624,43 @@ found.</p>
 
 
 
+  <a id="com_absence_dialoguesystem_Dialogue_Initialize_" data-uid="com.absence.dialoguesystem.Dialogue.Initialize*"></a>
+
+  <h3 id="com_absence_dialoguesystem_Dialogue_Initialize" data-uid="com.absence.dialoguesystem.Dialogue.Initialize">
+  Initialize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>It teleports the flow back to the root node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_Dialogue_OverridePeople_" data-uid="com.absence.dialoguesystem.Dialogue.OverridePeople*"></a>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__" data-uid="com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})">
   OverridePeople(List&lt;Person&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
-object's people list won't be affected by this.</p>
+object's people list won't be affected by this.
+<br><br><b>CAUTION!</b> The recommended way is to use this function on clones only.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -687,7 +689,7 @@ object's people list won't be affected by this.</p>
 
   <h3 id="com_absence_dialoguesystem_Dialogue_Pass_System_Object___" data-uid="com.absence.dialoguesystem.Dialogue.Pass(System.Object[])">
   Pass(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to progress to the next node in the dialogue. Using this method directly is not recommended
@@ -704,60 +706,6 @@ if you're not adding an extra functionality. You can consider using <a class="xr
     <dt><code>passData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="com_absence_dialoguesystem_Dialogue_ResetPeopleList_" data-uid="com.absence.dialoguesystem.Dialogue.ResetPeopleList*"></a>
-
-  <h3 id="com_absence_dialoguesystem_Dialogue_ResetPeopleList" data-uid="com.absence.dialoguesystem.Dialogue.ResetPeopleList">
-  ResetPeopleList()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L158"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Use to reset people list if you've overridden it before.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ResetPeopleList()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="com_absence_dialoguesystem_Dialogue_ResetProgress_" data-uid="com.absence.dialoguesystem.Dialogue.ResetProgress*"></a>
-
-  <h3 id="com_absence_dialoguesystem_Dialogue_ResetProgress" data-uid="com.absence.dialoguesystem.Dialogue.ResetProgress">
-  ResetProgress()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs/#L167"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Use to reset all the progress has gotten in this dialogue.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ResetProgress()</code></pre>
-  </div>
-
 
 
 

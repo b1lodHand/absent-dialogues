@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ActionNode | absent-dialogues Documentation (test) ">
       
-      
+      <meta name="description" content="Node which invokes some actions on the flow.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -75,7 +75,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_internals_ActionNode" data-uid="com.absence.dialoguesystem.internals.ActionNode" class="text-break">
-Class ActionNode  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class ActionNode  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -83,11 +83,12 @@ Class ActionNode  <a class="header-action link-secondary" title="View source" hr
   <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Node which invokes some actions on the flow.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ActionNode : Node</code></pre>
+    <pre><code class="lang-csharp hljs">public class ActionNode : Node, IContainVariableManipulators</code></pre>
   </div>
 
 
@@ -104,6 +105,12 @@ Class ActionNode  <a class="header-action link-secondary" title="View source" hr
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -363,7 +370,7 @@ Class ActionNode  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_Next" data-uid="com.absence.dialoguesystem.internals.ActionNode.Next">
   Next
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -394,7 +401,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_UnityEvents" data-uid="com.absence.dialoguesystem.internals.ActionNode.UnityEvents">
   UnityEvents
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -424,7 +431,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_VBActions" data-uid="com.absence.dialoguesystem.internals.ActionNode.VBActions">
   VBActions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -459,7 +466,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.ActionNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">
   AddNextNode_Inline(Node, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write the functionality of connecting a node to any port of this node.</p>
@@ -493,7 +500,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_CustomAction" data-uid="com.absence.dialoguesystem.internals.ActionNode.CustomAction">
   CustomAction()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -515,11 +522,44 @@ public Node Next</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_ActionNode_DelayedClone_" data-uid="com.absence.dialoguesystem.internals.ActionNode.DelayedClone*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_ActionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.internals.ActionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)">
+  DelayedClone(Dialogue)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This method will get called right after the dialogue gets cloned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DelayedClone(Dialogue originalDialogue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>originalDialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
+    <dd><p>This is the dialogue the cloned dialogue had cloned from.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_internals_ActionNode_GetClassName_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetClassName*"></a>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_GetClassName" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetClassName">
   GetClassName()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use if you have a special USS class for this node. If you don't have any, return null.</p>
@@ -548,11 +588,43 @@ public Node Next</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_ActionNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetComparers*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_ActionNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetComparers">
+  GetComparers()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VariableComparer&gt; GetComparers()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">VariableComparer</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_internals_ActionNode_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline*"></a>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">
   GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to describe the editor which nodes are the next nodes of this one in the chain by modifying the list.</p>
@@ -580,11 +652,43 @@ public Node Next</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_ActionNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetSetters*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_ActionNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetSetters">
+  GetSetters()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VariableSetter&gt; GetSetters()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">VariableSetter</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="com_absence_dialoguesystem_internals_ActionNode_GetTitle_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetTitle*"></a>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_GetTitle" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetTitle">
   GetTitle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to  set the title of this node type in the graph view.</p>
@@ -617,7 +721,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.ActionNode.Pass_Inline(System.Object[])">
   Pass_Inline(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
@@ -649,7 +753,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.ActionNode.Reach_Inline">
   Reach_Inline()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write what happens when the dialogue reaches this node.</p>
@@ -676,7 +780,7 @@ public Node Next</code></pre>
 
   <h3 id="com_absence_dialoguesystem_internals_ActionNode_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.ActionNode.RemoveNextNode_Inline(System.Int32)">
   RemoveNextNode_Inline(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use to write the functionality of removing the next node of this one.</p>
@@ -704,11 +808,43 @@ public Node Next</code></pre>
 
 
 
+  <a id="com_absence_dialoguesystem_internals_ActionNode_Traverse_" data-uid="com.absence.dialoguesystem.internals.ActionNode.Traverse*"></a>
+
+  <h3 id="com_absence_dialoguesystem_internals_ActionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__" data-uid="com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})">
+  Traverse(Action&lt;Node&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Traverse(Action&lt;Node&gt; action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

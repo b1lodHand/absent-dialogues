@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  id: DialogueAnimationsPlayer.WorkMode
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  - com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  langs:
+  - csharp
+  - vb
+  name: DialogueAnimationsPlayer.WorkMode
+  nameWithType: DialogueAnimationsPlayer.WorkMode
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: WorkMode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Lets you select the way this extension uses the <xref href="com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public enum DialogueAnimationsPlayer.WorkMode
+    content.vb: Public Enum DialogueAnimationsPlayer.WorkMode
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  commentId: F:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  id: CrossFade
+  parent: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  langs:
+  - csharp
+  - vb
+  name: CrossFade
+  nameWithType: DialogueAnimationsPlayer.WorkMode.CrossFade
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.CrossFade
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CrossFade
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: CrossFade = 0
+    return:
+      type: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  commentId: F:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  id: SetTrigger
+  parent: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  langs:
+  - csharp
+  - vb
+  name: SetTrigger
+  nameWithType: DialogueAnimationsPlayer.WorkMode.SetTrigger
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.SetTrigger
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetTrigger
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: SetTrigger = 1
+    return:
+      type: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+references:
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html#com_absence_dialoguesystem_internals_AdditionalSpeechData_AnimatorMemberName
+  name: AnimatorMemberName
+  nameWithType: AdditionalSpeechData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData.AnimatorMemberName
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
+  name: DialogueAnimationsPlayer.WorkMode
+  nameWithType: DialogueAnimationsPlayer.WorkMode
+  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
+    name: DialogueAnimationsPlayer
+    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+    name: WorkMode
+    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
+    name: DialogueAnimationsPlayer
+    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
+    name: WorkMode
+    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html
