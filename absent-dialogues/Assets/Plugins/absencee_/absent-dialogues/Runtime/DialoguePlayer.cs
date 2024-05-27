@@ -37,38 +37,51 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public Dialogue ClonedDialogue => m_dialogue;
 
+        [SerializeField, Readonly] private Node m_currentNode;
         [SerializeField, Readonly] private VariableBank m_blackboardBank;
         [SerializeField, Readonly] private Blackboard m_blackboard;
+
+        /// <summary>
+        /// Person who speaks.
+        /// </summary>
+        public Person Speaker => m_currentNode.Person;
+
+        /// <summary>
+        /// Additional data of the current node.
+        /// </summary>
+        public AdditionalSpeechData AdditionalSpeechData => (m_currentNode as IContainSpeech).GetAdditionalSpeechData();
+
+        /// <summary>
+        /// Speech of the current node.
+        /// </summary>
+        public string Speech => (m_currentNode as IContainSpeech).GetSpeech();
+
+        /// <summary>
+        /// Options of the current node, if there is any.
+        /// </summary>
+        public List<Option> Options => (m_currentNode as IContainSpeech).GetOptions();
+
+
+        /// <summary>
+        /// Use to check if current node is a <see cref="IContainSpeech"/> or not.
+        /// </summary>
+        public bool HasSpeech => (m_currentNode is IContainSpeech);
+
+        /// <summary>
+        /// Use to check if current node is a <see cref="FastSpeechNode"/> or not.
+        /// </summary>
+        public bool HasOptions => (m_currentNode is DecisionSpeechNode);
+
+        /// <summary>
+        /// Use to check if current node <see cref="Node.PersonDependent"/> or not.
+        /// </summary>
+        public bool HasPerson => (m_currentNode.PersonDependent);
+
 
         /// <summary>
         /// Action which will get invoked when <see cref="DialoguePlayer.Continue(object[])"/> gets called.
         /// </summary>
         public event Action<PlayerState> OnContinue;
-
-        /// <summary>
-        /// Person who speaks.
-        /// </summary>
-        public Person Speaker => m_dialogue.LastOrCurrentNode.Person;
-
-        /// <summary>
-        /// Additional data of the current node.
-        /// </summary>
-        public AdditionalSpeechData AdditionalSpeechData => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetAdditionalSpeechData();
-
-        /// <summary>
-        /// Speech of the current node.
-        /// </summary>
-        public string Speech => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetSpeech();
-
-        /// <summary>
-        /// Options of the current node, if there is any.
-        /// </summary>
-        public List<Option> Options => (m_dialogue.LastOrCurrentNode as IContainSpeech).GetOptions();
-
-        /// <summary>
-        /// Use to check if current node is a <see cref="IContainSpeech"/> or not.
-        /// </summary>
-        public bool HasSpeech => (m_dialogue.LastOrCurrentNode is IContainSpeech);
 
         /// <summary>
         /// Use to create a new <see cref="DialoguePlayer"/>.
@@ -77,12 +90,12 @@ namespace com.absence.dialoguesystem
         public DialoguePlayer(Dialogue dialogue)
         {
             m_dialogue = dialogue.Clone();
-            //m_dialogue = dialogue;
 
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
-            m_dialogue.Initialize();
+            TeleportToRoot();
+
             m_state = PlayerState.NoSpeech;
         }
 
@@ -106,6 +119,15 @@ namespace com.absence.dialoguesystem
         }
 
         /// <summary>
+        /// Teleports the flow to the <see cref="RootNode"/> of the dialogue clone.
+        /// </summary>
+        public void TeleportToRoot()
+        {
+            m_dialogue.Initialize();
+            m_currentNode = m_dialogue.LastOrCurrentNode;
+        }
+
+        /// <summary>
         /// Use to progress in the target dialogue wih some optional data.
         /// </summary>
         /// <param name="passData">
@@ -113,20 +135,26 @@ namespace com.absence.dialoguesystem
         /// </param>
         public void Continue(params object[] passData)
         {
-            if (m_dialogue.LastOrCurrentNode.ExitDialogAfterwards)
+            if (m_currentNode.ExitDialogAfterwards)
             {
                 m_state = PlayerState.WillExit;
-                m_dialogue.Pass(passData);
+                Pass(passData);
                 return;
             }
 
-            m_dialogue.Pass(passData);
+            Pass(passData);
 
-            if (!(m_dialogue.LastOrCurrentNode is IContainSpeech)) m_state = PlayerState.NoSpeech;
-            else if (m_dialogue.LastOrCurrentNode is FastSpeechNode) m_state = PlayerState.WaitingForSkip;
-            else if (m_dialogue.LastOrCurrentNode is DecisionSpeechNode) m_state = PlayerState.WaitingForOption;
+            if (!(m_currentNode is IContainSpeech)) m_state = PlayerState.NoSpeech;
+            else if (m_currentNode is FastSpeechNode) m_state = PlayerState.WaitingForSkip;
+            else if (m_currentNode is DecisionSpeechNode) m_state = PlayerState.WaitingForOption;
 
             OnContinue?.Invoke(m_state);
+        }
+
+        void Pass(params object[] passData)
+        {
+            m_dialogue.Pass(passData);
+            m_currentNode = m_dialogue.LastOrCurrentNode;
         }
     }
 }

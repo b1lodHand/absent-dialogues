@@ -1,3 +1,4 @@
+using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which displays a speech with options.
     /// </summary>
-    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone
+    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -79,5 +80,19 @@ namespace com.absence.dialoguesystem.internals
                 opt.LeadsTo = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
             });
         }
+
+        public List<VariableComparer> GetComparers()
+        {
+            List<VariableComparer> result = new();
+
+            Options.ForEach(option =>
+            {
+                result.Add(option.ShowIf);
+            });
+
+            return result;
+        }
+
+        public List<VariableSetter> GetSetters() => null;
     }
 }

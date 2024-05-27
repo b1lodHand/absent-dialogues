@@ -16,6 +16,9 @@ namespace com.absence.dialoguesystem
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
+        [SerializeField, Tooltip("When enabled, last node stepped on the flow will get saved. For the next time you enter a dialogue with this instance.")]
+        private bool m_saveProgressOnExit = false;
+
         [Space(10)]
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
@@ -35,6 +38,15 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action<AdditionalSpeechData> OnHandleAdditionalData;
 
+        /// <summary>
+        /// Subscribe to this delegate to override any data will get displayed.
+        /// </summary>
+        public event BeforeSpeechEventHandler OnBeforeSpeech;
+        public delegate void BeforeSpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
+
+        Person m_speaker;
+        string m_speech;
+        List<Option> m_options;
         bool m_inDialogue = false;
 
         private void Awake()
@@ -70,7 +82,17 @@ namespace com.absence.dialoguesystem
             m_inDialogue = true;
 
             m_player.OnContinue += OnPlayerContinue;
-            OnPlayerContinue(m_player.State);
+
+            if(!m_saveProgressOnExit)
+            {
+                m_player.TeleportToRoot();
+                m_player.Continue();
+            }
+
+            else
+            {
+                OnPlayerContinue(m_player.State);
+            }
 
             return true;
         }
@@ -91,6 +113,8 @@ namespace com.absence.dialoguesystem
 
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
+            GatherPlayerData();
+            InvokeBeforeSpeech();
             HandleAdditionalData();
 
             switch (state)
@@ -100,11 +124,11 @@ namespace com.absence.dialoguesystem
                     break;
 
                 case DialoguePlayer.PlayerState.WaitingForOption:
-                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech, Player.Options, i => Player.Continue(i));
+                    DialogueDisplayer.Instance.Display(m_speaker, m_speech, m_options, i => Player.Continue(i));
                     break;
 
                 case DialoguePlayer.PlayerState.WaitingForSkip:
-                    DialogueDisplayer.Instance.Display(Player.Speaker, Player.Speech);
+                    DialogueDisplayer.Instance.Display(m_speaker, m_speech);
                     break;
 
                 case DialoguePlayer.PlayerState.WillExit:
@@ -116,11 +140,32 @@ namespace com.absence.dialoguesystem
                     throw new Exception("An unknown error occurred while displaying the dialogue.");
             }
         }
+
+        private void GatherPlayerData()
+        {
+            if(!Player.HasSpeech)
+            {
+                m_speaker = null;
+                m_speech = null;
+                m_options = null;
+                return;
+            }
+
+            m_speaker = Player.Speaker;
+            m_speech = Player.Speech;
+            if (Player.HasOptions) m_options = new(Player.Options);
+        }
         private void HandleAdditionalData()
         {
             if (!Player.HasSpeech) return;
 
             OnHandleAdditionalData?.Invoke(Player.AdditionalSpeechData);
+        }
+        private void InvokeBeforeSpeech()
+        {
+            if (!Player.HasSpeech) return;
+
+            OnBeforeSpeech?.Invoke(ref m_speaker, ref m_speech, ref m_options);
         }
 
         /// <summary>

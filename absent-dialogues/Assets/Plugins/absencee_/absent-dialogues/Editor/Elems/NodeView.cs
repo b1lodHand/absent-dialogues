@@ -9,6 +9,7 @@ using System.Linq;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.personsystem;
+using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -111,8 +112,18 @@ namespace com.absence.dialoguesystem.editor
             else if (Node is DialoguePartNode) DrawElems_DialogPartNode();
 
             if (Node.PersonDependent) RefreshPersonDropdown();
+            if (Node is IContainVariableManipulators) RefreshVariableManipulators();
         }
 
+        private void RefreshVariableManipulators()
+        {
+            IContainVariableManipulators nodeAsManipulator = Node as IContainVariableManipulators;
+            List<VariableComparer> comparers = nodeAsManipulator.GetComparers();
+            List<VariableSetter> setters = nodeAsManipulator.GetSetters();
+
+            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.SetFixedBank(Node.Blackboard.Bank));
+            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.SetFixedBank(Node.Blackboard.Bank));
+        }
         private void RefreshPersonDropdown()
         {
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
@@ -321,6 +332,7 @@ namespace com.absence.dialoguesystem.editor
 
                 Master.Refresh();
             });
+
             removeButton.text = "X";
             removeButton.AddToClassList("removeOptionButton");
 

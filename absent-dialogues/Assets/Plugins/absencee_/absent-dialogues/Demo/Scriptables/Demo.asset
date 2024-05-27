@@ -79,6 +79,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: 7901140551254700991}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -95,6 +96,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: 7512322125377748830}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -211,7 +213,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 550.0001, y: 143.99995}
+  Position: {x: 558, y: 149.00005}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -234,6 +236,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 1
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: -914008930283711827}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -250,6 +253,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: -1965666318695130335}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -285,6 +289,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 1
+    m_fixedBank: {fileID: 3482111983400843739}
   - m_setType: 0
     m_targetBank: {fileID: 3482111983400843739}
     m_targetVariableName: 'bool: b_missionPending'
@@ -292,6 +297,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+    m_fixedBank: {fileID: 3482111983400843739}
   UnityEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -362,6 +368,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+    m_fixedBank: {fileID: 3482111983400843739}
   - m_comparisonType: 2
     m_targetBank: {fileID: 3482111983400843739}
     m_targetVariableName: 'bool: b_missionDone'
@@ -369,6 +376,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+    m_fixedBank: {fileID: 3482111983400843739}
   - m_comparisonType: 2
     m_targetBank: {fileID: 3482111983400843739}
     m_targetVariableName: 'bool: b_missionCommitted'
@@ -376,6 +384,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+    m_fixedBank: {fileID: 3482111983400843739}
 --- !u!114 &1326889792880528920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +492,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: 1239550416686042660}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -499,6 +509,7 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 1
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: -1399893973709126951}
     AdditionalData:
       m_audioClip: {fileID: 0}
@@ -555,6 +566,7 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 1
+    m_fixedBank: {fileID: 3482111983400843739}
   UnityEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -595,7 +607,25 @@ MonoBehaviour:
       m_floatValue: 0
       m_stringValue: 
       m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
     LeadsTo: {fileID: 7512322125377748830}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+  - Speech: 
+    UseShowIf: 0
+    ShowIf:
+      m_comparisonType: 2
+      m_targetBank: {fileID: 3482111983400843739}
+      m_targetVariableName: 'null: null'
+      m_intValue: 0
+      m_floatValue: 0
+      m_stringValue: 
+      m_boolValue: 0
+      m_fixedBank: {fileID: 3482111983400843739}
+    LeadsTo: {fileID: 0}
     AdditionalData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 

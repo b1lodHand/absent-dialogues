@@ -26,14 +26,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "720d4e7d0f32230aa08230dfcc749a86fb7a1c73"
+      "hash": "ff382890912c39213db8544d0c5de28dba637419"
     },
     "com.absence.variablesystem": {
       "version": "https://github.com/b1lodHand/absent-variables.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a51aa261cb31e7e328063b24bf3bb65194a5029c"
+      "hash": "4fa2d41732246f964267013fece731c7dbb142c9"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

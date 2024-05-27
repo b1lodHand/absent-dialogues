@@ -9,7 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which invokes some actions on the flow.
     /// </summary>
-    public class ActionNode : Node, IPerformDelayedClone
+    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
         public List<VariableSetter> VBActions = new List<VariableSetter>();
         public UnityEvent UnityEvents;
@@ -67,6 +67,10 @@ namespace com.absence.dialoguesystem.internals
             action?.Invoke(this);
             Next.Traverse(action);
         }
+
+        public List<VariableComparer> GetComparers() => null;
+
+        public List<VariableSetter> GetSetters() => new(VBActions);
     }
 
 }
