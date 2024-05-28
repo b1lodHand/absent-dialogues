@@ -20,7 +20,12 @@
         "files": [
           "toc.yml",
           "index.md",
-          "**/*.{md,yml}"
+          "getting-started.md",
+          "introduction.md",
+          "docs/**/*.md",
+          "docs/**/*.yml",
+          "api/**.yml",
+          "api/index.md"
         ],
         "exclude": [
           "_site/**"
