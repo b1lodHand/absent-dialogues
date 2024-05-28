@@ -1,113 +1,89 @@
 ﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
 <html>
+
   <head>
     <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class DialoguePlayer | absent-dialogues Documentation (test) </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class DialoguePlayer | absent-dialogues Documentation (test) ">
-      
-      <meta name="description" content="Lets you progress in a dialogue easily.">
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
-      
-      <meta name="docfx:rel" content="../">
-      
-      
-      <meta name="docfx:docurl" content="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
-      <meta name="loc:inThisArticle" content="In this article">
-      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-      <meta name="loc:tocFilter" content="Filter by title">
-      <meta name="loc:nextArticle" content="Next">
-      <meta name="loc:prevArticle" content="Previous">
-      <meta name="loc:themeLight" content="Light">
-      <meta name="loc:themeDark" content="Dark">
-      <meta name="loc:themeAuto" content="Auto">
-      <meta name="loc:changeTheme" content="Change theme">
-      <meta name="loc:copy" content="Copy">
-      <meta name="loc:downloadPdf" content="Download PDF">
-
-      <script type="module" src="./../public/docfx.min.js"></script>
-
-      <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-      </script>
-
+    
+    <meta name="description" content="Lets you progress in a dialogue easily.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
   </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
-    <header class="bg-body border-bottom">
-      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
-        <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="absent-dialogues Documentation (test)">
-            absent-dialogues Documentation (test)
-          </a>
-          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-three-dots"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navpanel">
-            <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="absent-dialogues Documentation (test)">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
               </form>
             </div>
           </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
+      </header>
+      <div class="container body-content">
 
-    <main class="container-xxl">
-
-      <div class="content">
-        <div class="actionbar">
-
-          <nav id="breadcrumb"></nav>
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="com.absence.dialoguesystem.DialoguePlayer">
 
-        <article data-uid="com.absence.dialoguesystem.DialoguePlayer">
 
 
-
-  <h1 id="com_absence_dialoguesystem_DialoguePlayer" data-uid="com.absence.dialoguesystem.DialoguePlayer" class="text-break">
-Class DialoguePlayer  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L14"><i class="bi bi-code-slash"></i></a>
-  </h1>
-
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="com.html">com</a>.<a class="xref" href="com.absence.html">absence</a>.<a class="xref" href="com.absence.dialoguesystem.html">dialoguesystem</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
-  </div>
-
-  <div class="markdown summary"><p>Lets you progress in a dialogue easily.</p>
+  <h1 id="com_absence_dialoguesystem_DialoguePlayer" data-uid="com.absence.dialoguesystem.DialoguePlayer" class="text-break">Class DialoguePlayer</h1>
+  <div class="markdown level0 summary"><p>Lets you progress in a dialogue easily.</p>
 </div>
-  <div class="markdown conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-public class DialoguePlayer</code></pre>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DialoguePlayer</span></div>
   </div>
-
-
-
-
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">DialoguePlayer</span></div>
-    </dd>
-  </dl>
-
-
-
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -129,500 +105,496 @@ public class DialoguePlayer</code></pre>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </dd></dl>
-
-
-
-
-
-
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="com.html">com</a>.<a class="xref" href="com.absence.html">absence</a>.<a class="xref" href="com.absence.dialoguesystem.html">dialoguesystem</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp-firstpass.dll</h6>
+  <h5 id="com_absence_dialoguesystem_DialoguePlayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class DialoguePlayer</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.%23ctor(com.absence.dialoguesystem.Dialogue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L90">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer__ctor_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue)">
-  DialoguePlayer(Dialogue)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L90"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue)">DialoguePlayer(Dialogue)</h4>
   <div class="markdown level1 summary"><p>Use to create a new <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DialoguePlayer(Dialogue dialogue)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>dialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
-    <dd><p>The original dialogue to clone from.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></td>
+        <td><span class="parametername">dialogue</span></td>
+        <td><p>The original dialogue to clone from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_System_Collections_Generic_List_com_absence_personsystem_Person__.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.%23ctor(com.absence.dialoguesystem.Dialogue%2CSystem.Collections.Generic.List%7Bcom.absence.personsystem.Person%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L107">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer__ctor_" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_System_Collections_Generic_List_com_absence_personsystem_Person__" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})">
-  DialoguePlayer(Dialogue, List&lt;Person&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L107"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer__ctor_com_absence_dialoguesystem_Dialogue_System_Collections_Generic_List_com_absence_personsystem_Person__" data-uid="com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})">DialoguePlayer(Dialogue, List&lt;Person&gt;)</h4>
   <div class="markdown level1 summary"><p>Use to create a new <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a> with an overridden people list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DialoguePlayer(Dialogue dialogue, List&lt;Person&gt; overridePeople)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>dialogue</code> <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
-    <dd><p>The original dialogue to clone from.</p>
-</dd>
-    <dt><code>overridePeople</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Person</span>&gt;</dt>
-    <dd><p>The list of new people.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></td>
+        <td><span class="parametername">dialogue</span></td>
+        <td><p>The original dialogue to clone from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Person</span>&gt;</td>
+        <td><span class="parametername">overridePeople</span></td>
+        <td><p>The list of new people.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L52">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData_" data-uid="com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData" data-uid="com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData">
-  AdditionalSpeechData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L52"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData" data-uid="com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData">AdditionalSpeechData</h4>
   <div class="markdown level1 summary"><p>Additional data of the current node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AdditionalSpeechData AdditionalSpeechData { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L38">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue" data-uid="com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue">
-  ClonedDialogue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L38"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_ClonedDialogue" data-uid="com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue">ClonedDialogue</h4>
   <div class="markdown level1 summary"><p>The dialogue cloned from the original one from constructor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dialogue ClonedDialogue { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_HasOptions.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.HasOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L73">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_HasOptions_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasOptions*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasOptions" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasOptions">
-  HasOptions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L73"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_HasOptions" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasOptions">HasOptions</h4>
   <div class="markdown level1 summary"><p>Use to check if current node is a <a class="xref" href="com.absence.dialoguesystem.internals.FastSpeechNode.html">FastSpeechNode</a> or not.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasOptions { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_HasPerson.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.HasPerson%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L78">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_HasPerson_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasPerson*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasPerson" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasPerson">
-  HasPerson
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L78"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_HasPerson" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasPerson">HasPerson</h4>
   <div class="markdown level1 summary"><p>Use to check if current node <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_PersonDependent">PersonDependent</a> or not.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasPerson { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_HasSpeech.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.HasSpeech%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L68">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_HasSpeech_" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasSpeech*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_HasSpeech" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasSpeech">
-  HasSpeech
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L68"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_HasSpeech" data-uid="com.absence.dialoguesystem.DialoguePlayer.HasSpeech">HasSpeech</h4>
   <div class="markdown level1 summary"><p>Use to check if current node is a <a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a> or not.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasSpeech { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_Options.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L62">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_Options_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Options" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options">
-  Options
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L62"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_Options" data-uid="com.absence.dialoguesystem.DialoguePlayer.Options">Options</h4>
   <div class="markdown level1 summary"><p>Options of the current node, if there is any.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;Option&gt; Options { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_Speaker.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.Speaker%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L47">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_Speaker_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speaker*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Speaker" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speaker">
-  Speaker
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L47"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_Speaker" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speaker">Speaker</h4>
   <div class="markdown level1 summary"><p>Person who speaks.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Person Speaker { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Person</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Person</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_Speech.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.Speech%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L57">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_Speech_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speech*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Speech" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speech">
-  Speech
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L57"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_Speech" data-uid="com.absence.dialoguesystem.DialoguePlayer.Speech">Speech</h4>
   <div class="markdown level1 summary"><p>Speech of the current node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Speech { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_State.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.State%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L32">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_State_" data-uid="com.absence.dialoguesystem.DialoguePlayer.State*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_State" data-uid="com.absence.dialoguesystem.DialoguePlayer.State">
-  State
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L32"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_State" data-uid="com.absence.dialoguesystem.DialoguePlayer.State">State</h4>
   <div class="markdown level1 summary"><p>Current state of the player.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DialoguePlayer.PlayerState State { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L136">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_Continue_" data-uid="com.absence.dialoguesystem.DialoguePlayer.Continue*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___" data-uid="com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])">
-  Continue(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L136"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___" data-uid="com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])">Continue(params object[])</h4>
   <div class="markdown level1 summary"><p>Use to progress in the target dialogue wih some optional data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Continue(params object[] passData)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>passData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd><p>Anything that you want to pass as data. (e.g. <a class="xref" href="com.absence.dialoguesystem.internals.DecisionSpeechNode.html">DecisionSpeechNode</a> uses the [0] element to get the selected option index.)</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">passData</span></td>
+        <td><p>Anything that you want to pass as data. (e.g. <a class="xref" href="com.absence.dialoguesystem.internals.DecisionSpeechNode.html">DecisionSpeechNode</a> uses the [0] element to get the selected option index.)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L124">View Source</a>
+  </span>
   <a id="com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot_" data-uid="com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot*"></a>
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot" data-uid="com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot">
-  TeleportToRoot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L124"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_TeleportToRoot" data-uid="com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot">TeleportToRoot()</h4>
   <div class="markdown level1 summary"><p>Teleports the flow to the <a class="xref" href="com.absence.dialoguesystem.internals.RootNode.html">RootNode</a> of the dialogue clone.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void TeleportToRoot()</code></pre>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="events">Events
-</h2>
-
-
-
-  <h3 id="com_absence_dialoguesystem_DialoguePlayer_OnContinue" data-uid="com.absence.dialoguesystem.DialoguePlayer.OnContinue">
-  OnContinue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L84"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer_OnContinue.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer.OnContinue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L84">View Source</a>
+  </span>
+  <h4 id="com_absence_dialoguesystem_DialoguePlayer_OnContinue" data-uid="com.absence.dialoguesystem.DialoguePlayer.OnContinue">OnContinue</h4>
   <div class="markdown level1 summary"><p>Action which will get invoked when <a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___">Continue(params object[])</a> gets called.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-
+  <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event Action&lt;DialoguePlayer.PlayerState&gt; OnContinue</code></pre>
   </div>
-
-
-
-
-
-
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.html">DialoguePlayer</a>.<a class="xref" href="com.absence.dialoguesystem.DialoguePlayer.PlayerState.html">PlayerState</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
+          </div>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L14" class="edit-link">Edit this page</a>
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialoguePlayer.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialoguePlayer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
         </div>
-
-
       </div>
 
-      <div class="affix">
-        <nav id="affix"></nav>
-      </div>
-    </main>
-
-    <div class="container-xxl search-results" id="search-results"></div>
-
-    <footer class="border-top text-secondary">
-      <div class="container-xxl">
-        <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>
