@@ -1,0 +1,25 @@
+apiRules:
+- exclude:
+      uidRegex: ^System\.Object
+- exclude:
+      uidRegex: ^UnityEngine\.Object
+- exclude:
+      uidRegex: ^UnityEngine\.Component
+- exclude:
+      uidRegex: ^UnityEngine\.Behaviour
+- exclude:
+      uidRegex: ^UnityEngine\.MonoBehaviour
+- exclude:
+      uidRegex: ^UnityEngine\.UIElements\.VisualElement
+- exclude:
+      uidRegex: ^UnityEditor\.EditorWindow
+- exclude:
+      uidRegex: ^UnityEditor\.Experimental\.GraphView
+- exclude:
+      uidRegex: ^UnityEngine\.UIElements\.UxmlFactory
+- exclude:
+      uidRegex: ^UnityEngine\.UIElements\.CallbackEventHandler
+- exclude:
+      uidRegex: ^UnityEngine\.UIElements\.Focusable
+- exclude:
+      uidRegex: ^UnityEngine\.UIElements\.BaseUxmlFactory
