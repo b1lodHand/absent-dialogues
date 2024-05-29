@@ -11,7 +11,8 @@
         }
       ],
   
-      "dest": "api"
+      "dest": "api",
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
@@ -40,10 +41,11 @@
       }
     ],
     "output": "_site",
-    "template": [ "default", "templates/unity" ],
+    "template": [ "default", "templates/singulinkfx" ],
     "globalMetadata": {
-      "_appName": "absent-dialogues Documentation (test)",
-      "_appTitle": "absent-dialogues Documentation (test)",
+      "_appName": "absent-dialogues",
+      "_appTitle": "absent-dialogues",
+      "_appLogoPath": "images/logo5.svg",
       "_enableSearch": true,
       "pdf": true
     }
