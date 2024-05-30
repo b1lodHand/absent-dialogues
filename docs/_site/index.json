@@ -219,19 +219,69 @@
     "title": "This is the API Documentation. | absent-dialogues",
     "keywords": "This is the API Documentation."
   },
-  "getting-started.html": {
-    "href": "getting-started.html",
+  "docs/advanced/custom-dialogue-extensions.html": {
+    "href": "docs/advanced/custom-dialogue-extensions.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/advanced/custom-nodes.html": {
+    "href": "docs/advanced/custom-nodes.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/advanced/index.html": {
+    "href": "docs/advanced/index.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/advanced/mechanism.html": {
+    "href": "docs/advanced/mechanism.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/getting-started/components.html": {
+    "href": "docs/getting-started/components.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/getting-started/index.html": {
+    "href": "docs/getting-started/index.html",
     "title": "Getting Started | absent-dialogues",
-    "keywords": "Getting Started Welcome Welcome to the documentation. Here I will teach you how to use the tool in a basic way. The code itself is also documented with the summary feature of C#. So, you can find some advanced information about using the internal code of the tool there. Now, let's start. Nodes Root Node Root Node is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its UNDESTROYABLE!!!. Dialogue Part Node Dialogue Part Node works similar to the Root Node. This is also a starting point node BUT it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to. Properties: (str.) Dialogue Part Name: This property is used by the Goto Node in order to find and teleport to this node. Read Goto Node for more details. Goto Node Goto Node is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target Dialogue Part Node and teleport to it. Properties: (str.) Target Dialogue Part Name: Goto Node finds a Dialogue Part Node which has it's target property matchin to this property and teleports to it. Important The relation between the Goto Node and Dialogue Part Node is string prone for now. So, be careful while using them. Fast Speech Node Fast Speech Node is one of the two speech nodes in this tool. This node is used to display a speech that has no options. Properties: (Person) Person: The person who speaks. (str.) Speech: Speech will be displayed. (AdditionalSpeechData) Additional Speech Data: This property contains some extra data that can be used when the speech gets displayed. Decision Speech Node Decision Speech Node does the same thing with the Fast Speech Node. The only difference between them is that the Decision Speech Node also has options the player acn choose from. Properties: (Person) Person: The person who speaks. (str.) Speech: Speech will be displayed. (AdditionalSpeechData) Additional Speech Data: This property contains some extra data that can be used when the speech gets displayed. (List ) Options: Options will be displayed. Option Block Option Block is not a Node itself. It is used to display the options of a Decision Speech Node. Text written in the text field of this block will be displayed as an option. Tip The panel above the text field is an integrated version of the VariableComparer from one of my other tools. For more details, you can hover the block in the Dialogue Editor or go to: https://github.com/b1lodHand/absent-variables Condition Node Condition Node lets you to progress in different ways in the dialogue depending on some conditions. The conditions are based on the Variable Comparers like the ones in the Option Block. Properties: (ProcessorType) Processor: Lets you select the way comparers work. (List ) Comparers: List of the entire comparers used to process the output boolean. Action Node Action Node is pretty self explanatory. It invokes some actions when it gets reached by the dialogue. Properties: (List ) VB Actions: Actions that depend on my absent-variables package. These can be used to set some variables which can be used troughout the game. (UnityEvent) Unity Events: UnityEvents that DO NOT accept scene objects. Tip There is also a property of Action Node called CustomAction() which is a virtual method. And also Action Node one of the two node subtypes which you can derive new subtypes from (they aren't sealed). So, you can derive from Action Node to have a node that has some more specific actions to perform. StickyNote Node StickyNote is not really a node. It is derived from the node base type and that's all. It has no effect on the dialogue flow. But you can use it to leave some useful notes in the graph view. Title Node Title Node is nearly the same as StickyNote. It is just bigger and easy to see."
+    "keywords": "Getting Started"
+  },
+  "docs/getting-started/nodes.html": {
+    "href": "docs/getting-started/nodes.html",
+    "title": "Nodes | absent-dialogues",
+    "keywords": "Nodes Root Node Root Node is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its UNDESTROYABLE!!!. Dialogue Part Node Dialogue Part Node works similar to the Root Node. This is also a starting point node BUT it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to. Properties: (str.) Dialogue Part Name: This property is used by the Goto Node in order to find and teleport to this node. Read Goto Node for more details. Goto Node Goto Node is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target Dialogue Part Node and teleport to it. Properties: (str.) Target Dialogue Part Name: Goto Node finds a Dialogue Part Node which has it's target property matchin to this property and teleports to it. Important The relation between the Goto Node and Dialogue Part Node is string prone for now. So, be careful while using them. Fast Speech Node Fast Speech Node is one of the two speech nodes in this tool. This node is used to display a speech that has no options. Properties: (Person) Person: The person who speaks. (str.) Speech: Speech will be displayed. (AdditionalSpeechData) Additional Speech Data: This property contains some extra data that can be used when the speech gets displayed. Decision Speech Node Decision Speech Node does the same thing with the Fast Speech Node. The only difference between them is that the Decision Speech Node also has options the player acn choose from. Properties: (Person) Person: The person who speaks. (str.) Speech: Speech will be displayed. (AdditionalSpeechData) Additional Speech Data: This property contains some extra data that can be used when the speech gets displayed. (List ) Options: Options will be displayed. Option Block Option Block is not a Node itself. It is used to display the options of a Decision Speech Node. Text written in the text field of this block will be displayed as an option. Tip The panel above the text field is an integrated version of the VariableComparer from one of my other tools. For more details, you can hover the block in the Dialogue Editor or go to: https://github.com/b1lodHand/absent-variables Condition Node Condition Node lets you to progress in different ways in the dialogue depending on some conditions. The conditions are based on the Variable Comparers like the ones in the Option Block. Properties: (ProcessorType) Processor: Lets you select the way comparers work. (List ) Comparers: List of the entire comparers used to process the output boolean. Action Node Action Node is pretty self explanatory. It invokes some actions when it gets reached by the dialogue. Properties: (List ) VB Actions: Actions that depend on my absent-variables package. These can be used to set some variables which can be used troughout the game. (UnityEvent) Unity Events: UnityEvents that DO NOT accept scene objects. Tip There is also a property of Action Node called CustomAction() which is a virtual method. And also Action Node one of the two node subtypes which you can derive new subtypes from (they aren't sealed). So, you can derive from Action Node to have a node that has some more specific actions to perform. StickyNote Node StickyNote is not really a node. It is derived from the node base type and that's all. It has no effect on the dialogue flow. But you can use it to leave some useful notes in the graph view. Title Node Title Node is nearly the same as StickyNote. It is just bigger and easy to see."
+  },
+  "docs/introduction/about.html": {
+    "href": "docs/introduction/about.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/introduction/basic-setup.html": {
+    "href": "docs/introduction/basic-setup.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/introduction/contributing.html": {
+    "href": "docs/introduction/contributing.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/introduction/demos-and-examples.html": {
+    "href": "docs/introduction/demos-and-examples.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
+  },
+  "docs/introduction/index.html": {
+    "href": "docs/introduction/index.html",
+    "title": "Introduction | absent-dialogues",
+    "keywords": "Introduction"
   },
   "index.html": {
     "href": "index.html",
-    "title": "This is the HOMEPAGE. | absent-dialogues",
-    "keywords": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Table of Contents I'm working on it..."
-  },
-  "introduction.html": {
-    "href": "introduction.html",
-    "title": "Introduction | absent-dialogues",
-    "keywords": "Introduction"
+    "title": "absent-dialogues | absent-dialogues",
+    "keywords": "absent-dialogues Welcome to the documentation of my completely free and open-source package: absent-dialogues. Here you will learn how to use, modify and integrate this package with Unity."
   }
 }

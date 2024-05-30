@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Nodes | absent-dialogues </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Nodes | absent-dialogues ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/logo5.svg" alt="absent-dialogues" class="logomark">
+              <span class="brand-title">absent-dialogues</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/logo5.svg" alt="absent-dialogues" class="logomark">
+                          <span class="brand-title">absent-dialogues</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+                <div class="footer">
+  
+  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/docs/getting-started/nodes.md/#L1" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+<h1 id="nodes">Nodes</h1>
+
+<h2 id="root-node">Root Node</h2>
+<p><img src="https://imgur.com/FwGmUyj.png" alt="Imgur Image"></p>
+<p><strong>Root Node</strong> is automatically created when you create a new graph. This node acts as a starting point in the graph. Because of that, its <strong>UNDESTROYABLE!!!</strong>.</p>
+<h2 id="dialogue-part-node">Dialogue Part Node</h2>
+<p><img src="https://imgur.com/ETY999l.png" alt="Imgur Image"></p>
+<p><strong>Dialogue Part Node</strong> works similar to the <strong>Root Node</strong>. This is also a starting point node <strong>BUT</strong> it is not the starting point of the graph itself. It is a starting point of the node chain it is connected to.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(str.)</em> <strong>Dialogue Part Name:</strong> This property is used by the <strong>Goto Node</strong> in order to find and teleport to this node. Read <a href="#goto-node">Goto Node</a> for more details.</li>
+</ul>
+<h2 id="goto-node-">Goto Node <a name="goto-node"></a></h2>
+<p><img src="https://imgur.com/3g168Py.png" alt="Imgur Image"></p>
+<p><strong>Goto Node</strong> is used to seperate the node chains to have a more clear graph window. The only mission of this node is to find the target <strong>Dialogue Part Node</strong> and teleport to it.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(str.)</em> <strong>Target Dialogue Part Name:</strong> <strong>Goto Node</strong> finds a <strong>Dialogue Part Node</strong> which has it's target property matchin to this property and teleports to it.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The relation between the <strong>Goto Node</strong> and <strong>Dialogue Part Node</strong> is <em>string prone</em> for now. So, be careful while using them.</p>
+</div>
+<h2 id="fast-speech-node">Fast Speech Node</h2>
+<p><img src="https://imgur.com/PmbBsqx.png" alt="Imgur Image"></p>
+<p><strong>Fast Speech Node</strong> is one of the two speech nodes in this tool. This node is used to display a speech that has no options.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(Person)</em> <strong>Person:</strong> The person who speaks.</li>
+<li><em>(str.)</em> <strong>Speech:</strong> Speech will be displayed.</li>
+<li><em>(AdditionalSpeechData)</em> <strong>Additional Speech Data:</strong> This property contains some extra data that can be used when the speech gets displayed.</li>
+</ul>
+<h2 id="decision-speech-node">Decision Speech Node</h2>
+<p><img src="https://imgur.com/4BmngHT.png" alt="Imgur Image"></p>
+<p><strong>Decision Speech Node</strong> does the same thing with the <strong>Fast Speech Node</strong>. The only difference between them is that the <strong>Decision Speech Node</strong> also has options the player acn choose from.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(Person)</em> <strong>Person:</strong> The person who speaks.</li>
+<li><em>(str.)</em> <strong>Speech:</strong> Speech will be displayed.</li>
+<li><em>(AdditionalSpeechData)</em> <strong>Additional Speech Data:</strong> This property contains some extra data that can be used when the speech gets displayed.</li>
+<li><em>(List<option>)</option></em> <strong>Options:</strong> Options will be displayed.</li>
+</ul>
+<h2 id="option-block">Option Block</h2>
+<p><img src="https://imgur.com/TkUgZ4I.png" alt="Imgur Image"></p>
+<p><strong>Option Block</strong> is not a Node itself. It is used to display the options of a <strong>Decision Speech Node</strong>. Text written in the text field of this block will be displayed as an option.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The panel above the text field is an integrated version of the <strong>VariableComparer</strong> from one of my other tools. For more details, you can hover the block in the Dialogue Editor or go to: <a href="https://github.com/b1lodHand/absent-variables">https://github.com/b1lodHand/absent-variables</a></p>
+</div>
+<h2 id="condition-node">Condition Node</h2>
+<p><img src="https://imgur.com/oeW8wXF.png" alt="Imgur Image"></p>
+<p><strong>Condition Node</strong> lets you to progress in different ways in the dialogue depending on some conditions. The conditions are based on the <strong>Variable Comparers</strong> like the ones in the <strong>Option Block</strong>.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(ProcessorType)</em> <strong>Processor:</strong> Lets you select the way comparers work.</li>
+<li><em>(List<variablecomparer>)</variablecomparer></em> <strong>Comparers:</strong> List of the entire comparers used to process the output boolean.</li>
+</ul>
+<h2 id="action-node">Action Node</h2>
+<p><img src="https://imgur.com/jBtwkVz.png" alt="Imgur Image"></p>
+<p><strong>Action Node</strong> is pretty self explanatory. It invokes some actions when it gets <em>reached</em> by the dialogue.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><em>(List<variablesetter>)</variablesetter></em> <strong>VB Actions:</strong> Actions that depend on my <strong>absent-variables</strong> package. These can be used to set some variables which can be used troughout the game.</li>
+<li><em>(UnityEvent)</em> <strong>Unity Events:</strong> UnityEvents that <strong>DO NOT</strong> accept scene objects.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>There is also a property of <strong>Action Node</strong> called <strong>CustomAction()</strong> which is a virtual method. And also <strong>Action Node</strong> one of the two node subtypes which you can derive new subtypes from (they aren't <em>sealed</em>). So, you can derive from <strong>Action Node</strong> to have a node that has some more specific actions to perform.</p>
+</div>
+<h2 id="stickynote-node">StickyNote Node</h2>
+<p><img src="https://imgur.com/1Zx5oKb.png" alt="Imgur Image"></p>
+<p><strong>StickyNote</strong> is not really a node. It is derived from the node base type and that's all. It has no effect on the dialogue flow. But you can use it to leave some useful notes in the graph view.</p>
+<h2 id="title-node">Title Node</h2>
+<p><img src="https://imgur.com/fhoK3Zd.png" alt="Imgur Image"></p>
+<p><strong>Title Node</strong> is nearly the same as <strong>StickyNote</strong>. It is just bigger and easy to see.</p>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

@@ -465,10 +465,120 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "getting-started.md",
+      "source_relative_path": "docs/advanced/custom-dialogue-extensions.md",
       "output": {
         ".html": {
-          "relative_path": "getting-started.html"
+          "relative_path": "docs/advanced/custom-dialogue-extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/advanced/custom-nodes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/advanced/custom-nodes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/advanced/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/advanced/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/advanced/mechanism.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/advanced/mechanism.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/components.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/nodes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/nodes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/about.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/about.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/basic-setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/basic-setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/contributing.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/contributing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/demos-and-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/demos-and-examples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/index.html"
         }
       },
       "version": ""
@@ -489,16 +599,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "introduction.html"
         }
       },
       "version": ""

@@ -2,10 +2,6 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# absent-dialogues
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
-
-## Table of Contents
-
-I'm working on it...
+### Welcome to the documentation of my completely free and open-source package: absent-dialogues. Here you will learn how to use, modify and integrate this package with [Unity](https://unity.com/).
