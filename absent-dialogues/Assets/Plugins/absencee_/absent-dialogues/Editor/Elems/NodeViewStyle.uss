@@ -184,14 +184,14 @@
     height: auto;
 }
 
-.dialogPartNode {
+.dialoguePartNode {
     height: auto;
     width: auto;
     min-width: 115px;
     min-height: 72px;
 }
 
-.dialogPartNode #title {
+.dialoguePartNode #title {
     -unity-text-align: upper-left;
 }
 
@@ -495,7 +495,7 @@
     -unity-background-image-tint-color: rgb(173, 144, 242);
 }
 
-.dialogPartNode #node-icon {
+.dialoguePartNode #node-icon {
     position: absolute;
     background-image: resource('node-icon-root');
     left: 84px;
@@ -531,4 +531,10 @@
 
 .personDependent #person-field {
     display: flex;
+}
+
+.decisionSpeechNode .optionShowIfLabel {
+    -unity-font-style: italic;
+    -unity-text-align: middle-left;
+    color: rgba(207, 207, 207, 0.62);
 }

@@ -485,26 +485,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/advanced/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "docs/advanced/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "docs/advanced/mechanism.md",
-      "output": {
-        ".html": {
-          "relative_path": "docs/advanced/mechanism.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "docs/getting-started/components.md",
       "output": {
         ".html": {
@@ -515,10 +495,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/getting-started/index.md",
+      "source_relative_path": "docs/getting-started/mechanism.md",
       "output": {
         ".html": {
-          "relative_path": "docs/getting-started/index.html"
+          "relative_path": "docs/getting-started/mechanism.html"
         }
       },
       "version": ""
@@ -569,16 +549,6 @@
       "output": {
         ".html": {
           "relative_path": "docs/introduction/demos-and-examples.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "docs/introduction/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "docs/introduction/index.html"
         }
       },
       "version": ""

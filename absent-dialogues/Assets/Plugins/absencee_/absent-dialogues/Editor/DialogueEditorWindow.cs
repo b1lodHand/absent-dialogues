@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem.editor
         static InspectorView m_inspectorView;
         static BlackboardView m_blackboardView;
         static Toolbar m_toolbar;
-        static ToolbarMenu m_dialogPartFinder;
+        static ToolbarMenu m_dialoguePartFinder;
 
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
@@ -34,38 +34,49 @@ namespace com.absence.dialoguesystem.editor
 
         private static void SaveLastDialogue()
         {
-            if (m_targetDialogue != null)
-                EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", AssetDatabase.GetAssetPath(m_targetDialogue));
+            if (m_targetDialogue == null) return;
+            if (!AssetDatabase.Contains(m_targetDialogue)) return;
+
+            EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", AssetDatabase.GetAssetPath(m_targetDialogue));
         }
 
         private static void LoadLastDialogue()
         {
             string lastDialoguePath = EditorPrefs.GetString("LastEditedDialogueBeforePlayMode_AssetPath", "");
-            if (string.IsNullOrWhiteSpace(lastDialoguePath)) return;
+            if (string.IsNullOrWhiteSpace(lastDialoguePath))
+            {
+                PopulateDialogueView(null);
+                return;
+            }
 
             Dialogue lastDialogue = AssetDatabase.LoadAssetAtPath<Dialogue>(lastDialoguePath);
-            if (lastDialogue == null) return;
+            if (lastDialogue == null) 
+            {
+                PopulateDialogueView(null);
+                EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", " ");
+                return;
+            }
 
-            PopulateDialogView(lastDialogue);
+            PopulateDialogueView(lastDialogue);
         }
 
         [OnOpenAsset]
         public static bool OnOpenAsset(int instanceId, int line)
         {
             if (Selection.activeObject is not Dialogue) return false;
+
             OpenWindow();
 
             m_targetDialogue = Selection.activeObject as Dialogue;
-            //m_targetDialogue.hideFlags = HideFlags.DontSave;
 
             var dialogObjectField = m_toolbar.Q<ObjectField>();
             dialogObjectField.SetValueWithoutNotify(m_targetDialogue);
 
             SaveLastDialogue();
-            return PopulateDialogView(m_targetDialogue);
+            return PopulateDialogueView(m_targetDialogue);
         }
 
-        private static bool PopulateDialogView(Dialogue dialogue)
+        public static bool PopulateDialogueView(Dialogue dialogue)
         {
             if (dialogue == null)
             {
@@ -77,11 +88,14 @@ namespace com.absence.dialoguesystem.editor
             }
 
             m_targetDialogue = dialogue;
+            m_dialogueObject = new SerializedObject(m_targetDialogue);
 
             if (m_dialogueGraphView == null) return false;
 
             if (Application.isPlaying) m_dialogueGraphView.PopulateView(dialogue);
             else if (AssetDatabase.CanOpenAssetInEditor(dialogue.GetInstanceID())) m_dialogueGraphView.PopulateView(dialogue);
+
+            m_blackboardView.Initialize(m_dialogueObject);
 
             ObjectField dialogueObjectField = m_toolbar.Q<ObjectField>("dialogue-object-field");
             if (dialogueObjectField == null) return true;
@@ -105,7 +119,20 @@ namespace com.absence.dialoguesystem.editor
 
             SetupEvents();
 
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+
             LoadLastDialogue();
+        }
+
+        private void OnPlayModeStateChanged(PlayModeStateChange change)
+        {
+            switch (change)
+            {
+                case PlayModeStateChange.EnteredEditMode:
+                    LoadLastDialogue();
+                    break;
+            }
         }
 
         private void AddStyleSheets(VisualElement root)
@@ -124,24 +151,24 @@ namespace com.absence.dialoguesystem.editor
 
             m_dialogueGraphView.OnNodeSelected -= OnNodeSelectionChanged;
             m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
-            PopulateDialogView(m_targetDialogue);
+            PopulateDialogueView(m_targetDialogue);
         }
 
         private void SetupToolbar(VisualElement root)
         {
-            Create_DialogPartFinder();
+            Create_DialoguePartFinder();
             Create_FindRootButton();
-            Create_DialogObjectField();
+            Create_DialogueObjectField();
             return;
 
-            void Create_DialogPartFinder()
+            void Create_DialoguePartFinder()
             {
-                m_dialogPartFinder = new ToolbarMenu();
-                m_dialogPartFinder.text = "Quick Find";
+                m_dialoguePartFinder = new ToolbarMenu();
+                m_dialoguePartFinder.text = "Quick Find";
 
-                RefreshDialogPartFinder();
+                RefreshDialoguePartFinder();
 
-                m_toolbar.Add(m_dialogPartFinder);
+                m_toolbar.Add(m_dialoguePartFinder);
             }
 
             void Create_FindRootButton()
@@ -157,7 +184,7 @@ namespace com.absence.dialoguesystem.editor
                 m_toolbar.Add(findRootButton);
             }
 
-            void Create_DialogObjectField()
+            void Create_DialogueObjectField()
             {
                 ObjectField dialogObjectField = new ObjectField("");
                 dialogObjectField.name = "dialogue-object-field";
@@ -168,7 +195,7 @@ namespace com.absence.dialoguesystem.editor
                 {
                     if (p.newValue == null)
                     {
-                        PopulateDialogView(null);
+                        PopulateDialogueView(null);
                         EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", " ");
                         return;
                     }
@@ -176,7 +203,7 @@ namespace com.absence.dialoguesystem.editor
                     if (!p.newValue.Equals(p.previousValue))
                     {
                         m_targetDialogue = (Dialogue)p.newValue;
-                        PopulateDialogView(m_targetDialogue);
+                        PopulateDialogueView(m_targetDialogue);
                         SaveLastDialogue();
                     }
                 });
@@ -186,26 +213,22 @@ namespace com.absence.dialoguesystem.editor
         }
         private void SetupEvents()
         {
-            m_dialogueGraphView.OnPopulateView -= RefreshDialogPartFinder;
-            m_dialogueGraphView.OnPopulateView += RefreshDialogPartFinder;
+            m_dialogueGraphView.OnPopulateView -= RefreshDialoguePartFinder;
+            m_dialogueGraphView.OnPopulateView += RefreshDialoguePartFinder;
         }
 
-        private void RefreshDialogPartFinder()
+        private void RefreshDialoguePartFinder()
         {
-            m_dialogPartFinder.menu.ClearItems();
+            m_dialoguePartFinder.menu.ClearItems();
             if (m_targetDialogue == null) return;
 
-            m_dialogueObject = new SerializedObject(m_targetDialogue);
-
-            m_targetDialogue.GetAllDialogParts().ForEach(dialogPartNode =>
+            m_targetDialogue.GetAllDialogueParts().ForEach(dialogPartNode =>
             {
-                m_dialogPartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
+                m_dialoguePartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
                 {
                     FrameToNode(dialogPartNode);
                 });
             });
-
-            m_blackboardView.Initialize(m_dialogueObject);
         }
 
         public void FrameToNode(Node node)

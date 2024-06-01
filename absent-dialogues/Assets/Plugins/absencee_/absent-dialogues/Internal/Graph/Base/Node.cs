@@ -29,11 +29,29 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public NodeState State = NodeState.Unreached;
         [Tooltip("Toggling this on will make the dialogue exit right after this node getting passed.")] public bool ExitDialogAfterwards = false;
 
-        public event Action<Node.NodeState> OnSetState;
+        /// <summary>
+        /// Action which will get invoked when the state of this node gets changed.
+        /// </summary>
+        public event Action<NodeState> OnSetState;
+
+        /// <summary>
+        /// Action which will get invoked when this node gets removed from the dialogue.
+        /// </summary>
         public event Action OnRemove;
+
+        /// <summary>
+        /// Action which will get invoked when <see cref="OnValidate"/> function gets called.
+        /// </summary>
         public event Action OnValidation;
 
+        /// <summary>
+        /// Action which will get invoked when this node gets reached on the flow.
+        /// </summary>
         public event Action OnReach;
+
+        /// <summary>
+        /// Action which will get invoked when this node get passed on the flow.
+        /// </summary>
         public event Action OnPass;
 
         [HideInInspector] public int PersonIndex;
@@ -169,7 +187,7 @@ namespace com.absence.dialoguesystem.internals
 
         }
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             OnValidation?.Invoke();
         }

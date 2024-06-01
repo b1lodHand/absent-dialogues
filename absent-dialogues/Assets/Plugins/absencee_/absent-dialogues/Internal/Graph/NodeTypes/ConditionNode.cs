@@ -9,18 +9,12 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which re-routes the flow under some conditions.
     /// </summary>
-    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
+    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
-        public enum ProcessType
-        {
-            All = 0,
-            Any = 1,
-        }
-
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
-        public ProcessType Processor = ProcessType.All;
-        public List<VariableComparer> Comparers = new List<VariableComparer>();
+        public VBProcessType Processor = VBProcessType.All;
+        public List<FixedVariableComparer> Comparers = new List<FixedVariableComparer>();
 
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
@@ -81,10 +75,10 @@ namespace com.absence.dialoguesystem.internals
             bool result = true;
             switch (Processor)
             {
-                case ProcessType.All:
+                case VBProcessType.All:
                     result = Comparers.All(c => c.GetResult());
                     break;
-                case ProcessType.Any:
+                case VBProcessType.Any:
                     result = Comparers.Any(c => c.GetResult());
                     break;
             }
@@ -92,7 +86,18 @@ namespace com.absence.dialoguesystem.internals
             return result;
         }
 
-        public List<VariableComparer> GetComparers() => new(Comparers);
-        public List<VariableSetter> GetSetters() => null;
+        public List<FixedVariableComparer> GetComparers() => new(Comparers);
+        public List<FixedVariableSetter> GetSetters() => null;
+
+        public void PerformEditorRefresh()
+        {
+            Comparers.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
+        }
+    }
+
+    public enum VBProcessType
+    {
+        All = 0,
+        Any = 1,
     }
 }

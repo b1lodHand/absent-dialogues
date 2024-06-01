@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Lets you select the way this extension uses the <see cref="AdditionalSpeechData.AnimatorMemberName"/>.
         /// </summary>
-        public enum WorkMode
+        private enum WorkMode
         {
             CrossFade = 0,
             SetTrigger = 1,

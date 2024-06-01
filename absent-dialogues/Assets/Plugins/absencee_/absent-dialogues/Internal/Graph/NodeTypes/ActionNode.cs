@@ -9,9 +9,9 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which invokes some actions on the flow.
     /// </summary>
-    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
+    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
-        public List<VariableSetter> VBActions = new List<VariableSetter>();
+        public List<FixedVariableSetter> VBActions = new List<FixedVariableSetter>();
         public UnityEvent UnityEvents;
 
         [HideInInspector] public Node Next;
@@ -68,9 +68,14 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public List<VariableComparer> GetComparers() => null;
+        public List<FixedVariableComparer> GetComparers() => null;
 
-        public List<VariableSetter> GetSetters() => new(VBActions);
+        public List<FixedVariableSetter> GetSetters() => new(VBActions);
+
+        public void PerformEditorRefresh()
+        {
+            VBActions.ForEach(setter => setter.SetFixedBank(Blackboard.Bank));
+        }
     }
 
 }

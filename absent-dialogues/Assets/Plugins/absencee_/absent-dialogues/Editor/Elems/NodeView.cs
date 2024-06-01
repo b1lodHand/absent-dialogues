@@ -60,6 +60,21 @@ namespace com.absence.dialoguesystem.editor
 
             node.OnValidation -= RefreshNodeIcon;
             node.OnValidation += RefreshNodeIcon;
+
+            UpdateState(node.State);
+            RefreshNodeIcon();
+
+            if(node.PersonDependent)
+            {
+                node.MasterDialogue.OnEditorRefresh -= RefreshPersonDropdown;
+                node.MasterDialogue.OnEditorRefresh += RefreshPersonDropdown;
+            }
+
+            if(node is DecisionSpeechNode)
+            {
+                node.OnValidation -= RefreshOptionLabels;
+                node.OnValidation += RefreshOptionLabels;
+            }
         }
 
         private void RefreshNodeIcon()
@@ -109,7 +124,7 @@ namespace com.absence.dialoguesystem.editor
         {
             if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
             else if (Node is GotoNode) DrawElems_GotoNode();
-            else if (Node is DialoguePartNode) DrawElems_DialogPartNode();
+            else if (Node is DialoguePartNode) DrawElems_DialoguePartNode();
 
             if (Node.PersonDependent) RefreshPersonDropdown();
             if (Node is IContainVariableManipulators) RefreshVariableManipulators();
@@ -118,8 +133,8 @@ namespace com.absence.dialoguesystem.editor
         private void RefreshVariableManipulators()
         {
             IContainVariableManipulators nodeAsManipulator = Node as IContainVariableManipulators;
-            List<VariableComparer> comparers = nodeAsManipulator.GetComparers();
-            List<VariableSetter> setters = nodeAsManipulator.GetSetters();
+            List<FixedVariableComparer> comparers = nodeAsManipulator.GetComparers();
+            List<FixedVariableSetter> setters = nodeAsManipulator.GetSetters();
 
             if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.SetFixedBank(Node.Blackboard.Bank));
             if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.SetFixedBank(Node.Blackboard.Bank));
@@ -161,7 +176,7 @@ namespace com.absence.dialoguesystem.editor
 
         }
 
-        private void DrawElems_DialogPartNode()
+        private void DrawElems_DialoguePartNode()
         {
             Label nameLabel = new Label();
             nameLabel.bindingPath = "DialoguePartName";
@@ -171,17 +186,17 @@ namespace com.absence.dialoguesystem.editor
         }
         private void DrawElems_DecisionSpeechNode()
         {
-            m_createNewOptionButton = new Button(CreateOption_DialogPartNode);
+            m_createNewOptionButton = new Button(CreateOption_DecisionSpeechNode);
             m_createNewOptionButton.text = "Add New Option";
             m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
 
-            RefreshOptions_DialogPartNode();
+            RefreshOptions_DecisionSpeechNode();
         }
         private void DrawElems_GotoNode()
         {
             Label gotoLabel = new Label();
-            gotoLabel.bindingPath = "TargetDialogPartName";
+            gotoLabel.bindingPath = "TargetDialoguePartName";
             gotoLabel.Bind(m_serializedNode);
 
             this.Add(gotoLabel);
@@ -209,6 +224,8 @@ namespace com.absence.dialoguesystem.editor
 
         private void UpdateState(Node.NodeState state)
         {
+            if (!Application.isPlaying) return;
+            
             RemoveFromClassList("unreached");
             RemoveFromClassList("current");
             RemoveFromClassList("past");
@@ -251,7 +268,16 @@ namespace com.absence.dialoguesystem.editor
         }
 
         #region Decision Speech Node
-        private void CreateOption_DialogPartNode()
+        private void RefreshOptionLabels()
+        {
+            m_optionElems.ForEach(optionElem =>
+            {
+                Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
+
+                showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
+            });
+        }
+        private void CreateOption_DecisionSpeechNode()
         {
             Option option = new Option();
 
@@ -260,7 +286,7 @@ namespace com.absence.dialoguesystem.editor
 
             Master.Refresh();
         }
-        private void RefreshOptions_DialogPartNode()
+        private void RefreshOptions_DecisionSpeechNode()
         {
             m_optionElems.ForEach(v =>
             {
@@ -300,6 +326,7 @@ namespace com.absence.dialoguesystem.editor
 
             VisualElement top = new VisualElement();
             top.AddToClassList("optionBottom");
+            top.name = "top";
 
             VisualElement divider = new VisualElement();
             divider.AddToClassList("optionDivider");
@@ -307,17 +334,7 @@ namespace com.absence.dialoguesystem.editor
             VisualElement bottom = new VisualElement();
             bottom.AddToClassList("optionBottom");
 
-            var useShowIfProp = optionProp.FindPropertyRelative("UseShowIf");
-            var showIfProp = optionProp.FindPropertyRelative("ShowIf");
             var speechProp = optionProp.FindPropertyRelative("Speech");
-
-            Toggle showIfToggle = new Toggle();
-            showIfToggle.BindProperty(useShowIfProp);
-            showIfToggle.AddToClassList("optionShowIfToggle");
-
-            PropertyField showIfContainer = new PropertyField(showIfProp, "Show If");
-            showIfContainer.Bind(m_serializedNode);
-            showIfContainer.AddToClassList("optionShowIf");
 
             Button removeButton = new Button(() =>
             {
@@ -346,20 +363,15 @@ namespace com.absence.dialoguesystem.editor
 
             speechField.BindProperty(speechProp);
 
-            showIfToggle.RegisterValueChangedCallback(evt =>
-            {
-                showIfContainer.visible = (evt.newValue);
-            });
-
-            showIfContainer.visible = (showIfToggle.value);
-
             removeButton.tooltip = "Remove this option.";
-            showIfToggle.tooltip = "If this checkbox is checked, the show if panel on the right will get enabled. For more details, hover it.";
-            showIfContainer.tooltip = "When enabled, the visibility of this option will depend on this condition.";
+
+            Label showIfLabel = new Label("Show if in use.");
+            showIfLabel.AddToClassList("optionShowIfLabel");
+            showIfLabel.name = "show-if-label";
 
             top.Add(removeButton);
-            top.Add(showIfToggle);
-            top.Add(showIfContainer);
+            top.Add(showIfLabel);
+            RefreshShowIfLabel();
 
             bottom.Add(speechField);
             bottom.Add(port);
@@ -367,6 +379,11 @@ namespace com.absence.dialoguesystem.editor
             optionElem.Add(divider);
             optionElem.Add(top);
             optionElem.Add(bottom);
+
+            void RefreshShowIfLabel()
+            {
+                showIfLabel.visible = optionProp.FindPropertyRelative("m_useShowIf").boolValue;
+            }
 
             return optionElem;
         }

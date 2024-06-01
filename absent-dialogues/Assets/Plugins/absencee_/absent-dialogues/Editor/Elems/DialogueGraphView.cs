@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
-using System.Text.RegularExpressions;
 using com.absence.utilities;
 
 namespace com.absence.dialoguesystem.editor
@@ -111,13 +110,7 @@ namespace com.absence.dialoguesystem.editor
                     EditorUtility.SetDirty(outputView.Node);
                 });
 
-                //Refresh();
             }
-
-            //if(graphViewChange.movedElements != null && graphViewChange.movedElements.Any(e => e is NodeView))
-            //{
-            //    Refresh();
-            //}
 
             return graphViewChange;
         }
@@ -147,9 +140,9 @@ namespace com.absence.dialoguesystem.editor
             graphViewChanged += OnGraphViewChanged;
         }
 
-        internal void PopulateView(Dialogue dialog)
+        internal void PopulateView(Dialogue dialogue)
         {
-            this.m_dialogue = dialog;
+            this.m_dialogue = dialogue;
 
             ClearViewWithoutNotification();
 
@@ -163,9 +156,9 @@ namespace com.absence.dialoguesystem.editor
                 AssetDatabase.SaveAssets();
             }
 
-            dialog.AllNodes.ForEach(n => CreateNodeView(n));
+            dialogue.AllNodes.ForEach(n => CreateNodeView(n));
 
-            dialog.AllNodes.ForEach(n =>
+            dialogue.AllNodes.ForEach(n =>
             {
                 if (n == null) return;
 

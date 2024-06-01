@@ -229,25 +229,15 @@
     "title": "| absent-dialogues",
     "keywords": ""
   },
-  "docs/advanced/index.html": {
-    "href": "docs/advanced/index.html",
-    "title": "| absent-dialogues",
-    "keywords": ""
-  },
-  "docs/advanced/mechanism.html": {
-    "href": "docs/advanced/mechanism.html",
-    "title": "| absent-dialogues",
-    "keywords": ""
-  },
   "docs/getting-started/components.html": {
     "href": "docs/getting-started/components.html",
     "title": "| absent-dialogues",
     "keywords": ""
   },
-  "docs/getting-started/index.html": {
-    "href": "docs/getting-started/index.html",
-    "title": "Getting Started | absent-dialogues",
-    "keywords": "Getting Started"
+  "docs/getting-started/mechanism.html": {
+    "href": "docs/getting-started/mechanism.html",
+    "title": "| absent-dialogues",
+    "keywords": ""
   },
   "docs/getting-started/nodes.html": {
     "href": "docs/getting-started/nodes.html",
@@ -273,11 +263,6 @@
     "href": "docs/introduction/demos-and-examples.html",
     "title": "| absent-dialogues",
     "keywords": ""
-  },
-  "docs/introduction/index.html": {
-    "href": "docs/introduction/index.html",
-    "title": "Introduction | absent-dialogues",
-    "keywords": "Introduction"
   },
   "index.html": {
     "href": "index.html",

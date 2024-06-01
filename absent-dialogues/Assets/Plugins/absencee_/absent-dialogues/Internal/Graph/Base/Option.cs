@@ -1,4 +1,7 @@
+using com.absence.attributes;
 using com.absence.variablesystem;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -15,24 +18,21 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public string Speech;
 
         /// <summary>
-        /// Boolean which decides if <see cref="ShowIf"/> will be used.
+        /// Additional speech data this option contains.
         /// </summary>
-        [HideInInspector] public bool UseShowIf = false;
+        public AdditionalSpeechData AdditionalData;
 
-        /// <summary>
-        /// The condition checker which decides the visibility of the option.
-        /// </summary>
-        [HideInInspector] public VariableComparer ShowIf;
+        [Space(10)]
+
+        [SerializeField] private bool m_useShowIf = false;
+        public bool UseShowIf => m_useShowIf;
+
+        [SerializeField, ShowIf(nameof(m_useShowIf))] public ShowIf Visibility;
 
         /// <summary>
         /// The node this option leads to.
         /// </summary>
         [HideInInspector] public Node LeadsTo;
-
-        /// <summary>
-        /// Additional speech data this option contains.
-        /// </summary>
-        public AdditionalSpeechData AdditionalData;
 
         /// <summary>
         /// Use to get a clone of this option.
@@ -43,12 +43,70 @@ namespace com.absence.dialoguesystem.internals
         {
             Option clone = new Option();
             clone.Speech = Speech;
-            clone.UseShowIf = UseShowIf;
-            clone.ShowIf = ShowIf.Clone(overrideBank);
+            clone.m_useShowIf = UseShowIf;
+            clone.Visibility = Visibility.Clone(overrideBank);
             clone.LeadsTo = LeadsTo;
             clone.AdditionalData = AdditionalData;
 
             return clone;
+        }
+
+        /// <summary>
+        /// Calculates the visibility of this option.
+        /// </summary>
+        /// <returns>Returns true if the option is visible, returns false otherwise.</returns>
+        public bool IsVisible()
+        {
+            if (!m_useShowIf) return true;
+
+            return Visibility.GetResult();
+        }
+
+        /// <summary>
+        /// A class specifically designed for calculating an option's visibility.
+        /// </summary>
+        [System.Serializable]
+        public class ShowIf
+        {
+            /// <summary>
+            /// An enum which defines what to do with multiple comparers in conclusion.
+            /// </summary>
+            public VBProcessType Processor = VBProcessType.All;
+
+            /// <summary>
+            /// A list of all <see cref="VariableComparer"/>s which has a role on determining this option's
+            /// visibility on display.
+            /// </summary>
+            public List<FixedVariableComparer> ShowIfList;
+
+            /// <summary>
+            /// Use to clone this instance.
+            /// </summary>
+            /// <param name="overrideBank"></param>
+            /// <returns></returns>
+            public ShowIf Clone(VariableBank overrideBank)
+            {
+                ShowIf clone = new ShowIf();
+                clone.Processor = Processor;
+                clone.ShowIfList = ShowIfList.ConvertAll(comparer => comparer.Clone(overrideBank));
+                return clone;
+            }
+
+            /// <summary>
+            /// Use to get the composite result of all of the comparers of this instance.
+            /// </summary>
+            /// <returns></returns>
+            public bool GetResult()
+            {
+                if (ShowIfList.Count == 0) return true;
+
+                return Processor switch
+                {
+                    VBProcessType.All => ShowIfList.All(comparer => comparer.GetResult()),
+                    VBProcessType.Any => ShowIfList.Any(comparer => comparer.GetResult()),
+                    _ => true,
+                };
+            }
         }
     }
 }

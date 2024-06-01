@@ -8,13 +8,13 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     public sealed class GotoNode : Node
     {
-        public string TargetDialogPartName;
+        public string TargetDialoguePartName;
         public override string GetClassName() => "gotoNode";
         public override string GetTitle() => "Goto";
 
         protected override void Pass_Inline(params object[] passData)
         {
-            var check = MasterDialogue.GetDialogPartNodesWithName(TargetDialogPartName);
+            var check = MasterDialogue.GetDialoguePartNodesWithName(TargetDialoguePartName);
             //if (check.Count == 0 || check.Count > 1) return;
 
             SetState(NodeState.Past);

@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which displays a speech with options.
     /// </summary>
-    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators
+    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -81,18 +81,29 @@ namespace com.absence.dialoguesystem.internals
             });
         }
 
-        public List<VariableComparer> GetComparers()
+        public List<FixedVariableComparer> GetComparers()
         {
-            List<VariableComparer> result = new();
+            List<FixedVariableComparer> result = new();
 
             Options.ForEach(option =>
             {
-                result.Add(option.ShowIf);
+                option.Visibility.ShowIfList.ForEach(comparer =>
+                {
+                    if (comparer != null) result.Add(comparer);
+                });
             });
 
             return result;
         }
 
-        public List<VariableSetter> GetSetters() => null;
+        public List<FixedVariableSetter> GetSetters() => null;
+
+        public void PerformEditorRefresh()
+        {
+            Options.ForEach(option =>
+            {
+                option.Visibility.ShowIfList.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
+            });
+        }
     }
 }

@@ -33,6 +33,12 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public List<Person> People => m_people;
 
+        public event Action OnEditorRefresh;
+        public void PerformEditorRefresh()
+        {
+            OnEditorRefresh?.Invoke();
+        }
+
         /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
@@ -97,7 +103,7 @@ namespace com.absence.dialoguesystem
         /// <param name="targetName"></param>
         /// <returns>A list of <see cref="DialoguePartNode"/>s with that specific name. Throws an exception nothing's
         /// found.</returns>
-        public List<DialoguePartNode> GetDialogPartNodesWithName(string targetName)
+        public List<DialoguePartNode> GetDialoguePartNodesWithName(string targetName)
         {
             var check = AllNodes.Where(n =>
             {
@@ -118,7 +124,7 @@ namespace com.absence.dialoguesystem
         /// Use to get a list of all <see cref="DialoguePartNode"/>s in this dialogue.
         /// </summary>
         /// <returns>The entire list of <see cref="DialoguePartNode"/>s in the current dialogue.</returns>
-        public List<DialoguePartNode> GetAllDialogParts()
+        public List<DialoguePartNode> GetAllDialogueParts()
         {
             return AllNodes.Where(n => n is DialoguePartNode).ToList().ConvertAll(n => (n as DialoguePartNode)).ToList();
         }
@@ -128,6 +134,7 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void Initialize()
         {
+            AllNodes.ForEach(node => node.SetState(Node.NodeState.Unreached));
             RootNode.Reach();
         }
 

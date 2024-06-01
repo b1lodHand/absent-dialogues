@@ -23,6 +23,11 @@ namespace com.absence.dialoguesystem
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
+        /// <summary>
+        /// Use to et the original (not the cloned one) dialogue of this instance.
+        /// </summary>
+        public Dialogue ReferencedDialogue => m_referencedDialogue;
+
         [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. Leave empty if you won't use it.")] 
         private List<Person> m_overridePeople;
 

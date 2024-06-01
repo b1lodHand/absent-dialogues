@@ -3,7 +3,7 @@ items:
   href: index.md
 
   name: Introduction
-  href: docs/introduction/index.md
+  href: docs/introduction/about.md
   items:
     - name: About
       href: docs/introduction/about.md
@@ -15,18 +15,18 @@ items:
       href: docs/introduction/contributing.md
 
 - name: Getting Started
-  href: docs/getting-started/index.md
+  href: docs/getting-started/mechanism.md
   items:
+    - name: Mechanism
+      href: docs/getting-started/mechanism.md
     - name: Nodes
       href: docs/getting-started/nodes.md
     - name: Components
       href: docs/getting-started/components.md
 
 - name: Advanced
-  href: docs/advanced/index.md
+  href: docs/advanced/custom-nodes.md
   items:
-    - name: Mechanism
-      href: docs/advanced/mechanism.md
     - name: Custom Nodes
       href: docs/advanced/custom-nodes.md
     - name: Custom Dialogue Extensions
