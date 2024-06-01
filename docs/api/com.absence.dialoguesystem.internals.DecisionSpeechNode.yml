@@ -18,6 +18,7 @@ items:
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.Options
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(System.Object[])
+  - com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.PersonDependent
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.RemoveNextNode_Inline(System.Int32)
@@ -44,8 +45,8 @@ items:
   summary: Node which displays a speech with options.
   example: []
   syntax:
-    content: 'public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators'
-    content.vb: Public NotInheritable Class DecisionSpeechNode Inherits Node Implements IContainSpeech, IContainVariableManipulators
+    content: 'public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh'
+    content.vb: Public NotInheritable Class DecisionSpeechNode Inherits Node Implements IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -54,6 +55,7 @@ items:
   implements:
   - com.absence.dialoguesystem.internals.IContainSpeech
   - com.absence.dialoguesystem.internals.IContainVariableManipulators
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
   - com.absence.dialoguesystem.internals.Node.Position
@@ -181,6 +183,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Is this node person dependent.
   example: []
   syntax:
     content: public override bool PersonDependent { get; }
@@ -647,11 +650,11 @@ items:
   summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
   example: []
   syntax:
-    content: public List<VariableComparer> GetComparers()
+    content: public List<FixedVariableComparer> GetComparers()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
       description: ''
-    content.vb: Public Function GetComparers() As List(Of VariableComparer)
+    content.vb: Public Function GetComparers() As List(Of FixedVariableComparer)
   overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
@@ -673,21 +676,51 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSetters
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 95
+    startLine: 98
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
   example: []
   syntax:
-    content: public List<VariableSetter> GetSetters()
+    content: public List<FixedVariableSetter> GetSetters()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
       description: ''
-    content.vb: Public Function GetSetters() As List(Of VariableSetter)
+    content.vb: Public Function GetSetters() As List(Of FixedVariableSetter)
   overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh
+  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh
+  id: PerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals.DecisionSpeechNode
+  langs:
+  - csharp
+  - vb
+  name: PerformEditorRefresh()
+  nameWithType: DecisionSpeechNode.PerformEditorRefresh()
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PerformEditorRefresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
+    startLine: 100
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to declare what to do when any value gets changed in the inspector/
+  example: []
+  syntax:
+    content: public void PerformEditorRefresh()
+    content.vb: Public Sub PerformEditorRefresh()
+  overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh*
+  implements:
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -773,6 +806,13 @@ references:
   name: IContainVariableManipulators
   nameWithType: IContainVariableManipulators
   fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  commentId: T:com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html
+  name: IPerformEditorRefresh
+  nameWithType: IPerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -2084,25 +2124,25 @@ references:
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
   - name: (
   - name: )
-- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<VariableComparer>
-  nameWithType: List<VariableComparer>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableComparer>
-  nameWithType.vb: List(Of VariableComparer)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableComparer)
-  name.vb: List(Of VariableComparer)
+  name: List<FixedVariableComparer>
+  nameWithType: List<FixedVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableComparer>
+  nameWithType.vb: List(Of FixedVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableComparer)
+  name.vb: List(Of FixedVariableComparer)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.VariableComparer
-    name: VariableComparer
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
     isExternal: true
   - name: '>'
   spec.vb:
@@ -2113,8 +2153,8 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.VariableComparer
-    name: VariableComparer
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
     isExternal: true
   - name: )
 - uid: com.absence.variablesystem
@@ -2172,25 +2212,25 @@ references:
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
   - name: (
   - name: )
-- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<VariableSetter>
-  nameWithType: List<VariableSetter>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableSetter>
-  nameWithType.vb: List(Of VariableSetter)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableSetter)
-  name.vb: List(Of VariableSetter)
+  name: List<FixedVariableSetter>
+  nameWithType: List<FixedVariableSetter>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableSetter>
+  nameWithType.vb: List(Of FixedVariableSetter)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableSetter)
+  name.vb: List(Of FixedVariableSetter)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.VariableSetter
-    name: VariableSetter
+  - uid: com.absence.variablesystem.FixedVariableSetter
+    name: FixedVariableSetter
     isExternal: true
   - name: '>'
   spec.vb:
@@ -2201,7 +2241,32 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.VariableSetter
-    name: VariableSetter
+  - uid: com.absence.variablesystem.FixedVariableSetter
+    name: FixedVariableSetter
     isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh*
+  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh
+  href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_PerformEditorRefresh
+  name: PerformEditorRefresh
+  nameWithType: DecisionSpeechNode.PerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.PerformEditorRefresh
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  commentId: M:com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  name: PerformEditorRefresh()
+  nameWithType: IPerformEditorRefresh.PerformEditorRefresh()
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+    name: PerformEditorRefresh
+    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+    name: PerformEditorRefresh
+    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  - name: (
   - name: )

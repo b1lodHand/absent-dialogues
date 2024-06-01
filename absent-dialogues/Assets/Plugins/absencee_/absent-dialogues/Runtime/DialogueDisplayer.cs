@@ -94,7 +94,7 @@ namespace com.absence.dialoguesystem
             {
                 Option option = options[i];
 
-                if (option.UseShowIf && !option.ShowIf.GetResult()) continue;
+                if (!option.IsVisible()) continue;
 
                 DialogueOptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
                 optionText.Initialize(i, option.Speech);

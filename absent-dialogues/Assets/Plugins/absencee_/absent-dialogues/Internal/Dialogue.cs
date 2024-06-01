@@ -34,6 +34,29 @@ namespace com.absence.dialoguesystem
         public List<Person> People => m_people;
 
         /// <summary>
+        /// The original dialogue which is used to create this cloned one. Returns null if this dialogue is not a clone.
+        /// </summary>
+        public Dialogue ClonedFrom { get; private set; }
+
+        /// <summary>
+        /// Use to check if this dialogue is a clone.
+        /// </summary>
+        public bool IsClone => ClonedFrom != null;
+
+        /// <summary>
+        /// Action which will get invoked if any value gets changed in the inspector when this dialogue is selected.
+        /// </summary>
+        public event Action OnEditorRefresh;
+
+        /// <summary>
+        /// Invokes the <see cref="OnEditorRefresh"/>.
+        /// </summary>
+        public void PerformEditorRefresh()
+        {
+            OnEditorRefresh?.Invoke();
+        }
+
+        /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
         [HideInInspector] public Blackboard Blackboard;
@@ -87,6 +110,7 @@ namespace com.absence.dialoguesystem
             });
 
             dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
+            dialogue.ClonedFrom = this;
 
             return dialogue;
         }
@@ -97,7 +121,7 @@ namespace com.absence.dialoguesystem
         /// <param name="targetName"></param>
         /// <returns>A list of <see cref="DialoguePartNode"/>s with that specific name. Throws an exception nothing's
         /// found.</returns>
-        public List<DialoguePartNode> GetDialogPartNodesWithName(string targetName)
+        public List<DialoguePartNode> GetDialoguePartNodesWithName(string targetName)
         {
             var check = AllNodes.Where(n =>
             {
@@ -118,7 +142,7 @@ namespace com.absence.dialoguesystem
         /// Use to get a list of all <see cref="DialoguePartNode"/>s in this dialogue.
         /// </summary>
         /// <returns>The entire list of <see cref="DialoguePartNode"/>s in the current dialogue.</returns>
-        public List<DialoguePartNode> GetAllDialogParts()
+        public List<DialoguePartNode> GetAllDialogueParts()
         {
             return AllNodes.Where(n => n is DialoguePartNode).ToList().ConvertAll(n => (n as DialoguePartNode)).ToList();
         }
@@ -128,6 +152,7 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void Initialize()
         {
+            AllNodes.ForEach(node => node.SetState(Node.NodeState.Unreached));
             RootNode.Reach();
         }
 

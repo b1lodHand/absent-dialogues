@@ -292,7 +292,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetPosition
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 232
+    startLine: 249
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -325,7 +325,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 240
+    startLine: 257
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -354,7 +354,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnUnselected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 246
+    startLine: 263
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor

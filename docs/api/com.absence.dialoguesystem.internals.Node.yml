@@ -24,6 +24,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.OnRemoval
   - com.absence.dialoguesystem.internals.Node.OnRemove
   - com.absence.dialoguesystem.internals.Node.OnSetState
+  - com.absence.dialoguesystem.internals.Node.OnValidate
   - com.absence.dialoguesystem.internals.Node.OnValidation
   - com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
   - com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
@@ -53,7 +54,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Node
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -99,7 +100,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Guid
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -136,7 +137,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Position
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -173,24 +174,24 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: MasterDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
     content: >-
-      [HideInInspector]
+      [Readonly]
 
       public Dialogue MasterDialogue
     return:
       type: com.absence.dialoguesystem.Dialogue
     content.vb: >-
-      <HideInInspector>
+      <Readonly>
 
       Public MasterDialogue As Dialogue
   attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
+  - type: com.absence.attributes.ReadonlyAttribute
+    ctor: com.absence.attributes.ReadonlyAttribute.#ctor
     arguments: []
 - uid: com.absence.dialoguesystem.internals.Node.Blackboard
   commentId: F:com.absence.dialoguesystem.internals.Node.Blackboard
@@ -210,7 +211,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Blackboard
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -247,7 +248,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: State
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -284,7 +285,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogAfterwards
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -323,10 +324,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSetState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 31
+    startLine: 35
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Action which will get invoked when the state of this node gets changed.
+  example: []
   syntax:
     content: public event Action<Node.NodeState> OnSetState
     return:
@@ -350,10 +353,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnRemove
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 32
+    startLine: 40
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Action which will get invoked when this node gets removed from the dialogue.
+  example: []
   syntax:
     content: public event Action OnRemove
     return:
@@ -377,10 +382,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnValidation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 33
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Action which will get invoked when <xref href="com.absence.dialoguesystem.internals.Node.OnValidate" data-throw-if-not-resolved="false"></xref> function gets called.
+  example: []
   syntax:
     content: public event Action OnValidation
     return:
@@ -404,10 +411,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnReach
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 35
+    startLine: 50
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Action which will get invoked when this node gets reached on the flow.
+  example: []
   syntax:
     content: public event Action OnReach
     return:
@@ -431,10 +440,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnPass
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 36
+    startLine: 55
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Action which will get invoked when this node get passed on the flow.
+  example: []
   syntax:
     content: public event Action OnPass
     return:
@@ -458,10 +469,15 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PersonIndex
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 38
+    startLine: 61
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: >-
+    Index of the person this node depends on (if it is <xref href="com.absence.dialoguesystem.internals.Node.PersonDependent" data-throw-if-not-resolved="false"></xref>) on the person list of the
+
+    <xref href="com.absence.dialoguesystem.internals.Node.MasterDialogue" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -495,10 +511,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Person
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 39
+    startLine: 66
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Property which returns the person with the index of <xref href="com.absence.dialoguesystem.internals.Node.PersonIndex" data-throw-if-not-resolved="false"></xref> from the person list.
+  example: []
   syntax:
     content: >-
       [HideInInspector]
@@ -534,10 +552,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 41
+    startLine: 71
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Will this node display it's state in editor on the flow.
+  example: []
   syntax:
     content: public virtual bool DisplayState { get; }
     parameters: []
@@ -563,10 +583,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowInMinimap
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 42
+    startLine: 76
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Will this node be visible on the minimap.
+  example: []
   syntax:
     content: public virtual bool ShowInMinimap { get; }
     parameters: []
@@ -592,10 +614,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PersonDependent
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 43
+    startLine: 81
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Is this node person dependent.
+  example: []
   syntax:
     content: public virtual bool PersonDependent { get; }
     parameters: []
@@ -621,7 +645,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 49
+    startLine: 87
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -652,7 +676,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 55
+    startLine: 93
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -683,17 +707,21 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 57
+    startLine: 100
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Use when you connect a new node to a right-side port of this node.
+  example: []
   syntax:
     content: public void AddNextNode(Node nextWillBeAdded, int atPort)
     parameters:
     - id: nextWillBeAdded
       type: com.absence.dialoguesystem.internals.Node
+      description: The reference value of the node connected.
     - id: atPort
       type: System.Int32
+      description: The port which hold the connection.
     content.vb: Public Sub AddNextNode(nextWillBeAdded As Node, atPort As Integer)
   overload: com.absence.dialoguesystem.internals.Node.AddNextNode*
   nameWithType.vb: Node.AddNextNode(Node, Integer)
@@ -717,15 +745,18 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 61
+    startLine: 109
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Use when you disconnect a node from a riht-side port of this node.
+  example: []
   syntax:
     content: public void RemoveNextNode(int atPort)
     parameters:
     - id: atPort
       type: System.Int32
+      description: The port which handled the disconnection event.
     content.vb: Public Sub RemoveNextNode(atPort As Integer)
   overload: com.absence.dialoguesystem.internals.Node.RemoveNextNode*
   nameWithType.vb: Node.RemoveNextNode(Integer)
@@ -749,14 +780,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 65
+    startLine: 118
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Use to get all of the nodes which are <b>directly</b> connected to this node <b>(only the right-side ones)</b>.
+  example: []
   syntax:
     content: public List<(int portIndex, Node node)> GetNextNodes()
     return:
       type: System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}
+      description: ''
     content.vb: Public Function GetNextNodes() As List(Of (portIndex As Integer, node As Node))
   overload: com.absence.dialoguesystem.internals.Node.GetNextNodes*
 - uid: com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
@@ -777,7 +811,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 72
+    startLine: 125
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -809,7 +843,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 79
+    startLine: 132
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -835,7 +869,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnRemoval
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 87
+    startLine: 140
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -861,7 +895,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 97
+    startLine: 150
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -899,7 +933,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 103
+    startLine: 156
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -934,7 +968,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 109
+    startLine: 162
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -969,7 +1003,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 115
+    startLine: 168
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1004,7 +1038,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 120
+    startLine: 173
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1032,7 +1066,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 126
+    startLine: 179
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1063,7 +1097,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 132
+    startLine: 185
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1094,7 +1128,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 141
+    startLine: 194
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1126,7 +1160,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 158
+    startLine: 211
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1164,7 +1198,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 166
+    startLine: 219
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1180,6 +1214,32 @@ items:
   nameWithType.vb: Node.Traverse(Action(Of Node))
   fullName.vb: com.absence.dialoguesystem.internals.Node.Traverse(System.Action(Of com.absence.dialoguesystem.internals.Node))
   name.vb: Traverse(Action(Of Node))
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
+  id: OnValidate
+  parent: com.absence.dialoguesystem.internals.Node
+  langs:
+  - csharp
+  - vb
+  name: OnValidate()
+  nameWithType: Node.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnValidate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
+    startLine: 224
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: protected virtual void OnValidate()
+    content.vb: Protected Overridable Sub OnValidate()
+  overload: com.absence.dialoguesystem.internals.Node.OnValidate*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -1538,6 +1598,46 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  name: OnValidate()
+  nameWithType: Node.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.internals.Node.PersonDependent
+  commentId: P:com.absence.dialoguesystem.internals.Node.PersonDependent
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_PersonDependent
+  name: PersonDependent
+  nameWithType: Node.PersonDependent
+  fullName: com.absence.dialoguesystem.internals.Node.PersonDependent
+- uid: com.absence.dialoguesystem.internals.Node.MasterDialogue
+  commentId: F:com.absence.dialoguesystem.internals.Node.MasterDialogue
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_MasterDialogue
+  name: MasterDialogue
+  nameWithType: Node.MasterDialogue
+  fullName: com.absence.dialoguesystem.internals.Node.MasterDialogue
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1549,6 +1649,13 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: com.absence.dialoguesystem.internals.Node.PersonIndex
+  commentId: F:com.absence.dialoguesystem.internals.Node.PersonIndex
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_PersonIndex
+  name: PersonIndex
+  nameWithType: Node.PersonIndex
+  fullName: com.absence.dialoguesystem.internals.Node.PersonIndex
 - uid: com.absence.dialoguesystem.internals.Node.Person*
   commentId: Overload:com.absence.dialoguesystem.internals.Node.Person
   href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Person
@@ -1628,13 +1735,6 @@ references:
   name: AddNextNode
   nameWithType: Node.AddNextNode
   fullName: com.absence.dialoguesystem.internals.Node.AddNextNode
-- uid: com.absence.dialoguesystem.internals.Node
-  commentId: T:com.absence.dialoguesystem.internals.Node
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Node.html
-  name: Node
-  nameWithType: Node
-  fullName: com.absence.dialoguesystem.internals.Node
 - uid: com.absence.dialoguesystem.internals.Node.RemoveNextNode*
   commentId: Overload:com.absence.dialoguesystem.internals.Node.RemoveNextNode
   href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_RemoveNextNode_System_Int32_
@@ -1962,3 +2062,9 @@ references:
     name: Node
     href: com.absence.dialoguesystem.internals.Node.html
   - name: )
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate*
+  commentId: Overload:com.absence.dialoguesystem.internals.Node.OnValidate
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  name: OnValidate
+  nameWithType: Node.OnValidate
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate

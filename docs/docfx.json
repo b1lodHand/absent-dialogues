@@ -21,8 +21,8 @@
         "files": [
           "toc.yml",
           "index.md",
-          "getting-started.md",
-          "introduction.md",
+          "docs/*.md",
+          "docs/*.yml",
           "docs/**/*.md",
           "docs/**/*.yml",
           "api/**.yml",

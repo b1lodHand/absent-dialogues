@@ -11,7 +11,7 @@ namespace com.absence.dialoguesystem
                 m_instance.Player.Continue();
         }
 
-        public override void OnHandleAdditionalData(AdditionalSpeechData data)
+        protected override void OnHandleAdditionalData(AdditionalSpeechData data)
         {
             return;
         }

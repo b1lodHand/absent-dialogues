@@ -92,6 +92,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.DialogueInstance.yml",
       "output": {
         ".html": {
@@ -172,6 +182,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.DialogueCustomEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.DialogueCustomEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.editor.DialogueEditorWindow.yml",
       "output": {
         ".html": {
@@ -222,10 +242,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeCustomEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.NodeCustomEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeView.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.editor.NodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html"
         }
       },
       "version": ""
@@ -362,6 +402,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.IPerformEditorRefresh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.IPerformEditorRefresh.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.Node.NodeState.yml",
       "output": {
         ".html": {
@@ -376,6 +426,16 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.Node.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Option.ShowIf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Option.ShowIf.html"
         }
       },
       "version": ""
@@ -416,6 +476,16 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.TitleNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.VBProcessType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.VBProcessType.html"
         }
       },
       "version": ""
@@ -465,10 +535,90 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "getting-started.md",
+      "source_relative_path": "docs/advanced/custom-dialogue-extensions.md",
       "output": {
         ".html": {
-          "relative_path": "getting-started.html"
+          "relative_path": "docs/advanced/custom-dialogue-extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/advanced/custom-nodes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/advanced/custom-nodes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/components.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/mechanism.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/mechanism.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started/nodes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started/nodes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/about.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/about.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/basic-setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/basic-setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/contributing.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/contributing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/demos-and-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/demos-and-examples.html"
         }
       },
       "version": ""
@@ -489,16 +639,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "introduction.html"
         }
       },
       "version": ""

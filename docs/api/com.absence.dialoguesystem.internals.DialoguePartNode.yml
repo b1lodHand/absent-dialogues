@@ -161,6 +161,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Will this node display it's state in editor on the flow.
   example: []
   syntax:
     content: public override bool DisplayState { get; }

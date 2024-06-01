@@ -14,12 +14,12 @@ namespace com.absence.dialoguesystem.internals
         /// A list of comparers which you want to restrict in terms of <see cref="VariableBank"/> selection
         /// </summary>
         /// <returns></returns>
-        List<VariableComparer> GetComparers();
+        List<FixedVariableComparer> GetComparers();
 
         /// <summary>
         /// A list of comparers which you want to restrict in terms of <see cref="VariableBank"/> selection
         /// </summary>
         /// <returns></returns>
-        List<VariableSetter> GetSetters();
+        List<FixedVariableSetter> GetSetters();
     }
 }

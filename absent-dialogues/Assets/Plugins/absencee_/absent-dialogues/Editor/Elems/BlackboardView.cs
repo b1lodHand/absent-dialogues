@@ -64,9 +64,20 @@ public class BlackboardView : VisualElement
 
         m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
 
-        if (!m_blackboardBankEditor) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-        else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-        else m_blackboardBankEditor.OnInspectorGUI();
+        if (bank == null) return;
+
+        try
+        {
+            if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            else m_blackboardBankEditor.OnInspectorGUI();
+        }
+
+        catch
+        {
+            Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+        }
+        
 
         EditorGUILayout.EndScrollView();
 

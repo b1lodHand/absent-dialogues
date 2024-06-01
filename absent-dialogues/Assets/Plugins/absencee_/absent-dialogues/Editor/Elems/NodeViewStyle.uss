@@ -184,14 +184,14 @@
     height: auto;
 }
 
-.dialogPartNode {
+.dialoguePartNode {
     height: auto;
     width: auto;
     min-width: 115px;
     min-height: 72px;
 }
 
-.dialogPartNode #title {
+.dialoguePartNode #title {
     -unity-text-align: upper-left;
 }
 
@@ -495,7 +495,7 @@
     -unity-background-image-tint-color: rgb(173, 144, 242);
 }
 
-.dialogPartNode #node-icon {
+.dialoguePartNode #node-icon {
     position: absolute;
     background-image: resource('node-icon-root');
     left: 84px;
@@ -516,19 +516,20 @@
     position: absolute;
 }
 
-.exit #node-icon {
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 #person-field {
     display: none;
 }
 
 .personDependent #person-field {
     display: flex;
+}
+
+.decisionSpeechNode .optionShowIfLabel {
+    -unity-font-style: italic;
+    -unity-text-align: middle-left;
+    color: rgba(207, 207, 207, 0.62);
+}
+
+.exit #node-border {
+    border-top-color: rgb(171, 68, 63);
 }

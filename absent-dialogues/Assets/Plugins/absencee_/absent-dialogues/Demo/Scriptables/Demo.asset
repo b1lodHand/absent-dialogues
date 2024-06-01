@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 0, y: 0}
+  Position: {x: 31.15001, y: -5.0999875}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -60,7 +60,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 2
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -70,39 +70,27 @@ MonoBehaviour:
     m_customInfo: []
   Options:
   - Speech: Sure, I'll be doing it.
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'null: null'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
     LeadsTo: {fileID: 7901140551254700991}
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
   - Speech: I'm not interested in that, actually.
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'null: null'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
-    LeadsTo: {fileID: 7512322125377748830}
     AdditionalData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
       m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 7512322125377748830}
   Speech: I want you to bring me some apples, dude. Will you do that for me?
 --- !u!114 &-3621898333564505408
 MonoBehaviour:
@@ -124,7 +112,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialogPartName: loop
+  TargetDialoguePartName: loop
 --- !u!114 &-2127933438961997456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +130,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 1
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -169,7 +157,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 2
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -196,10 +184,10 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 2
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialogPartName: loop
+  TargetDialoguePartName: loop
 --- !u!114 &-1399893973709126951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,11 +201,11 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 558, y: 149.00005}
+  Position: {x: 566, y: 153}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 2
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -227,39 +215,34 @@ MonoBehaviour:
     m_customInfo: []
   Options:
   - Speech: I've done it.
-    UseShowIf: 1
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'bool: b_missionDone'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 1
-      m_fixedBank: {fileID: 3482111983400843739}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+    m_useShowIf: 1
+    Visibility:
+      Processor: 0
+      ShowIfList:
+      - m_comparisonType: 2
+        m_targetBank: {fileID: 3482111983400843739}
+        m_targetVariableName: 'bool: b_missionDone'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 1
     LeadsTo: {fileID: -914008930283711827}
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
   - Speech: I am working on it.
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'bool: b_missionDone'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
-    LeadsTo: {fileID: -1965666318695130335}
     AdditionalData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
       m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -1965666318695130335}
   Speech: Oh yeah, I've totally forgotten about that! What have you done?
 --- !u!114 &-914008930283711827
 MonoBehaviour:
@@ -289,15 +272,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 1
-    m_fixedBank: {fileID: 3482111983400843739}
-  - m_setType: 0
-    m_targetBank: {fileID: 3482111983400843739}
-    m_targetVariableName: 'bool: b_missionPending'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
-    m_fixedBank: {fileID: 3482111983400843739}
   UnityEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -315,7 +289,7 @@ MonoBehaviour:
   m_Name: Demo
   m_EditorClassIdentifier: 
   RootNode: {fileID: -9120434286002774121}
-  LastOrCurrentNode: {fileID: 1239550416686042660}
+  LastOrCurrentNode: {fileID: -9120434286002774121}
   AllNodes:
   - {fileID: -9120434286002774121}
   - {fileID: -8258285536222529687}
@@ -335,6 +309,7 @@ MonoBehaviour:
   - {fileID: 7901140551254700991}
   m_people:
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
+  - {fileID: 11400000, guid: 51314ca2212de414ea471788da803d40, type: 2}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
 --- !u!114 &1239550416686042660
@@ -354,7 +329,7 @@ MonoBehaviour:
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 1
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   TrueNext: {fileID: -3899366801720709168}
@@ -368,7 +343,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
-    m_fixedBank: {fileID: 3482111983400843739}
   - m_comparisonType: 2
     m_targetBank: {fileID: 3482111983400843739}
     m_targetVariableName: 'bool: b_missionDone'
@@ -376,7 +350,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
-    m_fixedBank: {fileID: 3482111983400843739}
   - m_comparisonType: 2
     m_targetBank: {fileID: 3482111983400843739}
     m_targetVariableName: 'bool: b_missionCommitted'
@@ -384,7 +357,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
-    m_fixedBank: {fileID: 3482111983400843739}
 --- !u!114 &1326889792880528920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
   Position: {x: -3, y: 63}
-  MasterDialogue: {fileID: 0}
+  MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -469,11 +441,11 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: ba671a40893b8f04f9cdd1ddc116785f
-  Position: {x: 138, y: -43}
+  Position: {x: 184.95827, y: -4.9999933}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 1
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   m_additionalData:
@@ -483,39 +455,41 @@ MonoBehaviour:
     m_customInfo: []
   Options:
   - Speech: Do you have any missions for me?
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'null: null'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
     LeadsTo: {fileID: 1239550416686042660}
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
   - Speech: I am here for the mission.
-    UseShowIf: 1
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'bool: b_missionPending'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 1
-      m_fixedBank: {fileID: 3482111983400843739}
-    LeadsTo: {fileID: -1399893973709126951}
     AdditionalData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
       m_customInfo: []
+    m_useShowIf: 1
+    Visibility:
+      Processor: 0
+      ShowIfList:
+      - m_comparisonType: 2
+        m_targetBank: {fileID: 3482111983400843739}
+        m_targetVariableName: 'bool: b_missionPending'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 1
+      - m_comparisonType: 2
+        m_targetBank: {fileID: 3482111983400843739}
+        m_targetVariableName: 'bool: b_missionCommitted'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 0
+    LeadsTo: {fileID: -1399893973709126951}
   Speech: So, What do you want?
 --- !u!114 &7512322125377748830
 MonoBehaviour:
@@ -537,7 +511,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialogPartName: loop
+  TargetDialoguePartName: loop
 --- !u!114 &7901140551254700991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,11 +525,11 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 041a83cc15b72f744a1842a686410a85
-  Position: {x: 1228.0001, y: -448.00018}
+  Position: {x: 1237, y: -447}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 2
+  State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
   VBActions:
@@ -566,7 +540,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 1
-    m_fixedBank: {fileID: 3482111983400843739}
   UnityEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -598,37 +571,14 @@ MonoBehaviour:
     m_customInfo: []
   Options:
   - Speech: Okay.
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'null: null'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
     LeadsTo: {fileID: 7512322125377748830}
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
-  - Speech: 
-    UseShowIf: 0
-    ShowIf:
-      m_comparisonType: 2
-      m_targetBank: {fileID: 3482111983400843739}
-      m_targetVariableName: 'null: null'
-      m_intValue: 0
-      m_floatValue: 0
-      m_stringValue: 
-      m_boolValue: 0
-      m_fixedBank: {fileID: 3482111983400843739}
-    LeadsTo: {fileID: 0}
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
   Speech: No, I don't have anything for you right now.

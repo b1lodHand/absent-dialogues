@@ -1,0 +1,128 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+  id: VBProcessType
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.VBProcessType.All
+  - com.absence.dialoguesystem.internals.VBProcessType.Any
+  langs:
+  - csharp
+  - vb
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VBProcessType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 97
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public enum VBProcessType
+    content.vb: Public Enum VBProcessType
+- uid: com.absence.dialoguesystem.internals.VBProcessType.All
+  commentId: F:com.absence.dialoguesystem.internals.VBProcessType.All
+  id: All
+  parent: com.absence.dialoguesystem.internals.VBProcessType
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: VBProcessType.All
+  fullName: com.absence.dialoguesystem.internals.VBProcessType.All
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: All
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 99
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: All = 0
+    return:
+      type: com.absence.dialoguesystem.internals.VBProcessType
+- uid: com.absence.dialoguesystem.internals.VBProcessType.Any
+  commentId: F:com.absence.dialoguesystem.internals.VBProcessType.Any
+  id: Any
+  parent: com.absence.dialoguesystem.internals.VBProcessType
+  langs:
+  - csharp
+  - vb
+  name: Any
+  nameWithType: VBProcessType.Any
+  fullName: com.absence.dialoguesystem.internals.VBProcessType.Any
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Any
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+    startLine: 100
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Any = 1
+    return:
+      type: com.absence.dialoguesystem.internals.VBProcessType
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.VBProcessType.html
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType

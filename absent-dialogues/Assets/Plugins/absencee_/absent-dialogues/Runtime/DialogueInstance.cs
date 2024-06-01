@@ -11,6 +11,7 @@ namespace com.absence.dialoguesystem
     /// Lets you manage a single <see cref="DialoguePlayer"/> in the scene easily.
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
+    [DisallowMultipleComponent]
     public class DialogueInstance : MonoBehaviour
     {
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
@@ -23,7 +24,30 @@ namespace com.absence.dialoguesystem
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
-        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. Leave empty if you won't use it.")] 
+        /// <summary>
+        /// Use to get the original (not the cloned one) dialogue of this instance.
+        /// </summary>
+        public Dialogue ReferencedDialogue => m_referencedDialogue;
+
+        /// <summary>
+        /// Use to get the cloned dialogue which the <see cref="DialoguePlayer"/> of this instance uses.
+        /// </summary>
+        public Dialogue ClonedDialogue
+        {
+            get
+            {
+                if (Player == null) throw new Exception("You cannot use 'DialogueInstance.ClonedDialogue' before that instance clones it's dialogue!");
+
+                return Player.ClonedDialogue;
+            }
+
+            private set
+            {
+                ClonedDialogue = value;
+            }
+        }
+
+        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
         private List<Person> m_overridePeople;
 
         [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
@@ -39,10 +63,22 @@ namespace com.absence.dialoguesystem
         public event Action<AdditionalSpeechData> OnHandleAdditionalData;
 
         /// <summary>
+        /// Action which will get invoked right after this instance clons it's <see cref="ReferencedDialogue"/>.
+        /// </summary>
+        public event Action OnAfterCloning;
+
+        /// <summary>
         /// Subscribe to this delegate to override any data will get displayed.
         /// </summary>
-        public event BeforeSpeechEventHandler OnBeforeSpeech;
-        public delegate void BeforeSpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
+        public event SpeechEventHandler OnBeforeSpeech;
+
+        /// <summary>
+        /// The delegate responsible for handling events directly about speech.
+        /// </summary>
+        /// <param name="speaker">Speaker of this speech.</param>
+        /// <param name="speech">Speech in context.</param>
+        /// <param name="options">Options of this speech (null if there is no options).</param>
+        public delegate void SpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
 
         Person m_speaker;
         string m_speech;
@@ -60,6 +96,8 @@ namespace com.absence.dialoguesystem
 
             if(m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
             else m_player = new DialoguePlayer(m_referencedDialogue);
+
+            OnAfterCloning?.Invoke();
         }
         private void Start()
         {

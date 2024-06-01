@@ -12,7 +12,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Node Next;
         public string DialoguePartName;
         public override bool DisplayState => false;
-        public override string GetClassName() => "dialogPartNode";
+        public override string GetClassName() => "dialoguePartNode";
         public override string GetTitle() => $"Dialogue Part";
 
         protected override void Pass_Inline(params object[] passData)

@@ -1,0 +1,224 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+  commentId: T:com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+  id: DialogueInstance.SpeechEventHandler
+  parent: com.absence.dialoguesystem
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DialogueInstance.SpeechEventHandler
+  nameWithType: DialogueInstance.SpeechEventHandler
+  fullName: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SpeechEventHandler
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 80
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: The delegate responsible for handling events directly about speech.
+  example: []
+  syntax:
+    content: public delegate void DialogueInstance.SpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options)
+    parameters:
+    - id: speaker
+      type: com.absence.personsystem.Person
+      description: Speaker of this speech.
+    - id: speech
+      type: System.String
+      description: Speech in context.
+    - id: options
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+      description: Options of this speech (null if there is no options).
+    content.vb: Public Delegate Sub DialogueInstance.SpeechEventHandler(speaker As Person, speech As String, options As List(Of [Option]))
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.personsystem.Person
+  commentId: T:com.absence.personsystem.Person
+  parent: com.absence.personsystem
+  isExternal: true
+  name: Person
+  nameWithType: Person
+  fullName: com.absence.personsystem.Person
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Option>
+  nameWithType: List<Option>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
+  nameWithType.vb: List(Of Option)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
+  name.vb: List(Of Option)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: )
+- uid: com.absence.personsystem
+  commentId: N:com.absence.personsystem
+  isExternal: true
+  name: com.absence.personsystem
+  nameWithType: com.absence.personsystem
+  fullName: com.absence.personsystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.personsystem
+    name: personsystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.personsystem
+    name: personsystem
+    isExternal: true
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

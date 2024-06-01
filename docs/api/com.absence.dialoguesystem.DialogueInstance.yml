@@ -6,11 +6,14 @@ items:
   parent: com.absence.dialoguesystem
   children:
   - com.absence.dialoguesystem.DialogueInstance.AddExtension``1
+  - com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
   - com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   - com.absence.dialoguesystem.DialogueInstance.ExitDialogue
+  - com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   - com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
   - com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
   - com.absence.dialoguesystem.DialogueInstance.Player
+  - com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   langs:
   - csharp
   - vb
@@ -35,9 +38,13 @@ items:
     content: >-
       [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
 
+      [DisallowMultipleComponent]
+
       public class DialogueInstance : MonoBehaviour
     content.vb: >-
       <AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")>
+
+      <DisallowMultipleComponent>
 
       Public Class DialogueInstance Inherits MonoBehaviour
   inheritance:
@@ -52,6 +59,71 @@ items:
     arguments:
     - type: System.String
       value: absencee_/absent-dialogues/Dialogue Instance
+  - type: UnityEngine.DisallowMultipleComponent
+    ctor: UnityEngine.DisallowMultipleComponent.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  id: ReferencedDialogue
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: ReferencedDialogue
+  nameWithType: DialogueInstance.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReferencedDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to get the original (not the cloned one) dialogue of this instance.
+  example: []
+  syntax:
+    content: public Dialogue ReferencedDialogue { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: Public ReadOnly Property ReferencedDialogue As Dialogue
+  overload: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue*
+- uid: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
+  id: ClonedDialogue
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: ClonedDialogue
+  nameWithType: DialogueInstance.ClonedDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ClonedDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to get the cloned dialogue which the <xref href="com.absence.dialoguesystem.DialoguePlayer" data-throw-if-not-resolved="false"></xref> of this instance uses.
+  example: []
+  syntax:
+    content: public Dialogue ClonedDialogue { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: Public Property ClonedDialogue As Dialogue
+  overload: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue*
 - uid: com.absence.dialoguesystem.DialogueInstance.Player
   commentId: P:com.absence.dialoguesystem.DialogueInstance.Player
   id: Player
@@ -70,7 +142,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Player
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 33
+    startLine: 57
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -101,7 +173,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 38
+    startLine: 62
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -112,6 +184,35 @@ items:
     return:
       type: System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
     content.vb: Public Event OnHandleAdditionalData As Action(Of AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
+  id: OnAfterCloning
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: OnAfterCloning
+  nameWithType: DialogueInstance.OnAfterCloning
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnAfterCloning
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    startLine: 67
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Action which will get invoked right after this instance clons it's <xref href="com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public event Action OnAfterCloning
+    return:
+      type: System.Action
+    content.vb: Public Event OnAfterCloning As Action
 - uid: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
   commentId: E:com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
   id: OnBeforeSpeech
@@ -130,17 +231,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 43
+    startLine: 72
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Subscribe to this delegate to override any data will get displayed.
   example: []
   syntax:
-    content: public event DialogueInstance.BeforeSpeechEventHandler OnBeforeSpeech
+    content: public event DialogueInstance.SpeechEventHandler OnBeforeSpeech
     return:
-      type: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    content.vb: Public Event OnBeforeSpeech As DialogueInstance.BeforeSpeechEventHandler
+      type: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    content.vb: Public Event OnBeforeSpeech As DialogueInstance.SpeechEventHandler
 - uid: com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   commentId: M:com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   id: EnterDialogue
@@ -159,7 +260,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: EnterDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 76
+    startLine: 114
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -190,7 +291,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 102
+    startLine: 140
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -218,7 +319,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddExtension
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 174
+    startLine: 212
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -324,6 +425,25 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue*
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ReferencedDialogue
+  name: ReferencedDialogue
+  nameWithType: DialogueInstance.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue*
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ClonedDialogue
+  name: ClonedDialogue
+  nameWithType: DialogueInstance.ClonedDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.Player*
   commentId: Overload:com.absence.dialoguesystem.DialogueInstance.Player
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_Player
@@ -409,29 +529,43 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-  commentId: T:com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+- uid: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ReferencedDialogue
+  name: ReferencedDialogue
+  nameWithType: DialogueInstance.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+  commentId: T:com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
   parent: com.absence.dialoguesystem
   href: com.absence.dialoguesystem.DialogueInstance.html
-  name: DialogueInstance.BeforeSpeechEventHandler
-  nameWithType: DialogueInstance.BeforeSpeechEventHandler
-  fullName: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  name: DialogueInstance.SpeechEventHandler
+  nameWithType: DialogueInstance.SpeechEventHandler
+  fullName: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
   spec.csharp:
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
     href: com.absence.dialoguesystem.DialogueInstance.html
   - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    name: BeforeSpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    name: SpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
   spec.vb:
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
     href: com.absence.dialoguesystem.DialogueInstance.html
   - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    name: BeforeSpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    name: SpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
 - uid: com.absence.dialoguesystem.DialogueDisplayer
   commentId: T:com.absence.dialoguesystem.DialogueDisplayer
   href: com.absence.dialoguesystem.DialogueDisplayer.html
