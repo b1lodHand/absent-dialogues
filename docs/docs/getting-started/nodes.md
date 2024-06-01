@@ -1,5 +1,7 @@
 # Nodes
 
+Nodes are the base elements of this tool. As I said, this is a *node based* dialogue system. So, In this section of the documentation, you will get a brief explanation of all node types included by default in this tool.
+
 ## Root Node
 ![Imgur Image](https://imgur.com/FwGmUyj.png)
 
@@ -55,9 +57,6 @@
 
 **Option Block** is not a Node itself. It is used to display the options of a **Decision Speech Node**. Text written in the text field of this block will be displayed as an option.
 
-> [!TIP]
-> The panel above the text field is an integrated version of the **VariableComparer** from one of my other tools. For more details, you can hover the block in the Dialogue Editor or go to: https://github.com/b1lodHand/absent-variables
-
 
 ## Condition Node
 ![Imgur Image](https://imgur.com/oeW8wXF.png)
@@ -92,3 +91,7 @@
 ![Imgur Image](https://imgur.com/fhoK3Zd.png)
 
 **Title Node** is nearly the same as **StickyNote**. It is just bigger and easy to see.
+
+## What's Next?
+
+This section is ended. Go to [Components](components.md) to continue.
