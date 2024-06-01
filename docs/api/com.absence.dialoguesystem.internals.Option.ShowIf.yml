@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf
+  commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
+  id: Option.ShowIf
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
+  - com.absence.dialoguesystem.internals.Option.ShowIf.Processor
+  - com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
+  langs:
+  - csharp
+  - vb
+  name: Option.ShowIf
+  nameWithType: Option.ShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ShowIf
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 67
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: A class specifically designed for calculating an option's visibility.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class Option.ShowIf
+    content.vb: >-
+      <Serializable>
+
+      Public Class [Option].ShowIf
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Processor
+  commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf.Processor
+  id: Processor
+  parent: com.absence.dialoguesystem.internals.Option.ShowIf
+  langs:
+  - csharp
+  - vb
+  name: Processor
+  nameWithType: Option.ShowIf.Processor
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Processor
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Processor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 73
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: An enum which defines what to do with multiple comparers in conclusion.
+  example: []
+  syntax:
+    content: public VBProcessType Processor
+    return:
+      type: com.absence.dialoguesystem.internals.VBProcessType
+    content.vb: Public Processor As VBProcessType
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
+  commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
+  id: ShowIfList
+  parent: com.absence.dialoguesystem.internals.Option.ShowIf
+  langs:
+  - csharp
+  - vb
+  name: ShowIfList
+  nameWithType: Option.ShowIf.ShowIfList
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ShowIfList
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 79
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: >-
+    A list of all <xref href="com.absence.variablesystem.VariableComparer" data-throw-if-not-resolved="false"></xref>s which has a role on determining this option's
+
+    visibility on display.
+  example: []
+  syntax:
+    content: public List<FixedVariableComparer> ShowIfList
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+    content.vb: Public ShowIfList As List(Of FixedVariableComparer)
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  id: Clone(com.absence.variablesystem.VariableBank)
+  parent: com.absence.dialoguesystem.internals.Option.ShowIf
+  langs:
+  - csharp
+  - vb
+  name: Clone(VariableBank)
+  nameWithType: Option.ShowIf.Clone(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 86
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to clone this instance.
+  example: []
+  syntax:
+    content: public Option.ShowIf Clone(VariableBank overrideBank)
+    parameters:
+    - id: overrideBank
+      type: com.absence.variablesystem.VariableBank
+      description: ''
+    return:
+      type: com.absence.dialoguesystem.internals.Option.ShowIf
+      description: ''
+    content.vb: Public Function Clone(overrideBank As VariableBank) As [Option].ShowIf
+  overload: com.absence.dialoguesystem.internals.Option.ShowIf.Clone*
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
+  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
+  id: GetResult
+  parent: com.absence.dialoguesystem.internals.Option.ShowIf
+  langs:
+  - csharp
+  - vb
+  name: GetResult()
+  nameWithType: Option.ShowIf.GetResult()
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetResult
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 98
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to get the composite result of all of the comparers of this instance.
+  example: []
+  syntax:
+    content: public bool GetResult()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function GetResult() As Boolean
+  overload: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult*
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.VBProcessType.html
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType
+- uid: com.absence.variablesystem.VariableComparer
+  commentId: T:com.absence.variablesystem.VariableComparer
+  isExternal: true
+  name: VariableComparer
+  nameWithType: VariableComparer
+  fullName: com.absence.variablesystem.VariableComparer
+- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<FixedVariableComparer>
+  nameWithType: List<FixedVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableComparer>
+  nameWithType.vb: List(Of FixedVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableComparer)
+  name.vb: List(Of FixedVariableComparer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.Clone
+  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablesystem_VariableBank_
+  name: Clone
+  nameWithType: Option.ShowIf.Clone
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf
+  commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option.ShowIf
+  nameWithType: Option.ShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
+  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_GetResult
+  name: GetResult
+  nameWithType: Option.ShowIf.GetResult
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

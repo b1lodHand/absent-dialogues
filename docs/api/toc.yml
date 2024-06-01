@@ -7,8 +7,6 @@ items:
     name: Dialogue
   - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
     name: DialogueAnimationsPlayer
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-    name: DialogueAnimationsPlayer.WorkMode
   - uid: com.absence.dialoguesystem.DialogueDisplayer
     name: DialogueDisplayer
   - uid: com.absence.dialoguesystem.DialogueExtensionBase
@@ -17,8 +15,8 @@ items:
     name: DialogueInputHandler_Legacy
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
-  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    name: DialogueInstance.BeforeSpeechEventHandler
+  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    name: DialogueInstance.SpeechEventHandler
   - uid: com.absence.dialoguesystem.DialogueOptionText
     name: DialogueOptionText
   - uid: com.absence.dialoguesystem.DialoguePlayer
@@ -30,6 +28,8 @@ items:
 - uid: com.absence.dialoguesystem.editor
   name: com.absence.dialoguesystem.editor
   items:
+  - uid: com.absence.dialoguesystem.editor.DialogueCustomEditor
+    name: DialogueCustomEditor
   - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow
     name: DialogueEditorWindow
   - uid: com.absence.dialoguesystem.editor.DialogueGraphView
@@ -40,8 +40,12 @@ items:
     name: InspectorView
   - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
     name: InspectorView.UxmlFactory
+  - uid: com.absence.dialoguesystem.editor.NodeCustomEditor
+    name: NodeCustomEditor
   - uid: com.absence.dialoguesystem.editor.NodeView
     name: NodeView
+  - uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+    name: RuntimeSelectionHandler
   - uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
     name: VariableBankCreationHandler
 - uid: com.absence.dialoguesystem.internals
@@ -55,8 +59,6 @@ items:
     name: Blackboard
   - uid: com.absence.dialoguesystem.internals.ConditionNode
     name: ConditionNode
-  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
-    name: ConditionNode.ProcessType
   - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
     name: DecisionSpeechNode
   - uid: com.absence.dialoguesystem.internals.DialoguePartNode
@@ -69,16 +71,22 @@ items:
     name: IContainSpeech
   - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
     name: IContainVariableManipulators
+  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+    name: IPerformEditorRefresh
   - uid: com.absence.dialoguesystem.internals.Node
     name: Node
   - uid: com.absence.dialoguesystem.internals.Node.NodeState
     name: Node.NodeState
   - uid: com.absence.dialoguesystem.internals.Option
     name: Option
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: Option.ShowIf
   - uid: com.absence.dialoguesystem.internals.RootNode
     name: RootNode
   - uid: com.absence.dialoguesystem.internals.StickyNoteNode
     name: StickyNoteNode
   - uid: com.absence.dialoguesystem.internals.TitleNode
     name: TitleNode
+  - uid: com.absence.dialoguesystem.internals.VBProcessType
+    name: VBProcessType
 memberLayout: SamePage

@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  commentId: T:com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  id: IPerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  langs:
+  - csharp
+  - vb
+  name: IPerformEditorRefresh
+  nameWithType: IPerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IPerformEditorRefresh.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IPerformEditorRefresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IPerformEditorRefresh.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Any node subtype with this interface implemented will get a callback when you change any value in the inspector.
+  example: []
+  syntax:
+    content: public interface IPerformEditorRefresh
+    content.vb: Public Interface IPerformEditorRefresh
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  commentId: M:com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  id: PerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  langs:
+  - csharp
+  - vb
+  name: PerformEditorRefresh()
+  nameWithType: IPerformEditorRefresh.PerformEditorRefresh()
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IPerformEditorRefresh.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PerformEditorRefresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IPerformEditorRefresh.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to declare what to do when any value gets changed in the inspector/
+  example: []
+  syntax:
+    content: void PerformEditorRefresh()
+    content.vb: Sub PerformEditorRefresh()
+  overload: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh*
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh*
+  commentId: Overload:com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  name: PerformEditorRefresh
+  nameWithType: IPerformEditorRefresh.PerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh

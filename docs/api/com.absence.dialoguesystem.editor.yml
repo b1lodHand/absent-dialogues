@@ -4,12 +4,15 @@ items:
   commentId: N:com.absence.dialoguesystem.editor
   id: com.absence.dialoguesystem.editor
   children:
+  - com.absence.dialoguesystem.editor.DialogueCustomEditor
   - com.absence.dialoguesystem.editor.DialogueEditorWindow
   - com.absence.dialoguesystem.editor.DialogueGraphView
   - com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
   - com.absence.dialoguesystem.editor.InspectorView
   - com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  - com.absence.dialoguesystem.editor.NodeCustomEditor
   - com.absence.dialoguesystem.editor.NodeView
+  - com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   - com.absence.dialoguesystem.editor.VariableBankCreationHandler
   langs:
   - csharp
@@ -28,12 +31,24 @@ references:
   name: NodeView
   nameWithType: NodeView
   fullName: com.absence.dialoguesystem.editor.NodeView
+- uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+  commentId: T:com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+  href: com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html
+  name: RuntimeSelectionHandler
+  nameWithType: RuntimeSelectionHandler
+  fullName: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow
   commentId: T:com.absence.dialoguesystem.editor.DialogueEditorWindow
   href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html
   name: DialogueEditorWindow
   nameWithType: DialogueEditorWindow
   fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow
+- uid: com.absence.dialoguesystem.editor.DialogueCustomEditor
+  commentId: T:com.absence.dialoguesystem.editor.DialogueCustomEditor
+  href: com.absence.dialoguesystem.editor.DialogueCustomEditor.html
+  name: DialogueCustomEditor
+  nameWithType: DialogueCustomEditor
+  fullName: com.absence.dialoguesystem.editor.DialogueCustomEditor
 - uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
   commentId: T:com.absence.dialoguesystem.editor.VariableBankCreationHandler
   href: com.absence.dialoguesystem.editor.VariableBankCreationHandler.html
@@ -97,6 +112,12 @@ references:
   - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
     name: UxmlFactory
     href: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.NodeCustomEditor
+  commentId: T:com.absence.dialoguesystem.editor.NodeCustomEditor
+  href: com.absence.dialoguesystem.editor.NodeCustomEditor.html
+  name: NodeCustomEditor
+  nameWithType: NodeCustomEditor
+  fullName: com.absence.dialoguesystem.editor.NodeCustomEditor
 - uid: com.absence.dialoguesystem.editor
   commentId: N:com.absence.dialoguesystem.editor
   href: com.html

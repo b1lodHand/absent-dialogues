@@ -6,12 +6,11 @@ items:
   children:
   - com.absence.dialoguesystem.Dialogue
   - com.absence.dialoguesystem.DialogueAnimationsPlayer
-  - com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
   - com.absence.dialoguesystem.DialogueDisplayer
   - com.absence.dialoguesystem.DialogueExtensionBase
   - com.absence.dialoguesystem.DialogueInputHandler_Legacy
   - com.absence.dialoguesystem.DialogueInstance
-  - com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  - com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
   - com.absence.dialoguesystem.DialogueOptionText
   - com.absence.dialoguesystem.DialoguePlayer
   - com.absence.dialoguesystem.DialoguePlayer.PlayerState
@@ -32,29 +31,6 @@ references:
   name: DialogueAnimationsPlayer
   nameWithType: DialogueAnimationsPlayer
   fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer
-- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
-  name: DialogueAnimationsPlayer.WorkMode
-  nameWithType: DialogueAnimationsPlayer.WorkMode
-  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
-    name: DialogueAnimationsPlayer
-    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-    name: WorkMode
-    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
-    name: DialogueAnimationsPlayer
-    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode
-    name: WorkMode
-    href: com.absence.dialoguesystem.DialogueAnimationsPlayer.WorkMode.html
 - uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy
   commentId: T:com.absence.dialoguesystem.DialogueInputHandler_Legacy
   href: com.absence.dialoguesystem.DialogueInputHandler_Legacy.html
@@ -111,29 +87,29 @@ references:
   name: DialogueInstance
   nameWithType: DialogueInstance
   fullName: com.absence.dialoguesystem.DialogueInstance
-- uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-  commentId: T:com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+- uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+  commentId: T:com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
   parent: com.absence.dialoguesystem
   href: com.absence.dialoguesystem.DialogueInstance.html
-  name: DialogueInstance.BeforeSpeechEventHandler
-  nameWithType: DialogueInstance.BeforeSpeechEventHandler
-  fullName: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
+  name: DialogueInstance.SpeechEventHandler
+  nameWithType: DialogueInstance.SpeechEventHandler
+  fullName: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
   spec.csharp:
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
     href: com.absence.dialoguesystem.DialogueInstance.html
   - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    name: BeforeSpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    name: SpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
   spec.vb:
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
     href: com.absence.dialoguesystem.DialogueInstance.html
   - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler
-    name: BeforeSpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.BeforeSpeechEventHandler.html
+  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+    name: SpeechEventHandler
+    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
 - uid: com.absence.dialoguesystem.DialogueSoundsPlayer
   commentId: T:com.absence.dialoguesystem.DialogueSoundsPlayer
   href: com.absence.dialoguesystem.DialogueSoundsPlayer.html

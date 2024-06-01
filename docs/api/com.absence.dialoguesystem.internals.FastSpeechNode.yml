@@ -176,6 +176,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Is this node person dependent.
   example: []
   syntax:
     content: public override bool PersonDependent { get; }

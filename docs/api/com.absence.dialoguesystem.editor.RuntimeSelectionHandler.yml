@@ -1,0 +1,97 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+  commentId: T:com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+  id: RuntimeSelectionHandler
+  parent: com.absence.dialoguesystem.editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: RuntimeSelectionHandler
+  nameWithType: RuntimeSelectionHandler
+  fullName: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/RuntimeSelectionHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: RuntimeSelectionHandler
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/RuntimeSelectionHandler.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: >-
+      [InitializeOnLoad]
+
+      public static class RuntimeSelectionHandler
+    content.vb: >-
+      <InitializeOnLoad>
+
+      Public Module RuntimeSelectionHandler
+  inheritance:
+  - System.Object
+  attributes:
+  - type: UnityEditor.InitializeOnLoadAttribute
+    ctor: UnityEditor.InitializeOnLoadAttribute.#ctor
+    arguments: []
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

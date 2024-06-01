@@ -7,8 +7,12 @@ items:
   children:
   - com.absence.dialoguesystem.editor.DialogueEditorWindow.CreateGUI
   - com.absence.dialoguesystem.editor.DialogueEditorWindow.FrameToNode(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue
+  - com.absence.dialoguesystem.editor.DialogueEditorWindow.OnGUIDelayCall
   - com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset(System.Int32,System.Int32)
   - com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow
+  - com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView(com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue
   - com.absence.dialoguesystem.editor.DialogueEditorWindow.SelectNode(com.absence.dialoguesystem.internals.Node)
   langs:
   - csharp
@@ -24,7 +28,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueEditorWindow
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -41,6 +45,33 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.OnGUIDelayCall
+  commentId: E:com.absence.dialoguesystem.editor.DialogueEditorWindow.OnGUIDelayCall
+  id: OnGUIDelayCall
+  parent: com.absence.dialoguesystem.editor.DialogueEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: OnGUIDelayCall
+  nameWithType: DialogueEditorWindow.OnGUIDelayCall
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.OnGUIDelayCall
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnGUIDelayCall
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static event Action OnGUIDelayCall
+    return:
+      type: System.Action
+    content.vb: Public Shared Event OnGUIDelayCall As Action
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow
   commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow
   id: OpenWindow
@@ -59,7 +90,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OpenWindow
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -79,6 +110,58 @@ items:
     arguments:
     - type: System.String
       value: absencee_/absent-dialogues/Open Dialogue Graph Window
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue
+  commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue
+  id: SaveLastDialogue
+  parent: com.absence.dialoguesystem.editor.DialogueEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: SaveLastDialogue()
+  nameWithType: DialogueEditorWindow.SaveLastDialogue()
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SaveLastDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 37
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void SaveLastDialogue()
+    content.vb: Public Shared Sub SaveLastDialogue()
+  overload: com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue*
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue
+  commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue
+  id: LoadLastDialogue
+  parent: com.absence.dialoguesystem.editor.DialogueEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: LoadLastDialogue()
+  nameWithType: DialogueEditorWindow.LoadLastDialogue()
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: LoadLastDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void LoadLastDialogue()
+    content.vb: Public Shared Sub LoadLastDialogue()
+  overload: com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue*
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset(System.Int32,System.Int32)
   commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset(System.Int32,System.Int32)
   id: OnOpenAsset(System.Int32,System.Int32)
@@ -97,7 +180,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnOpenAsset
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 51
+    startLine: 65
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -125,6 +208,37 @@ items:
   nameWithType.vb: DialogueEditorWindow.OnOpenAsset(Integer, Integer)
   fullName.vb: com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset(Integer, Integer)
   name.vb: OnOpenAsset(Integer, Integer)
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView(com.absence.dialoguesystem.Dialogue)
+  id: PopulateDialogueView(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.editor.DialogueEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: PopulateDialogueView(Dialogue)
+  nameWithType: DialogueEditorWindow.PopulateDialogueView(Dialogue)
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PopulateDialogueView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
+    startLine: 81
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static bool PopulateDialogueView(Dialogue dialogue)
+    parameters:
+    - id: dialogue
+      type: com.absence.dialoguesystem.Dialogue
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function PopulateDialogueView(dialogue As Dialogue) As Boolean
+  overload: com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView*
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.CreateGUI
   commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.CreateGUI
   id: CreateGUI
@@ -143,7 +257,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateGUI
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 93
+    startLine: 110
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -169,7 +283,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FrameToNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 210
+    startLine: 239
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -198,7 +312,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SelectNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 216
+    startLine: 245
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -407,12 +521,32 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow*
   commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow
   href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_OpenWindow
   name: OpenWindow
   nameWithType: DialogueEditorWindow.OpenWindow
   fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.OpenWindow
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue*
+  commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue
+  href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_SaveLastDialogue
+  name: SaveLastDialogue
+  nameWithType: DialogueEditorWindow.SaveLastDialogue
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.SaveLastDialogue
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue*
+  commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue
+  href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_LoadLastDialogue
+  name: LoadLastDialogue
+  nameWithType: DialogueEditorWindow.LoadLastDialogue
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.LoadLastDialogue
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset*
   commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.OnOpenAsset
   href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_OnOpenAsset_System_Int32_System_Int32_
@@ -441,6 +575,49 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView*
+  commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView
+  href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_PopulateDialogueView_com_absence_dialoguesystem_Dialogue_
+  name: PopulateDialogueView
+  nameWithType: DialogueEditorWindow.PopulateDialogueView
+  fullName: com.absence.dialoguesystem.editor.DialogueEditorWindow.PopulateDialogueView
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.CreateGUI*
   commentId: Overload:com.absence.dialoguesystem.editor.DialogueEditorWindow.CreateGUI
   href: com.absence.dialoguesystem.editor.DialogueEditorWindow.html#com_absence_dialoguesystem_editor_DialogueEditorWindow_CreateGUI

@@ -132,6 +132,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Will this node display it's state in editor on the flow.
   example: []
   syntax:
     content: public override bool DisplayState { get; }
@@ -163,6 +164,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Will this node be visible on the minimap.
   example: []
   syntax:
     content: public override bool ShowInMinimap { get; }

@@ -15,6 +15,7 @@ items:
   - com.absence.dialoguesystem.internals.ActionNode.GetTitle
   - com.absence.dialoguesystem.internals.ActionNode.Next
   - com.absence.dialoguesystem.internals.ActionNode.Pass_Inline(System.Object[])
+  - com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh
   - com.absence.dialoguesystem.internals.ActionNode.Reach_Inline
   - com.absence.dialoguesystem.internals.ActionNode.RemoveNextNode_Inline(System.Int32)
   - com.absence.dialoguesystem.internals.ActionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
@@ -41,8 +42,8 @@ items:
   summary: Node which invokes some actions on the flow.
   example: []
   syntax:
-    content: 'public class ActionNode : Node, IContainVariableManipulators'
-    content.vb: Public Class ActionNode Inherits Node Implements IContainVariableManipulators
+    content: 'public class ActionNode : Node, IContainVariableManipulators, IPerformEditorRefresh'
+    content.vb: Public Class ActionNode Inherits Node Implements IContainVariableManipulators, IPerformEditorRefresh
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -50,6 +51,7 @@ items:
   - com.absence.dialoguesystem.internals.Node
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
   - com.absence.dialoguesystem.internals.Node.Position
@@ -77,6 +79,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
   - com.absence.dialoguesystem.internals.Node.Clone
+  - com.absence.dialoguesystem.internals.Node.OnValidate
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -104,10 +107,10 @@ items:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public List<VariableSetter> VBActions
+    content: public List<FixedVariableSetter> VBActions
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
-    content.vb: Public VBActions As List(Of VariableSetter)
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+    content.vb: Public VBActions As List(Of FixedVariableSetter)
 - uid: com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   commentId: F:com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   id: UnityEvents
@@ -530,11 +533,11 @@ items:
   summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
   example: []
   syntax:
-    content: public List<VariableComparer> GetComparers()
+    content: public List<FixedVariableComparer> GetComparers()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
       description: ''
-    content.vb: Public Function GetComparers() As List(Of VariableComparer)
+    content.vb: Public Function GetComparers() As List(Of FixedVariableComparer)
   overload: com.absence.dialoguesystem.internals.ActionNode.GetComparers*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
@@ -563,14 +566,44 @@ items:
   summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
   example: []
   syntax:
-    content: public List<VariableSetter> GetSetters()
+    content: public List<FixedVariableSetter> GetSetters()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
       description: ''
-    content.vb: Public Function GetSetters() As List(Of VariableSetter)
+    content.vb: Public Function GetSetters() As List(Of FixedVariableSetter)
   overload: com.absence.dialoguesystem.internals.ActionNode.GetSetters*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
+- uid: com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh
+  commentId: M:com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh
+  id: PerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals.ActionNode
+  langs:
+  - csharp
+  - vb
+  name: PerformEditorRefresh()
+  nameWithType: ActionNode.PerformEditorRefresh()
+  fullName: com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PerformEditorRefresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
+    startLine: 74
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to declare what to do when any value gets changed in the inspector/
+  example: []
+  syntax:
+    content: public void PerformEditorRefresh()
+    content.vb: Public Sub PerformEditorRefresh()
+  overload: com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh*
+  implements:
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -649,6 +682,13 @@ references:
   name: IContainVariableManipulators
   nameWithType: IContainVariableManipulators
   fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  commentId: T:com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html
+  name: IPerformEditorRefresh
+  nameWithType: IPerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -1011,6 +1051,25 @@ references:
     href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
   - name: (
   - name: )
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  name: OnValidate()
+  nameWithType: Node.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
+  - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -1132,25 +1191,25 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableSetter}
+- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<VariableSetter>
-  nameWithType: List<VariableSetter>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableSetter>
-  nameWithType.vb: List(Of VariableSetter)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableSetter)
-  name.vb: List(Of VariableSetter)
+  name: List<FixedVariableSetter>
+  nameWithType: List<FixedVariableSetter>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableSetter>
+  nameWithType.vb: List(Of FixedVariableSetter)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableSetter)
+  name.vb: List(Of FixedVariableSetter)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.VariableSetter
-    name: VariableSetter
+  - uid: com.absence.variablesystem.FixedVariableSetter
+    name: FixedVariableSetter
     isExternal: true
   - name: '>'
   spec.vb:
@@ -1161,8 +1220,8 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.VariableSetter
-    name: VariableSetter
+  - uid: com.absence.variablesystem.FixedVariableSetter
+    name: FixedVariableSetter
     isExternal: true
   - name: )
 - uid: System.Collections.Generic.List`1
@@ -1855,25 +1914,25 @@ references:
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
   - name: (
   - name: )
-- uid: System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.VariableComparer}
+- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<VariableComparer>
-  nameWithType: List<VariableComparer>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.VariableComparer>
-  nameWithType.vb: List(Of VariableComparer)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.VariableComparer)
-  name.vb: List(Of VariableComparer)
+  name: List<FixedVariableComparer>
+  nameWithType: List<FixedVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableComparer>
+  nameWithType.vb: List(Of FixedVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableComparer)
+  name.vb: List(Of FixedVariableComparer)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.VariableComparer
-    name: VariableComparer
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
     isExternal: true
   - name: '>'
   spec.vb:
@@ -1884,8 +1943,8 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.VariableComparer
-    name: VariableComparer
+  - uid: com.absence.variablesystem.FixedVariableComparer
+    name: FixedVariableComparer
     isExternal: true
   - name: )
 - uid: com.absence.variablesystem
@@ -1941,5 +2000,30 @@ references:
   - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
     name: GetSetters
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh*
+  commentId: Overload:com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh
+  href: com.absence.dialoguesystem.internals.ActionNode.html#com_absence_dialoguesystem_internals_ActionNode_PerformEditorRefresh
+  name: PerformEditorRefresh
+  nameWithType: ActionNode.PerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  commentId: M:com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  name: PerformEditorRefresh()
+  nameWithType: IPerformEditorRefresh.PerformEditorRefresh()
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+    name: PerformEditorRefresh
+    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+    name: PerformEditorRefresh
+    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
   - name: (
   - name: )

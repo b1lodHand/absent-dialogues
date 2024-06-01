@@ -131,7 +131,7 @@ public abstract class DialogueExtensionBase : MonoBehaviour</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_m_instance.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.m_instance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L17">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L19">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_m_instance" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.m_instance">m_instance</h4>
   <div class="markdown level1 summary"><p><a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html">DialogueInstance</a> component attached to the current gameobject.</p>
@@ -162,10 +162,72 @@ protected DialogueInstance m_instance</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L59">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning*"></a>
+  <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning">OnAfterCloning()</h4>
+  <div class="markdown level1 summary"><p>Use to define what to do right after the target instance clones it's <a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ReferencedDialogue">ReferencedDialogue</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAfterCloning()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person%40%2CSystem.String%40%2CSystem.Collections.Generic.List%7Bcom.absence.dialoguesystem.internals.Option%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L51">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech*"></a>
+  <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)">OnBeforeSpeech(ref Person, ref string, ref List&lt;Option&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use to define what to do with the original speech data right before displaying it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List&lt;Option&gt; options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Person</span></td>
+        <td><span class="parametername">speaker</span></td>
+        <td><p>Speaker of this speech.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">speech</span></td>
+        <td><p>Speech in context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.Option.html">Option</a>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Option of this speech.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L34">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs/#L40">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*"></a>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)">OnHandleAdditionalData(AdditionalSpeechData)</h4>
@@ -175,7 +237,7 @@ progresses.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void OnHandleAdditionalData(AdditionalSpeechData data)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void OnHandleAdditionalData(AdditionalSpeechData data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">

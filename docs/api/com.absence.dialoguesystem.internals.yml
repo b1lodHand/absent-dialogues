@@ -8,19 +8,21 @@ items:
   - com.absence.dialoguesystem.internals.AdditionalSpeechData
   - com.absence.dialoguesystem.internals.Blackboard
   - com.absence.dialoguesystem.internals.ConditionNode
-  - com.absence.dialoguesystem.internals.ConditionNode.ProcessType
   - com.absence.dialoguesystem.internals.DecisionSpeechNode
   - com.absence.dialoguesystem.internals.DialoguePartNode
   - com.absence.dialoguesystem.internals.FastSpeechNode
   - com.absence.dialoguesystem.internals.GotoNode
   - com.absence.dialoguesystem.internals.IContainSpeech
   - com.absence.dialoguesystem.internals.IContainVariableManipulators
+  - com.absence.dialoguesystem.internals.IPerformEditorRefresh
   - com.absence.dialoguesystem.internals.Node
   - com.absence.dialoguesystem.internals.Node.NodeState
   - com.absence.dialoguesystem.internals.Option
+  - com.absence.dialoguesystem.internals.Option.ShowIf
   - com.absence.dialoguesystem.internals.RootNode
   - com.absence.dialoguesystem.internals.StickyNoteNode
   - com.absence.dialoguesystem.internals.TitleNode
+  - com.absence.dialoguesystem.internals.VBProcessType
   langs:
   - csharp
   - vb
@@ -37,29 +39,13 @@ references:
   name: ConditionNode
   nameWithType: ConditionNode
   fullName: com.absence.dialoguesystem.internals.ConditionNode
-- uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
-  commentId: T:com.absence.dialoguesystem.internals.ConditionNode.ProcessType
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.ConditionNode.html
-  name: ConditionNode.ProcessType
-  nameWithType: ConditionNode.ProcessType
-  fullName: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.ConditionNode
-    name: ConditionNode
-    href: com.absence.dialoguesystem.internals.ConditionNode.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
-    name: ProcessType
-    href: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.internals.ConditionNode
-    name: ConditionNode
-    href: com.absence.dialoguesystem.internals.ConditionNode.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals.ConditionNode.ProcessType
-    name: ProcessType
-    href: com.absence.dialoguesystem.internals.ConditionNode.ProcessType.html
+  href: com.absence.dialoguesystem.internals.VBProcessType.html
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
   commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
   parent: com.absence.dialoguesystem.internals
@@ -105,6 +91,13 @@ references:
   name: FastSpeechNode
   nameWithType: FastSpeechNode
   fullName: com.absence.dialoguesystem.internals.FastSpeechNode
+- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  commentId: T:com.absence.dialoguesystem.internals.IPerformEditorRefresh
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html
+  name: IPerformEditorRefresh
+  nameWithType: IPerformEditorRefresh
+  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh
 - uid: com.absence.dialoguesystem.internals.Node
   commentId: T:com.absence.dialoguesystem.internals.Node
   parent: com.absence.dialoguesystem.internals
@@ -155,6 +148,29 @@ references:
   name: Option
   nameWithType: Option
   fullName: com.absence.dialoguesystem.internals.Option
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf
+  commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option.ShowIf
+  nameWithType: Option.ShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
 - uid: com.absence.dialoguesystem.internals.IContainSpeech
   commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
   parent: com.absence.dialoguesystem.internals

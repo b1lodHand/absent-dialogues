@@ -13,7 +13,7 @@ items:
   - com.absence.dialoguesystem.internals.GotoNode.Pass_Inline(System.Object[])
   - com.absence.dialoguesystem.internals.GotoNode.Reach_Inline
   - com.absence.dialoguesystem.internals.GotoNode.RemoveNextNode_Inline(System.Int32)
-  - com.absence.dialoguesystem.internals.GotoNode.TargetDialogPartName
+  - com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
   langs:
   - csharp
   - vb
@@ -73,33 +73,33 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
-- uid: com.absence.dialoguesystem.internals.GotoNode.TargetDialogPartName
-  commentId: F:com.absence.dialoguesystem.internals.GotoNode.TargetDialogPartName
-  id: TargetDialogPartName
+- uid: com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
+  commentId: F:com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
+  id: TargetDialoguePartName
   parent: com.absence.dialoguesystem.internals.GotoNode
   langs:
   - csharp
   - vb
-  name: TargetDialogPartName
-  nameWithType: GotoNode.TargetDialogPartName
-  fullName: com.absence.dialoguesystem.internals.GotoNode.TargetDialogPartName
+  name: TargetDialoguePartName
+  nameWithType: GotoNode.TargetDialoguePartName
+  fullName: com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: TargetDialogPartName
+    id: TargetDialoguePartName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs
     startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public string TargetDialogPartName
+    content: public string TargetDialoguePartName
     return:
       type: System.String
-    content.vb: Public TargetDialogPartName As String
+    content.vb: Public TargetDialoguePartName As String
 - uid: com.absence.dialoguesystem.internals.GotoNode.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.GotoNode.GetClassName
   id: GetClassName

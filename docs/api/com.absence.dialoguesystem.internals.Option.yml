@@ -7,10 +7,11 @@ items:
   children:
   - com.absence.dialoguesystem.internals.Option.AdditionalData
   - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.IsVisible
   - com.absence.dialoguesystem.internals.Option.LeadsTo
-  - com.absence.dialoguesystem.internals.Option.ShowIf
   - com.absence.dialoguesystem.internals.Option.Speech
   - com.absence.dialoguesystem.internals.Option.UseShowIf
+  - com.absence.dialoguesystem.internals.Option.Visibility
   langs:
   - csharp
   - vb
@@ -25,7 +26,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Option
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -64,7 +65,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -81,123 +82,6 @@ items:
       <HideInInspector>
 
       Public Speech As String
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.UseShowIf
-  commentId: F:com.absence.dialoguesystem.internals.Option.UseShowIf
-  id: UseShowIf
-  parent: com.absence.dialoguesystem.internals.Option
-  langs:
-  - csharp
-  - vb
-  name: UseShowIf
-  nameWithType: Option.UseShowIf
-  fullName: com.absence.dialoguesystem.internals.Option.UseShowIf
-  type: Field
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: UseShowIf
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 19
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  summary: Boolean which decides if <xref href="com.absence.dialoguesystem.internals.Option.ShowIf" data-throw-if-not-resolved="false"></xref> will be used.
-  example: []
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public bool UseShowIf
-    return:
-      type: System.Boolean
-    content.vb: >-
-      <HideInInspector>
-
-      Public UseShowIf As Boolean
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.ShowIf
-  commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf
-  id: ShowIf
-  parent: com.absence.dialoguesystem.internals.Option
-  langs:
-  - csharp
-  - vb
-  name: ShowIf
-  nameWithType: Option.ShowIf
-  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
-  type: Field
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ShowIf
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 24
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  summary: The condition checker which decides the visibility of the option.
-  example: []
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public VariableComparer ShowIf
-    return:
-      type: com.absence.variablesystem.VariableComparer
-    content.vb: >-
-      <HideInInspector>
-
-      Public ShowIf As VariableComparer
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.LeadsTo
-  commentId: F:com.absence.dialoguesystem.internals.Option.LeadsTo
-  id: LeadsTo
-  parent: com.absence.dialoguesystem.internals.Option
-  langs:
-  - csharp
-  - vb
-  name: LeadsTo
-  nameWithType: Option.LeadsTo
-  fullName: com.absence.dialoguesystem.internals.Option.LeadsTo
-  type: Field
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: LeadsTo
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 29
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  summary: The node this option leads to.
-  example: []
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public Node LeadsTo
-    return:
-      type: com.absence.dialoguesystem.internals.Node
-    content.vb: >-
-      <HideInInspector>
-
-      Public LeadsTo As Node
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -220,7 +104,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AdditionalData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 34
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -231,6 +115,120 @@ items:
     return:
       type: com.absence.dialoguesystem.internals.AdditionalSpeechData
     content.vb: Public AdditionalData As AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.Option.UseShowIf
+  commentId: P:com.absence.dialoguesystem.internals.Option.UseShowIf
+  id: UseShowIf
+  parent: com.absence.dialoguesystem.internals.Option
+  langs:
+  - csharp
+  - vb
+  name: UseShowIf
+  nameWithType: Option.UseShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.UseShowIf
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: UseShowIf
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public bool UseShowIf { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property UseShowIf As Boolean
+  overload: com.absence.dialoguesystem.internals.Option.UseShowIf*
+- uid: com.absence.dialoguesystem.internals.Option.Visibility
+  commentId: F:com.absence.dialoguesystem.internals.Option.Visibility
+  id: Visibility
+  parent: com.absence.dialoguesystem.internals.Option
+  langs:
+  - csharp
+  - vb
+  name: Visibility
+  nameWithType: Option.Visibility
+  fullName: com.absence.dialoguesystem.internals.Option.Visibility
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Visibility
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      [ShowIf("m_useShowIf")]
+
+      public Option.ShowIf Visibility
+    return:
+      type: com.absence.dialoguesystem.internals.Option.ShowIf
+    content.vb: >-
+      <SerializeField>
+
+      <ShowIf("m_useShowIf")>
+
+      Public Visibility As [Option].ShowIf
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+  - type: com.absence.attributes.ShowIfAttribute
+    ctor: com.absence.attributes.ShowIfAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: m_useShowIf
+- uid: com.absence.dialoguesystem.internals.Option.LeadsTo
+  commentId: F:com.absence.dialoguesystem.internals.Option.LeadsTo
+  id: LeadsTo
+  parent: com.absence.dialoguesystem.internals.Option
+  langs:
+  - csharp
+  - vb
+  name: LeadsTo
+  nameWithType: Option.LeadsTo
+  fullName: com.absence.dialoguesystem.internals.Option.LeadsTo
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: LeadsTo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: The node this option leads to.
+  example: []
+  syntax:
+    content: >-
+      [HideInInspector]
+
+      public Node LeadsTo
+    return:
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: >-
+      <HideInInspector>
+
+      Public LeadsTo As Node
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
+    arguments: []
 - uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
   commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
   id: Clone(com.absence.variablesystem.VariableBank)
@@ -266,6 +264,37 @@ items:
       description: ''
     content.vb: Public Function Clone(overrideBank As VariableBank) As [Option]
   overload: com.absence.dialoguesystem.internals.Option.Clone*
+- uid: com.absence.dialoguesystem.internals.Option.IsVisible
+  commentId: M:com.absence.dialoguesystem.internals.Option.IsVisible
+  id: IsVisible
+  parent: com.absence.dialoguesystem.internals.Option
+  langs:
+  - csharp
+  - vb
+  name: IsVisible()
+  nameWithType: Option.IsVisible()
+  fullName: com.absence.dialoguesystem.internals.Option.IsVisible()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IsVisible
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+    startLine: 57
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Calculates the visibility of this option.
+  example: []
+  syntax:
+    content: public bool IsVisible()
+    return:
+      type: System.Boolean
+      description: Returns true if the option is visible, returns false otherwise.
+    content.vb: Public Function IsVisible() As Boolean
+  overload: com.absence.dialoguesystem.internals.Option.IsVisible*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -334,12 +363,19 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: com.absence.dialoguesystem.internals.Option.ShowIf
-  commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf
-  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_ShowIf
-  name: ShowIf
-  nameWithType: Option.ShowIf
-  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  name: AdditionalSpeechData
+  nameWithType: AdditionalSpeechData
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.Option.UseShowIf*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.UseShowIf
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_UseShowIf
+  name: UseShowIf
+  nameWithType: Option.UseShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.UseShowIf
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -351,13 +387,56 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: com.absence.variablesystem.VariableComparer
-  commentId: T:com.absence.variablesystem.VariableComparer
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf
+  commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option.ShowIf
+  nameWithType: Option.ShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Option.ShowIf
+    name: ShowIf
+    href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.internals.Option.Clone*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  name: Clone
+  nameWithType: Option.Clone
+  fullName: com.absence.dialoguesystem.internals.Option.Clone
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
   parent: com.absence.variablesystem
   isExternal: true
-  name: VariableComparer
-  nameWithType: VariableComparer
-  fullName: com.absence.variablesystem.VariableComparer
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.dialoguesystem.internals.Option
+  commentId: T:com.absence.dialoguesystem.internals.Option
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option
+  nameWithType: Option
+  fullName: com.absence.dialoguesystem.internals.Option
 - uid: com.absence.variablesystem
   commentId: N:com.absence.variablesystem
   isExternal: true
@@ -388,37 +467,9 @@ references:
   - uid: com.absence.variablesystem
     name: variablesystem
     isExternal: true
-- uid: com.absence.dialoguesystem.internals.Node
-  commentId: T:com.absence.dialoguesystem.internals.Node
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Node.html
-  name: Node
-  nameWithType: Node
-  fullName: com.absence.dialoguesystem.internals.Node
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.Option.Clone*
-  commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
-  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
-  name: Clone
-  nameWithType: Option.Clone
-  fullName: com.absence.dialoguesystem.internals.Option.Clone
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
-  isExternal: true
-  name: VariableBank
-  nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
-- uid: com.absence.dialoguesystem.internals.Option
-  commentId: T:com.absence.dialoguesystem.internals.Option
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Option.html
-  name: Option
-  nameWithType: Option
-  fullName: com.absence.dialoguesystem.internals.Option
+- uid: com.absence.dialoguesystem.internals.Option.IsVisible*
+  commentId: Overload:com.absence.dialoguesystem.internals.Option.IsVisible
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible
+  name: IsVisible
+  nameWithType: Option.IsVisible
+  fullName: com.absence.dialoguesystem.internals.Option.IsVisible
