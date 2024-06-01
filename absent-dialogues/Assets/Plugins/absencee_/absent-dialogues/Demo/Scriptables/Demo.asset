@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
   Position: {x: -3, y: 63}
-  MasterDialogue: {fileID: 0}
+  MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
@@ -21,6 +22,8 @@ namespace com.absence.dialoguesystem.editor
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
+        public static event Action OnGUIDelayCall;
+
         [MenuItem("absencee_/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
@@ -32,7 +35,7 @@ namespace com.absence.dialoguesystem.editor
             };
         }
 
-        private static void SaveLastDialogue()
+        public static void SaveLastDialogue()
         {
             if (m_targetDialogue == null) return;
             if (!AssetDatabase.Contains(m_targetDialogue)) return;
@@ -40,7 +43,7 @@ namespace com.absence.dialoguesystem.editor
             EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", AssetDatabase.GetAssetPath(m_targetDialogue));
         }
 
-        private static void LoadLastDialogue()
+        public static void LoadLastDialogue()
         {
             string lastDialoguePath = EditorPrefs.GetString("LastEditedDialogueBeforePlayMode_AssetPath", "");
             if (string.IsNullOrWhiteSpace(lastDialoguePath))
@@ -123,6 +126,9 @@ namespace com.absence.dialoguesystem.editor
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
 
             LoadLastDialogue();
+
+            OnGUIDelayCall?.Invoke();
+            OnGUIDelayCall = null;
         }
 
         private void OnPlayModeStateChanged(PlayModeStateChange change)

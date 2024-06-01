@@ -1,5 +1,7 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
+using com.absence.personsystem;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -19,11 +21,15 @@ namespace com.absence.dialoguesystem
         private void OnEnable()
         {
             m_instance.OnHandleAdditionalData += OnHandleAdditionalData;
+            m_instance.OnBeforeSpeech += OnBeforeSpeech;
+            m_instance.OnAfterCloning += OnAfterCloning;
         }
 
         private void OnDisable()
         {
             m_instance.OnHandleAdditionalData -= OnHandleAdditionalData;
+            m_instance.OnBeforeSpeech -= OnBeforeSpeech;
+            m_instance.OnAfterCloning -= OnAfterCloning;
         }
 
         /// <summary>
@@ -31,7 +37,29 @@ namespace com.absence.dialoguesystem
         /// progresses.
         /// </summary>
         /// <param name="data"></param>
-        public abstract void OnHandleAdditionalData(AdditionalSpeechData data);
+        protected virtual void OnHandleAdditionalData(AdditionalSpeechData data)
+        {
+
+        }
+
+        /// <summary>
+        /// Use to define what to do with the original speech data right before displaying it.
+        /// </summary>
+        /// <param name="speaker">Speaker of this speech.</param>
+        /// <param name="speech">Speech in context.</param>
+        /// <param name="options">Option of this speech.</param>
+        protected virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
+        {
+            
+        }
+
+        /// <summary>
+        /// Use to define what to do right after the target instance clones it's <see cref="DialogueInstance.ReferencedDialogue"/>.
+        /// </summary>
+        protected virtual void OnAfterCloning()
+        {
+
+        }
 
         private void Reset()
         {

@@ -516,15 +516,6 @@
     position: absolute;
 }
 
-.exit #node-icon {
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 #person-field {
     display: none;
 }
@@ -537,4 +528,8 @@
     -unity-font-style: italic;
     -unity-text-align: middle-left;
     color: rgba(207, 207, 207, 0.62);
+}
+
+.exit #node-border {
+    border-top-color: rgb(171, 68, 63);
 }

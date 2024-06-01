@@ -33,7 +33,24 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public List<Person> People => m_people;
 
+        /// <summary>
+        /// The original dialogue which is used to create this cloned one. Returns null if this dialogue is not a clone.
+        /// </summary>
+        public Dialogue ClonedFrom { get; private set; }
+
+        /// <summary>
+        /// Use to check if this dialogue is a clone.
+        /// </summary>
+        public bool IsClone => ClonedFrom != null;
+
+        /// <summary>
+        /// Action which will get invoked if any value gets changed in the inspector when this dialogue is selected.
+        /// </summary>
         public event Action OnEditorRefresh;
+
+        /// <summary>
+        /// Invokes the <see cref="OnEditorRefresh"/>.
+        /// </summary>
         public void PerformEditorRefresh()
         {
             OnEditorRefresh?.Invoke();
@@ -93,6 +110,7 @@ namespace com.absence.dialoguesystem
             });
 
             dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
+            dialogue.ClonedFrom = this;
 
             return dialogue;
         }

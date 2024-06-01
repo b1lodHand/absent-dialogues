@@ -224,7 +224,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void UpdateState(Node.NodeState state)
         {
-            if (!Application.isPlaying) return;
+            if ((!Node.MasterDialogue.IsClone) || !Application.isPlaying) return;
             
             RemoveFromClassList("unreached");
             RemoveFromClassList("current");

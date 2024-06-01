@@ -1,3 +1,4 @@
+using com.absence.attributes;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public string Guid;
         [HideInInspector] public Vector2 Position = new();
 
-        [HideInInspector] public Dialogue MasterDialogue;
+        [Readonly] public Dialogue MasterDialogue;
         [HideInInspector] public Blackboard Blackboard;
 
         [HideInInspector] public NodeState State = NodeState.Unreached;
@@ -54,11 +55,30 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         public event Action OnPass;
 
+        /// <summary>
+        /// Index of the person this node depends on (if it is <see cref="PersonDependent"/>) on the person list of the
+        /// <see cref="MasterDialogue"/>.
+        /// </summary>
         [HideInInspector] public int PersonIndex;
+
+        /// <summary>
+        /// Property which returns the person with the index of <see cref="PersonIndex"/> from the person list.
+        /// </summary>
         [HideInInspector] public Person Person { get => MasterDialogue.People[PersonIndex]; }
 
+        /// <summary>
+        /// Will this node display it's state in editor on the flow.
+        /// </summary>
         public virtual bool DisplayState => true;
+
+        /// <summary>
+        /// Will this node be visible on the minimap.
+        /// </summary>
         public virtual bool ShowInMinimap => true;
+
+        /// <summary>
+        /// Is this node person dependent.
+        /// </summary>
         public virtual bool PersonDependent => false;
 
         /// <summary>
@@ -73,14 +93,29 @@ namespace com.absence.dialoguesystem.internals
         /// <returns>The title as a string.</returns>
         public abstract string GetTitle();
 
+        /// <summary>
+        /// Use when you connect a new node to a right-side port of this node.
+        /// </summary>
+        /// <param name="nextWillBeAdded">The reference value of the node connected.</param>
+        /// <param name="atPort">The port which hold the connection.</param>
         public void AddNextNode(Node nextWillBeAdded, int atPort)
         {
             AddNextNode_Inline(nextWillBeAdded, atPort);
         }
+
+        /// <summary>
+        /// Use when you disconnect a node from a riht-side port of this node.
+        /// </summary>
+        /// <param name="atPort">The port which handled the disconnection event.</param>
         public void RemoveNextNode(int atPort)
         {
             RemoveNextNode_Inline(atPort);
         }
+
+        /// <summary>
+        /// Use to get all of the nodes which are <b>directly</b> connected to this node <b>(only the right-side ones)</b>.
+        /// </summary>
+        /// <returns></returns>
         public List<(int portIndex, Node node)> GetNextNodes()
         {
             var result = new List<(int portIndex, Node node)>();
