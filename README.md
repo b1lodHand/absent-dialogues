@@ -18,6 +18,9 @@ https://github.com/b1lodHand/absent-people.git
 ```
 https://github.com/b1lodHand/absent-attributes.git
 ```
+```
+https://github.com/b1lodHand/absent-utilities.git
+```
 All you need to do is copying the URLs above and pasting them into you package manager.
 
 ![Imgur Image](https://imgur.com/cX3OF72.png)
