@@ -31,11 +31,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Dialogue
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
     startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
@@ -43,8 +43,14 @@ items:
   summary: The scriptable object derived type that holds all of the data which is essential for a dialogue.
   example: []
   syntax:
-    content: 'public class Dialogue : ScriptableObject'
-    content.vb: Public Class Dialogue Inherits ScriptableObject
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.Dialogue.html")]
+
+      public class Dialogue : ScriptableObject
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.Dialogue.html")>
+
+      Public Class Dialogue Inherits ScriptableObject
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -54,6 +60,12 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.Dialogue.html
 - uid: com.absence.dialoguesystem.Dialogue.RootNode
   commentId: F:com.absence.dialoguesystem.Dialogue.RootNode
   id: RootNode
@@ -67,12 +79,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RootNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 17
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -106,12 +118,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: LastOrCurrentNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 22
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -145,12 +157,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AllNodes
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 27
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -184,12 +196,12 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: People
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 33
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 34
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -215,12 +227,12 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ClonedFrom
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 38
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 39
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -246,12 +258,12 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IsClone
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 43
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 44
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -277,12 +289,12 @@ items:
   type: Event
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnEditorRefresh
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 48
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -306,12 +318,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PerformEditorRefresh
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 53
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 54
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -334,12 +346,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Blackboard
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 61
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 62
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -373,12 +385,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 68
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 69
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -408,12 +420,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DeleteNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 86
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 87
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -440,12 +452,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 97
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 98
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -474,12 +486,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetDialoguePartNodesWithName
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 123
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 124
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -514,12 +526,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAllDialogueParts
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 144
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 145
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -545,12 +557,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Initialize
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 152
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 153
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -573,12 +585,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OverridePeople
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 166
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 167
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -613,12 +625,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Dialogue.cs
-    startLine: 179
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 180
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

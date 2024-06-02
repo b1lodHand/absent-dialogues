@@ -1,0 +1,310 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.BlackboardView
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView
+  id: BlackboardView
+  parent: com.absence.dialoguesystem.editor
+  children:
+  - com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  langs:
+  - csharp
+  - vb
+  name: BlackboardView
+  nameWithType: BlackboardView
+  fullName: com.absence.dialoguesystem.editor.BlackboardView
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BlackboardView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  summary: A visual element subtype which is responsible for displaying a <xref href="com.absence.dialoguesystem.internals.Blackboard" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.BlackboardView.html")]
+
+      public class BlackboardView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.BlackboardView.html")>
+
+      Public Class BlackboardView Inherits VisualElement Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+  inheritance:
+  - System.Object
+  - UnityEngine.UIElements.CallbackEventHandler
+  - UnityEngine.UIElements.Focusable
+  - UnityEngine.UIElements.VisualElement
+  implements:
+  - UnityEngine.UIElements.IEventHandler
+  - UnityEngine.UIElements.IResolvedStyle
+  - UnityEngine.UIElements.ITransform
+  - UnityEngine.UIElements.Experimental.ITransitionAnimations
+  - UnityEngine.UIElements.IExperimentalFeatures
+  - UnityEngine.UIElements.IVisualElementScheduler
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.BlackboardView.html
+- uid: com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  commentId: M:com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  id: '#ctor'
+  parent: com.absence.dialoguesystem.editor.BlackboardView
+  langs:
+  - csharp
+  - vb
+  name: BlackboardView()
+  nameWithType: BlackboardView.BlackboardView()
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.BlackboardView()
+  type: Constructor
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: .ctor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public BlackboardView()
+    content.vb: Public Sub New()
+  overload: com.absence.dialoguesystem.editor.BlackboardView.#ctor*
+  nameWithType.vb: BlackboardView.New()
+  fullName.vb: com.absence.dialoguesystem.editor.BlackboardView.New()
+  name.vb: New()
+references:
+- uid: com.absence.dialoguesystem.internals.Blackboard
+  commentId: T:com.absence.dialoguesystem.internals.Blackboard
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Blackboard.html
+  name: Blackboard
+  nameWithType: Blackboard
+  fullName: com.absence.dialoguesystem.internals.Blackboard
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.UIElements.CallbackEventHandler
+  commentId: T:UnityEngine.UIElements.CallbackEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: CallbackEventHandler
+  nameWithType: CallbackEventHandler
+  fullName: UnityEngine.UIElements.CallbackEventHandler
+- uid: UnityEngine.UIElements.Focusable
+  commentId: T:UnityEngine.UIElements.Focusable
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: Focusable
+  nameWithType: Focusable
+  fullName: UnityEngine.UIElements.Focusable
+- uid: UnityEngine.UIElements.VisualElement
+  commentId: T:UnityEngine.UIElements.VisualElement
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: VisualElement
+  nameWithType: VisualElement
+  fullName: UnityEngine.UIElements.VisualElement
+- uid: UnityEngine.UIElements.IEventHandler
+  commentId: T:UnityEngine.UIElements.IEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IEventHandler
+  nameWithType: IEventHandler
+  fullName: UnityEngine.UIElements.IEventHandler
+- uid: UnityEngine.UIElements.IResolvedStyle
+  commentId: T:UnityEngine.UIElements.IResolvedStyle
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IResolvedStyle
+  nameWithType: IResolvedStyle
+  fullName: UnityEngine.UIElements.IResolvedStyle
+- uid: UnityEngine.UIElements.ITransform
+  commentId: T:UnityEngine.UIElements.ITransform
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: ITransform
+  nameWithType: ITransform
+  fullName: UnityEngine.UIElements.ITransform
+- uid: UnityEngine.UIElements.Experimental.ITransitionAnimations
+  commentId: T:UnityEngine.UIElements.Experimental.ITransitionAnimations
+  parent: UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: ITransitionAnimations
+  nameWithType: ITransitionAnimations
+  fullName: UnityEngine.UIElements.Experimental.ITransitionAnimations
+- uid: UnityEngine.UIElements.IExperimentalFeatures
+  commentId: T:UnityEngine.UIElements.IExperimentalFeatures
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IExperimentalFeatures
+  nameWithType: IExperimentalFeatures
+  fullName: UnityEngine.UIElements.IExperimentalFeatures
+- uid: UnityEngine.UIElements.IVisualElementScheduler
+  commentId: T:UnityEngine.UIElements.IVisualElementScheduler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IVisualElementScheduler
+  nameWithType: IVisualElementScheduler
+  fullName: UnityEngine.UIElements.IVisualElementScheduler
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.UIElements
+  commentId: N:UnityEngine.UIElements
+  isExternal: true
+  name: UnityEngine.UIElements
+  nameWithType: UnityEngine.UIElements
+  fullName: UnityEngine.UIElements
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+- uid: UnityEngine.UIElements.Experimental
+  commentId: N:UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: UnityEngine.UIElements.Experimental
+  nameWithType: UnityEngine.UIElements.Experimental
+  fullName: UnityEngine.UIElements.Experimental
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true
+- uid: com.absence.dialoguesystem.editor.BlackboardView.#ctor*
+  commentId: Overload:com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  href: com.absence.dialoguesystem.editor.BlackboardView.html#com_absence_dialoguesystem_editor_BlackboardView__ctor
+  name: BlackboardView
+  nameWithType: BlackboardView.BlackboardView
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.BlackboardView
+  nameWithType.vb: BlackboardView.New
+  fullName.vb: com.absence.dialoguesystem.editor.BlackboardView.New
+  name.vb: New

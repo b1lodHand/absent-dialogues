@@ -10,6 +10,7 @@ namespace com.absence.dialoguesystem
     /// <summary>
     /// The scriptable object derived type that holds all of the data which is essential for a dialogue.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.Dialogue.html")]
     public class Dialogue : ScriptableObject
     {
         /// <summary>

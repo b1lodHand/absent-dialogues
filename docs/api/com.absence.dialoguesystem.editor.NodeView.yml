@@ -15,7 +15,6 @@ items:
   - com.absence.dialoguesystem.editor.NodeView.OnUnselected
   - com.absence.dialoguesystem.editor.NodeView.Outputs
   - com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
-  - com.absence.dialoguesystem.editor.NodeView.m_serializedNode
   langs:
   - csharp
   - vb
@@ -30,13 +29,21 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The view class responsible for rendering a node's data in the graph.
+  example: []
   syntax:
-    content: 'public class NodeView : Node, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler'
-    content.vb: Public Class NodeView Inherits Node Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html")]
+
+      public class NodeView : Node, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html")>
+
+      Public Class NodeView Inherits Node Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
   inheritance:
   - System.Object
   - UnityEngine.UIElements.CallbackEventHandler
@@ -51,6 +58,12 @@ items:
   - UnityEngine.UIElements.Experimental.ITransitionAnimations
   - UnityEngine.UIElements.IExperimentalFeatures
   - UnityEngine.UIElements.IVisualElementScheduler
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html
 - uid: com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
   commentId: F:com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
   id: K_PERSONDEPENDENT_CLASSNAME
@@ -69,10 +82,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: K_PERSONDEPENDENT_CLASSNAME
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 17
+    startLine: 24
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The USS class name for person dependent nodes.
+  example: []
   syntax:
     content: public static string K_PERSONDEPENDENT_CLASSNAME
     return:
@@ -96,10 +111,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnNodeSelected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 19
+    startLine: 29
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Action gets invoked when this node gets selected or unselected.
+  example: []
   syntax:
     content: public Action<NodeView> OnNodeSelected
     return:
@@ -123,10 +140,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Node
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 20
+    startLine: 34
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The node this view displays.
+  example: []
   syntax:
     content: public Node Node
     return:
@@ -150,10 +169,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Input
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 22
+    startLine: 39
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The left-hand side port.
+  example: []
   syntax:
     content: public Port Input
     return:
@@ -177,42 +198,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Outputs
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 23
+    startLine: 44
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: A list of right-hand side ports.
+  example: []
   syntax:
     content: public List<Port> Outputs
     return:
       type: System.Collections.Generic.List{UnityEditor.Experimental.GraphView.Port}
     content.vb: Public Outputs As List(Of Port)
-- uid: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  id: m_serializedNode
-  parent: com.absence.dialoguesystem.editor.NodeView
-  langs:
-  - csharp
-  - vb
-  name: m_serializedNode
-  nameWithType: NodeView.m_serializedNode
-  fullName: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  type: Field
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: m_serializedNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 28
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor
-  syntax:
-    content: protected SerializedObject m_serializedNode
-    return:
-      type: UnityEditor.SerializedObject
-    content.vb: Protected m_serializedNode As SerializedObject
 - uid: com.absence.dialoguesystem.editor.NodeView.Master
   commentId: P:com.absence.dialoguesystem.editor.NodeView.Master
   id: Master
@@ -231,10 +227,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Master
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 31
+    startLine: 55
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The graph we're in.
+  example: []
   syntax:
     content: public DialogueGraphView Master { get; }
     parameters: []
@@ -260,15 +258,18 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 33
+    startLine: 61
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Use to construct a node view from a node.
+  example: []
   syntax:
     content: public NodeView(Node node)
     parameters:
     - id: node
       type: com.absence.dialoguesystem.internals.Node
+      description: Target node.
     content.vb: Public Sub New(node As Node)
   overload: com.absence.dialoguesystem.editor.NodeView.#ctor*
   nameWithType.vb: NodeView.New(Node)
@@ -292,7 +293,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetPosition
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 249
+    startLine: 277
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -325,7 +326,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 257
+    startLine: 285
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -354,7 +355,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnUnselected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 263
+    startLine: 291
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -803,19 +804,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: UnityEditor.SerializedObject
-  commentId: T:UnityEditor.SerializedObject
-  parent: UnityEditor
-  isExternal: true
-  name: SerializedObject
-  nameWithType: SerializedObject
-  fullName: UnityEditor.SerializedObject
-- uid: UnityEditor
-  commentId: N:UnityEditor
-  isExternal: true
-  name: UnityEditor
-  nameWithType: UnityEditor
-  fullName: UnityEditor
 - uid: com.absence.dialoguesystem.editor.NodeView.Master*
   commentId: Overload:com.absence.dialoguesystem.editor.NodeView.Master
   href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Master

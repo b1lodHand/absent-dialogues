@@ -19,11 +19,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueExtensionBase
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
@@ -86,11 +86,11 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_instance
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
@@ -132,11 +132,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
@@ -167,11 +167,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 58
   assemblies:
   - Assembly-CSharp-firstpass
@@ -208,11 +208,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 66
   assemblies:
   - Assembly-CSharp-firstpass
@@ -236,11 +236,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 74
   assemblies:
   - Assembly-CSharp-firstpass

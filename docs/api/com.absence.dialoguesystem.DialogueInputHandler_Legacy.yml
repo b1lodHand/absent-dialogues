@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueInputHandler_Legacy
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
     startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
@@ -91,11 +91,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
     startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass

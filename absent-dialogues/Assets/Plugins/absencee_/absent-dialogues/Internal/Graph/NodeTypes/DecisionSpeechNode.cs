@@ -8,6 +8,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which displays a speech with options.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
     public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
@@ -91,7 +92,7 @@ namespace com.absence.dialoguesystem.internals
             {
                 option.Visibility.ShowIfList.ForEach(comparer =>
                 {
-                    if (comparer != null) result.Add(comparer);
+                    result.Add(comparer);
                 });
             });
 

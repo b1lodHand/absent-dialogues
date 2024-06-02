@@ -150,9 +150,6 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateEditor(Object[], Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Editor.DrawPropertiesExcluding(SerializedObject, params string[])</a>
-    </div>
-    <div>
       <span class="xref">Editor.DrawDefaultInspector()</span>
     </div>
     <div>
@@ -166,12 +163,6 @@
     </div>
     <div>
       <span class="xref">Editor.DrawHeader()</span>
-    </div>
-    <div>
-      <span class="xref">Editor.OnHeaderGUI()</span>
-    </div>
-    <div>
-      <span class="xref">Editor.ShouldHideOpenButton()</span>
     </div>
     <div>
       <span class="xref">Editor.DrawFoldoutInspector(Object, ref Editor)</span>
@@ -248,7 +239,7 @@
   <h5 id="com_absence_dialoguesystem_editor_NodeCustomEditor_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CustomEditor(typeof(Node), true)]
-public class NodeCustomEditor : Editor</code></pre>
+public sealed class NodeCustomEditor : Editor</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>

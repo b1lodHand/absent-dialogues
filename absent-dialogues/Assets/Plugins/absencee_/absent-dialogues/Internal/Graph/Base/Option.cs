@@ -10,6 +10,7 @@ namespace com.absence.dialoguesystem.internals
     /// The type to hold references to dialogue options.
     /// </summary>
     [System.Serializable]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.html")]
     public class Option
     {
         /// <summary>
@@ -66,6 +67,7 @@ namespace com.absence.dialoguesystem.internals
         /// A class specifically designed for calculating an option's visibility.
         /// </summary>
         [System.Serializable]
+        [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.ShowIf.html")]
         public class ShowIf
         {
             /// <summary>
@@ -77,7 +79,7 @@ namespace com.absence.dialoguesystem.internals
             /// A list of all <see cref="VariableComparer"/>s which has a role on determining this option's
             /// visibility on display.
             /// </summary>
-            public List<FixedVariableComparer> ShowIfList;
+            public List<FixedVariableComparer> ShowIfList = new();
 
             /// <summary>
             /// Use to clone this instance.

@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueAnimationsPlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueAnimationsPlayer
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueAnimationsPlayer.cs
     startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
@@ -94,11 +94,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueAnimationsPlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueAnimationsPlayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueAnimationsPlayer.cs
     startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass

@@ -6,6 +6,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which contains a user defined string.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
     public sealed class StickyNoteNode : Node
     {
         [HideInInspector] public string Speech;

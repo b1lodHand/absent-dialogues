@@ -7,6 +7,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which let's you create more and seperate routes.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html")]
     public sealed class DialoguePartNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;

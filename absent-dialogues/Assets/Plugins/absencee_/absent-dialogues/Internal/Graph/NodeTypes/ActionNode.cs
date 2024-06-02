@@ -17,6 +17,7 @@ namespace com.absence.dialoguesystem.internals
     /// CustomAction();
     /// </code>
     /// </remarks>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
     public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
         [Tooltip("All of the 'VariableBank' based actions of this action node.")] 

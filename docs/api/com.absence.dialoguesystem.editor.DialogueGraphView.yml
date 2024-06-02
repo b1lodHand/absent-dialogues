@@ -26,13 +26,21 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueGraphView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: The graph view responsible for rendering a dialogue's graph elements.
+  example: []
   syntax:
-    content: 'public class DialogueGraphView : GraphView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler'
-    content.vb: Public Class DialogueGraphView Inherits GraphView Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueGraphView.html")]
+
+      public sealed class DialogueGraphView : GraphView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueGraphView.html")>
+
+      Public NotInheritable Class DialogueGraphView Inherits GraphView Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
   inheritance:
   - System.Object
   - UnityEngine.UIElements.CallbackEventHandler
@@ -46,6 +54,12 @@ items:
   - UnityEngine.UIElements.Experimental.ITransitionAnimations
   - UnityEngine.UIElements.IExperimentalFeatures
   - UnityEngine.UIElements.IVisualElementScheduler
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueGraphView.html
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeSelected
   commentId: E:com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeSelected
   id: OnNodeSelected
@@ -64,10 +78,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnNodeSelected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 18
+    startLine: 26
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Gets invoked when a node gets selected.
+  example: []
   syntax:
     content: public event Action<NodeView> OnNodeSelected
     return:
@@ -91,10 +107,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnPopulateView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 19
+    startLine: 31
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Gets invoked when a dialogue gets displayed.
+  example: []
   syntax:
     content: public event Action OnPopulateView
     return:
@@ -118,10 +136,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 21
+    startLine: 36
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Default constructor.
+  example: []
   syntax:
     content: public DialogueGraphView()
     content.vb: Public Sub New()
@@ -147,7 +167,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetCompatiblePorts
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 61
+    startLine: 77
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -186,7 +206,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BuildContextualMenu
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 117
+    startLine: 133
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -219,10 +239,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Refresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 177
+    startLine: 197
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Use to refresh the current graph view.
+  example: []
   syntax:
     content: public void Refresh()
     content.vb: Public Sub Refresh()
@@ -245,17 +267,21 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FindNodeView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 183
+    startLine: 208
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Use to find the view of a node.
+  example: []
   syntax:
     content: public NodeView FindNodeView(Node node)
     parameters:
     - id: node
       type: com.absence.dialoguesystem.internals.Node
+      description: Target node.
     return:
       type: com.absence.dialoguesystem.editor.NodeView
+      description: Returns the view of the target node.
     content.vb: Public Function FindNodeView(node As Node) As NodeView
   overload: com.absence.dialoguesystem.editor.DialogueGraphView.FindNodeView*
 references:

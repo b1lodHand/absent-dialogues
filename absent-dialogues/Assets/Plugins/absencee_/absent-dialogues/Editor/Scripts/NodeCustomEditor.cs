@@ -4,7 +4,7 @@ using UnityEditor;
 namespace com.absence.dialoguesystem.editor
 {
     [CustomEditor(typeof(Node), true)]
-    public class NodeCustomEditor : Editor
+    public sealed class NodeCustomEditor : Editor
     {
         public override void OnInspectorGUI()
         {

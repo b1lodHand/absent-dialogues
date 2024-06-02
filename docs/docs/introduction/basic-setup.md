@@ -19,6 +19,9 @@ You can create a dialogue graph via the: **'absencee_/absent-dialogues/Create Di
 
 You can add a person to a dialogue by selecting the dialogue and adding the people to the list in the inspector.
 
+>[!TIP]
+>You can toggle **graph snapping** feature via: **'Preferences->Graph Snapping'** in the unity editor.
+
 ## What's Next?
 
-Now you know the basics. You can go to [Getting Started](../getting-started/mechanism.md) to continue reading about the tool itself. Or you can go to [Demos and Examples](demos-and-examples.md) to have a look at example use cases of the tool.
+Now you know the basics. You can go to [Mechanism](https://b1lodhand.github.io/absent-dialogues/docs/getting-started/mechanism.html) to continue reading about the tool itself. Or you can go to [Demos and Examples](https://b1lodhand.github.io/absent-dialogues/docs/introduction/demos-and-examples.html) to have a look at example use cases of the tool.

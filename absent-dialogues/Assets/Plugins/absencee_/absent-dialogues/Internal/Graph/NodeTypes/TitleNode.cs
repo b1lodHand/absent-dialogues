@@ -6,6 +6,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which is simply <see cref="StickyNoteNode"/> but bigger.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.TitleNode.html")]
     public sealed class TitleNode : Node
     {
         [HideInInspector] public string Speech;

@@ -3,7 +3,7 @@
 In this section of the documentation, you will learn how to install this tool and get it ready to use.
 
 >[!NOTE]
->If you've already installed the package, you can skip this section and go to [Basic Setup](basic-setup.md).
+>If you've already installed the package, you can skip this section and go to [Basic Setup](https://b1lodhand.github.io/absent-dialogues/docs/introduction/basic-setup.html).
 
 ## Prerequisites
 First of all, this tool depends on some of my other tools. No, no, no, no! Don't run away! They are so lightweight and easy to setup.
@@ -44,4 +44,4 @@ This step is pretty much straightforward:
 
 ## What's Next?
 
-This section is ended. Go to [Basic Setup](basic-setup.md) to continue.
+This section is ended. Go to [Basic Setup](https://b1lodhand.github.io/absent-dialogues/docs/introduction/basic-setup.html) to continue.

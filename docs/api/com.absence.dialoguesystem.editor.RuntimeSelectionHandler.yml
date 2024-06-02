@@ -19,17 +19,23 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RuntimeSelectionHandler
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/RuntimeSelectionHandler.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: It handles the selection events of <xref href="com.absence.dialoguesystem.IUseDialogueInScene" data-throw-if-not-resolved="false"></xref> game objects.
+  example: []
   syntax:
     content: >-
       [InitializeOnLoad]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html")]
+
       public static class RuntimeSelectionHandler
     content.vb: >-
       <InitializeOnLoad>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html")>
 
       Public Module RuntimeSelectionHandler
   inheritance:
@@ -38,7 +44,19 @@ items:
   - type: UnityEditor.InitializeOnLoadAttribute
     ctor: UnityEditor.InitializeOnLoadAttribute.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html
 references:
+- uid: com.absence.dialoguesystem.IUseDialogueInScene
+  commentId: T:com.absence.dialoguesystem.IUseDialogueInScene
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.IUseDialogueInScene.html
+  name: IUseDialogueInScene
+  nameWithType: IUseDialogueInScene
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene
 - uid: com.absence.dialoguesystem.editor
   commentId: N:com.absence.dialoguesystem.editor
   href: com.html
@@ -88,6 +106,36 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
 - uid: System
   commentId: N:System
   isExternal: true

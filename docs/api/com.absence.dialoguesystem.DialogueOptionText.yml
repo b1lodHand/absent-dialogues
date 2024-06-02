@@ -17,11 +17,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueOptionText
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
     startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
@@ -71,11 +71,11 @@ items:
   type: Event
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnClickAction
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
     startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
@@ -98,11 +98,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Initialize
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
     startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
@@ -136,11 +136,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnClick
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueOptionText.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueOptionText.cs
     startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass

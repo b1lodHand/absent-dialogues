@@ -13,4 +13,4 @@ You can open up the **'./TMP/Demo_TMP.unity'** scene and press play to give it a
 
 ## More?
 
-I'll be adding new demos and examples here as I develop games using this tool. You can jump to [Getting Started](../getting-started/mechanism.md) go on.
+I'll be adding new demos and examples here as I develop games using this tool. You can jump to [Mechanism](https://b1lodhand.github.io/absent-dialogues/docs/getting-started/mechanism.html) and go on.

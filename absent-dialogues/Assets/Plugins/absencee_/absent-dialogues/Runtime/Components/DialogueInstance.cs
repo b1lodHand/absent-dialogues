@@ -13,7 +13,7 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
     [DisallowMultipleComponent]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
-    public class DialogueInstance : MonoBehaviour
+    public class DialogueInstance : MonoBehaviour, IUseDialogueInScene
     {
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
@@ -25,14 +25,8 @@ namespace com.absence.dialoguesystem
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
-        /// <summary>
-        /// Use to get the original (not the cloned one) dialogue of this instance.
-        /// </summary>
         public Dialogue ReferencedDialogue => m_referencedDialogue;
 
-        /// <summary>
-        /// Use to get the cloned dialogue which the <see cref="DialoguePlayer"/> of this instance uses.
-        /// </summary>
         public Dialogue ClonedDialogue
         {
             get

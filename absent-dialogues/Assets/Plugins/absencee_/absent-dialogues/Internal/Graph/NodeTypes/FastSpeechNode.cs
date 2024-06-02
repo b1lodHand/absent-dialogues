@@ -7,6 +7,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which displays a speech without options.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.FastSpeechNode.html")]
     public sealed class FastSpeechNode : Node, IContainSpeech, IPerformDelayedClone
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;

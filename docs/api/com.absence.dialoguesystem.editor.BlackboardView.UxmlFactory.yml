@@ -1,0 +1,288 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  id: BlackboardView.UxmlFactory
+  parent: com.absence.dialoguesystem.editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: BlackboardView.UxmlFactory
+  nameWithType: BlackboardView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: UxmlFactory
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/BlackboardView.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: 'public class BlackboardView.UxmlFactory : UxmlFactory<BlackboardView, VisualElement.UxmlTraits>, IUxmlFactory, IBaseUxmlFactory'
+    content.vb: Public Class BlackboardView.UxmlFactory Inherits UxmlFactory(Of BlackboardView, VisualElement.UxmlTraits) Implements IUxmlFactory, IBaseUxmlFactory
+  inheritance:
+  - System.Object
+  - UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  - UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  implements:
+  - UnityEngine.UIElements.IUxmlFactory
+  - UnityEngine.UIElements.IBaseUxmlFactory
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  commentId: T:UnityEngine.UIElements.BaseUxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  parent: UnityEngine.UIElements
+  definition: UnityEngine.UIElements.BaseUxmlFactory`2
+  href: com.absence.dialoguesystem.editor.BlackboardView.html
+  name: BaseUxmlFactory<BlackboardView, VisualElement.UxmlTraits>
+  nameWithType: BaseUxmlFactory<BlackboardView, VisualElement.UxmlTraits>
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<com.absence.dialoguesystem.editor.BlackboardView, UnityEngine.UIElements.VisualElement.UxmlTraits>
+  nameWithType.vb: BaseUxmlFactory(Of BlackboardView, VisualElement.UxmlTraits)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of com.absence.dialoguesystem.editor.BlackboardView, UnityEngine.UIElements.VisualElement.UxmlTraits)
+  name.vb: BaseUxmlFactory(Of BlackboardView, VisualElement.UxmlTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: <
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  commentId: T:UnityEngine.UIElements.UxmlFactory{com.absence.dialoguesystem.editor.BlackboardView,UnityEngine.UIElements.VisualElement.UxmlTraits}
+  parent: UnityEngine.UIElements
+  definition: UnityEngine.UIElements.UxmlFactory`2
+  href: com.absence.dialoguesystem.editor.BlackboardView.html
+  name: UxmlFactory<BlackboardView, VisualElement.UxmlTraits>
+  nameWithType: UxmlFactory<BlackboardView, VisualElement.UxmlTraits>
+  fullName: UnityEngine.UIElements.UxmlFactory<com.absence.dialoguesystem.editor.BlackboardView, UnityEngine.UIElements.VisualElement.UxmlTraits>
+  nameWithType.vb: UxmlFactory(Of BlackboardView, VisualElement.UxmlTraits)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of com.absence.dialoguesystem.editor.BlackboardView, UnityEngine.UIElements.VisualElement.UxmlTraits)
+  name.vb: UxmlFactory(Of BlackboardView, VisualElement.UxmlTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: <
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.VisualElement.UxmlTraits
+    name: UxmlTraits
+    isExternal: true
+  - name: )
+- uid: UnityEngine.UIElements.IUxmlFactory
+  commentId: T:UnityEngine.UIElements.IUxmlFactory
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IUxmlFactory
+  nameWithType: IUxmlFactory
+  fullName: UnityEngine.UIElements.IUxmlFactory
+- uid: UnityEngine.UIElements.IBaseUxmlFactory
+  commentId: T:UnityEngine.UIElements.IBaseUxmlFactory
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IBaseUxmlFactory
+  nameWithType: IBaseUxmlFactory
+  fullName: UnityEngine.UIElements.IBaseUxmlFactory
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.UIElements.BaseUxmlFactory`2
+  commentId: T:UnityEngine.UIElements.BaseUxmlFactory`2
+  isExternal: true
+  name: BaseUxmlFactory<TCreatedType, TTraits>
+  nameWithType: BaseUxmlFactory<TCreatedType, TTraits>
+  fullName: UnityEngine.UIElements.BaseUxmlFactory<TCreatedType, TTraits>
+  nameWithType.vb: BaseUxmlFactory(Of TCreatedType, TTraits)
+  fullName.vb: UnityEngine.UIElements.BaseUxmlFactory(Of TCreatedType, TTraits)
+  name.vb: BaseUxmlFactory(Of TCreatedType, TTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: <
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.BaseUxmlFactory`2
+    name: BaseUxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: )
+- uid: UnityEngine.UIElements
+  commentId: N:UnityEngine.UIElements
+  isExternal: true
+  name: UnityEngine.UIElements
+  nameWithType: UnityEngine.UIElements
+  fullName: UnityEngine.UIElements
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+- uid: UnityEngine.UIElements.UxmlFactory`2
+  commentId: T:UnityEngine.UIElements.UxmlFactory`2
+  isExternal: true
+  name: UxmlFactory<TCreatedType, TTraits>
+  nameWithType: UxmlFactory<TCreatedType, TTraits>
+  fullName: UnityEngine.UIElements.UxmlFactory<TCreatedType, TTraits>
+  nameWithType.vb: UxmlFactory(Of TCreatedType, TTraits)
+  fullName.vb: UnityEngine.UIElements.UxmlFactory(Of TCreatedType, TTraits)
+  name.vb: UxmlFactory(Of TCreatedType, TTraits)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: <
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.UIElements.UxmlFactory`2
+    name: UxmlFactory
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCreatedType
+  - name: ','
+  - name: " "
+  - name: TTraits
+  - name: )

@@ -18,11 +18,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueDisplayer
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
     startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
@@ -81,11 +81,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Occupy
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
     startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
@@ -112,11 +112,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Release
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
     startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
@@ -143,11 +143,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
     startLine: 72
   assemblies:
   - Assembly-CSharp-firstpass
@@ -181,11 +181,11 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
     startLine: 88
   assemblies:
   - Assembly-CSharp-firstpass

@@ -23,7 +23,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIf
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 67
+    startLine: 68
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -33,9 +33,13 @@ items:
     content: >-
       [Serializable]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.ShowIf.html")]
+
       public class Option.ShowIf
     content.vb: >-
       <Serializable>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.ShowIf.html")>
 
       Public Class [Option].ShowIf
   inheritance:
@@ -44,6 +48,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.ShowIf.html
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.Processor
   commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf.Processor
   id: Processor
@@ -62,7 +71,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Processor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 73
+    startLine: 75
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -91,7 +100,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIfList
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 79
+    startLine: 81
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -123,7 +132,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 86
+    startLine: 88
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -158,7 +167,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetResult
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 98
+    startLine: 100
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

@@ -7,6 +7,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which is essential if you want to have a dialogue graph.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.RootNode.html")]
     public sealed class RootNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;

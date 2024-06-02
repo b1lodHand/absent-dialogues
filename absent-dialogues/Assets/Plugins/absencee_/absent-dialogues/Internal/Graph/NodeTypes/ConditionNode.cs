@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which re-routes the flow under some conditions.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
     public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
         [HideInInspector] public Node TrueNext;
@@ -98,11 +99,5 @@ namespace com.absence.dialoguesystem.internals
         {
             Comparers.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
         }
-    }
-
-    public enum VBProcessType
-    {
-        All = 0,
-        Any = 1,
     }
 }

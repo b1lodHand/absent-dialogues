@@ -20,19 +20,25 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueCustomEditor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCustomEditor.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Custom editor script for dialogues.
+  example: []
   syntax:
     content: >-
       [CustomEditor(typeof(Dialogue), false)]
 
-      public class DialogueCustomEditor : Editor
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCustomEditor.html")]
+
+      public sealed class DialogueCustomEditor : Editor
     content.vb: >-
       <CustomEditor(GetType(Dialogue), False)>
 
-      Public Class DialogueCustomEditor Inherits Editor
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCustomEditor.html")>
+
+      Public NotInheritable Class DialogueCustomEditor Inherits Editor
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -51,14 +57,11 @@ items:
   - UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
   - UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
   - UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  - UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
   - UnityEditor.Editor.DrawDefaultInspector
   - UnityEditor.Editor.Repaint
   - UnityEditor.Editor.CreateInspectorGUI
   - UnityEditor.Editor.RequiresConstantRepaint
   - UnityEditor.Editor.DrawHeader
-  - UnityEditor.Editor.OnHeaderGUI
-  - UnityEditor.Editor.ShouldHideOpenButton
   - UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
   - UnityEditor.Editor.HasPreviewGUI
   - UnityEditor.Editor.GetPreviewTitle
@@ -90,6 +93,11 @@ items:
       value: com.absence.dialoguesystem.Dialogue
     - type: System.Boolean
       value: false
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCustomEditor.html
 - uid: com.absence.dialoguesystem.editor.DialogueCustomEditor.OnInspectorGUI
   commentId: M:com.absence.dialoguesystem.editor.DialogueCustomEditor.OnInspectorGUI
   id: OnInspectorGUI
@@ -108,7 +116,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnInspectorGUI
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCustomEditor.cs
-    startLine: 7
+    startLine: 12
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -705,55 +713,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
-- uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  commentId: M:UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: DrawPropertiesExcluding(SerializedObject, params string[])
-  nameWithType: Editor.DrawPropertiesExcluding(SerializedObject, params string[])
-  fullName: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, params string[])
-  nameWithType.vb: Editor.DrawPropertiesExcluding(SerializedObject, ParamArray String())
-  fullName.vb: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, ParamArray String())
-  name.vb: DrawPropertiesExcluding(SerializedObject, ParamArray String())
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
-    isExternal: true
-  - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: params
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
-    isExternal: true
-  - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: ParamArray
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: (
-  - name: )
-  - name: )
 - uid: UnityEditor.Editor.DrawDefaultInspector
   commentId: M:UnityEditor.Editor.DrawDefaultInspector
   parent: UnityEditor.Editor
@@ -846,44 +805,6 @@ references:
   spec.vb:
   - uid: UnityEditor.Editor.DrawHeader
     name: DrawHeader
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.OnHeaderGUI
-  commentId: M:UnityEditor.Editor.OnHeaderGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnHeaderGUI()
-  nameWithType: Editor.OnHeaderGUI()
-  fullName: UnityEditor.Editor.OnHeaderGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.ShouldHideOpenButton
-  commentId: M:UnityEditor.Editor.ShouldHideOpenButton
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: ShouldHideOpenButton()
-  nameWithType: Editor.ShouldHideOpenButton()
-  fullName: UnityEditor.Editor.ShouldHideOpenButton()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
     isExternal: true
   - name: (
   - name: )
