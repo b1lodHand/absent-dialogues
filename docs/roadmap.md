@@ -20,6 +20,7 @@ In this section of the documentation, you will see some details about the past a
 * Folder restrucure.
 * Custom documentation for components and nodes.
 * More and better API documentation.
+* Small bugfixes.
 
 ## Already on the Plans
 
