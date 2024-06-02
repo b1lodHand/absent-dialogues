@@ -12,6 +12,7 @@ namespace com.absence.dialoguesystem
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")]
     [DisallowMultipleComponent]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
     public class DialogueInstance : MonoBehaviour
     {
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 

@@ -18,6 +18,7 @@ namespace com.absence.dialoguesystem
     /// </code>
     /// </remarks>
     [RequireComponent(typeof(DialogueInstance))]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
     public abstract class DialogueExtensionBase : MonoBehaviour
     {
         /// <summary>

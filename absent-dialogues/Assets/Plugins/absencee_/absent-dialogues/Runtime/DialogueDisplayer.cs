@@ -15,6 +15,7 @@ namespace com.absence.dialoguesystem
     /// the UI Toolkit.
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
         [Header("Speaker Fields")]

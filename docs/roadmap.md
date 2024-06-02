@@ -2,12 +2,12 @@
 
 In this section of the documentation, you will see some details about the past and the future of this project.
 
-## Latest Version
+## Latest Version (v0.3.1-alpha)
 * Small bugs fixed.
 * Editor window consistency is far better from now on.
 * Restricted the usages of VariableBanks with nodes for a healthier structure.
 
-## In the Next Version
+## In the Next Version (v1.0.0)
 
 * Dialogue editor refresh automation.
 * Stabler graph view.

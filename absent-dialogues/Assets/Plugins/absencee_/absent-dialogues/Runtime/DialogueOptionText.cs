@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem
     /// A small component that manages the functionality of an option's drawing and input.
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/Option Text")]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")]
     public class DialogueOptionText : MonoBehaviour
     {
         [SerializeField, Required, Tooltip("The text that will show the option speech.")] private TMP_Text m_text;

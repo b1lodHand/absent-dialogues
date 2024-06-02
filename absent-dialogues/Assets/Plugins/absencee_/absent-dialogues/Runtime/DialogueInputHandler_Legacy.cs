@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem
     [RequireComponent(typeof(DialogueInstance))]
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")]
     [DisallowMultipleComponent]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")]
     public class DialogueInputHandler_Legacy : DialogueExtensionBase
     {
         protected override void OnDialogueUpdate()
