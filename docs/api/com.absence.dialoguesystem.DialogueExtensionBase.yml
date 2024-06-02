@@ -43,9 +43,13 @@ items:
     content: >-
       [RequireComponent(typeof(DialogueInstance))]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
+
       public abstract class DialogueExtensionBase : MonoBehaviour
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")>
 
       Public MustInherit Class DialogueExtensionBase Inherits MonoBehaviour
   inheritance:
@@ -64,6 +68,11 @@ items:
     arguments:
     - type: System.Type
       value: com.absence.dialoguesystem.DialogueInstance
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   commentId: F:com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   id: m_instance
@@ -82,7 +91,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_instance
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -128,7 +137,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -163,7 +172,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -204,7 +213,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -232,7 +241,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 73
+    startLine: 74
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

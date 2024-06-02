@@ -36,9 +36,13 @@ items:
     content: >-
       [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")]
+
       public class DialogueDisplayer : Singleton<DialogueDisplayer>
     content.vb: >-
       <AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")>
 
       Public Class DialogueDisplayer Inherits Singleton(Of DialogueDisplayer)
   inheritance:
@@ -59,6 +63,11 @@ items:
     arguments:
     - type: System.String
       value: absencee_/absent-dialogues/Dialogue Displayer
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html
 - uid: com.absence.dialoguesystem.DialogueDisplayer.Occupy
   commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Occupy
   id: Occupy
@@ -77,7 +86,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Occupy
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -108,7 +117,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Release
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -139,7 +148,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -177,7 +186,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueDisplayer.cs
-    startLine: 87
+    startLine: 88
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

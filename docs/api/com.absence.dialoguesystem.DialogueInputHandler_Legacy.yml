@@ -34,6 +34,8 @@ items:
 
       [DisallowMultipleComponent]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")]
+
       public class DialogueInputHandler_Legacy : DialogueExtensionBase
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
@@ -41,6 +43,8 @@ items:
       <AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")>
 
       <DisallowMultipleComponent>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")>
 
       Public Class DialogueInputHandler_Legacy Inherits DialogueExtensionBase
   inheritance:
@@ -69,6 +73,11 @@ items:
   - type: UnityEngine.DisallowMultipleComponent
     ctor: UnityEngine.DisallowMultipleComponent.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html
 - uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
   commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
   id: OnDialogueUpdate
@@ -87,7 +96,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
