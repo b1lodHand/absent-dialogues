@@ -2,13 +2,7 @@
 
 In this section of the documentation, you will see some details about the past and the future of this project.
 
-## Latest Version [(v0.3.1-alpha)](https://github.com/b1lodHand/absent-dialogues/releases/tag/0.3.1-alpha)
-* Small bugs fixed.
-* Editor window consistency is far better from now on.
-* Restricted the usages of VariableBanks with nodes for a healthier structure.
-
-## Upcoming Version (v1.0.0)
-
+## Latest Version [(v1.0.0)](https://github.com/b1lodHand/absent-dialogues/releases/latest)
 * Dialogue editor refresh automation.
 * Stabler graph view.
 * Grid snapping fix (will be added to the docs).
@@ -21,6 +15,10 @@ In this section of the documentation, you will see some details about the past a
 * Custom documentation for components and nodes.
 * More and better API documentation.
 * Small bugfixes.
+
+## Upcoming Version
+* *Not certain yet.*
+
 
 ## Already on the Plans
 
