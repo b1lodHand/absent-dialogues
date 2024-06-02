@@ -25,9 +25,17 @@ items:
     name: DialoguePlayer.PlayerState
   - uid: com.absence.dialoguesystem.DialogueSoundsPlayer
     name: DialogueSoundsPlayer
+  - uid: com.absence.dialoguesystem.IUseDialogueInScene
+    name: IUseDialogueInScene
 - uid: com.absence.dialoguesystem.editor
   name: com.absence.dialoguesystem.editor
   items:
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+  - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+    name: BlackboardView.UxmlFactory
+  - uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
+    name: DialogueCreationHandler
   - uid: com.absence.dialoguesystem.editor.DialogueCustomEditor
     name: DialogueCustomEditor
   - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow
@@ -46,8 +54,10 @@ items:
     name: NodeView
   - uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
     name: RuntimeSelectionHandler
-  - uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
-    name: VariableBankCreationHandler
+  - uid: com.absence.dialoguesystem.editor.SplitView
+    name: SplitView
+  - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+    name: SplitView.UxmlFactory
 - uid: com.absence.dialoguesystem.internals
   name: com.absence.dialoguesystem.internals
   items:

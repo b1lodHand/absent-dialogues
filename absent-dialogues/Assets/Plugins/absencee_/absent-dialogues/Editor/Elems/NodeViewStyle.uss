@@ -267,6 +267,12 @@
     border-radius: 0;
 }
 
+.decisionSpeechNode .optionShowIfLabel {
+    -unity-font-style: italic;
+    -unity-text-align: middle-left;
+    color: rgba(207, 207, 207, 0.62);
+}
+
 .stickyNoteNode {
     min-width: 170px;
     min-height: 40px;
@@ -306,6 +312,14 @@
 
 .stickyNoteNode:hover:selected {
     opacity: 1;
+}
+
+.stickyNoteNode #selection-border {
+    opacity: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
 }
 
 .titleNode #node-border {
@@ -406,14 +420,6 @@
     border-bottom-color: rgb(255, 255, 255);
 }
 
-.stickyNoteNode #selection-border {
-    opacity: 1;
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
-}
-
 .titleNode:hover #divider {
     opacity: 0.6;
 }
@@ -424,16 +430,6 @@
 
 .titleNode:selected #divider {
     opacity: 1;
-}
-
-#person-field {
-    display: none;
-}
-
-.personPreview {
-    width: 16px;
-    height: 16px;
-    align-self: center;
 }
 
 .personField .unity-popup-field__input {
@@ -520,14 +516,14 @@
     display: none;
 }
 
-.personDependent #person-field {
-    display: flex;
+.personPreview {
+    width: 16px;
+    height: 16px;
+    align-self: center;
 }
 
-.decisionSpeechNode .optionShowIfLabel {
-    -unity-font-style: italic;
-    -unity-text-align: middle-left;
-    color: rgba(207, 207, 207, 0.62);
+.personDependent #person-field {
+    display: flex;
 }
 
 .exit #node-border {

@@ -10,7 +10,15 @@ namespace com.absence.dialoguesystem
     /// This is the base class to derive from in order to handle some custom logic
     /// over the system.
     /// </summary>
+    /// <remarks>
+    /// Execution order goes like:
+    /// <code>
+    /// OnHandleAdditionalData(...);
+    /// OnBeforeSpeech(...);
+    /// </code>
+    /// </remarks>
     [RequireComponent(typeof(DialogueInstance))]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
     public abstract class DialogueExtensionBase : MonoBehaviour
     {
         /// <summary>
@@ -59,6 +67,30 @@ namespace com.absence.dialoguesystem
         protected virtual void OnAfterCloning()
         {
 
+        }
+
+        /// <summary>
+        /// Use to define what to do on each frame when the target instance is <see cref="DialogueInstance.InDialogue"/>
+        /// </summary>
+        protected virtual void OnDialogueUpdate()
+        {
+
+        }
+
+        private void Start()
+        {
+            if(m_instance == null)
+            {
+                Debug.LogWarning("There are no instances for this extension to use. Disabling it.");
+                enabled = false;
+            }
+        }
+
+        private void Update()
+        {
+            if (!m_instance.InDialogue) return;
+
+            OnDialogueUpdate();
         }
 
         private void Reset()

@@ -1,0 +1,101 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  commentId: T:com.absence.dialoguesystem.editor.DialogueCreationHandler
+  id: DialogueCreationHandler
+  parent: com.absence.dialoguesystem.editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DialogueCreationHandler
+  nameWithType: DialogueCreationHandler
+  fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueCreationHandler
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCreationHandler.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  summary: A script responsible for handling the creation of a dialogue.
+  example: []
+  syntax:
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")]
+
+      public static class DialogueCreationHandler
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")>
+
+      Public Module DialogueCreationHandler
+  inheritance:
+  - System.Object
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

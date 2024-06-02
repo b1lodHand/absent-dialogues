@@ -243,6 +243,17 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: -1965666318695130335}
+  - Speech: 
+    AdditionalData:
+      m_audioClip: {fileID: 0}
+      m_animMemberName: 
+      m_sprite: {fileID: 0}
+      m_customInfo: []
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 0}
   Speech: Oh yeah, I've totally forgotten about that! What have you done?
 --- !u!114 &-914008930283711827
 MonoBehaviour:
@@ -504,7 +515,7 @@ MonoBehaviour:
   m_Name: GotoNode
   m_EditorClassIdentifier: 
   Guid: ff39af66e057bbc46bba9a0cab5f57c0
-  Position: {x: 1208.0001, y: -327.00018}
+  Position: {x: 1236.5417, y: -289.71725}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}

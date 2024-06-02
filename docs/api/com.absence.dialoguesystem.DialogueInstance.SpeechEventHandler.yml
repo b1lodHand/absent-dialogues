@@ -14,12 +14,12 @@ items:
   type: Delegate
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SpeechEventHandler
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 80
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 75
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

@@ -8,7 +8,11 @@ using Node = com.absence.dialoguesystem.internals.Node;
 
 namespace com.absence.dialoguesystem.editor
 {
-    public class DialogueEditorWindow : EditorWindow
+    /// <summary>
+    /// The dialogue editor window responsible for letting you open, edit and save a dialogue.
+    /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueEditorWindow.html")]
+    public sealed class DialogueEditorWindow : EditorWindow
     {
         [SerializeField]
         private VisualTreeAsset m_VisualTreeAsset = default;
@@ -22,8 +26,14 @@ namespace com.absence.dialoguesystem.editor
         static SerializedObject m_dialogueObject;
         static Dialogue m_targetDialogue;
 
+        /// <summary>
+        /// Gets invoked when <see cref="CreateGUI"/> gets called. <b>Clears itself everytime it gets invoked.</b>
+        /// </summary>
         public static event Action OnGUIDelayCall;
 
+        /// <summary>
+        /// Use to open the dialogue editor window.
+        /// </summary>
         [MenuItem("absencee_/absent-dialogues/Open Dialogue Graph Window")]
         public static void OpenWindow()
         {
@@ -35,6 +45,9 @@ namespace com.absence.dialoguesystem.editor
             };
         }
 
+        /// <summary>
+        /// Use to save the dialogue displayed currently in the editor.
+        /// </summary>
         public static void SaveLastDialogue()
         {
             if (m_targetDialogue == null) return;
@@ -43,6 +56,9 @@ namespace com.absence.dialoguesystem.editor
             EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", AssetDatabase.GetAssetPath(m_targetDialogue));
         }
 
+        /// <summary>
+        /// Use to load the last dialogue displayed in the editor.
+        /// </summary>
         public static void LoadLastDialogue()
         {
             string lastDialoguePath = EditorPrefs.GetString("LastEditedDialogueBeforePlayMode_AssetPath", "");
@@ -63,6 +79,12 @@ namespace com.absence.dialoguesystem.editor
             PopulateDialogueView(lastDialogue);
         }
 
+        /// <summary>
+        /// The method that handles the asset selection events.
+        /// </summary>
+        /// <param name="instanceId"></param>
+        /// <param name="line"></param>
+        /// <returns></returns>
         [OnOpenAsset]
         public static bool OnOpenAsset(int instanceId, int line)
         {
@@ -79,6 +101,11 @@ namespace com.absence.dialoguesystem.editor
             return PopulateDialogueView(m_targetDialogue);
         }
 
+        /// <summary>
+        /// Use to display a dialogue in the graph.
+        /// </summary>
+        /// <param name="dialogue">Target dialogue.</param>
+        /// <returns></returns>
         public static bool PopulateDialogueView(Dialogue dialogue)
         {
             if (dialogue == null)
@@ -237,12 +264,20 @@ namespace com.absence.dialoguesystem.editor
             });
         }
 
+        /// <summary>
+        /// Teleports the view to the target node and selects it.
+        /// </summary>
+        /// <param name="node">Target node.</param>
         public void FrameToNode(Node node)
         {
             SelectNode(node);
             m_dialogueGraphView.FrameSelection();
         }
 
+        /// <summary>
+        /// Selects the target node.
+        /// </summary>
+        /// <param name="node">Target node.</param>
         public void SelectNode(Node node)
         {
             m_dialogueGraphView.SelectNode(node);

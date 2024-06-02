@@ -39,13 +39,6 @@ references:
   name: ConditionNode
   nameWithType: ConditionNode
   fullName: com.absence.dialoguesystem.internals.ConditionNode
-- uid: com.absence.dialoguesystem.internals.VBProcessType
-  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.VBProcessType.html
-  name: VBProcessType
-  nameWithType: VBProcessType
-  fullName: com.absence.dialoguesystem.internals.VBProcessType
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
   commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
   parent: com.absence.dialoguesystem.internals
@@ -79,6 +72,13 @@ references:
   name: RootNode
   nameWithType: RootNode
   fullName: com.absence.dialoguesystem.internals.RootNode
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.VBProcessType.html
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode
   commentId: T:com.absence.dialoguesystem.internals.StickyNoteNode
   href: com.absence.dialoguesystem.internals.StickyNoteNode.html

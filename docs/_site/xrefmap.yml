@@ -355,6 +355,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech
   nameWithType: DialogueExtensionBase.OnBeforeSpeech
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  name: OnDialogueUpdate()
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
+  name: OnDialogueUpdate
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate_
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   name: OnHandleAdditionalData(AdditionalSpeechData)
   href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
@@ -380,19 +393,19 @@ references:
   commentId: T:com.absence.dialoguesystem.DialogueInputHandler_Legacy
   fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy
   nameWithType: DialogueInputHandler_Legacy
-- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  name: OnHandleAdditionalData(AdditionalSpeechData)
-  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
-  commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData(AdditionalSpeechData)
-- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData*
-  name: OnHandleAdditionalData
-  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_
-  commentId: Overload:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  name: OnDialogueUpdate()
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate()
+  nameWithType: DialogueInputHandler_Legacy.OnDialogueUpdate()
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate*
+  name: OnDialogueUpdate
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
-  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  nameWithType: DialogueInputHandler_Legacy.OnDialogueUpdate
 - uid: com.absence.dialoguesystem.DialogueInstance
   name: DialogueInstance
   href: api/com.absence.dialoguesystem.DialogueInstance.html
@@ -460,6 +473,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
   nameWithType: DialogueInstance.ExitDialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  name: InDialogue
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  nameWithType: DialogueInstance.InDialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue*
+  name: InDialogue
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  nameWithType: DialogueInstance.InDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   name: OnAfterCloning
   href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_OnAfterCloning
@@ -835,6 +861,38 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.IExternalDialogueElement.Initialize
   nameWithType: IExternalDialogueElement.Initialize
+- uid: com.absence.dialoguesystem.IUseDialogueInScene
+  name: IUseDialogueInScene
+  href: api/com.absence.dialoguesystem.IUseDialogueInScene.html
+  commentId: T:com.absence.dialoguesystem.IUseDialogueInScene
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene
+  nameWithType: IUseDialogueInScene
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  name: ClonedDialogue
+  href: api/com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ClonedDialogue
+  commentId: P:com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  nameWithType: IUseDialogueInScene.ClonedDialogue
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue*
+  name: ClonedDialogue
+  href: api/com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ClonedDialogue_
+  commentId: Overload:com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  nameWithType: IUseDialogueInScene.ClonedDialogue
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  name: ReferencedDialogue
+  href: api/com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ReferencedDialogue
+  commentId: P:com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  nameWithType: IUseDialogueInScene.ReferencedDialogue
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue*
+  name: ReferencedDialogue
+  href: api/com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ReferencedDialogue_
+  commentId: Overload:com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  nameWithType: IUseDialogueInScene.ReferencedDialogue
 - uid: com.absence.dialoguesystem.OptionText
   name: OptionText
   href: api/com.absence.dialoguesystem.OptionText.html
@@ -882,6 +940,43 @@ references:
   commentId: N:com.absence.dialoguesystem.editor
   fullName: com.absence.dialoguesystem.editor
   nameWithType: com.absence.dialoguesystem.editor
+- uid: com.absence.dialoguesystem.editor.BlackboardView
+  name: BlackboardView
+  href: api/com.absence.dialoguesystem.editor.BlackboardView.html
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView
+  fullName: com.absence.dialoguesystem.editor.BlackboardView
+  nameWithType: BlackboardView
+- uid: com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  name: BlackboardView()
+  href: api/com.absence.dialoguesystem.editor.BlackboardView.html#com_absence_dialoguesystem_editor_BlackboardView__ctor
+  commentId: M:com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  name.vb: New()
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.BlackboardView()
+  fullName.vb: com.absence.dialoguesystem.editor.BlackboardView.New()
+  nameWithType: BlackboardView.BlackboardView()
+  nameWithType.vb: BlackboardView.New()
+- uid: com.absence.dialoguesystem.editor.BlackboardView.#ctor*
+  name: BlackboardView
+  href: api/com.absence.dialoguesystem.editor.BlackboardView.html#com_absence_dialoguesystem_editor_BlackboardView__ctor_
+  commentId: Overload:com.absence.dialoguesystem.editor.BlackboardView.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.BlackboardView
+  fullName.vb: com.absence.dialoguesystem.editor.BlackboardView.New
+  nameWithType: BlackboardView.BlackboardView
+  nameWithType.vb: BlackboardView.New
+- uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  name: BlackboardView.UxmlFactory
+  href: api/com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.html
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  nameWithType: BlackboardView.UxmlFactory
+- uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  name: DialogueCreationHandler
+  href: api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html
+  commentId: T:com.absence.dialoguesystem.editor.DialogueCreationHandler
+  fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  nameWithType: DialogueCreationHandler
 - uid: com.absence.dialoguesystem.editor.DialogueCustomEditor
   name: DialogueCustomEditor
   href: api/com.absence.dialoguesystem.editor.DialogueCustomEditor.html
@@ -1272,18 +1367,24 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.editor.NodeView.SetPosition
   nameWithType: NodeView.SetPosition
-- uid: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  name: m_serializedNode
-  href: api/com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_m_serializedNode
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  fullName: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
-  nameWithType: NodeView.m_serializedNode
 - uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   name: RuntimeSelectionHandler
   href: api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html
   commentId: T:com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   fullName: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   nameWithType: RuntimeSelectionHandler
+- uid: com.absence.dialoguesystem.editor.SplitView
+  name: SplitView
+  href: api/com.absence.dialoguesystem.editor.SplitView.html
+  commentId: T:com.absence.dialoguesystem.editor.SplitView
+  fullName: com.absence.dialoguesystem.editor.SplitView
+  nameWithType: SplitView
+- uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  name: SplitView.UxmlFactory
+  href: api/com.absence.dialoguesystem.editor.SplitView.UxmlFactory.html
+  commentId: T:com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
 - uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
   name: VariableBankCreationHandler
   href: api/com.absence.dialoguesystem.editor.VariableBankCreationHandler.html

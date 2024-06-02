@@ -1,0 +1,321 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.SplitView
+  commentId: T:com.absence.dialoguesystem.editor.SplitView
+  id: SplitView
+  parent: com.absence.dialoguesystem.editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: SplitView
+  nameWithType: SplitView
+  fullName: com.absence.dialoguesystem.editor.SplitView
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/SplitView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SplitView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/SplitView.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: 'public class SplitView : TwoPaneSplitView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler'
+    content.vb: Public Class SplitView Inherits TwoPaneSplitView Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+  inheritance:
+  - System.Object
+  - UnityEngine.UIElements.CallbackEventHandler
+  - UnityEngine.UIElements.Focusable
+  - UnityEngine.UIElements.VisualElement
+  - UnityEngine.UIElements.TwoPaneSplitView
+  implements:
+  - UnityEngine.UIElements.IEventHandler
+  - UnityEngine.UIElements.IResolvedStyle
+  - UnityEngine.UIElements.ITransform
+  - UnityEngine.UIElements.Experimental.ITransitionAnimations
+  - UnityEngine.UIElements.IExperimentalFeatures
+  - UnityEngine.UIElements.IVisualElementScheduler
+  inheritedMembers:
+  - UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(System.Int32)
+  - UnityEngine.UIElements.TwoPaneSplitView.UnCollapse
+  - UnityEngine.UIElements.TwoPaneSplitView.fixedPane
+  - UnityEngine.UIElements.TwoPaneSplitView.flexedPane
+  - UnityEngine.UIElements.TwoPaneSplitView.fixedPaneIndex
+  - UnityEngine.UIElements.TwoPaneSplitView.fixedPaneInitialDimension
+  - UnityEngine.UIElements.TwoPaneSplitView.orientation
+  - UnityEngine.UIElements.TwoPaneSplitView.contentContainer
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.UIElements.CallbackEventHandler
+  commentId: T:UnityEngine.UIElements.CallbackEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: CallbackEventHandler
+  nameWithType: CallbackEventHandler
+  fullName: UnityEngine.UIElements.CallbackEventHandler
+- uid: UnityEngine.UIElements.Focusable
+  commentId: T:UnityEngine.UIElements.Focusable
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: Focusable
+  nameWithType: Focusable
+  fullName: UnityEngine.UIElements.Focusable
+- uid: UnityEngine.UIElements.VisualElement
+  commentId: T:UnityEngine.UIElements.VisualElement
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: VisualElement
+  nameWithType: VisualElement
+  fullName: UnityEngine.UIElements.VisualElement
+- uid: UnityEngine.UIElements.TwoPaneSplitView
+  commentId: T:UnityEngine.UIElements.TwoPaneSplitView
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: TwoPaneSplitView
+  nameWithType: TwoPaneSplitView
+  fullName: UnityEngine.UIElements.TwoPaneSplitView
+- uid: UnityEngine.UIElements.IEventHandler
+  commentId: T:UnityEngine.UIElements.IEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IEventHandler
+  nameWithType: IEventHandler
+  fullName: UnityEngine.UIElements.IEventHandler
+- uid: UnityEngine.UIElements.IResolvedStyle
+  commentId: T:UnityEngine.UIElements.IResolvedStyle
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IResolvedStyle
+  nameWithType: IResolvedStyle
+  fullName: UnityEngine.UIElements.IResolvedStyle
+- uid: UnityEngine.UIElements.ITransform
+  commentId: T:UnityEngine.UIElements.ITransform
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: ITransform
+  nameWithType: ITransform
+  fullName: UnityEngine.UIElements.ITransform
+- uid: UnityEngine.UIElements.Experimental.ITransitionAnimations
+  commentId: T:UnityEngine.UIElements.Experimental.ITransitionAnimations
+  parent: UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: ITransitionAnimations
+  nameWithType: ITransitionAnimations
+  fullName: UnityEngine.UIElements.Experimental.ITransitionAnimations
+- uid: UnityEngine.UIElements.IExperimentalFeatures
+  commentId: T:UnityEngine.UIElements.IExperimentalFeatures
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IExperimentalFeatures
+  nameWithType: IExperimentalFeatures
+  fullName: UnityEngine.UIElements.IExperimentalFeatures
+- uid: UnityEngine.UIElements.IVisualElementScheduler
+  commentId: T:UnityEngine.UIElements.IVisualElementScheduler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IVisualElementScheduler
+  nameWithType: IVisualElementScheduler
+  fullName: UnityEngine.UIElements.IVisualElementScheduler
+- uid: UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(System.Int32)
+  commentId: M:UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(System.Int32)
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: CollapseChild(int)
+  nameWithType: TwoPaneSplitView.CollapseChild(int)
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(int)
+  nameWithType.vb: TwoPaneSplitView.CollapseChild(Integer)
+  fullName.vb: UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(Integer)
+  name.vb: CollapseChild(Integer)
+  spec.csharp:
+  - uid: UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(System.Int32)
+    name: CollapseChild
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.TwoPaneSplitView.CollapseChild(System.Int32)
+    name: CollapseChild
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: UnityEngine.UIElements.TwoPaneSplitView.UnCollapse
+  commentId: M:UnityEngine.UIElements.TwoPaneSplitView.UnCollapse
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: UnCollapse()
+  nameWithType: TwoPaneSplitView.UnCollapse()
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.UnCollapse()
+  spec.csharp:
+  - uid: UnityEngine.UIElements.TwoPaneSplitView.UnCollapse
+    name: UnCollapse
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.UIElements.TwoPaneSplitView.UnCollapse
+    name: UnCollapse
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.UIElements.TwoPaneSplitView.fixedPane
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.fixedPane
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: fixedPane
+  nameWithType: TwoPaneSplitView.fixedPane
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.fixedPane
+- uid: UnityEngine.UIElements.TwoPaneSplitView.flexedPane
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.flexedPane
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: flexedPane
+  nameWithType: TwoPaneSplitView.flexedPane
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.flexedPane
+- uid: UnityEngine.UIElements.TwoPaneSplitView.fixedPaneIndex
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.fixedPaneIndex
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: fixedPaneIndex
+  nameWithType: TwoPaneSplitView.fixedPaneIndex
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.fixedPaneIndex
+- uid: UnityEngine.UIElements.TwoPaneSplitView.fixedPaneInitialDimension
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.fixedPaneInitialDimension
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: fixedPaneInitialDimension
+  nameWithType: TwoPaneSplitView.fixedPaneInitialDimension
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.fixedPaneInitialDimension
+- uid: UnityEngine.UIElements.TwoPaneSplitView.orientation
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.orientation
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: orientation
+  nameWithType: TwoPaneSplitView.orientation
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.orientation
+- uid: UnityEngine.UIElements.TwoPaneSplitView.contentContainer
+  commentId: P:UnityEngine.UIElements.TwoPaneSplitView.contentContainer
+  parent: UnityEngine.UIElements.TwoPaneSplitView
+  isExternal: true
+  name: contentContainer
+  nameWithType: TwoPaneSplitView.contentContainer
+  fullName: UnityEngine.UIElements.TwoPaneSplitView.contentContainer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.UIElements
+  commentId: N:UnityEngine.UIElements
+  isExternal: true
+  name: UnityEngine.UIElements
+  nameWithType: UnityEngine.UIElements
+  fullName: UnityEngine.UIElements
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+- uid: UnityEngine.UIElements.Experimental
+  commentId: N:UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: UnityEngine.UIElements.Experimental
+  nameWithType: UnityEngine.UIElements.Experimental
+  fullName: UnityEngine.UIElements.Experimental
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true

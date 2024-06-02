@@ -23,17 +23,23 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AdditionalSpeechData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/AdditionalSpeechData.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Holds some extra data which you can use on the flow.
+  example: []
   syntax:
     content: >-
       [Serializable]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html")]
+
       public class AdditionalSpeechData
     content.vb: >-
       <Serializable>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html")>
 
       Public Class AdditionalSpeechData
   inheritance:
@@ -42,6 +48,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
   commentId: P:com.absence.dialoguesystem.internals.AdditionalSpeechData.AudioClip
   id: AudioClip
@@ -60,7 +71,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AudioClip
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/AdditionalSpeechData.cs
-    startLine: 12
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -89,7 +100,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AnimatorMemberName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/AdditionalSpeechData.cs
-    startLine: 13
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -118,7 +129,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Sprite
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/AdditionalSpeechData.cs
-    startLine: 14
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -147,7 +158,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CustomInfo
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/AdditionalSpeechData.cs
-    startLine: 15
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

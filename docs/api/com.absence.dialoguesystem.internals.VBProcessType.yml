@@ -16,15 +16,17 @@ items:
   type: Enum
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VBProcessType
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 97
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
+    startLine: 5
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: An enum used to define the way to handle multiple variable manipulators at once.
+  example: []
   syntax:
     content: public enum VBProcessType
     content.vb: Public Enum VBProcessType
@@ -41,12 +43,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: All
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 99
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -67,12 +69,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Any
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 100
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Enums/VBProcessType.cs
+    startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

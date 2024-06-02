@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSoundsPlayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueSoundsPlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueSoundsPlayer
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSoundsPlayer.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueSoundsPlayer.cs
     startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
@@ -35,11 +35,19 @@ items:
 
       [AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")]
 
+      [DisallowMultipleComponent]
+
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html")]
+
       public class DialogueSoundsPlayer : DialogueExtensionBase
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
 
       <AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")>
+
+      <DisallowMultipleComponent>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html")>
 
       Public Class DialogueSoundsPlayer Inherits DialogueExtensionBase
   inheritance:
@@ -53,6 +61,7 @@ items:
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   attributes:
   - type: UnityEngine.RequireComponent
     ctor: UnityEngine.RequireComponent.#ctor(System.Type)
@@ -64,6 +73,14 @@ items:
     arguments:
     - type: System.String
       value: absencee_/absent-dialogues/Dialogue Sounds Player
+  - type: UnityEngine.DisallowMultipleComponent
+    ctor: UnityEngine.DisallowMultipleComponent.#ctor
+    arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html
 - uid: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   commentId: M:com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   id: OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
@@ -77,12 +94,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSoundsPlayer.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueSoundsPlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSoundsPlayer.cs
-    startLine: 17
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueSoundsPlayer.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -279,6 +296,25 @@ references:
   - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
     name: OnAfterCloning
     href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  name: OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+    name: OnDialogueUpdate
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+    name: OnDialogueUpdate
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
   - name: (
   - name: )
 - uid: System

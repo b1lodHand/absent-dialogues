@@ -45,8 +45,14 @@ items:
   summary: Node which displays a speech with options.
   example: []
   syntax:
-    content: 'public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh'
-    content.vb: Public NotInheritable Class DecisionSpeechNode Inherits Node Implements IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
+
+      public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")>
+
+      Public NotInheritable Class DecisionSpeechNode Inherits Node Implements IContainSpeech, IContainVariableManipulators, IPerformEditorRefresh
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -85,6 +91,12 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Options
   commentId: F:com.absence.dialoguesystem.internals.DecisionSpeechNode.Options
   id: Options
@@ -103,7 +115,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Options
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -111,11 +123,15 @@ items:
     content: >-
       [Space(10)]
 
+      [Tooltip("All of the options of this node.")]
+
       public List<Option> Options
     return:
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
     content.vb: >-
       <Space(10)>
+
+      <Tooltip("All of the options of this node.")>
 
       Public Options As List(Of [Option])
   attributes:
@@ -124,6 +140,11 @@ items:
     arguments:
     - type: System.Single
       value: 10
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: All of the options of this node.
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech
   commentId: F:com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech
   id: Speech
@@ -142,7 +163,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -179,7 +200,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PersonDependent
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -211,7 +232,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -243,7 +264,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -275,7 +296,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -311,7 +332,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -340,7 +361,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 39
+    startLine: 42
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -379,7 +400,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 43
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -415,7 +436,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -451,7 +472,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 55
+    startLine: 58
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -486,7 +507,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 64
+    startLine: 67
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -518,7 +539,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 69
+    startLine: 72
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -549,7 +570,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOptions
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 70
+    startLine: 73
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -580,7 +601,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAdditionalSpeechData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 71
+    startLine: 74
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -611,7 +632,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DelayedClone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 73
+    startLine: 76
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -643,7 +664,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetComparers
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 83
+    startLine: 86
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -676,7 +697,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSetters
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 98
+    startLine: 101
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -709,7 +730,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PerformEditorRefresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 100
+    startLine: 103
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

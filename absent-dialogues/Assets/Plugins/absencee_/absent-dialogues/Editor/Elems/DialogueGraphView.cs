@@ -11,14 +11,29 @@ using com.absence.utilities;
 
 namespace com.absence.dialoguesystem.editor
 {
-    public class DialogueGraphView : GraphView
+    /// <summary>
+    /// The graph view responsible for rendering a dialogue's graph elements.
+    /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueGraphView.html")]
+    public sealed class DialogueGraphView : GraphView
     {
         public new class UxmlFactory : UxmlFactory<DialogueGraphView, GraphView.UxmlTraits> { }
 
         Dialogue m_dialogue;
+
+        /// <summary>
+        /// Gets invoked when a node gets selected.
+        /// </summary>
         public event Action<NodeView> OnNodeSelected;
+
+        /// <summary>
+        /// Gets invoked when a dialogue gets displayed.
+        /// </summary>
         public event Action OnPopulateView;
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public DialogueGraphView()
         {
             Insert(0, new GridBackground());
@@ -30,6 +45,7 @@ namespace com.absence.dialoguesystem.editor
             Undo.undoRedoPerformed -= OnUndoRedo;
             Undo.undoRedoPerformed += OnUndoRedo;
         }
+
         private void AddStyleSheets()
         {
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.uss");
@@ -175,16 +191,26 @@ namespace com.absence.dialoguesystem.editor
 
             OnPopulateView?.Invoke();
         }
+
+        /// <summary>
+        /// Use to refresh the current graph view.
+        /// </summary>
         public void Refresh()
         {
             if (m_dialogue == null) return;
             PopulateView(m_dialogue);
         }
 
+        /// <summary>
+        /// Use to find the view of a node.
+        /// </summary>
+        /// <param name="node">Target node.</param>
+        /// <returns>Returns the view of the target node.</returns>
         public NodeView FindNodeView(Node node)
         {
             return GetNodeByGuid(node.Guid) as NodeView;
         }
+
         Node CreateNode(System.Type type, Vector2 atPosition)
         {
             Undo.RecordObject(m_dialogue, "Dialog (Create Node)");

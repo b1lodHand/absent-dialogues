@@ -12,6 +12,7 @@ namespace com.absence.dialoguesystem
     /// Lets you progress in a dialogue easily.
     /// </summary>
     [System.Serializable]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html")]
     public class DialoguePlayer
     {
         /// <summary>
@@ -19,9 +20,21 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public enum PlayerState
         {
+            /// <summary>
+            /// The player is not displaying any dialogue or the current node is not <see cref="IContainSpeech"/>.
+            /// </summary>
             NoSpeech = 0,
+            /// <summary>
+            /// The player is displaying a speech which has some options and waiting for player to pick an option.
+            /// </summary>     
             WaitingForOption = 1,
+            /// <summary>
+            /// The player is displaying a speech without any options and waiting for the player to skip it.
+            /// </summary>
             WaitingForSkip = 2,
+            /// <summary>
+            /// The player's last node was a <see cref="Node.ExitDialogAfterwards"/>.
+            /// </summary>
             WillExit = 3,
         }
 

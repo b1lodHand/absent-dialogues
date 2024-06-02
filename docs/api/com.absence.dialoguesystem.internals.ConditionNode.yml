@@ -44,8 +44,14 @@ items:
   summary: Node which re-routes the flow under some conditions.
   example: []
   syntax:
-    content: 'public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh'
-    content.vb: Public Class ConditionNode Inherits Node Implements IContainVariableManipulators, IPerformEditorRefresh
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
+
+      public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")>
+
+      Public Class ConditionNode Inherits Node Implements IContainVariableManipulators, IPerformEditorRefresh
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -85,6 +91,12 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html
 - uid: com.absence.dialoguesystem.internals.ConditionNode.TrueNext
   commentId: F:com.absence.dialoguesystem.internals.ConditionNode.TrueNext
   id: TrueNext
@@ -103,7 +115,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TrueNext
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -140,7 +152,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FalseNext
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -177,15 +189,27 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Processor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public VBProcessType Processor
+    content: >-
+      [Tooltip("Use to declare what to do with the sum of the results of comparers.")]
+
+      public VBProcessType Processor
     return:
       type: com.absence.dialoguesystem.internals.VBProcessType
-    content.vb: Public Processor As VBProcessType
+    content.vb: >-
+      <Tooltip("Use to declare what to do with the sum of the results of comparers.")>
+
+      Public Processor As VBProcessType
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use to declare what to do with the sum of the results of comparers.
 - uid: com.absence.dialoguesystem.internals.ConditionNode.Comparers
   commentId: F:com.absence.dialoguesystem.internals.ConditionNode.Comparers
   id: Comparers
@@ -204,15 +228,27 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Comparers
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public List<FixedVariableComparer> Comparers
+    content: >-
+      [Tooltip("All of the comparers this node relies on.")]
+
+      public List<FixedVariableComparer> Comparers
     return:
       type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
-    content.vb: Public Comparers As List(Of FixedVariableComparer)
+    content.vb: >-
+      <Tooltip("All of the comparers this node relies on.")>
+
+      Public Comparers As List(Of FixedVariableComparer)
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: All of the comparers this node relies on.
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.ConditionNode.GetClassName
   id: GetClassName
@@ -231,7 +267,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -263,7 +299,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -295,7 +331,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -331,7 +367,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -360,7 +396,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -399,7 +435,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -435,7 +471,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -471,7 +507,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DelayedClone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -503,7 +539,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 58
+    startLine: 60
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -538,7 +574,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 65
+    startLine: 67
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -570,14 +606,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Process
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 70
+    startLine: 76
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Use this to override (if you need) the checking result of this node.
+  example: []
   syntax:
     content: protected virtual bool Process()
     return:
       type: System.Boolean
+      description: Normally returns the sum of the results of node's comparer list in a way declared by <xref href="com.absence.dialoguesystem.internals.ConditionNode.Processor" data-throw-if-not-resolved="false"></xref>
     content.vb: Protected Overridable Function Process() As Boolean
   overload: com.absence.dialoguesystem.internals.ConditionNode.Process*
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetComparers
@@ -598,7 +637,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetComparers
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 88
+    startLine: 94
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -631,7 +670,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSetters
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 89
+    startLine: 95
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -664,7 +703,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PerformEditorRefresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 91
+    startLine: 97
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1967,6 +2006,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: com.absence.dialoguesystem.internals.ConditionNode.Processor
+  commentId: F:com.absence.dialoguesystem.internals.ConditionNode.Processor
+  href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Processor
+  name: Processor
+  nameWithType: ConditionNode.Processor
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.Processor
 - uid: com.absence.dialoguesystem.internals.ConditionNode.Process*
   commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.Process
   href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Process

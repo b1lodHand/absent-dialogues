@@ -63,8 +63,8 @@
                     </div>                    <div class="sidebar-item-separator"></div>
                 </div>
                 <div class="footer">
+  © 2024 absencee_ All rights reserved.
   
-  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
                 </div>            </nav>
 
             <main class="main-panel">
@@ -98,34 +98,40 @@
 <p>Components are essential when you're working with a tool which is integrated right into unity. In this section of the documentation, you will get a simple explanation of built-in components that come this tool.</p>
 <h2 id="dialogue-displayer">Dialogue Displayer</h2>
 <p><img src="https://imgur.com/Uw9L3VB.png" alt="Imgur Image"></p>
-<p><strong>Dialogue Displayer</strong> is the only built-in way of displaying a dialogue on screen. But you can come up with your own solutions with the knowledge from the <a href="mechanism.html">mechanism</a> section.</p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html">Dialogue Displayer</a> is the only built-in way of displaying a dialogue on screen. But you can come up with your own solutions.</p>
 <div class="WARNING">
 <h5>Warning</h5>
 <p><strong>Dialogue Displayer</strong> is a singleton! Use it with this knowledge.</p>
 </div>
 <h2 id="option-text">Option Text</h2>
 <p><img src="https://imgur.com/nTjOKrW.png" alt="Imgur Image"></p>
-<p><strong>Option Text</strong> is a needed component when working with the built-int <strong>Dialogue Displayer.</strong> It is simply responsible for the <em>clicking</em> action, <em>index</em> holding and of course, displaying the option.</p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html">Option Text</a> is a needed component when working with the built-int <a href="#dialogue-displayer">Dialogue Displayer</a> It is simply responsible for the <em>clicking</em> action, <em>index</em> holding and of course, displaying the option.</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p><strong>Dialogue Instance</strong> is designed to work with the <strong>Dialogue Player</strong>. You can read <a href="mechanism.html">Mechanism</a> page for more details about that class.</p>
+<p><strong>Dialogue Instance</strong> is designed to work with the <a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html">Dialogue Player</a>. You can read <a href="https://b1lodhand.github.io/absent-dialogues/docs/getting-started/mechanism.html">Mechanism</a> page for more details about that class.</p>
 </div>
 <h2 id="dialogue-instance">Dialogue Instance</h2>
 <p><img src="https://imgur.com/CqkZrWU.png" alt="Imgur Image"></p>
-<p><strong>Dialogue Instance</strong> is the best way to play a dialogue in your game. It is pretty straight-forward to use. All you have to do is: attach, drag, press play. And you're done!</p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html">Dialogue Instance</a> is the best way to play a dialogue in your game. It is pretty straight-forward to use. All you have to do is: attach, drag, press play. And you're done!</p>
 <div class="TIP">
 <h5>Tip</h5>
 <p>The <em>player</em> section below in the inspector is only visible in <strong>play mode.</strong></p>
 </div>
 <h2 id="dialogue-sounds-player">Dialogue Sounds Player</h2>
 <p><img src="https://imgur.com/8kGJWRF.png" alt="Imgur Image"></p>
-<p><strong>Dialogue Sounds Player</strong> is the <em>extension</em> component responsible for playing sounds from an audio source, using the information from <strong>AdditionalSpeechData.</strong></p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html">Dialogue Sounds Player</a> is the <em>extension</em> component responsible for playing sounds from an audio source, using the information from <a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a>.</p>
 <h2 id="dialogue-animations-player">Dialogue Animations Player</h2>
 <p><img src="https://imgur.com/KZMhiR4.png" alt="Imgur Image"></p>
-<p><strong>Dialogue Animations Player</strong> is the <em>extension</em> component responsible for managing animator controller over a dialogue, using the information from <strong>AdditionalSpeechData</strong></p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html">Dialogue Animations Player</a> is the <em>extension</em> component responsible for managing animator controller over a dialogue, using the information from <a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a>.</p>
 <h2 id="dialogue-input-handler-legacy">Dialogue Input Handler (Legacy)</h2>
 <p><img src="https://imgur.com/23WeTkq.png" alt="Imgur Image"></p>
-<p><strong>Dialogue Input Handler (Legacy)</strong> is the <em>extension</em> component responsible for handling the input comes from player during the dialogue. It is marked <strong>legacy</strong> because it only works with the old input system of unity.</p>
+<p><a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html">Dialogue Input Handler (Legacy)</a> is the <em>extension</em> component responsible for handling the input comes from player during the dialogue. It is marked <strong>legacy</strong> because it only works with the old input system of unity.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>All of the <em>extension</em> components above are derived from the <a href="https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html">DialogueExtensionBase</a> class. See <a href="https://b1lodhand.github.io/absent-dialogues/docs/advanced/custom-dialogue-extensions.html">Custom Dialogue Extensions</a> for more information..</p>
+</div>
+<h2 id="whats-next">What's Next?</h2>
+<p><strong>Well, you know everything you need to know about this tool right now.</strong> But if you want to modify it for your own use, you can go to <a href="https://b1lodhand.github.io/absent-dialogues/docs/advanced/custom-nodes.html">Advanced</a> to see how you can do it easily.</p>
 
 </article>
                 </div>

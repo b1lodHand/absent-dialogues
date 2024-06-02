@@ -9,12 +9,27 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Node which invokes some actions on the flow.
     /// </summary>
+    /// <remarks>
+    /// Execution order goes like:
+    /// <code>
+    /// VBActions.ForEach(action => action.Perform());
+    /// UnityEvents?.Invoke();
+    /// CustomAction();
+    /// </code>
+    /// </remarks>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
     public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
+        [Tooltip("All of the 'VariableBank' based actions of this action node.")] 
         public List<FixedVariableSetter> VBActions = new List<FixedVariableSetter>();
-        public UnityEvent UnityEvents;
+
+        [Tooltip("All of the unity based events of this action node.")] public UnityEvent UnityEvents;
 
         [HideInInspector] public Node Next;
+
+        /// <summary>
+        /// Use to define what to do when this action node gets passed on the flow.
+        /// </summary>
         protected virtual void CustomAction()
         {
 

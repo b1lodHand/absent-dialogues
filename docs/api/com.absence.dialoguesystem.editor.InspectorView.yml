@@ -20,13 +20,21 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: InspectorView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: A visual element subtype which is responsible for rendering a node's inspector properties when selected.
+  example: []
   syntax:
-    content: 'public class InspectorView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler'
-    content.vb: Public Class InspectorView Inherits VisualElement Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.InspectorView.html")]
+
+      public class InspectorView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.InspectorView.html")>
+
+      Public Class InspectorView Inherits VisualElement Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
   inheritance:
   - System.Object
   - UnityEngine.UIElements.CallbackEventHandler
@@ -39,6 +47,12 @@ items:
   - UnityEngine.UIElements.Experimental.ITransitionAnimations
   - UnityEngine.UIElements.IExperimentalFeatures
   - UnityEngine.UIElements.IVisualElementScheduler
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.InspectorView.html
 - uid: com.absence.dialoguesystem.editor.InspectorView.#ctor
   commentId: M:com.absence.dialoguesystem.editor.InspectorView.#ctor
   id: '#ctor'
@@ -57,10 +71,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
-    startLine: 10
+    startLine: 19
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
+  summary: Default constructor.
+  example: []
   syntax:
     content: public InspectorView()
     content.vb: Public Sub New()

@@ -13,24 +13,52 @@ using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem.editor
 {
+    /// <summary>
+    /// The view class responsible for rendering a node's data in the graph.
+    /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html")]
     public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
+        /// <summary>
+        /// The USS class name for person dependent nodes.
+        /// </summary>
         public static string K_PERSONDEPENDENT_CLASSNAME = "personDependent";
 
+        /// <summary>
+        /// Action gets invoked when this node gets selected or unselected.
+        /// </summary>
         public Action<NodeView> OnNodeSelected;
+
+        /// <summary>
+        /// The node this view displays.
+        /// </summary>
         public Node Node;
 
+        /// <summary>
+        /// The left-hand side port.
+        /// </summary>
         public Port Input;
+
+        /// <summary>
+        /// A list of right-hand side ports.
+        /// </summary>
         public List<Port> Outputs = new List<Port>();
 
         private Button m_createNewOptionButton;
         private List<VisualElement> m_optionElems = new List<VisualElement>();
 
-        protected SerializedObject m_serializedNode;
+        private SerializedObject m_serializedNode;
         private DecisionSpeechNode m_nodeAsDecisive;
 
+        /// <summary>
+        /// The graph we're in.
+        /// </summary>
         public DialogueGraphView Master { get; internal set; }
 
+        /// <summary>
+        /// Use to construct a node view from a node.
+        /// </summary>
+        /// <param name="node">Target node.</param>
         public NodeView(Node node) : base("Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml")
         {
             this.Node = node;

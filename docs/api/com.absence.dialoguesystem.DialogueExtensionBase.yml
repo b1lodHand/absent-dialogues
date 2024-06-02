@@ -7,6 +7,7 @@ items:
   children:
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   langs:
@@ -18,12 +19,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueExtensionBase
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 12
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -31,14 +32,24 @@ items:
     This is the base class to derive from in order to handle some custom logic
 
     over the system.
+  remarks: >-
+    Execution order goes like:
+
+    <pre><code class="lang-csharp">OnHandleAdditionalData(...);
+
+    OnBeforeSpeech(...);</code></pre>
   example: []
   syntax:
     content: >-
       [RequireComponent(typeof(DialogueInstance))]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
+
       public abstract class DialogueExtensionBase : MonoBehaviour
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")>
 
       Public MustInherit Class DialogueExtensionBase Inherits MonoBehaviour
   inheritance:
@@ -57,6 +68,11 @@ items:
     arguments:
     - type: System.Type
       value: com.absence.dialoguesystem.DialogueInstance
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   commentId: F:com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   id: m_instance
@@ -70,12 +86,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_instance
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 18
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -116,12 +132,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 39
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -151,12 +167,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 50
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 58
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -192,12 +208,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 58
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 66
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -207,6 +223,34 @@ items:
     content: protected virtual void OnAfterCloning()
     content.vb: Protected Overridable Sub OnAfterCloning()
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning*
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  id: OnDialogueUpdate
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  langs:
+  - csharp
+  - vb
+  name: OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnDialogueUpdate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 74
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to define what to do on each frame when the target instance is <xref href="com.absence.dialoguesystem.DialogueInstance.InDialogue" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: protected virtual void OnDialogueUpdate()
+    content.vb: Protected Overridable Sub OnDialogueUpdate()
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -526,3 +570,15 @@ references:
   name: OnAfterCloning
   nameWithType: DialogueExtensionBase.OnAfterCloning
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
+  name: InDialogue
+  nameWithType: DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  name: OnDialogueUpdate
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate

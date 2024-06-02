@@ -31,9 +31,13 @@ items:
     content: >-
       [Serializable]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Blackboard.html")]
+
       public class Blackboard
     content.vb: >-
       <Serializable>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Blackboard.html")>
 
       Public Class Blackboard
   inheritance:
@@ -42,6 +46,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Blackboard.html
 - uid: com.absence.dialoguesystem.internals.Blackboard.Bank
   commentId: F:com.absence.dialoguesystem.internals.Blackboard.Bank
   id: Bank
@@ -60,7 +69,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Bank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Blackboard.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -99,7 +108,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Blackboard.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

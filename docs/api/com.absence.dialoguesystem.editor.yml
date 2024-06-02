@@ -4,6 +4,9 @@ items:
   commentId: N:com.absence.dialoguesystem.editor
   id: com.absence.dialoguesystem.editor
   children:
+  - com.absence.dialoguesystem.editor.BlackboardView
+  - com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  - com.absence.dialoguesystem.editor.DialogueCreationHandler
   - com.absence.dialoguesystem.editor.DialogueCustomEditor
   - com.absence.dialoguesystem.editor.DialogueEditorWindow
   - com.absence.dialoguesystem.editor.DialogueGraphView
@@ -13,7 +16,8 @@ items:
   - com.absence.dialoguesystem.editor.NodeCustomEditor
   - com.absence.dialoguesystem.editor.NodeView
   - com.absence.dialoguesystem.editor.RuntimeSelectionHandler
-  - com.absence.dialoguesystem.editor.VariableBankCreationHandler
+  - com.absence.dialoguesystem.editor.SplitView
+  - com.absence.dialoguesystem.editor.SplitView.UxmlFactory
   langs:
   - csharp
   - vb
@@ -49,12 +53,68 @@ references:
   name: DialogueCustomEditor
   nameWithType: DialogueCustomEditor
   fullName: com.absence.dialoguesystem.editor.DialogueCustomEditor
-- uid: com.absence.dialoguesystem.editor.VariableBankCreationHandler
-  commentId: T:com.absence.dialoguesystem.editor.VariableBankCreationHandler
-  href: com.absence.dialoguesystem.editor.VariableBankCreationHandler.html
-  name: VariableBankCreationHandler
-  nameWithType: VariableBankCreationHandler
-  fullName: com.absence.dialoguesystem.editor.VariableBankCreationHandler
+- uid: com.absence.dialoguesystem.editor.SplitView
+  commentId: T:com.absence.dialoguesystem.editor.SplitView
+  href: com.absence.dialoguesystem.editor.SplitView.html
+  name: SplitView
+  nameWithType: SplitView
+  fullName: com.absence.dialoguesystem.editor.SplitView
+- uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.SplitView.html
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.SplitView
+    name: SplitView
+    href: com.absence.dialoguesystem.editor.SplitView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.SplitView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.SplitView
+    name: SplitView
+    href: com.absence.dialoguesystem.editor.SplitView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.SplitView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.BlackboardView
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView
+  href: com.absence.dialoguesystem.editor.BlackboardView.html
+  name: BlackboardView
+  nameWithType: BlackboardView
+  fullName: com.absence.dialoguesystem.editor.BlackboardView
+- uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.BlackboardView.html
+  name: BlackboardView.UxmlFactory
+  nameWithType: BlackboardView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.BlackboardView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  commentId: T:com.absence.dialoguesystem.editor.DialogueCreationHandler
+  href: com.absence.dialoguesystem.editor.DialogueCreationHandler.html
+  name: DialogueCreationHandler
+  nameWithType: DialogueCreationHandler
+  fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView
   commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView
   parent: com.absence.dialoguesystem.editor

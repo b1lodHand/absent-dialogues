@@ -43,9 +43,13 @@ items:
     content: >-
       [Serializable]
 
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html")]
+
       public class DialoguePlayer
     content.vb: >-
       <Serializable>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html")>
 
       Public Class DialoguePlayer
   inheritance:
@@ -54,6 +58,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html
 - uid: com.absence.dialoguesystem.DialoguePlayer.State
   commentId: P:com.absence.dialoguesystem.DialoguePlayer.State
   id: State
@@ -72,7 +81,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: State
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 31
+    startLine: 44
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -103,7 +112,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ClonedDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 37
+    startLine: 50
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -134,7 +143,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speaker
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 46
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -165,7 +174,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AdditionalSpeechData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 51
+    startLine: 64
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -196,7 +205,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 56
+    startLine: 69
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -227,7 +236,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Options
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 61
+    startLine: 74
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -258,7 +267,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 67
+    startLine: 80
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -289,7 +298,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasOptions
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 72
+    startLine: 85
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -320,7 +329,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasPerson
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 77
+    startLine: 90
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -351,7 +360,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnContinue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 83
+    startLine: 96
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -380,7 +389,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 89
+    startLine: 102
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -415,7 +424,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 106
+    startLine: 119
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -453,7 +462,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TeleportToRoot
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 123
+    startLine: 136
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -481,7 +490,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Continue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 135
+    startLine: 148
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

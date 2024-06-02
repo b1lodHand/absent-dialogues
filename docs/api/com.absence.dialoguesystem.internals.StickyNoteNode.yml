@@ -38,8 +38,14 @@ items:
   summary: Node which contains a user defined string.
   example: []
   syntax:
-    content: 'public sealed class StickyNoteNode : Node'
-    content.vb: Public NotInheritable Class StickyNoteNode Inherits Node
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
+
+      public sealed class StickyNoteNode : Node
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")>
+
+      Public NotInheritable Class StickyNoteNode Inherits Node
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -73,6 +79,12 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode.Speech
   commentId: F:com.absence.dialoguesystem.internals.StickyNoteNode.Speech
   id: Speech
@@ -91,7 +103,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -128,7 +140,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -160,7 +172,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowInMinimap
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -192,7 +204,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -224,7 +236,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -256,7 +268,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -295,7 +307,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -331,7 +343,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -367,7 +379,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -396,7 +408,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -432,7 +444,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -464,7 +476,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

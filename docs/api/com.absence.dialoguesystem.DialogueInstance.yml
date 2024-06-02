@@ -9,6 +9,7 @@ items:
   - com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
   - com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   - com.absence.dialoguesystem.DialogueInstance.ExitDialogue
+  - com.absence.dialoguesystem.DialogueInstance.InDialogue
   - com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   - com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
   - com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
@@ -23,11 +24,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueInstance
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
     startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
@@ -40,19 +41,25 @@ items:
 
       [DisallowMultipleComponent]
 
-      public class DialogueInstance : MonoBehaviour
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
+
+      public class DialogueInstance : MonoBehaviour, IUseDialogueInScene
     content.vb: >-
       <AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance")>
 
       <DisallowMultipleComponent>
 
-      Public Class DialogueInstance Inherits MonoBehaviour
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")>
+
+      Public Class DialogueInstance Inherits MonoBehaviour Implements IUseDialogueInScene
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
+  implements:
+  - com.absence.dialoguesystem.IUseDialogueInScene
   attributes:
   - type: UnityEngine.AddComponentMenu
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
@@ -62,6 +69,11 @@ items:
   - type: UnityEngine.DisallowMultipleComponent
     ctor: UnityEngine.DisallowMultipleComponent.#ctor
     arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html
 - uid: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   commentId: P:com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   id: ReferencedDialogue
@@ -75,16 +87,16 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ReferencedDialogue
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 29
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to get the original (not the cloned one) dialogue of this instance.
+  summary: The original dialogue provided for the script (not the cloned one).
   example: []
   syntax:
     content: public Dialogue ReferencedDialogue { get; }
@@ -93,6 +105,8 @@ items:
       type: com.absence.dialoguesystem.Dialogue
     content.vb: Public ReadOnly Property ReferencedDialogue As Dialogue
   overload: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue*
+  implements:
+  - com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
   commentId: P:com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
   id: ClonedDialogue
@@ -106,16 +120,16 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ClonedDialogue
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 34
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to get the cloned dialogue which the <xref href="com.absence.dialoguesystem.DialoguePlayer" data-throw-if-not-resolved="false"></xref> of this instance uses.
+  summary: The dialogue cloned and in-use.
   example: []
   syntax:
     content: public Dialogue ClonedDialogue { get; }
@@ -124,6 +138,8 @@ items:
       type: com.absence.dialoguesystem.Dialogue
     content.vb: Public Property ClonedDialogue As Dialogue
   overload: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue*
+  implements:
+  - com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.Player
   commentId: P:com.absence.dialoguesystem.DialogueInstance.Player
   id: Player
@@ -137,12 +153,12 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Player
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 57
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 52
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -168,12 +184,12 @@ items:
   type: Event
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 62
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 57
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -197,12 +213,12 @@ items:
   type: Event
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 67
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 62
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -226,12 +242,12 @@ items:
   type: Event
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 72
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 67
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -242,6 +258,37 @@ items:
     return:
       type: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
     content.vb: Public Event OnBeforeSpeech As DialogueInstance.SpeechEventHandler
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  id: InDialogue
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: InDialogue
+  nameWithType: DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: InDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 82
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to check if this instance is in progress right now.
+  example: []
+  syntax:
+    content: public bool InDialogue { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property InDialogue As Boolean
+  overload: com.absence.dialoguesystem.DialogueInstance.InDialogue*
 - uid: com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   commentId: M:com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   id: EnterDialogue
@@ -255,12 +302,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: EnterDialogue
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 114
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 115
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -286,12 +333,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogue
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 140
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 141
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -314,12 +361,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddExtension
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInstance.cs
-    startLine: 212
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 213
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -412,6 +459,13 @@ references:
   name: MonoBehaviour
   nameWithType: MonoBehaviour
   fullName: UnityEngine.MonoBehaviour
+- uid: com.absence.dialoguesystem.IUseDialogueInScene
+  commentId: T:com.absence.dialoguesystem.IUseDialogueInScene
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.IUseDialogueInScene.html
+  name: IUseDialogueInScene
+  nameWithType: IUseDialogueInScene
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene
 - uid: System
   commentId: N:System
   isExternal: true
@@ -431,6 +485,13 @@ references:
   name: ReferencedDialogue
   nameWithType: DialogueInstance.ReferencedDialogue
   fullName: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  commentId: P:com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
+  parent: com.absence.dialoguesystem.IUseDialogueInScene
+  href: com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ReferencedDialogue
+  name: ReferencedDialogue
+  nameWithType: IUseDialogueInScene.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ReferencedDialogue
 - uid: com.absence.dialoguesystem.Dialogue
   commentId: T:com.absence.dialoguesystem.Dialogue
   parent: com.absence.dialoguesystem
@@ -444,6 +505,13 @@ references:
   name: ClonedDialogue
   nameWithType: DialogueInstance.ClonedDialogue
   fullName: com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
+- uid: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  commentId: P:com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
+  parent: com.absence.dialoguesystem.IUseDialogueInScene
+  href: com.absence.dialoguesystem.IUseDialogueInScene.html#com_absence_dialoguesystem_IUseDialogueInScene_ClonedDialogue
+  name: ClonedDialogue
+  nameWithType: IUseDialogueInScene.ClonedDialogue
+  fullName: com.absence.dialoguesystem.IUseDialogueInScene.ClonedDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.Player*
   commentId: Overload:com.absence.dialoguesystem.DialogueInstance.Player
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_Player
@@ -566,6 +634,23 @@ references:
   - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
     name: SpeechEventHandler
     href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue*
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
+  name: InDialogue
+  nameWithType: DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: com.absence.dialoguesystem.DialogueDisplayer
   commentId: T:com.absence.dialoguesystem.DialogueDisplayer
   href: com.absence.dialoguesystem.DialogueDisplayer.html
@@ -578,17 +663,6 @@ references:
   name: EnterDialogue
   nameWithType: DialogueInstance.EnterDialogue
   fullName: com.absence.dialoguesystem.DialogueInstance.EnterDialogue
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: com.absence.dialoguesystem.DialogueInstance.ExitDialogue*
   commentId: Overload:com.absence.dialoguesystem.DialogueInstance.ExitDialogue
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ExitDialogue

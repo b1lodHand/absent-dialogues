@@ -10,6 +10,8 @@ namespace com.absence.dialoguesystem
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")]
+    [DisallowMultipleComponent]
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html")]
     public class DialogueSoundsPlayer : DialogueExtensionBase
     {
         [SerializeField, Required] private AudioSource m_source;

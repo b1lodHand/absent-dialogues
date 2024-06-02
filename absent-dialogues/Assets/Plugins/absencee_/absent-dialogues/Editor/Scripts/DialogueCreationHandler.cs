@@ -8,7 +8,11 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
-    public class VariableBankCreationHandler
+    /// <summary>
+    /// A script responsible for handling the creation of a dialogue.
+    /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")]
+    public static class DialogueCreationHandler
     {
         private static readonly string k_createPath = "Assets/Scriptables/Dialogue Graphs";
 

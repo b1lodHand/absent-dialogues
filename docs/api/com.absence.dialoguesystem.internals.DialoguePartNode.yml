@@ -39,8 +39,14 @@ items:
   summary: Node which let's you create more and seperate routes.
   example: []
   syntax:
-    content: 'public sealed class DialoguePartNode : Node'
-    content.vb: Public NotInheritable Class DialoguePartNode Inherits Node
+    content: >-
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html")]
+
+      public sealed class DialoguePartNode : Node
+    content.vb: >-
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html")>
+
+      Public NotInheritable Class DialoguePartNode Inherits Node
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -75,6 +81,12 @@ items:
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
   - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode.Next
   commentId: F:com.absence.dialoguesystem.internals.DialoguePartNode.Next
   id: Next
@@ -93,7 +105,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Next
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -130,7 +142,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialoguePartName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -157,7 +169,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -189,7 +201,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -221,7 +233,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -253,7 +265,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -289,7 +301,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -318,7 +330,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -357,7 +369,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -393,7 +405,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -429,7 +441,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -464,7 +476,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -496,7 +508,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DelayedClone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DialoguePartNode.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

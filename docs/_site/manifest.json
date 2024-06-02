@@ -172,10 +172,50 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.IUseDialogueInScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.IUseDialogueInScene.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.OptionText.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.OptionText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.BlackboardView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.BlackboardView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.DialogueCreationHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html"
         }
       },
       "version": ""
@@ -266,6 +306,26 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.SplitView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.SplitView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.SplitView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.SplitView.html"
         }
       },
       "version": ""
@@ -624,6 +684,16 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction/installing.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction/installing.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "images/logo5.svg",
       "output": {
@@ -639,6 +709,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "roadmap.md",
+      "output": {
+        ".html": {
+          "relative_path": "roadmap.html"
         }
       },
       "version": ""

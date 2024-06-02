@@ -7,6 +7,8 @@ items:
   items:
     - name: About
       href: docs/introduction/about.md
+    - name: Installing
+      gref: docs/introduction/installing.md
     - name: Basic Setup
       href: docs/introduction/basic-setup.md
     - name: Demos and Examples
@@ -31,6 +33,9 @@ items:
       href: docs/advanced/custom-nodes.md
     - name: Custom Dialogue Extensions
       href: docs/advanced/custom-dialogue-extensions.md
+
+- name: Roadmap
+  href: roadmap.md
 
 - name: API Documentation
   href: api/

@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
     /// <summary>
     /// Node which teleports the flow to a specific <see cref="DialoguePartNode"/>.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.GotoNode.html")]
     public sealed class GotoNode : Node
     {
         public string TargetDialoguePartName;

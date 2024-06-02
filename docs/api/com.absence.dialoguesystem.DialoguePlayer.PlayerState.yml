@@ -23,7 +23,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PlayerState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -50,10 +50,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NoSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: The player is not displaying any dialogue or the current node is not <xref href="com.absence.dialoguesystem.internals.IContainSpeech" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: NoSpeech = 0
     return:
@@ -76,10 +78,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: WaitingForOption
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 22
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: The player is displaying a speech which has some options and waiting for player to pick an option.
+  example: []
   syntax:
     content: WaitingForOption = 1
     return:
@@ -102,10 +106,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: WaitingForSkip
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 23
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: The player is displaying a speech without any options and waiting for the player to skip it.
+  example: []
   syntax:
     content: WaitingForSkip = 2
     return:
@@ -128,10 +134,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: WillExit
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 24
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
+  summary: The player's last node was a <xref href="com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: WillExit = 3
     return:
@@ -167,6 +175,13 @@ references:
   - uid: com.absence.dialoguesystem
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.internals.IContainSpeech
+  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html
+  name: IContainSpeech
+  nameWithType: IContainSpeech
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech
 - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
   commentId: T:com.absence.dialoguesystem.DialoguePlayer.PlayerState
   parent: com.absence.dialoguesystem
@@ -190,3 +205,55 @@ references:
   - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
     name: PlayerState
     href: com.absence.dialoguesystem.DialoguePlayer.PlayerState.html
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards
+  name: ExitDialogAfterwards
+  nameWithType: Node.ExitDialogAfterwards
+  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node

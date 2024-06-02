@@ -1,6 +1,6 @@
 # Mechanism
 
-In this section of the documentation, I'll be explaining you the base mechanism this tool relies on. I highly recommend you to read this section if you want to **contribute** to this tool or just wnat to **expand** the tool for your own use. And also, before starting, I recommend you to read the [Basic Setup](../introduction/basic-setup.md) section before reading this one. Let's give it a go!
+In this section of the documentation, I'll be explaining you the base mechanism this tool relies on. I highly recommend you to read this section if you want to **contribute** to this tool or just wnat to **expand** the tool for your own use. And also, before starting, I recommend you to read the [Basic Setup](https://b1lodhand.github.io/absent-dialogues/docs/introduction/basic-setup.html) section before reading this one. Let's give it a go!
 
 ## The Graph
 
@@ -44,8 +44,9 @@ The purpose with this is to prevent you from losing any data on the flow. None o
 
 **Dialogue Player** is the class responsible for using a dialogue. What it does is pretty simple.
 
-1. Clone the **referenced dialogue**.
-2. Let users decide what to do with the current **state**.
+1. **Clone** the **referenced dialogue** (when constructor gets called).
+2. Let you progress with the **'Continue(...)'** function.
+3. Let you decide what to do with the current **state**, and the **data** of the current node.
 
 And that's it!
 
@@ -58,4 +59,4 @@ I highly recommend reading the API Documentation of Dialogue player for further 
 
 ## What's Next?
 
-This section is ended. Go to [Nodes](nodes.md) to continue.
+This section is ended. Go to [Nodes](https://b1lodhand.github.io/absent-dialogues/docs/getting-started/nodes.html) to continue.

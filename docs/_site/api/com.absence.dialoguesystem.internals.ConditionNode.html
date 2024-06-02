@@ -67,8 +67,8 @@
                         </div>
                 </div>
                 <div class="footer">
+  © 2024 absencee_ All rights reserved.
   
-  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
                 </div>            </nav>
 
             <main class="main-panel">
@@ -214,7 +214,8 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp-firstpass.dll</h6>
   <h5 id="com_absence_dialoguesystem_internals_ConditionNode_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh</code></pre>
+    <pre><code class="lang-csharp hljs">[HelpURL(&quot;https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html&quot;)]
+public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -223,14 +224,15 @@
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Comparers.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Comparers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L17">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L19">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Comparers" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Comparers">Comparers</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;FixedVariableComparer&gt; Comparers</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;All of the comparers this node relies on.&quot;)]
+public List&lt;FixedVariableComparer&gt; Comparers</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -252,7 +254,7 @@
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_FalseNext.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.FalseNext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L15">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L16">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_FalseNext" data-uid="com.absence.dialoguesystem.internals.ConditionNode.FalseNext">FalseNext</h4>
   <div class="markdown level1 summary"></div>
@@ -282,14 +284,15 @@ public Node FalseNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Processor.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Processor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L16">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L18">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Processor" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Processor">Processor</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public VBProcessType Processor</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Use to declare what to do with the sum of the results of comparers.&quot;)]
+public VBProcessType Processor</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -311,7 +314,7 @@ public Node FalseNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_TrueNext.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.TrueNext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L14">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L15">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_TrueNext" data-uid="com.absence.dialoguesystem.internals.ConditionNode.TrueNext">TrueNext</h4>
   <div class="markdown level1 summary"></div>
@@ -343,7 +346,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L32">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L34">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_AddNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.AddNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">AddNextNode_Inline(Node, int)</h4>
@@ -383,7 +386,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L48">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L50">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_DelayedClone_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.DelayedClone*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_DelayedClone_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.DelayedClone(com.absence.dialoguesystem.Dialogue)">DelayedClone(Dialogue)</h4>
@@ -417,7 +420,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetClassName.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetClassName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L19">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L21">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetClassName_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetClassName*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetClassName" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetClassName">GetClassName()</h4>
@@ -451,7 +454,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetComparers.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetComparers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L89">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L95">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetComparers*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetComparers">GetComparers()</h4>
@@ -482,7 +485,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetNextNodes_Inline(System.Collections.Generic.List%7BSystem.ValueTuple%7BSystem.Int32%2Ccom.absence.dialoguesystem.internals.Node%7D%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L42">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L44">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetNextNodes_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)</h4>
@@ -517,7 +520,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetOutputPortNamesForCreation.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetOutputPortNamesForCreation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L66">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L68">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetOutputPortNamesForCreation_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetOutputPortNamesForCreation*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetOutputPortNamesForCreation" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetOutputPortNamesForCreation">GetOutputPortNamesForCreation()</h4>
@@ -551,7 +554,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetSetters.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetSetters%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L90">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L96">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetSetters*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetSetters">GetSetters()</h4>
@@ -582,7 +585,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_GetTitle.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.GetTitle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L20">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L22">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetTitle_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetTitle*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetTitle" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetTitle">GetTitle()</h4>
@@ -616,7 +619,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Pass_Inline_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Pass_Inline(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L22">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L24">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_Pass_Inline_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Pass_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Pass_Inline(System.Object[])">Pass_Inline(params object[])</h4>
@@ -651,7 +654,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L92">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L98">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh" data-uid="com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh">PerformEditorRefresh()</h4>
@@ -667,11 +670,12 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Process.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Process%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L71">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L77">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_Process_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Process*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Process" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Process">Process()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Use this to override (if you need) the checking result of this node.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -688,7 +692,8 @@ public Node TrueNext</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>Normally returns the sum of the results of node's comparer list in a way declared by <a class="xref" href="com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_Processor">Processor</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -697,7 +702,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Reach_Inline.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Reach_Inline%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L27">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L29">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_Reach_Inline_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Reach_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Reach_Inline">Reach_Inline()</h4>
@@ -715,7 +720,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_RemoveNextNode_Inline_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.RemoveNextNode_Inline(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L37">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L39">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_RemoveNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.RemoveNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.RemoveNextNode_Inline(System.Int32)">RemoveNextNode_Inline(int)</h4>
@@ -750,7 +755,7 @@ public Node TrueNext</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action%7Bcom.absence.dialoguesystem.internals.Node%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L59">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L61">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_Traverse_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Traverse*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__" data-uid="com.absence.dialoguesystem.internals.ConditionNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})">Traverse(Action&lt;Node&gt;)</h4>

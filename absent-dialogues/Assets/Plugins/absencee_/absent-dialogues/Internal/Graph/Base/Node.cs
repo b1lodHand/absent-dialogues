@@ -9,6 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// This is the base abstract class to derive from for any new node subtypes.
     /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Node.html")]
     public abstract class Node : ScriptableObject
     {
         /// <summary>
