@@ -1,5 +1,9 @@
 # absent-dialogues
 
+<a href="https://github.com/b1lodHand"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" /> </a>
+<a href="https://www.youtube.com/channel/UCJ6e4ooQWudmDiPUO4RExtw"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" /> </a>
+<a href="https://patreon.com/absencee_"><img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" /> </a>
+
 ## About <a name = "about"></a>
 Hello dear! You just stepped onto a completely free and open-source dialogue system for unity. With this tool, your dream game character dialogues can come true.  Well, I hear you saying "I love that, tell me how to get it!". Scroll down, I'll be there to guide you.
 
