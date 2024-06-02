@@ -2,7 +2,11 @@
 
 In this section of the documentation, you will learn how to write your own dialogue extensions. Let's start.
 
-To create custom dialogue extensions, you have to inherit the **DialogueExtensionBase** class.
+To create custom dialogue extensions, you have to inherit the [DialogueExtensionBase](https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html) class.
+
+I highy recommend reading the [API Documentation](https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html) to have a better understanding of the *extension* concept.
+
+If you want to add your custom extension to the **'Add Extension'** menu in the context menu of the [DialogueInstance](https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html), you can copy and paste the code below **inside** your new extension class.
 
 ```c#
 #if UNITY_EDITOR
