@@ -13,8 +13,9 @@ namespace com.absence.dialoguesystem.internals
     {
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
-        public VBProcessType Processor = VBProcessType.All;
-        public List<FixedVariableComparer> Comparers = new List<FixedVariableComparer>();
+
+        [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public VBProcessType Processor = VBProcessType.All;
+        [Tooltip("All of the comparers this node relies on.")] public List<FixedVariableComparer> Comparers = new List<FixedVariableComparer>();
 
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
@@ -68,6 +69,10 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>() { "True", "False" };
         }
 
+        /// <summary>
+        /// Use this to override (if you need) the checking result of this node.
+        /// </summary>
+        /// <returns>Normally returns the sum of the results of node's comparer list in a way declared by <see cref="Processor"/></returns>
         protected virtual bool Process()
         {
             if (Comparers.Count == 0) return true;

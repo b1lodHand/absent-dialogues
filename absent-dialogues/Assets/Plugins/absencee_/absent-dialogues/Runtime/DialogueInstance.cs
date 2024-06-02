@@ -80,10 +80,16 @@ namespace com.absence.dialoguesystem
         /// <param name="options">Options of this speech (null if there is no options).</param>
         public delegate void SpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
 
+        bool m_inDialogue = false;
+
+        /// <summary>
+        /// Use to check if this instance is in progress right now.
+        /// </summary>
+        public bool InDialogue => m_inDialogue;
+
         Person m_speaker;
         string m_speech;
         List<Option> m_options;
-        bool m_inDialogue = false;
 
         private void Awake()
         {
@@ -152,8 +158,8 @@ namespace com.absence.dialoguesystem
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
             GatherPlayerData();
-            InvokeBeforeSpeech();
             HandleAdditionalData();
+            InvokeBeforeSpeech();
 
             switch (state)
             {

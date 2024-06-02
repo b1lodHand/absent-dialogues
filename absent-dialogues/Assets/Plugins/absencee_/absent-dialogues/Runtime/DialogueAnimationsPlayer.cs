@@ -11,6 +11,7 @@ namespace com.absence.dialoguesystem
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Animations Player")]
+    [DisallowMultipleComponent]
     public class DialogueAnimationsPlayer : DialogueExtensionBase
     {
         /// <summary>

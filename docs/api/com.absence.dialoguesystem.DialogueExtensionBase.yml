@@ -7,6 +7,7 @@ items:
   children:
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   langs:
@@ -23,7 +24,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueExtensionBase
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -31,6 +32,12 @@ items:
     This is the base class to derive from in order to handle some custom logic
 
     over the system.
+  remarks: >-
+    Execution order goes like:
+
+    <pre><code class="lang-csharp">OnHandleAdditionalData(...);
+
+    OnBeforeSpeech(...);</code></pre>
   example: []
   syntax:
     content: >-
@@ -75,7 +82,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_instance
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 18
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -121,7 +128,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 39
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -156,7 +163,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 50
+    startLine: 57
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -197,7 +204,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
-    startLine: 58
+    startLine: 65
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -207,6 +214,34 @@ items:
     content: protected virtual void OnAfterCloning()
     content.vb: Protected Overridable Sub OnAfterCloning()
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning*
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  id: OnDialogueUpdate
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  langs:
+  - csharp
+  - vb
+  name: OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnDialogueUpdate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueExtensionBase.cs
+    startLine: 73
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to define what to do on each frame when the target instance is <xref href="com.absence.dialoguesystem.DialogueInstance.InDialogue" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: protected virtual void OnDialogueUpdate()
+    content.vb: Protected Overridable Sub OnDialogueUpdate()
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -526,3 +561,15 @@ references:
   name: OnAfterCloning
   nameWithType: DialogueExtensionBase.OnAfterCloning
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
+  name: InDialogue
+  nameWithType: DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  name: OnDialogueUpdate
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate

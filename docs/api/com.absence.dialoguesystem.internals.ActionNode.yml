@@ -35,11 +35,19 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ActionNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 11
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Node which invokes some actions on the flow.
+  remarks: >-
+    Execution order goes like:
+
+    <pre><code class="lang-csharp">VBActions.ForEach(action =&gt; action.Perform());
+
+    UnityEvents?.Invoke();
+
+    CustomAction();</code></pre>
   example: []
   syntax:
     content: 'public class ActionNode : Node, IContainVariableManipulators, IPerformEditorRefresh'
@@ -102,15 +110,27 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VBActions
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public List<FixedVariableSetter> VBActions
+    content: >-
+      [Tooltip("All of the 'VariableBank' based actions of this action node.")]
+
+      public List<FixedVariableSetter> VBActions
     return:
       type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
-    content.vb: Public VBActions As List(Of FixedVariableSetter)
+    content.vb: >-
+      <Tooltip("All of the 'VariableBank' based actions of this action node.")>
+
+      Public VBActions As List(Of FixedVariableSetter)
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: All of the 'VariableBank' based actions of this action node.
 - uid: com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   commentId: F:com.absence.dialoguesystem.internals.ActionNode.UnityEvents
   id: UnityEvents
@@ -129,15 +149,27 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UnityEvents
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 14
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public UnityEvent UnityEvents
+    content: >-
+      [Tooltip("All of the unity based events of this action node.")]
+
+      public UnityEvent UnityEvents
     return:
       type: UnityEngine.Events.UnityEvent
-    content.vb: Public UnityEvents As UnityEvent
+    content.vb: >-
+      <Tooltip("All of the unity based events of this action node.")>
+
+      Public UnityEvents As UnityEvent
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: All of the unity based events of this action node.
 - uid: com.absence.dialoguesystem.internals.ActionNode.Next
   commentId: F:com.absence.dialoguesystem.internals.ActionNode.Next
   id: Next
@@ -156,7 +188,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Next
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 16
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -193,10 +225,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CustomAction
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 17
+    startLine: 31
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
+  summary: Use to define what to do when this action node gets passed on the flow.
+  example: []
   syntax:
     content: protected virtual void CustomAction()
     content.vb: Protected Overridable Sub CustomAction()
@@ -219,7 +253,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 22
+    startLine: 36
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -251,7 +285,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 23
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -283,7 +317,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 25
+    startLine: 39
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -319,7 +353,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 36
+    startLine: 50
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -348,7 +382,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 41
+    startLine: 55
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -387,7 +421,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 45
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -423,7 +457,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 49
+    startLine: 63
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -459,7 +493,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DelayedClone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 54
+    startLine: 68
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -491,7 +525,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 64
+    startLine: 78
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -526,7 +560,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetComparers
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 70
+    startLine: 84
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -559,7 +593,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSetters
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 72
+    startLine: 86
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -592,7 +626,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PerformEditorRefresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs
-    startLine: 74
+    startLine: 88
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

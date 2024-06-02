@@ -44,8 +44,9 @@ The purpose with this is to prevent you from losing any data on the flow. None o
 
 **Dialogue Player** is the class responsible for using a dialogue. What it does is pretty simple.
 
-1. Clone the **referenced dialogue**.
-2. Let users decide what to do with the current **state**.
+1. **Clone** the **referenced dialogue** (when constructor gets called).
+2. Let you progress with the **'Continue(...)'** function.
+3. Let you decide what to do with the current **state**, and the **data** of the current node.
 
 And that's it!
 

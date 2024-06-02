@@ -14,7 +14,9 @@ namespace com.absence.dialoguesystem.internals
 
         [Space(10)]
 
-        public List<Option> Options = new List<Option>();
+        
+        [Tooltip("All of the options of this node.")] public List<Option> Options = new List<Option>();
+
         [HideInInspector] public string Speech;
 
         public override bool PersonDependent => true;

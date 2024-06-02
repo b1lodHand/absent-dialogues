@@ -63,8 +63,8 @@
                     </div>                    <div class="sidebar-item-separator"></div>
                 </div>
                 <div class="footer">
+  © 2024 absencee_ All rights reserved.
   
-  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
                 </div>            </nav>
 
             <main class="main-panel">
@@ -123,8 +123,9 @@
 <h2 id="the-dialogue-player">The Dialogue Player</h2>
 <p><strong>Dialogue Player</strong> is the class responsible for using a dialogue. What it does is pretty simple.</p>
 <ol>
-<li>Clone the <strong>referenced dialogue</strong>.</li>
-<li>Let users decide what to do with the current <strong>state</strong>.</li>
+<li><strong>Clone</strong> the <strong>referenced dialogue</strong> (when constructor gets called).</li>
+<li>Let you progress with the <strong>'Continue(...)'</strong> function.</li>
+<li>Let you decide what to do with the current <strong>state</strong>, and the <strong>data</strong> of the current node.</li>
 </ol>
 <p>And that's it!</p>
 <p>Dialogue Player does not perform anything by itself. It only updates it's state in order for you to know what is going on with the flow.</p>

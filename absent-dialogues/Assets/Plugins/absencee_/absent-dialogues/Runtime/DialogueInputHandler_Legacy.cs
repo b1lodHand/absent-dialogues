@@ -3,17 +3,18 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem
 {
+    /// <summary>
+    /// A small component with the responsibility of using the input comes from player (uses legacy input system of unity) on the dialogue.
+    /// </summary>
+    [RequireComponent(typeof(DialogueInstance))]
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")]
+    [DisallowMultipleComponent]
     public class DialogueInputHandler_Legacy : DialogueExtensionBase
     {
-        private void Update()
+        protected override void OnDialogueUpdate()
         {
             if (Input.GetKeyDown(KeyCode.Space) && m_instance.Player.State == DialoguePlayer.PlayerState.WaitingForSkip)
                 m_instance.Player.Continue();
-        }
-
-        protected override void OnHandleAdditionalData(AdditionalSpeechData data)
-        {
-            return;
         }
 
 #if UNITY_EDITOR

@@ -21,7 +21,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VBProcessType
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 97
+    startLine: 102
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -46,7 +46,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: All
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 99
+    startLine: 104
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Any
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
-    startLine: 100
+    startLine: 105
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

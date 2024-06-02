@@ -51,3 +51,7 @@ Components are essential when you're working with a tool which is integrated rig
 ![Imgur Image](https://imgur.com/23WeTkq.png)
 
 **Dialogue Input Handler (Legacy)** is the *extension* component responsible for handling the input comes from player during the dialogue. It is marked **legacy** because it only works with the old input system of unity.
+
+## What's Next?
+
+**Well, you know everything you need to know about this tool right now.** But if you want to modify it for your own use, you can go to [Advanced](../advanced/custom-nodes.md) to see how you can do it easily.

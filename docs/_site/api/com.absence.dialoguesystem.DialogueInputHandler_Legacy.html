@@ -67,8 +67,8 @@
                         </div>
                 </div>
                 <div class="footer">
+  © 2024 absencee_ All rights reserved.
   
-  <strong><a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href='https://www.singulink.com'>Singulink</a> = ♥</strong>
                 </div>            </nav>
 
             <main class="main-panel">
@@ -101,7 +101,8 @@
 
 
   <h1 id="com_absence_dialoguesystem_DialogueInputHandler_Legacy" data-uid="com.absence.dialoguesystem.DialogueInputHandler_Legacy" class="text-break">Class DialogueInputHandler_Legacy</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A small component with the responsibility of using the input comes from player (uses legacy input system of unity) on the dialogue.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -119,6 +120,9 @@
       <a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_m_instance">DialogueExtensionBase.m_instance</a>
     </div>
     <div>
+      <a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_">DialogueExtensionBase.OnHandleAdditionalData(AdditionalSpeechData)</a>
+    </div>
+    <div>
       <a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___">DialogueExtensionBase.OnBeforeSpeech(ref Person, ref string, ref List&lt;Option&gt;)</a>
     </div>
     <div>
@@ -129,46 +133,31 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp-firstpass.dll</h6>
   <h5 id="com_absence_dialoguesystem_DialogueInputHandler_Legacy_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DialogueInputHandler_Legacy : DialogueExtensionBase</code></pre>
+    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(DialogueInstance))]
+[AddComponentMenu(&quot;absencee_/absent-dialogues/Dialogue Input Handler (Legacy)&quot;)]
+[DisallowMultipleComponent]
+public class DialogueInputHandler_Legacy : DialogueExtensionBase</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueInputHandler_Legacy.cs/#L14">View Source</a>
   </span>
-  <a id="com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_" data-uid="com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData*"></a>
-  <h4 id="com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_" data-uid="com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)">OnHandleAdditionalData(AdditionalSpeechData)</h4>
-  <div class="markdown level1 summary"><p>Use to define what to do with the current <a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a>. Gets called when the <a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_m_instance">m_instance</a>
-progresses.</p>
+  <a id="com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate_" data-uid="com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate*"></a>
+  <h4 id="com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate" data-uid="com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate">OnDialogueUpdate()</h4>
+  <div class="markdown level1 summary"><p>Use to define what to do on each frame when the target instance is <a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue">InDialogue</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnHandleAdditionalData(AdditionalSpeechData data)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void OnDialogueUpdate()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a></td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_">DialogueExtensionBase.OnHandleAdditionalData(AdditionalSpeechData)</a></div>
+  <div><a class="xref" href="com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate">DialogueExtensionBase.OnDialogueUpdate()</a></div>
 
 </article>
                 </div>

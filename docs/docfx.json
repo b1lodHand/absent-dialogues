@@ -21,6 +21,7 @@
         "files": [
           "toc.yml",
           "index.md",
+          "roadmap.md",
           "docs/*.md",
           "docs/*.yml",
           "docs/**/*.md",
@@ -46,6 +47,7 @@
       "_appName": "absent-dialogues",
       "_appTitle": "absent-dialogues",
       "_appLogoPath": "images/logo5.svg",
+      "_appFooter": "© 2024 absencee_ All rights reserved.",
       "_enableSearch": true,
       "pdf": true
     }

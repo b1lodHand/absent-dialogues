@@ -355,6 +355,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech
   nameWithType: DialogueExtensionBase.OnBeforeSpeech
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  name: OnDialogueUpdate()
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
+  name: OnDialogueUpdate
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate_
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   name: OnHandleAdditionalData(AdditionalSpeechData)
   href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
@@ -380,19 +393,19 @@ references:
   commentId: T:com.absence.dialoguesystem.DialogueInputHandler_Legacy
   fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy
   nameWithType: DialogueInputHandler_Legacy
-- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  name: OnHandleAdditionalData(AdditionalSpeechData)
-  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
-  commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData(AdditionalSpeechData)
-- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData*
-  name: OnHandleAdditionalData
-  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnHandleAdditionalData_
-  commentId: Overload:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  name: OnDialogueUpdate()
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate()
+  nameWithType: DialogueInputHandler_Legacy.OnDialogueUpdate()
+- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate*
+  name: OnDialogueUpdate
+  href: api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html#com_absence_dialoguesystem_DialogueInputHandler_Legacy_OnDialogueUpdate_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
   isSpec: "True"
-  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnHandleAdditionalData
-  nameWithType: DialogueInputHandler_Legacy.OnHandleAdditionalData
+  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate
+  nameWithType: DialogueInputHandler_Legacy.OnDialogueUpdate
 - uid: com.absence.dialoguesystem.DialogueInstance
   name: DialogueInstance
   href: api/com.absence.dialoguesystem.DialogueInstance.html
@@ -460,6 +473,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
   nameWithType: DialogueInstance.ExitDialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  name: InDialogue
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
+  commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  nameWithType: DialogueInstance.InDialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.InDialogue*
+  name: InDialogue
+  href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue_
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.InDialogue
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueInstance.InDialogue
+  nameWithType: DialogueInstance.InDialogue
 - uid: com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   name: OnAfterCloning
   href: api/com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_OnAfterCloning
