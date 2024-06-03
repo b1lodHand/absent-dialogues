@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Node FalseNext;
 
         [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public VBProcessType Processor = VBProcessType.All;
-        [Tooltip("All of the comparers this node relies on.")] public List<FixedVariableComparer> Comparers = new List<FixedVariableComparer>();
+        [Tooltip("All of the comparers this node relies on.")] public List<NodeVariableComparer> Comparers = new();
 
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
@@ -92,12 +92,12 @@ namespace com.absence.dialoguesystem.internals
             return result;
         }
 
-        public List<FixedVariableComparer> GetComparers() => new(Comparers);
-        public List<FixedVariableSetter> GetSetters() => null;
+        public List<NodeVariableComparer> GetComparers() => new(Comparers);
+        public List<NodeVariableSetter> GetSetters() => null;
 
         public void PerformEditorRefresh()
         {
-            Comparers.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
+            Comparers.ForEach(comparer => comparer.BlackboardBank = Blackboard.Bank);
         }
     }
 }

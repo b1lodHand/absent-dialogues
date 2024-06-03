@@ -161,11 +161,11 @@ namespace com.absence.dialoguesystem.editor
         private void RefreshVariableManipulators()
         {
             IContainVariableManipulators nodeAsManipulator = Node as IContainVariableManipulators;
-            List<FixedVariableComparer> comparers = nodeAsManipulator.GetComparers();
-            List<FixedVariableSetter> setters = nodeAsManipulator.GetSetters();
+            List<NodeVariableComparer> comparers = nodeAsManipulator.GetComparers();
+            List<NodeVariableSetter> setters = nodeAsManipulator.GetSetters();
 
-            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.SetFixedBank(Node.Blackboard.Bank));
-            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.SetFixedBank(Node.Blackboard.Bank));
+            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.BlackboardBank = Node.Blackboard.Bank);
+            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.BlackboardBank = Node.Blackboard.Bank);
         }
         private void RefreshPersonDropdown()
         {

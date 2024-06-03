@@ -79,7 +79,7 @@ namespace com.absence.dialoguesystem.internals
             /// A list of all <see cref="VariableComparer"/>s which has a role on determining this option's
             /// visibility on display.
             /// </summary>
-            public List<FixedVariableComparer> ShowIfList = new();
+            public List<NodeVariableComparer> ShowIfList = new();
 
             /// <summary>
             /// Use to clone this instance.

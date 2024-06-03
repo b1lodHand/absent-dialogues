@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 566, y: 153}
+  Position: {x: 565.60004, y: 158.65001}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -243,17 +243,6 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: -1965666318695130335}
-  - Speech: 
-    AdditionalData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 0}
   Speech: Oh yeah, I've totally forgotten about that! What have you done?
 --- !u!114 &-914008930283711827
 MonoBehaviour:

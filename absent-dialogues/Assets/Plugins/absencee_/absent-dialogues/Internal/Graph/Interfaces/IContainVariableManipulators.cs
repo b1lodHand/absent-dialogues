@@ -1,4 +1,3 @@
-using com.absence.variablesystem;
 using System.Collections.Generic;
 
 namespace com.absence.dialoguesystem.internals
@@ -14,12 +13,12 @@ namespace com.absence.dialoguesystem.internals
         /// A list of comparers which you want to restrict in terms of <see cref="VariableBank"/> selection
         /// </summary>
         /// <returns></returns>
-        List<FixedVariableComparer> GetComparers();
+        List<NodeVariableComparer> GetComparers();
 
         /// <summary>
         /// A list of comparers which you want to restrict in terms of <see cref="VariableBank"/> selection
         /// </summary>
         /// <returns></returns>
-        List<FixedVariableSetter> GetSetters();
+        List<NodeVariableSetter> GetSetters();
     }
 }

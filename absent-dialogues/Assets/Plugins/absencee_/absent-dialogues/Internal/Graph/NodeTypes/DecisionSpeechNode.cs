@@ -84,9 +84,9 @@ namespace com.absence.dialoguesystem.internals
             });
         }
 
-        public List<FixedVariableComparer> GetComparers()
+        public List<NodeVariableComparer> GetComparers()
         {
-            List<FixedVariableComparer> result = new();
+            List<NodeVariableComparer> result = new();
 
             Options.ForEach(option =>
             {
@@ -99,13 +99,13 @@ namespace com.absence.dialoguesystem.internals
             return result;
         }
 
-        public List<FixedVariableSetter> GetSetters() => null;
+        public List<NodeVariableSetter> GetSetters() => null;
 
         public void PerformEditorRefresh()
         {
             Options.ForEach(option =>
             {
-                option.Visibility.ShowIfList.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
+                option.Visibility.ShowIfList.ForEach(comparer => comparer.BlackboardBank = Blackboard.Bank);
             });
         }
     }

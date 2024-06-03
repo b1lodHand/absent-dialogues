@@ -1,0 +1,26 @@
+.container {
+	flex-direction: row;
+	align-items: flex-start;
+	align-self: stretch;
+	padding-right: 10
+}
+
+.bankSelector {
+	flex-shrink: 4;
+	flex-grow: 1;
+}
+
+.varSelector {
+	flex-shrink: 4;
+	flex-grow: 1;
+}
+
+.setTypeSelector {
+	flex-shrink: 6;
+	flex-grow: 1;
+}
+
+.valueField {
+	flex-shrink: 4;
+	flex-grow: 1;
+}

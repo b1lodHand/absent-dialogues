@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem.internals
     public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
     {
         [Tooltip("All of the 'VariableBank' based actions of this action node.")] 
-        public List<FixedVariableSetter> VBActions = new List<FixedVariableSetter>();
+        public List<NodeVariableSetter> VBActions = new();
 
         [Tooltip("All of the unity based events of this action node.")] public UnityEvent UnityEvents;
 
@@ -83,13 +83,13 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public List<FixedVariableComparer> GetComparers() => null;
+        public List<NodeVariableComparer> GetComparers() => null;
 
-        public List<FixedVariableSetter> GetSetters() => new(VBActions);
+        public List<NodeVariableSetter> GetSetters() => new(VBActions);
 
         public void PerformEditorRefresh()
         {
-            VBActions.ForEach(setter => setter.SetFixedBank(Blackboard.Bank));
+            VBActions.ForEach(setter => setter.BlackboardBank = Blackboard.Bank);
         }
     }
 

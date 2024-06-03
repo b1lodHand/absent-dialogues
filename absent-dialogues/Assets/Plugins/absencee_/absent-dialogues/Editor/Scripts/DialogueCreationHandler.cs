@@ -1,6 +1,5 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.variablesystem;
-using com.absence.variablesystem.Editor;
 using System.IO;
 using UnityEditor;
 using UnityEditor.ProjectWindowCallback;
@@ -40,10 +39,8 @@ namespace com.absence.dialoguesystem.editor
                 var blackboardBank = ScriptableObject.CreateInstance<VariableBank>();
 
                 blackboardBank.name = $"{itemCreated.name} Blackboard VB";
-                blackboardBank.OnDestroyAction += () =>
-                {
-                    VariableBankDatabase.Refresh();
-                };
+                blackboardBank.AvoidCloning = true;
+                blackboardBank.ShowOnList = false;
 
                 AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
 
@@ -53,7 +50,6 @@ namespace com.absence.dialoguesystem.editor
 
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
-                VariableBankDatabase.Refresh();
 
                 Selection.activeObject = itemCreated;
             }
