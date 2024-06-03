@@ -105,7 +105,7 @@ namespace com.absence.dialoguesystem.internals
         {
             Options.ForEach(option =>
             {
-                option.Visibility.ShowIfList.ForEach(comparer => comparer.BlackboardBank = Blackboard.Bank);
+                option.Visibility.ShowIfList.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
             });
         }
     }

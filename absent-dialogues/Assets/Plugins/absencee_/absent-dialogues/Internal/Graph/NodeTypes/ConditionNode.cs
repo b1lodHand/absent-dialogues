@@ -97,7 +97,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void PerformEditorRefresh()
         {
-            Comparers.ForEach(comparer => comparer.BlackboardBank = Blackboard.Bank);
+            Comparers.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
         }
     }
 }

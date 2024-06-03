@@ -1,5 +1,6 @@
 using com.absence.variablesystem;
 using com.absence.variablesystem.internals;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -8,9 +9,17 @@ namespace com.absence.dialoguesystem.internals
     {
         public VariableBank BlackboardBank { get; set; }
 
-        public override bool HasFixedBank => throw new System.NotImplementedException();
+        public override bool HasFixedBank => true;
 
         public override VariableBank GetRuntimeBank() => BlackboardBank;
+
+        public void SetBlackboardBank(VariableBank originalBlackboardBank)
+        {
+            if (Application.isPlaying) return;
+
+            BlackboardBank = originalBlackboardBank;
+            m_targetBankGuid = BlackboardBank.GUID;
+        }
 
         public NodeVariableSetter Clone(VariableBank clonedVariableBank)
         {

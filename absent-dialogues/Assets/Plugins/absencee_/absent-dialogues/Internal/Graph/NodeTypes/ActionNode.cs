@@ -89,7 +89,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void PerformEditorRefresh()
         {
-            VBActions.ForEach(setter => setter.BlackboardBank = Blackboard.Bank);
+            VBActions.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
         }
     }
 
