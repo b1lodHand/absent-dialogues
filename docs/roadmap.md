@@ -15,6 +15,7 @@ In this section of the documentation, you will see some details about the past a
 * Custom documentation for components and nodes.
 * More and better API documentation.
 * Small bugfixes.
+* Integration of new **absent-variablebanks**.
 
 ## Upcoming Version
 * *Not certain yet.*
@@ -28,6 +29,8 @@ In this section of the documentation, you will see some details about the past a
 * New images and gifs for the documentation.
 * New icons for the components, nodes and etc.
 * An extension based on the absent-saves package.
+* Breaking the dependency with absent-variablebanks (in order to reduce complexity).
+* Undo/Redo inspector loading bug fix.
 
 ## In the Future (Without Certainty)
 * Import/Export/Backup support.

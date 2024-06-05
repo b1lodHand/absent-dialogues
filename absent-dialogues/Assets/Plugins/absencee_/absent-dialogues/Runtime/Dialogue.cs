@@ -45,16 +45,13 @@ namespace com.absence.dialoguesystem
         public bool IsClone => ClonedFrom != null;
 
         /// <summary>
-        /// Action which will get invoked if any value gets changed in the inspector when this dialogue is selected.
+        /// Action which will get invoked if <see cref="OnValidate"/> gets called in the editor.
         /// </summary>
-        public event Action OnEditorRefresh;
+        public event Action OnValidateAction;
 
-        /// <summary>
-        /// Invokes the <see cref="OnEditorRefresh"/>.
-        /// </summary>
-        public void PerformEditorRefresh()
+        private void OnValidate()
         {
-            OnEditorRefresh?.Invoke();
+            OnValidateAction?.Invoke();
         }
 
         /// <summary>

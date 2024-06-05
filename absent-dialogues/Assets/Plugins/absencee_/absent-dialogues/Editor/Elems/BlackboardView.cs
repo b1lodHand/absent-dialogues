@@ -1,4 +1,4 @@
-using com.absence.variablesystem;
+using com.absence.variablebanks;
 using com.absence.dialoguesystem.internals;
 using UnityEditor;
 using UnityEngine;

@@ -1,4 +1,4 @@
-using com.absence.variablesystem;
+using com.absence.variablebanks;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.internals
         public Blackboard Clone()
         {
             Blackboard blackboard = new Blackboard();
-            blackboard.Bank = ScriptableObject.Instantiate(Bank);
+            blackboard.Bank = Bank.Clone();
 
             return blackboard;
         }

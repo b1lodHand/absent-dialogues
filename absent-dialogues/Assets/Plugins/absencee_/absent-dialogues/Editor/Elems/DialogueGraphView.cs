@@ -75,6 +75,7 @@ namespace com.absence.dialoguesystem.editor
             Refresh();
             AssetDatabase.SaveAssets();
         }
+
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
         {
             return ports.ToList().Where(endPort =>
@@ -158,11 +159,13 @@ namespace com.absence.dialoguesystem.editor
 
         internal void PopulateView(Dialogue dialogue)
         {
-            this.m_dialogue = dialogue;
+            Dialogue previousDialogue = m_dialogue;
+            m_dialogue = dialogue;
 
             ClearViewWithoutNotification();
 
             if (m_dialogue == null) return;
+
             if (m_dialogue.RootNode == null)
             {
                 m_dialogue.RootNode = m_dialogue.CreateNode(typeof(RootNode)) as RootNode;
@@ -255,7 +258,8 @@ namespace com.absence.dialoguesystem.editor
 
         internal void SelectNode(Node node)
         {
-            ISelectable selectableNode = FindNodeView(node).GetFirstOfType<ISelectable>();
+            NodeView view = FindNodeView(node);
+            ISelectable selectableNode = view.GetFirstOfType<ISelectable>();
 
             if (selectableNode == null) return;
 

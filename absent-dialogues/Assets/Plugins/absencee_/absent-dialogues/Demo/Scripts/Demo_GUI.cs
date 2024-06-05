@@ -1,6 +1,5 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem;
-using com.absence.variablesystem;
 using UnityEngine;
 
 [RequireComponent(typeof(DialogueInstance))]
@@ -12,26 +11,19 @@ public class Demo_GUI : MonoBehaviour
 
     [SerializeField, Readonly] private DialogueInstance m_instance;
 
-    private Variable_Boolean b_missionPending;
-    private Variable_Boolean b_missionDone;
-    private Variable_Boolean b_missionCommitted;
-
-    private void Start()
-    {
-        b_missionPending = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONPENDING);
-        b_missionDone = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONDONE);
-        b_missionCommitted = m_instance.Player.ClonedDialogue.Blackboard.Bank.GetBoolean(K_MISSIONCOMMITTED);
-    }
-
     private void OnGUI()
     {
-        if (!b_missionPending.Value) return;
-        if (b_missionDone.Value) return;
-        if (b_missionCommitted.Value) return;
+        m_instance.Player.ClonedDialogue.Blackboard.Bank.TryGetBoolean(K_MISSIONPENDING, out bool pending);
+        m_instance.Player.ClonedDialogue.Blackboard.Bank.TryGetBoolean(K_MISSIONDONE, out bool done);
+        m_instance.Player.ClonedDialogue.Blackboard.Bank.TryGetBoolean(K_MISSIONCOMMITTED, out bool committed);
+
+        if (!pending) return;
+        if (done) return;
+        if (committed) return;
 
         if(GUI.Button(new Rect(10f, 10f, 100f, 20f), "Get apples."))
         {
-            b_missionDone.Value = true;
+            m_instance.Player.ClonedDialogue.Blackboard.Bank.SetBoolean(K_MISSIONDONE, true);
         }
     }
 

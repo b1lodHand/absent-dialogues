@@ -10,13 +10,13 @@ namespace com.absence.dialoguesystem.internals
     /// Node which re-routes the flow under some conditions.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
-    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
+    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
 
         [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public VBProcessType Processor = VBProcessType.All;
-        [Tooltip("All of the comparers this node relies on.")] public List<FixedVariableComparer> Comparers = new List<FixedVariableComparer>();
+        [Tooltip("All of the comparers this node relies on.")] public List<NodeVariableComparer> Comparers = new();
 
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
@@ -92,12 +92,14 @@ namespace com.absence.dialoguesystem.internals
             return result;
         }
 
-        public List<FixedVariableComparer> GetComparers() => new(Comparers);
-        public List<FixedVariableSetter> GetSetters() => null;
+        public List<NodeVariableComparer> GetComparers() => new(Comparers);
+        public List<NodeVariableSetter> GetSetters() => null;
 
-        public void PerformEditorRefresh()
+        protected override void OnValidate()
         {
-            Comparers.ForEach(comparer => comparer.SetFixedBank(Blackboard.Bank));
+            Comparers.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
+
+            base.OnValidate();
         }
     }
 }

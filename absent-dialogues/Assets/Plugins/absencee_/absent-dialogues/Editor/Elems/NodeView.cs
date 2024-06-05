@@ -94,8 +94,8 @@ namespace com.absence.dialoguesystem.editor
 
             if(node.PersonDependent)
             {
-                node.MasterDialogue.OnEditorRefresh -= RefreshPersonDropdown;
-                node.MasterDialogue.OnEditorRefresh += RefreshPersonDropdown;
+                node.MasterDialogue.OnValidateAction -= RefreshPersonDropdown;
+                node.MasterDialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
             if(node is DecisionSpeechNode)
@@ -161,11 +161,11 @@ namespace com.absence.dialoguesystem.editor
         private void RefreshVariableManipulators()
         {
             IContainVariableManipulators nodeAsManipulator = Node as IContainVariableManipulators;
-            List<FixedVariableComparer> comparers = nodeAsManipulator.GetComparers();
-            List<FixedVariableSetter> setters = nodeAsManipulator.GetSetters();
+            List<NodeVariableComparer> comparers = nodeAsManipulator.GetComparers();
+            List<NodeVariableSetter> setters = nodeAsManipulator.GetSetters();
 
-            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.SetFixedBank(Node.Blackboard.Bank));
-            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.SetFixedBank(Node.Blackboard.Bank));
+            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.BlackboardBank = Node.Blackboard.Bank);
+            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.BlackboardBank = Node.Blackboard.Bank);
         }
         private void RefreshPersonDropdown()
         {
@@ -298,12 +298,20 @@ namespace com.absence.dialoguesystem.editor
         #region Decision Speech Node
         private void RefreshOptionLabels()
         {
-            m_optionElems.ForEach(optionElem =>
+            try
             {
-                Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
+                m_optionElems.ForEach(optionElem =>
+                {
+                    Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
 
-                showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
-            });
+                    showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
+                });
+            }
+
+            catch
+            {
+                return;
+            }
         }
         private void CreateOption_DecisionSpeechNode()
         {
