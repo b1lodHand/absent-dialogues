@@ -3220,11 +3220,11 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
   nameWithType: NodeVariableComparer.BlackboardBank
-- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablesystem.VariableBank)
   name: Clone(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_Clone_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_Clone_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablesystem.VariableBank)
   nameWithType: NodeVariableComparer.Clone(VariableBank)
 - uid: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone*
   name: Clone
@@ -3259,11 +3259,11 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
   nameWithType: NodeVariableComparer.HasFixedBank
-- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   name: SetBlackboardBank(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_SetBlackboardBank_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_SetBlackboardBank_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   nameWithType: NodeVariableComparer.SetBlackboardBank(VariableBank)
 - uid: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank*
   name: SetBlackboardBank
@@ -3291,11 +3291,11 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank
   nameWithType: NodeVariableSetter.BlackboardBank
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
   name: Clone(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_Clone_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_Clone_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
   nameWithType: NodeVariableSetter.Clone(VariableBank)
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone*
   name: Clone
@@ -3330,11 +3330,11 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank
   nameWithType: NodeVariableSetter.HasFixedBank
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   name: SetBlackboardBank(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_SetBlackboardBank_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_SetBlackboardBank_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   nameWithType: NodeVariableSetter.SetBlackboardBank(VariableBank)
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank*
   name: SetBlackboardBank
@@ -3355,11 +3355,11 @@ references:
   commentId: F:com.absence.dialoguesystem.internals.Option.AdditionalData
   fullName: com.absence.dialoguesystem.internals.Option.AdditionalData
   nameWithType: Option.AdditionalData
-- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
   name: Clone(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
   nameWithType: Option.Clone(VariableBank)
 - uid: com.absence.dialoguesystem.internals.Option.Clone*
   name: Clone
@@ -3393,11 +3393,11 @@ references:
   commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
   fullName: com.absence.dialoguesystem.internals.Option.ShowIf
   nameWithType: Option.ShowIf
-- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
   name: Clone(VariableBank)
-  href: api/com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablebanks_VariableBank_
-  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
+  href: api/com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablesystem_VariableBank_
+  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
   nameWithType: Option.ShowIf.Clone(VariableBank)
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone*
   name: Clone

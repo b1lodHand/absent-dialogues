@@ -6,10 +6,10 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank
-  - com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
+  - com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
   - com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank
   - com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank
-  - com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  - com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   langs:
   - csharp
   - vb
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeVariableSetter
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -41,20 +41,20 @@ items:
       Public Class NodeVariableSetter Inherits BaseVariableSetter
   inheritance:
   - System.Object
-  - com.absence.variablebanks.internals.BaseVariableSetter
+  - com.absence.variablesystem.BaseVariableSetter
   inheritedMembers:
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_setType
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
-  - com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
-  - com.absence.variablebanks.internals.BaseVariableSetter.Perform
-  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
-  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
-  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
-  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  - com.absence.variablesystem.BaseVariableSetter.m_setType
+  - com.absence.variablesystem.BaseVariableSetter.m_targetBankGuid
+  - com.absence.variablesystem.BaseVariableSetter.m_targetVariableName
+  - com.absence.variablesystem.BaseVariableSetter.m_intValue
+  - com.absence.variablesystem.BaseVariableSetter.m_floatValue
+  - com.absence.variablesystem.BaseVariableSetter.m_stringValue
+  - com.absence.variablesystem.BaseVariableSetter.m_boolValue
+  - com.absence.variablesystem.BaseVariableSetter.Perform
+  - com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
+  - com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
+  - com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
+  - com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
   attributes:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
@@ -77,7 +77,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BlackboardBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -87,7 +87,7 @@ items:
     content: public VariableBank BlackboardBank { get; set; }
     parameters: []
     return:
-      type: com.absence.variablebanks.VariableBank
+      type: com.absence.variablesystem.VariableBank
     content.vb: Public Property BlackboardBank As VariableBank
   overload: com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank*
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank
@@ -108,11 +108,10 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasFixedBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: Will the bank selector be hidden in the editor?
   example: []
   syntax:
     content: public override bool HasFixedBank { get; }
@@ -120,7 +119,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides ReadOnly Property HasFixedBank As Boolean
-  overridden: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  overridden: com.absence.variablesystem.BaseVariableSetter.HasFixedBank
   overload: com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank*
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank
   commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank
@@ -140,30 +139,28 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetRuntimeBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: Override to define how this setter will find it's runtime bank.
   example: []
   syntax:
     content: protected override VariableBank GetRuntimeBank()
     return:
-      type: com.absence.variablebanks.VariableBank
-      description: The runtime bank or null
+      type: com.absence.variablesystem.VariableBank
     content.vb: Protected Overrides Function GetRuntimeBank() As VariableBank
-  overridden: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  overridden: com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank
   overload: com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank*
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
-  id: SetBlackboardBank(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
+  id: SetBlackboardBank(com.absence.variablesystem.VariableBank)
   parent: com.absence.dialoguesystem.internals.NodeVariableSetter
   langs:
   - csharp
   - vb
   name: SetBlackboardBank(VariableBank)
   nameWithType: NodeVariableSetter.SetBlackboardBank(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank(com.absence.variablesystem.VariableBank)
   type: Method
   source:
     remote:
@@ -172,7 +169,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetBlackboardBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -182,20 +179,20 @@ items:
     content: public void SetBlackboardBank(VariableBank originalBlackboardBank)
     parameters:
     - id: originalBlackboardBank
-      type: com.absence.variablebanks.VariableBank
+      type: com.absence.variablesystem.VariableBank
       description: Target bank.
     content.vb: Public Sub SetBlackboardBank(originalBlackboardBank As VariableBank)
   overload: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank*
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
-  id: Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
+  id: Clone(com.absence.variablesystem.VariableBank)
   parent: com.absence.dialoguesystem.internals.NodeVariableSetter
   langs:
   - csharp
   - vb
   name: Clone(VariableBank)
   nameWithType: NodeVariableSetter.Clone(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone(com.absence.variablesystem.VariableBank)
   type: Method
   source:
     remote:
@@ -204,7 +201,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableSetter.cs
-    startLine: 38
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -214,7 +211,7 @@ items:
     content: public NodeVariableSetter Clone(VariableBank clonedVariableBank)
     parameters:
     - id: clonedVariableBank
-      type: com.absence.variablebanks.VariableBank
+      type: com.absence.variablesystem.VariableBank
     return:
       type: com.absence.dialoguesystem.internals.NodeVariableSetter
       description: The clone.
@@ -270,180 +267,180 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: com.absence.variablebanks.internals.BaseVariableSetter
-  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter
-  parent: com.absence.variablebanks.internals
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+- uid: com.absence.variablesystem.BaseVariableSetter
+  commentId: T:com.absence.variablesystem.BaseVariableSetter
+  parent: com.absence.variablesystem
+  isExternal: true
   name: BaseVariableSetter
   nameWithType: BaseVariableSetter
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_setType
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_setType
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_setType
+  fullName: com.absence.variablesystem.BaseVariableSetter
+- uid: com.absence.variablesystem.BaseVariableSetter.m_setType
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_setType
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_setType
   nameWithType: BaseVariableSetter.m_setType
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_setType
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_targetBankGuid
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_setType
+- uid: com.absence.variablesystem.BaseVariableSetter.m_targetBankGuid
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_targetBankGuid
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_targetBankGuid
   nameWithType: BaseVariableSetter.m_targetBankGuid
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_targetVariableName
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_targetBankGuid
+- uid: com.absence.variablesystem.BaseVariableSetter.m_targetVariableName
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_targetVariableName
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_targetVariableName
   nameWithType: BaseVariableSetter.m_targetVariableName
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_intValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_targetVariableName
+- uid: com.absence.variablesystem.BaseVariableSetter.m_intValue
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_intValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_intValue
   nameWithType: BaseVariableSetter.m_intValue
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_floatValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_intValue
+- uid: com.absence.variablesystem.BaseVariableSetter.m_floatValue
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_floatValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_floatValue
   nameWithType: BaseVariableSetter.m_floatValue
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_stringValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_floatValue
+- uid: com.absence.variablesystem.BaseVariableSetter.m_stringValue
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_stringValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_stringValue
   nameWithType: BaseVariableSetter.m_stringValue
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
-  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_m_boolValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_stringValue
+- uid: com.absence.variablesystem.BaseVariableSetter.m_boolValue
+  commentId: F:com.absence.variablesystem.BaseVariableSetter.m_boolValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: m_boolValue
   nameWithType: BaseVariableSetter.m_boolValue
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+  fullName: com.absence.variablesystem.BaseVariableSetter.m_boolValue
+- uid: com.absence.variablesystem.BaseVariableSetter.Perform
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.Perform
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: Perform()
   nameWithType: BaseVariableSetter.Perform()
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform()
+  fullName: com.absence.variablesystem.BaseVariableSetter.Perform()
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform
     name: Perform
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+    isExternal: true
   - name: (
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform
     name: Perform
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+    isExternal: true
   - name: (
   - name: )
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Boolean_com_absence_variablebanks_VariableBank_
+- uid: com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: Perform_Boolean(VariableBank)
   nameWithType: BaseVariableSetter.Perform_Boolean(VariableBank)
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
     name: Perform_Boolean
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Boolean_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Boolean(com.absence.variablesystem.VariableBank)
     name: Perform_Boolean
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Boolean_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_String_com_absence_variablebanks_VariableBank_
+- uid: com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: Perform_String(VariableBank)
   nameWithType: BaseVariableSetter.Perform_String(VariableBank)
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
     name: Perform_String
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_String_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
     name: Perform_String
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_String_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Float_com_absence_variablebanks_VariableBank_
+- uid: com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: Perform_Float(VariableBank)
   nameWithType: BaseVariableSetter.Perform_Float(VariableBank)
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
     name: Perform_Float
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Float_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
     name: Perform_Float
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Float_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Int_com_absence_variablebanks_VariableBank_
+- uid: com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: Perform_Int(VariableBank)
   nameWithType: BaseVariableSetter.Perform_Int(VariableBank)
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
     name: Perform_Int
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Int_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  - uid: com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
     name: Perform_Int
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Int_com_absence_variablebanks_VariableBank_
+    isExternal: true
   - name: (
-  - uid: com.absence.variablebanks.VariableBank
+  - uid: com.absence.variablesystem.VariableBank
     name: VariableBank
-    href: com.absence.variablebanks.VariableBank.html
+    isExternal: true
   - name: )
 - uid: System
   commentId: N:System
@@ -452,94 +449,56 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: com.absence.variablebanks.internals
-  commentId: N:com.absence.variablebanks.internals
-  href: com.html
-  name: com.absence.variablebanks.internals
-  nameWithType: com.absence.variablebanks.internals
-  fullName: com.absence.variablebanks.internals
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
   spec.csharp:
   - uid: com
     name: com
-    href: com.html
+    isExternal: true
   - name: .
   - uid: com.absence
     name: absence
-    href: com.absence.html
+    isExternal: true
   - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
-  - name: .
-  - uid: com.absence.variablebanks.internals
-    name: internals
-    href: com.absence.variablebanks.internals.html
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
   spec.vb:
   - uid: com
     name: com
-    href: com.html
+    isExternal: true
   - name: .
   - uid: com.absence
     name: absence
-    href: com.absence.html
+    isExternal: true
   - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
-  - name: .
-  - uid: com.absence.variablebanks.internals
-    name: internals
-    href: com.absence.variablebanks.internals.html
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank*
   commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank
   href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_BlackboardBank
   name: BlackboardBank
   nameWithType: NodeVariableSetter.BlackboardBank
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.BlackboardBank
-- uid: com.absence.variablebanks.VariableBank
-  commentId: T:com.absence.variablebanks.VariableBank
-  parent: com.absence.variablebanks
-  href: com.absence.variablebanks.VariableBank.html
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablebanks.VariableBank
-- uid: com.absence.variablebanks
-  commentId: N:com.absence.variablebanks
-  href: com.html
-  name: com.absence.variablebanks
-  nameWithType: com.absence.variablebanks
-  fullName: com.absence.variablebanks
-  spec.csharp:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
-  spec.vb:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
-  commentId: P:com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_HasFixedBank
+  fullName: com.absence.variablesystem.VariableBank
+- uid: com.absence.variablesystem.BaseVariableSetter.HasFixedBank
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.HasFixedBank
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: HasFixedBank
   nameWithType: BaseVariableSetter.HasFixedBank
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  fullName: com.absence.variablesystem.BaseVariableSetter.HasFixedBank
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank*
   commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableSetter.HasFixedBank
   href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_HasFixedBank
@@ -557,23 +516,23 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
-  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
-  parent: com.absence.variablebanks.internals.BaseVariableSetter
-  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_GetRuntimeBank
+- uid: com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank
+  commentId: M:com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
   name: GetRuntimeBank()
   nameWithType: BaseVariableSetter.GetRuntimeBank()
-  fullName: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank()
+  fullName: com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank()
   spec.csharp:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  - uid: com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank
     name: GetRuntimeBank
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_GetRuntimeBank
+    isExternal: true
   - name: (
   - name: )
   spec.vb:
-  - uid: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  - uid: com.absence.variablesystem.BaseVariableSetter.GetRuntimeBank
     name: GetRuntimeBank
-    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_GetRuntimeBank
+    isExternal: true
   - name: (
   - name: )
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank*
@@ -584,13 +543,13 @@ references:
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.GetRuntimeBank
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank*
   commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank
-  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_SetBlackboardBank_com_absence_variablebanks_VariableBank_
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_SetBlackboardBank_com_absence_variablesystem_VariableBank_
   name: SetBlackboardBank
   nameWithType: NodeVariableSetter.SetBlackboardBank
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.SetBlackboardBank
 - uid: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableSetter.Clone
-  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_Clone_com_absence_variablebanks_VariableBank_
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html#com_absence_dialoguesystem_internals_NodeVariableSetter_Clone_com_absence_variablesystem_VariableBank_
   name: Clone
   nameWithType: NodeVariableSetter.Clone
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter.Clone
