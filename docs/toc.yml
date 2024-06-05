@@ -8,7 +8,7 @@ items:
     - name: About
       href: docs/introduction/about.md
     - name: Installing
-      gref: docs/introduction/installing.md
+      href: docs/introduction/installing.md
     - name: Basic Setup
       href: docs/introduction/basic-setup.md
     - name: Demos and Examples
