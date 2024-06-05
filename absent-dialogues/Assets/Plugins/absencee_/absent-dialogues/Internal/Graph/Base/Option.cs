@@ -1,5 +1,5 @@
 using com.absence.attributes;
-using com.absence.variablebanks;
+using com.absence.variablesystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
