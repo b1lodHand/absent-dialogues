@@ -1,7 +1,7 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
-using com.absence.variablebanks;
+using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

@@ -33,21 +33,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "80c11b48f4400b77c57d9c8f198eff7fafcd06a4"
-    },
-    "com.unity.addressables": {
-      "version": "1.21.21",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.21.23",
-        "com.unity.modules.assetbundle": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
+      "hash": "4cf1ffd92ad0e364f7c24508cae0d9a356690de0"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -72,13 +58,6 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
       },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.scriptablebuildpipeline": {
-      "version": "1.21.23",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {

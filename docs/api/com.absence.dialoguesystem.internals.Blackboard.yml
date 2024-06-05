@@ -25,7 +25,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: This is a class for holding any variables in the dialogues. It also contains a <xref href="com.absence.variablebanks.VariableBank" data-throw-if-not-resolved="false"></xref>.
+  summary: This is a class for holding any variables in the dialogues. It also contains a <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: >-
@@ -81,7 +81,7 @@ items:
 
       public VariableBank Bank
     return:
-      type: com.absence.variablebanks.VariableBank
+      type: com.absence.variablesystem.VariableBank
     content.vb: >-
       <HideInInspector>
 
@@ -122,13 +122,13 @@ items:
     content.vb: Public Function Clone() As Blackboard
   overload: com.absence.dialoguesystem.internals.Blackboard.Clone*
 references:
-- uid: com.absence.variablebanks.VariableBank
-  commentId: T:com.absence.variablebanks.VariableBank
-  parent: com.absence.variablebanks
-  href: com.absence.variablebanks.VariableBank.html
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablebanks.VariableBank
+  fullName: com.absence.variablesystem.VariableBank
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
   href: com.html
@@ -178,36 +178,36 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: com.absence.variablebanks
-  commentId: N:com.absence.variablebanks
-  href: com.html
-  name: com.absence.variablebanks
-  nameWithType: com.absence.variablebanks
-  fullName: com.absence.variablebanks
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
   spec.csharp:
   - uid: com
     name: com
-    href: com.html
+    isExternal: true
   - name: .
   - uid: com.absence
     name: absence
-    href: com.absence.html
+    isExternal: true
   - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
   spec.vb:
   - uid: com
     name: com
-    href: com.html
+    isExternal: true
   - name: .
   - uid: com.absence
     name: absence
-    href: com.absence.html
+    isExternal: true
   - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
 - uid: System
   commentId: N:System
   isExternal: true

@@ -1,4 +1,4 @@
-using com.absence.variablebanks;
+using com.absence.variablesystem;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals

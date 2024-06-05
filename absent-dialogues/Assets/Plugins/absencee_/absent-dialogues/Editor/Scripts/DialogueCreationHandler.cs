@@ -1,6 +1,5 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.variablebanks;
-using System;
+using com.absence.variablesystem;
 using System.IO;
 using UnityEditor;
 using UnityEditor.ProjectWindowCallback;

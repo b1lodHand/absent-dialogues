@@ -5,7 +5,7 @@ items:
   id: Option.ShowIf
   parent: com.absence.dialoguesystem.internals
   children:
-  - com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
   - com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
   - com.absence.dialoguesystem.internals.Option.ShowIf.Processor
   - com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
@@ -105,7 +105,7 @@ items:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: >-
-    A list of all <xref href="com.absence.variablebanks.VariableComparer" data-throw-if-not-resolved="false"></xref>s which has a role on determining this option's
+    A list of all VariableComparers which has a role on determining this option's
 
     visibility on display.
   example: []
@@ -114,16 +114,16 @@ items:
     return:
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
     content.vb: Public ShowIfList As List(Of NodeVariableComparer)
-- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
-  id: Clone(com.absence.variablebanks.VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  id: Clone(com.absence.variablesystem.VariableBank)
   parent: com.absence.dialoguesystem.internals.Option.ShowIf
   langs:
   - csharp
   - vb
   name: Clone(VariableBank)
   nameWithType: Option.ShowIf.Clone(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablebanks.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
   type: Method
   source:
     remote:
@@ -142,7 +142,7 @@ items:
     content: public Option.ShowIf Clone(VariableBank overrideBank)
     parameters:
     - id: overrideBank
-      type: com.absence.variablebanks.VariableBank
+      type: com.absence.variablesystem.VariableBank
       description: ''
     return:
       type: com.absence.dialoguesystem.internals.Option.ShowIf
@@ -244,13 +244,6 @@ references:
   name: VBProcessType
   nameWithType: VBProcessType
   fullName: com.absence.dialoguesystem.internals.VBProcessType
-- uid: com.absence.variablebanks.VariableComparer
-  commentId: T:com.absence.variablebanks.VariableComparer
-  parent: com.absence.variablebanks
-  href: com.absence.variablebanks.VariableComparer.html
-  name: VariableComparer
-  nameWithType: VariableComparer
-  fullName: com.absence.variablebanks.VariableComparer
 - uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   parent: System.Collections.Generic
@@ -284,36 +277,6 @@ references:
     name: NodeVariableComparer
     href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
   - name: )
-- uid: com.absence.variablebanks
-  commentId: N:com.absence.variablebanks
-  href: com.html
-  name: com.absence.variablebanks
-  nameWithType: com.absence.variablebanks
-  fullName: com.absence.variablebanks
-  spec.csharp:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
-  spec.vb:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.variablebanks
-    name: variablebanks
-    href: com.absence.variablebanks.html
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -381,17 +344,17 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.Clone
-  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablebanks_VariableBank_
+  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablesystem_VariableBank_
   name: Clone
   nameWithType: Option.ShowIf.Clone
   fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone
-- uid: com.absence.variablebanks.VariableBank
-  commentId: T:com.absence.variablebanks.VariableBank
-  parent: com.absence.variablebanks
-  href: com.absence.variablebanks.VariableBank.html
+- uid: com.absence.variablesystem.VariableBank
+  commentId: T:com.absence.variablesystem.VariableBank
+  parent: com.absence.variablesystem
+  isExternal: true
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablebanks.VariableBank
+  fullName: com.absence.variablesystem.VariableBank
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf
   commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
   parent: com.absence.dialoguesystem.internals
@@ -415,6 +378,36 @@ references:
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: ShowIf
     href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
   href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_GetResult
