@@ -1,0 +1,2193 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  id: VariableBank
+  parent: com.absence.variablebanks
+  children:
+  - com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}})
+  - com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}})
+  - com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}})
+  - com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}})
+  - com.absence.variablebanks.VariableBank.Booleans
+  - com.absence.variablebanks.VariableBank.Clone
+  - com.absence.variablebanks.VariableBank.ClonedFrom
+  - com.absence.variablebanks.VariableBank.Floats
+  - com.absence.variablebanks.VariableBank.ForExternalUse
+  - com.absence.variablebanks.VariableBank.GetAllVariableNames
+  - com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes
+  - com.absence.variablebanks.VariableBank.GetInstance(System.String)
+  - com.absence.variablebanks.VariableBank.Guid
+  - com.absence.variablebanks.VariableBank.HasAny(System.String)
+  - com.absence.variablebanks.VariableBank.HasBoolean(System.String)
+  - com.absence.variablebanks.VariableBank.HasFloat(System.String)
+  - com.absence.variablebanks.VariableBank.HasInt(System.String)
+  - com.absence.variablebanks.VariableBank.HasString(System.String)
+  - com.absence.variablebanks.VariableBank.Ints
+  - com.absence.variablebanks.VariableBank.IsClone
+  - com.absence.variablebanks.VariableBank.Null
+  - com.absence.variablebanks.VariableBank.OnDestroyAction
+  - com.absence.variablebanks.VariableBank.SetBoolean(System.String,System.Boolean)
+  - com.absence.variablebanks.VariableBank.SetFloat(System.String,System.Single)
+  - com.absence.variablebanks.VariableBank.SetInt(System.String,System.Int32)
+  - com.absence.variablebanks.VariableBank.SetString(System.String,System.String)
+  - com.absence.variablebanks.VariableBank.Strings
+  - com.absence.variablebanks.VariableBank.TryGetBoolean(System.String,System.Boolean@)
+  - com.absence.variablebanks.VariableBank.TryGetFloat(System.String,System.Single@)
+  - com.absence.variablebanks.VariableBank.TryGetInt(System.String,System.Int32@)
+  - com.absence.variablebanks.VariableBank.TryGetString(System.String,System.String@)
+  - com.absence.variablebanks.VariableBank.m_booleans
+  - com.absence.variablebanks.VariableBank.m_floats
+  - com.absence.variablebanks.VariableBank.m_ints
+  - com.absence.variablebanks.VariableBank.m_strings
+  langs:
+  - csharp
+  - vb
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VariableBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: The scriptable object represents a bank of variables.
+  example: []
+  syntax:
+    content: 'public class VariableBank : ScriptableObject'
+    content.vb: Public Class VariableBank Inherits ScriptableObject
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.ScriptableObject
+  inheritedMembers:
+  - UnityEngine.ScriptableObject.SetDirty
+  - UnityEngine.ScriptableObject.CreateInstance(System.String)
+  - UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  - UnityEngine.ScriptableObject.CreateInstance``1
+- uid: com.absence.variablebanks.VariableBank.Null
+  commentId: F:com.absence.variablebanks.VariableBank.Null
+  id: "Null"
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: "Null"
+  nameWithType: VariableBank.Null
+  fullName: com.absence.variablebanks.VariableBank.Null
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: "Null"
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: A constant string that represents a null variable name (with the prefix).
+  example: []
+  syntax:
+    content: 'public const string Null = "null: null"'
+    return:
+      type: System.String
+    content.vb: 'Public Const Null As String = "null: null"'
+- uid: com.absence.variablebanks.VariableBank.Guid
+  commentId: P:com.absence.variablebanks.VariableBank.Guid
+  id: Guid
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Guid
+  nameWithType: VariableBank.Guid
+  fullName: com.absence.variablebanks.VariableBank.Guid
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Guid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Guid of this bank.
+  example: []
+  syntax:
+    content: public string Guid { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Guid As String
+  overload: com.absence.variablebanks.VariableBank.Guid*
+- uid: com.absence.variablebanks.VariableBank.GetInstance(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.GetInstance(System.String)
+  id: GetInstance(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(string)
+  nameWithType: VariableBank.GetInstance(string)
+  fullName: com.absence.variablebanks.VariableBank.GetInstance(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetInstance
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get a cloned bank with a specific Guid. <b>Runtime Only.</b>
+  example: []
+  syntax:
+    content: public static VariableBank GetInstance(string targetGuid)
+    parameters:
+    - id: targetGuid
+      type: System.String
+      description: Target Guid.
+    return:
+      type: com.absence.variablebanks.VariableBank
+      description: Throws an error if a clone with the target Guid does not exist. Returns the bank otherwise.
+    content.vb: Public Shared Function GetInstance(targetGuid As String) As VariableBank
+  overload: com.absence.variablebanks.VariableBank.GetInstance*
+  nameWithType.vb: VariableBank.GetInstance(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.GetInstance(String)
+  name.vb: GetInstance(String)
+- uid: com.absence.variablebanks.VariableBank.ForExternalUse
+  commentId: P:com.absence.variablebanks.VariableBank.ForExternalUse
+  id: ForExternalUse
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: ForExternalUse
+  nameWithType: VariableBank.ForExternalUse
+  fullName: com.absence.variablebanks.VariableBank.ForExternalUse
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ForExternalUse
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 42
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: >-
+    If true, this bank won't get cloned in the startup and also will not get shown on the variable bank name lists. Set to
+
+    true if you'll use direct references of such. For more information, read the docs.
+  example: []
+  syntax:
+    content: public bool ForExternalUse { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ForExternalUse As Boolean
+  overload: com.absence.variablebanks.VariableBank.ForExternalUse*
+- uid: com.absence.variablebanks.VariableBank.m_ints
+  commentId: F:com.absence.variablebanks.VariableBank.m_ints
+  id: m_ints
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: m_ints
+  nameWithType: VariableBank.m_ints
+  fullName: com.absence.variablebanks.VariableBank.m_ints
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_ints
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 57
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected List<Variable_Integer> m_ints
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Integer}
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_ints As List(Of Variable_Integer)
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.VariableBank.m_floats
+  commentId: F:com.absence.variablebanks.VariableBank.m_floats
+  id: m_floats
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: m_floats
+  nameWithType: VariableBank.m_floats
+  fullName: com.absence.variablebanks.VariableBank.m_floats
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_floats
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 58
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected List<Variable_Float> m_floats
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Float}
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_floats As List(Of Variable_Float)
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.VariableBank.m_strings
+  commentId: F:com.absence.variablebanks.VariableBank.m_strings
+  id: m_strings
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: m_strings
+  nameWithType: VariableBank.m_strings
+  fullName: com.absence.variablebanks.VariableBank.m_strings
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_strings
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 59
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected List<Variable_String> m_strings
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_String}
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_strings As List(Of Variable_String)
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.VariableBank.m_booleans
+  commentId: F:com.absence.variablebanks.VariableBank.m_booleans
+  id: m_booleans
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: m_booleans
+  nameWithType: VariableBank.m_booleans
+  fullName: com.absence.variablebanks.VariableBank.m_booleans
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_booleans
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 60
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected List<Variable_Boolean> m_booleans
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Boolean}
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_booleans As List(Of Variable_Boolean)
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.VariableBank.Ints
+  commentId: P:com.absence.variablebanks.VariableBank.Ints
+  id: Ints
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Ints
+  nameWithType: VariableBank.Ints
+  fullName: com.absence.variablebanks.VariableBank.Ints
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Ints
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 65
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: All of the integer variables within this bank.
+  example: []
+  syntax:
+    content: public List<Variable_Integer> Ints { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Integer}
+    content.vb: Public Property Ints As List(Of Variable_Integer)
+  overload: com.absence.variablebanks.VariableBank.Ints*
+- uid: com.absence.variablebanks.VariableBank.Floats
+  commentId: P:com.absence.variablebanks.VariableBank.Floats
+  id: Floats
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Floats
+  nameWithType: VariableBank.Floats
+  fullName: com.absence.variablebanks.VariableBank.Floats
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Floats
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 70
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: All of the floating point variables within this bank.
+  example: []
+  syntax:
+    content: public List<Variable_Float> Floats { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Float}
+    content.vb: Public Property Floats As List(Of Variable_Float)
+  overload: com.absence.variablebanks.VariableBank.Floats*
+- uid: com.absence.variablebanks.VariableBank.Strings
+  commentId: P:com.absence.variablebanks.VariableBank.Strings
+  id: Strings
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Strings
+  nameWithType: VariableBank.Strings
+  fullName: com.absence.variablebanks.VariableBank.Strings
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Strings
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 75
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: All of the string variables within this bank.
+  example: []
+  syntax:
+    content: public List<Variable_String> Strings { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_String}
+    content.vb: Public Property Strings As List(Of Variable_String)
+  overload: com.absence.variablebanks.VariableBank.Strings*
+- uid: com.absence.variablebanks.VariableBank.Booleans
+  commentId: P:com.absence.variablebanks.VariableBank.Booleans
+  id: Booleans
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Booleans
+  nameWithType: VariableBank.Booleans
+  fullName: com.absence.variablebanks.VariableBank.Booleans
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Booleans
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 80
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: All of the boolean variables within this bank.
+  example: []
+  syntax:
+    content: public List<Variable_Boolean> Booleans { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.variablesystem.Variable_Boolean}
+    content.vb: Public Property Booleans As List(Of Variable_Boolean)
+  overload: com.absence.variablebanks.VariableBank.Booleans*
+- uid: com.absence.variablebanks.VariableBank.OnDestroyAction
+  commentId: E:com.absence.variablebanks.VariableBank.OnDestroyAction
+  id: OnDestroyAction
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: OnDestroyAction
+  nameWithType: VariableBank.OnDestroyAction
+  fullName: com.absence.variablebanks.VariableBank.OnDestroyAction
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnDestroyAction
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 85
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: The action gets invoked when this bank gets destroyed.
+  example: []
+  syntax:
+    content: public event Action OnDestroyAction
+    return:
+      type: System.Action
+    content.vb: Public Event OnDestroyAction As Action
+- uid: com.absence.variablebanks.VariableBank.ClonedFrom
+  commentId: P:com.absence.variablebanks.VariableBank.ClonedFrom
+  id: ClonedFrom
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: ClonedFrom
+  nameWithType: VariableBank.ClonedFrom
+  fullName: com.absence.variablebanks.VariableBank.ClonedFrom
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ClonedFrom
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 92
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Returns null if this is not a clone. Returns the original bank if this is a clone.
+  example: []
+  syntax:
+    content: public VariableBank ClonedFrom { get; }
+    parameters: []
+    return:
+      type: com.absence.variablebanks.VariableBank
+    content.vb: Public ReadOnly Property ClonedFrom As VariableBank
+  overload: com.absence.variablebanks.VariableBank.ClonedFrom*
+- uid: com.absence.variablebanks.VariableBank.IsClone
+  commentId: P:com.absence.variablebanks.VariableBank.IsClone
+  id: IsClone
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: IsClone
+  nameWithType: VariableBank.IsClone
+  fullName: com.absence.variablebanks.VariableBank.IsClone
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IsClone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 97
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if this bank is a clone.
+  example: []
+  syntax:
+    content: public bool IsClone { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsClone As Boolean
+  overload: com.absence.variablebanks.VariableBank.IsClone*
+- uid: com.absence.variablebanks.VariableBank.GetAllVariableNames
+  commentId: M:com.absence.variablebanks.VariableBank.GetAllVariableNames
+  id: GetAllVariableNames
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: GetAllVariableNames()
+  nameWithType: VariableBank.GetAllVariableNames()
+  fullName: com.absence.variablebanks.VariableBank.GetAllVariableNames()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetAllVariableNames
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 103
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get a list of all variables' names of this bank.
+  example: []
+  syntax:
+    content: public List<string> GetAllVariableNames()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: 'A list of variable names. Example: "example_int"'
+    content.vb: Public Function GetAllVariableNames() As List(Of String)
+  overload: com.absence.variablebanks.VariableBank.GetAllVariableNames*
+- uid: com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes
+  commentId: M:com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes
+  id: GetAllVariableNamesWithTypes
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: GetAllVariableNamesWithTypes()
+  nameWithType: VariableBank.GetAllVariableNamesWithTypes()
+  fullName: com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetAllVariableNamesWithTypes
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 122
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: >-
+    Use to get a list of all variables' names of this bank, each one of the names will contain a type prefix. <b>Those
+
+    prefixes get trimmed when you pass them to any function of a variable bank.</b>
+  example: []
+  syntax:
+    content: public List<string> GetAllVariableNamesWithTypes()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: 'A list of all variable names with the prefixes. Example: "int: example_int"'
+    content.vb: Public Function GetAllVariableNamesWithTypes() As List(Of String)
+  overload: com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes*
+- uid: com.absence.variablebanks.VariableBank.TryGetInt(System.String,System.Int32@)
+  commentId: M:com.absence.variablebanks.VariableBank.TryGetInt(System.String,System.Int32@)
+  id: TryGetInt(System.String,System.Int32@)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: TryGetInt(string, out int)
+  nameWithType: VariableBank.TryGetInt(string, out int)
+  fullName: com.absence.variablebanks.VariableBank.TryGetInt(string, out int)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TryGetInt
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 143
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get value of an integer variable within this bank.
+  example: []
+  syntax:
+    content: public bool TryGetInt(string variableName, out int value)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: value
+      type: System.Int32
+      description: Value of the variable.
+    return:
+      type: System.Boolean
+      description: True if a variable with the target name exists within the bank.
+    content.vb: Public Function TryGetInt(variableName As String, value As Integer) As Boolean
+  overload: com.absence.variablebanks.VariableBank.TryGetInt*
+  nameWithType.vb: VariableBank.TryGetInt(String, Integer)
+  fullName.vb: com.absence.variablebanks.VariableBank.TryGetInt(String, Integer)
+  name.vb: TryGetInt(String, Integer)
+- uid: com.absence.variablebanks.VariableBank.TryGetFloat(System.String,System.Single@)
+  commentId: M:com.absence.variablebanks.VariableBank.TryGetFloat(System.String,System.Single@)
+  id: TryGetFloat(System.String,System.Single@)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: TryGetFloat(string, out float)
+  nameWithType: VariableBank.TryGetFloat(string, out float)
+  fullName: com.absence.variablebanks.VariableBank.TryGetFloat(string, out float)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TryGetFloat
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 161
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get value of a floating point variable within this bank.
+  example: []
+  syntax:
+    content: public bool TryGetFloat(string variableName, out float value)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: value
+      type: System.Single
+      description: Value of the variable.
+    return:
+      type: System.Boolean
+      description: True if a variable with the target name exists within the bank.
+    content.vb: Public Function TryGetFloat(variableName As String, value As Single) As Boolean
+  overload: com.absence.variablebanks.VariableBank.TryGetFloat*
+  nameWithType.vb: VariableBank.TryGetFloat(String, Single)
+  fullName.vb: com.absence.variablebanks.VariableBank.TryGetFloat(String, Single)
+  name.vb: TryGetFloat(String, Single)
+- uid: com.absence.variablebanks.VariableBank.TryGetString(System.String,System.String@)
+  commentId: M:com.absence.variablebanks.VariableBank.TryGetString(System.String,System.String@)
+  id: TryGetString(System.String,System.String@)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: TryGetString(string, out string)
+  nameWithType: VariableBank.TryGetString(string, out string)
+  fullName: com.absence.variablebanks.VariableBank.TryGetString(string, out string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TryGetString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 179
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get value of a string variable within this bank.
+  example: []
+  syntax:
+    content: public bool TryGetString(string variableName, out string value)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: value
+      type: System.String
+      description: Value of the variable.
+    return:
+      type: System.Boolean
+      description: True if a variable with the target name exists within the bank.
+    content.vb: Public Function TryGetString(variableName As String, value As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.TryGetString*
+  nameWithType.vb: VariableBank.TryGetString(String, String)
+  fullName.vb: com.absence.variablebanks.VariableBank.TryGetString(String, String)
+  name.vb: TryGetString(String, String)
+- uid: com.absence.variablebanks.VariableBank.TryGetBoolean(System.String,System.Boolean@)
+  commentId: M:com.absence.variablebanks.VariableBank.TryGetBoolean(System.String,System.Boolean@)
+  id: TryGetBoolean(System.String,System.Boolean@)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: TryGetBoolean(string, out bool)
+  nameWithType: VariableBank.TryGetBoolean(string, out bool)
+  fullName: com.absence.variablebanks.VariableBank.TryGetBoolean(string, out bool)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TryGetBoolean
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 197
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get value of a boolean variable within this bank.
+  example: []
+  syntax:
+    content: public bool TryGetBoolean(string variableName, out bool value)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: value
+      type: System.Boolean
+      description: Value of the variable.
+    return:
+      type: System.Boolean
+      description: True if a variable with the target name exists within the bank.
+    content.vb: Public Function TryGetBoolean(variableName As String, value As Boolean) As Boolean
+  overload: com.absence.variablebanks.VariableBank.TryGetBoolean*
+  nameWithType.vb: VariableBank.TryGetBoolean(String, Boolean)
+  fullName.vb: com.absence.variablebanks.VariableBank.TryGetBoolean(String, Boolean)
+  name.vb: TryGetBoolean(String, Boolean)
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}})
+  commentId: M:com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}})
+  id: AddValueChangeListenerToInt(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}})
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: AddValueChangeListenerToInt(string, Action<VariableValueChangedCallbackContext<int>>)
+  nameWithType: VariableBank.AddValueChangeListenerToInt(string, Action<VariableValueChangedCallbackContext<int>>)
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(string, System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<int>>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AddValueChangeListenerToInt
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 214
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to add a value change callback to an integer variable with a specific name.
+  example: []
+  syntax:
+    content: public void AddValueChangeListenerToInt(string variableName, Action<VariableValueChangedCallbackContext<int>> callbackAction)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: callbackAction
+      type: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}}
+      description: What to do when value of the variable changes.
+    content.vb: Public Sub AddValueChangeListenerToInt(variableName As String, callbackAction As Action(Of VariableValueChangedCallbackContext(Of Integer)))
+  overload: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt*
+  nameWithType.vb: VariableBank.AddValueChangeListenerToInt(String, Action(Of VariableValueChangedCallbackContext(Of Integer)))
+  fullName.vb: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(String, System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Integer)))
+  name.vb: AddValueChangeListenerToInt(String, Action(Of VariableValueChangedCallbackContext(Of Integer)))
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}})
+  commentId: M:com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}})
+  id: AddValueChangeListenerToFloat(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}})
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: AddValueChangeListenerToFloat(string, Action<VariableValueChangedCallbackContext<float>>)
+  nameWithType: VariableBank.AddValueChangeListenerToFloat(string, Action<VariableValueChangedCallbackContext<float>>)
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(string, System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<float>>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AddValueChangeListenerToFloat
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 229
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to add a value change callback to a floating point variable with a specific name.
+  example: []
+  syntax:
+    content: public void AddValueChangeListenerToFloat(string variableName, Action<VariableValueChangedCallbackContext<float>> callbackAction)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: callbackAction
+      type: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}}
+      description: What to do when value of the variable changes.
+    content.vb: Public Sub AddValueChangeListenerToFloat(variableName As String, callbackAction As Action(Of VariableValueChangedCallbackContext(Of Single)))
+  overload: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat*
+  nameWithType.vb: VariableBank.AddValueChangeListenerToFloat(String, Action(Of VariableValueChangedCallbackContext(Of Single)))
+  fullName.vb: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(String, System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Single)))
+  name.vb: AddValueChangeListenerToFloat(String, Action(Of VariableValueChangedCallbackContext(Of Single)))
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}})
+  commentId: M:com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}})
+  id: AddValueChangeListenerToString(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}})
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: AddValueChangeListenerToString(string, Action<VariableValueChangedCallbackContext<string>>)
+  nameWithType: VariableBank.AddValueChangeListenerToString(string, Action<VariableValueChangedCallbackContext<string>>)
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(string, System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<string>>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AddValueChangeListenerToString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 244
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to add a value change callback to a string variable with a specific name.
+  example: []
+  syntax:
+    content: public void AddValueChangeListenerToString(string variableName, Action<VariableValueChangedCallbackContext<string>> callbackAction)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: callbackAction
+      type: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}}
+      description: What to do when value of the variable changes.
+    content.vb: Public Sub AddValueChangeListenerToString(variableName As String, callbackAction As Action(Of VariableValueChangedCallbackContext(Of String)))
+  overload: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString*
+  nameWithType.vb: VariableBank.AddValueChangeListenerToString(String, Action(Of VariableValueChangedCallbackContext(Of String)))
+  fullName.vb: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(String, System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of String)))
+  name.vb: AddValueChangeListenerToString(String, Action(Of VariableValueChangedCallbackContext(Of String)))
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}})
+  commentId: M:com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}})
+  id: AddValueChangeListenerToBoolean(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}})
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: AddValueChangeListenerToBoolean(string, Action<VariableValueChangedCallbackContext<bool>>)
+  nameWithType: VariableBank.AddValueChangeListenerToBoolean(string, Action<VariableValueChangedCallbackContext<bool>>)
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(string, System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<bool>>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AddValueChangeListenerToBoolean
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 259
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to add a value change callback to a boolean variable with a specific name.
+  example: []
+  syntax:
+    content: public void AddValueChangeListenerToBoolean(string variableName, Action<VariableValueChangedCallbackContext<bool>> callbackAction)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: callbackAction
+      type: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}}
+      description: What to do when value of the variable changes.
+    content.vb: Public Sub AddValueChangeListenerToBoolean(variableName As String, callbackAction As Action(Of VariableValueChangedCallbackContext(Of Boolean)))
+  overload: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean*
+  nameWithType.vb: VariableBank.AddValueChangeListenerToBoolean(String, Action(Of VariableValueChangedCallbackContext(Of Boolean)))
+  fullName.vb: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(String, System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Boolean)))
+  name.vb: AddValueChangeListenerToBoolean(String, Action(Of VariableValueChangedCallbackContext(Of Boolean)))
+- uid: com.absence.variablebanks.VariableBank.SetInt(System.String,System.Int32)
+  commentId: M:com.absence.variablebanks.VariableBank.SetInt(System.String,System.Int32)
+  id: SetInt(System.String,System.Int32)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: SetInt(string, int)
+  nameWithType: VariableBank.SetInt(string, int)
+  fullName: com.absence.variablebanks.VariableBank.SetInt(string, int)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetInt
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 275
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to change an integer variable's value.
+  example: []
+  syntax:
+    content: public bool SetInt(string variableName, int newValue)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: newValue
+      type: System.Int32
+      description: New value for the variable.
+    return:
+      type: System.Boolean
+      description: True if value changing process ended successfully. False otherwise.
+    content.vb: Public Function SetInt(variableName As String, newValue As Integer) As Boolean
+  overload: com.absence.variablebanks.VariableBank.SetInt*
+  nameWithType.vb: VariableBank.SetInt(String, Integer)
+  fullName.vb: com.absence.variablebanks.VariableBank.SetInt(String, Integer)
+  name.vb: SetInt(String, Integer)
+- uid: com.absence.variablebanks.VariableBank.SetFloat(System.String,System.Single)
+  commentId: M:com.absence.variablebanks.VariableBank.SetFloat(System.String,System.Single)
+  id: SetFloat(System.String,System.Single)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: SetFloat(string, float)
+  nameWithType: VariableBank.SetFloat(string, float)
+  fullName: com.absence.variablebanks.VariableBank.SetFloat(string, float)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetFloat
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 292
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to change a floating point variable's value.
+  example: []
+  syntax:
+    content: public bool SetFloat(string variableName, float newValue)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: newValue
+      type: System.Single
+      description: New value for the variable.
+    return:
+      type: System.Boolean
+      description: True if value changing process ended successfully. False otherwise.
+    content.vb: Public Function SetFloat(variableName As String, newValue As Single) As Boolean
+  overload: com.absence.variablebanks.VariableBank.SetFloat*
+  nameWithType.vb: VariableBank.SetFloat(String, Single)
+  fullName.vb: com.absence.variablebanks.VariableBank.SetFloat(String, Single)
+  name.vb: SetFloat(String, Single)
+- uid: com.absence.variablebanks.VariableBank.SetString(System.String,System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.SetString(System.String,System.String)
+  id: SetString(System.String,System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: SetString(string, string)
+  nameWithType: VariableBank.SetString(string, string)
+  fullName: com.absence.variablebanks.VariableBank.SetString(string, string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 309
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to change a string variable's value.
+  example: []
+  syntax:
+    content: public bool SetString(string variableName, string newValue)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: newValue
+      type: System.String
+      description: New value for the variable.
+    return:
+      type: System.Boolean
+      description: True if value changing process ended successfully. False otherwise.
+    content.vb: Public Function SetString(variableName As String, newValue As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.SetString*
+  nameWithType.vb: VariableBank.SetString(String, String)
+  fullName.vb: com.absence.variablebanks.VariableBank.SetString(String, String)
+  name.vb: SetString(String, String)
+- uid: com.absence.variablebanks.VariableBank.SetBoolean(System.String,System.Boolean)
+  commentId: M:com.absence.variablebanks.VariableBank.SetBoolean(System.String,System.Boolean)
+  id: SetBoolean(System.String,System.Boolean)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: SetBoolean(string, bool)
+  nameWithType: VariableBank.SetBoolean(string, bool)
+  fullName: com.absence.variablebanks.VariableBank.SetBoolean(string, bool)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetBoolean
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 326
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to change a boolean variable's value.
+  example: []
+  syntax:
+    content: public bool SetBoolean(string variableName, bool newValue)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    - id: newValue
+      type: System.Boolean
+      description: New value for the variable.
+    return:
+      type: System.Boolean
+      description: True if value changing process ended successfully. False otherwise.
+    content.vb: Public Function SetBoolean(variableName As String, newValue As Boolean) As Boolean
+  overload: com.absence.variablebanks.VariableBank.SetBoolean*
+  nameWithType.vb: VariableBank.SetBoolean(String, Boolean)
+  fullName.vb: com.absence.variablebanks.VariableBank.SetBoolean(String, Boolean)
+  name.vb: SetBoolean(String, Boolean)
+- uid: com.absence.variablebanks.VariableBank.HasInt(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.HasInt(System.String)
+  id: HasInt(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: HasInt(string)
+  nameWithType: VariableBank.HasInt(string)
+  fullName: com.absence.variablebanks.VariableBank.HasInt(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasInt
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 342
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if an integer variable with the target name exists within this bank.
+  example: []
+  syntax:
+    content: public bool HasInt(string variableName)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Function HasInt(variableName As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.HasInt*
+  nameWithType.vb: VariableBank.HasInt(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.HasInt(String)
+  name.vb: HasInt(String)
+- uid: com.absence.variablebanks.VariableBank.HasFloat(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.HasFloat(System.String)
+  id: HasFloat(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: HasFloat(string)
+  nameWithType: VariableBank.HasFloat(string)
+  fullName: com.absence.variablebanks.VariableBank.HasFloat(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasFloat
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 349
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if a floating point variable with the target name exists within this bank.
+  example: []
+  syntax:
+    content: public bool HasFloat(string variableName)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Function HasFloat(variableName As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.HasFloat*
+  nameWithType.vb: VariableBank.HasFloat(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.HasFloat(String)
+  name.vb: HasFloat(String)
+- uid: com.absence.variablebanks.VariableBank.HasString(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.HasString(System.String)
+  id: HasString(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: HasString(string)
+  nameWithType: VariableBank.HasString(string)
+  fullName: com.absence.variablebanks.VariableBank.HasString(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 356
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if a string variable with the target name exists within this bank.
+  example: []
+  syntax:
+    content: public bool HasString(string variableName)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Function HasString(variableName As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.HasString*
+  nameWithType.vb: VariableBank.HasString(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.HasString(String)
+  name.vb: HasString(String)
+- uid: com.absence.variablebanks.VariableBank.HasBoolean(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.HasBoolean(System.String)
+  id: HasBoolean(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: HasBoolean(string)
+  nameWithType: VariableBank.HasBoolean(string)
+  fullName: com.absence.variablebanks.VariableBank.HasBoolean(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasBoolean
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 363
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if a boolean variable with the target name exists within this bank.
+  example: []
+  syntax:
+    content: public bool HasBoolean(string variableName)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Function HasBoolean(variableName As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.HasBoolean*
+  nameWithType.vb: VariableBank.HasBoolean(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.HasBoolean(String)
+  name.vb: HasBoolean(String)
+- uid: com.absence.variablebanks.VariableBank.HasAny(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.HasAny(System.String)
+  id: HasAny(System.String)
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: HasAny(string)
+  nameWithType: VariableBank.HasAny(string)
+  fullName: com.absence.variablebanks.VariableBank.HasAny(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasAny
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 370
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to check if a variable with the target name exists within this bank.
+  example: []
+  syntax:
+    content: public bool HasAny(string variableName)
+    parameters:
+    - id: variableName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Function HasAny(variableName As String) As Boolean
+  overload: com.absence.variablebanks.VariableBank.HasAny*
+  nameWithType.vb: VariableBank.HasAny(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.HasAny(String)
+  name.vb: HasAny(String)
+- uid: com.absence.variablebanks.VariableBank.Clone
+  commentId: M:com.absence.variablebanks.VariableBank.Clone
+  id: Clone
+  parent: com.absence.variablebanks.VariableBank
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: VariableBank.Clone()
+  fullName: com.absence.variablebanks.VariableBank.Clone()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs
+    startLine: 388
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to clone this bank.
+  example: []
+  syntax:
+    content: public VariableBank Clone()
+    return:
+      type: com.absence.variablebanks.VariableBank
+      description: Returns the clone created.
+    content.vb: Public Function Clone() As VariableBank
+  overload: com.absence.variablebanks.VariableBank.Clone*
+references:
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: UnityEngine.ScriptableObject.SetDirty
+  commentId: M:UnityEngine.ScriptableObject.SetDirty
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: SetDirty()
+  nameWithType: ScriptableObject.SetDirty()
+  fullName: UnityEngine.ScriptableObject.SetDirty()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateInstance(string)
+  nameWithType: ScriptableObject.CreateInstance(string)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(string)
+  nameWithType.vb: ScriptableObject.CreateInstance(String)
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(String)
+  name.vb: CreateInstance(String)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: CreateInstance(Type)
+  nameWithType: ScriptableObject.CreateInstance(Type)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance``1
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance<T>()
+  nameWithType: ScriptableObject.CreateInstance<T>()
+  fullName: UnityEngine.ScriptableObject.CreateInstance<T>()
+  nameWithType.vb: ScriptableObject.CreateInstance(Of T)()
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.variablebanks.VariableBank.Guid*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Guid
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Guid
+  name: Guid
+  nameWithType: VariableBank.Guid
+  fullName: com.absence.variablebanks.VariableBank.Guid
+- uid: com.absence.variablebanks.VariableBank.GetInstance*
+  commentId: Overload:com.absence.variablebanks.VariableBank.GetInstance
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_GetInstance_System_String_
+  name: GetInstance
+  nameWithType: VariableBank.GetInstance
+  fullName: com.absence.variablebanks.VariableBank.GetInstance
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+- uid: com.absence.variablebanks.VariableBank.ForExternalUse*
+  commentId: Overload:com.absence.variablebanks.VariableBank.ForExternalUse
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_ForExternalUse
+  name: ForExternalUse
+  nameWithType: VariableBank.ForExternalUse
+  fullName: com.absence.variablebanks.VariableBank.ForExternalUse
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.List{com.absence.variablesystem.Variable_Integer}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.Variable_Integer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Variable_Integer>
+  nameWithType: List<Variable_Integer>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.Variable_Integer>
+  nameWithType.vb: List(Of Variable_Integer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.Variable_Integer)
+  name.vb: List(Of Variable_Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.Variable_Integer
+    name: Variable_Integer
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.Variable_Integer
+    name: Variable_Integer
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.List{com.absence.variablesystem.Variable_Float}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.Variable_Float}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Variable_Float>
+  nameWithType: List<Variable_Float>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.Variable_Float>
+  nameWithType.vb: List(Of Variable_Float)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.Variable_Float)
+  name.vb: List(Of Variable_Float)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.Variable_Float
+    name: Variable_Float
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.Variable_Float
+    name: Variable_Float
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List{com.absence.variablesystem.Variable_String}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.Variable_String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Variable_String>
+  nameWithType: List<Variable_String>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.Variable_String>
+  nameWithType.vb: List(Of Variable_String)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.Variable_String)
+  name.vb: List(Of Variable_String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.Variable_String
+    name: Variable_String
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.Variable_String
+    name: Variable_String
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List{com.absence.variablesystem.Variable_Boolean}
+  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.Variable_Boolean}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Variable_Boolean>
+  nameWithType: List<Variable_Boolean>
+  fullName: System.Collections.Generic.List<com.absence.variablesystem.Variable_Boolean>
+  nameWithType.vb: List(Of Variable_Boolean)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.Variable_Boolean)
+  name.vb: List(Of Variable_Boolean)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablesystem.Variable_Boolean
+    name: Variable_Boolean
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.Variable_Boolean
+    name: Variable_Boolean
+    isExternal: true
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.Ints*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Ints
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Ints
+  name: Ints
+  nameWithType: VariableBank.Ints
+  fullName: com.absence.variablebanks.VariableBank.Ints
+- uid: com.absence.variablebanks.VariableBank.Floats*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Floats
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Floats
+  name: Floats
+  nameWithType: VariableBank.Floats
+  fullName: com.absence.variablebanks.VariableBank.Floats
+- uid: com.absence.variablebanks.VariableBank.Strings*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Strings
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Strings
+  name: Strings
+  nameWithType: VariableBank.Strings
+  fullName: com.absence.variablebanks.VariableBank.Strings
+- uid: com.absence.variablebanks.VariableBank.Booleans*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Booleans
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Booleans
+  name: Booleans
+  nameWithType: VariableBank.Booleans
+  fullName: com.absence.variablebanks.VariableBank.Booleans
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: com.absence.variablebanks.VariableBank.ClonedFrom*
+  commentId: Overload:com.absence.variablebanks.VariableBank.ClonedFrom
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_ClonedFrom
+  name: ClonedFrom
+  nameWithType: VariableBank.ClonedFrom
+  fullName: com.absence.variablebanks.VariableBank.ClonedFrom
+- uid: com.absence.variablebanks.VariableBank.IsClone*
+  commentId: Overload:com.absence.variablebanks.VariableBank.IsClone
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_IsClone
+  name: IsClone
+  nameWithType: VariableBank.IsClone
+  fullName: com.absence.variablebanks.VariableBank.IsClone
+- uid: com.absence.variablebanks.VariableBank.GetAllVariableNames*
+  commentId: Overload:com.absence.variablebanks.VariableBank.GetAllVariableNames
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_GetAllVariableNames
+  name: GetAllVariableNames
+  nameWithType: VariableBank.GetAllVariableNames
+  fullName: com.absence.variablebanks.VariableBank.GetAllVariableNames
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes*
+  commentId: Overload:com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_GetAllVariableNamesWithTypes
+  name: GetAllVariableNamesWithTypes
+  nameWithType: VariableBank.GetAllVariableNamesWithTypes
+  fullName: com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes
+- uid: com.absence.variablebanks.VariableBank.TryGetInt*
+  commentId: Overload:com.absence.variablebanks.VariableBank.TryGetInt
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_TryGetInt_System_String_System_Int32__
+  name: TryGetInt
+  nameWithType: VariableBank.TryGetInt
+  fullName: com.absence.variablebanks.VariableBank.TryGetInt
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: com.absence.variablebanks.VariableBank.TryGetFloat*
+  commentId: Overload:com.absence.variablebanks.VariableBank.TryGetFloat
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_TryGetFloat_System_String_System_Single__
+  name: TryGetFloat
+  nameWithType: VariableBank.TryGetFloat
+  fullName: com.absence.variablebanks.VariableBank.TryGetFloat
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: com.absence.variablebanks.VariableBank.TryGetString*
+  commentId: Overload:com.absence.variablebanks.VariableBank.TryGetString
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_TryGetString_System_String_System_String__
+  name: TryGetString
+  nameWithType: VariableBank.TryGetString
+  fullName: com.absence.variablebanks.VariableBank.TryGetString
+- uid: com.absence.variablebanks.VariableBank.TryGetBoolean*
+  commentId: Overload:com.absence.variablebanks.VariableBank.TryGetBoolean
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_TryGetBoolean_System_String_System_Boolean__
+  name: TryGetBoolean
+  nameWithType: VariableBank.TryGetBoolean
+  fullName: com.absence.variablebanks.VariableBank.TryGetBoolean
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt*
+  commentId: Overload:com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_AddValueChangeListenerToInt_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Int32___
+  name: AddValueChangeListenerToInt
+  nameWithType: VariableBank.AddValueChangeListenerToInt
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt
+- uid: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}}
+  commentId: T:System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<VariableValueChangedCallbackContext<int>>
+  nameWithType: Action<VariableValueChangedCallbackContext<int>>
+  fullName: System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<int>>
+  nameWithType.vb: Action(Of VariableValueChangedCallbackContext(Of Integer))
+  fullName.vb: System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Integer))
+  name.vb: Action(Of VariableValueChangedCallbackContext(Of Integer))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat*
+  commentId: Overload:com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_AddValueChangeListenerToFloat_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Single___
+  name: AddValueChangeListenerToFloat
+  nameWithType: VariableBank.AddValueChangeListenerToFloat
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat
+- uid: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}}
+  commentId: T:System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<VariableValueChangedCallbackContext<float>>
+  nameWithType: Action<VariableValueChangedCallbackContext<float>>
+  fullName: System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<float>>
+  nameWithType.vb: Action(Of VariableValueChangedCallbackContext(Of Single))
+  fullName.vb: System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Single))
+  name.vb: Action(Of VariableValueChangedCallbackContext(Of Single))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString*
+  commentId: Overload:com.absence.variablebanks.VariableBank.AddValueChangeListenerToString
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_AddValueChangeListenerToString_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_String___
+  name: AddValueChangeListenerToString
+  nameWithType: VariableBank.AddValueChangeListenerToString
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToString
+- uid: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}}
+  commentId: T:System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<VariableValueChangedCallbackContext<string>>
+  nameWithType: Action<VariableValueChangedCallbackContext<string>>
+  fullName: System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<string>>
+  nameWithType.vb: Action(Of VariableValueChangedCallbackContext(Of String))
+  fullName.vb: System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of String))
+  name.vb: Action(Of VariableValueChangedCallbackContext(Of String))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean*
+  commentId: Overload:com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_AddValueChangeListenerToBoolean_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Boolean___
+  name: AddValueChangeListenerToBoolean
+  nameWithType: VariableBank.AddValueChangeListenerToBoolean
+  fullName: com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean
+- uid: System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}}
+  commentId: T:System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<VariableValueChangedCallbackContext<bool>>
+  nameWithType: Action<VariableValueChangedCallbackContext<bool>>
+  fullName: System.Action<com.absence.variablesystem.VariableValueChangedCallbackContext<bool>>
+  nameWithType.vb: Action(Of VariableValueChangedCallbackContext(Of Boolean))
+  fullName.vb: System.Action(Of com.absence.variablesystem.VariableValueChangedCallbackContext(Of Boolean))
+  name.vb: Action(Of VariableValueChangedCallbackContext(Of Boolean))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.VariableValueChangedCallbackContext`1
+    name: VariableValueChangedCallbackContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+- uid: com.absence.variablebanks.VariableBank.SetInt*
+  commentId: Overload:com.absence.variablebanks.VariableBank.SetInt
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_SetInt_System_String_System_Int32_
+  name: SetInt
+  nameWithType: VariableBank.SetInt
+  fullName: com.absence.variablebanks.VariableBank.SetInt
+- uid: com.absence.variablebanks.VariableBank.SetFloat*
+  commentId: Overload:com.absence.variablebanks.VariableBank.SetFloat
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_SetFloat_System_String_System_Single_
+  name: SetFloat
+  nameWithType: VariableBank.SetFloat
+  fullName: com.absence.variablebanks.VariableBank.SetFloat
+- uid: com.absence.variablebanks.VariableBank.SetString*
+  commentId: Overload:com.absence.variablebanks.VariableBank.SetString
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_SetString_System_String_System_String_
+  name: SetString
+  nameWithType: VariableBank.SetString
+  fullName: com.absence.variablebanks.VariableBank.SetString
+- uid: com.absence.variablebanks.VariableBank.SetBoolean*
+  commentId: Overload:com.absence.variablebanks.VariableBank.SetBoolean
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_SetBoolean_System_String_System_Boolean_
+  name: SetBoolean
+  nameWithType: VariableBank.SetBoolean
+  fullName: com.absence.variablebanks.VariableBank.SetBoolean
+- uid: com.absence.variablebanks.VariableBank.HasInt*
+  commentId: Overload:com.absence.variablebanks.VariableBank.HasInt
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_HasInt_System_String_
+  name: HasInt
+  nameWithType: VariableBank.HasInt
+  fullName: com.absence.variablebanks.VariableBank.HasInt
+- uid: com.absence.variablebanks.VariableBank.HasFloat*
+  commentId: Overload:com.absence.variablebanks.VariableBank.HasFloat
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_HasFloat_System_String_
+  name: HasFloat
+  nameWithType: VariableBank.HasFloat
+  fullName: com.absence.variablebanks.VariableBank.HasFloat
+- uid: com.absence.variablebanks.VariableBank.HasString*
+  commentId: Overload:com.absence.variablebanks.VariableBank.HasString
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_HasString_System_String_
+  name: HasString
+  nameWithType: VariableBank.HasString
+  fullName: com.absence.variablebanks.VariableBank.HasString
+- uid: com.absence.variablebanks.VariableBank.HasBoolean*
+  commentId: Overload:com.absence.variablebanks.VariableBank.HasBoolean
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_HasBoolean_System_String_
+  name: HasBoolean
+  nameWithType: VariableBank.HasBoolean
+  fullName: com.absence.variablebanks.VariableBank.HasBoolean
+- uid: com.absence.variablebanks.VariableBank.HasAny*
+  commentId: Overload:com.absence.variablebanks.VariableBank.HasAny
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_HasAny_System_String_
+  name: HasAny
+  nameWithType: VariableBank.HasAny
+  fullName: com.absence.variablebanks.VariableBank.HasAny
+- uid: com.absence.variablebanks.VariableBank.Clone*
+  commentId: Overload:com.absence.variablebanks.VariableBank.Clone
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_Clone
+  name: Clone
+  nameWithType: VariableBank.Clone
+  fullName: com.absence.variablebanks.VariableBank.Clone

@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  id: com.absence.variablebanks
+  children:
+  - com.absence.variablebanks.FixedVariableComparer
+  - com.absence.variablebanks.FixedVariableSetter
+  - com.absence.variablebanks.VariableBank
+  - com.absence.variablebanks.VariableBankAcquirer
+  - com.absence.variablebanks.VariableBankReference
+  - com.absence.variablebanks.VariableComparer
+  - com.absence.variablebanks.VariableSetter
+  langs:
+  - csharp
+  - vb
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.variablebanks.FixedVariableSetter
+  commentId: T:com.absence.variablebanks.FixedVariableSetter
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.FixedVariableSetter.html
+  name: FixedVariableSetter
+  nameWithType: FixedVariableSetter
+  fullName: com.absence.variablebanks.FixedVariableSetter
+- uid: com.absence.variablebanks.VariableBankAcquirer
+  commentId: T:com.absence.variablebanks.VariableBankAcquirer
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBankAcquirer.html
+  name: VariableBankAcquirer
+  nameWithType: VariableBankAcquirer
+  fullName: com.absence.variablebanks.VariableBankAcquirer
+- uid: com.absence.variablebanks.VariableSetter
+  commentId: T:com.absence.variablebanks.VariableSetter
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableSetter.html
+  name: VariableSetter
+  nameWithType: VariableSetter
+  fullName: com.absence.variablebanks.VariableSetter
+- uid: com.absence.variablebanks.FixedVariableComparer
+  commentId: T:com.absence.variablebanks.FixedVariableComparer
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.FixedVariableComparer.html
+  name: FixedVariableComparer
+  nameWithType: FixedVariableComparer
+  fullName: com.absence.variablebanks.FixedVariableComparer
+- uid: com.absence.variablebanks.VariableBankReference
+  commentId: T:com.absence.variablebanks.VariableBankReference
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBankReference.html
+  name: VariableBankReference
+  nameWithType: VariableBankReference
+  fullName: com.absence.variablebanks.VariableBankReference
+- uid: com.absence.variablebanks.VariableComparer
+  commentId: T:com.absence.variablebanks.VariableComparer
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableComparer.html
+  name: VariableComparer
+  nameWithType: VariableComparer
+  fullName: com.absence.variablebanks.VariableComparer
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html

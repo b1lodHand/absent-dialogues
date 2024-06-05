@@ -115,7 +115,6 @@
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a></div>
-    <div><a class="xref" href="com.absence.dialoguesystem.internals.IPerformEditorRefresh.html">IPerformEditorRefresh</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -198,9 +197,6 @@
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone">Node.Clone()</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a>
-    </div>
-    <div>
       <span class="xref">ScriptableObject.SetDirty()</span>
     </div>
     <div>
@@ -218,7 +214,7 @@
   <h5 id="com_absence_dialoguesystem_internals_ActionNode_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HelpURL(&quot;https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html&quot;)]
-public class ActionNode : Node, IContainVariableManipulators, IPerformEditorRefresh</code></pre>
+public class ActionNode : Node, IContainVariableManipulators</code></pre>
   </div>
   <h5 id="com_absence_dialoguesystem_internals_ActionNode_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Execution order goes like:</p>
@@ -301,7 +297,7 @@ public UnityEvent UnityEvents</code></pre>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Tooltip(&quot;All of the &#39;VariableBank&#39; based actions of this action node.&quot;)]
-public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
+public List&lt;NodeVariableSetter&gt; VBActions</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -313,7 +309,7 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableSetter</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableSetter.html">NodeVariableSetter</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -453,12 +449,12 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
   </span>
   <a id="com_absence_dialoguesystem_internals_ActionNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetComparers*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ActionNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetComparers">GetComparers()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;FixedVariableComparer&gt; GetComparers()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;NodeVariableComparer&gt; GetComparers()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -470,7 +466,7 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableComparer</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableComparer.html">NodeVariableComparer</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -519,12 +515,12 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
   </span>
   <a id="com_absence_dialoguesystem_internals_ActionNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetSetters*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ActionNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.ActionNode.GetSetters">GetSetters()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;FixedVariableSetter&gt; GetSetters()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;NodeVariableSetter&gt; GetSetters()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -536,7 +532,7 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableSetter</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableSetter.html">NodeVariableSetter</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -577,6 +573,23 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetTitle">Node.GetTitle()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ActionNode_OnValidate.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ActionNode.OnValidate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L90">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_ActionNode_OnValidate_" data-uid="com.absence.dialoguesystem.internals.ActionNode.OnValidate*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_ActionNode_OnValidate" data-uid="com.absence.dialoguesystem.internals.ActionNode.OnValidate">OnValidate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnValidate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ActionNode_Pass_Inline_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ActionNode.Pass_Inline(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -610,22 +623,6 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___">Node.Pass_Inline(params object[])</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ActionNode_PerformEditorRefresh.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ActionNode.cs/#L90">View Source</a>
-  </span>
-  <a id="com_absence_dialoguesystem_internals_ActionNode_PerformEditorRefresh_" data-uid="com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_ActionNode_PerformEditorRefresh" data-uid="com.absence.dialoguesystem.internals.ActionNode.PerformEditorRefresh">PerformEditorRefresh()</h4>
-  <div class="markdown level1 summary"><p>Use to declare what to do when any value gets changed in the inspector/</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void PerformEditorRefresh()</code></pre>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ActionNode_Reach_Inline.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ActionNode.Reach_Inline%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
@@ -717,9 +714,6 @@ public List&lt;FixedVariableSetter&gt; VBActions</code></pre>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a>
-  </div>
-  <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.IPerformEditorRefresh.html">IPerformEditorRefresh</a>
   </div>
 
 </article>

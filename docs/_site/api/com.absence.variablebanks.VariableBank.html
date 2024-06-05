@@ -1,0 +1,1596 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class VariableBank | absent-dialogues </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class VariableBank | absent-dialogues ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/logo5.svg" alt="absent-dialogues" class="logomark">
+              <span class="brand-title">absent-dialogues</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/logo5.svg" alt="absent-dialogues" class="logomark">
+                          <span class="brand-title">absent-dialogues</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  © 2024 absencee_ All rights reserved.
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="com.absence.variablebanks.VariableBank">
+
+
+
+  <h1 id="com_absence_variablebanks_VariableBank" data-uid="com.absence.variablebanks.VariableBank" class="text-break">Class VariableBank</h1>
+  <div class="markdown level0 summary"><p>The scriptable object represents a bank of variables.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Object</span></div>
+    <div class="level2"><span class="xref">ScriptableObject</span></div>
+    <div class="level3"><span class="xref">VariableBank</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ScriptableObject.SetDirty()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="com.html">com</a>.<a class="xref" href="com.absence.html">absence</a>.<a class="xref" href="com.absence.variablebanks.html">variablebanks</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp-firstpass.dll</h6>
+  <h5 id="com_absence_variablebanks_VariableBank_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class VariableBank : ScriptableObject</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Null.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Null%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L19">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_Null" data-uid="com.absence.variablebanks.VariableBank.Null">Null</h4>
+  <div class="markdown level1 summary"><p>A constant string that represents a null variable name (with the prefix).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Null = &quot;null: null&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_m_booleans.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.m_booleans%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L61">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_m_booleans" data-uid="com.absence.variablebanks.VariableBank.m_booleans">m_booleans</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected List&lt;Variable_Boolean&gt; m_booleans</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_m_floats.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.m_floats%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L59">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_m_floats" data-uid="com.absence.variablebanks.VariableBank.m_floats">m_floats</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected List&lt;Variable_Float&gt; m_floats</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Float</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_m_ints.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.m_ints%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L58">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_m_ints" data-uid="com.absence.variablebanks.VariableBank.m_ints">m_ints</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected List&lt;Variable_Integer&gt; m_ints</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Integer</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_m_strings.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.m_strings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L60">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_m_strings" data-uid="com.absence.variablebanks.VariableBank.m_strings">m_strings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected List&lt;Variable_String&gt; m_strings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Booleans.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Booleans%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L81">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Booleans_" data-uid="com.absence.variablebanks.VariableBank.Booleans*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Booleans" data-uid="com.absence.variablebanks.VariableBank.Booleans">Booleans</h4>
+  <div class="markdown level1 summary"><p>All of the boolean variables within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Variable_Boolean&gt; Booleans { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_ClonedFrom.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.ClonedFrom%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L93">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_ClonedFrom_" data-uid="com.absence.variablebanks.VariableBank.ClonedFrom*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_ClonedFrom" data-uid="com.absence.variablebanks.VariableBank.ClonedFrom">ClonedFrom</h4>
+  <div class="markdown level1 summary"><p>Returns null if this is not a clone. Returns the original bank if this is a clone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VariableBank ClonedFrom { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.variablebanks.VariableBank.html">VariableBank</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Floats.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Floats%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L71">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Floats_" data-uid="com.absence.variablebanks.VariableBank.Floats*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Floats" data-uid="com.absence.variablebanks.VariableBank.Floats">Floats</h4>
+  <div class="markdown level1 summary"><p>All of the floating point variables within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Variable_Float&gt; Floats { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Float</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_ForExternalUse.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.ForExternalUse%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L43">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_ForExternalUse_" data-uid="com.absence.variablebanks.VariableBank.ForExternalUse*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_ForExternalUse" data-uid="com.absence.variablebanks.VariableBank.ForExternalUse">ForExternalUse</h4>
+  <div class="markdown level1 summary"><p>If true, this bank won't get cloned in the startup and also will not get shown on the variable bank name lists. Set to
+true if you'll use direct references of such. For more information, read the docs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ForExternalUse { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Guid.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Guid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L27">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Guid_" data-uid="com.absence.variablebanks.VariableBank.Guid*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Guid" data-uid="com.absence.variablebanks.VariableBank.Guid">Guid</h4>
+  <div class="markdown level1 summary"><p>Guid of this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Guid { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Ints.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Ints%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L66">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Ints_" data-uid="com.absence.variablebanks.VariableBank.Ints*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Ints" data-uid="com.absence.variablebanks.VariableBank.Ints">Ints</h4>
+  <div class="markdown level1 summary"><p>All of the integer variables within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Variable_Integer&gt; Ints { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_Integer</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_IsClone.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.IsClone%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L98">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_IsClone_" data-uid="com.absence.variablebanks.VariableBank.IsClone*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_IsClone" data-uid="com.absence.variablebanks.VariableBank.IsClone">IsClone</h4>
+  <div class="markdown level1 summary"><p>Use to check if this bank is a clone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsClone { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Strings.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Strings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L76">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Strings_" data-uid="com.absence.variablebanks.VariableBank.Strings*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Strings" data-uid="com.absence.variablebanks.VariableBank.Strings">Strings</h4>
+  <div class="markdown level1 summary"><p>All of the string variables within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Variable_String&gt; Strings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Variable_String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_AddValueChangeListenerToBoolean_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Boolean___.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(System.String%2CSystem.Action%7Bcom.absence.variablesystem.VariableValueChangedCallbackContext%7BSystem.Boolean%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L260">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToBoolean_" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToBoolean_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Boolean___" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToBoolean(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Boolean}})">AddValueChangeListenerToBoolean(string, Action&lt;VariableValueChangedCallbackContext&lt;bool&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use to add a value change callback to a boolean variable with a specific name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddValueChangeListenerToBoolean(string variableName, Action&lt;VariableValueChangedCallbackContext&lt;bool&gt;&gt; callbackAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">VariableValueChangedCallbackContext</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</td>
+        <td><span class="parametername">callbackAction</span></td>
+        <td><p>What to do when value of the variable changes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_AddValueChangeListenerToFloat_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Single___.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(System.String%2CSystem.Action%7Bcom.absence.variablesystem.VariableValueChangedCallbackContext%7BSystem.Single%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L230">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToFloat_" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToFloat_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Single___" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToFloat(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Single}})">AddValueChangeListenerToFloat(string, Action&lt;VariableValueChangedCallbackContext&lt;float&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use to add a value change callback to a floating point variable with a specific name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddValueChangeListenerToFloat(string variableName, Action&lt;VariableValueChangedCallbackContext&lt;float&gt;&gt; callbackAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">VariableValueChangedCallbackContext</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</td>
+        <td><span class="parametername">callbackAction</span></td>
+        <td><p>What to do when value of the variable changes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_AddValueChangeListenerToInt_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Int32___.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(System.String%2CSystem.Action%7Bcom.absence.variablesystem.VariableValueChangedCallbackContext%7BSystem.Int32%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L215">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToInt_" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToInt_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_Int32___" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToInt(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.Int32}})">AddValueChangeListenerToInt(string, Action&lt;VariableValueChangedCallbackContext&lt;int&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use to add a value change callback to an integer variable with a specific name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddValueChangeListenerToInt(string variableName, Action&lt;VariableValueChangedCallbackContext&lt;int&gt;&gt; callbackAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">VariableValueChangedCallbackContext</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;&gt;</td>
+        <td><span class="parametername">callbackAction</span></td>
+        <td><p>What to do when value of the variable changes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_AddValueChangeListenerToString_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_String___.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(System.String%2CSystem.Action%7Bcom.absence.variablesystem.VariableValueChangedCallbackContext%7BSystem.String%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L245">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToString_" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToString*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_AddValueChangeListenerToString_System_String_System_Action_com_absence_variablesystem_VariableValueChangedCallbackContext_System_String___" data-uid="com.absence.variablebanks.VariableBank.AddValueChangeListenerToString(System.String,System.Action{com.absence.variablesystem.VariableValueChangedCallbackContext{System.String}})">AddValueChangeListenerToString(string, Action&lt;VariableValueChangedCallbackContext&lt;string&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use to add a value change callback to a string variable with a specific name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddValueChangeListenerToString(string variableName, Action&lt;VariableValueChangedCallbackContext&lt;string&gt;&gt; callbackAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">VariableValueChangedCallbackContext</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</td>
+        <td><span class="parametername">callbackAction</span></td>
+        <td><p>What to do when value of the variable changes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_Clone.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.Clone%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L389">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_Clone_" data-uid="com.absence.variablebanks.VariableBank.Clone*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_Clone" data-uid="com.absence.variablebanks.VariableBank.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Use to clone this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VariableBank Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.variablebanks.VariableBank.html">VariableBank</a></td>
+        <td><p>Returns the clone created.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_GetAllVariableNames.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.GetAllVariableNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L104">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_GetAllVariableNames_" data-uid="com.absence.variablebanks.VariableBank.GetAllVariableNames*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_GetAllVariableNames" data-uid="com.absence.variablebanks.VariableBank.GetAllVariableNames">GetAllVariableNames()</h4>
+  <div class="markdown level1 summary"><p>Use to get a list of all variables' names of this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetAllVariableNames()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><p>A list of variable names. Example: &quot;example_int&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_GetAllVariableNamesWithTypes.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L123">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_GetAllVariableNamesWithTypes_" data-uid="com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_GetAllVariableNamesWithTypes" data-uid="com.absence.variablebanks.VariableBank.GetAllVariableNamesWithTypes">GetAllVariableNamesWithTypes()</h4>
+  <div class="markdown level1 summary"><p>Use to get a list of all variables' names of this bank, each one of the names will contain a type prefix. <b>Those
+prefixes get trimmed when you pass them to any function of a variable bank.</b></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetAllVariableNamesWithTypes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><p>A list of all variable names with the prefixes. Example: &quot;int: example_int&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_GetInstance_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.GetInstance(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L34">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_GetInstance_" data-uid="com.absence.variablebanks.VariableBank.GetInstance*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_GetInstance_System_String_" data-uid="com.absence.variablebanks.VariableBank.GetInstance(System.String)">GetInstance(string)</h4>
+  <div class="markdown level1 summary"><p>Use to get a cloned bank with a specific Guid. <b>Runtime Only.</b></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static VariableBank GetInstance(string targetGuid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">targetGuid</span></td>
+        <td><p>Target Guid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.variablebanks.VariableBank.html">VariableBank</a></td>
+        <td><p>Throws an error if a clone with the target Guid does not exist. Returns the bank otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_HasAny_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.HasAny(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L371">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_HasAny_" data-uid="com.absence.variablebanks.VariableBank.HasAny*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_HasAny_System_String_" data-uid="com.absence.variablebanks.VariableBank.HasAny(System.String)">HasAny(string)</h4>
+  <div class="markdown level1 summary"><p>Use to check if a variable with the target name exists within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasAny(string variableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if exists, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_HasBoolean_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.HasBoolean(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L364">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_HasBoolean_" data-uid="com.absence.variablebanks.VariableBank.HasBoolean*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_HasBoolean_System_String_" data-uid="com.absence.variablebanks.VariableBank.HasBoolean(System.String)">HasBoolean(string)</h4>
+  <div class="markdown level1 summary"><p>Use to check if a boolean variable with the target name exists within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasBoolean(string variableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if exists, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_HasFloat_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.HasFloat(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L350">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_HasFloat_" data-uid="com.absence.variablebanks.VariableBank.HasFloat*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_HasFloat_System_String_" data-uid="com.absence.variablebanks.VariableBank.HasFloat(System.String)">HasFloat(string)</h4>
+  <div class="markdown level1 summary"><p>Use to check if a floating point variable with the target name exists within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasFloat(string variableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if exists, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_HasInt_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.HasInt(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L343">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_HasInt_" data-uid="com.absence.variablebanks.VariableBank.HasInt*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_HasInt_System_String_" data-uid="com.absence.variablebanks.VariableBank.HasInt(System.String)">HasInt(string)</h4>
+  <div class="markdown level1 summary"><p>Use to check if an integer variable with the target name exists within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasInt(string variableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if exists, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_HasString_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.HasString(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L357">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_HasString_" data-uid="com.absence.variablebanks.VariableBank.HasString*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_HasString_System_String_" data-uid="com.absence.variablebanks.VariableBank.HasString(System.String)">HasString(string)</h4>
+  <div class="markdown level1 summary"><p>Use to check if a string variable with the target name exists within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasString(string variableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if exists, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_SetBoolean_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.SetBoolean(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L327">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_SetBoolean_" data-uid="com.absence.variablebanks.VariableBank.SetBoolean*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_SetBoolean_System_String_System_Boolean_" data-uid="com.absence.variablebanks.VariableBank.SetBoolean(System.String,System.Boolean)">SetBoolean(string, bool)</h4>
+  <div class="markdown level1 summary"><p>Use to change a boolean variable's value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetBoolean(string variableName, bool newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>New value for the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value changing process ended successfully. False otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_SetFloat_System_String_System_Single_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.SetFloat(System.String%2CSystem.Single)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L293">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_SetFloat_" data-uid="com.absence.variablebanks.VariableBank.SetFloat*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_SetFloat_System_String_System_Single_" data-uid="com.absence.variablebanks.VariableBank.SetFloat(System.String,System.Single)">SetFloat(string, float)</h4>
+  <div class="markdown level1 summary"><p>Use to change a floating point variable's value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetFloat(string variableName, float newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>New value for the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value changing process ended successfully. False otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_SetInt_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.SetInt(System.String%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L276">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_SetInt_" data-uid="com.absence.variablebanks.VariableBank.SetInt*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_SetInt_System_String_System_Int32_" data-uid="com.absence.variablebanks.VariableBank.SetInt(System.String,System.Int32)">SetInt(string, int)</h4>
+  <div class="markdown level1 summary"><p>Use to change an integer variable's value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetInt(string variableName, int newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>New value for the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value changing process ended successfully. False otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_SetString_System_String_System_String_.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.SetString(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L310">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_SetString_" data-uid="com.absence.variablebanks.VariableBank.SetString*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_SetString_System_String_System_String_" data-uid="com.absence.variablebanks.VariableBank.SetString(System.String,System.String)">SetString(string, string)</h4>
+  <div class="markdown level1 summary"><p>Use to change a string variable's value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetString(string variableName, string newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>New value for the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value changing process ended successfully. False otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_TryGetBoolean_System_String_System_Boolean__.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.TryGetBoolean(System.String%2CSystem.Boolean%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L198">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_TryGetBoolean_" data-uid="com.absence.variablebanks.VariableBank.TryGetBoolean*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_TryGetBoolean_System_String_System_Boolean__" data-uid="com.absence.variablebanks.VariableBank.TryGetBoolean(System.String,System.Boolean@)">TryGetBoolean(string, out bool)</h4>
+  <div class="markdown level1 summary"><p>Use to get value of a boolean variable within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetBoolean(string variableName, out bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value of the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if a variable with the target name exists within the bank.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_TryGetFloat_System_String_System_Single__.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.TryGetFloat(System.String%2CSystem.Single%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L162">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_TryGetFloat_" data-uid="com.absence.variablebanks.VariableBank.TryGetFloat*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_TryGetFloat_System_String_System_Single__" data-uid="com.absence.variablebanks.VariableBank.TryGetFloat(System.String,System.Single@)">TryGetFloat(string, out float)</h4>
+  <div class="markdown level1 summary"><p>Use to get value of a floating point variable within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetFloat(string variableName, out float value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value of the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if a variable with the target name exists within the bank.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_TryGetInt_System_String_System_Int32__.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.TryGetInt(System.String%2CSystem.Int32%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L144">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_TryGetInt_" data-uid="com.absence.variablebanks.VariableBank.TryGetInt*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_TryGetInt_System_String_System_Int32__" data-uid="com.absence.variablebanks.VariableBank.TryGetInt(System.String,System.Int32@)">TryGetInt(string, out int)</h4>
+  <div class="markdown level1 summary"><p>Use to get value of an integer variable within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetInt(string variableName, out int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value of the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if a variable with the target name exists within the bank.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_TryGetString_System_String_System_String__.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.TryGetString(System.String%2CSystem.String%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L180">View Source</a>
+  </span>
+  <a id="com_absence_variablebanks_VariableBank_TryGetString_" data-uid="com.absence.variablebanks.VariableBank.TryGetString*"></a>
+  <h4 id="com_absence_variablebanks_VariableBank_TryGetString_System_String_System_String__" data-uid="com.absence.variablebanks.VariableBank.TryGetString(System.String,System.String@)">TryGetString(string, out string)</h4>
+  <div class="markdown level1 summary"><p>Use to get value of a string variable within this bank.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetString(string variableName, out string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">variableName</span></td>
+        <td><p>Target name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value of the variable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if a variable with the target name exists within the bank.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_variablebanks_VariableBank_OnDestroyAction.md&amp;value=---%0Auid%3A%20com.absence.variablebanks.VariableBank.OnDestroyAction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Main/VariableBank.cs/#L86">View Source</a>
+  </span>
+  <h4 id="com_absence_variablebanks_VariableBank_OnDestroyAction" data-uid="com.absence.variablebanks.VariableBank.OnDestroyAction">OnDestroyAction</h4>
+  <div class="markdown level1 summary"><p>The action gets invoked when this bank gets destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnDestroyAction</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

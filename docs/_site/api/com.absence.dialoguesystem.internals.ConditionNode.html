@@ -115,7 +115,6 @@
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a></div>
-    <div><a class="xref" href="com.absence.dialoguesystem.internals.IPerformEditorRefresh.html">IPerformEditorRefresh</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -195,9 +194,6 @@
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone">Node.Clone()</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a>
-    </div>
-    <div>
       <span class="xref">ScriptableObject.SetDirty()</span>
     </div>
     <div>
@@ -215,7 +211,7 @@
   <h5 id="com_absence_dialoguesystem_internals_ConditionNode_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HelpURL(&quot;https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html&quot;)]
-public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh</code></pre>
+public class ConditionNode : Node, IContainVariableManipulators</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -232,7 +228,7 @@ public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorR
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Tooltip(&quot;All of the comparers this node relies on.&quot;)]
-public List&lt;FixedVariableComparer&gt; Comparers</code></pre>
+public List&lt;NodeVariableComparer&gt; Comparers</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -244,7 +240,7 @@ public List&lt;FixedVariableComparer&gt; Comparers</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableComparer</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableComparer.html">NodeVariableComparer</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -458,12 +454,12 @@ public Node TrueNext</code></pre>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetComparers*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetComparers">GetComparers()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;FixedVariableComparer&gt; GetComparers()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;NodeVariableComparer&gt; GetComparers()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -475,7 +471,7 @@ public Node TrueNext</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableComparer</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableComparer.html">NodeVariableComparer</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -558,12 +554,12 @@ public Node TrueNext</code></pre>
   </span>
   <a id="com_absence_dialoguesystem_internals_ConditionNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetSetters*"></a>
   <h4 id="com_absence_dialoguesystem_internals_ConditionNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.ConditionNode.GetSetters">GetSetters()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;FixedVariableSetter&gt; GetSetters()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;NodeVariableSetter&gt; GetSetters()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -575,7 +571,7 @@ public Node TrueNext</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableSetter</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableSetter.html">NodeVariableSetter</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -616,6 +612,23 @@ public Node TrueNext</code></pre>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetTitle">Node.GetTitle()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_OnValidate.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.OnValidate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L98">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_ConditionNode_OnValidate_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.OnValidate*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_ConditionNode_OnValidate" data-uid="com.absence.dialoguesystem.internals.ConditionNode.OnValidate">OnValidate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnValidate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Pass_Inline_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Pass_Inline(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -649,22 +662,6 @@ public Node TrueNext</code></pre>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___">Node.Pass_Inline(params object[])</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs/#L98">View Source</a>
-  </span>
-  <a id="com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh_" data-uid="com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh" data-uid="com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh">PerformEditorRefresh()</h4>
-  <div class="markdown level1 summary"><p>Use to declare what to do when any value gets changed in the inspector/</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void PerformEditorRefresh()</code></pre>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_ConditionNode_Process.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.ConditionNode.Process%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
@@ -788,9 +785,6 @@ public Node TrueNext</code></pre>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a>
-  </div>
-  <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.IPerformEditorRefresh.html">IPerformEditorRefresh</a>
   </div>
 
 </article>

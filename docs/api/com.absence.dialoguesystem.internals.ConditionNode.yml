@@ -15,8 +15,8 @@ items:
   - com.absence.dialoguesystem.internals.ConditionNode.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.ConditionNode.GetSetters
   - com.absence.dialoguesystem.internals.ConditionNode.GetTitle
+  - com.absence.dialoguesystem.internals.ConditionNode.OnValidate
   - com.absence.dialoguesystem.internals.ConditionNode.Pass_Inline(System.Object[])
-  - com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh
   - com.absence.dialoguesystem.internals.ConditionNode.Process
   - com.absence.dialoguesystem.internals.ConditionNode.Processor
   - com.absence.dialoguesystem.internals.ConditionNode.Reach_Inline
@@ -47,11 +47,11 @@ items:
     content: >-
       [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
 
-      public class ConditionNode : Node, IContainVariableManipulators, IPerformEditorRefresh
+      public class ConditionNode : Node, IContainVariableManipulators
     content.vb: >-
       <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")>
 
-      Public Class ConditionNode Inherits Node Implements IContainVariableManipulators, IPerformEditorRefresh
+      Public Class ConditionNode Inherits Node Implements IContainVariableManipulators
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -59,7 +59,6 @@ items:
   - com.absence.dialoguesystem.internals.Node
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators
-  - com.absence.dialoguesystem.internals.IPerformEditorRefresh
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
   - com.absence.dialoguesystem.internals.Node.Position
@@ -86,7 +85,6 @@ items:
   - com.absence.dialoguesystem.internals.Node.GetInputPortNameForCreation
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
   - com.absence.dialoguesystem.internals.Node.Clone
-  - com.absence.dialoguesystem.internals.Node.OnValidate
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -236,13 +234,13 @@ items:
     content: >-
       [Tooltip("All of the comparers this node relies on.")]
 
-      public List<FixedVariableComparer> Comparers
+      public List<NodeVariableComparer> Comparers
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
     content.vb: >-
       <Tooltip("All of the comparers this node relies on.")>
 
-      Public Comparers As List(Of FixedVariableComparer)
+      Public Comparers As List(Of NodeVariableComparer)
   attributes:
   - type: UnityEngine.TooltipAttribute
     ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
@@ -641,14 +639,14 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  summary: A list of comparers which you want to restrict in terms of VariableBank selection
   example: []
   syntax:
-    content: public List<FixedVariableComparer> GetComparers()
+    content: public List<NodeVariableComparer> GetComparers()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
       description: ''
-    content.vb: Public Function GetComparers() As List(Of FixedVariableComparer)
+    content.vb: Public Function GetComparers() As List(Of NodeVariableComparer)
   overload: com.absence.dialoguesystem.internals.ConditionNode.GetComparers*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
@@ -674,47 +672,45 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  summary: A list of comparers which you want to restrict in terms of VariableBank selection
   example: []
   syntax:
-    content: public List<FixedVariableSetter> GetSetters()
+    content: public List<NodeVariableSetter> GetSetters()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
       description: ''
-    content.vb: Public Function GetSetters() As List(Of FixedVariableSetter)
+    content.vb: Public Function GetSetters() As List(Of NodeVariableSetter)
   overload: com.absence.dialoguesystem.internals.ConditionNode.GetSetters*
   implements:
   - com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
-- uid: com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh
-  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh
-  id: PerformEditorRefresh
+- uid: com.absence.dialoguesystem.internals.ConditionNode.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.ConditionNode.OnValidate
+  id: OnValidate
   parent: com.absence.dialoguesystem.internals.ConditionNode
   langs:
   - csharp
   - vb
-  name: PerformEditorRefresh()
-  nameWithType: ConditionNode.PerformEditorRefresh()
-  fullName: com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh()
+  name: OnValidate()
+  nameWithType: ConditionNode.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.OnValidate()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: PerformEditorRefresh
+    id: OnValidate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/ConditionNode.cs
     startLine: 97
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: Use to declare what to do when any value gets changed in the inspector/
   example: []
   syntax:
-    content: public void PerformEditorRefresh()
-    content.vb: Public Sub PerformEditorRefresh()
-  overload: com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh*
-  implements:
-  - com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
+    content: protected override void OnValidate()
+    content.vb: Protected Overrides Sub OnValidate()
+  overridden: com.absence.dialoguesystem.internals.Node.OnValidate
+  overload: com.absence.dialoguesystem.internals.ConditionNode.OnValidate*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -793,13 +789,6 @@ references:
   name: IContainVariableManipulators
   nameWithType: IContainVariableManipulators
   fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
-- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh
-  commentId: T:com.absence.dialoguesystem.internals.IPerformEditorRefresh
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html
-  name: IPerformEditorRefresh
-  nameWithType: IPerformEditorRefresh
-  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -1143,25 +1132,6 @@ references:
     href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone
   - name: (
   - name: )
-- uid: com.absence.dialoguesystem.internals.Node.OnValidate
-  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
-  parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
-  name: OnValidate()
-  nameWithType: Node.OnValidate()
-  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
-    name: OnValidate
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
-    name: OnValidate
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
-  - name: (
-  - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -1290,26 +1260,26 @@ references:
   name: VBProcessType
   nameWithType: VBProcessType
   fullName: com.absence.dialoguesystem.internals.VBProcessType
-- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<FixedVariableComparer>
-  nameWithType: List<FixedVariableComparer>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableComparer>
-  nameWithType.vb: List(Of FixedVariableComparer)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableComparer)
-  name.vb: List(Of FixedVariableComparer)
+  name: List<NodeVariableComparer>
+  nameWithType: List<NodeVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableComparer>
+  nameWithType.vb: List(Of NodeVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableComparer)
+  name.vb: List(Of NodeVariableComparer)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.FixedVariableComparer
-    name: FixedVariableComparer
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -1319,9 +1289,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.FixedVariableComparer
-    name: FixedVariableComparer
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
@@ -2029,13 +1999,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
-  isExternal: true
-  name: VariableBank
-  nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetComparers*
   commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.GetComparers
   href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetComparers
@@ -2061,36 +2024,6 @@ references:
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
   - name: (
   - name: )
-- uid: com.absence.variablesystem
-  commentId: N:com.absence.variablesystem
-  isExternal: true
-  name: com.absence.variablesystem
-  nameWithType: com.absence.variablesystem
-  fullName: com.absence.variablesystem
-  spec.csharp:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
-  spec.vb:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
 - uid: com.absence.dialoguesystem.internals.ConditionNode.GetSetters*
   commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.GetSetters
   href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_GetSetters
@@ -2116,26 +2049,26 @@ references:
     href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters
   - name: (
   - name: )
-- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<FixedVariableSetter>
-  nameWithType: List<FixedVariableSetter>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableSetter>
-  nameWithType.vb: List(Of FixedVariableSetter)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableSetter)
-  name.vb: List(Of FixedVariableSetter)
+  name: List<NodeVariableSetter>
+  nameWithType: List<NodeVariableSetter>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableSetter>
+  nameWithType.vb: List(Of NodeVariableSetter)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableSetter)
+  name.vb: List(Of NodeVariableSetter)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.FixedVariableSetter
-    name: FixedVariableSetter
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+    name: NodeVariableSetter
+    href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -2145,32 +2078,32 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.FixedVariableSetter
-    name: FixedVariableSetter
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+    name: NodeVariableSetter
+    href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
   - name: )
-- uid: com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh*
-  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh
-  href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_PerformEditorRefresh
-  name: PerformEditorRefresh
-  nameWithType: ConditionNode.PerformEditorRefresh
-  fullName: com.absence.dialoguesystem.internals.ConditionNode.PerformEditorRefresh
-- uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
-  commentId: M:com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
-  parent: com.absence.dialoguesystem.internals.IPerformEditorRefresh
-  href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
-  name: PerformEditorRefresh()
-  nameWithType: IPerformEditorRefresh.PerformEditorRefresh()
-  fullName: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh()
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  name: OnValidate()
+  nameWithType: Node.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
-    name: PerformEditorRefresh
-    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
   - name: (
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.IPerformEditorRefresh.PerformEditorRefresh
-    name: PerformEditorRefresh
-    href: com.absence.dialoguesystem.internals.IPerformEditorRefresh.html#com_absence_dialoguesystem_internals_IPerformEditorRefresh_PerformEditorRefresh
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
   - name: (
   - name: )
+- uid: com.absence.dialoguesystem.internals.ConditionNode.OnValidate*
+  commentId: Overload:com.absence.dialoguesystem.internals.ConditionNode.OnValidate
+  href: com.absence.dialoguesystem.internals.ConditionNode.html#com_absence_dialoguesystem_internals_ConditionNode_OnValidate
+  name: OnValidate
+  nameWithType: ConditionNode.OnValidate
+  fullName: com.absence.dialoguesystem.internals.ConditionNode.OnValidate

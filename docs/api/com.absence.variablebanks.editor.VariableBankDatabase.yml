@@ -1,0 +1,662 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.editor.VariableBankDatabase
+  commentId: T:com.absence.variablebanks.editor.VariableBankDatabase
+  id: VariableBankDatabase
+  parent: com.absence.variablebanks.editor
+  children:
+  - com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+  - com.absence.variablebanks.editor.VariableBankDatabase.Exists(System.String)
+  - com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists(System.String)
+  - com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList
+  - com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf(System.String)
+  - com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid(System.String)
+  - com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+  - com.absence.variablebanks.editor.VariableBankDatabase.Refresh
+  langs:
+  - csharp
+  - vb
+  name: VariableBankDatabase
+  nameWithType: VariableBankDatabase
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VariableBankDatabase
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: >-
+    The static class responsible for holding a list of all <xref href="com.absence.variablebanks.VariableBank" data-throw-if-not-resolved="false"></xref>s in the project. <b>Editor only! For runtime, use 
+
+    <xref href="com.absence.variablebanks.VariableBank.GetInstance(System.String)" data-throw-if-not-resolved="false"></xref> instead.</b>
+  example: []
+  syntax:
+    content: >-
+      [InitializeOnLoad]
+
+      public static class VariableBankDatabase
+    content.vb: >-
+      <InitializeOnLoad>
+
+      Public Module VariableBankDatabase
+  inheritance:
+  - System.Object
+  attributes:
+  - type: UnityEditor.InitializeOnLoadAttribute
+    ctor: UnityEditor.InitializeOnLoadAttribute.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+  commentId: P:com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+  id: BanksInAssets
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: BanksInAssets
+  nameWithType: VariableBankDatabase.BanksInAssets
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BanksInAssets
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: All of the banks in the project.
+  example: []
+  syntax:
+    content: public static List<VariableBank> BanksInAssets { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.variablebanks.VariableBank}
+    content.vb: Public Shared ReadOnly Property BanksInAssets As List(Of VariableBank)
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets*
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+  commentId: P:com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+  id: NoBanks
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: NoBanks
+  nameWithType: VariableBankDatabase.NoBanks
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NoBanks
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Returns true when there are no variable banks in the project's assets.
+  example: []
+  syntax:
+    content: public static bool NoBanks { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly Property NoBanks As Boolean
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.NoBanks*
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.Refresh
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.Refresh
+  id: Refresh
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: VariableBankDatabase.Refresh()
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.Refresh()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Refresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Use to refresh the variable bank database.
+  example: []
+  syntax:
+    content: public static void Refresh()
+    content.vb: Public Shared Sub Refresh()
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.Refresh*
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.Exists(System.String)
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.Exists(System.String)
+  id: Exists(System.String)
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: Exists(string)
+  nameWithType: VariableBankDatabase.Exists(string)
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.Exists(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Exists
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Use to check if a bank with the target Guid exists.
+  example: []
+  syntax:
+    content: public static bool Exists(string bankGuid)
+    parameters:
+    - id: bankGuid
+      type: System.String
+      description: Target Guid.
+    return:
+      type: System.Boolean
+      description: True if exists, false otherwise.
+    content.vb: Public Shared Function Exists(bankGuid As String) As Boolean
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.Exists*
+  nameWithType.vb: VariableBankDatabase.Exists(String)
+  fullName.vb: com.absence.variablebanks.editor.VariableBankDatabase.Exists(String)
+  name.vb: Exists(String)
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists(System.String)
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists(System.String)
+  id: GetBankIfExists(System.String)
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetBankIfExists(string)
+  nameWithType: VariableBankDatabase.GetBankIfExists(string)
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetBankIfExists
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 52
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  syntax:
+    content: public static VariableBank GetBankIfExists(string bankGuid)
+    parameters:
+    - id: bankGuid
+      type: System.String
+    return:
+      type: com.absence.variablebanks.VariableBank
+    content.vb: Public Shared Function GetBankIfExists(bankGuid As String) As VariableBank
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists*
+  nameWithType.vb: VariableBankDatabase.GetBankIfExists(String)
+  fullName.vb: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists(String)
+  name.vb: GetBankIfExists(String)
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf(System.String)
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf(System.String)
+  id: GetIndexOf(System.String)
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetIndexOf(string)
+  nameWithType: VariableBankDatabase.GetIndexOf(string)
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetIndexOf
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 62
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Get the index of the bank with the target Guid.
+  example: []
+  syntax:
+    content: public static int GetIndexOf(string bankGuid)
+    parameters:
+    - id: bankGuid
+      type: System.String
+      description: Target Guid.
+    return:
+      type: System.Int32
+      description: Returns <b>-1</b> if the bank with the target Guid does not exits. Returns the index otherwise.
+    content.vb: Public Shared Function GetIndexOf(bankGuid As String) As Integer
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf*
+  nameWithType.vb: VariableBankDatabase.GetIndexOf(String)
+  fullName.vb: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf(String)
+  name.vb: GetIndexOf(String)
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid(System.String)
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid(System.String)
+  id: NameToGuid(System.String)
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: NameToGuid(string)
+  nameWithType: VariableBankDatabase.NameToGuid(string)
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NameToGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 76
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Use to get Guid of a bank with a specific name.
+  example: []
+  syntax:
+    content: public static string NameToGuid(string bankName)
+    parameters:
+    - id: bankName
+      type: System.String
+      description: Target name.
+    return:
+      type: System.String
+      description: Returns null if a bank with the target name does not exist. Returns the Guid otherwise.
+    content.vb: Public Shared Function NameToGuid(bankName As String) As String
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid*
+  nameWithType.vb: VariableBankDatabase.NameToGuid(String)
+  fullName.vb: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid(String)
+  name.vb: NameToGuid(String)
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList
+  commentId: M:com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList
+  id: GetBankNameList
+  parent: com.absence.variablebanks.editor.VariableBankDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetBankNameList()
+  nameWithType: VariableBankDatabase.GetBankNameList()
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetBankNameList
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Editor/Scripts/VariableBankDatabase.cs
+    startLine: 89
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.variablebanks.editor
+  summary: Use to get a list of all variable banks' names.
+  example: []
+  syntax:
+    content: public static List<string> GetBankNameList()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: Returns a list of all variable banks' (except of the ones marked as <xref href="com.absence.variablebanks.VariableBank.ForExternalUse" data-throw-if-not-resolved="false"></xref>) names.
+    content.vb: Public Shared Function GetBankNameList() As List(Of String)
+  overload: com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList*
+references:
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+- uid: com.absence.variablebanks.VariableBank.GetInstance(System.String)
+  commentId: M:com.absence.variablebanks.VariableBank.GetInstance(System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetInstance(string)
+  nameWithType: VariableBank.GetInstance(string)
+  fullName: com.absence.variablebanks.VariableBank.GetInstance(string)
+  nameWithType.vb: VariableBank.GetInstance(String)
+  fullName.vb: com.absence.variablebanks.VariableBank.GetInstance(String)
+  name.vb: GetInstance(String)
+  spec.csharp:
+  - uid: com.absence.variablebanks.VariableBank.GetInstance(System.String)
+    name: GetInstance
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: com.absence.variablebanks.VariableBank.GetInstance(System.String)
+    name: GetInstance
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: com.absence.variablebanks.editor
+  commentId: N:com.absence.variablebanks.editor
+  href: com.html
+  name: com.absence.variablebanks.editor
+  nameWithType: com.absence.variablebanks.editor
+  fullName: com.absence.variablebanks.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.editor
+    name: editor
+    href: com.absence.variablebanks.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.editor
+    name: editor
+    href: com.absence.variablebanks.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_BanksInAssets
+  name: BanksInAssets
+  nameWithType: VariableBankDatabase.BanksInAssets
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.BanksInAssets
+- uid: System.Collections.Generic.List{com.absence.variablebanks.VariableBank}
+  commentId: T:System.Collections.Generic.List{com.absence.variablebanks.VariableBank}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<VariableBank>
+  nameWithType: List<VariableBank>
+  fullName: System.Collections.Generic.List<com.absence.variablebanks.VariableBank>
+  nameWithType.vb: List(Of VariableBank)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.variablebanks.VariableBank)
+  name.vb: List(Of VariableBank)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.variablebanks.VariableBank
+    name: VariableBank
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablebanks.VariableBank
+    name: VariableBank
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.NoBanks*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_NoBanks
+  name: NoBanks
+  nameWithType: VariableBankDatabase.NoBanks
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.NoBanks
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.Refresh*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.Refresh
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_Refresh
+  name: Refresh
+  nameWithType: VariableBankDatabase.Refresh
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.Refresh
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.Exists*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.Exists
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_Exists_System_String_
+  name: Exists
+  nameWithType: VariableBankDatabase.Exists
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.Exists
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_GetBankIfExists_System_String_
+  name: GetBankIfExists
+  nameWithType: VariableBankDatabase.GetBankIfExists
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetBankIfExists
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_GetIndexOf_System_String_
+  name: GetIndexOf
+  nameWithType: VariableBankDatabase.GetIndexOf
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetIndexOf
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_NameToGuid_System_String_
+  name: NameToGuid
+  nameWithType: VariableBankDatabase.NameToGuid
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.NameToGuid
+- uid: com.absence.variablebanks.VariableBank.ForExternalUse
+  commentId: P:com.absence.variablebanks.VariableBank.ForExternalUse
+  href: com.absence.variablebanks.VariableBank.html#com_absence_variablebanks_VariableBank_ForExternalUse
+  name: ForExternalUse
+  nameWithType: VariableBank.ForExternalUse
+  fullName: com.absence.variablebanks.VariableBank.ForExternalUse
+- uid: com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList*
+  commentId: Overload:com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html#com_absence_variablebanks_editor_VariableBankDatabase_GetBankNameList
+  name: GetBankNameList
+  nameWithType: VariableBankDatabase.GetBankNameList
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase.GetBankNameList
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

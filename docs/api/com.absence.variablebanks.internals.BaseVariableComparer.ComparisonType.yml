@@ -1,0 +1,332 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  id: BaseVariableComparer.ComparisonType
+  parent: com.absence.variablebanks.internals
+  children:
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.EqualsTo
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterOrEqual
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterThan
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessOrEqual
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessThan
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.NotEquals
+  langs:
+  - csharp
+  - vb
+  name: BaseVariableComparer.ComparisonType
+  nameWithType: BaseVariableComparer.ComparisonType
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ComparisonType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: An enum for deciding how the comparison will get performed.
+  example: []
+  syntax:
+    content: public enum BaseVariableComparer.ComparisonType
+    content.vb: Public Enum BaseVariableComparer.ComparisonType
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessThan
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessThan
+  id: LessThan
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: LessThan
+  nameWithType: BaseVariableComparer.ComparisonType.LessThan
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessThan
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: LessThan
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("<")]
+
+      LessThan = 0
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName("<")>
+
+      LessThan = 0
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: <
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessOrEqual
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessOrEqual
+  id: LessOrEqual
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: LessOrEqual
+  nameWithType: BaseVariableComparer.ComparisonType.LessOrEqual
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.LessOrEqual
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: LessOrEqual
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("≤")]
+
+      LessOrEqual = 1
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName("≤")>
+
+      LessOrEqual = 1
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ≤
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.EqualsTo
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.EqualsTo
+  id: EqualsTo
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: EqualsTo
+  nameWithType: BaseVariableComparer.ComparisonType.EqualsTo
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.EqualsTo
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: EqualsTo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("=")]
+
+      EqualsTo = 2
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName("=")>
+
+      EqualsTo = 2
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: =
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.NotEquals
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.NotEquals
+  id: NotEquals
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: NotEquals
+  nameWithType: BaseVariableComparer.ComparisonType.NotEquals
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.NotEquals
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NotEquals
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("≠")]
+
+      NotEquals = 3
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName("≠")>
+
+      NotEquals = 3
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ≠
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterOrEqual
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterOrEqual
+  id: GreaterOrEqual
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: GreaterOrEqual
+  nameWithType: BaseVariableComparer.ComparisonType.GreaterOrEqual
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterOrEqual
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GreaterOrEqual
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("≥")]
+
+      GreaterOrEqual = 4
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName("≥")>
+
+      GreaterOrEqual = 4
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ≥
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterThan
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterThan
+  id: GreaterThan
+  parent: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  langs:
+  - csharp
+  - vb
+  name: GreaterThan
+  nameWithType: BaseVariableComparer.ComparisonType.GreaterThan
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.GreaterThan
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GreaterThan
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableComparer.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName(">")]
+
+      GreaterThan = 5
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    content.vb: >-
+      <InspectorName(">")>
+
+      GreaterThan = 5
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '>'
+references:
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  name: BaseVariableComparer.ComparisonType
+  nameWithType: BaseVariableComparer.ComparisonType
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer
+    name: BaseVariableComparer
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    href: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.html
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer
+    name: BaseVariableComparer
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    href: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.html

@@ -1,0 +1,740 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.internals.BaseVariableSetter
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter
+  id: BaseVariableSetter
+  parent: com.absence.variablebanks.internals
+  children:
+  - com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  - com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_setType
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
+  - com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
+  langs:
+  - csharp
+  - vb
+  name: BaseVariableSetter
+  nameWithType: BaseVariableSetter
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BaseVariableSetter
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: The base class for setters.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public abstract class BaseVariableSetter
+    content.vb: >-
+      <Serializable>
+
+      Public MustInherit Class BaseVariableSetter
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - com.absence.dialoguesystem.internals.NodeVariableSetter
+  - com.absence.variablebanks.FixedVariableSetter
+  - com.absence.variablebanks.VariableSetter
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_setType
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_setType
+  id: m_setType
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_setType
+  nameWithType: BaseVariableSetter.m_setType
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_setType
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_setType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected BaseVariableSetter.SetType m_setType
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_setType As BaseVariableSetter.SetType
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
+  id: m_targetBankGuid
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_targetBankGuid
+  nameWithType: BaseVariableSetter.m_targetBankGuid
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_targetBankGuid
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_targetBankGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected string m_targetBankGuid
+    return:
+      type: System.String
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_targetBankGuid As String
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
+  id: m_targetVariableName
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_targetVariableName
+  nameWithType: BaseVariableSetter.m_targetVariableName
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_targetVariableName
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_targetVariableName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected string m_targetVariableName
+    return:
+      type: System.String
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_targetVariableName As String
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
+  id: m_intValue
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_intValue
+  nameWithType: BaseVariableSetter.m_intValue
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_intValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_intValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected int m_intValue
+    return:
+      type: System.Int32
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_intValue As Integer
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
+  id: m_floatValue
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_floatValue
+  nameWithType: BaseVariableSetter.m_floatValue
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_floatValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_floatValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected float m_floatValue
+    return:
+      type: System.Single
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_floatValue As Single
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
+  id: m_stringValue
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_stringValue
+  nameWithType: BaseVariableSetter.m_stringValue
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_stringValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_stringValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected string m_stringValue
+    return:
+      type: System.String
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_stringValue As String
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
+  id: m_boolValue
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: m_boolValue
+  nameWithType: BaseVariableSetter.m_boolValue
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.m_boolValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_boolValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected bool m_boolValue
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <SerializeField>
+
+      Protected m_boolValue As Boolean
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  commentId: P:com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  id: HasFixedBank
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: HasFixedBank
+  nameWithType: BaseVariableSetter.HasFixedBank
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasFixedBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 35
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Will the bank selector be hidden in the editor?
+  example: []
+  syntax:
+    content: public abstract bool HasFixedBank { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride ReadOnly Property HasFixedBank As Boolean
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  id: GetRuntimeBank
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: GetRuntimeBank()
+  nameWithType: BaseVariableSetter.GetRuntimeBank()
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetRuntimeBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 41
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Override to define how this setter will find it's runtime bank.
+  example: []
+  syntax:
+    content: protected virtual VariableBank GetRuntimeBank()
+    return:
+      type: com.absence.variablebanks.VariableBank
+      description: The runtime bank or null
+    content.vb: Protected Overridable Function GetRuntimeBank() As VariableBank
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  id: Perform
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Perform()
+  nameWithType: BaseVariableSetter.Perform()
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Perform
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 46
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Sets the target variable in target <xref href="com.absence.variablebanks.VariableBank" data-throw-if-not-resolved="false"></xref> to intended value.
+  example: []
+  syntax:
+    content: public virtual void Perform()
+    content.vb: Public Overridable Sub Perform()
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.Perform*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  id: Perform_Boolean(com.absence.variablebanks.VariableBank)
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Perform_Boolean(VariableBank)
+  nameWithType: BaseVariableSetter.Perform_Boolean(VariableBank)
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Perform_Boolean
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 70
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Override to define the logic for booleans.
+  example: []
+  syntax:
+    content: protected virtual void Perform_Boolean(VariableBank bank)
+    parameters:
+    - id: bank
+      type: com.absence.variablebanks.VariableBank
+      description: Runtime bank.
+    content.vb: Protected Overridable Sub Perform_Boolean(bank As VariableBank)
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  id: Perform_String(com.absence.variablebanks.VariableBank)
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Perform_String(VariableBank)
+  nameWithType: BaseVariableSetter.Perform_String(VariableBank)
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Perform_String
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 79
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Override to define the logic for strings.
+  example: []
+  syntax:
+    content: protected virtual void Perform_String(VariableBank bank)
+    parameters:
+    - id: bank
+      type: com.absence.variablebanks.VariableBank
+      description: Runtime bank.
+    content.vb: Protected Overridable Sub Perform_String(bank As VariableBank)
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  id: Perform_Float(com.absence.variablebanks.VariableBank)
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Perform_Float(VariableBank)
+  nameWithType: BaseVariableSetter.Perform_Float(VariableBank)
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Perform_Float
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 88
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Override to define the logic for floating points.
+  example: []
+  syntax:
+    content: protected virtual void Perform_Float(VariableBank bank)
+    parameters:
+    - id: bank
+      type: com.absence.variablebanks.VariableBank
+      description: Runtime bank.
+    content.vb: Protected Overridable Sub Perform_Float(bank As VariableBank)
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float*
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  id: Perform_Int(com.absence.variablebanks.VariableBank)
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Perform_Int(VariableBank)
+  nameWithType: BaseVariableSetter.Perform_Int(VariableBank)
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Perform_Int
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 120
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: Override to define the logic for integers.
+  example: []
+  syntax:
+    content: protected virtual void Perform_Int(VariableBank bank)
+    parameters:
+    - id: bank
+      type: com.absence.variablebanks.VariableBank
+      description: Runtime bank.
+    content.vb: Protected Overridable Sub Perform_Int(bank As VariableBank)
+  overload: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int*
+references:
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  name: BaseVariableSetter.SetType
+  nameWithType: BaseVariableSetter.SetType
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_HasFixedBank
+  name: HasFixedBank
+  nameWithType: BaseVariableSetter.HasFixedBank
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_GetRuntimeBank
+  name: GetRuntimeBank
+  nameWithType: BaseVariableSetter.GetRuntimeBank
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.GetRuntimeBank
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+  name: Perform
+  nameWithType: BaseVariableSetter.Perform
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Boolean_com_absence_variablebanks_VariableBank_
+  name: Perform_Boolean
+  nameWithType: BaseVariableSetter.Perform_Boolean
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Boolean
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.Perform_String
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_String_com_absence_variablebanks_VariableBank_
+  name: Perform_String
+  nameWithType: BaseVariableSetter.Perform_String
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_String
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Float_com_absence_variablebanks_VariableBank_
+  name: Perform_Float
+  nameWithType: BaseVariableSetter.Perform_Float
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Float
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int*
+  commentId: Overload:com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform_Int_com_absence_variablebanks_VariableBank_
+  name: Perform_Int
+  nameWithType: BaseVariableSetter.Perform_Int
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform_Int

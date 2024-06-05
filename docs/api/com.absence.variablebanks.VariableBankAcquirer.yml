@@ -1,0 +1,213 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.VariableBankAcquirer
+  commentId: T:com.absence.variablebanks.VariableBankAcquirer
+  id: VariableBankAcquirer
+  parent: com.absence.variablebanks
+  children:
+  - com.absence.variablebanks.VariableBankAcquirer.Bank
+  - com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+  langs:
+  - csharp
+  - vb
+  name: VariableBankAcquirer
+  nameWithType: VariableBankAcquirer
+  fullName: com.absence.variablebanks.VariableBankAcquirer
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VariableBankAcquirer
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: A component to reference banks both in editor and runtime.
+  example: []
+  syntax:
+    content: 'public class VariableBankAcquirer : MonoBehaviour'
+    content.vb: Public Class VariableBankAcquirer Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+- uid: com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+  commentId: P:com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+  id: TargetGuid
+  parent: com.absence.variablebanks.VariableBankAcquirer
+  langs:
+  - csharp
+  - vb
+  name: TargetGuid
+  nameWithType: VariableBankAcquirer.TargetGuid
+  fullName: com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TargetGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get the Guid of the referenced bank.
+  example: []
+  syntax:
+    content: public string TargetGuid { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TargetGuid As String
+  overload: com.absence.variablebanks.VariableBankAcquirer.TargetGuid*
+- uid: com.absence.variablebanks.VariableBankAcquirer.Bank
+  commentId: P:com.absence.variablebanks.VariableBankAcquirer.Bank
+  id: Bank
+  parent: com.absence.variablebanks.VariableBankAcquirer
+  langs:
+  - csharp
+  - vb
+  name: Bank
+  nameWithType: VariableBankAcquirer.Bank
+  fullName: com.absence.variablebanks.VariableBankAcquirer.Bank
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Bank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Components/VariableBankAcquirer.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to get clone of the referenced bank. <b>Runtime only.</b>
+  example: []
+  syntax:
+    content: public VariableBank Bank { get; }
+    parameters: []
+    return:
+      type: com.absence.variablebanks.VariableBank
+    content.vb: Public ReadOnly Property Bank As VariableBank
+  overload: com.absence.variablebanks.VariableBankAcquirer.Bank*
+references:
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: com.absence.variablebanks.VariableBankAcquirer.TargetGuid*
+  commentId: Overload:com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+  href: com.absence.variablebanks.VariableBankAcquirer.html#com_absence_variablebanks_VariableBankAcquirer_TargetGuid
+  name: TargetGuid
+  nameWithType: VariableBankAcquirer.TargetGuid
+  fullName: com.absence.variablebanks.VariableBankAcquirer.TargetGuid
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.variablebanks.VariableBankAcquirer.Bank*
+  commentId: Overload:com.absence.variablebanks.VariableBankAcquirer.Bank
+  href: com.absence.variablebanks.VariableBankAcquirer.html#com_absence_variablebanks_VariableBankAcquirer_Bank
+  name: Bank
+  nameWithType: VariableBankAcquirer.Bank
+  fullName: com.absence.variablebanks.VariableBankAcquirer.Bank
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank

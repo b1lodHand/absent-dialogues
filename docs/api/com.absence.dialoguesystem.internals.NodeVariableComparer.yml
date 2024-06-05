@@ -1,0 +1,500 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
+  id: NodeVariableComparer
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  langs:
+  - csharp
+  - vb
+  name: NodeVariableComparer
+  nameWithType: NodeVariableComparer
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeVariableComparer
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: The comparer specifically designed for working with dialogue nodes.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class NodeVariableComparer : BaseVariableComparer
+    content.vb: >-
+      <Serializable>
+
+      Public Class NodeVariableComparer Inherits BaseVariableComparer
+  inheritance:
+  - System.Object
+  - com.absence.variablebanks.internals.BaseVariableComparer
+  inheritedMembers:
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_comparisonType
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_targetBankGuid
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_targetVariableName
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_intValue
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_floatValue
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_stringValue
+  - com.absence.variablebanks.internals.BaseVariableComparer.m_boolValue
+  - com.absence.variablebanks.internals.BaseVariableComparer.GetResult
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+  commentId: P:com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+  id: BlackboardBank
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: BlackboardBank
+  nameWithType: NodeVariableComparer.BlackboardBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BlackboardBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Bank of the blackboard in context.
+  example: []
+  syntax:
+    content: public VariableBank BlackboardBank { get; set; }
+    parameters: []
+    return:
+      type: com.absence.variablebanks.VariableBank
+    content.vb: Public Property BlackboardBank As VariableBank
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+  commentId: P:com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+  id: HasFixedBank
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: HasFixedBank
+  nameWithType: NodeVariableComparer.HasFixedBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasFixedBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Will the bank selector be hidden in the editor?
+  example: []
+  syntax:
+    content: public override bool HasFixedBank { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property HasFixedBank As Boolean
+  overridden: com.absence.variablebanks.internals.BaseVariableComparer.HasFixedBank
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
+  id: GetRuntimeBank
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: GetRuntimeBank()
+  nameWithType: NodeVariableComparer.GetRuntimeBank()
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetRuntimeBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Override to define how this comparer will find it's runtime bank.
+  example: []
+  syntax:
+    content: protected override VariableBank GetRuntimeBank()
+    return:
+      type: com.absence.variablebanks.VariableBank
+      description: The runtime bank or null
+    content.vb: Protected Overrides Function GetRuntimeBank() As VariableBank
+  overridden: com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  id: SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: SetBlackboardBank(VariableBank)
+  nameWithType: NodeVariableComparer.SetBlackboardBank(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetBlackboardBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to set the blackboard bank of this comparer.
+  example: []
+  syntax:
+    content: public void SetBlackboardBank(VariableBank originalBlackboardBank)
+    parameters:
+    - id: originalBlackboardBank
+      type: com.absence.variablebanks.VariableBank
+      description: Target bank.
+    content.vb: Public Sub SetBlackboardBank(originalBlackboardBank As VariableBank)
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+  id: Clone(com.absence.variablebanks.VariableBank)
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: Clone(VariableBank)
+  nameWithType: NodeVariableComparer.Clone(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablebanks.VariableBank)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 38
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Use to copy this comparer.
+  example: []
+  syntax:
+    content: public NodeVariableComparer Clone(VariableBank clonedBlackboardBank)
+    parameters:
+    - id: clonedBlackboardBank
+      type: com.absence.variablebanks.VariableBank
+      description: Cloned blackboard bank.
+    return:
+      type: com.absence.dialoguesystem.internals.NodeVariableComparer
+      description: The clone.
+    content.vb: Public Function Clone(clonedBlackboardBank As VariableBank) As NodeVariableComparer
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone*
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: com.absence.variablebanks.internals.BaseVariableComparer
+  commentId: T:com.absence.variablebanks.internals.BaseVariableComparer
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  name: BaseVariableComparer
+  nameWithType: BaseVariableComparer
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_comparisonType
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_comparisonType
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_comparisonType
+  name: m_comparisonType
+  nameWithType: BaseVariableComparer.m_comparisonType
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_comparisonType
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_targetBankGuid
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_targetBankGuid
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_targetBankGuid
+  name: m_targetBankGuid
+  nameWithType: BaseVariableComparer.m_targetBankGuid
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_targetBankGuid
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_targetVariableName
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_targetVariableName
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_targetVariableName
+  name: m_targetVariableName
+  nameWithType: BaseVariableComparer.m_targetVariableName
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_targetVariableName
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_intValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_intValue
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_intValue
+  name: m_intValue
+  nameWithType: BaseVariableComparer.m_intValue
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_intValue
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_floatValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_floatValue
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_floatValue
+  name: m_floatValue
+  nameWithType: BaseVariableComparer.m_floatValue
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_floatValue
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_stringValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_stringValue
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_stringValue
+  name: m_stringValue
+  nameWithType: BaseVariableComparer.m_stringValue
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_stringValue
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.m_boolValue
+  commentId: F:com.absence.variablebanks.internals.BaseVariableComparer.m_boolValue
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_m_boolValue
+  name: m_boolValue
+  nameWithType: BaseVariableComparer.m_boolValue
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.m_boolValue
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.GetResult
+  commentId: M:com.absence.variablebanks.internals.BaseVariableComparer.GetResult
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetResult
+  name: GetResult()
+  nameWithType: BaseVariableComparer.GetResult()
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.GetResult()
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.GetResult
+    name: GetResult
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetResult
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.GetResult
+    name: GetResult
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetResult
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_BlackboardBank
+  name: BlackboardBank
+  nameWithType: NodeVariableComparer.BlackboardBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
+  name: VariableBank
+  nameWithType: VariableBank
+  fullName: com.absence.variablebanks.VariableBank
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.HasFixedBank
+  commentId: P:com.absence.variablebanks.internals.BaseVariableComparer.HasFixedBank
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_HasFixedBank
+  name: HasFixedBank
+  nameWithType: BaseVariableComparer.HasFixedBank
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.HasFixedBank
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_HasFixedBank
+  name: HasFixedBank
+  nameWithType: NodeVariableComparer.HasFixedBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank
+  commentId: M:com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank
+  parent: com.absence.variablebanks.internals.BaseVariableComparer
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetRuntimeBank
+  name: GetRuntimeBank()
+  nameWithType: BaseVariableComparer.GetRuntimeBank()
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank()
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank
+    name: GetRuntimeBank
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetRuntimeBank
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.GetRuntimeBank
+    name: GetRuntimeBank
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html#com_absence_variablebanks_internals_BaseVariableComparer_GetRuntimeBank
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_GetRuntimeBank
+  name: GetRuntimeBank
+  nameWithType: NodeVariableComparer.GetRuntimeBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_SetBlackboardBank_com_absence_variablebanks_VariableBank_
+  name: SetBlackboardBank
+  nameWithType: NodeVariableComparer.SetBlackboardBank
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.Clone
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_Clone_com_absence_variablebanks_VariableBank_
+  name: Clone
+  nameWithType: NodeVariableComparer.Clone
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  name: NodeVariableComparer
+  nameWithType: NodeVariableComparer
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer

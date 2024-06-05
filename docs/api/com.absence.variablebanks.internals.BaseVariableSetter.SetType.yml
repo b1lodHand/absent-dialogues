@@ -1,0 +1,292 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  id: BaseVariableSetter.SetType
+  parent: com.absence.variablebanks.internals
+  children:
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType.DecrementBy
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType.DivideBy
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType.IncrementBy
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType.MultipltyBy
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType.SetTo
+  langs:
+  - csharp
+  - vb
+  name: BaseVariableSetter.SetType
+  nameWithType: BaseVariableSetter.SetType
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: An enum for deciding which way the setting will work.
+  example: []
+  syntax:
+    content: public enum BaseVariableSetter.SetType
+    content.vb: Public Enum BaseVariableSetter.SetType
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType.SetTo
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.SetType.SetTo
+  id: SetTo
+  parent: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  langs:
+  - csharp
+  - vb
+  name: SetTo
+  nameWithType: BaseVariableSetter.SetType.SetTo
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType.SetTo
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetTo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("=")]
+
+      SetTo = 0
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <InspectorName("=")>
+
+      SetTo = 0
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: =
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType.IncrementBy
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.SetType.IncrementBy
+  id: IncrementBy
+  parent: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  langs:
+  - csharp
+  - vb
+  name: IncrementBy
+  nameWithType: BaseVariableSetter.SetType.IncrementBy
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType.IncrementBy
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IncrementBy
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("+")]
+
+      IncrementBy = 1
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <InspectorName("+")>
+
+      IncrementBy = 1
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: +
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType.DecrementBy
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.SetType.DecrementBy
+  id: DecrementBy
+  parent: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  langs:
+  - csharp
+  - vb
+  name: DecrementBy
+  nameWithType: BaseVariableSetter.SetType.DecrementBy
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType.DecrementBy
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DecrementBy
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("-")]
+
+      DecrementBy = 2
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <InspectorName("-")>
+
+      DecrementBy = 2
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '-'
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType.MultipltyBy
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.SetType.MultipltyBy
+  id: MultipltyBy
+  parent: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  langs:
+  - csharp
+  - vb
+  name: MultipltyBy
+  nameWithType: BaseVariableSetter.SetType.MultipltyBy
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType.MultipltyBy
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: MultipltyBy
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("x")]
+
+      MultipltyBy = 3
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <InspectorName("x")>
+
+      MultipltyBy = 3
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType.DivideBy
+  commentId: F:com.absence.variablebanks.internals.BaseVariableSetter.SetType.DivideBy
+  id: DivideBy
+  parent: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  langs:
+  - csharp
+  - vb
+  name: DivideBy
+  nameWithType: BaseVariableSetter.SetType.DivideBy
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType.DivideBy
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DivideBy
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Abstract/BaseVariableSetter.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  syntax:
+    content: >-
+      [InspectorName("÷")]
+
+      DivideBy = 4
+    return:
+      type: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    content.vb: >-
+      <InspectorName("÷")>
+
+      DivideBy = 4
+  attributes:
+  - type: UnityEngine.InspectorNameAttribute
+    ctor: UnityEngine.InspectorNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ÷
+references:
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  name: BaseVariableSetter.SetType
+  nameWithType: BaseVariableSetter.SetType
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html

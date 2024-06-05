@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.testing
+  commentId: N:com.absence.variablebanks.testing
+  id: com.absence.variablebanks.testing
+  children:
+  - com.absence.variablebanks.testing.Varcaster
+  langs:
+  - csharp
+  - vb
+  name: com.absence.variablebanks.testing
+  nameWithType: com.absence.variablebanks.testing
+  fullName: com.absence.variablebanks.testing
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.variablebanks.testing.Varcaster
+  commentId: T:com.absence.variablebanks.testing.Varcaster
+  href: com.absence.variablebanks.testing.Varcaster.html
+  name: Varcaster
+  nameWithType: Varcaster
+  fullName: com.absence.variablebanks.testing.Varcaster

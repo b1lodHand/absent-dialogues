@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.testing.Varcaster
+  commentId: T:com.absence.variablebanks.testing.Varcaster
+  id: Varcaster
+  parent: com.absence.variablebanks.testing
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Varcaster
+  nameWithType: Varcaster
+  fullName: com.absence.variablebanks.testing.Varcaster
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Testing/Varcaster.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Varcaster
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Testing/Varcaster.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.testing
+  syntax:
+    content: 'public class Varcaster : MonoBehaviour'
+    content.vb: Public Class Varcaster Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+references:
+- uid: com.absence.variablebanks.testing
+  commentId: N:com.absence.variablebanks.testing
+  href: com.html
+  name: com.absence.variablebanks.testing
+  nameWithType: com.absence.variablebanks.testing
+  fullName: com.absence.variablebanks.testing
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.testing
+    name: testing
+    href: com.absence.variablebanks.testing.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.testing
+    name: testing
+    href: com.absence.variablebanks.testing.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

@@ -101,7 +101,7 @@
 
 
   <h1 id="com_absence_dialoguesystem_internals_IContainVariableManipulators" data-uid="com.absence.dialoguesystem.internals.IContainVariableManipulators" class="text-break">Interface IContainVariableManipulators</h1>
-  <div class="markdown level0 summary"><p>Any node subtype with this interface implemented will refresh its <span class="xref">com.absence.variablesystem.VariableComparer</span>s and <span class="xref">com.absence.variablesystem.VariableSetter</span>s
+  <div class="markdown level0 summary"><p>Any node subtype with this interface implemented will refresh its VariableComparers and VariableSetters
 to have the correct reference to the <a class="xref" href="com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Bank">Bank</a> of the current <a class="xref" href="com.absence.dialoguesystem.Dialogue.html">Dialogue</a> everytime the
 editor window refreshes.</p>
 </div>
@@ -119,16 +119,16 @@ editor window refreshes.</p>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs/#L17">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs/#L16">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers_" data-uid="com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*"></a>
   <h4 id="com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers" data-uid="com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers">GetComparers()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;FixedVariableComparer&gt; GetComparers()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;NodeVariableComparer&gt; GetComparers()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -140,7 +140,7 @@ editor window refreshes.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableComparer</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableComparer.html">NodeVariableComparer</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -150,16 +150,16 @@ editor window refreshes.</p>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs/#L23">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs/#L22">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters_" data-uid="com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters*"></a>
   <h4 id="com_absence_dialoguesystem_internals_IContainVariableManipulators_GetSetters" data-uid="com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters">GetSetters()</h4>
-  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of <span class="xref">com.absence.variablesystem.VariableBank</span> selection</p>
+  <div class="markdown level1 summary"><p>A list of comparers which you want to restrict in terms of VariableBank selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;FixedVariableSetter&gt; GetSetters()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;NodeVariableSetter&gt; GetSetters()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -171,7 +171,7 @@ editor window refreshes.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">FixedVariableSetter</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.NodeVariableSetter.html">NodeVariableSetter</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
