@@ -6,7 +6,7 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.Option.AdditionalData
-  - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
   - com.absence.dialoguesystem.internals.Option.IsVisible
   - com.absence.dialoguesystem.internals.Option.LeadsTo
   - com.absence.dialoguesystem.internals.Option.Speech
@@ -238,16 +238,16 @@ items:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
     arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
-  id: Clone(com.absence.variablesystem.VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
+  id: Clone(com.absence.variablebanks.VariableBank)
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
   name: Clone(VariableBank)
   nameWithType: Option.Clone(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablebanks.VariableBank)
   type: Method
   source:
     remote:
@@ -266,7 +266,7 @@ items:
     content: public Option Clone(VariableBank overrideBank)
     parameters:
     - id: overrideBank
-      type: com.absence.variablesystem.VariableBank
+      type: com.absence.variablebanks.VariableBank
       description: ''
     return:
       type: com.absence.dialoguesystem.internals.Option
@@ -428,17 +428,17 @@ references:
   fullName: com.absence.dialoguesystem.internals.Node
 - uid: com.absence.dialoguesystem.internals.Option.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
-  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablebanks_VariableBank_
   name: Clone
   nameWithType: Option.Clone
   fullName: com.absence.dialoguesystem.internals.Option.Clone
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
-  isExternal: true
+- uid: com.absence.variablebanks.VariableBank
+  commentId: T:com.absence.variablebanks.VariableBank
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.VariableBank.html
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
+  fullName: com.absence.variablebanks.VariableBank
 - uid: com.absence.dialoguesystem.internals.Option
   commentId: T:com.absence.dialoguesystem.internals.Option
   parent: com.absence.dialoguesystem.internals
@@ -446,36 +446,36 @@ references:
   name: Option
   nameWithType: Option
   fullName: com.absence.dialoguesystem.internals.Option
-- uid: com.absence.variablesystem
-  commentId: N:com.absence.variablesystem
-  isExternal: true
-  name: com.absence.variablesystem
-  nameWithType: com.absence.variablesystem
-  fullName: com.absence.variablesystem
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
   spec.csharp:
   - uid: com
     name: com
-    isExternal: true
+    href: com.html
   - name: .
   - uid: com.absence
     name: absence
-    isExternal: true
+    href: com.absence.html
   - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
   spec.vb:
   - uid: com
     name: com
-    isExternal: true
+    href: com.html
   - name: .
   - uid: com.absence
     name: absence
-    isExternal: true
+    href: com.absence.html
   - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
 - uid: com.absence.dialoguesystem.internals.Option.IsVisible*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.IsVisible
   href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible

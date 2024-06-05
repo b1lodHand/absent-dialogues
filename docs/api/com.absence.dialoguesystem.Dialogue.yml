@@ -16,11 +16,10 @@ items:
   - com.absence.dialoguesystem.Dialogue.Initialize
   - com.absence.dialoguesystem.Dialogue.IsClone
   - com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
-  - com.absence.dialoguesystem.Dialogue.OnEditorRefresh
+  - com.absence.dialoguesystem.Dialogue.OnValidateAction
   - com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   - com.absence.dialoguesystem.Dialogue.Pass(System.Object[])
   - com.absence.dialoguesystem.Dialogue.People
-  - com.absence.dialoguesystem.Dialogue.PerformEditorRefresh
   - com.absence.dialoguesystem.Dialogue.RootNode
   langs:
   - csharp
@@ -276,63 +275,35 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property IsClone As Boolean
   overload: com.absence.dialoguesystem.Dialogue.IsClone*
-- uid: com.absence.dialoguesystem.Dialogue.OnEditorRefresh
-  commentId: E:com.absence.dialoguesystem.Dialogue.OnEditorRefresh
-  id: OnEditorRefresh
+- uid: com.absence.dialoguesystem.Dialogue.OnValidateAction
+  commentId: E:com.absence.dialoguesystem.Dialogue.OnValidateAction
+  id: OnValidateAction
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: OnEditorRefresh
-  nameWithType: Dialogue.OnEditorRefresh
-  fullName: com.absence.dialoguesystem.Dialogue.OnEditorRefresh
+  name: OnValidateAction
+  nameWithType: Dialogue.OnValidateAction
+  fullName: com.absence.dialoguesystem.Dialogue.OnValidateAction
   type: Event
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnEditorRefresh
+    id: OnValidateAction
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
     startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Action which will get invoked if any value gets changed in the inspector when this dialogue is selected.
+  summary: Action which will get invoked if <xref href="com.absence.dialoguesystem.Dialogue.OnValidate" data-throw-if-not-resolved="false"></xref> gets called in the editor.
   example: []
   syntax:
-    content: public event Action OnEditorRefresh
+    content: public event Action OnValidateAction
     return:
       type: System.Action
-    content.vb: Public Event OnEditorRefresh As Action
-- uid: com.absence.dialoguesystem.Dialogue.PerformEditorRefresh
-  commentId: M:com.absence.dialoguesystem.Dialogue.PerformEditorRefresh
-  id: PerformEditorRefresh
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: PerformEditorRefresh()
-  nameWithType: Dialogue.PerformEditorRefresh()
-  fullName: com.absence.dialoguesystem.Dialogue.PerformEditorRefresh()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: PerformEditorRefresh
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 54
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: Invokes the <xref href="com.absence.dialoguesystem.Dialogue.OnEditorRefresh" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public void PerformEditorRefresh()
-    content.vb: Public Sub PerformEditorRefresh()
-  overload: com.absence.dialoguesystem.Dialogue.PerformEditorRefresh*
+    content.vb: Public Event OnValidateAction As Action
 - uid: com.absence.dialoguesystem.Dialogue.Blackboard
   commentId: F:com.absence.dialoguesystem.Dialogue.Blackboard
   id: Blackboard
@@ -351,7 +322,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Blackboard
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 62
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -390,7 +361,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 69
+    startLine: 66
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -425,7 +396,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DeleteNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 87
+    startLine: 84
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -457,7 +428,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 98
+    startLine: 95
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -491,7 +462,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetDialoguePartNodesWithName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 124
+    startLine: 121
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -531,7 +502,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAllDialogueParts
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 145
+    startLine: 142
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -562,7 +533,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Initialize
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 153
+    startLine: 150
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -590,7 +561,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OverridePeople
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 167
+    startLine: 164
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -630,7 +601,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 180
+    startLine: 177
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -1052,6 +1023,24 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: com.absence.dialoguesystem.Dialogue.OnValidate
+  commentId: M:com.absence.dialoguesystem.Dialogue.OnValidate
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OnValidate
+  name: OnValidate()
+  nameWithType: Dialogue.OnValidate()
+  fullName: com.absence.dialoguesystem.Dialogue.OnValidate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.Dialogue.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OnValidate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.Dialogue.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OnValidate
+  - name: (
+  - name: )
 - uid: System.Action
   commentId: T:System.Action
   parent: System
@@ -1060,18 +1049,6 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
-- uid: com.absence.dialoguesystem.Dialogue.OnEditorRefresh
-  commentId: E:com.absence.dialoguesystem.Dialogue.OnEditorRefresh
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OnEditorRefresh
-  name: OnEditorRefresh
-  nameWithType: Dialogue.OnEditorRefresh
-  fullName: com.absence.dialoguesystem.Dialogue.OnEditorRefresh
-- uid: com.absence.dialoguesystem.Dialogue.PerformEditorRefresh*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.PerformEditorRefresh
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_PerformEditorRefresh
-  name: PerformEditorRefresh
-  nameWithType: Dialogue.PerformEditorRefresh
-  fullName: com.absence.dialoguesystem.Dialogue.PerformEditorRefresh
 - uid: com.absence.dialoguesystem.Dialogue.Blackboard
   commentId: F:com.absence.dialoguesystem.Dialogue.Blackboard
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Blackboard

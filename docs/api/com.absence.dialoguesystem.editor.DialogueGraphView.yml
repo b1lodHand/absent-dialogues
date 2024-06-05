@@ -167,7 +167,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetCompatiblePorts
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 77
+    startLine: 78
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -206,7 +206,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BuildContextualMenu
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 133
+    startLine: 134
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -239,7 +239,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Refresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 197
+    startLine: 200
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -267,7 +267,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FindNodeView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 208
+    startLine: 211
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor

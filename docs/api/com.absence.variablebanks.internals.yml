@@ -1,0 +1,132 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  id: com.absence.variablebanks.internals
+  children:
+  - com.absence.variablebanks.internals.BaseVariableComparer
+  - com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  - com.absence.variablebanks.internals.BaseVariableSetter
+  - com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  - com.absence.variablebanks.internals.Constants
+  - com.absence.variablebanks.internals.VariableBanksCloningHandler
+  langs:
+  - csharp
+  - vb
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.variablebanks.internals.BaseVariableSetter
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  name: BaseVariableSetter
+  nameWithType: BaseVariableSetter
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  name: BaseVariableSetter.SetType
+  nameWithType: BaseVariableSetter.SetType
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter
+    name: BaseVariableSetter
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.SetType
+    name: SetType
+    href: com.absence.variablebanks.internals.BaseVariableSetter.SetType.html
+- uid: com.absence.variablebanks.internals.Constants
+  commentId: T:com.absence.variablebanks.internals.Constants
+  href: com.absence.variablebanks.internals.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: com.absence.variablebanks.internals.Constants
+- uid: com.absence.variablebanks.internals.VariableBanksCloningHandler
+  commentId: T:com.absence.variablebanks.internals.VariableBanksCloningHandler
+  href: com.absence.variablebanks.internals.VariableBanksCloningHandler.html
+  name: VariableBanksCloningHandler
+  nameWithType: VariableBanksCloningHandler
+  fullName: com.absence.variablebanks.internals.VariableBanksCloningHandler
+- uid: com.absence.variablebanks.internals.BaseVariableComparer
+  commentId: T:com.absence.variablebanks.internals.BaseVariableComparer
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  name: BaseVariableComparer
+  nameWithType: BaseVariableComparer
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer
+- uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  commentId: T:com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  name: BaseVariableComparer.ComparisonType
+  nameWithType: BaseVariableComparer.ComparisonType
+  fullName: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer
+    name: BaseVariableComparer
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    href: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.html
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer
+    name: BaseVariableComparer
+    href: com.absence.variablebanks.internals.BaseVariableComparer.html
+  - name: .
+  - uid: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    href: com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.html
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html

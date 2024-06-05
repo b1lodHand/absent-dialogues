@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.editor
+  commentId: N:com.absence.variablebanks.editor
+  id: com.absence.variablebanks.editor
+  children:
+  - com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor
+  - com.absence.variablebanks.editor.VariableBankCreationHandler
+  - com.absence.variablebanks.editor.VariableBankDatabase
+  - com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer
+  - com.absence.variablebanks.editor.VariableComparerDrawer
+  - com.absence.variablebanks.editor.VariableSetterDrawer
+  langs:
+  - csharp
+  - vb
+  name: com.absence.variablebanks.editor
+  nameWithType: com.absence.variablebanks.editor
+  fullName: com.absence.variablebanks.editor
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+references:
+- uid: com.absence.variablebanks.editor.VariableBankDatabase
+  commentId: T:com.absence.variablebanks.editor.VariableBankDatabase
+  href: com.absence.variablebanks.editor.VariableBankDatabase.html
+  name: VariableBankDatabase
+  nameWithType: VariableBankDatabase
+  fullName: com.absence.variablebanks.editor.VariableBankDatabase
+- uid: com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer
+  commentId: T:com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer
+  href: com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer.html
+  name: VariableBankReferencePropertyDrawer
+  nameWithType: VariableBankReferencePropertyDrawer
+  fullName: com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer
+- uid: com.absence.variablebanks.editor.VariableComparerDrawer
+  commentId: T:com.absence.variablebanks.editor.VariableComparerDrawer
+  href: com.absence.variablebanks.editor.VariableComparerDrawer.html
+  name: VariableComparerDrawer
+  nameWithType: VariableComparerDrawer
+  fullName: com.absence.variablebanks.editor.VariableComparerDrawer
+- uid: com.absence.variablebanks.editor.VariableSetterDrawer
+  commentId: T:com.absence.variablebanks.editor.VariableSetterDrawer
+  href: com.absence.variablebanks.editor.VariableSetterDrawer.html
+  name: VariableSetterDrawer
+  nameWithType: VariableSetterDrawer
+  fullName: com.absence.variablebanks.editor.VariableSetterDrawer
+- uid: com.absence.variablebanks.editor.VariableBankCreationHandler
+  commentId: T:com.absence.variablebanks.editor.VariableBankCreationHandler
+  href: com.absence.variablebanks.editor.VariableBankCreationHandler.html
+  name: VariableBankCreationHandler
+  nameWithType: VariableBankCreationHandler
+  fullName: com.absence.variablebanks.editor.VariableBankCreationHandler
+- uid: com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor
+  commentId: T:com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor
+  href: com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor.html
+  name: VariableBankAcquirerCustomEditor
+  nameWithType: VariableBankAcquirerCustomEditor
+  fullName: com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor

@@ -21,12 +21,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IContainVariableManipulators
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: >-
-    Any node subtype with this interface implemented will refresh its <xref href="com.absence.variablesystem.VariableComparer" data-throw-if-not-resolved="false"></xref>s and <xref href="com.absence.variablesystem.VariableSetter" data-throw-if-not-resolved="false"></xref>s
+    Any node subtype with this interface implemented will refresh its VariableComparers and VariableSetters
 
     to have the correct reference to the <xref href="com.absence.dialoguesystem.internals.Blackboard.Bank" data-throw-if-not-resolved="false"></xref> of the current <xref href="com.absence.dialoguesystem.Dialogue" data-throw-if-not-resolved="false"></xref> everytime the
 
@@ -53,18 +53,18 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetComparers
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  summary: A list of comparers which you want to restrict in terms of VariableBank selection
   example: []
   syntax:
-    content: List<FixedVariableComparer> GetComparers()
+    content: List<NodeVariableComparer> GetComparers()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
       description: ''
-    content.vb: Function GetComparers() As List(Of FixedVariableComparer)
+    content.vb: Function GetComparers() As List(Of NodeVariableComparer)
   overload: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*
 - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
   commentId: M:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
@@ -84,32 +84,20 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetSetters
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainVariableManipulators.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: A list of comparers which you want to restrict in terms of <xref href="com.absence.variablesystem.VariableBank" data-throw-if-not-resolved="false"></xref> selection
+  summary: A list of comparers which you want to restrict in terms of VariableBank selection
   example: []
   syntax:
-    content: List<FixedVariableSetter> GetSetters()
+    content: List<NodeVariableSetter> GetSetters()
     return:
-      type: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
       description: ''
-    content.vb: Function GetSetters() As List(Of FixedVariableSetter)
+    content.vb: Function GetSetters() As List(Of NodeVariableSetter)
   overload: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters*
 references:
-- uid: com.absence.variablesystem.VariableComparer
-  commentId: T:com.absence.variablesystem.VariableComparer
-  isExternal: true
-  name: VariableComparer
-  nameWithType: VariableComparer
-  fullName: com.absence.variablesystem.VariableComparer
-- uid: com.absence.variablesystem.VariableSetter
-  commentId: T:com.absence.variablesystem.VariableSetter
-  isExternal: true
-  name: VariableSetter
-  nameWithType: VariableSetter
-  fullName: com.absence.variablesystem.VariableSetter
 - uid: com.absence.dialoguesystem.internals.Blackboard.Bank
   commentId: F:com.absence.dialoguesystem.internals.Blackboard.Bank
   href: com.absence.dialoguesystem.internals.Blackboard.html#com_absence_dialoguesystem_internals_Blackboard_Bank
@@ -191,39 +179,32 @@ references:
   - uid: com.absence.dialoguesystem
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
-  isExternal: true
-  name: VariableBank
-  nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
 - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers*
   commentId: Overload:com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
   href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html#com_absence_dialoguesystem_internals_IContainVariableManipulators_GetComparers
   name: GetComparers
   nameWithType: IContainVariableManipulators.GetComparers
   fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetComparers
-- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableComparer}
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<FixedVariableComparer>
-  nameWithType: List<FixedVariableComparer>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableComparer>
-  nameWithType.vb: List(Of FixedVariableComparer)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableComparer)
-  name.vb: List(Of FixedVariableComparer)
+  name: List<NodeVariableComparer>
+  nameWithType: List<NodeVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableComparer>
+  nameWithType.vb: List(Of NodeVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableComparer)
+  name.vb: List(Of NodeVariableComparer)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.FixedVariableComparer
-    name: FixedVariableComparer
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -233,40 +214,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.FixedVariableComparer
-    name: FixedVariableComparer
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
   - name: )
-- uid: com.absence.variablesystem
-  commentId: N:com.absence.variablesystem
-  isExternal: true
-  name: com.absence.variablesystem
-  nameWithType: com.absence.variablesystem
-  fullName: com.absence.variablesystem
-  spec.csharp:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
-  spec.vb:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.variablesystem
-    name: variablesystem
-    isExternal: true
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -338,26 +289,26 @@ references:
   name: GetSetters
   nameWithType: IContainVariableManipulators.GetSetters
   fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators.GetSetters
-- uid: System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
-  commentId: T:System.Collections.Generic.List{com.absence.variablesystem.FixedVariableSetter}
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableSetter}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<FixedVariableSetter>
-  nameWithType: List<FixedVariableSetter>
-  fullName: System.Collections.Generic.List<com.absence.variablesystem.FixedVariableSetter>
-  nameWithType.vb: List(Of FixedVariableSetter)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.variablesystem.FixedVariableSetter)
-  name.vb: List(Of FixedVariableSetter)
+  name: List<NodeVariableSetter>
+  nameWithType: List<NodeVariableSetter>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableSetter>
+  nameWithType.vb: List(Of NodeVariableSetter)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableSetter)
+  name.vb: List(Of NodeVariableSetter)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.variablesystem.FixedVariableSetter
-    name: FixedVariableSetter
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+    name: NodeVariableSetter
+    href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -367,7 +318,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.variablesystem.FixedVariableSetter
-    name: FixedVariableSetter
-    isExternal: true
+  - uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+    name: NodeVariableSetter
+    href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
   - name: )

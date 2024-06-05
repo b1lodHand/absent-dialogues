@@ -1,0 +1,160 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.internals.Constants
+  commentId: T:com.absence.variablebanks.internals.Constants
+  id: Constants
+  parent: com.absence.variablebanks.internals
+  children:
+  - com.absence.variablebanks.internals.Constants.K_ADDRESSABLES_TAG
+  - com.absence.variablebanks.internals.Constants.K_RESOURCES_PATH
+  langs:
+  - csharp
+  - vb
+  name: Constants
+  nameWithType: Constants
+  fullName: com.absence.variablebanks.internals.Constants
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Constants
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: The static class responsible for holding the constants variables of the package.
+  example: []
+  syntax:
+    content: public static class Constants
+    content.vb: Public Module Constants
+  inheritance:
+  - System.Object
+- uid: com.absence.variablebanks.internals.Constants.K_RESOURCES_PATH
+  commentId: F:com.absence.variablebanks.internals.Constants.K_RESOURCES_PATH
+  id: K_RESOURCES_PATH
+  parent: com.absence.variablebanks.internals.Constants
+  langs:
+  - csharp
+  - vb
+  name: K_RESOURCES_PATH
+  nameWithType: Constants.K_RESOURCES_PATH
+  fullName: com.absence.variablebanks.internals.Constants.K_RESOURCES_PATH
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: K_RESOURCES_PATH
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: The resources path of variable banks if you're using <b>Resources API</b> as the asset management tool.
+  example: []
+  syntax:
+    content: public const string K_RESOURCES_PATH = "VariableBanks"
+    return:
+      type: System.String
+    content.vb: Public Const K_RESOURCES_PATH As String = "VariableBanks"
+- uid: com.absence.variablebanks.internals.Constants.K_ADDRESSABLES_TAG
+  commentId: F:com.absence.variablebanks.internals.Constants.K_ADDRESSABLES_TAG
+  id: K_ADDRESSABLES_TAG
+  parent: com.absence.variablebanks.internals.Constants
+  langs:
+  - csharp
+  - vb
+  name: K_ADDRESSABLES_TAG
+  nameWithType: Constants.K_ADDRESSABLES_TAG
+  fullName: com.absence.variablebanks.internals.Constants.K_ADDRESSABLES_TAG
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: K_ADDRESSABLES_TAG
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Helpers/Constants.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks.internals
+  summary: The addressables label of variable banks if you're using <b>Addressables</b> as the asset management tool.
+  example: []
+  syntax:
+    content: public const string K_ADDRESSABLES_TAG = "variable-banks"
+    return:
+      type: System.String
+    content.vb: Public Const K_ADDRESSABLES_TAG As String = "variable-banks"
+references:
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

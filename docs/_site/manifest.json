@@ -492,6 +492,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.NodeVariableComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.NodeVariableComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.NodeVariableSetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.NodeVariableSetter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.Option.ShowIf.yml",
       "output": {
         ".html": {
@@ -566,6 +586,246 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.FixedVariableComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.FixedVariableComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.FixedVariableSetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.FixedVariableSetter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.VariableBank.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.VariableBank.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.VariableBankAcquirer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.VariableBankAcquirer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.VariableBankReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.VariableBankReference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.VariableComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.VariableComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.VariableSetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.VariableSetter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableBankAcquirerCustomEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableBankCreationHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableBankCreationHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableBankDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableBankDatabase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableBankReferencePropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableComparerDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableComparerDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.VariableSetterDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.VariableSetterDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.BaseVariableComparer.ComparisonType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.BaseVariableComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.BaseVariableComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.BaseVariableSetter.SetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.BaseVariableSetter.SetType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.BaseVariableSetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.BaseVariableSetter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.Constants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.VariableBanksCloningHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.VariableBanksCloningHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.internals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.internals.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.testing.Varcaster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.testing.Varcaster.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.testing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.variablebanks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.variablebanks.html"
         }
       },
       "version": ""

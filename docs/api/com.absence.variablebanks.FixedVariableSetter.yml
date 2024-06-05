@@ -1,0 +1,352 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.variablebanks.FixedVariableSetter
+  commentId: T:com.absence.variablebanks.FixedVariableSetter
+  id: FixedVariableSetter
+  parent: com.absence.variablebanks
+  children:
+  - com.absence.variablebanks.FixedVariableSetter.Clone
+  - com.absence.variablebanks.FixedVariableSetter.Clone(System.String)
+  - com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+  - com.absence.variablebanks.FixedVariableSetter.SetFixedBank(System.String)
+  langs:
+  - csharp
+  - vb
+  name: FixedVariableSetter
+  nameWithType: FixedVariableSetter
+  fullName: com.absence.variablebanks.FixedVariableSetter
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FixedVariableSetter
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Setter with a fixed bank.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public sealed class FixedVariableSetter : BaseVariableSetter
+    content.vb: >-
+      <Serializable>
+
+      Public NotInheritable Class FixedVariableSetter Inherits BaseVariableSetter
+  inheritance:
+  - System.Object
+  - com.absence.variablebanks.internals.BaseVariableSetter
+  inheritedMembers:
+  - com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+  commentId: P:com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+  id: HasFixedBank
+  parent: com.absence.variablebanks.FixedVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: HasFixedBank
+  nameWithType: FixedVariableSetter.HasFixedBank
+  fullName: com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasFixedBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Will the bank selector be hidden in the editor?
+  example: []
+  syntax:
+    content: public override bool HasFixedBank { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property HasFixedBank As Boolean
+  overridden: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  overload: com.absence.variablebanks.FixedVariableSetter.HasFixedBank*
+- uid: com.absence.variablebanks.FixedVariableSetter.SetFixedBank(System.String)
+  commentId: M:com.absence.variablebanks.FixedVariableSetter.SetFixedBank(System.String)
+  id: SetFixedBank(System.String)
+  parent: com.absence.variablebanks.FixedVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: SetFixedBank(string)
+  nameWithType: FixedVariableSetter.SetFixedBank(string)
+  fullName: com.absence.variablebanks.FixedVariableSetter.SetFixedBank(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetFixedBank
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to set the fixed bank of this fixed setter.
+  example: []
+  syntax:
+    content: public void SetFixedBank(string fixedBankGuid)
+    parameters:
+    - id: fixedBankGuid
+      type: System.String
+      description: Guid for the fixed bank.
+    content.vb: Public Sub SetFixedBank(fixedBankGuid As String)
+  overload: com.absence.variablebanks.FixedVariableSetter.SetFixedBank*
+  nameWithType.vb: FixedVariableSetter.SetFixedBank(String)
+  fullName.vb: com.absence.variablebanks.FixedVariableSetter.SetFixedBank(String)
+  name.vb: SetFixedBank(String)
+- uid: com.absence.variablebanks.FixedVariableSetter.Clone(System.String)
+  commentId: M:com.absence.variablebanks.FixedVariableSetter.Clone(System.String)
+  id: Clone(System.String)
+  parent: com.absence.variablebanks.FixedVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Clone(string)
+  nameWithType: FixedVariableSetter.Clone(string)
+  fullName: com.absence.variablebanks.FixedVariableSetter.Clone(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to clone this setter.
+  example: []
+  syntax:
+    content: public FixedVariableSetter Clone(string overrideBankGuid)
+    parameters:
+    - id: overrideBankGuid
+      type: System.String
+      description: Guid for a new bank.
+    return:
+      type: com.absence.variablebanks.FixedVariableSetter
+      description: The clone.
+    content.vb: Public Function Clone(overrideBankGuid As String) As FixedVariableSetter
+  overload: com.absence.variablebanks.FixedVariableSetter.Clone*
+  nameWithType.vb: FixedVariableSetter.Clone(String)
+  fullName.vb: com.absence.variablebanks.FixedVariableSetter.Clone(String)
+  name.vb: Clone(String)
+- uid: com.absence.variablebanks.FixedVariableSetter.Clone
+  commentId: M:com.absence.variablebanks.FixedVariableSetter.Clone
+  id: Clone
+  parent: com.absence.variablebanks.FixedVariableSetter
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: FixedVariableSetter.Clone()
+  fullName: com.absence.variablebanks.FixedVariableSetter.Clone()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-variablebanks/Runtime/Manipulators/FixedVariableSetter.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.variablebanks
+  summary: Use to clone this setter.
+  example: []
+  syntax:
+    content: public FixedVariableSetter Clone()
+    return:
+      type: com.absence.variablebanks.FixedVariableSetter
+      description: The clone.
+    content.vb: Public Function Clone() As FixedVariableSetter
+  overload: com.absence.variablebanks.FixedVariableSetter.Clone*
+references:
+- uid: com.absence.variablebanks
+  commentId: N:com.absence.variablebanks
+  href: com.html
+  name: com.absence.variablebanks
+  nameWithType: com.absence.variablebanks
+  fullName: com.absence.variablebanks
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: com.absence.variablebanks.internals.BaseVariableSetter
+  commentId: T:com.absence.variablebanks.internals.BaseVariableSetter
+  parent: com.absence.variablebanks.internals
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html
+  name: BaseVariableSetter
+  nameWithType: BaseVariableSetter
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  commentId: M:com.absence.variablebanks.internals.BaseVariableSetter.Perform
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+  name: Perform()
+  nameWithType: BaseVariableSetter.Perform()
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.Perform()
+  spec.csharp:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+    name: Perform
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.variablebanks.internals.BaseVariableSetter.Perform
+    name: Perform
+    href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_Perform
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.variablebanks.internals
+  commentId: N:com.absence.variablebanks.internals
+  href: com.html
+  name: com.absence.variablebanks.internals
+  nameWithType: com.absence.variablebanks.internals
+  fullName: com.absence.variablebanks.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.variablebanks
+    name: variablebanks
+    href: com.absence.variablebanks.html
+  - name: .
+  - uid: com.absence.variablebanks.internals
+    name: internals
+    href: com.absence.variablebanks.internals.html
+- uid: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  commentId: P:com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+  parent: com.absence.variablebanks.internals.BaseVariableSetter
+  href: com.absence.variablebanks.internals.BaseVariableSetter.html#com_absence_variablebanks_internals_BaseVariableSetter_HasFixedBank
+  name: HasFixedBank
+  nameWithType: BaseVariableSetter.HasFixedBank
+  fullName: com.absence.variablebanks.internals.BaseVariableSetter.HasFixedBank
+- uid: com.absence.variablebanks.FixedVariableSetter.HasFixedBank*
+  commentId: Overload:com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+  href: com.absence.variablebanks.FixedVariableSetter.html#com_absence_variablebanks_FixedVariableSetter_HasFixedBank
+  name: HasFixedBank
+  nameWithType: FixedVariableSetter.HasFixedBank
+  fullName: com.absence.variablebanks.FixedVariableSetter.HasFixedBank
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.variablebanks.FixedVariableSetter.SetFixedBank*
+  commentId: Overload:com.absence.variablebanks.FixedVariableSetter.SetFixedBank
+  href: com.absence.variablebanks.FixedVariableSetter.html#com_absence_variablebanks_FixedVariableSetter_SetFixedBank_System_String_
+  name: SetFixedBank
+  nameWithType: FixedVariableSetter.SetFixedBank
+  fullName: com.absence.variablebanks.FixedVariableSetter.SetFixedBank
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.variablebanks.FixedVariableSetter.Clone*
+  commentId: Overload:com.absence.variablebanks.FixedVariableSetter.Clone
+  href: com.absence.variablebanks.FixedVariableSetter.html#com_absence_variablebanks_FixedVariableSetter_Clone_System_String_
+  name: Clone
+  nameWithType: FixedVariableSetter.Clone
+  fullName: com.absence.variablebanks.FixedVariableSetter.Clone
+- uid: com.absence.variablebanks.FixedVariableSetter
+  commentId: T:com.absence.variablebanks.FixedVariableSetter
+  parent: com.absence.variablebanks
+  href: com.absence.variablebanks.FixedVariableSetter.html
+  name: FixedVariableSetter
+  nameWithType: FixedVariableSetter
+  fullName: com.absence.variablebanks.FixedVariableSetter
