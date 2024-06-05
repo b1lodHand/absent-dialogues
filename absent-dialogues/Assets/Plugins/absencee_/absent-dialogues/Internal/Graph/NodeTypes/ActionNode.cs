@@ -18,7 +18,7 @@ namespace com.absence.dialoguesystem.internals
     /// </code>
     /// </remarks>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
-    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
+    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
         [Tooltip("All of the 'VariableBank' based actions of this action node.")] 
         public List<NodeVariableSetter> VBActions = new();
@@ -87,9 +87,11 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableSetter> GetSetters() => new(VBActions);
 
-        public void PerformEditorRefresh()
+        protected override void OnValidate()
         {
             VBActions.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
+
+            base.OnValidate();
         }
     }
 

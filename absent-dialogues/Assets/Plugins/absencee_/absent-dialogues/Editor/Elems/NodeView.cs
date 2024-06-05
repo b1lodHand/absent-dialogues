@@ -94,8 +94,8 @@ namespace com.absence.dialoguesystem.editor
 
             if(node.PersonDependent)
             {
-                node.MasterDialogue.OnEditorRefresh -= RefreshPersonDropdown;
-                node.MasterDialogue.OnEditorRefresh += RefreshPersonDropdown;
+                node.MasterDialogue.OnValidateAction -= RefreshPersonDropdown;
+                node.MasterDialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
             if(node is DecisionSpeechNode)
@@ -298,12 +298,20 @@ namespace com.absence.dialoguesystem.editor
         #region Decision Speech Node
         private void RefreshOptionLabels()
         {
-            m_optionElems.ForEach(optionElem =>
+            try
             {
-                Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
+                m_optionElems.ForEach(optionElem =>
+                {
+                    Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
 
-                showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
-            });
+                    showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
+                });
+            }
+
+            catch
+            {
+                return;
+            }
         }
         private void CreateOption_DecisionSpeechNode()
         {

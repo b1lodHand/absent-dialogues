@@ -10,7 +10,7 @@ namespace com.absence.dialoguesystem.internals
     /// Node which re-routes the flow under some conditions.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
-    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
+    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
@@ -95,9 +95,11 @@ namespace com.absence.dialoguesystem.internals
         public List<NodeVariableComparer> GetComparers() => new(Comparers);
         public List<NodeVariableSetter> GetSetters() => null;
 
-        public void PerformEditorRefresh()
+        protected override void OnValidate()
         {
             Comparers.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
+
+            base.OnValidate();
         }
     }
 }

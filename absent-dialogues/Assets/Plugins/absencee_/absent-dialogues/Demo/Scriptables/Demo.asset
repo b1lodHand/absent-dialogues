@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 565.60004, y: 158.65001}
+  Position: {x: 576.12524, y: 138.95825}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: Demo Blackboard VB
   m_EditorClassIdentifier: 
   m_guid: b2261a92-cd16-4dc7-b225-4c3a6bd6af9a
+  m_forExternalUse: 0
   m_ints: []
   m_floats: []
   m_strings: []
@@ -535,7 +536,7 @@ MonoBehaviour:
   PersonIndex: 0
   VBActions:
   - m_setType: 0
-    m_targetBankGuid: 
+    m_targetBankGuid: b2261a92-cd16-4dc7-b225-4c3a6bd6af9a
     m_targetVariableName: 'bool: b_missionPending'
     m_intValue: 0
     m_floatValue: 0

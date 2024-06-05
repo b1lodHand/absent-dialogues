@@ -28,6 +28,13 @@
       "dependencies": {},
       "hash": "5d8e21764fb4fc123fb3ea4fb6c23d842090a939"
     },
+    "com.absence.variablesystem": {
+      "version": "https://github.com/b1lodHand/absent-variables.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "80c11b48f4400b77c57d9c8f198eff7fafcd06a4"
+    },
     "com.unity.addressables": {
       "version": "1.21.21",
       "depth": 0,

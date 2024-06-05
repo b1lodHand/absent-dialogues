@@ -1,5 +1,6 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.variablesystem;
+using com.absence.variablebanks;
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEditor.ProjectWindowCallback;
@@ -39,8 +40,7 @@ namespace com.absence.dialoguesystem.editor
                 var blackboardBank = ScriptableObject.CreateInstance<VariableBank>();
 
                 blackboardBank.name = $"{itemCreated.name} Blackboard VB";
-                blackboardBank.AvoidCloning = true;
-                blackboardBank.ShowOnList = false;
+                blackboardBank.ForExternalUse = true;
 
                 AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
 

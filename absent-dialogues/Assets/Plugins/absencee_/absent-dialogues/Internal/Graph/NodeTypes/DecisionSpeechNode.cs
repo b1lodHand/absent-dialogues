@@ -9,7 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// Node which displays a speech with options.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
-    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators, IPerformEditorRefresh
+    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators
     {
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
@@ -101,12 +101,14 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableSetter> GetSetters() => null;
 
-        public void PerformEditorRefresh()
+        protected override void OnValidate()
         {
             Options.ForEach(option =>
             {
                 option.Visibility.ShowIfList.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
             });
+
+            base.OnValidate();
         }
     }
 }
