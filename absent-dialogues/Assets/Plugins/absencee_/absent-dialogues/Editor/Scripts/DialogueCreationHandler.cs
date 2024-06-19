@@ -13,19 +13,33 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")]
     public static class DialogueCreationHandler
     {
-        private static readonly string k_createPath = "Assets/Scriptables/Dialogue Graphs";
-
-        [MenuItem("absencee_/absent-dialogues/Create Dialogue Graph", priority = 0)]
+        [MenuItem("Assets/Create/absencee_/Dialogue", priority = 0)]
         static void CreateDialogue()
         {
+            string selectedPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+            if (selectedPath == string.Empty) return;
+
+            while ((!AssetDatabase.IsValidFolder(selectedPath)))
+            {
+                TrimLastSlash(ref selectedPath);
+            }
+
             CreateDialogueEndNameEditAction create = ScriptableObject.CreateInstance<CreateDialogueEndNameEditAction>();
-            var path = Path.Combine(k_createPath, "New Dialogue.asset");
+            var path = Path.Combine(selectedPath, "New Dialogue.asset");
             var icon = EditorGUIUtility.IconContent("d_ScriptableObject Icon").image as Texture2D;
 
-            if (!AssetDatabase.IsValidFolder("Assets/Scriptables")) AssetDatabase.CreateFolder("Assets", "Scriptables");
-            if (!AssetDatabase.IsValidFolder(k_createPath)) AssetDatabase.CreateFolder("Assets/Scriptables", "Dialogue Graphs");
-
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, create, path, icon, null);
+        }
+
+        private static void TrimLastSlash(ref string path)
+        {
+            int lastSlashIndex;
+            for (lastSlashIndex = path.Length - 1; lastSlashIndex > 0; lastSlashIndex--)
+            {
+                if (path[lastSlashIndex] == '/') break;
+            }
+
+            path = path.Remove(lastSlashIndex, (path.Length - lastSlashIndex));
         }
 
         internal class CreateDialogueEndNameEditAction : EndNameEditAction

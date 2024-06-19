@@ -309,7 +309,6 @@ MonoBehaviour:
   - {fileID: 7901140551254700991}
   m_people:
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
-  - {fileID: 11400000, guid: 51314ca2212de414ea471788da803d40, type: 2}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
 --- !u!114 &1239550416686042660

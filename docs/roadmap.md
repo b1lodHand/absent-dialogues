@@ -15,7 +15,6 @@ In this section of the documentation, you will see some details about the past a
 * Custom documentation for components and nodes.
 * More and better API documentation.
 * Small bugfixes.
-* Integration of new **absent-variablebanks**.
 
 ## Upcoming Version
 * *Not certain yet.*
