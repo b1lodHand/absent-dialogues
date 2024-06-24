@@ -7,7 +7,7 @@ namespace com.absence.dialoguesystem
     /// A small component with the responsibility of using the input comes from player (uses legacy input system of unity) on the dialogue.
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
-    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")]
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Input Handler (Legacy)")]
     [DisallowMultipleComponent]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")]
     public class DialogueInputHandler_Legacy : DialogueExtensionBase

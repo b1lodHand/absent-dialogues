@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem
     /// A singleton with the duty of displaying the current dialogue context. Written for the Unity UI package. Not compatible with
     /// the UI Toolkit.
     /// </summary>
-    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
+    [AddComponentMenu("absencee_/absent-dialogues/UI/Dialogue Displayer")]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
