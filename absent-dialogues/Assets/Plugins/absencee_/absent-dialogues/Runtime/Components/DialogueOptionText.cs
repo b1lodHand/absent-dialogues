@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem
     /// <summary>
     /// A small component that manages the functionality of an option's drawing and input.
     /// </summary>
-    [AddComponentMenu("absencee_/absent-dialogues/Option Text")]
+    [AddComponentMenu("absencee_/absent-dialogues/UI/Option Text")]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")]
     public class DialogueOptionText : MonoBehaviour
     {

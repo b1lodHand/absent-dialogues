@@ -149,6 +149,8 @@ namespace com.absence.dialoguesystem.editor
 
             SetupEvents();
 
+            PopulateDialogueView(m_targetDialogue);
+
             EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
 
@@ -181,10 +183,6 @@ namespace com.absence.dialoguesystem.editor
             m_inspectorView = root.Q<InspectorView>();
             m_blackboardView = root.Q<BlackboardView>();
             m_toolbar = root.Q<Toolbar>();
-
-            m_dialogueGraphView.OnNodeSelected -= OnNodeSelectionChanged;
-            m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
-            PopulateDialogueView(m_targetDialogue);
         }
 
         private void SetupToolbar(VisualElement root)
@@ -246,6 +244,9 @@ namespace com.absence.dialoguesystem.editor
         }
         private void SetupEvents()
         {
+            m_dialogueGraphView.OnNodeSelected -= OnNodeSelectionChanged;
+            m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
+
             m_dialogueGraphView.OnPopulateView -= RefreshDialoguePartFinder;
             m_dialogueGraphView.OnPopulateView += RefreshDialoguePartFinder;
         }

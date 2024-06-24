@@ -10,7 +10,7 @@ namespace com.absence.dialoguesystem
     /// attached to the same game object.
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
-    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Animations Player")]
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Animations Player")]
     [DisallowMultipleComponent]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueAnimationsPlayer.html")]
     public class DialogueAnimationsPlayer : DialogueExtensionBase

@@ -9,7 +9,7 @@ namespace com.absence.dialoguesystem
     /// attached to the same gameobject.
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
-    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")]
+    [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Sounds Player")]
     [DisallowMultipleComponent]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueSoundsPlayer.html")]
     public class DialogueSoundsPlayer : DialogueExtensionBase
