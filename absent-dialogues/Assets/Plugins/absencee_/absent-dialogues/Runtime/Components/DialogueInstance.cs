@@ -25,8 +25,14 @@ namespace com.absence.dialoguesystem
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
-        public Dialogue ReferencedDialogue => m_referencedDialogue;
+        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
+        private List<Person> m_overridePeople;
 
+        [Space(10), SerializeField, Readonly] private List<DialogueExtensionBase> m_extensionList = new();
+
+        [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
+
+        public Dialogue ReferencedDialogue => m_referencedDialogue;
         public Dialogue ClonedDialogue
         {
             get
@@ -41,11 +47,6 @@ namespace com.absence.dialoguesystem
                 ClonedDialogue = value;
             }
         }
-
-        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
-        private List<Person> m_overridePeople;
-
-        [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
 
         /// <summary>
         /// <see cref="DialoguePlayer"/> of this instance.
