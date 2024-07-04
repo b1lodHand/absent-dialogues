@@ -33,69 +33,6 @@ references:
   name: NodeView
   nameWithType: NodeView
   fullName: com.absence.dialoguesystem.editor.NodeView
-- uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
-  commentId: T:com.absence.dialoguesystem.editor.DialogueCreationHandler
-  href: com.absence.dialoguesystem.editor.DialogueCreationHandler.html
-  name: DialogueCreationHandler
-  nameWithType: DialogueCreationHandler
-  fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
-- uid: com.absence.dialoguesystem.editor.DialogueGraphView
-  commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView
-  parent: com.absence.dialoguesystem.editor
-  href: com.absence.dialoguesystem.editor.DialogueGraphView.html
-  name: DialogueGraphView
-  nameWithType: DialogueGraphView
-  fullName: com.absence.dialoguesystem.editor.DialogueGraphView
-- uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-  commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-  href: com.absence.dialoguesystem.editor.DialogueGraphView.html
-  name: DialogueGraphView.UxmlFactory
-  nameWithType: DialogueGraphView.UxmlFactory
-  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
-    name: DialogueGraphView
-    href: com.absence.dialoguesystem.editor.DialogueGraphView.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-    name: UxmlFactory
-    href: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
-    name: DialogueGraphView
-    href: com.absence.dialoguesystem.editor.DialogueGraphView.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-    name: UxmlFactory
-    href: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory.html
-- uid: com.absence.dialoguesystem.editor.InspectorView
-  commentId: T:com.absence.dialoguesystem.editor.InspectorView
-  href: com.absence.dialoguesystem.editor.InspectorView.html
-  name: InspectorView
-  nameWithType: InspectorView
-  fullName: com.absence.dialoguesystem.editor.InspectorView
-- uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-  commentId: T:com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-  href: com.absence.dialoguesystem.editor.InspectorView.html
-  name: InspectorView.UxmlFactory
-  nameWithType: InspectorView.UxmlFactory
-  fullName: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.editor.InspectorView
-    name: InspectorView
-    href: com.absence.dialoguesystem.editor.InspectorView.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-    name: UxmlFactory
-    href: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.editor.InspectorView
-    name: InspectorView
-    href: com.absence.dialoguesystem.editor.InspectorView.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-    name: UxmlFactory
-    href: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
 - uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   commentId: T:com.absence.dialoguesystem.editor.RuntimeSelectionHandler
   href: com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html
@@ -164,6 +101,69 @@ references:
   - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
     name: UxmlFactory
     href: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
+  commentId: T:com.absence.dialoguesystem.editor.DialogueCreationHandler
+  href: com.absence.dialoguesystem.editor.DialogueCreationHandler.html
+  name: DialogueCreationHandler
+  nameWithType: DialogueCreationHandler
+  fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView
+  commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView
+  parent: com.absence.dialoguesystem.editor
+  href: com.absence.dialoguesystem.editor.DialogueGraphView.html
+  name: DialogueGraphView
+  nameWithType: DialogueGraphView
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.DialogueGraphView.html
+  name: DialogueGraphView.UxmlFactory
+  nameWithType: DialogueGraphView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
+    name: DialogueGraphView
+    href: com.absence.dialoguesystem.editor.DialogueGraphView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
+    name: DialogueGraphView
+    href: com.absence.dialoguesystem.editor.DialogueGraphView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.InspectorView
+  commentId: T:com.absence.dialoguesystem.editor.InspectorView
+  href: com.absence.dialoguesystem.editor.InspectorView.html
+  name: InspectorView
+  nameWithType: InspectorView
+  fullName: com.absence.dialoguesystem.editor.InspectorView
+- uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.InspectorView.html
+  name: InspectorView.UxmlFactory
+  nameWithType: InspectorView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.InspectorView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
 - uid: com.absence.dialoguesystem.editor
   commentId: N:com.absence.dialoguesystem.editor
   href: com.html

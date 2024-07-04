@@ -33,7 +33,7 @@ items:
     content: >-
       [RequireComponent(typeof(DialogueInstance))]
 
-      [AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")]
+      [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Sounds Player")]
 
       [DisallowMultipleComponent]
 
@@ -43,7 +43,7 @@ items:
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
 
-      <AddComponentMenu("absencee_/absent-dialogues/Dialogue Sounds Player")>
+      <AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Sounds Player")>
 
       <DisallowMultipleComponent>
 
@@ -59,9 +59,11 @@ items:
   - com.absence.dialoguesystem.DialogueExtensionBase
   inheritedMembers:
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  - com.absence.dialoguesystem.DialogueExtensionBase.Order
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  - com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
   attributes:
   - type: UnityEngine.RequireComponent
     ctor: UnityEngine.RequireComponent.#ctor(System.Type)
@@ -72,7 +74,7 @@ items:
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
     arguments:
     - type: System.String
-      value: absencee_/absent-dialogues/Dialogue Sounds Player
+      value: absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Sounds Player
   - type: UnityEngine.DisallowMultipleComponent
     ctor: UnityEngine.DisallowMultipleComponent.#ctor
     arguments: []
@@ -109,12 +111,12 @@ items:
     progresses.
   example: []
   syntax:
-    content: protected override void OnHandleAdditionalData(AdditionalSpeechData data)
+    content: public override void OnHandleAdditionalData(AdditionalSpeechData data)
     parameters:
     - id: data
       type: com.absence.dialoguesystem.internals.AdditionalSpeechData
       description: ''
-    content.vb: Protected Overrides Sub OnHandleAdditionalData(data As AdditionalSpeechData)
+    content.vb: Public Overrides Sub OnHandleAdditionalData(data As AdditionalSpeechData)
   overridden: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   overload: com.absence.dialoguesystem.DialogueSoundsPlayer.OnHandleAdditionalData*
 references:
@@ -208,6 +210,13 @@ references:
   name: m_instance
   nameWithType: DialogueExtensionBase.m_instance
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  commentId: P:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order
+  name: Order
+  nameWithType: DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   parent: com.absence.dialoguesystem.DialogueExtensionBase
@@ -315,6 +324,25 @@ references:
   - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
     name: OnDialogueUpdate
     href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  name: FindInstance()
+  nameWithType: DialogueExtensionBase.FindInstance()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
   - name: (
   - name: )
 - uid: System

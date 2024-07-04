@@ -30,13 +30,13 @@ items:
   example: []
   syntax:
     content: >-
-      [AddComponentMenu("absencee_/absent-dialogues/Option Text")]
+      [AddComponentMenu("absencee_/absent-dialogues/UI/Option Text")]
 
       [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")]
 
       public class DialogueOptionText : MonoBehaviour
     content.vb: >-
-      <AddComponentMenu("absencee_/absent-dialogues/Option Text")>
+      <AddComponentMenu("absencee_/absent-dialogues/UI/Option Text")>
 
       <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")>
 
@@ -52,7 +52,7 @@ items:
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
     arguments:
     - type: System.String
-      value: absencee_/absent-dialogues/Option Text
+      value: absencee_/absent-dialogues/UI/Option Text
   - type: UnityEngine.HelpURLAttribute
     ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
     arguments:

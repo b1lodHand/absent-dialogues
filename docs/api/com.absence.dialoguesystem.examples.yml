@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.examples
+  commentId: N:com.absence.dialoguesystem.examples
+  id: com.absence.dialoguesystem.examples
+  children:
+  - com.absence.dialoguesystem.examples.Demo_GUI
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.examples
+  nameWithType: com.absence.dialoguesystem.examples
+  fullName: com.absence.dialoguesystem.examples
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.examples.Demo_GUI
+  commentId: T:com.absence.dialoguesystem.examples.Demo_GUI
+  href: com.absence.dialoguesystem.examples.Demo_GUI.html
+  name: Demo_GUI
+  nameWithType: Demo_GUI
+  fullName: com.absence.dialoguesystem.examples.Demo_GUI

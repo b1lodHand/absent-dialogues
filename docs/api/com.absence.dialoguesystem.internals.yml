@@ -40,6 +40,13 @@ references:
   name: ConditionNode
   nameWithType: ConditionNode
   fullName: com.absence.dialoguesystem.internals.ConditionNode
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  name: AdditionalSpeechData
+  nameWithType: AdditionalSpeechData
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
 - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
   commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
   parent: com.absence.dialoguesystem.internals
@@ -47,12 +54,25 @@ references:
   name: NodeVariableComparer
   nameWithType: NodeVariableComparer
   fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
+  commentId: T:com.absence.dialoguesystem.internals.DecisionSpeechNode
+  href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html
+  name: DecisionSpeechNode
+  nameWithType: DecisionSpeechNode
+  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode
 - uid: com.absence.dialoguesystem.internals.ActionNode
   commentId: T:com.absence.dialoguesystem.internals.ActionNode
   href: com.absence.dialoguesystem.internals.ActionNode.html
   name: ActionNode
   nameWithType: ActionNode
   fullName: com.absence.dialoguesystem.internals.ActionNode
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
+  name: NodeVariableSetter
+  nameWithType: NodeVariableSetter
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
 - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
   commentId: T:com.absence.dialoguesystem.internals.IContainVariableManipulators
   parent: com.absence.dialoguesystem.internals
@@ -74,39 +94,6 @@ references:
   name: VBProcessType
   nameWithType: VBProcessType
   fullName: com.absence.dialoguesystem.internals.VBProcessType
-- uid: com.absence.dialoguesystem.internals.IContainSpeech
-  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html
-  name: IContainSpeech
-  nameWithType: IContainSpeech
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech
-- uid: com.absence.dialoguesystem.internals.GotoNode
-  commentId: T:com.absence.dialoguesystem.internals.GotoNode
-  href: com.absence.dialoguesystem.internals.GotoNode.html
-  name: GotoNode
-  nameWithType: GotoNode
-  fullName: com.absence.dialoguesystem.internals.GotoNode
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
-  commentId: T:com.absence.dialoguesystem.internals.DecisionSpeechNode
-  href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html
-  name: DecisionSpeechNode
-  nameWithType: DecisionSpeechNode
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
-  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
-  name: NodeVariableSetter
-  nameWithType: NodeVariableSetter
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode
   commentId: T:com.absence.dialoguesystem.internals.StickyNoteNode
   href: com.absence.dialoguesystem.internals.StickyNoteNode.html
@@ -158,6 +145,7 @@ references:
   fullName: com.absence.dialoguesystem.internals.Blackboard
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode
   commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
+  parent: com.absence.dialoguesystem.internals
   href: com.absence.dialoguesystem.internals.DialoguePartNode.html
   name: DialoguePartNode
   nameWithType: DialoguePartNode
@@ -192,6 +180,19 @@ references:
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: ShowIf
     href: com.absence.dialoguesystem.internals.Option.ShowIf.html
+- uid: com.absence.dialoguesystem.internals.IContainSpeech
+  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html
+  name: IContainSpeech
+  nameWithType: IContainSpeech
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech
+- uid: com.absence.dialoguesystem.internals.GotoNode
+  commentId: T:com.absence.dialoguesystem.internals.GotoNode
+  href: com.absence.dialoguesystem.internals.GotoNode.html
+  name: GotoNode
+  nameWithType: GotoNode
+  fullName: com.absence.dialoguesystem.internals.GotoNode
 - uid: com.absence.dialoguesystem.internals.TitleNode
   commentId: T:com.absence.dialoguesystem.internals.TitleNode
   href: com.absence.dialoguesystem.internals.TitleNode.html

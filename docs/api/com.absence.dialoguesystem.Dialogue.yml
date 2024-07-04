@@ -1090,6 +1090,7 @@ references:
   fullName: com.absence.dialoguesystem.Dialogue.Clone
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode
   commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
+  parent: com.absence.dialoguesystem.internals
   href: com.absence.dialoguesystem.internals.DialoguePartNode.html
   name: DialoguePartNode
   nameWithType: DialoguePartNode

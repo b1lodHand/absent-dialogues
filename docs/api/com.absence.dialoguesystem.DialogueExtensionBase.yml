@@ -5,10 +5,12 @@ items:
   id: DialogueExtensionBase
   parent: com.absence.dialoguesystem
   children:
+  - com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  - com.absence.dialoguesystem.DialogueExtensionBase.Order
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   langs:
   - csharp
@@ -62,6 +64,7 @@ items:
   - com.absence.dialoguesystem.DialogueAnimationsPlayer
   - com.absence.dialoguesystem.DialogueInputHandler_Legacy
   - com.absence.dialoguesystem.DialogueSoundsPlayer
+  - com.absence.dialoguesystem.examples.Demo_GUI
   attributes:
   - type: UnityEngine.RequireComponent
     ctor: UnityEngine.RequireComponent.#ctor(System.Type)
@@ -91,17 +94,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: m_instance
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
-    startLine: 26
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: <xref href="com.absence.dialoguesystem.DialogueInstance" data-throw-if-not-resolved="false"></xref> component attached to the current gameobject.
-  example: []
   syntax:
     content: >-
       [SerializeField]
 
       [Readonly]
+
+      [Tooltip("Dialogue instance component attached to the current gameobject.")]
 
       protected DialogueInstance m_instance
     return:
@@ -111,6 +114,8 @@ items:
 
       <Readonly>
 
+      <Tooltip("Dialogue instance component attached to the current gameobject.")>
+
       Protected m_instance As DialogueInstance
   attributes:
   - type: UnityEngine.SerializeField
@@ -119,6 +124,40 @@ items:
   - type: com.absence.attributes.ReadonlyAttribute
     ctor: com.absence.attributes.ReadonlyAttribute.#ctor
     arguments: []
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Dialogue instance component attached to the current gameobject.
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  commentId: P:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  id: Order
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  langs:
+  - csharp
+  - vb
+  name: Order
+  nameWithType: DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Order
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public sbyte Order { get; }
+    parameters: []
+    return:
+      type: System.SByte
+    content.vb: Public ReadOnly Property Order As SByte
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.Order*
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   id: OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
@@ -137,7 +176,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnHandleAdditionalData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
-    startLine: 47
+    startLine: 36
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -147,12 +186,12 @@ items:
     progresses.
   example: []
   syntax:
-    content: protected virtual void OnHandleAdditionalData(AdditionalSpeechData data)
+    content: public virtual void OnHandleAdditionalData(AdditionalSpeechData data)
     parameters:
     - id: data
       type: com.absence.dialoguesystem.internals.AdditionalSpeechData
       description: ''
-    content.vb: Protected Overridable Sub OnHandleAdditionalData(data As AdditionalSpeechData)
+    content.vb: Public Overridable Sub OnHandleAdditionalData(data As AdditionalSpeechData)
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
@@ -172,14 +211,14 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnBeforeSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
-    startLine: 58
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Use to define what to do with the original speech data right before displaying it.
   example: []
   syntax:
-    content: protected virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
+    content: public virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
     parameters:
     - id: speaker
       type: com.absence.personsystem.Person
@@ -190,7 +229,7 @@ items:
     - id: options
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
       description: Option of this speech.
-    content.vb: Protected Overridable Sub OnBeforeSpeech(speaker As Person, speech As String, options As List(Of [Option]))
+    content.vb: Public Overridable Sub OnBeforeSpeech(speaker As Person, speech As String, options As List(Of [Option]))
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech*
   nameWithType.vb: DialogueExtensionBase.OnBeforeSpeech(Person, String, List(Of Option))
   fullName.vb: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option))
@@ -213,15 +252,15 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
-    startLine: 66
+    startLine: 55
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Use to define what to do right after the target instance clones it's <xref href="com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: protected virtual void OnAfterCloning()
-    content.vb: Protected Overridable Sub OnAfterCloning()
+    content: public virtual void OnAfterCloning()
+    content.vb: Public Overridable Sub OnAfterCloning()
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning*
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
@@ -241,16 +280,42 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
-    startLine: 74
+    startLine: 63
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Use to define what to do on each frame when the target instance is <xref href="com.absence.dialoguesystem.DialogueInstance.InDialogue" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: protected virtual void OnDialogueUpdate()
-    content.vb: Protected Overridable Sub OnDialogueUpdate()
+    content: public virtual void OnDialogueUpdate()
+    content.vb: Public Overridable Sub OnDialogueUpdate()
   overload: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  id: FindInstance
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  langs:
+  - csharp
+  - vb
+  name: FindInstance()
+  nameWithType: DialogueExtensionBase.FindInstance()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FindInstance
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
+    startLine: 68
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public void FindInstance()
+    content.vb: Public Sub FindInstance()
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -341,6 +406,23 @@ references:
   name: DialogueInstance
   nameWithType: DialogueInstance
   fullName: com.absence.dialoguesystem.DialogueInstance
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order
+  name: Order
+  nameWithType: DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
+- uid: System.SByte
+  commentId: T:System.SByte
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  name: sbyte
+  nameWithType: sbyte
+  fullName: sbyte
+  nameWithType.vb: SByte
+  fullName.vb: SByte
+  name.vb: SByte
 - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
   commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
   parent: com.absence.dialoguesystem.internals
@@ -582,3 +664,9 @@ references:
   name: OnDialogueUpdate
   nameWithType: DialogueExtensionBase.OnDialogueUpdate
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  name: FindInstance
+  nameWithType: DialogueExtensionBase.FindInstance
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance

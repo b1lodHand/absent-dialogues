@@ -288,7 +288,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateGUI
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 137
+    startLine: 138
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -314,19 +314,19 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FrameToNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 270
+    startLine: 272
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: Teleports the view to the target node and selects it.
   example: []
   syntax:
-    content: public void FrameToNode(Node node)
+    content: public static void FrameToNode(Node node)
     parameters:
     - id: node
       type: com.absence.dialoguesystem.internals.Node
       description: Target node.
-    content.vb: Public Sub FrameToNode(node As Node)
+    content.vb: Public Shared Sub FrameToNode(node As Node)
   overload: com.absence.dialoguesystem.editor.DialogueEditorWindow.FrameToNode*
 - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow.SelectNode(com.absence.dialoguesystem.internals.Node)
   commentId: M:com.absence.dialoguesystem.editor.DialogueEditorWindow.SelectNode(com.absence.dialoguesystem.internals.Node)
@@ -346,19 +346,19 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SelectNode
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.cs
-    startLine: 280
+    startLine: 282
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: Selects the target node.
   example: []
   syntax:
-    content: public void SelectNode(Node node)
+    content: public static void SelectNode(Node node)
     parameters:
     - id: node
       type: com.absence.dialoguesystem.internals.Node
       description: Target node.
-    content.vb: Public Sub SelectNode(node As Node)
+    content.vb: Public Shared Sub SelectNode(node As Node)
   overload: com.absence.dialoguesystem.editor.DialogueEditorWindow.SelectNode*
 references:
 - uid: com.absence.dialoguesystem.editor
