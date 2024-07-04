@@ -21,31 +21,20 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
     public abstract class DialogueExtensionBase : MonoBehaviour
     {
-        /// <summary>
-        /// <see cref="DialogueInstance"/> component attached to the current gameobject.
-        /// </summary>
-        [SerializeField, Readonly] protected DialogueInstance m_instance;
+        [SerializeField, Readonly, Tooltip("Dialogue instance component attached to the current gameobject.")] 
+        protected DialogueInstance m_instance;
 
-        private void OnEnable()
-        {
-            m_instance.OnHandleAdditionalData += OnHandleAdditionalData;
-            m_instance.OnBeforeSpeech += OnBeforeSpeech;
-            m_instance.OnAfterCloning += OnAfterCloning;
-        }
+        [SerializeField, Tooltip("Execution order of this extension. Lower values means sooner execution.")] 
+        private sbyte m_order = 0;
 
-        private void OnDisable()
-        {
-            m_instance.OnHandleAdditionalData -= OnHandleAdditionalData;
-            m_instance.OnBeforeSpeech -= OnBeforeSpeech;
-            m_instance.OnAfterCloning -= OnAfterCloning;
-        }
+        public sbyte Order => m_order;
 
         /// <summary>
         /// Use to define what to do with the current <see cref="AdditionalSpeechData"/>. Gets called when the <see cref="m_instance"/>
         /// progresses.
         /// </summary>
         /// <param name="data"></param>
-        protected virtual void OnHandleAdditionalData(AdditionalSpeechData data)
+        public virtual void OnHandleAdditionalData(AdditionalSpeechData data)
         {
 
         }
@@ -56,7 +45,7 @@ namespace com.absence.dialoguesystem
         /// <param name="speaker">Speaker of this speech.</param>
         /// <param name="speech">Speech in context.</param>
         /// <param name="options">Option of this speech.</param>
-        protected virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
+        public virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
         {
             
         }
@@ -64,7 +53,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to define what to do right after the target instance clones it's <see cref="DialogueInstance.ReferencedDialogue"/>.
         /// </summary>
-        protected virtual void OnAfterCloning()
+        public virtual void OnAfterCloning()
         {
 
         }
@@ -72,9 +61,14 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to define what to do on each frame when the target instance is <see cref="DialogueInstance.InDialogue"/>
         /// </summary>
-        protected virtual void OnDialogueUpdate()
+        public virtual void OnDialogueUpdate()
         {
 
+        }
+
+        public void FindInstance()
+        {
+            m_instance = GetComponent<DialogueInstance>();
         }
 
         private void Start()
@@ -86,16 +80,15 @@ namespace com.absence.dialoguesystem
             }
         }
 
-        private void Update()
-        {
-            if (!m_instance.InDialogue) return;
-
-            OnDialogueUpdate();
-        }
-
         private void Reset()
         {
-            m_instance = GetComponent<DialogueInstance>();
+            FindInstance();
+        }
+
+        [ContextMenu("Find Instance")]
+        void FindInstance_Editor()
+        {
+            FindInstance();
         }
     }
 }

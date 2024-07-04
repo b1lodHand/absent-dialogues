@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -8,19 +7,22 @@ namespace com.absence.dialoguesystem.internals
     /// Node which teleports the flow to a specific <see cref="DialoguePartNode"/>.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.GotoNode.html")]
-    public sealed class GotoNode : Node
+    public sealed class GotoNode : Node, IPerformDelayedClone
     {
-        public string TargetDialoguePartName;
+        /// <summary>
+        /// The node which will get reached when this goto node gets passed.
+        /// </summary>
+        [HideInInspector] public DialoguePartNode TargetNode;
+
         public override string GetClassName() => "gotoNode";
         public override string GetTitle() => "Goto";
 
         protected override void Pass_Inline(params object[] passData)
         {
-            var check = MasterDialogue.GetDialoguePartNodesWithName(TargetDialoguePartName);
-            //if (check.Count == 0 || check.Count > 1) return;
+            if (TargetNode == null) throw new System.Exception("Target node of GotoNode is null!");
 
             SetState(NodeState.Past);
-            check.FirstOrDefault().Reach();
+            TargetNode.Reach();
         }
         protected override void Reach_Inline()
         {
@@ -43,6 +45,11 @@ namespace com.absence.dialoguesystem.internals
         public override List<string> GetOutputPortNamesForCreation()
         {
             return new List<string>();
+        }
+
+        public void DelayedClone(Dialogue originalDialogue)
+        {
+            TargetNode = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
         }
     }
 

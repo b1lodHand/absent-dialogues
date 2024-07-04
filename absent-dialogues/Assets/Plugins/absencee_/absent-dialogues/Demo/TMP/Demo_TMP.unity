@@ -608,7 +608,9 @@ MonoBehaviour:
   m_saveProgressOnExit: 0
   m_referencedDialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
   m_overridePeople: []
-  m_extensionList: []
+  m_extensionList:
+  - {fileID: 560826872}
+  - {fileID: 560826873}
   m_player:
     m_state: 0
     m_dialogue: {fileID: 0}
@@ -629,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
+  m_order: 0
 --- !u!114 &560826873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
+  m_order: 1
 --- !u!1 &673667125
 GameObject:
   m_ObjectHideFlags: 0

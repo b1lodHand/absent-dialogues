@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "382555d8c53684c707c6a8922c2be63a9380a97f"
+      "hash": "9d46ec0177e75616daf8ee0b2d1d420ed8885257"
     },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",
@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "54b2ac222c22edcd15aa96c6c99c3de3dee82f4f"
+      "hash": "5b360321be4bf964f670ce9b226a946f64a9746c"
     },
     "com.absence.utilities": {
       "version": "https://github.com/b1lodHand/absent-utilities.git",

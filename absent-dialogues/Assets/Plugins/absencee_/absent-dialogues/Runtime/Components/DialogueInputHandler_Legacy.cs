@@ -1,4 +1,3 @@
-using com.absence.dialoguesystem.internals;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -12,7 +11,7 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")]
     public class DialogueInputHandler_Legacy : DialogueExtensionBase
     {
-        protected override void OnDialogueUpdate()
+        public override void OnDialogueUpdate()
         {
             if (Input.GetKeyDown(KeyCode.Space) && m_instance.Player.State == DialoguePlayer.PlayerState.WaitingForSkip)
                 m_instance.Player.Continue();

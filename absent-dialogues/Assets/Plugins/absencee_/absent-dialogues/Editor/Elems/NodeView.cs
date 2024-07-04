@@ -9,7 +9,6 @@ using System.Linq;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.personsystem;
-using com.absence.variablesystem;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -45,10 +44,14 @@ namespace com.absence.dialoguesystem.editor
         public List<Port> Outputs = new List<Port>();
 
         private Button m_createNewOptionButton;
+        private DropdownField m_gotoDropdown;
+
         private List<VisualElement> m_optionElems = new List<VisualElement>();
 
         private SerializedObject m_serializedNode;
+
         private DecisionSpeechNode m_nodeAsDecisive;
+        private GotoNode m_nodeAsGoto;
 
         /// <summary>
         /// The graph we're in.
@@ -103,6 +106,21 @@ namespace com.absence.dialoguesystem.editor
                 node.OnValidation -= RefreshOptionLabels;
                 node.OnValidation += RefreshOptionLabels;
             }
+            else if(node is DialoguePartNode)
+            {
+                node.OnValidation -= RefreshDialoguePartFinder;
+                node.OnValidation += RefreshDialoguePartFinder;
+            }
+            else if (node is GotoNode)
+            {
+                DialogueEditorWindow.m_inspectorView.OnNodeValidation -= RefreshGotoDropdown;
+                DialogueEditorWindow.m_inspectorView.OnNodeValidation += RefreshGotoDropdown;
+            }
+        }
+
+        private void RefreshDialoguePartFinder()
+        {
+            DialogueEditorWindow.RefreshDialoguePartFinder();
         }
 
         private void RefreshNodeIcon()
@@ -139,7 +157,8 @@ namespace com.absence.dialoguesystem.editor
         private void SetupNodeForSerialization()
         {
             m_serializedNode = new SerializedObject(Node);
-            if (Node is DecisionSpeechNode) m_nodeAsDecisive = Node as DecisionSpeechNode;
+            if (Node is DecisionSpeechNode decisiveNode) m_nodeAsDecisive = decisiveNode;
+            else if (Node is GotoNode gotoNode) m_nodeAsGoto = gotoNode;
         }
         private void SetupSpeechFieldIfExists()
         {
@@ -167,6 +186,7 @@ namespace com.absence.dialoguesystem.editor
             if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.BlackboardBank = Node.Blackboard.Bank);
             if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.BlackboardBank = Node.Blackboard.Bank);
         }
+
         private void RefreshPersonDropdown()
         {
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
@@ -204,6 +224,29 @@ namespace com.absence.dialoguesystem.editor
 
         }
 
+        private void RefreshGotoDropdown()
+        {
+            m_gotoDropdown.choices.Clear();
+
+            Node.MasterDialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
+            {
+                m_gotoDropdown.choices.Add(dialoguePartNode.DialoguePartName);
+            });
+
+            if (m_gotoDropdown.choices.Count == 0)
+            {
+                m_gotoDropdown.SetValueWithoutNotify("There are no DialoguePartNode.");
+                return;
+            }
+
+            if (Node.MasterDialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
+            else m_gotoDropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
+        }
+        private void SoftRefreshGotoLabel()
+        {
+            m_gotoDropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
+        }
+
         private void DrawElems_DialoguePartNode()
         {
             Label nameLabel = new Label();
@@ -223,11 +266,23 @@ namespace com.absence.dialoguesystem.editor
         }
         private void DrawElems_GotoNode()
         {
-            Label gotoLabel = new Label();
-            gotoLabel.bindingPath = "TargetDialoguePartName";
-            gotoLabel.Bind(m_serializedNode);
+            DropdownField gotoDropdown = new DropdownField();
+            gotoDropdown.name = "goto-dropdown";
+            gotoDropdown.AddToClassList("goto-field");
+            m_gotoDropdown = gotoDropdown;
 
-            this.Add(gotoLabel);
+            gotoDropdown.RegisterValueChangedCallback(evt =>
+            {
+                Undo.RecordObject(m_nodeAsGoto, "Node (Person Modified)");
+
+                DialoguePartNode targetNode = Node.MasterDialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
+                if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
+
+                EditorUtility.SetDirty(m_nodeAsGoto);
+            });
+
+            RefreshGotoDropdown();
+            this.Add(gotoDropdown);
         }
 
         private void CreateInputPort()
@@ -288,11 +343,10 @@ namespace com.absence.dialoguesystem.editor
             base.OnSelected();
             OnNodeSelected?.Invoke(this);
         }
-
         public override void OnUnselected()
         {
             base.OnUnselected();
-            OnNodeSelected?.Invoke(null);
+            if(Master.selection.Count == 1) OnNodeSelected?.Invoke(null); //??
         }
 
         #region Decision Speech Node
