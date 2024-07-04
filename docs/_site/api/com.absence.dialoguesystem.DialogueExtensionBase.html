@@ -116,6 +116,7 @@ over the system.</p>
       <div class="level6"><a class="xref" href="com.absence.dialoguesystem.DialogueAnimationsPlayer.html">DialogueAnimationsPlayer</a></div>
       <div class="level6"><a class="xref" href="com.absence.dialoguesystem.DialogueInputHandler_Legacy.html">DialogueInputHandler_Legacy</a></div>
       <div class="level6"><a class="xref" href="com.absence.dialoguesystem.DialogueSoundsPlayer.html">DialogueSoundsPlayer</a></div>
+      <div class="level6"><a class="xref" href="com.absence.dialoguesystem.examples.Demo_GUI.html">Demo_GUI</a></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="com.html">com</a>.<a class="xref" href="com.absence.html">absence</a>.<a class="xref" href="com.absence.dialoguesystem.html">dialoguesystem</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp-firstpass.dll</h6>
@@ -137,16 +138,16 @@ OnBeforeSpeech(...);</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_m_instance.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.m_instance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L27">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L25">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_m_instance" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.m_instance">m_instance</h4>
-  <div class="markdown level1 summary"><p><a class="xref" href="com.absence.dialoguesystem.DialogueInstance.html">DialogueInstance</a> component attached to the current gameobject.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 [Readonly]
+[Tooltip(&quot;Dialogue instance component attached to the current gameobject.&quot;)]
 protected DialogueInstance m_instance</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
@@ -164,14 +165,61 @@ protected DialogueInstance m_instance</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_Order.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.Order%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L30">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_DialogueExtensionBase_Order_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.Order*"></a>
+  <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_Order" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.Order">Order</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sbyte Order { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_FindInstance.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.FindInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L69">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_DialogueExtensionBase_FindInstance_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.FindInstance*"></a>
+  <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_FindInstance" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.FindInstance">FindInstance()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindInstance()</code></pre>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L67">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L56">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning*"></a>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning">OnAfterCloning()</h4>
@@ -180,14 +228,14 @@ protected DialogueInstance m_instance</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnAfterCloning()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnAfterCloning()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person%40%2CSystem.String%40%2CSystem.Collections.Generic.List%7Bcom.absence.dialoguesystem.internals.Option%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L59">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L48">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech*"></a>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)">OnBeforeSpeech(ref Person, ref string, ref List&lt;Option&gt;)</h4>
@@ -196,7 +244,7 @@ protected DialogueInstance m_instance</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List&lt;Option&gt; options)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List&lt;Option&gt; options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -233,7 +281,7 @@ protected DialogueInstance m_instance</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L75">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L64">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate*"></a>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate">OnDialogueUpdate()</h4>
@@ -242,14 +290,14 @@ protected DialogueInstance m_instance</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnDialogueUpdate()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnDialogueUpdate()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L48">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs/#L37">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*"></a>
   <h4 id="com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_" data-uid="com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)">OnHandleAdditionalData(AdditionalSpeechData)</h4>
@@ -259,7 +307,7 @@ progresses.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnHandleAdditionalData(AdditionalSpeechData data)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnHandleAdditionalData(AdditionalSpeechData data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">

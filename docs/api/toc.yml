@@ -54,6 +54,11 @@ items:
     name: SplitView
   - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
     name: SplitView.UxmlFactory
+- uid: com.absence.dialoguesystem.examples
+  name: com.absence.dialoguesystem.examples
+  items:
+  - uid: com.absence.dialoguesystem.examples.Demo_GUI
+    name: Demo_GUI
 - uid: com.absence.dialoguesystem.internals
   name: com.absence.dialoguesystem.internals
   items:

@@ -112,7 +112,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialoguePartName: loop
+  TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &-2127933438961997456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,14 +180,14 @@ MonoBehaviour:
   m_Name: GotoNode
   m_EditorClassIdentifier: 
   Guid: 8d834be62b356db4f886d9a83844f6b9
-  Position: {x: 1396.1504, y: 297.5}
+  Position: {x: 1420.0112, y: 295.99997}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialoguePartName: loop
+  TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &-1399893973709126951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 576.12524, y: 138.95825}
+  Position: {x: 571, y: 167}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: DialoguePartNode
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
-  Position: {x: -3, y: 63}
+  Position: {x: 4.999987, y: 72.749016}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: ba671a40893b8f04f9cdd1ddc116785f
-  Position: {x: 184.95827, y: -4.9999933}
+  Position: {x: 192.99998, y: 5.011313}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -512,7 +512,7 @@ MonoBehaviour:
   State: 0
   ExitDialogAfterwards: 0
   PersonIndex: 0
-  TargetDialoguePartName: loop
+  TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &7901140551254700991
 MonoBehaviour:
   m_ObjectHideFlags: 0

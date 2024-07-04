@@ -6,6 +6,7 @@ items:
   parent: com.absence.dialoguesystem.editor
   children:
   - com.absence.dialoguesystem.editor.InspectorView.#ctor
+  - com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
   langs:
   - csharp
   - vb
@@ -20,7 +21,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: InspectorView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -53,6 +54,33 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.InspectorView.html
+- uid: com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  commentId: E:com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  id: OnNodeValidation
+  parent: com.absence.dialoguesystem.editor.InspectorView
+  langs:
+  - csharp
+  - vb
+  name: OnNodeValidation
+  nameWithType: InspectorView.OnNodeValidation
+  fullName: com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnNodeValidation
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public event Action OnNodeValidation
+    return:
+      type: System.Action
+    content.vb: Public Event OnNodeValidation As Action
 - uid: com.absence.dialoguesystem.editor.InspectorView.#ctor
   commentId: M:com.absence.dialoguesystem.editor.InspectorView.#ctor
   id: '#ctor'
@@ -71,7 +99,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
-    startLine: 19
+    startLine: 23
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -256,6 +284,14 @@ references:
   - uid: UnityEngine.UIElements.Experimental
     name: Experimental
     isExternal: true
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
 - uid: com.absence.dialoguesystem.editor.InspectorView.#ctor*
   commentId: Overload:com.absence.dialoguesystem.editor.InspectorView.#ctor
   href: com.absence.dialoguesystem.editor.InspectorView.html#com_absence_dialoguesystem_editor_InspectorView__ctor

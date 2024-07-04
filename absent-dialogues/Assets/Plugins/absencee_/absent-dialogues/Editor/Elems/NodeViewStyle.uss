@@ -529,3 +529,27 @@
 .exit #node-border {
     border-top-color: rgb(171, 68, 63);
 }
+
+#goto-dropdown {
+    display: none;
+    visibility: visible;
+    align-self: center;
+    align-items: center;
+}
+
+.gotoNode #goto-dropdown {
+    display: flex;
+}
+
+.goto-field .unity-popup-field__input {
+    border-radius: 0;
+    text-overflow: clip;
+    white-space: nowrap;
+    position: relative;
+    flex-basis: 0;
+    height: 18px;
+}
+
+.goto-field .unity-popup-field__label {
+    display: none;
+}

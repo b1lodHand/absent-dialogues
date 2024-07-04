@@ -9,6 +9,8 @@ items:
   - com.absence.dialoguesystem.editor.DialogueGraphView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
   - com.absence.dialoguesystem.editor.DialogueGraphView.FindNodeView(com.absence.dialoguesystem.internals.Node)
   - com.absence.dialoguesystem.editor.DialogueGraphView.GetCompatiblePorts(UnityEditor.Experimental.GraphView.Port,UnityEditor.Experimental.GraphView.NodeAdapter)
+  - com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  - com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
   - com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeSelected
   - com.absence.dialoguesystem.editor.DialogueGraphView.OnPopulateView
   - com.absence.dialoguesystem.editor.DialogueGraphView.Refresh
@@ -118,6 +120,60 @@ items:
     return:
       type: System.Action
     content.vb: Public Event OnPopulateView As Action
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  commentId: E:com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  id: OnNodeCreated
+  parent: com.absence.dialoguesystem.editor.DialogueGraphView
+  langs:
+  - csharp
+  - vb
+  name: OnNodeCreated
+  nameWithType: DialogueGraphView.OnNodeCreated
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnNodeCreated
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public event Action<Node> OnNodeCreated
+    return:
+      type: System.Action{com.absence.dialoguesystem.internals.Node}
+    content.vb: Public Event OnNodeCreated As Action(Of Node)
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  commentId: E:com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  id: OnBeforeNodeDeleted
+  parent: com.absence.dialoguesystem.editor.DialogueGraphView
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeNodeDeleted
+  nameWithType: DialogueGraphView.OnBeforeNodeDeleted
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnBeforeNodeDeleted
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public event Action<Node> OnBeforeNodeDeleted
+    return:
+      type: System.Action{com.absence.dialoguesystem.internals.Node}
+    content.vb: Public Event OnBeforeNodeDeleted As Action(Of Node)
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView.#ctor
   commentId: M:com.absence.dialoguesystem.editor.DialogueGraphView.#ctor
   id: '#ctor'
@@ -136,7 +192,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -167,7 +223,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetCompatiblePorts
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 78
+    startLine: 81
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -206,7 +262,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BuildContextualMenu
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 134
+    startLine: 137
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -239,7 +295,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Refresh
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 200
+    startLine: 205
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -267,7 +323,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: FindNodeView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/DialogueGraphView.cs
-    startLine: 211
+    startLine: 221
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -562,6 +618,39 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
+- uid: System.Action{com.absence.dialoguesystem.internals.Node}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.Node}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Node>
+  nameWithType: Action<Node>
+  fullName: System.Action<com.absence.dialoguesystem.internals.Node>
+  nameWithType.vb: Action(Of Node)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.Node)
+  name.vb: Action(Of Node)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView.#ctor*
   commentId: Overload:com.absence.dialoguesystem.editor.DialogueGraphView.#ctor
   href: com.absence.dialoguesystem.editor.DialogueGraphView.html#com_absence_dialoguesystem_editor_DialogueGraphView__ctor

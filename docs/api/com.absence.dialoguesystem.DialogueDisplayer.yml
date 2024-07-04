@@ -34,13 +34,13 @@ items:
   example: []
   syntax:
     content: >-
-      [AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")]
+      [AddComponentMenu("absencee_/absent-dialogues/UI/Dialogue Displayer")]
 
       [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")]
 
       public class DialogueDisplayer : Singleton<DialogueDisplayer>
     content.vb: >-
-      <AddComponentMenu("absencee_/absent-dialogues/Dialogue Displayer")>
+      <AddComponentMenu("absencee_/absent-dialogues/UI/Dialogue Displayer")>
 
       <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")>
 
@@ -62,7 +62,7 @@ items:
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
     arguments:
     - type: System.String
-      value: absencee_/absent-dialogues/Dialogue Displayer
+      value: absencee_/absent-dialogues/UI/Dialogue Displayer
   - type: UnityEngine.HelpURLAttribute
     ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
     arguments:

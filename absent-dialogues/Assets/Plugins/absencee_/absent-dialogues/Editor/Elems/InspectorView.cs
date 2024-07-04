@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,14 +13,17 @@ namespace com.absence.dialoguesystem.editor
     {
         public new class UxmlFactory : UxmlFactory<InspectorView, VisualElement.UxmlTraits> { }
 
+        internal NodeView m_currentNode;
         Editor editor;
+
+        public event Action OnNodeValidation = null;
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         public InspectorView()
         {
-
+            
         }
 
         internal void UpdateSelection(NodeView nodeView)
@@ -27,14 +31,20 @@ namespace com.absence.dialoguesystem.editor
             Clear();
             UnityEngine.Object.DestroyImmediate(editor);
 
+            m_currentNode = nodeView;
+
             if (nodeView == null) return;
 
             editor = Editor.CreateEditor(nodeView.Node);
             IMGUIContainer container = new IMGUIContainer(() =>
             {
                 if (editor.target == null) return;
+
+                EditorGUI.BeginChangeCheck();
+
                 editor.OnInspectorGUI();
-                //editor.CreateInspectorGUI();
+
+                if (EditorGUI.EndChangeCheck()) OnNodeValidation.Invoke();
             });
             Add(container);
         }

@@ -19,17 +19,20 @@ namespace com.absence.dialoguesystem.editor
     {
         public new class UxmlFactory : UxmlFactory<DialogueGraphView, GraphView.UxmlTraits> { }
 
-        Dialogue m_dialogue;
+        internal Dialogue m_dialogue;
 
         /// <summary>
         /// Gets invoked when a node gets selected.
         /// </summary>
-        public event Action<NodeView> OnNodeSelected;
+        public event Action<NodeView> OnNodeSelected = null;
 
         /// <summary>
         /// Gets invoked when a dialogue gets displayed.
         /// </summary>
-        public event Action OnPopulateView;
+        public event Action OnPopulateView = null;
+
+        public event Action<Node> OnNodeCreated = null;
+        public event Action<Node> OnBeforeNodeDeleted = null;
 
         /// <summary>
         /// Default constructor.
@@ -164,6 +167,8 @@ namespace com.absence.dialoguesystem.editor
 
             ClearViewWithoutNotification();
 
+            if (previousDialogue != m_dialogue) EditorPrefs.SetString("last-node-guid", string.Empty);
+
             if (m_dialogue == null) return;
 
             if (m_dialogue.RootNode == null)
@@ -202,6 +207,11 @@ namespace com.absence.dialoguesystem.editor
         {
             if (m_dialogue == null) return;
             PopulateView(m_dialogue);
+
+            string lastNodeGuid = EditorPrefs.GetString("last-node-guid", string.Empty);
+            if (string.IsNullOrWhiteSpace(lastNodeGuid)) return;
+
+            SelectNode(m_dialogue.AllNodes.Where(node => node.Guid == lastNodeGuid).FirstOrDefault());
         }
 
         /// <summary>
@@ -233,6 +243,8 @@ namespace com.absence.dialoguesystem.editor
             Refresh();
             SelectNode(node);
 
+            OnNodeCreated?.Invoke(node);
+
             return node;
         }
 
@@ -240,6 +252,9 @@ namespace com.absence.dialoguesystem.editor
         {
             Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
             m_dialogue.DeleteNode(view.Node);
+
+            OnBeforeNodeDeleted?.Invoke(view.Node);
+
             Undo.DestroyObjectImmediate(view.Node);
             AssetDatabase.SaveAssets();
         }

@@ -31,7 +31,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, ShowIf(nameof(m_workMode), WorkMode.CrossFade), Range(0f, 1f)]
         private float m_transitionTime = 0.15f;
 
-        protected override void OnHandleAdditionalData(AdditionalSpeechData data)
+        public override void OnHandleAdditionalData(AdditionalSpeechData data)
         {
             if (string.IsNullOrWhiteSpace(data.AnimatorMemberName)) return;
 

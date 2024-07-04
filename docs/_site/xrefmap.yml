@@ -313,6 +313,19 @@ references:
   commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
   fullName: com.absence.dialoguesystem.DialogueExtensionBase
   nameWithType: DialogueExtensionBase
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  name: FindInstance()
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance()
+  nameWithType: DialogueExtensionBase.FindInstance()
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance*
+  name: FindInstance
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance_
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  nameWithType: DialogueExtensionBase.FindInstance
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   name: OnAfterCloning()
   href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
@@ -368,6 +381,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData
   nameWithType: DialogueExtensionBase.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  name: Order
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order
+  commentId: P:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  nameWithType: DialogueExtensionBase.Order
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order*
+  name: Order
+  href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order_
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  nameWithType: DialogueExtensionBase.Order
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   name: m_instance
   href: api/com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_m_instance
@@ -1166,6 +1192,18 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.editor.DialogueGraphView.GetCompatiblePorts
   nameWithType: DialogueGraphView.GetCompatiblePorts
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  name: OnBeforeNodeDeleted
+  href: api/com.absence.dialoguesystem.editor.DialogueGraphView.html#com_absence_dialoguesystem_editor_DialogueGraphView_OnBeforeNodeDeleted
+  commentId: E:com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.OnBeforeNodeDeleted
+  nameWithType: DialogueGraphView.OnBeforeNodeDeleted
+- uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  name: OnNodeCreated
+  href: api/com.absence.dialoguesystem.editor.DialogueGraphView.html#com_absence_dialoguesystem_editor_DialogueGraphView_OnNodeCreated
+  commentId: E:com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  fullName: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeCreated
+  nameWithType: DialogueGraphView.OnNodeCreated
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView.OnNodeSelected
   name: OnNodeSelected
   href: api/com.absence.dialoguesystem.editor.DialogueGraphView.html#com_absence_dialoguesystem_editor_DialogueGraphView_OnNodeSelected
@@ -1222,6 +1260,12 @@ references:
   fullName.vb: com.absence.dialoguesystem.editor.InspectorView.New
   nameWithType: InspectorView.InspectorView
   nameWithType.vb: InspectorView.New
+- uid: com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  name: OnNodeValidation
+  href: api/com.absence.dialoguesystem.editor.InspectorView.html#com_absence_dialoguesystem_editor_InspectorView_OnNodeValidation
+  commentId: E:com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  fullName: com.absence.dialoguesystem.editor.InspectorView.OnNodeValidation
+  nameWithType: InspectorView.OnNodeValidation
 - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
   name: InspectorView.UxmlFactory
   href: api/com.absence.dialoguesystem.editor.InspectorView.UxmlFactory.html
@@ -1378,6 +1422,31 @@ references:
   commentId: T:com.absence.dialoguesystem.editor.VariableBankCreationHandler
   fullName: com.absence.dialoguesystem.editor.VariableBankCreationHandler
   nameWithType: VariableBankCreationHandler
+- uid: com.absence.dialoguesystem.examples
+  name: com.absence.dialoguesystem.examples
+  href: api/com.absence.dialoguesystem.examples.html
+  commentId: N:com.absence.dialoguesystem.examples
+  fullName: com.absence.dialoguesystem.examples
+  nameWithType: com.absence.dialoguesystem.examples
+- uid: com.absence.dialoguesystem.examples.Demo_GUI
+  name: Demo_GUI
+  href: api/com.absence.dialoguesystem.examples.Demo_GUI.html
+  commentId: T:com.absence.dialoguesystem.examples.Demo_GUI
+  fullName: com.absence.dialoguesystem.examples.Demo_GUI
+  nameWithType: Demo_GUI
+- uid: com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning
+  name: OnAfterCloning()
+  href: api/com.absence.dialoguesystem.examples.Demo_GUI.html#com_absence_dialoguesystem_examples_Demo_GUI_OnAfterCloning
+  commentId: M:com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning
+  fullName: com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning()
+  nameWithType: Demo_GUI.OnAfterCloning()
+- uid: com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning*
+  name: OnAfterCloning
+  href: api/com.absence.dialoguesystem.examples.Demo_GUI.html#com_absence_dialoguesystem_examples_Demo_GUI_OnAfterCloning_
+  commentId: Overload:com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.examples.Demo_GUI.OnAfterCloning
+  nameWithType: Demo_GUI.OnAfterCloning
 - uid: com.absence.dialoguesystem.internals
   name: com.absence.dialoguesystem.internals
   href: api/com.absence.dialoguesystem.internals.html
@@ -2574,6 +2643,19 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.GotoNode.AddNextNode_Inline
   nameWithType: GotoNode.AddNextNode_Inline
+- uid: com.absence.dialoguesystem.internals.GotoNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  name: DelayedClone(Dialogue)
+  href: api/com.absence.dialoguesystem.internals.GotoNode.html#com_absence_dialoguesystem_internals_GotoNode_DelayedClone_com_absence_dialoguesystem_Dialogue_
+  commentId: M:com.absence.dialoguesystem.internals.GotoNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  fullName: com.absence.dialoguesystem.internals.GotoNode.DelayedClone(com.absence.dialoguesystem.Dialogue)
+  nameWithType: GotoNode.DelayedClone(Dialogue)
+- uid: com.absence.dialoguesystem.internals.GotoNode.DelayedClone*
+  name: DelayedClone
+  href: api/com.absence.dialoguesystem.internals.GotoNode.html#com_absence_dialoguesystem_internals_GotoNode_DelayedClone_
+  commentId: Overload:com.absence.dialoguesystem.internals.GotoNode.DelayedClone
+  isSpec: "True"
+  fullName: com.absence.dialoguesystem.internals.GotoNode.DelayedClone
+  nameWithType: GotoNode.DelayedClone
 - uid: com.absence.dialoguesystem.internals.GotoNode.GetClassName
   name: GetClassName()
   href: api/com.absence.dialoguesystem.internals.GotoNode.html#com_absence_dialoguesystem_internals_GotoNode_GetClassName
@@ -2674,12 +2756,12 @@ references:
   isSpec: "True"
   fullName: com.absence.dialoguesystem.internals.GotoNode.RemoveNextNode_Inline
   nameWithType: GotoNode.RemoveNextNode_Inline
-- uid: com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
-  name: TargetDialoguePartName
-  href: api/com.absence.dialoguesystem.internals.GotoNode.html#com_absence_dialoguesystem_internals_GotoNode_TargetDialoguePartName
-  commentId: F:com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
-  fullName: com.absence.dialoguesystem.internals.GotoNode.TargetDialoguePartName
-  nameWithType: GotoNode.TargetDialoguePartName
+- uid: com.absence.dialoguesystem.internals.GotoNode.TargetNode
+  name: TargetNode
+  href: api/com.absence.dialoguesystem.internals.GotoNode.html#com_absence_dialoguesystem_internals_GotoNode_TargetNode
+  commentId: F:com.absence.dialoguesystem.internals.GotoNode.TargetNode
+  fullName: com.absence.dialoguesystem.internals.GotoNode.TargetNode
+  nameWithType: GotoNode.TargetNode
 - uid: com.absence.dialoguesystem.internals.IContainSpeech
   name: IContainSpeech
   href: api/com.absence.dialoguesystem.internals.IContainSpeech.html

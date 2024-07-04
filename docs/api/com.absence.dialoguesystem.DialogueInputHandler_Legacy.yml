@@ -20,7 +20,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DialogueInputHandler_Legacy
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -30,7 +30,7 @@ items:
     content: >-
       [RequireComponent(typeof(DialogueInstance))]
 
-      [AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")]
+      [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Input Handler (Legacy)")]
 
       [DisallowMultipleComponent]
 
@@ -40,7 +40,7 @@ items:
     content.vb: >-
       <RequireComponent(GetType(DialogueInstance))>
 
-      <AddComponentMenu("absencee_/absent-dialogues/Dialogue Input Handler (Legacy)")>
+      <AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Input Handler (Legacy)")>
 
       <DisallowMultipleComponent>
 
@@ -56,9 +56,11 @@ items:
   - com.absence.dialoguesystem.DialogueExtensionBase
   inheritedMembers:
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  - com.absence.dialoguesystem.DialogueExtensionBase.Order
   - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+  - com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
   attributes:
   - type: UnityEngine.RequireComponent
     ctor: UnityEngine.RequireComponent.#ctor(System.Type)
@@ -69,7 +71,7 @@ items:
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
     arguments:
     - type: System.String
-      value: absencee_/absent-dialogues/Dialogue Input Handler (Legacy)
+      value: absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Input Handler (Legacy)
   - type: UnityEngine.DisallowMultipleComponent
     ctor: UnityEngine.DisallowMultipleComponent.#ctor
     arguments: []
@@ -96,15 +98,15 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDialogueUpdate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInputHandler_Legacy.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Use to define what to do on each frame when the target instance is <xref href="com.absence.dialoguesystem.DialogueInstance.InDialogue" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: protected override void OnDialogueUpdate()
-    content.vb: Protected Overrides Sub OnDialogueUpdate()
+    content: public override void OnDialogueUpdate()
+    content.vb: Public Overrides Sub OnDialogueUpdate()
   overridden: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
   overload: com.absence.dialoguesystem.DialogueInputHandler_Legacy.OnDialogueUpdate*
 references:
@@ -191,6 +193,13 @@ references:
   name: m_instance
   nameWithType: DialogueExtensionBase.m_instance
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  commentId: P:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order
+  name: Order
+  nameWithType: DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
   parent: com.absence.dialoguesystem.DialogueExtensionBase
@@ -304,6 +313,25 @@ references:
   - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
     name: OnAfterCloning
     href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  name: FindInstance()
+  nameWithType: DialogueExtensionBase.FindInstance()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
   - name: (
   - name: )
 - uid: System

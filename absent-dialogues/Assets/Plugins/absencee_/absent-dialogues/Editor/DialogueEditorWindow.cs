@@ -18,7 +18,7 @@ namespace com.absence.dialoguesystem.editor
         private VisualTreeAsset m_VisualTreeAsset = default;
 
         static DialogueGraphView m_dialogueGraphView;
-        static InspectorView m_inspectorView;
+        internal static InspectorView m_inspectorView;
         static BlackboardView m_blackboardView;
         static Toolbar m_toolbar;
         static ToolbarMenu m_dialoguePartFinder;
@@ -114,6 +114,7 @@ namespace com.absence.dialoguesystem.editor
                 m_blackboardView.Clear();
                 m_inspectorView.Clear();
                 m_dialogueGraphView.ClearViewWithoutNotification();
+                m_dialogueGraphView.m_dialogue = null;
                 return false;
             }
 
@@ -251,7 +252,7 @@ namespace com.absence.dialoguesystem.editor
             m_dialogueGraphView.OnPopulateView += RefreshDialoguePartFinder;
         }
 
-        private void RefreshDialoguePartFinder()
+        internal static void RefreshDialoguePartFinder()
         {
             m_dialoguePartFinder.menu.ClearItems();
             if (m_targetDialogue == null) return;
@@ -269,7 +270,7 @@ namespace com.absence.dialoguesystem.editor
         /// Teleports the view to the target node and selects it.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public void FrameToNode(Node node)
+        public static void FrameToNode(Node node)
         {
             SelectNode(node);
             m_dialogueGraphView.FrameSelection();
@@ -279,7 +280,7 @@ namespace com.absence.dialoguesystem.editor
         /// Selects the target node.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public void SelectNode(Node node)
+        public static void SelectNode(Node node)
         {
             m_dialogueGraphView.SelectNode(node);
         }
@@ -287,6 +288,11 @@ namespace com.absence.dialoguesystem.editor
         private void OnNodeSelectionChanged(NodeView node)
         {
             m_inspectorView.UpdateSelection(node);
+
+            NodeView currentNode = m_inspectorView.m_currentNode;
+
+            if (currentNode != null) EditorPrefs.SetString("last-node-guid", currentNode.Node.Guid);
+            else EditorPrefs.SetString("last-node-guid", string.Empty);
         }
     }
 

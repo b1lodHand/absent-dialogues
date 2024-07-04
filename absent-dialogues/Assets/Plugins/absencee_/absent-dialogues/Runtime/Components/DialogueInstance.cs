@@ -3,6 +3,7 @@ using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -25,8 +26,17 @@ namespace com.absence.dialoguesystem
 
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
-        public Dialogue ReferencedDialogue => m_referencedDialogue;
+        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
+        private List<Person> m_overridePeople;
 
+        [Space(10)]
+
+        [SerializeField, Readonly, Tooltip("A list which contains all of the extension scripts of this dialogue instance.")] 
+        private List<DialogueExtensionBase> m_extensionList = new();
+
+        [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
+
+        public Dialogue ReferencedDialogue => m_referencedDialogue;
         public Dialogue ClonedDialogue
         {
             get
@@ -41,11 +51,6 @@ namespace com.absence.dialoguesystem
                 ClonedDialogue = value;
             }
         }
-
-        [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
-        private List<Person> m_overridePeople;
-
-        [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
 
         /// <summary>
         /// <see cref="DialoguePlayer"/> of this instance.
@@ -84,7 +89,15 @@ namespace com.absence.dialoguesystem
 
         Person m_speaker;
         string m_speech;
+        AdditionalSpeechData m_additionalData;
         List<Option> m_options;
+
+        [Button("Refresh Extension List")]
+        void RefreshExtensionList()
+        {
+            m_extensionList = gameObject.GetComponents<DialogueExtensionBase>().OrderBy(extension => extension.Order).ToList();
+            m_extensionList.ForEach(extension => extension.FindInstance());
+        }
 
         private void Awake()
         {
@@ -98,6 +111,13 @@ namespace com.absence.dialoguesystem
             if(m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
             else m_player = new DialoguePlayer(m_referencedDialogue);
 
+            m_extensionList.ForEach(extension => 
+            { 
+                if (!extension.enabled) return;
+
+                extension.OnAfterCloning();
+            });
+            
             OnAfterCloning?.Invoke();
         }
         private void Start()
@@ -107,6 +127,13 @@ namespace com.absence.dialoguesystem
         private void Update()
         {
             if (!m_inDialogue) return;
+
+            m_extensionList.ForEach(extension =>
+            {
+                if (!extension.enabled) return;
+
+                extension.OnDialogueUpdate();
+            });
         }
 
         /// <summary>
@@ -187,22 +214,38 @@ namespace com.absence.dialoguesystem
                 m_speaker = null;
                 m_speech = null;
                 m_options = null;
+                m_additionalData = null;
                 return;
             }
 
             m_speaker = Player.Speaker;
             m_speech = Player.Speech;
+            m_additionalData = Player.AdditionalSpeechData;
             if (Player.HasOptions) m_options = new(Player.Options);
         }
         private void HandleAdditionalData()
         {
             if (!Player.HasSpeech) return;
 
-            OnHandleAdditionalData?.Invoke(Player.AdditionalSpeechData);
+            m_extensionList.ForEach(extension =>
+            {
+                if (!extension.enabled) return;
+
+                extension.OnHandleAdditionalData(m_additionalData);
+            });
+
+            OnHandleAdditionalData?.Invoke(m_additionalData);
         }
         private void InvokeBeforeSpeech()
         {
             if (!Player.HasSpeech) return;
+
+            m_extensionList.ForEach(extension =>
+            {
+                if (!extension.enabled) return;
+
+                extension.OnBeforeSpeech(ref m_speaker, ref m_speech, ref m_options);
+            });
 
             OnBeforeSpeech?.Invoke(ref m_speaker, ref m_speech, ref m_options);
         }
@@ -215,7 +258,8 @@ namespace com.absence.dialoguesystem
         {
             if (Application.isPlaying) return;
 
-            gameObject.AddComponent<T>();
+            T component = gameObject.AddComponent<T>();
+            m_extensionList.Add(component);
         }
 
         private void OnApplicationQuit()

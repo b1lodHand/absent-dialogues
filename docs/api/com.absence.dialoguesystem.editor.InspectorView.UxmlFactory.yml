@@ -19,7 +19,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UxmlFactory
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/InspectorView.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
