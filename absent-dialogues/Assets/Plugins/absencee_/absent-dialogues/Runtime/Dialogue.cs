@@ -89,31 +89,6 @@ namespace com.absence.dialoguesystem
         }
 
         /// <summary>
-        /// Use to clone the dialogue scriptable object. Useful to progress in a copy
-        /// while keeping the original unchanged.
-        /// </summary>
-        /// <returns></returns>
-        public Dialogue Clone()
-        {
-            Dialogue dialogue = Instantiate(this);
-            dialogue.Blackboard = Blackboard.Clone();
-
-            dialogue.AllNodes = AllNodes.ConvertAll(node => node.Clone());
-            dialogue.AllNodes.ForEach(node =>
-            {
-                node.Blackboard = dialogue.Blackboard;
-                node.MasterDialogue = dialogue;
-
-                if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this);
-            });
-
-            dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
-            dialogue.ClonedFrom = this;
-
-            return dialogue;
-        }
-
-        /// <summary>
         /// Use to find <see cref="DialoguePartNode"/>s with a specific name.
         /// </summary>
         /// <param name="targetName"></param>
@@ -143,6 +118,31 @@ namespace com.absence.dialoguesystem
         public List<DialoguePartNode> GetAllDialogueParts()
         {
             return AllNodes.Where(n => n is DialoguePartNode).ToList().ConvertAll(n => (n as DialoguePartNode)).ToList();
+        }
+
+        /// <summary>
+        /// Use to clone the dialogue scriptable object. Useful to progress in a copy
+        /// while keeping the original unchanged.
+        /// </summary>
+        /// <returns></returns>
+        public Dialogue Clone()
+        {
+            Dialogue dialogue = Instantiate(this);
+            dialogue.Blackboard = Blackboard.Clone();
+
+            dialogue.AllNodes = AllNodes.ConvertAll(node => node.Clone());
+            dialogue.AllNodes.ForEach(node =>
+            {
+                node.Blackboard = dialogue.Blackboard;
+                node.MasterDialogue = dialogue;
+
+                if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this);
+            });
+
+            dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
+            dialogue.ClonedFrom = this;
+
+            return dialogue;
         }
 
         /// <summary>
