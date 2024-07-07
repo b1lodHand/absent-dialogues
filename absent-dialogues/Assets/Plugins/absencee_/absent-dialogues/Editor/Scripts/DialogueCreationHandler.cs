@@ -13,7 +13,7 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")]
     public static class DialogueCreationHandler
     {
-        [MenuItem("Assets/Create/absencee_/Dialogue", priority = 0)]
+        [MenuItem("Assets/Create/absencee_/absent-dialogues/Dialogue", priority = 0)]
         static void CreateDialogue()
         {
             string selectedPath = AssetDatabase.GetAssetPath(Selection.activeObject);
