@@ -20,10 +20,12 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Demo_GUI
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Demo/Scripts/Demo_GUI.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.examples
+  summary: A simple component to show how to use the system in the recommended way.
+  example: []
   syntax:
     content: >-
       [RequireComponent(typeof(DialogueInstance))]
@@ -71,7 +73,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnAfterCloning
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Demo/Scripts/Demo_GUI.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.examples

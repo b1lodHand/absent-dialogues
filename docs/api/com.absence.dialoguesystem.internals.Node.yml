@@ -1172,24 +1172,17 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 212
+    startLine: 207
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  summary: >-
-    Use to clone this node. 
-
-    <br /><br /><b>CAUTION!</b> It works as a traverse function. If you clone any node,
-
-    it will automatically clone any node connected to it (forward-only). But the <xref href="com.absence.dialoguesystem.internals.GotoNode" data-throw-if-not-resolved="false"></xref> won't clone
-
-    the <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref> referenced to it. Simply because they are not connected directly.
+  summary: Use to clone this node.
   example: []
   syntax:
     content: public virtual Node Clone()
     return:
       type: com.absence.dialoguesystem.internals.Node
-      description: ''
+      description: The clone.
     content.vb: Public Overridable Function Clone() As Node
   overload: com.absence.dialoguesystem.internals.Node.Clone*
 - uid: com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
@@ -1210,7 +1203,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 220
+    startLine: 215
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -1244,7 +1237,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnValidate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Node.cs
-    startLine: 225
+    startLine: 220
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -2017,19 +2010,6 @@ references:
   name: SetState
   nameWithType: Node.SetState
   fullName: com.absence.dialoguesystem.internals.Node.SetState
-- uid: com.absence.dialoguesystem.internals.GotoNode
-  commentId: T:com.absence.dialoguesystem.internals.GotoNode
-  href: com.absence.dialoguesystem.internals.GotoNode.html
-  name: GotoNode
-  nameWithType: GotoNode
-  fullName: com.absence.dialoguesystem.internals.GotoNode
-- uid: com.absence.dialoguesystem.internals.DialoguePartNode
-  commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.DialoguePartNode.html
-  name: DialoguePartNode
-  nameWithType: DialoguePartNode
-  fullName: com.absence.dialoguesystem.internals.DialoguePartNode
 - uid: com.absence.dialoguesystem.internals.Node.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.Node.Clone
   href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone

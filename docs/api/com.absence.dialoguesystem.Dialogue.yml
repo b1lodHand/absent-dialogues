@@ -410,40 +410,6 @@ items:
       description: ''
     content.vb: Public Sub DeleteNode(node As Node)
   overload: com.absence.dialoguesystem.Dialogue.DeleteNode*
-- uid: com.absence.dialoguesystem.Dialogue.Clone
-  commentId: M:com.absence.dialoguesystem.Dialogue.Clone
-  id: Clone
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: Clone()
-  nameWithType: Dialogue.Clone()
-  fullName: com.absence.dialoguesystem.Dialogue.Clone()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Clone
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 95
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: >-
-    Use to clone the dialogue scriptable object. Useful to progress in a copy
-
-    while keeping the original unchanged.
-  example: []
-  syntax:
-    content: public Dialogue Clone()
-    return:
-      type: com.absence.dialoguesystem.Dialogue
-      description: ''
-    content.vb: Public Function Clone() As Dialogue
-  overload: com.absence.dialoguesystem.Dialogue.Clone*
 - uid: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(System.String)
   commentId: M:com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(System.String)
   id: GetDialoguePartNodesWithName(System.String)
@@ -462,7 +428,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetDialoguePartNodesWithName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 121
+    startLine: 96
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -502,7 +468,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAllDialogueParts
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 142
+    startLine: 117
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -515,6 +481,40 @@ items:
       description: The entire list of <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s in the current dialogue.
     content.vb: Public Function GetAllDialogueParts() As List(Of DialoguePartNode)
   overload: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts*
+- uid: com.absence.dialoguesystem.Dialogue.Clone
+  commentId: M:com.absence.dialoguesystem.Dialogue.Clone
+  id: Clone
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Dialogue.Clone()
+  fullName: com.absence.dialoguesystem.Dialogue.Clone()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clone
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 127
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: >-
+    Use to clone the dialogue scriptable object. Useful to progress in a copy
+
+    while keeping the original unchanged.
+  example: []
+  syntax:
+    content: public Dialogue Clone()
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+      description: ''
+    content.vb: Public Function Clone() As Dialogue
+  overload: com.absence.dialoguesystem.Dialogue.Clone*
 - uid: com.absence.dialoguesystem.Dialogue.Initialize
   commentId: M:com.absence.dialoguesystem.Dialogue.Initialize
   id: Initialize
@@ -1082,12 +1082,6 @@ references:
   name: DeleteNode
   nameWithType: Dialogue.DeleteNode
   fullName: com.absence.dialoguesystem.Dialogue.DeleteNode
-- uid: com.absence.dialoguesystem.Dialogue.Clone*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Clone
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Clone
-  name: Clone
-  nameWithType: Dialogue.Clone
-  fullName: com.absence.dialoguesystem.Dialogue.Clone
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode
   commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
   parent: com.absence.dialoguesystem.internals
@@ -1151,6 +1145,12 @@ references:
   name: GetAllDialogueParts
   nameWithType: Dialogue.GetAllDialogueParts
   fullName: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
+- uid: com.absence.dialoguesystem.Dialogue.Clone*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.Clone
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Clone
+  name: Clone
+  nameWithType: Dialogue.Clone
+  fullName: com.absence.dialoguesystem.Dialogue.Clone
 - uid: com.absence.dialoguesystem.Dialogue.Initialize*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.Initialize
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Initialize
