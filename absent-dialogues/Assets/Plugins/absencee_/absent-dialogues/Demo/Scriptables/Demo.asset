@@ -18,7 +18,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   Next: {fileID: 6611807328144254293}
 --- !u!114 &-8258285536222529687
@@ -39,7 +39,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   Speech: "Welcome to the demo graph!\nHere you will see usages of every\nnode.\n\nYou
     can get to fullscreen view \npressing SHIFT+SPACE."
@@ -61,7 +61,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &-2127933438961997456
@@ -131,7 +131,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &-1399893973709126951
@@ -206,7 +206,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -262,7 +262,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   VBActions:
   - m_setType: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TrueNext: {fileID: -3899366801720709168}
   FalseNext: {fileID: 9119168445957565552}
@@ -374,7 +374,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   Next: {fileID: 6611807328144254293}
   DialoguePartName: loop
@@ -420,7 +420,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -447,7 +447,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}
@@ -510,7 +510,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &7901140551254700991
@@ -531,7 +531,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   VBActions:
   - m_setType: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogAfterwards: 0
+  ExitDialogueAfterwards: 0
   PersonIndex: 0
   m_additionalData:
     m_audioClip: {fileID: 0}

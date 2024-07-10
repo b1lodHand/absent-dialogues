@@ -33,7 +33,7 @@ namespace com.absence.dialoguesystem
             /// </summary>
             WaitingForSkip = 2,
             /// <summary>
-            /// The player's last node was a <see cref="Node.ExitDialogAfterwards"/>.
+            /// The player's last node was a <see cref="Node.ExitDialogueAfterwards"/>.
             /// </summary>
             WillExit = 3,
         }
@@ -148,7 +148,7 @@ namespace com.absence.dialoguesystem
         /// </param>
         public void Continue(params object[] passData)
         {
-            if (m_currentNode.ExitDialogAfterwards)
+            if (m_currentNode.ExitDialogueAfterwards)
             {
                 m_state = PlayerState.WillExit;
                 Pass(passData);
