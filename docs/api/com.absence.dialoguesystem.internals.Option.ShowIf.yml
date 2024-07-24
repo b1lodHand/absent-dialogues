@@ -23,7 +23,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIf
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 68
+    startLine: 79
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -71,7 +71,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Processor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 75
+    startLine: 86
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -100,7 +100,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIfList
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 81
+    startLine: 92
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 88
+    startLine: 99
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -167,7 +167,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetResult
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 100
+    startLine: 111
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

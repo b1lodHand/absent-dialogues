@@ -11,10 +11,8 @@ items:
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
-  - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters
-  - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.OnValidate
   - com.absence.dialoguesystem.internals.DecisionSpeechNode.Options
@@ -67,7 +65,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.MasterDialogue
   - com.absence.dialoguesystem.internals.Node.Blackboard
   - com.absence.dialoguesystem.internals.Node.State
-  - com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  - com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   - com.absence.dialoguesystem.internals.Node.OnSetState
   - com.absence.dialoguesystem.internals.Node.OnRemove
   - com.absence.dialoguesystem.internals.Node.OnValidation
@@ -114,7 +112,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Options
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -162,7 +160,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -199,7 +197,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: PersonDependent
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -231,7 +229,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -263,7 +261,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -295,7 +293,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -331,7 +329,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -360,7 +358,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -399,7 +397,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -435,7 +433,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 49
+    startLine: 51
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -471,7 +469,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Traverse
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -506,7 +504,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 66
+    startLine: 68
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -520,68 +518,6 @@ items:
     content.vb: Public Overrides Function GetOutputPortNamesForCreation() As List(Of String)
   overridden: com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation*
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
-  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
-  id: GetSpeech
-  parent: com.absence.dialoguesystem.internals.DecisionSpeechNode
-  langs:
-  - csharp
-  - vb
-  name: GetSpeech()
-  nameWithType: DecisionSpeechNode.GetSpeech()
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetSpeech
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 71
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  example: []
-  syntax:
-    content: public string GetSpeech()
-    return:
-      type: System.String
-    content.vb: Public Function GetSpeech() As String
-  overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech*
-  implements:
-  - com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions
-  commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions
-  id: GetOptions
-  parent: com.absence.dialoguesystem.internals.DecisionSpeechNode
-  langs:
-  - csharp
-  - vb
-  name: GetOptions()
-  nameWithType: DecisionSpeechNode.GetOptions()
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetOptions
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs
-    startLine: 72
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  example: []
-  syntax:
-    content: public List<Option> GetOptions()
-    return:
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-    content.vb: Public Function GetOptions() As List(Of [Option])
-  overload: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions*
-  implements:
-  - com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData
   commentId: M:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData
   id: GetAdditionalSpeechData
@@ -859,13 +795,13 @@ references:
   name: State
   nameWithType: Node.State
   fullName: com.absence.dialoguesystem.internals.Node.State
-- uid: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
-  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+- uid: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
+  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards
-  name: ExitDialogAfterwards
-  nameWithType: Node.ExitDialogAfterwards
-  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards
+  name: ExitDialogueAfterwards
+  nameWithType: Node.ExitDialogueAfterwards
+  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
 - uid: com.absence.dialoguesystem.internals.Node.OnSetState
   commentId: E:com.absence.dialoguesystem.internals.Node.OnSetState
   parent: com.absence.dialoguesystem.internals.Node
@@ -1977,56 +1913,6 @@ references:
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech*
-  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
-  href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSpeech
-  name: GetSpeech
-  nameWithType: DecisionSpeechNode.GetSpeech
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSpeech
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-  parent: com.absence.dialoguesystem.internals.IContainSpeech
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetSpeech
-  name: GetSpeech()
-  nameWithType: IContainSpeech.GetSpeech()
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech()
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-    name: GetSpeech
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetSpeech
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-    name: GetSpeech
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetSpeech
-  - name: (
-  - name: )
-- uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions*
-  commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions
-  href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html#com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOptions
-  name: GetOptions
-  nameWithType: DecisionSpeechNode.GetOptions
-  fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOptions
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  parent: com.absence.dialoguesystem.internals.IContainSpeech
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetOptions
-  name: GetOptions()
-  nameWithType: IContainSpeech.GetOptions()
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions()
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-    name: GetOptions
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetOptions
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-    name: GetOptions
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetOptions
-  - name: (
   - name: )
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData*
   commentId: Overload:com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData

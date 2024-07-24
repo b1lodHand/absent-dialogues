@@ -155,6 +155,18 @@ namespace com.absence.dialoguesystem
         }
 
         /// <summary>
+        /// It reassigns needed auto-fields to prevent any errors.
+        /// </summary>
+        public void Rebind()
+        {
+            AllNodes.ForEach(node =>
+            {
+                node.Blackboard = Blackboard;
+                node.MasterDialogue = this;
+            });
+        }
+
+        /// <summary>
         /// Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
         /// object's people list won't be affected by this.
         /// <br></br>

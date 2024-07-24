@@ -38,6 +38,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Required, Tooltip("The prefab of the option box.")] private DialogueOptionText m_optionPrefab;
 
         bool m_occupied = false;
+        GameObject m_firstOption;
 
         /// <summary>
         /// Let's you occupy the sinleton. If it is occuppied by any other scripts about dialogues, you can't occupy.
@@ -60,6 +61,8 @@ namespace com.absence.dialoguesystem
         public void Release()
         {
             if (!m_occupied) return;
+
+            m_occupied = false;
 
             ClearOptionContainer();
             DisableView();
@@ -100,7 +103,19 @@ namespace com.absence.dialoguesystem
                 DialogueOptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
                 optionText.Initialize(i, option.Speech);
                 optionText.OnClickAction += optionPressAction;
+
+                if (m_firstOption != null) continue;
+
+                m_firstOption = optionText.gameObject;
+                ReselectFirstOptionIfExists();
             }
+        }
+
+        public void ReselectFirstOptionIfExists()
+        {
+            if (!m_occupied) return;
+            if (UnityEngine.EventSystems.EventSystem.current == null) return;
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_firstOption);
         }
 
         void EnableView()
@@ -116,6 +131,7 @@ namespace com.absence.dialoguesystem
         void ClearOptionContainer()
         {
             m_optionContainer.DestroyChildren();
+            m_firstOption = null;
         }
 
     }

@@ -7,11 +7,13 @@ items:
   children:
   - com.absence.dialoguesystem.internals.TitleNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)
   - com.absence.dialoguesystem.internals.TitleNode.DisplayState
+  - com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData
   - com.absence.dialoguesystem.internals.TitleNode.GetClassName
   - com.absence.dialoguesystem.internals.TitleNode.GetInputPortNameForCreation
   - com.absence.dialoguesystem.internals.TitleNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
   - com.absence.dialoguesystem.internals.TitleNode.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.TitleNode.GetTitle
+  - com.absence.dialoguesystem.internals.TitleNode.Options
   - com.absence.dialoguesystem.internals.TitleNode.Pass_Inline(System.Object[])
   - com.absence.dialoguesystem.internals.TitleNode.Reach_Inline
   - com.absence.dialoguesystem.internals.TitleNode.RemoveNextNode_Inline(System.Int32)
@@ -41,23 +43,25 @@ items:
     content: >-
       [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.TitleNode.html")]
 
-      public sealed class TitleNode : Node
+      public sealed class TitleNode : Node, IContainSpeech
     content.vb: >-
       <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.TitleNode.html")>
 
-      Public NotInheritable Class TitleNode Inherits Node
+      Public NotInheritable Class TitleNode Inherits Node Implements IContainSpeech
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - com.absence.dialoguesystem.internals.Node
+  implements:
+  - com.absence.dialoguesystem.internals.IContainSpeech
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
   - com.absence.dialoguesystem.internals.Node.Position
   - com.absence.dialoguesystem.internals.Node.MasterDialogue
   - com.absence.dialoguesystem.internals.Node.Blackboard
   - com.absence.dialoguesystem.internals.Node.State
-  - com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  - com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   - com.absence.dialoguesystem.internals.Node.OnSetState
   - com.absence.dialoguesystem.internals.Node.OnRemove
   - com.absence.dialoguesystem.internals.Node.OnValidation
@@ -186,6 +190,38 @@ items:
     content.vb: Public Overrides ReadOnly Property ShowInMinimap As Boolean
   overridden: com.absence.dialoguesystem.internals.Node.ShowInMinimap
   overload: com.absence.dialoguesystem.internals.TitleNode.ShowInMinimap*
+- uid: com.absence.dialoguesystem.internals.TitleNode.Options
+  commentId: P:com.absence.dialoguesystem.internals.TitleNode.Options
+  id: Options
+  parent: com.absence.dialoguesystem.internals.TitleNode
+  langs:
+  - csharp
+  - vb
+  name: Options
+  nameWithType: TitleNode.Options
+  fullName: com.absence.dialoguesystem.internals.TitleNode.Options
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Options
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  example: []
+  syntax:
+    content: public List<Option> Options { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+    content.vb: Public Property Options As List(Of [Option])
+  overload: com.absence.dialoguesystem.internals.TitleNode.Options*
+  implements:
+  - com.absence.dialoguesystem.internals.IContainSpeech.Options
 - uid: com.absence.dialoguesystem.internals.TitleNode.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.TitleNode.GetClassName
   id: GetClassName
@@ -204,7 +240,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -236,7 +272,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -268,7 +304,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -307,7 +343,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -343,7 +379,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -379,7 +415,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -408,7 +444,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -444,7 +480,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 45
+    startLine: 48
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -476,7 +512,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
-    startLine: 46
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -490,6 +526,37 @@ items:
     content.vb: Public Overrides Function GetOutputPortNamesForCreation() As List(Of String)
   overridden: com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   overload: com.absence.dialoguesystem.internals.TitleNode.GetOutputPortNamesForCreation*
+- uid: com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData
+  commentId: M:com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData
+  id: GetAdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals.TitleNode
+  langs:
+  - csharp
+  - vb
+  name: GetAdditionalSpeechData()
+  nameWithType: TitleNode.GetAdditionalSpeechData()
+  fullName: com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetAdditionalSpeechData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/TitleNode.cs
+    startLine: 51
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  example: []
+  syntax:
+    content: public AdditionalSpeechData GetAdditionalSpeechData()
+    return:
+      type: com.absence.dialoguesystem.internals.AdditionalSpeechData
+    content.vb: Public Function GetAdditionalSpeechData() As AdditionalSpeechData
+  overload: com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData*
+  implements:
+  - com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
 references:
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode
   commentId: T:com.absence.dialoguesystem.internals.StickyNoteNode
@@ -567,6 +634,13 @@ references:
   name: Node
   nameWithType: Node
   fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.internals.IContainSpeech
+  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html
+  name: IContainSpeech
+  nameWithType: IContainSpeech
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -602,13 +676,13 @@ references:
   name: State
   nameWithType: Node.State
   fullName: com.absence.dialoguesystem.internals.Node.State
-- uid: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
-  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+- uid: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
+  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards
-  name: ExitDialogAfterwards
-  nameWithType: Node.ExitDialogAfterwards
-  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards
+  name: ExitDialogueAfterwards
+  nameWithType: Node.ExitDialogueAfterwards
+  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
 - uid: com.absence.dialoguesystem.internals.Node.OnSetState
   commentId: E:com.absence.dialoguesystem.internals.Node.OnSetState
   parent: com.absence.dialoguesystem.internals.Node
@@ -1089,6 +1163,117 @@ references:
   name: ShowInMinimap
   nameWithType: TitleNode.ShowInMinimap
   fullName: com.absence.dialoguesystem.internals.TitleNode.ShowInMinimap
+- uid: com.absence.dialoguesystem.internals.TitleNode.Options*
+  commentId: Overload:com.absence.dialoguesystem.internals.TitleNode.Options
+  href: com.absence.dialoguesystem.internals.TitleNode.html#com_absence_dialoguesystem_internals_TitleNode_Options
+  name: Options
+  nameWithType: TitleNode.Options
+  fullName: com.absence.dialoguesystem.internals.TitleNode.Options
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.Options
+  commentId: P:com.absence.dialoguesystem.internals.IContainSpeech.Options
+  parent: com.absence.dialoguesystem.internals.IContainSpeech
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_Options
+  name: Options
+  nameWithType: IContainSpeech.Options
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Options
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Option>
+  nameWithType: List<Option>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
+  nameWithType.vb: List(Of Option)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
+  name.vb: List(Of Option)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Option
+    name: Option
+    href: com.absence.dialoguesystem.internals.Option.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.Node.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.Node.GetClassName
   parent: com.absence.dialoguesystem.internals.Node
@@ -1353,71 +1538,6 @@ references:
     href: com.absence.dialoguesystem.internals.Node.html
   - name: )
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
   commentId: M:com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
   parent: com.absence.dialoguesystem.internals.Node
@@ -1633,3 +1753,35 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData*
+  commentId: Overload:com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData
+  href: com.absence.dialoguesystem.internals.TitleNode.html#com_absence_dialoguesystem_internals_TitleNode_GetAdditionalSpeechData
+  name: GetAdditionalSpeechData
+  nameWithType: TitleNode.GetAdditionalSpeechData
+  fullName: com.absence.dialoguesystem.internals.TitleNode.GetAdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals.IContainSpeech
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
+  name: GetAdditionalSpeechData()
+  nameWithType: IContainSpeech.GetAdditionalSpeechData()
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+    name: GetAdditionalSpeechData
+    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+    name: GetAdditionalSpeechData
+    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  name: AdditionalSpeechData
+  nameWithType: AdditionalSpeechData
+  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData

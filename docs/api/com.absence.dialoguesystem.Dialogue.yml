@@ -20,6 +20,7 @@ items:
   - com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   - com.absence.dialoguesystem.Dialogue.Pass(System.Object[])
   - com.absence.dialoguesystem.Dialogue.People
+  - com.absence.dialoguesystem.Dialogue.Rebind
   - com.absence.dialoguesystem.Dialogue.RootNode
   langs:
   - csharp
@@ -543,6 +544,34 @@ items:
     content: public void Initialize()
     content.vb: Public Sub Initialize()
   overload: com.absence.dialoguesystem.Dialogue.Initialize*
+- uid: com.absence.dialoguesystem.Dialogue.Rebind
+  commentId: M:com.absence.dialoguesystem.Dialogue.Rebind
+  id: Rebind
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: Rebind()
+  nameWithType: Dialogue.Rebind()
+  fullName: com.absence.dialoguesystem.Dialogue.Rebind()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Rebind
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 159
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: It reassigns needed auto-fields to prevent any errors.
+  example: []
+  syntax:
+    content: public void Rebind()
+    content.vb: Public Sub Rebind()
+  overload: com.absence.dialoguesystem.Dialogue.Rebind*
 - uid: com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   commentId: M:com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
   id: OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
@@ -561,7 +590,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OverridePeople
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 164
+    startLine: 176
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -601,7 +630,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 177
+    startLine: 189
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -1157,6 +1186,12 @@ references:
   name: Initialize
   nameWithType: Dialogue.Initialize
   fullName: com.absence.dialoguesystem.Dialogue.Initialize
+- uid: com.absence.dialoguesystem.Dialogue.Rebind*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.Rebind
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Rebind
+  name: Rebind
+  nameWithType: Dialogue.Rebind
+  fullName: com.absence.dialoguesystem.Dialogue.Rebind
 - uid: com.absence.dialoguesystem.Dialogue.OverridePeople*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.OverridePeople
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__

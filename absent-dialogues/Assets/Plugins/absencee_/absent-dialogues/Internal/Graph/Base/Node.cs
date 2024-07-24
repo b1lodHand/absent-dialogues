@@ -29,7 +29,8 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Blackboard Blackboard;
 
         [HideInInspector] public NodeState State = NodeState.Unreached;
-        [Tooltip("Toggling this on will make the dialogue exit right after this node getting passed.")] public bool ExitDialogAfterwards = false;
+        [Tooltip("Toggling this on will make the dialogue exit right after this node getting passed.")] 
+        public bool ExitDialogueAfterwards = false;
 
         /// <summary>
         /// Action which will get invoked when the state of this node gets changed.

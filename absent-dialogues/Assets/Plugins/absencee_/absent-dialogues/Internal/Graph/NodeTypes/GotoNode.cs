@@ -49,7 +49,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void DelayedClone(Dialogue originalDialogue)
         {
-            TargetNode = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
+            if (TargetNode != null) TargetNode = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
         }
     }
 

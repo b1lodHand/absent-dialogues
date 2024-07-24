@@ -71,7 +71,7 @@ items:
   - com.absence.dialoguesystem.internals.Node.MasterDialogue
   - com.absence.dialoguesystem.internals.Node.Blackboard
   - com.absence.dialoguesystem.internals.Node.State
-  - com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  - com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   - com.absence.dialoguesystem.internals.Node.OnSetState
   - com.absence.dialoguesystem.internals.Node.OnRemove
   - com.absence.dialoguesystem.internals.Node.OnValidation
@@ -759,13 +759,13 @@ references:
   name: State
   nameWithType: Node.State
   fullName: com.absence.dialoguesystem.internals.Node.State
-- uid: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
-  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+- uid: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
+  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards
-  name: ExitDialogAfterwards
-  nameWithType: Node.ExitDialogAfterwards
-  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards
+  name: ExitDialogueAfterwards
+  nameWithType: Node.ExitDialogueAfterwards
+  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
 - uid: com.absence.dialoguesystem.internals.Node.OnSetState
   commentId: E:com.absence.dialoguesystem.internals.Node.OnSetState
   parent: com.absence.dialoguesystem.internals.Node

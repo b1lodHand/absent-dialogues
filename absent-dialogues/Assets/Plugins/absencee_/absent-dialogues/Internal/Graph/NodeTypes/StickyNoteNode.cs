@@ -7,12 +7,15 @@ namespace com.absence.dialoguesystem.internals
     /// Node which contains a user defined string.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
-    public sealed class StickyNoteNode : Node
+    public sealed class StickyNoteNode : Node, IContainSpeech
     {
         [HideInInspector] public string Speech;
 
         public override bool DisplayState => false;
         public override bool ShowInMinimap => false;
+
+        string IContainSpeech.Speech { get => Speech; set { Speech = value; } }
+        public List<Option> Options { get => null; set { return; } }
 
         public override string GetClassName() => "stickyNoteNode";
 
@@ -45,6 +48,11 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetInputPortNameForCreation() => null;
         public override List<string> GetOutputPortNamesForCreation() => new();
+
+        public AdditionalSpeechData GetAdditionalSpeechData()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
 }

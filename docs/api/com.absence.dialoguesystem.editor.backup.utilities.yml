@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup.utilities
+  commentId: N:com.absence.dialoguesystem.editor.backup.utilities
+  id: com.absence.dialoguesystem.editor.backup.utilities
+  children:
+  - com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  - com.absence.dialoguesystem.editor.backup.utilities.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.editor.backup.utilities
+  nameWithType: com.absence.dialoguesystem.editor.backup.utilities
+  fullName: com.absence.dialoguesystem.editor.backup.utilities
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+references:
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  commentId: T:com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  href: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.html
+  name: FileHelper
+  nameWithType: FileHelper
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+- uid: com.absence.dialoguesystem.editor.backup.utilities.JsonHelper
+  commentId: T:com.absence.dialoguesystem.editor.backup.utilities.JsonHelper
+  href: com.absence.dialoguesystem.editor.backup.utilities.JsonHelper.html
+  name: JsonHelper
+  nameWithType: JsonHelper
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.JsonHelper

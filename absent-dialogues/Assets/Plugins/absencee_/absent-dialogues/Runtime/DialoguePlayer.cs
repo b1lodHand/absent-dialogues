@@ -33,7 +33,7 @@ namespace com.absence.dialoguesystem
             /// </summary>
             WaitingForSkip = 2,
             /// <summary>
-            /// The player's last node was a <see cref="Node.ExitDialogAfterwards"/>.
+            /// The player's last node was a <see cref="Node.ExitDialogueAfterwards"/>.
             /// </summary>
             WillExit = 3,
         }
@@ -67,12 +67,12 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Speech of the current node.
         /// </summary>
-        public string Speech => (m_currentNode as IContainSpeech).GetSpeech();
+        public string Speech => (m_currentNode as IContainSpeech).Speech;
 
         /// <summary>
         /// Options of the current node, if there is any.
         /// </summary>
-        public List<Option> Options => (m_currentNode as IContainSpeech).GetOptions();
+        public List<Option> Options => (m_currentNode as IContainSpeech).Options;
 
 
         /// <summary>
@@ -148,10 +148,12 @@ namespace com.absence.dialoguesystem
         /// </param>
         public void Continue(params object[] passData)
         {
-            if (m_currentNode.ExitDialogAfterwards)
+            if (m_currentNode.ExitDialogueAfterwards)
             {
                 m_state = PlayerState.WillExit;
                 Pass(passData);
+
+                OnContinue?.Invoke(m_state);
                 return;
             }
 

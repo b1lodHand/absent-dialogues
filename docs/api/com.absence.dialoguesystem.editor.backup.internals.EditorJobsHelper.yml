@@ -1,0 +1,103 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
+  commentId: T:com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
+  id: EditorJobsHelper
+  parent: com.absence.dialoguesystem.editor.backup.internals
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: EditorJobsHelper
+  nameWithType: EditorJobsHelper
+  fullName: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/EditorJobsHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: EditorJobsHelper
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/EditorJobsHelper.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static class EditorJobsHelper
+    content.vb: Public Module EditorJobsHelper
+  inheritance:
+  - System.Object
+references:
+- uid: com.absence.dialoguesystem.editor.backup.internals
+  commentId: N:com.absence.dialoguesystem.editor.backup.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.backup.internals
+  nameWithType: com.absence.dialoguesystem.editor.backup.internals
+  fullName: com.absence.dialoguesystem.editor.backup.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.backup.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.backup.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -26,7 +26,18 @@ namespace com.absence.dialoguesystem.internals
         [Space(10)]
 
         [SerializeField] private bool m_useShowIf = false;
-        public bool UseShowIf => m_useShowIf;
+        public bool UseShowIf
+        {
+            get
+            {
+                return m_useShowIf;
+            }
+
+            set
+            {
+                m_useShowIf = value;
+            }
+        }
 
         [SerializeField, ShowIf(nameof(m_useShowIf))] public ShowIf Visibility;
 

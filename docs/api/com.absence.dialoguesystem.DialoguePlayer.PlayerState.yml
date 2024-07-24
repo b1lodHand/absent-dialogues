@@ -138,7 +138,7 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: The player's last node was a <xref href="com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards" data-throw-if-not-resolved="false"></xref>.
+  summary: The player's last node was a <xref href="com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: WillExit = 3
@@ -243,13 +243,13 @@ references:
   - uid: com.absence.dialoguesystem.internals
     name: internals
     href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
-  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+- uid: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
+  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogAfterwards
-  name: ExitDialogAfterwards
-  nameWithType: Node.ExitDialogAfterwards
-  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogAfterwards
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards
+  name: ExitDialogueAfterwards
+  nameWithType: Node.ExitDialogueAfterwards
+  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
 - uid: com.absence.dialoguesystem.internals.Node
   commentId: T:com.absence.dialoguesystem.internals.Node
   parent: com.absence.dialoguesystem.internals

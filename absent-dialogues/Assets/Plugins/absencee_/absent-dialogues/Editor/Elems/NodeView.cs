@@ -125,7 +125,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void RefreshNodeIcon()
         {
-            if (Node.ExitDialogAfterwards) AddToClassList("exit");
+            if (Node.ExitDialogueAfterwards) AddToClassList("exit");
             else RemoveFromClassList("exit");
         }
 

@@ -17,6 +17,9 @@ namespace com.absence.dialoguesystem.internals
 
         public override bool PersonDependent => true;
 
+        string IContainSpeech.Speech { get => Speech; set { Speech = value; } }
+        public List<Option> Options { get => null; set { return; } }
+
         public override string GetClassName() => "fastSpeechNode";
         public override string GetTitle() => "Fast Speech";
 
@@ -51,13 +54,11 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public string GetSpeech() => Speech;
-        public List<Option> GetOptions() => null;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
 
         public void DelayedClone(Dialogue originalDialogue)
         {
-            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

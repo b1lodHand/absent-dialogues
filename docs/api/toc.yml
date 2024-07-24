@@ -54,6 +54,60 @@ items:
     name: SplitView
   - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
     name: SplitView.UxmlFactory
+- uid: com.absence.dialoguesystem.editor.backup
+  name: com.absence.dialoguesystem.editor.backup
+  items:
+  - uid: com.absence.dialoguesystem.editor.backup.DialogueExporter
+    name: DialogueExporter
+  - uid: com.absence.dialoguesystem.editor.backup.DialogueImporter
+    name: DialogueImporter
+- uid: com.absence.dialoguesystem.editor.backup.data
+  name: com.absence.dialoguesystem.editor.backup.data
+  items:
+  - uid: com.absence.dialoguesystem.editor.backup.data.BlackboardData
+    name: BlackboardData
+  - uid: com.absence.dialoguesystem.editor.backup.data.BooleanPair
+    name: BooleanPair
+  - uid: com.absence.dialoguesystem.editor.backup.data.DialogueData
+    name: DialogueData
+  - uid: com.absence.dialoguesystem.editor.backup.data.FloatPair
+    name: FloatPair
+  - uid: com.absence.dialoguesystem.editor.backup.data.IntPair
+    name: IntPair
+  - uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+    name: NodeConnectionData
+  - uid: com.absence.dialoguesystem.editor.backup.data.NodeData
+    name: NodeData
+  - uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
+    name: NodeVariableComparerData
+  - uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
+    name: NodeVariableSetterData
+  - uid: com.absence.dialoguesystem.editor.backup.data.OptionData
+    name: OptionData
+  - uid: com.absence.dialoguesystem.editor.backup.data.StringPair
+    name: StringPair
+- uid: com.absence.dialoguesystem.editor.backup.internals
+  name: com.absence.dialoguesystem.editor.backup.internals
+  items:
+  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
+    name: DialogueExportSettings
+  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    name: DialogueImportContext
+  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
+    name: DialogueImportSettings
+  - uid: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
+    name: EditorJobsHelper
+  - uid: com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
+    name: NodeExportActions
+  - uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+    name: NodeImportActions
+- uid: com.absence.dialoguesystem.editor.backup.utilities
+  name: com.absence.dialoguesystem.editor.backup.utilities
+  items:
+  - uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+    name: FileHelper
+  - uid: com.absence.dialoguesystem.editor.backup.utilities.JsonHelper
+    name: JsonHelper
 - uid: com.absence.dialoguesystem.examples
   name: com.absence.dialoguesystem.examples
   items:

@@ -6,8 +6,8 @@ items:
   parent: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-  - com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  - com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
+  - com.absence.dialoguesystem.internals.IContainSpeech.Options
+  - com.absence.dialoguesystem.internals.IContainSpeech.Speech
   langs:
   - csharp
   - vb
@@ -22,7 +22,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IContainSpeech
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -31,62 +31,64 @@ items:
   syntax:
     content: public interface IContainSpeech
     content.vb: Public Interface IContainSpeech
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-  id: GetSpeech
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.Speech
+  commentId: P:com.absence.dialoguesystem.internals.IContainSpeech.Speech
+  id: Speech
   parent: com.absence.dialoguesystem.internals.IContainSpeech
   langs:
   - csharp
   - vb
-  name: GetSpeech()
-  nameWithType: IContainSpeech.GetSpeech()
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech()
-  type: Method
+  name: Speech
+  nameWithType: IContainSpeech.Speech
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Speech
+  type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetSpeech
+    id: Speech
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: string Speech { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Speech As String
+  overload: com.absence.dialoguesystem.internals.IContainSpeech.Speech*
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.Options
+  commentId: P:com.absence.dialoguesystem.internals.IContainSpeech.Options
+  id: Options
+  parent: com.absence.dialoguesystem.internals.IContainSpeech
+  langs:
+  - csharp
+  - vb
+  name: Options
+  nameWithType: IContainSpeech.Options
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Options
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Options
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
     startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: string GetSpeech()
-    return:
-      type: System.String
-    content.vb: Function GetSpeech() As String
-  overload: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech*
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  id: GetOptions
-  parent: com.absence.dialoguesystem.internals.IContainSpeech
-  langs:
-  - csharp
-  - vb
-  name: GetOptions()
-  nameWithType: IContainSpeech.GetOptions()
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetOptions
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
-    startLine: 11
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  syntax:
-    content: List<Option> GetOptions()
+    content: List<Option> Options { get; set; }
+    parameters: []
     return:
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-    content.vb: Function GetOptions() As List(Of [Option])
-  overload: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions*
+    content.vb: Property Options As List(Of [Option])
+  overload: com.absence.dialoguesystem.internals.IContainSpeech.Options*
 - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
   commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
   id: GetAdditionalSpeechData
@@ -105,7 +107,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetAdditionalSpeechData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Interfaces/IContainSpeech.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -161,12 +163,12 @@ references:
   - uid: com.absence.dialoguesystem.internals
     name: internals
     href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech*
-  commentId: Overload:com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetSpeech
-  name: GetSpeech
-  nameWithType: IContainSpeech.GetSpeech
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetSpeech
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.Speech*
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainSpeech.Speech
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_Speech
+  name: Speech
+  nameWithType: IContainSpeech.Speech
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Speech
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -185,12 +187,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions*
-  commentId: Overload:com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetOptions
-  name: GetOptions
-  nameWithType: IContainSpeech.GetOptions
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetOptions
+- uid: com.absence.dialoguesystem.internals.IContainSpeech.Options*
+  commentId: Overload:com.absence.dialoguesystem.internals.IContainSpeech.Options
+  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_Options
+  name: Options
+  nameWithType: IContainSpeech.Options
+  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Options
 - uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
   commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
   parent: System.Collections.Generic

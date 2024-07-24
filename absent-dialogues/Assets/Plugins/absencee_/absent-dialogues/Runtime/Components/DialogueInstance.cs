@@ -73,6 +73,11 @@ namespace com.absence.dialoguesystem
         public event SpeechEventHandler OnBeforeSpeech;
 
         /// <summary>
+        /// Action which will get invoked when this instance exits dialogue.
+        /// </summary>
+        public event Action OnExitDialogue;
+
+        /// <summary>
         /// The delegate responsible for handling events directly about speech.
         /// </summary>
         /// <param name="speaker">Speaker of this speech.</param>
@@ -175,6 +180,8 @@ namespace com.absence.dialoguesystem
             DialogueDisplayer.Instance.Release();
 
             m_player.OnContinue -= OnPlayerContinue;
+
+            OnExitDialogue?.Invoke();
         }
 
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
