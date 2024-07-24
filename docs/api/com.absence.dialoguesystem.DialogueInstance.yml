@@ -12,6 +12,7 @@ items:
   - com.absence.dialoguesystem.DialogueInstance.InDialogue
   - com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   - com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  - com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
   - com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
   - com.absence.dialoguesystem.DialogueInstance.Player
   - com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
@@ -258,6 +259,35 @@ items:
     return:
       type: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
     content.vb: Public Event OnBeforeSpeech As DialogueInstance.SpeechEventHandler
+- uid: com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
+  id: OnExitDialogue
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: OnExitDialogue
+  nameWithType: DialogueInstance.OnExitDialogue
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnExitDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 77
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Action which will get invoked when this instance exits dialogue.
+  example: []
+  syntax:
+    content: public event Action OnExitDialogue
+    return:
+      type: System.Action
+    content.vb: Public Event OnExitDialogue As Action
 - uid: com.absence.dialoguesystem.DialogueInstance.InDialogue
   commentId: P:com.absence.dialoguesystem.DialogueInstance.InDialogue
   id: InDialogue
@@ -276,7 +306,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: InDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 87
+    startLine: 92
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -307,7 +337,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: EnterDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 142
+    startLine: 147
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -338,7 +368,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 168
+    startLine: 173
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -366,7 +396,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddExtension
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 256
+    startLine: 263
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem

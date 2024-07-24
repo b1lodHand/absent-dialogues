@@ -147,11 +147,11 @@ items:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public bool UseShowIf { get; }
+    content: public bool UseShowIf { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly Property UseShowIf As Boolean
+    content.vb: Public Property UseShowIf As Boolean
   overload: com.absence.dialoguesystem.internals.Option.UseShowIf*
 - uid: com.absence.dialoguesystem.internals.Option.Visibility
   commentId: F:com.absence.dialoguesystem.internals.Option.Visibility
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Visibility
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 30
+    startLine: 41
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -217,7 +217,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: LeadsTo
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 35
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -256,7 +256,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 42
+    startLine: 53
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -291,7 +291,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IsVisible
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 58
+    startLine: 69
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals

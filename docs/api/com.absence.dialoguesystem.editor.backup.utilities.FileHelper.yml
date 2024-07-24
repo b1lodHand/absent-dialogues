@@ -1,0 +1,196 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  commentId: T:com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  id: FileHelper
+  parent: com.absence.dialoguesystem.editor.backup.utilities
+  children:
+  - com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile(System.String)
+  - com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: FileHelper
+  nameWithType: FileHelper
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FileHelper
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.utilities
+  syntax:
+    content: public static class FileHelper
+    content.vb: Public Module FileHelper
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile(System.String,System.String)
+  commentId: M:com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile(System.String,System.String)
+  id: WriteToFile(System.String,System.String)
+  parent: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteToFile(string, string)
+  nameWithType: FileHelper.WriteToFile(string, string)
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile(string, string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: WriteToFile
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.utilities
+  syntax:
+    content: public static void WriteToFile(string jsonText, string fullPath)
+    parameters:
+    - id: jsonText
+      type: System.String
+    - id: fullPath
+      type: System.String
+    content.vb: Public Shared Sub WriteToFile(jsonText As String, fullPath As String)
+  overload: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile*
+  nameWithType.vb: FileHelper.WriteToFile(String, String)
+  fullName.vb: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile(String, String)
+  name.vb: WriteToFile(String, String)
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile(System.String)
+  commentId: M:com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile(System.String)
+  id: ReadFromFile(System.String)
+  parent: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadFromFile(string)
+  nameWithType: FileHelper.ReadFromFile(string)
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadFromFile
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Utilities/FileHelper.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.utilities
+  syntax:
+    content: public static string ReadFromFile(string fullPath)
+    parameters:
+    - id: fullPath
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function ReadFromFile(fullPath As String) As String
+  overload: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile*
+  nameWithType.vb: FileHelper.ReadFromFile(String)
+  fullName.vb: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile(String)
+  name.vb: ReadFromFile(String)
+references:
+- uid: com.absence.dialoguesystem.editor.backup.utilities
+  commentId: N:com.absence.dialoguesystem.editor.backup.utilities
+  href: com.html
+  name: com.absence.dialoguesystem.editor.backup.utilities
+  nameWithType: com.absence.dialoguesystem.editor.backup.utilities
+  fullName: com.absence.dialoguesystem.editor.backup.utilities
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.utilities
+    name: utilities
+    href: com.absence.dialoguesystem.editor.backup.utilities.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.utilities
+    name: utilities
+    href: com.absence.dialoguesystem.editor.backup.utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile
+  href: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.html#com_absence_dialoguesystem_editor_backup_utilities_FileHelper_WriteToFile_System_String_System_String_
+  name: WriteToFile
+  nameWithType: FileHelper.WriteToFile
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.WriteToFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile
+  href: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.html#com_absence_dialoguesystem_editor_backup_utilities_FileHelper_ReadFromFile_System_String_
+  name: ReadFromFile
+  nameWithType: FileHelper.ReadFromFile
+  fullName: com.absence.dialoguesystem.editor.backup.utilities.FileHelper.ReadFromFile

@@ -55,6 +55,12 @@ items:
   - com.absence.variablesystem.BaseVariableSetter.Perform_String(com.absence.variablesystem.VariableBank)
   - com.absence.variablesystem.BaseVariableSetter.Perform_Float(com.absence.variablesystem.VariableBank)
   - com.absence.variablesystem.BaseVariableSetter.Perform_Int(com.absence.variablesystem.VariableBank)
+  - com.absence.variablesystem.BaseVariableSetter.TargetVariableName
+  - com.absence.variablesystem.BaseVariableSetter.TypeOfSet
+  - com.absence.variablesystem.BaseVariableSetter.IntValue
+  - com.absence.variablesystem.BaseVariableSetter.FloatValue
+  - com.absence.variablesystem.BaseVariableSetter.StringValue
+  - com.absence.variablesystem.BaseVariableSetter.BooleanValue
   attributes:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
@@ -442,6 +448,48 @@ references:
     name: VariableBank
     isExternal: true
   - name: )
+- uid: com.absence.variablesystem.BaseVariableSetter.TargetVariableName
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.TargetVariableName
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: TargetVariableName
+  nameWithType: BaseVariableSetter.TargetVariableName
+  fullName: com.absence.variablesystem.BaseVariableSetter.TargetVariableName
+- uid: com.absence.variablesystem.BaseVariableSetter.TypeOfSet
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.TypeOfSet
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: TypeOfSet
+  nameWithType: BaseVariableSetter.TypeOfSet
+  fullName: com.absence.variablesystem.BaseVariableSetter.TypeOfSet
+- uid: com.absence.variablesystem.BaseVariableSetter.IntValue
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.IntValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: IntValue
+  nameWithType: BaseVariableSetter.IntValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.IntValue
+- uid: com.absence.variablesystem.BaseVariableSetter.FloatValue
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.FloatValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: FloatValue
+  nameWithType: BaseVariableSetter.FloatValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.FloatValue
+- uid: com.absence.variablesystem.BaseVariableSetter.StringValue
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.StringValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: StringValue
+  nameWithType: BaseVariableSetter.StringValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.StringValue
+- uid: com.absence.variablesystem.BaseVariableSetter.BooleanValue
+  commentId: P:com.absence.variablesystem.BaseVariableSetter.BooleanValue
+  parent: com.absence.variablesystem.BaseVariableSetter
+  isExternal: true
+  name: BooleanValue
+  nameWithType: BaseVariableSetter.BooleanValue
+  fullName: com.absence.variablesystem.BaseVariableSetter.BooleanValue
 - uid: System
   commentId: N:System
   isExternal: true

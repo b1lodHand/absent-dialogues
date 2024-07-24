@@ -1,0 +1,576 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  commentId: T:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  id: NodeImportActions
+  parent: com.absence.dialoguesystem.editor.backup.internals
+  children:
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  langs:
+  - csharp
+  - vb
+  name: NodeImportActions
+  nameWithType: NodeImportActions
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeImportActions
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static class NodeImportActions
+    content.vb: Public Module NodeImportActions
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: RootNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: RootNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.RootNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: RootNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void RootNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub RootNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: DialoguePartNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: DialoguePartNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.DialoguePartNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialoguePartNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void DialoguePartNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub DialoguePartNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: DecisionSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: DecisionSpeechNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.DecisionSpeechNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DecisionSpeechNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void DecisionSpeechNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub DecisionSpeechNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: FastSpeechNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: FastSpeechNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.FastSpeechNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FastSpeechNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void FastSpeechNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub FastSpeechNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: ActionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: ActionNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.ActionNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ActionNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void ActionNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub ActionNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: ConditionNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: ConditionNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.ConditionNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ConditionNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 37
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void ConditionNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub ConditionNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: GotoNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: GotoNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.GotoNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GotoNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 44
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void GotoNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub GotoNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: TitleNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: TitleNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.TitleNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TitleNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 50
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void TitleNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub TitleNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode*
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  id: StickyNoteNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.backup.data.NodeData,com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  parent: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
+  langs:
+  - csharp
+  - vb
+  name: StickyNoteNode(Node, NodeData, DialogueImportContext)
+  nameWithType: NodeImportActions.StickyNoteNode(Node, NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.backup.data.NodeData, com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: StickyNoteNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Internal/NodeImportActions.cs
+    startLine: 55
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.internals
+  syntax:
+    content: public static void StickyNoteNode(Node node, NodeData data, DialogueImportContext context)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: data
+      type: com.absence.dialoguesystem.editor.backup.data.NodeData
+    - id: context
+      type: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+    content.vb: Public Shared Sub StickyNoteNode(node As Node, data As NodeData, context As DialogueImportContext)
+  overload: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode*
+references:
+- uid: com.absence.dialoguesystem.editor.backup.internals
+  commentId: N:com.absence.dialoguesystem.editor.backup.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.backup.internals
+  nameWithType: com.absence.dialoguesystem.editor.backup.internals
+  fullName: com.absence.dialoguesystem.editor.backup.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.backup.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.backup.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_RootNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: RootNode
+  nameWithType: NodeImportActions.RootNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.RootNode
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.editor.backup.data.NodeData
+  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeData
+  parent: com.absence.dialoguesystem.editor.backup.data
+  href: com.absence.dialoguesystem.editor.backup.data.NodeData.html
+  name: NodeData
+  nameWithType: NodeData
+  fullName: com.absence.dialoguesystem.editor.backup.data.NodeData
+- uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+  commentId: T:com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+  parent: com.absence.dialoguesystem.editor.backup.internals
+  href: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext.html
+  name: DialogueImportContext
+  nameWithType: DialogueImportContext
+  fullName: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.editor.backup.data
+  commentId: N:com.absence.dialoguesystem.editor.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.editor.backup.data
+  nameWithType: com.absence.dialoguesystem.editor.backup.data
+  fullName: com.absence.dialoguesystem.editor.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.data
+    name: data
+    href: com.absence.dialoguesystem.editor.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.data
+    name: data
+    href: com.absence.dialoguesystem.editor.backup.data.html
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_DialoguePartNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: DialoguePartNode
+  nameWithType: NodeImportActions.DialoguePartNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DialoguePartNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_DecisionSpeechNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: DecisionSpeechNode
+  nameWithType: NodeImportActions.DecisionSpeechNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.DecisionSpeechNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_FastSpeechNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: FastSpeechNode
+  nameWithType: NodeImportActions.FastSpeechNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.FastSpeechNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_ActionNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: ActionNode
+  nameWithType: NodeImportActions.ActionNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ActionNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_ConditionNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: ConditionNode
+  nameWithType: NodeImportActions.ConditionNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.ConditionNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_GotoNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: GotoNode
+  nameWithType: NodeImportActions.GotoNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.GotoNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_TitleNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: TitleNode
+  nameWithType: NodeImportActions.TitleNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.TitleNode
+- uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode*
+  commentId: Overload:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode
+  href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html#com_absence_dialoguesystem_editor_backup_internals_NodeImportActions_StickyNoteNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_backup_data_NodeData_com_absence_dialoguesystem_editor_backup_internals_DialogueImportContext_
+  name: StickyNoteNode
+  nameWithType: NodeImportActions.StickyNoteNode
+  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.StickyNoteNode

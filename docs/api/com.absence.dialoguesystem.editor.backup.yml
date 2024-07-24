@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup
+  commentId: N:com.absence.dialoguesystem.editor.backup
+  id: com.absence.dialoguesystem.editor.backup
+  children:
+  - com.absence.dialoguesystem.editor.backup.DialogueExporter
+  - com.absence.dialoguesystem.editor.backup.DialogueImporter
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.editor.backup
+  nameWithType: com.absence.dialoguesystem.editor.backup
+  fullName: com.absence.dialoguesystem.editor.backup
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+references:
+- uid: com.absence.dialoguesystem.editor.backup.DialogueExporter
+  commentId: T:com.absence.dialoguesystem.editor.backup.DialogueExporter
+  href: com.absence.dialoguesystem.editor.backup.DialogueExporter.html
+  name: DialogueExporter
+  nameWithType: DialogueExporter
+  fullName: com.absence.dialoguesystem.editor.backup.DialogueExporter
+- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter
+  commentId: T:com.absence.dialoguesystem.editor.backup.DialogueImporter
+  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html
+  name: DialogueImporter
+  nameWithType: DialogueImporter
+  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter

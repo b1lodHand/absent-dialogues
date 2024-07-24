@@ -96,11 +96,16 @@
 <h1 id="roadmap">Roadmap</h1>
 
 <p>In this section of the documentation, you will see some details about the past and the future of this project.</p>
-<h2 id="latest-version-v111">Latest Version <a href="https://github.com/b1lodHand/absent-dialogues/releases/latest">(v1.1.1)</a></h2>
+<h2 id="latest-version-v120">Latest Version <a href="https://github.com/b1lodHand/absent-dialogues/releases/latest">(v1.2.0)</a></h2>
 <ul>
-<li>Documented the <strong>'Demo_GUI'</strong>, a class in the 'Demo' section.</li>
-<li>Moved dialogue creation menu option to: <strong>'Assets/Create/absencee_/absent-dialogues/Dialogue'</strong></li>
-<li>Added <strong>'PackageInitializer.cs'.</strong></li>
+<li><strong>Import/Export</strong> support. It is called <strong>'Backup System'</strong>.</li>
+<li><strong>Bugfix:</strong> Fixed a bug which caused NullReferenceException when <strong>IPerformDelayedClone</strong>.DelayedClone function got called.</li>
+<li><strong>Bugfix:</strong> Fixed a bug that caused <strong>DialogueDisplayer</strong> to not hold occupience state truly when an instance exits dialogue.</li>
+<li><strong>Bugfix:</strong> Fixed a bug that caused <strong>DialoguePlayer</strong> to not invoke <em>OnContinue</em> action when the state is <em>DialoguePlayerState.WillExit</em>.</li>
+<li><strong>Changed</strong> interface <strong>IContainSpeech</strong> completely.</li>
+<li><strong>Changed</strong> some properties to get/set from get-only.</li>
+<li><strong>Added</strong> the <em>event</em> action <strong>OnExitDialogue</strong> to <strong>DialogueInstance</strong>.</li>
+<li><strong>Added</strong> first option selection feature to <strong>DialogueDisplayer</strong>. Now it selects the first option when a dialogue displayed.</li>
 </ul>
 <h2 id="upcoming-version">Upcoming Version</h2>
 <ul>
@@ -119,7 +124,6 @@
 <h2 id="in-the-future-without-certainty">In the Future (Without Certainty)</h2>
 <ul>
 <li><strong>Localization</strong> for dialogues.</li>
-<li><strong>Import/Export/Backup</strong> support.</li>
 <li><strong>Integration</strong> with some other applications.</li>
 <li>Generic option feature.</li>
 <li>Dialogue override graph feature.</li>

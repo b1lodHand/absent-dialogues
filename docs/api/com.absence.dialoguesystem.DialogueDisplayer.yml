@@ -9,6 +9,7 @@ items:
   - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option},System.Action{System.Int32})
   - com.absence.dialoguesystem.DialogueDisplayer.Occupy
   - com.absence.dialoguesystem.DialogueDisplayer.Release
+  - com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
   langs:
   - csharp
   - vb
@@ -86,7 +87,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Occupy
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -117,7 +118,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Release
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -148,7 +149,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 72
+    startLine: 75
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -186,7 +187,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 88
+    startLine: 91
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -212,6 +213,32 @@ items:
   nameWithType.vb: DialogueDisplayer.Display(Person, String, List(Of Option), Action(Of Integer))
   fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option), System.Action(Of Integer))
   name.vb: Display(Person, String, List(Of Option), Action(Of Integer))
+- uid: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
+  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
+  id: ReselectFirstOptionIfExists
+  parent: com.absence.dialoguesystem.DialogueDisplayer
+  langs:
+  - csharp
+  - vb
+  name: ReselectFirstOptionIfExists()
+  nameWithType: DialogueDisplayer.ReselectFirstOptionIfExists()
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReselectFirstOptionIfExists
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
+    startLine: 113
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public void ReselectFirstOptionIfExists()
+    content.vb: Public Sub ReselectFirstOptionIfExists()
+  overload: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -780,3 +807,9 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists*
+  commentId: Overload:com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
+  href: com.absence.dialoguesystem.DialogueDisplayer.html#com_absence_dialoguesystem_DialogueDisplayer_ReselectFirstOptionIfExists
+  name: ReselectFirstOptionIfExists
+  nameWithType: DialogueDisplayer.ReselectFirstOptionIfExists
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists

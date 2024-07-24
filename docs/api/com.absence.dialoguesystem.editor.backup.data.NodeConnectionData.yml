@@ -1,0 +1,219 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  id: NodeConnectionData
+  parent: com.absence.dialoguesystem.editor.backup.data
+  children:
+  - com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromGuid
+  - com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromPortIndex
+  - com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.ToGuid
+  langs:
+  - csharp
+  - vb
+  name: NodeConnectionData
+  nameWithType: NodeConnectionData
+  fullName: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeConnectionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+    startLine: 2
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.data
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class NodeConnectionData
+    content.vb: >-
+      <Serializable>
+
+      Public Class NodeConnectionData
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromPortIndex
+  commentId: F:com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromPortIndex
+  id: FromPortIndex
+  parent: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  langs:
+  - csharp
+  - vb
+  name: FromPortIndex
+  nameWithType: NodeConnectionData.FromPortIndex
+  fullName: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromPortIndex
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FromPortIndex
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.data
+  syntax:
+    content: public int FromPortIndex
+    return:
+      type: System.Int32
+    content.vb: Public FromPortIndex As Integer
+- uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromGuid
+  commentId: F:com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromGuid
+  id: FromGuid
+  parent: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  langs:
+  - csharp
+  - vb
+  name: FromGuid
+  nameWithType: NodeConnectionData.FromGuid
+  fullName: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.FromGuid
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FromGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.data
+  syntax:
+    content: public string FromGuid
+    return:
+      type: System.String
+    content.vb: Public FromGuid As String
+- uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.ToGuid
+  commentId: F:com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.ToGuid
+  id: ToGuid
+  parent: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
+  langs:
+  - csharp
+  - vb
+  name: ToGuid
+  nameWithType: NodeConnectionData.ToGuid
+  fullName: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData.ToGuid
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ToGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/Data/NodeConnectionData.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.backup.data
+  syntax:
+    content: public string ToGuid
+    return:
+      type: System.String
+    content.vb: Public ToGuid As String
+references:
+- uid: com.absence.dialoguesystem.editor.backup.data
+  commentId: N:com.absence.dialoguesystem.editor.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.editor.backup.data
+  nameWithType: com.absence.dialoguesystem.editor.backup.data
+  fullName: com.absence.dialoguesystem.editor.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.data
+    name: data
+    href: com.absence.dialoguesystem.editor.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.backup.data
+    name: data
+    href: com.absence.dialoguesystem.editor.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

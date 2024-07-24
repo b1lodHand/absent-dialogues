@@ -51,6 +51,12 @@ items:
   - com.absence.variablesystem.BaseVariableComparer.m_stringValue
   - com.absence.variablesystem.BaseVariableComparer.m_boolValue
   - com.absence.variablesystem.BaseVariableComparer.GetResult
+  - com.absence.variablesystem.BaseVariableComparer.TargetVariableName
+  - com.absence.variablesystem.BaseVariableComparer.TypeOfComparison
+  - com.absence.variablesystem.BaseVariableComparer.IntValue
+  - com.absence.variablesystem.BaseVariableComparer.FloatValue
+  - com.absence.variablesystem.BaseVariableComparer.StringValue
+  - com.absence.variablesystem.BaseVariableComparer.BooleanValue
   attributes:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
@@ -339,6 +345,48 @@ references:
     isExternal: true
   - name: (
   - name: )
+- uid: com.absence.variablesystem.BaseVariableComparer.TargetVariableName
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.TargetVariableName
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: TargetVariableName
+  nameWithType: BaseVariableComparer.TargetVariableName
+  fullName: com.absence.variablesystem.BaseVariableComparer.TargetVariableName
+- uid: com.absence.variablesystem.BaseVariableComparer.TypeOfComparison
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.TypeOfComparison
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: TypeOfComparison
+  nameWithType: BaseVariableComparer.TypeOfComparison
+  fullName: com.absence.variablesystem.BaseVariableComparer.TypeOfComparison
+- uid: com.absence.variablesystem.BaseVariableComparer.IntValue
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.IntValue
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: IntValue
+  nameWithType: BaseVariableComparer.IntValue
+  fullName: com.absence.variablesystem.BaseVariableComparer.IntValue
+- uid: com.absence.variablesystem.BaseVariableComparer.FloatValue
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.FloatValue
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: FloatValue
+  nameWithType: BaseVariableComparer.FloatValue
+  fullName: com.absence.variablesystem.BaseVariableComparer.FloatValue
+- uid: com.absence.variablesystem.BaseVariableComparer.StringValue
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.StringValue
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: StringValue
+  nameWithType: BaseVariableComparer.StringValue
+  fullName: com.absence.variablesystem.BaseVariableComparer.StringValue
+- uid: com.absence.variablesystem.BaseVariableComparer.BooleanValue
+  commentId: P:com.absence.variablesystem.BaseVariableComparer.BooleanValue
+  parent: com.absence.variablesystem.BaseVariableComparer
+  isExternal: true
+  name: BooleanValue
+  nameWithType: BaseVariableComparer.BooleanValue
+  fullName: com.absence.variablesystem.BaseVariableComparer.BooleanValue
 - uid: System
   commentId: N:System
   isExternal: true
