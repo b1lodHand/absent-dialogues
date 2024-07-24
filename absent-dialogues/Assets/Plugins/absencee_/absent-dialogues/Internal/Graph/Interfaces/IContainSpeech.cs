@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -8,8 +7,8 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     public interface IContainSpeech
     {
-        public string GetSpeech();
-        public List<Option> GetOptions();
-        public AdditionalSpeechData GetAdditionalSpeechData();
+        string Speech { get; set; }
+        List<Option> Options { get; set; }
+        AdditionalSpeechData GetAdditionalSpeechData();
     }
 }

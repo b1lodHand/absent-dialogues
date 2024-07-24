@@ -51,7 +51,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void DelayedClone(Dialogue originalDialogue)
         {
-            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

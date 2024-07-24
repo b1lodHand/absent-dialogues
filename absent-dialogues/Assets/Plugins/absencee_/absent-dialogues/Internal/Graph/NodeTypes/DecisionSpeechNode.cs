@@ -13,13 +13,15 @@ namespace com.absence.dialoguesystem.internals
         [SerializeField] private AdditionalSpeechData m_additionalData;
 
         [Space(10)]
-
         
         [Tooltip("All of the options of this node.")] public List<Option> Options = new List<Option>();
 
         [HideInInspector] public string Speech;
 
         public override bool PersonDependent => true;
+
+        string IContainSpeech.Speech { get => Speech; set { Speech = value; } }
+        List<Option> IContainSpeech.Options { get => Options; set { Options = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
         public override string GetTitle() => "Decision Speech";
@@ -69,8 +71,6 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public string GetSpeech() => Speech;
-        public List<Option> GetOptions() => Options;
         public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
 
         public void DelayedClone(Dialogue originalDialogue)

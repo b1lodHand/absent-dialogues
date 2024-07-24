@@ -48,8 +48,8 @@ namespace com.absence.dialoguesystem.internals
 
         public void DelayedClone(Dialogue originalDialogue)
         {
-            TrueNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
-            FalseNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
+            if (TrueNext != null) TrueNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
+            if (FalseNext != null) FalseNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
 
             Comparers = Comparers.ConvertAll(comparer =>
             {

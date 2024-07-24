@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem.editor
     public static class DialogueCreationHandler
     {
         [MenuItem("Assets/Create/absencee_/absent-dialogues/Dialogue", priority = 0)]
-        static void CreateDialogue()
+        static void CreateDialogue_MenuItem()
         {
             string selectedPath = AssetDatabase.GetAssetPath(Selection.activeObject);
             if (selectedPath == string.Empty) return;
@@ -42,29 +42,38 @@ namespace com.absence.dialoguesystem.editor
             path = path.Remove(lastSlashIndex, (path.Length - lastSlashIndex));
         }
 
+        public static Dialogue CreateDialogue(string pathName)
+        {
+            var itemCreated = ScriptableObject.CreateInstance<Dialogue>();
+            AssetDatabase.CreateAsset(itemCreated, pathName);
+
+            var blackboard = new Blackboard();
+            var blackboardBank = ScriptableObject.CreateInstance<VariableBank>();
+
+            blackboardBank.name = $"{itemCreated.name} Blackboard VB";
+            blackboardBank.ForExternalUse = true;
+
+            AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
+
+            blackboard.Bank = blackboardBank;
+
+            itemCreated.Blackboard = blackboard;
+            //itemCreated.RootNode = itemCreated.CreateNode(typeof(RootNode)) as RootNode;
+            //AssetDatabase.AddObjectToAsset(itemCreated.RootNode, itemCreated);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Selection.activeObject = itemCreated;
+
+            return itemCreated;
+        }
+
         internal class CreateDialogueEndNameEditAction : EndNameEditAction
         {
             public override void Action(int instanceId, string pathName, string resourceFile)
             {
-                var itemCreated = ScriptableObject.CreateInstance<Dialogue>();
-                AssetDatabase.CreateAsset(itemCreated, pathName);
-
-                var blackboard = new Blackboard();
-                var blackboardBank = ScriptableObject.CreateInstance<VariableBank>();
-
-                blackboardBank.name = $"{itemCreated.name} Blackboard VB";
-                blackboardBank.ForExternalUse = true;
-
-                AssetDatabase.AddObjectToAsset(blackboardBank, itemCreated);
-
-                blackboard.Bank = blackboardBank;
-
-                itemCreated.Blackboard = blackboard;
-
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-
-                Selection.activeObject = itemCreated;
+                DialogueCreationHandler.CreateDialogue(pathName);
             }
 
             public override void Cancelled(int instanceId, string pathName, string resourceFile)
