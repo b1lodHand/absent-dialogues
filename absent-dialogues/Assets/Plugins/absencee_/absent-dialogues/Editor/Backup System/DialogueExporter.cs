@@ -1,6 +1,6 @@
-using com.absence.dialoguesystem.editor.backup.data;
-using com.absence.dialoguesystem.editor.backup.internals;
 using com.absence.dialoguesystem.internals;
+using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.runtime.backup.internals;
 using com.absence.variablesystem;
 using System.Collections.Generic;
 
@@ -54,19 +54,20 @@ namespace com.absence.dialoguesystem.editor.backup
             NodeData data = new();
             data.PositionX = node.Position.x;
             data.PositionY = node.Position.y;
-            data.NodeTypeIndicator = DialogueExportSettings.NodeTypeDictionary[node.GetType()];
+            //data.NodeTypeIndicator = DialogueExportSettings.NodeTypeDictionary[node.GetType()];
+            data.NodeTypeName = node.GetType().Name;
             data.OldGuid = node.Guid;
-            data.ExitDialogueAfterwards = false; // deprecated.
 
             if (node is IContainData speecher)
             {
-                data.Speech = speecher.Text;
+                data.Text = speecher.Text;
 
                 List<Option> options = speecher.Options;
                 if(options != null) data.OptionDatas = options.ConvertAll(option => GenerateOptionData(option)).ToArray();
             }
 
-            DialogueExportSettings.NodeExportActionDictionary[node.GetType()]?.Invoke(node, data);
+            //DialogueExportSettings.NodeExportActionDictionary[node.GetType()]?.Invoke(node, data);
+            node.OnExport(data);
 
             return data;
         }
@@ -135,34 +136,9 @@ namespace com.absence.dialoguesystem.editor.backup
         {
             OptionData data = new();
             data.ShowIfInUse = option.UseShowIf;
-            data.ShowIfData = option.Visibility.ShowIfList.ConvertAll(comparer => GenerateComparerData(comparer)).ToArray();
+            data.ShowIfData = option.Visibility.ShowIfList.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
             data.Speech = option.Text;
             data.ProcessorType = DialogueExportSettings.ProcessorDictionary[option.Visibility.Processor];
-
-            return data;
-        }
-
-        public static NodeVariableComparerData GenerateComparerData(NodeVariableComparer comparer)
-        {
-            NodeVariableComparerData data = new();
-            data.TargetVariableName = comparer.TargetVariableName;
-            data.ComparisonType = DialogueExportSettings.ComparerDictionary[comparer.TypeOfComparison];
-            data.IntValue = comparer.IntValue;
-            data.FloatValue = comparer.FloatValue;
-            data.StringValue = comparer.StringValue;
-            data.BooleanValue = comparer.BooleanValue;
-
-            return data;
-        }
-        public static NodeVariableSetterData GenerateSetterData(NodeVariableSetter setter)
-        {
-            NodeVariableSetterData data = new();
-            data.TargetVariableName = setter.TargetVariableName;
-            data.SetType = DialogueExportSettings.SetterDictionary[setter.TypeOfSet];
-            data.IntValue = setter.IntValue;
-            data.FloatValue = setter.FloatValue;
-            data.StringValue = setter.StringValue;
-            data.BooleanValue = setter.BooleanValue;
 
             return data;
         }

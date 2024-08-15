@@ -1,5 +1,8 @@
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -91,6 +94,16 @@ namespace com.absence.dialoguesystem.internals
             VBActions.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
 
             base.OnValidate();
+        }
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            VBActions = dataToRead.SetterDatas.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+        }
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            dataToWrite.SetterDatas = VBActions.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
         }
     }
 

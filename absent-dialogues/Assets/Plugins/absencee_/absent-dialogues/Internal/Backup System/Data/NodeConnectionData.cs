@@ -1,4 +1,4 @@
-namespace com.absence.dialoguesystem.editor.backup.data
+namespace com.absence.dialoguesystem.runtime.backup.data
 {
     [System.Serializable]
     public class NodeConnectionData

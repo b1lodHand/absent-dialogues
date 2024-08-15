@@ -1,3 +1,6 @@
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.runtime.backup.internals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,6 +96,18 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableComparer> GetComparers() => new(Comparers);
         public List<NodeVariableSetter> GetSetters() => null;
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            Processor = DialogueImportSettings.ProcessorDictionary[dataToRead.ComparerProcessorType];
+            Comparers = dataToRead.ComparerDatas.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
+        }
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            dataToWrite.ComparerProcessorType = DialogueExportSettings.ProcessorDictionary[Processor];
+            dataToWrite.ComparerDatas = Comparers.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
+        }
 
         protected override void OnValidate()
         {

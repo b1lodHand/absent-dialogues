@@ -1,10 +1,10 @@
-namespace com.absence.dialoguesystem.editor.backup.data
+namespace com.absence.dialoguesystem.runtime.backup.data
 {
     [System.Serializable]
-    public class NodeVariableSetterData
+    public class NodeVariableComparerData 
     {
         public string TargetVariableName;
-        public char SetType;
+        public char ComparisonType;
         public int IntValue;
         public float FloatValue;
         public string StringValue;

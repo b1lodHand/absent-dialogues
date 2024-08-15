@@ -1,4 +1,6 @@
 using com.absence.attributes;
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
@@ -127,7 +129,7 @@ namespace com.absence.dialoguesystem.internals
         {
             SetState(NodeState.Past);
 
-            context.State = DialogueFlowContext.ContextState.Pass;
+            if (context != null) context.State = DialogueFlowContext.ContextState.Pass;
 
             OnPass?.Invoke();
             Pass_Inline(context);
@@ -137,7 +139,7 @@ namespace com.absence.dialoguesystem.internals
             MasterDialogue.LastOrCurrentNode = this;
             SetState(NodeState.Current);
 
-            context.State = DialogueFlowContext.ContextState.Reach;
+            if (context != null) context.State = DialogueFlowContext.ContextState.Reach;
 
             OnReach?.Invoke();
             Reach_Inline(context);
@@ -217,6 +219,16 @@ namespace com.absence.dialoguesystem.internals
         /// Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
         /// </summary>
         public virtual void Traverse(Action<Node> action)
+        {
+
+        }
+
+        public virtual void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+
+        }
+
+        public virtual void OnExport(NodeData dataToWrite)
         {
 
         }

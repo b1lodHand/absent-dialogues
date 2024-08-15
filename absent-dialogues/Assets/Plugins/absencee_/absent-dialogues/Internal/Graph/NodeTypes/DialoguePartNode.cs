@@ -1,3 +1,5 @@
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,6 +54,16 @@ namespace com.absence.dialoguesystem.internals
         public void DelayedClone(Dialogue originalDialogue)
         {
             if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+        }
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            DialoguePartName = dataToRead.DialoguePartName;
+        }
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            dataToWrite.DialoguePartName = DialoguePartName;
         }
     }
 

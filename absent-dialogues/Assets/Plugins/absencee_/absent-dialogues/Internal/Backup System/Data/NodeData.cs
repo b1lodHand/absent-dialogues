@@ -1,14 +1,12 @@
-namespace com.absence.dialoguesystem.editor.backup.data
+namespace com.absence.dialoguesystem.runtime.backup.data
 {
     [System.Serializable]
     public class NodeData
     {
-        public char NodeTypeIndicator;
+        public string NodeTypeName;
         public float PositionX;
         public float PositionY;
         public string OldGuid;
-
-        public bool ExitDialogueAfterwards;
 
         public string GotoTargetGuid;
         public string DialoguePartName;
@@ -18,7 +16,7 @@ namespace com.absence.dialoguesystem.editor.backup.data
 
         public char ComparerProcessorType;
 
-        public string Speech;
+        public string Text;
         public OptionData[] OptionDatas;
     }
 }

@@ -1,6 +1,6 @@
-using com.absence.dialoguesystem.editor.backup.data;
-using com.absence.dialoguesystem.editor.backup.internals;
 using com.absence.dialoguesystem.internals;
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.variablesystem;
 using System;
 using System.Collections.Generic;
@@ -90,7 +90,8 @@ namespace com.absence.dialoguesystem.editor.backup
         }
         static Node ReadNodeData(NodeData data, Dialogue targetDialogue)
         {
-            Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeIndicator];
+            //Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeName];
+            Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
             Node node = targetDialogue.CreateNode(nodeType);
             node.Guid = GUID.Generate().ToString();
             node.Position.x = data.PositionX;
@@ -99,8 +100,8 @@ namespace com.absence.dialoguesystem.editor.backup
 
             if(node is IContainData speecher)
             {
-                speecher.Text = data.Speech;
-                List<Option> options = data.OptionDatas.ToList().ConvertAll(optionData => ReadOptionData(optionData)).ToList();
+                speecher.Text = data.Text;
+                List<Option> options = data.OptionDatas.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
                 if(options.Count > 0) speecher.Options = new(options);
             }
 
@@ -114,9 +115,11 @@ namespace com.absence.dialoguesystem.editor.backup
                 Node node = context.Dialogue.AllNodes[i];
                 NodeData data = context.DialogueData.NodeDatas[i];
 
-                Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeIndicator];
+                //Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeName];
+                Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
 
-                DialogueImportSettings.NodeImportActionDictionary[nodeType].Invoke(node, data, context);
+                //DialogueImportSettings.NodeImportActionDictionary[nodeType].Invoke(node, data, context);
+                node.OnImport(data, context);
 
                 if (node is not IContainVariableManipulators manipulator) continue;
 
@@ -127,44 +130,6 @@ namespace com.absence.dialoguesystem.editor.backup
                 if (setters != null) setters.ForEach(setter => setter.SetBlackboardBank(context.Dialogue.Blackboard.Bank));
             }
         }
-
-        public static NodeVariableComparer ReadComparerData(NodeVariableComparerData data)
-        {
-            NodeVariableComparer comparer = new();
-            comparer.TargetVariableName = data.TargetVariableName;
-            comparer.TypeOfComparison = DialogueImportSettings.ComparerDictionary[data.ComparisonType];
-            comparer.IntValue = data.IntValue;
-            comparer.FloatValue = data.FloatValue;
-            comparer.StringValue = data.StringValue;
-            comparer.BooleanValue = data.BooleanValue;
-
-            return comparer;
-        }
-        public static NodeVariableSetter ReadSetterData(NodeVariableSetterData data)
-        {
-            NodeVariableSetter setter = new();
-            setter.TargetVariableName = data.TargetVariableName;
-            setter.TypeOfSet = DialogueImportSettings.SetterDictionary[data.SetType];
-            setter.IntValue = data.IntValue;
-            setter.FloatValue = data.FloatValue;
-            setter.StringValue = data.StringValue;
-            setter.BooleanValue = data.BooleanValue;
-
-            return setter;
-        }
-        public static Option ReadOptionData(OptionData data)
-        {
-            Option option = new();
-            option.Text = data.Speech;
-            option.UseShowIf = data.ShowIfInUse;
-
-            option.Visibility = new Option.ShowIf();
-            option.Visibility.Processor = DialogueImportSettings.ProcessorDictionary[data.ProcessorType];
-            option.Visibility.ShowIfList = data.ShowIfData.ToList().ConvertAll(comparerData => ReadComparerData(comparerData));
-
-            return option;
-        }
-
         internal class ImportDialogueEndNameEditAction : EndNameEditAction
         {
             public DialogueData ImportedData { get; set; }
