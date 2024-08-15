@@ -56,11 +56,11 @@ namespace com.absence.dialoguesystem.editor.backup
             data.PositionY = node.Position.y;
             data.NodeTypeIndicator = DialogueExportSettings.NodeTypeDictionary[node.GetType()];
             data.OldGuid = node.Guid;
-            data.ExitDialogueAfterwards = node.ExitDialogueAfterwards;
+            data.ExitDialogueAfterwards = false; // deprecated.
 
-            if (node is IContainSpeech speecher)
+            if (node is IContainData speecher)
             {
-                data.Speech = speecher.Speech;
+                data.Speech = speecher.Text;
 
                 List<Option> options = speecher.Options;
                 if(options != null) data.OptionDatas = options.ConvertAll(option => GenerateOptionData(option)).ToArray();
@@ -136,7 +136,7 @@ namespace com.absence.dialoguesystem.editor.backup
             OptionData data = new();
             data.ShowIfInUse = option.UseShowIf;
             data.ShowIfData = option.Visibility.ShowIfList.ConvertAll(comparer => GenerateComparerData(comparer)).ToArray();
-            data.Speech = option.Speech;
+            data.Speech = option.Text;
             data.ProcessorType = DialogueExportSettings.ProcessorDictionary[option.Visibility.Processor];
 
             return data;

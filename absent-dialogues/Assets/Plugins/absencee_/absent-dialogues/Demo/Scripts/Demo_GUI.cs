@@ -53,12 +53,18 @@ namespace com.absence.dialoguesystem.examples
             // For this example, I've used IMGUI system. Because it is the fastest option to setup. I wouldn't recommend using it
             // in your games, tho.
 
+            // drawing a simple button to let any tester re-enter the dialogue.
+            if ((!m_instance.InDialogue) && GUILayout.Button("Talk"))
+            {
+                m_instance.EnterDialogue();
+            }
+
             if (!m_pending) return; // checking if we've gotten the mission.
             if (m_done) return; // checking if we've already done the mission.
             if (m_committed) return; // checking if we've told the NPC that we've done the mission already.
 
             // drawing the 'Get apples' button to let users complete the mission easily.
-            if (GUI.Button(new Rect(10f, 10f, 100f, 20f), "Get apples."))
+            if (GUILayout.Button("Get apples."))
             {
                 m_blackboardBank.SetBoolean(K_MISSIONDONE, true);
             }

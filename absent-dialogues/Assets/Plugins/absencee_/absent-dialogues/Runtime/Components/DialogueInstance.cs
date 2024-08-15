@@ -60,7 +60,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// The Action which will get invoked when <see cref="HandleAdditionalData"/> gets called.
         /// </summary>
-        public event Action<AdditionalSpeechData> OnHandleAdditionalData;
+        public event Action<ExtraDialogueData> OnHandleExtraData;
 
         /// <summary>
         /// Action which will get invoked right after this instance clons it's <see cref="ReferencedDialogue"/>.
@@ -70,20 +70,12 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Subscribe to this delegate to override any data will get displayed.
         /// </summary>
-        public event SpeechEventHandler OnBeforeSpeech;
+        public event Action<DialogueFlowContext> OnBeforeProgress;
 
         /// <summary>
         /// Action which will get invoked when this instance exits dialogue.
         /// </summary>
         public event Action OnExitDialogue;
-
-        /// <summary>
-        /// The delegate responsible for handling events directly about speech.
-        /// </summary>
-        /// <param name="speaker">Speaker of this speech.</param>
-        /// <param name="speech">Speech in context.</param>
-        /// <param name="options">Options of this speech (null if there is no options).</param>
-        public delegate void SpeechEventHandler(ref Person speaker, ref string speech, ref List<Option> options);
 
         bool m_inDialogue = false;
 
@@ -93,9 +85,9 @@ namespace com.absence.dialoguesystem
         public bool InDialogue => m_inDialogue;
 
         Person m_speaker;
-        string m_speech;
-        AdditionalSpeechData m_additionalData;
-        List<Option> m_options;
+        string m_text;
+        ExtraDialogueData m_extraData;
+        List<OptionHandle> m_options;
 
         [Button("Refresh Extension List")]
         void RefreshExtensionList()
@@ -184,6 +176,11 @@ namespace com.absence.dialoguesystem
             OnExitDialogue?.Invoke();
         }
 
+        public void ForceContinue()
+        {
+            m_player.Continue();
+        }
+
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
             GatherPlayerData();
@@ -192,16 +189,20 @@ namespace com.absence.dialoguesystem
 
             switch (state)
             {
-                case DialoguePlayer.PlayerState.NoSpeech:
+                case DialoguePlayer.PlayerState.NoText:
                     Player.Continue();
                     break;
 
                 case DialoguePlayer.PlayerState.WaitingForOption:
-                    DialogueDisplayer.Instance.Display(m_speaker, m_speech, m_options, i => Player.Continue(i));
+                    DialogueDisplayer.Instance.Display(m_speaker, m_text, m_options, i =>
+                    {
+                        Player.Context.OptionIndex = i;
+                        Player.Continue();
+                    });
                     break;
 
-                case DialoguePlayer.PlayerState.WaitingForSkip:
-                    DialogueDisplayer.Instance.Display(m_speaker, m_speech);
+                case DialoguePlayer.PlayerState.WaitingForInput:
+                    DialogueDisplayer.Instance.Display(m_speaker, m_text);
                     break;
 
                 case DialoguePlayer.PlayerState.WillExit:
@@ -216,45 +217,45 @@ namespace com.absence.dialoguesystem
 
         private void GatherPlayerData()
         {
-            if(!Player.HasSpeech)
+            if(!Player.HasText)
             {
                 m_speaker = null;
-                m_speech = null;
+                m_text = null;
                 m_options = null;
-                m_additionalData = null;
+                m_extraData = null;
                 return;
             }
 
             m_speaker = Player.Speaker;
-            m_speech = Player.Speech;
-            m_additionalData = Player.AdditionalSpeechData;
-            if (Player.HasOptions) m_options = new(Player.Options);
+            m_text = Player.Text;
+            m_extraData = Player.ExtraDialogueData;
+            if (Player.HasOptions) m_options = new(Player.OptionIndexPairs);
         }
         private void HandleAdditionalData()
         {
-            if (!Player.HasSpeech) return;
+            if (!Player.HasText) return;
 
             m_extensionList.ForEach(extension =>
             {
                 if (!extension.enabled) return;
 
-                extension.OnHandleAdditionalData(m_additionalData);
+                extension.OnHandleExtraData(m_extraData);
             });
 
-            OnHandleAdditionalData?.Invoke(m_additionalData);
+            OnHandleExtraData?.Invoke(m_extraData);
         }
         private void InvokeBeforeSpeech()
         {
-            if (!Player.HasSpeech) return;
+            if (!Player.HasText) return;
 
             m_extensionList.ForEach(extension =>
             {
                 if (!extension.enabled) return;
 
-                extension.OnBeforeSpeech(ref m_speaker, ref m_speech, ref m_options);
+                extension.OnBeforeSpeech(m_player.Context);
             });
 
-            OnBeforeSpeech?.Invoke(ref m_speaker, ref m_speech, ref m_options);
+            OnBeforeProgress?.Invoke(m_player.Context);
         }
 
         /// <summary>

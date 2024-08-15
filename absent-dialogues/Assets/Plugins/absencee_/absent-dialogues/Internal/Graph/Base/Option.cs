@@ -16,12 +16,12 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Speech of this option.
         /// </summary>
-        [HideInInspector] public string Speech;
+        [HideInInspector] public string Text;
 
         /// <summary>
         /// Additional speech data this option contains.
         /// </summary>
-        public AdditionalSpeechData AdditionalData;
+        public ExtraDialogueData ExtraData;
 
         [Space(10)]
 
@@ -54,11 +54,11 @@ namespace com.absence.dialoguesystem.internals
         public Option Clone(VariableBank overrideBank)
         {
             Option clone = new Option();
-            clone.Speech = Speech;
+            clone.Text = Text;
             clone.m_useShowIf = UseShowIf;
             clone.Visibility = Visibility.Clone(overrideBank);
             clone.LeadsTo = LeadsTo;
-            clone.AdditionalData = AdditionalData;
+            clone.ExtraData = ExtraData;
 
             return clone;
         }

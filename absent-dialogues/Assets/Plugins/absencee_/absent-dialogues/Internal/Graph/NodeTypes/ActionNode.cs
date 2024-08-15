@@ -37,7 +37,7 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "actionNode";
         public override string GetTitle() => "Action";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
             if (Next == null) return;
 
@@ -45,10 +45,10 @@ namespace com.absence.dialoguesystem.internals
             UnityEvents?.Invoke();
             CustomAction();
 
-            Next.Reach();
+            Next.Reach(context);
             SetState(NodeState.Past);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
 
         }

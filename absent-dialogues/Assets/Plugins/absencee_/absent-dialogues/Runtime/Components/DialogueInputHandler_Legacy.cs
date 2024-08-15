@@ -13,8 +13,8 @@ namespace com.absence.dialoguesystem
     {
         public override void OnDialogueUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && m_instance.Player.State == DialoguePlayer.PlayerState.WaitingForSkip)
-                m_instance.Player.Continue();
+            if (Input.GetKeyDown(KeyCode.Space) && m_instance.Player.State == DialoguePlayer.PlayerState.WaitingForInput)
+                m_instance.ForceContinue();
         }
 
 #if UNITY_EDITOR

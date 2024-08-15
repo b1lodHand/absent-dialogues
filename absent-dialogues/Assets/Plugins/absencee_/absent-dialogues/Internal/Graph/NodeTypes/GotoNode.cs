@@ -17,14 +17,14 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "gotoNode";
         public override string GetTitle() => "Goto";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
             if (TargetNode == null) throw new System.Exception("Target node of GotoNode is null!");
 
             SetState(NodeState.Past);
-            TargetNode.Reach();
+            TargetNode.Reach(context);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
 
         }

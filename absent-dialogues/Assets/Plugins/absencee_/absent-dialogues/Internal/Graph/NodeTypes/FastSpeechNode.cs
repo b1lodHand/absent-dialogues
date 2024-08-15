@@ -8,31 +8,34 @@ namespace com.absence.dialoguesystem.internals
     /// Node which displays a speech without options.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.FastSpeechNode.html")]
-    public sealed class FastSpeechNode : Node, IContainSpeech, IPerformDelayedClone
+    public sealed class FastSpeechNode : Node, IContainData, IPerformDelayedClone
     {
-        [SerializeField] private AdditionalSpeechData m_additionalData;
+        [SerializeField] private ExtraDialogueData m_extraData;
 
         [HideInInspector] public Node Next;
-        [HideInInspector] public string Speech;
+        [HideInInspector] public string m_text;
 
         public override bool PersonDependent => true;
 
-        string IContainSpeech.Speech { get => Speech; set { Speech = value; } }
+        public string Text { get => m_text; set { m_text = value; } }
         public List<Option> Options { get => null; set { return; } }
+        public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "fastSpeechNode";
-        public override string GetTitle() => "Fast Speech";
+        public override string GetTitle() => "Fast";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
+            context.ClearSpeech();
+
             if (Next == null) return;
 
-            Next.Reach();
+            Next.Reach(context);
             SetState(NodeState.Past);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
-
+            context.Text = Text;
         }
 
         protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
@@ -54,7 +57,7 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
+        public ExtraDialogueData GetExtraData() => m_extraData;
 
         public void DelayedClone(Dialogue originalDialogue)
         {

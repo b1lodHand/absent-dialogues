@@ -35,10 +35,17 @@ namespace com.absence.dialoguesystem
         [Header("Option Fields")]
 
         [SerializeField, Required, Tooltip("The container for option boxes.")] private Transform m_optionContainer;
-        [SerializeField, Required, Tooltip("The prefab of the option box.")] private DialogueOptionText m_optionPrefab;
+        [SerializeField, Required, Tooltip("The prefab of the option box.")] private OptionText m_optionPrefab;
+
+        /// <summary>
+        /// Action which will get invoked when displayer refreshes.
+        /// </summary>
+        public event Action OnDisplay = null;
 
         bool m_occupied = false;
+        List<GameObject> m_options = new();
         GameObject m_firstOption;
+        GameObject m_lastSelectedOption;
 
         /// <summary>
         /// Let's you occupy the sinleton. If it is occuppied by any other scripts about dialogues, you can't occupy.
@@ -80,6 +87,8 @@ namespace com.absence.dialoguesystem
             if (m_speakerIcon != null) m_speakerIcon.sprite = speaker.Icon;
             if (m_speakerNameText != null) m_speakerNameText.text = speaker.Name;
             m_speechText.text = speech;
+
+            OnDisplay?.Invoke();
         }
 
         /// <summary>
@@ -89,33 +98,106 @@ namespace com.absence.dialoguesystem
         /// <param name="speech"></param>
         /// <param name="options"></param>
         /// <param name="optionPressAction"></param>
-        public void Display(Person speaker, string speech, List<Option> options, Action<int> optionPressAction)
+        public void Display(Person speaker, string speech, List<OptionHandle> options, Action<int> optionPressAction)
         {
             ClearOptionContainer();
 
             Display(speaker, speech);
-            for (int i = 0; i < options.Count; i++)
+
+            options.ForEach(option =>
             {
-                Option option = options[i];
+                OptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
+                optionText.Initialize(option.TargetedIndex, option.Text);
 
-                if (!option.IsVisible()) continue;
-
-                DialogueOptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
-                optionText.Initialize(i, option.Speech);
                 optionText.OnClickAction += optionPressAction;
 
-                if (m_firstOption != null) continue;
+                optionText.OnSelectAction += () =>
+                {
+                    m_lastSelectedOption = optionText.gameObject;
+                };
+
+                if (m_firstOption != null) return;
 
                 m_firstOption = optionText.gameObject;
                 ReselectFirstOptionIfExists();
-            }
+
+                OnDisplay?.Invoke();
+            });
         }
 
+        /// <summary>
+        /// Reselects first option if certain conditions are met.
+        /// </summary>
         public void ReselectFirstOptionIfExists()
         {
+            if (m_options.Count == 0) return;
             if (!m_occupied) return;
             if (UnityEngine.EventSystems.EventSystem.current == null) return;
+            if (m_firstOption == null) return;
+
             UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_firstOption);
+        }
+
+        /// <summary>
+        /// Reselects last option selected by the user if certain conditions are met.
+        /// </summary>
+        public void ReselectLastOptionIfExists()
+        {
+            if (m_options.Count == 0) return;
+            if (!m_occupied) return;
+            if (UnityEngine.EventSystems.EventSystem.current == null) return;
+
+            if (m_lastSelectedOption == null)
+            {
+                ReselectFirstOptionIfExists();
+                return;
+            }
+
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_lastSelectedOption);
+        }
+
+        /// <summary>
+        /// When called, attempts to select the option above the current one.
+        /// </summary>
+        public void TrySelectUpperOption()
+        {
+            if (m_options.Count == 0) return;
+            if (!m_occupied) return;
+            if (UnityEngine.EventSystems.EventSystem.current == null) return;
+
+            if (m_lastSelectedOption == null) return;
+
+            int index = m_options.IndexOf(m_lastSelectedOption);
+            if (index == 0) return;
+
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_options[index - 1]);
+        }
+
+        /// <summary>
+        /// When called, attempts to select the option below the current one.
+        /// </summary>
+        public void TrySelectLowerOption()
+        {
+            if (m_options.Count == 0) return;
+            if (!m_occupied) return;
+            if (UnityEngine.EventSystems.EventSystem.current == null) return;
+
+            if (m_lastSelectedOption == null) return;
+
+            int index = m_options.IndexOf(m_lastSelectedOption);
+            if (index == m_options.Count - 1) return;
+
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_options[index + 1]);
+        }
+
+        /// <returns>
+        /// Index of the currently selected option.
+        /// </returns>
+        public int TryGetCurrentSelectedOptionIndex()
+        {
+            if (m_lastSelectedOption == null) return -1;
+
+            return m_options.IndexOf(m_lastSelectedOption);
         }
 
         void EnableView()
@@ -130,8 +212,10 @@ namespace com.absence.dialoguesystem
 
         void ClearOptionContainer()
         {
+            m_options.Clear();
             m_optionContainer.DestroyChildren();
             m_firstOption = null;
+            m_lastSelectedOption = null;
         }
 
     }

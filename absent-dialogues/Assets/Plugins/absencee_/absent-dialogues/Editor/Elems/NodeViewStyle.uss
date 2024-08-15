@@ -512,6 +512,24 @@
     position: absolute;
 }
 
+.exitNode #node-icon {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    background-image: resource('node-icon-goto');
+    -unity-background-image-tint-color: rgb(171, 68, 63);
+    display: none;
+}
+
+.exitNode #title {
+    -unity-text-align: upper-center;
+}
+
+.exitNode #node-border {
+    border-top-color: rgb(171, 68, 63);
+}
+
+
 #person-field {
     display: none;
 }
@@ -524,10 +542,6 @@
 
 .personDependent #person-field {
     display: flex;
-}
-
-.exit #node-border {
-    border-top-color: rgb(171, 68, 63);
 }
 
 #goto-dropdown {

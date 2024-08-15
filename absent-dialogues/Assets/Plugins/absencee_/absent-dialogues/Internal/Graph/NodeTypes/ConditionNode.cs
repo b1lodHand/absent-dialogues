@@ -20,12 +20,12 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
             var targetNext = Process() ? TrueNext : FalseNext;
-            if (targetNext != null) targetNext.Reach();
+            if (targetNext != null) targetNext.Reach(context);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
 
         }

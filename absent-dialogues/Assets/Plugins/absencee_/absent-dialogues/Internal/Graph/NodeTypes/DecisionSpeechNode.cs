@@ -8,37 +8,52 @@ namespace com.absence.dialoguesystem.internals
     /// Node which displays a speech with options.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
-    public sealed class DecisionSpeechNode : Node, IContainSpeech, IPerformDelayedClone, IContainVariableManipulators
+    public sealed class DecisionSpeechNode : Node, IContainData, IPerformDelayedClone, IContainVariableManipulators
     {
-        [SerializeField] private AdditionalSpeechData m_additionalData;
+        [SerializeField] private ExtraDialogueData m_extraData;
 
         [Space(10)]
         
         [Tooltip("All of the options of this node.")] public List<Option> Options = new List<Option>();
 
-        [HideInInspector] public string Speech;
+        [HideInInspector] public string m_text;
 
         public override bool PersonDependent => true;
 
-        string IContainSpeech.Speech { get => Speech; set { Speech = value; } }
-        List<Option> IContainSpeech.Options { get => Options; set { Options = value; } }
+        public string Text { get => m_text; set { m_text = value; } }
+        List<Option> IContainData.Options { get => Options; set { Options = value; } }
+        public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
-        public override string GetTitle() => "Decision Speech";
+        public override string GetTitle() => "Decision";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
-            var optionSelected = (int)passData[0];
+            context.ClearSpeech();
+
+            var optionSelected = context.OptionIndex;
 
             if (Options.Count == 0) return;
             if (Options[optionSelected].LeadsTo == null) return;
 
-            Options[optionSelected].LeadsTo.Reach();
+            Options[optionSelected].LeadsTo.Reach(context);
             SetState(NodeState.Past);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
+            List<OptionHandle> temp = new();
+            Options.ForEach(o =>
+            {
+                if(!o.IsVisible()) return;
 
+                temp.Add(new OptionHandle(Options.IndexOf(o), o.Text));
+            });
+
+            context.Text = Text;
+            context.OptionIndexPairs = new(temp);
+
+            temp.Clear();
+            temp = null;
         }
 
         protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
@@ -71,7 +86,7 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public AdditionalSpeechData GetAdditionalSpeechData() => m_additionalData;
+        public ExtraDialogueData GetExtraData() => m_extraData;
 
         public void DelayedClone(Dialogue originalDialogue)
         {
@@ -79,6 +94,8 @@ namespace com.absence.dialoguesystem.internals
 
             Options.ForEach(opt =>
             {
+                if (opt.LeadsTo == null) return;
+
                 opt.LeadsTo = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
             });
         }

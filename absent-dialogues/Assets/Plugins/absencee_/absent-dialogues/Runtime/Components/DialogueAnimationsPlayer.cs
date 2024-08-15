@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem
     public class DialogueAnimationsPlayer : DialogueExtensionBase
     {
         /// <summary>
-        /// Lets you select the way this extension uses the <see cref="AdditionalSpeechData.AnimatorMemberName"/>.
+        /// Lets you select the way this extension uses the <see cref="ExtraDialogueData.AnimatorMemberName"/>.
         /// </summary>
         private enum WorkMode
         {
@@ -31,7 +31,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, ShowIf(nameof(m_workMode), WorkMode.CrossFade), Range(0f, 1f)]
         private float m_transitionTime = 0.15f;
 
-        public override void OnHandleAdditionalData(AdditionalSpeechData data)
+        public override void OnHandleExtraData(ExtraDialogueData data)
         {
             if (string.IsNullOrWhiteSpace(data.AnimatorMemberName)) return;
 

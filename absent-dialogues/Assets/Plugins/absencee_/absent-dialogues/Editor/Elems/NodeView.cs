@@ -83,30 +83,25 @@ namespace com.absence.dialoguesystem.editor
             CreateInputPort();
             CreateOutputPorts();
 
-            SetupSpeechFieldIfExists();
-            RefreshNodeIcon();
+            SetupTextFieldIfExists();
 
             node.OnSetState -= UpdateState;
             node.OnSetState += UpdateState;
 
-            node.OnValidation -= RefreshNodeIcon;
-            node.OnValidation += RefreshNodeIcon;
-
             UpdateState(node.State);
-            RefreshNodeIcon();
 
-            if(node.PersonDependent)
+            if (node.PersonDependent)
             {
                 node.MasterDialogue.OnValidateAction -= RefreshPersonDropdown;
                 node.MasterDialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
-            if(node is DecisionSpeechNode)
+            if (node is DecisionSpeechNode)
             {
                 node.OnValidation -= RefreshOptionLabels;
                 node.OnValidation += RefreshOptionLabels;
             }
-            else if(node is DialoguePartNode)
+            else if (node is DialoguePartNode)
             {
                 node.OnValidation -= RefreshDialoguePartFinder;
                 node.OnValidation += RefreshDialoguePartFinder;
@@ -121,12 +116,6 @@ namespace com.absence.dialoguesystem.editor
         private void RefreshDialoguePartFinder()
         {
             DialogueEditorWindow.RefreshDialoguePartFinder();
-        }
-
-        private void RefreshNodeIcon()
-        {
-            if (Node.ExitDialogueAfterwards) AddToClassList("exit");
-            else RemoveFromClassList("exit");
         }
 
         private void SetupPersonDropdownIfExists()
@@ -160,11 +149,11 @@ namespace com.absence.dialoguesystem.editor
             if (Node is DecisionSpeechNode decisiveNode) m_nodeAsDecisive = decisiveNode;
             else if (Node is GotoNode gotoNode) m_nodeAsGoto = gotoNode;
         }
-        private void SetupSpeechFieldIfExists()
+        private void SetupTextFieldIfExists()
         {
-            TextField speechField = this.Q<TextField>("speech");
-            speechField.bindingPath = "Speech";
-            speechField.Bind(m_serializedNode);
+            TextField textField = this.Q<TextField>("speech");
+            textField.bindingPath = "m_text";
+            textField.Bind(m_serializedNode);
         }
 
         private void DrawElems()
@@ -207,7 +196,7 @@ namespace com.absence.dialoguesystem.editor
 
             personDropdown.choices = new List<string>(peopleNameList);
 
-            if(Node.PersonIndex < 0 || Node.PersonIndex > Node.MasterDialogue.People.Count - 1)
+            if (Node.PersonIndex < 0 || Node.PersonIndex > Node.MasterDialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
                 return;
@@ -308,7 +297,7 @@ namespace com.absence.dialoguesystem.editor
         private void UpdateState(Node.NodeState state)
         {
             if ((!Node.MasterDialogue.IsClone) || !Application.isPlaying) return;
-            
+
             RemoveFromClassList("unreached");
             RemoveFromClassList("current");
             RemoveFromClassList("past");
@@ -346,7 +335,7 @@ namespace com.absence.dialoguesystem.editor
         public override void OnUnselected()
         {
             base.OnUnselected();
-            if(Master.selection.Count == 1) OnNodeSelected?.Invoke(null); //??
+            if (Master.selection.Count == 1) OnNodeSelected?.Invoke(null); //??
         }
 
         #region Decision Speech Node
@@ -373,6 +362,10 @@ namespace com.absence.dialoguesystem.editor
 
             Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
             m_nodeAsDecisive.Options.Add(option);
+
+            EditorUtility.SetDirty(m_nodeAsDecisive);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
 
             Master.Refresh();
         }
@@ -424,7 +417,7 @@ namespace com.absence.dialoguesystem.editor
             VisualElement bottom = new VisualElement();
             bottom.AddToClassList("optionBottom");
 
-            var speechProp = optionProp.FindPropertyRelative("Speech");
+            var speechProp = optionProp.FindPropertyRelative("Text");
 
             Button removeButton = new Button(() =>
             {
@@ -433,6 +426,10 @@ namespace com.absence.dialoguesystem.editor
                 Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
                 m_nodeAsDecisive.RemoveNextNode(Outputs.IndexOf(optionElem.Q<Port>()));
                 m_nodeAsDecisive.Options.Remove(target);
+
+                EditorUtility.SetDirty(m_nodeAsDecisive);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
 
                 m_optionElems.Remove(optionElem);
                 mainContainer.Remove(optionElem);

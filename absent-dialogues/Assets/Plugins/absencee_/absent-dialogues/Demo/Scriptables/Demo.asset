@@ -18,7 +18,6 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   Next: {fileID: 6611807328144254293}
 --- !u!114 &-8258285536222529687
@@ -34,15 +33,19 @@ MonoBehaviour:
   m_Name: StickyNoteNode
   m_EditorClassIdentifier: 
   Guid: 1df79d3e9f9718d4689e74e77c52884d
-  Position: {x: -102.5, y: -147}
+  Position: {x: -87, y: -119}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  Speech: "Welcome to the demo graph!\nHere you will see usages of every\nnode.\n\nYou
-    can get to fullscreen view \npressing SHIFT+SPACE."
+  m_text: 'Welcome to the demo graph!
+
+
+    Here you will see every nodes''
+
+    usage
+    in a simple way.'
 --- !u!114 &-3899366801720709168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,21 +59,20 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: 7d72d44870ddbd04abf36ec572209cd1
-  Position: {x: 792.00006, y: -581.0002}
+  Position: {x: 800.0001, y: -574.15015}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
   Options:
-  - Speech: Sure, I'll be doing it.
-    AdditionalData:
+  - Text: Sure!
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -80,8 +82,8 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 7901140551254700991}
-  - Speech: I'm not interested in that, actually.
-    AdditionalData:
+  - Text: I am not interested in that, actually.
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -91,7 +93,7 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 7512322125377748830}
-  Speech: I want you to bring me some apples, dude. Will you do that for me?
+  m_text: Actually, yeah. I want apples so bad right now. Can you find me some?
 --- !u!114 &-3621898333564505408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +112,6 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TargetNode: {fileID: 1326889792880528920}
 --- !u!114 &-2127933438961997456
@@ -131,15 +132,14 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
   Next: {fileID: -3621898333564505408}
-  Speech: Alright! I'll be waiting for you.
+  m_text: Alright! I'll be here when you're done.
 --- !u!114 &-1965666318695130335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,36 +158,14 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
-  Next: {fileID: -1633778966378657852}
-  Speech: Okay, buddy. Do your best. I believe in you.
---- !u!114 &-1633778966378657852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
-  m_Name: GotoNode
-  m_EditorClassIdentifier: 
-  Guid: 8d834be62b356db4f886d9a83844f6b9
-  Position: {x: 1420.0112, y: 295.99997}
-  MasterDialogue: {fileID: 11400000}
-  Blackboard:
-    Bank: {fileID: 3482111983400843739}
-  State: 0
-  ExitDialogueAfterwards: 0
-  PersonIndex: 0
-  TargetNode: {fileID: 1326889792880528920}
+  Next: {fileID: 7873461484329537452}
+  m_text: Okay, bud. Do your best.
 --- !u!114 &-1399893973709126951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,16 +184,15 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
   Options:
-  - Speech: I've done it.
-    AdditionalData:
+  - Text: I've done it.
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -232,8 +209,8 @@ MonoBehaviour:
         m_stringValue: 
         m_boolValue: 1
     LeadsTo: {fileID: -914008930283711827}
-  - Speech: I am working on it.
-    AdditionalData:
+  - Text: I am working on it.
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -243,7 +220,7 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: -1965666318695130335}
-  Speech: Oh yeah, I've totally forgotten about that! What have you done?
+  m_text: Okay, what is it?
 --- !u!114 &-914008930283711827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +239,6 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   VBActions:
   - m_setType: 0
@@ -299,7 +275,6 @@ MonoBehaviour:
   - {fileID: -914008930283711827}
   - {fileID: 6287193538585539002}
   - {fileID: -1965666318695130335}
-  - {fileID: -1633778966378657852}
   - {fileID: 1239550416686042660}
   - {fileID: 9119168445957565552}
   - {fileID: -3621898333564505408}
@@ -307,6 +282,8 @@ MonoBehaviour:
   - {fileID: 7512322125377748830}
   - {fileID: -2127933438961997456}
   - {fileID: 7901140551254700991}
+  - {fileID: 1839565436388208056}
+  - {fileID: 7873461484329537452}
   m_people:
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
   Blackboard:
@@ -329,7 +306,6 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TrueNext: {fileID: -3899366801720709168}
   FalseNext: {fileID: 9119168445957565552}
@@ -374,10 +350,28 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   Next: {fileID: 6611807328144254293}
   DialoguePartName: loop
+--- !u!114 &1839565436388208056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
+  m_Name: ExitNode
+  m_EditorClassIdentifier: 
+  Guid: 780f88a861213254c9385f7b9e50d597
+  Position: {x: 1389.0002, y: 234.30002}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  PersonIndex: 0
 --- !u!114 &3482111983400843739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,15 +414,14 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
-  Next: {fileID: -1633778966378657852}
-  Speech: Thank you so much!
+  Next: {fileID: 1839565436388208056}
+  m_text: Thank you!
 --- !u!114 &6611807328144254293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,16 +440,15 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
   Options:
-  - Speech: Do you have any missions for me?
-    AdditionalData:
+  - Text: Do you have missions for me?
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -466,8 +458,8 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 1239550416686042660}
-  - Speech: I am here for the mission.
-    AdditionalData:
+  - Text: I am here for the mission.
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -491,7 +483,7 @@ MonoBehaviour:
         m_stringValue: 
         m_boolValue: 0
     LeadsTo: {fileID: -1399893973709126951}
-  Speech: So, What do you want?
+  m_text: Oh, hello! What  do you want?
 --- !u!114 &7512322125377748830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,9 +502,27 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   TargetNode: {fileID: 1326889792880528920}
+--- !u!114 &7873461484329537452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
+  m_Name: ExitNode
+  m_EditorClassIdentifier: 
+  Guid: 7dabfef6710c9d446ba7ae57cacc4df1
+  Position: {x: 1391.1002, y: 401.85007}
+  MasterDialogue: {fileID: 11400000}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  PersonIndex: 0
 --- !u!114 &7901140551254700991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +541,6 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
   VBActions:
   - m_setType: 0
@@ -563,16 +572,15 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
-  ExitDialogueAfterwards: 0
   PersonIndex: 0
-  m_additionalData:
+  m_extraData:
     m_audioClip: {fileID: 0}
     m_animMemberName: 
     m_sprite: {fileID: 0}
     m_customInfo: []
   Options:
-  - Speech: Okay.
-    AdditionalData:
+  - Text: Okay.
+    ExtraData:
       m_audioClip: {fileID: 0}
       m_animMemberName: 
       m_sprite: {fileID: 0}
@@ -582,4 +590,4 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 7512322125377748830}
-  Speech: No, I don't have anything for you right now.
+  m_text: No, I don't have anything for you right now.

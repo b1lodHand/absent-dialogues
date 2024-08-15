@@ -148,10 +148,10 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// It teleports the flow back to the root node.
         /// </summary>
-        public void Initialize()
+        public void Initialize(DialogueFlowContext context = null)
         {
             AllNodes.ForEach(node => node.SetState(Node.NodeState.Unreached));
-            RootNode.Reach();
+            RootNode.Reach(context);
         }
 
         /// <summary>
@@ -187,9 +187,9 @@ namespace com.absence.dialoguesystem
         /// if you're not adding an extra functionality. You can consider using <see cref="DialoguePlayer"/> instead.
         /// </summary>
         /// <param name="passData"></param>
-        public void Pass(params object[] passData)
+        public void Pass(DialogueFlowContext context)
         {
-            if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(passData);
+            if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(context);
         }
     }
 }

@@ -15,13 +15,13 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "rootNode";
         public override string GetTitle() => "Root";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
             if (Next == null) return;
 
-            Next.Reach();
+            Next.Reach(context);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
 
         }
@@ -55,7 +55,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void DelayedClone(Dialogue originalDialogue)
         {
-            Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 

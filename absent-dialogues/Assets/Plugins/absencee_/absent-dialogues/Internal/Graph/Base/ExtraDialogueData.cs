@@ -7,7 +7,7 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     [System.Serializable]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html")]
-    public class AdditionalSpeechData
+    public class ExtraDialogueData
     {
         [SerializeField] private AudioClip m_audioClip;
 

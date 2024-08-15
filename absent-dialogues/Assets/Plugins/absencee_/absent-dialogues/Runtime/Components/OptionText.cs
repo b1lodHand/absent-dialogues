@@ -10,12 +10,13 @@ namespace com.absence.dialoguesystem
     /// </summary>
     [AddComponentMenu("absencee_/absent-dialogues/UI/Option Text")]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")]
-    public class DialogueOptionText : MonoBehaviour
+    public class OptionText : MonoBehaviour
     {
         [SerializeField, Required, Tooltip("The text that will show the option speech.")] private TMP_Text m_text;
         int m_index;
 
         public event Action<int> OnClickAction;
+        public event Action OnSelectAction;
 
         /// <summary>
         /// Sets the index and the text of this option.
@@ -34,6 +35,11 @@ namespace com.absence.dialoguesystem
         public void OnClick()
         {
             OnClickAction?.Invoke(m_index);
+        }
+
+        public void OnSelect()
+        {
+            OnSelectAction?.Invoke();
         }
     }
 

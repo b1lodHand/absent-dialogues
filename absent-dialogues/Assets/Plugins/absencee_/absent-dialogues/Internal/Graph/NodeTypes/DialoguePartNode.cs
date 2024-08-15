@@ -16,11 +16,11 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "dialoguePartNode";
         public override string GetTitle() => $"Dialogue Part";
 
-        protected override void Pass_Inline(params object[] passData)
+        protected override void Pass_Inline(DialogueFlowContext context)
         {
-            if (Next != null) Next.Reach();
+            if (Next != null) Next.Reach(context);
         }
-        protected override void Reach_Inline()
+        protected override void Reach_Inline(DialogueFlowContext context)
         {
 
         }

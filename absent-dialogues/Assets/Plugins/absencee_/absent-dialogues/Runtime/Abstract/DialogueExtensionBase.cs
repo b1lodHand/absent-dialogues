@@ -30,11 +30,11 @@ namespace com.absence.dialoguesystem
         public sbyte Order => m_order;
 
         /// <summary>
-        /// Use to define what to do with the current <see cref="AdditionalSpeechData"/>. Gets called when the <see cref="m_instance"/>
+        /// Use to define what to do with the current <see cref="ExtraDialogueData"/>. Gets called when the <see cref="m_instance"/>
         /// progresses.
         /// </summary>
         /// <param name="data"></param>
-        public virtual void OnHandleAdditionalData(AdditionalSpeechData data)
+        public virtual void OnHandleExtraData(ExtraDialogueData data)
         {
 
         }
@@ -45,7 +45,7 @@ namespace com.absence.dialoguesystem
         /// <param name="speaker">Speaker of this speech.</param>
         /// <param name="speech">Speech in context.</param>
         /// <param name="options">Option of this speech.</param>
-        public virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
+        public virtual void OnBeforeSpeech(DialogueFlowContext context)
         {
             
         }

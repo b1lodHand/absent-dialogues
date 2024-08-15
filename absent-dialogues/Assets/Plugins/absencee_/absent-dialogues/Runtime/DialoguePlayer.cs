@@ -21,9 +21,9 @@ namespace com.absence.dialoguesystem
         public enum PlayerState
         {
             /// <summary>
-            /// The player is not displaying any dialogue or the current node is not <see cref="IContainSpeech"/>.
+            /// The player is not displaying any dialogue or the current node has no text.
             /// </summary>
-            NoSpeech = 0,
+            NoText = 0,
             /// <summary>
             /// The player is displaying a speech which has some options and waiting for player to pick an option.
             /// </summary>     
@@ -31,7 +31,7 @@ namespace com.absence.dialoguesystem
             /// <summary>
             /// The player is displaying a speech without any options and waiting for the player to skip it.
             /// </summary>
-            WaitingForSkip = 2,
+            WaitingForInput = 2,
             /// <summary>
             /// The player's last node was a <see cref="Node.ExitDialogueAfterwards"/>.
             /// </summary>
@@ -53,6 +53,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Readonly] private Node m_currentNode;
         [SerializeField, Readonly] private VariableBank m_blackboardBank;
         [SerializeField, Readonly] private Blackboard m_blackboard;
+        [SerializeField, Readonly] private DialogueFlowContext m_context;
 
         /// <summary>
         /// Person who speaks.
@@ -62,28 +63,29 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Additional data of the current node.
         /// </summary>
-        public AdditionalSpeechData AdditionalSpeechData => (m_currentNode as IContainSpeech).GetAdditionalSpeechData();
+        public ExtraDialogueData ExtraDialogueData => m_context.ExtraData;
 
         /// <summary>
         /// Speech of the current node.
         /// </summary>
-        public string Speech => (m_currentNode as IContainSpeech).Speech;
+        public string Text => m_context.Text;
 
         /// <summary>
         /// Options of the current node, if there is any.
         /// </summary>
-        public List<Option> Options => (m_currentNode as IContainSpeech).Options;
+        public List<OptionHandle> OptionIndexPairs => m_context.OptionIndexPairs;
 
+        public DialogueFlowContext Context => m_context;
 
         /// <summary>
-        /// Use to check if current node is a <see cref="IContainSpeech"/> or not.
+        /// Use to check if current node has any text.
         /// </summary>
-        public bool HasSpeech => (m_currentNode is IContainSpeech);
+        public bool HasText => (m_context.HasText);
 
         /// <summary>
         /// Use to check if current node is a <see cref="FastSpeechNode"/> or not.
         /// </summary>
-        public bool HasOptions => (m_currentNode is DecisionSpeechNode);
+        public bool HasOptions => (m_context.HasOptions);
 
         /// <summary>
         /// Use to check if current node <see cref="Node.PersonDependent"/> or not.
@@ -108,8 +110,7 @@ namespace com.absence.dialoguesystem
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
             TeleportToRoot();
-
-            m_state = PlayerState.NoSpeech;
+            m_state = PlayerState.NoText;
         }
 
         /// <summary>
@@ -120,15 +121,14 @@ namespace com.absence.dialoguesystem
         public DialoguePlayer(Dialogue dialogue, List<Person> overridePeople)
         {
             m_dialogue = dialogue.Clone();
-            //m_dialogue = dialogue;
 
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
             m_dialogue.OverridePeople(overridePeople);
 
-            m_dialogue.Initialize();
-            m_state = PlayerState.NoSpeech;
+            TeleportToRoot();
+            m_state = PlayerState.NoText;
         }
 
         /// <summary>
@@ -136,7 +136,9 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void TeleportToRoot()
         {
-            m_dialogue.Initialize();
+            m_context = new();
+
+            m_dialogue.Initialize(m_context);
             m_currentNode = m_dialogue.LastOrCurrentNode;
         }
 
@@ -146,29 +148,35 @@ namespace com.absence.dialoguesystem
         /// <param name="passData">
         /// Anything that you want to pass as data. (e.g. <see cref="DecisionSpeechNode"/> uses the [0] element to get the selected option index.)
         /// </param>
-        public void Continue(params object[] passData)
+        public void Continue()
         {
-            if (m_currentNode.ExitDialogueAfterwards)
+            if (m_context.WillExit)
             {
                 m_state = PlayerState.WillExit;
-                Pass(passData);
+                Pass(m_context);
 
                 OnContinue?.Invoke(m_state);
                 return;
             }
 
-            Pass(passData);
+            Pass(m_context);
 
-            if (!(m_currentNode is IContainSpeech)) m_state = PlayerState.NoSpeech;
-            else if (m_currentNode is FastSpeechNode) m_state = PlayerState.WaitingForSkip;
-            else if (m_currentNode is DecisionSpeechNode) m_state = PlayerState.WaitingForOption;
+            if (!m_context.HasText)
+            {
+                m_state = PlayerState.NoText;
+                OnContinue?.Invoke(m_state);
+                return;
+            }
+
+            if (!m_context.HasOptions) m_state = PlayerState.WaitingForInput;
+            else m_state = PlayerState.WaitingForOption;
 
             OnContinue?.Invoke(m_state);
         }
 
-        void Pass(params object[] passData)
+        void Pass(DialogueFlowContext context)
         {
-            m_dialogue.Pass(passData);
+            m_dialogue.Pass(context);
             m_currentNode = m_dialogue.LastOrCurrentNode;
         }
     }

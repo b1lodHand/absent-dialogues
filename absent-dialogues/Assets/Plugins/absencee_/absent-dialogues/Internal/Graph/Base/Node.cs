@@ -29,8 +29,6 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Blackboard Blackboard;
 
         [HideInInspector] public NodeState State = NodeState.Unreached;
-        [Tooltip("Toggling this on will make the dialogue exit right after this node getting passed.")] 
-        public bool ExitDialogueAfterwards = false;
 
         /// <summary>
         /// Action which will get invoked when the state of this node gets changed.
@@ -125,20 +123,24 @@ namespace com.absence.dialoguesystem.internals
             return result;
         }
 
-        public void Pass(params object[] passData)
+        public void Pass(DialogueFlowContext context)
         {
             SetState(NodeState.Past);
 
+            context.State = DialogueFlowContext.ContextState.Pass;
+
             OnPass?.Invoke();
-            Pass_Inline(passData);
+            Pass_Inline(context);
         }
-        public void Reach()
+        public void Reach(DialogueFlowContext context)
         {
             MasterDialogue.LastOrCurrentNode = this;
             SetState(NodeState.Current);
 
+            context.State = DialogueFlowContext.ContextState.Reach;
+
             OnReach?.Invoke();
-            Reach_Inline();
+            Reach_Inline(context);
         }
         public void OnRemoval()
         {
@@ -168,12 +170,12 @@ namespace com.absence.dialoguesystem.internals
         /// Use to write what happenswhen the dialogue passes this node.
         /// </summary>
         /// <param name="passData"></param>
-        protected abstract void Pass_Inline(params object[] passData);
+        protected abstract void Pass_Inline(DialogueFlowContext context);
 
         /// <summary>
         /// Use to write what happens when the dialogue reaches this node.
         /// </summary>
-        protected abstract void Reach_Inline();
+        protected abstract void Reach_Inline(DialogueFlowContext context);
 
         /// <summary>
         /// Use to describe the name of the input port of this node.

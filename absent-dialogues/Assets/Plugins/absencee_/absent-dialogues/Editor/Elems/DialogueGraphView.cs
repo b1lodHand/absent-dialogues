@@ -273,6 +273,8 @@ namespace com.absence.dialoguesystem.editor
 
         internal void SelectNode(Node node)
         {
+            if (node == null) return;
+
             NodeView view = FindNodeView(node);
             ISelectable selectableNode = view.GetFirstOfType<ISelectable>();
 

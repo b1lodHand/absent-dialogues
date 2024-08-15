@@ -17,7 +17,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Required] private AudioSource m_source;
         [SerializeField, HideIf(nameof(m_source), null), Range(0f, 10f)] private float m_volume = 1f;
 
-        public override void OnHandleAdditionalData(AdditionalSpeechData data)
+        public override void OnHandleExtraData(ExtraDialogueData data)
         {
             if (data.AudioClip == null) return;
             if (m_source == null) return;

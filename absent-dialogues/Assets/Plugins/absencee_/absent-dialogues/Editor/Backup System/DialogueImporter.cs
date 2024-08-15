@@ -95,11 +95,11 @@ namespace com.absence.dialoguesystem.editor.backup
             node.Guid = GUID.Generate().ToString();
             node.Position.x = data.PositionX;
             node.Position.y = data.PositionY;
-            node.ExitDialogueAfterwards = data.ExitDialogueAfterwards;
+            //node.ExitDialogueAfterwards = data.ExitDialogueAfterwards; deprecated.
 
-            if(node is IContainSpeech speecher)
+            if(node is IContainData speecher)
             {
-                speecher.Speech = data.Speech;
+                speecher.Text = data.Speech;
                 List<Option> options = data.OptionDatas.ToList().ConvertAll(optionData => ReadOptionData(optionData)).ToList();
                 if(options.Count > 0) speecher.Options = new(options);
             }
@@ -155,7 +155,7 @@ namespace com.absence.dialoguesystem.editor.backup
         public static Option ReadOptionData(OptionData data)
         {
             Option option = new();
-            option.Speech = data.Speech;
+            option.Text = data.Speech;
             option.UseShowIf = data.ShowIfInUse;
 
             option.Visibility = new Option.ShowIf();
