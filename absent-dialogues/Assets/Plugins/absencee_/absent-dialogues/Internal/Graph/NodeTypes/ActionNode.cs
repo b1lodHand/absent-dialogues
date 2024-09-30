@@ -1,3 +1,4 @@
+using com.absence.attributes;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
 using System;
@@ -22,10 +23,18 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
     public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
-        [Tooltip("All of the 'VariableBank' based actions of this action node.")] 
+        public bool UsedByMapper = false;
+        [ShowIf(nameof(UsedByMapper))] public string UniqueMapperId;
+
+        [Space(10)]
+
+        [Tooltip("All of the 'VariableBank' based actions of this action node.")]
         public List<NodeVariableSetter> VBActions = new();
 
-        [Tooltip("All of the unity based events of this action node.")] public UnityEvent UnityEvents;
+        [Space(10)]
+
+        [Tooltip("All of the unity based events of this action node.")]
+        public UnityEvent UnityEvents;
 
         [HideInInspector] public Node Next;
 

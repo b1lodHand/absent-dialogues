@@ -37,6 +37,12 @@ namespace com.absence.dialoguesystem.editor
 
         void DrawGUI(SerializedObject dialogue)
         {
+            if (dialogue == null)
+            {
+                Debug.LogWarning("Associated dialogue graph is somehow deleted.");
+                return;
+            }
+
             SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
             if (blackboardProperty == null) return;
 

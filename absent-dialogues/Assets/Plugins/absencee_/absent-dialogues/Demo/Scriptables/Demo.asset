@@ -240,6 +240,8 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
+  UsedByMapper: 1
+  UniqueMapperId: 
   VBActions:
   - m_setType: 0
     m_targetBankGuid: b2261a92-cd16-4dc7-b225-4c3a6bd6af9a
@@ -542,6 +544,8 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
+  UsedByMapper: 0
+  UniqueMapperId: 
   VBActions:
   - m_setType: 0
     m_targetBankGuid: b2261a92-cd16-4dc7-b225-4c3a6bd6af9a
@@ -567,7 +571,7 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: d3b46e06c6cbf8347868f38b7c31d4c3
-  Position: {x: 784.00006, y: -214.00003}
+  Position: {x: 792.00006, y: -204.25096}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}

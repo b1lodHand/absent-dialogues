@@ -59,6 +59,7 @@ namespace com.absence.dialoguesystem
         /// </summary>
         [HideInInspector] public Blackboard Blackboard;
 
+#if UNITY_EDITOR
         /// <summary>
         /// Use to create new nodes. Using runtime is not recommended.
         /// </summary>
@@ -66,6 +67,8 @@ namespace com.absence.dialoguesystem
         /// <returns></returns>
         public Node CreateNode(System.Type type)
         {
+            if (IsClone) throw new Exception("You cannot edit contents (besides of the people of it) of a clone dialogue graph.");
+
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
 
@@ -84,9 +87,12 @@ namespace com.absence.dialoguesystem
         /// <param name="node"></param>
         public void DeleteNode(Node node)
         {
+            if (IsClone) throw new Exception("You cannot edit contents (besides of the people of it) of a clone dialogue graph.");
+
             AllNodes.Remove(node);
             node.OnRemoval();
         }
+#endif
 
         /// <summary>
         /// Use to find <see cref="DialoguePartNode"/>s with a specific name.
@@ -176,6 +182,11 @@ namespace com.absence.dialoguesystem
         /// <param name="overridePeople"></param>
         public void OverridePeople(List<Person> overridePeople)
         {
+            if (!IsClone)
+            {
+                Debug.LogWarning("Overriding people of a non-clone dialogue graph is not recommended.");
+            } 
+
             if (overridePeople != null)
             {
                 m_people = new List<Person>(overridePeople);
@@ -189,6 +200,11 @@ namespace com.absence.dialoguesystem
         /// <param name="passData"></param>
         public void Pass(DialogueFlowContext context)
         {
+            if (!IsClone)
+            {
+                Debug.LogWarning("Progressing in a non-clone dialogue graph is not recommended.");
+            }
+
             if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(context);
         }
     }

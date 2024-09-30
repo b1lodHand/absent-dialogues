@@ -25,7 +25,10 @@ namespace com.absence.dialoguesystem.internals
         }
 
         [HideInInspector] public string Guid;
+
+#if UNITY_EDITOR
         [HideInInspector] public Vector2 Position = new();
+#endif
 
         [Readonly] public Dialogue MasterDialogue;
         [HideInInspector] public Blackboard Blackboard;

@@ -455,6 +455,7 @@ namespace com.absence.dialoguesystem.editor
             Label showIfLabel = new Label("Show if in use.");
             showIfLabel.AddToClassList("optionShowIfLabel");
             showIfLabel.name = "show-if-label";
+            showIfLabel.tooltip = "NODATA";
 
             top.Add(removeButton);
             top.Add(showIfLabel);
