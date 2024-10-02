@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -570,6 +569,7 @@ GameObject:
   - component: {fileID: 560826871}
   - component: {fileID: 560826872}
   - component: {fileID: 560826873}
+  - component: {fileID: 560826874}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -611,6 +611,7 @@ MonoBehaviour:
   m_extensionList:
   - {fileID: 560826872}
   - {fileID: 560826873}
+  - {fileID: 560826874}
   m_player:
     m_state: 0
     m_dialogue: {fileID: 0}
@@ -618,6 +619,16 @@ MonoBehaviour:
     m_blackboardBank: {fileID: 0}
     m_blackboard:
       Bank: {fileID: 0}
+    m_context:
+      OptionIndex: -1
+      State: 0
+      Text: 
+      OptionIndexPairs: []
+      ExtraData:
+        m_audioClip: {fileID: 0}
+        m_animMemberName: 
+        m_sprite: {fileID: 0}
+        m_customInfo: []
 --- !u!114 &560826872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +657,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
   m_order: 1
+--- !u!114 &560826874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560826869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed120969bdb614c48a3f76faace2e3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_instance: {fileID: 560826871}
+  m_order: 0
+  m_actionMapPairs:
+  - TargetActionNode: {fileID: -914008930283711827, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
+    AttachedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    Enabled: 1
+    BackupGuid: 1b00f74471196944ebb0794b4dfc1216
+    m_editorProperties:
+      IsFoldout: 1
 --- !u!1 &673667125
 GameObject:
   m_ObjectHideFlags: 0

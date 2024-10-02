@@ -2,6 +2,7 @@ using com.absence.attributes;
 using com.absence.variablesystem;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -119,6 +120,16 @@ namespace com.absence.dialoguesystem.internals
                     VBProcessType.Any => ShowIfList.Any(comparer => comparer.GetResult()),
                     _ => true,
                 };
+            }
+
+            public override string ToString()
+            {
+                return GetConditionString(false);
+            }
+
+            public string GetConditionString(bool richText = false)
+            {
+                return Utilities.Comparison.GetConditionString(ShowIfList, Processor, richText);
             }
         }
     }

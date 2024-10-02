@@ -49,11 +49,6 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action OnValidateAction;
 
-        private void OnValidate()
-        {
-            OnValidateAction?.Invoke();
-        }
-
         /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
@@ -206,6 +201,11 @@ namespace com.absence.dialoguesystem
             }
 
             if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(context);
+        }
+
+        public void OnValidate()
+        {
+            OnValidateAction?.Invoke();
         }
     }
 }

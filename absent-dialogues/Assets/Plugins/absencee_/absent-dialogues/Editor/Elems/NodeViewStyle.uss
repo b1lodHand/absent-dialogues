@@ -65,11 +65,6 @@
     flex-wrap: nowrap;
 }
 
-#title {
-    -unity-font-style: normal;
-    -unity-text-align: upper-center;
-}
-
 #option {
     display: none;
 }
@@ -112,6 +107,8 @@
     margin-left: 6px;
     font-size: 12px;
     background-color: rgba(0, 0, 0, 0);
+    white-space: normal;
+    -unity-text-align: middle-center;
 }
 
 :hover > #selection-border {
@@ -176,7 +173,6 @@
 .fastSpeechNode {
     min-width: 230px;
     width: auto;
-    max-width: 350px;
 }
 
 .fastSpeechNode #speech {
@@ -187,21 +183,20 @@
 .dialoguePartNode {
     height: auto;
     width: auto;
-    min-width: 115px;
-    min-height: 72px;
+    min-height: 58px;
 }
 
 .dialoguePartNode #title {
     -unity-text-align: upper-left;
+    -unity-font-style: bold;
 }
 
 .rootNode {
-    width: 80px;
-    height: 53px;
+    width: auto;
+    height: auto;
 }
 
 .rootNode #title {
-    -unity-text-align: upper-left;
     -unity-font-style: bold;
 }
 
@@ -445,45 +440,39 @@
 }
 
 #node-icon {
-    position: absolute;
+    position: relative;
     left: 2px;
     top: 2px;
-    border-left-color: rgb(171, 68, 63);
-    border-right-color: rgb(171, 68, 63);
-    border-top-color: rgb(171, 68, 63);
-    border-bottom-color: rgb(171, 68, 63);
-    border-top-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
     width: 16px;
     height: 16px;
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.76);
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-top: 1px;
+}
+
+.mapped #node-icon {
+    -unity-background-image-tint-color: rgba(63, 166, 171, 0.76);
 }
 
 .gotoNode #node-icon {
-    position: absolute;
-    top: 4px;
-    left: 3px;
     background-image: resource('node-icon-goto');
 }
 
 .decisionSpeechNode #node-icon {
     background-image: none;
-    position: absolute;
+    width: 0;
+    height: 0;
 }
 
 .fastSpeechNode #node-icon {
     background-image: none;
-    position: absolute;
-    top: 1px;
+    width: 0;
+    height: 0;
 }
 
 .rootNode #node-icon {
     background-image: resource('node-icon-root');
-    opacity: 1;
-    position: absolute;
-    left: 51px;
     border-left-color: rgb(139, 119, 190);
     border-right-color: rgb(139, 119, 190);
     border-top-color: rgb(139, 119, 190);
@@ -492,24 +481,15 @@
 }
 
 .dialoguePartNode #node-icon {
-    position: absolute;
     background-image: resource('node-icon-root');
-    left: 84px;
-    top: 3px;
 }
 
 .actionNode #node-icon {
     background-image: resource('node-icon-action');
-    left: 3px;
-    top: 3px;
-    position: absolute;
 }
 
 .conditionNode #node-icon {
     background-image: resource('node-icon-condition');
-    left: 5px;
-    top: 3px;
-    position: absolute;
 }
 
 .exitNode #node-icon {
@@ -519,6 +499,8 @@
     background-image: resource('node-icon-goto');
     -unity-background-image-tint-color: rgb(171, 68, 63);
     display: none;
+    width: 0;
+    height: 0;
 }
 
 .exitNode #title {
@@ -528,7 +510,6 @@
 .exitNode #node-border {
     border-top-color: rgb(171, 68, 63);
 }
-
 
 #person-field {
     display: none;
@@ -548,7 +529,6 @@
     display: none;
     visibility: visible;
     align-self: center;
-    align-items: center;
 }
 
 .gotoNode #goto-dropdown {
@@ -566,4 +546,27 @@
 
 .goto-field .unity-popup-field__label {
     display: none;
+}
+
+.rootNode #initial {
+    flex-direction: row-reverse;
+}
+
+.dialoguePartNode #initial {
+    flex-direction: row-reverse;
+}
+
+#initial {
+    flex-grow: 1;
+    flex-direction: row;
+    padding-right: 6px;
+    padding-bottom: 1px;
+}
+
+.actionNode #title {
+    padding-right: 6px;
+}
+
+.conditionNode #title {
+    padding-right: 6px;
 }

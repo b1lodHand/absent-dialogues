@@ -117,7 +117,7 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableSetter> GetSetters() => null;
 
-        protected override void OnValidate()
+        public override void OnValidate()
         {
             Options.ForEach(option =>
             {

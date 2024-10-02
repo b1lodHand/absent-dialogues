@@ -105,12 +105,66 @@ namespace com.absence.dialoguesystem.editor
             {
                 node.OnValidation -= RefreshDialoguePartFinder;
                 node.OnValidation += RefreshDialoguePartFinder;
+
+                node.OnValidation += RefreshDialoguePartTitle;
+                node.OnValidation += RefreshDialoguePartTitle;
+            }
+            else if (node is ActionNode)
+            {
+                node.OnValidation -= RefreshActionMapProps;
+                node.OnValidation += RefreshActionMapProps;
             }
             else if (node is GotoNode)
             {
                 DialogueEditorWindow.m_inspectorView.OnNodeValidation -= RefreshGotoDropdown;
                 DialogueEditorWindow.m_inspectorView.OnNodeValidation += RefreshGotoDropdown;
             }
+            else if (node is ConditionNode)
+            {
+                node.OnValidation -= RefreshConditionTooltip;
+                node.OnValidation += RefreshConditionTooltip;
+            }
+        }
+
+        private void RefreshConditionTooltip()
+        {
+            ConditionNode nodeAsCondition = Node as ConditionNode;
+            VisualElement icon = this.Q<VisualElement>("node-icon");
+
+            icon.tooltip = nodeAsCondition.GetConditionString(true);
+        }
+
+        private void RefreshDialoguePartTitle()
+        {
+            DialoguePartNode nodeAsDp = Node as DialoguePartNode;
+            Label title = this.Q<Label>("title-label");
+
+            string dpName = nodeAsDp.DialoguePartName;
+
+            if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.GetTitle();
+            else title.text = dpName;
+        }
+
+        private void RefreshActionMapProps()
+        {
+            ActionNode nodeAsAction = Node as ActionNode;
+            VisualElement icon = this.Q<VisualElement>("node-icon");
+            Label title = this.Q<Label>("title-label");
+
+            if (nodeAsAction.UsedByMapper)
+            {
+                AddToClassList("mapped");
+                title.text = nodeAsAction.UniqueMapperId;
+            }
+
+            else
+            {
+                RemoveFromClassList("mapped");
+                title.text = nodeAsAction.GetTitle();
+            }
+
+            if (nodeAsAction.UsedByMapper) icon.tooltip = nodeAsAction.UniqueMapperId;
+            else icon.tooltip = null;
         }
 
         private void RefreshDialoguePartFinder()
@@ -160,7 +214,6 @@ namespace com.absence.dialoguesystem.editor
         {
             if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
             else if (Node is GotoNode) DrawElems_GotoNode();
-            else if (Node is DialoguePartNode) DrawElems_DialoguePartNode();
 
             if (Node.PersonDependent) RefreshPersonDropdown();
             if (Node is IContainVariableManipulators) RefreshVariableManipulators();
@@ -234,15 +287,6 @@ namespace com.absence.dialoguesystem.editor
         private void SoftRefreshGotoLabel()
         {
             m_gotoDropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
-        }
-
-        private void DrawElems_DialoguePartNode()
-        {
-            Label nameLabel = new Label();
-            nameLabel.bindingPath = "DialoguePartName";
-            nameLabel.Bind(m_serializedNode);
-
-            this.Insert(0, nameLabel);
         }
         private void DrawElems_DecisionSpeechNode()
         {
@@ -345,9 +389,14 @@ namespace com.absence.dialoguesystem.editor
             {
                 m_optionElems.ForEach(optionElem =>
                 {
+                    Option targetOption = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)];
                     Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
 
-                    showIfLabel.visible = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)].UseShowIf;
+                    showIfLabel.visible = targetOption.UseShowIf;
+
+                    if (!showIfLabel.visible) return;
+
+                    showIfLabel.tooltip = targetOption.Visibility.GetConditionString(true);
                 });
             }
 

@@ -236,7 +236,7 @@ namespace com.absence.dialoguesystem.internals
 
         }
 
-        protected virtual void OnValidate()
+        public virtual void OnValidate()
         {
             OnValidation?.Invoke();
         }

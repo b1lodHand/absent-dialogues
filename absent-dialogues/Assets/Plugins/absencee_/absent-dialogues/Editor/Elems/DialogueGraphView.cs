@@ -197,6 +197,12 @@ namespace com.absence.dialoguesystem.editor
                 });
             });
 
+            dialogue.OnValidate();
+            dialogue.AllNodes.ForEach(n =>
+            {
+                n.OnValidate();
+            });
+
             OnPopulateView?.Invoke();
         }
 

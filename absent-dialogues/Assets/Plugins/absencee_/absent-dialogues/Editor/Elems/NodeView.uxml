@@ -2,12 +2,14 @@
     <Style src="project://database/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeViewStyle.uss?fileID=7433441132597879392&amp;guid=b58717021f98a4b41bd35bbd70c6872e&amp;type=3#NodeViewStyle" />
     <ui:VisualElement name="node-border">
         <ui:VisualElement name="contents" style="flex-direction: column;">
-            <ui:VisualElement name="node-icon" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0);" />
-            <ui:VisualElement name="title">
-                <ui:Label name="title-label" text="FastSpeechNode" class="unity-text-element unity-label" />
-                <ui:VisualElement name="title-button-container">
-                    <ui:VisualElement name="collapse-button">
-                        <ui:VisualElement name="icon" />
+            <ui:VisualElement name="initial">
+                <ui:VisualElement name="node-icon" />
+                <ui:VisualElement name="title" style="flex-grow: 1;">
+                    <ui:Label name="title-label" text="FastSpeechNode" class="unity-text-element unity-label" />
+                    <ui:VisualElement name="title-button-container">
+                        <ui:VisualElement name="collapse-button">
+                            <ui:VisualElement name="icon" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

@@ -277,6 +277,5 @@ namespace com.absence.dialoguesystem
 
             m_player = null;
         }
-
     }
 }

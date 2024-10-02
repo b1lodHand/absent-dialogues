@@ -98,7 +98,7 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableSetter> GetSetters() => new(VBActions);
 
-        protected override void OnValidate()
+        public override void OnValidate()
         {
             VBActions.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
 
