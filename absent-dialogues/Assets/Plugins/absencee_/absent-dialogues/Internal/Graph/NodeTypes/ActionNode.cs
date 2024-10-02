@@ -62,7 +62,13 @@ namespace com.absence.dialoguesystem.internals
         }
         protected override void Reach_Inline(DialogueFlowContext context)
         {
+            if (UsedByMapper)
+            {
+                context.InvokeAction = true;
+                context.ActionId = UniqueMapperId;
+            }
 
+            SetState(NodeState.Current);
         }
 
         protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)

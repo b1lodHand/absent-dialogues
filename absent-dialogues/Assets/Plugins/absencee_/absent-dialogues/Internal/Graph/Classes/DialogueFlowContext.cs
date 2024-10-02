@@ -14,6 +14,9 @@ namespace com.absence.dialoguesystem.internals
         public int OptionIndex;
         public ContextState State;
 
+        public bool InvokeAction;
+        public string ActionId;
+
         public string Text;
         public List<OptionHandle> OptionIndexPairs;
         public ExtraDialogueData ExtraData;
@@ -26,6 +29,8 @@ namespace com.absence.dialoguesystem.internals
         {
             WillExit = false;
             OptionIndex = -1;
+            ActionId = string.Empty;
+            InvokeAction = false;
             State = ContextState.Reach;
 
             OptionIndexPairs = new();

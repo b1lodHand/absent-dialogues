@@ -252,7 +252,7 @@ namespace com.absence.dialoguesystem
             {
                 if (!extension.enabled) return;
 
-                extension.OnBeforeSpeech(m_player.Context);
+                extension.OnProgress(m_player.Context);
             });
 
             OnBeforeProgress?.Invoke(m_player.Context);

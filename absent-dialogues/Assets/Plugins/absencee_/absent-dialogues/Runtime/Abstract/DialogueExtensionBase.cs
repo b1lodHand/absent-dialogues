@@ -45,7 +45,7 @@ namespace com.absence.dialoguesystem
         /// <param name="speaker">Speaker of this speech.</param>
         /// <param name="speech">Speech in context.</param>
         /// <param name="options">Option of this speech.</param>
-        public virtual void OnBeforeSpeech(DialogueFlowContext context)
+        public virtual void OnProgress(DialogueFlowContext context)
         {
             
         }

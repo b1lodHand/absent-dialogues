@@ -33,8 +33,9 @@ namespace com.absence.dialoguesystem.editor
 
             SerializedProperty eventProp = property.FindPropertyRelative("AttachedEvent");
             SerializedProperty enabledProp = property.FindPropertyRelative("Enabled");
-            ActionNode targetActionNode = (property.boxedValue as DialogueActionMapper.ActionMapPair).TargetActionNode;
+            SerializedProperty idProp = property.FindPropertyRelative("BackupId");
 
+            string id = idProp.stringValue;
             bool enabled = enabledProp.boolValue;
 
             float totalHeight = position.height;
@@ -47,9 +48,9 @@ namespace com.absence.dialoguesystem.editor
             foldoutLabelStyle.fontStyle = FontStyle.Bold;
 
             string foldoutLabel;
-            if (enabled) foldoutLabel = Utilities.Texts.ColorizeString(targetActionNode.UniqueMapperId, 
+            if (enabled) foldoutLabel = Utilities.Texts.ColorizeString(id, 
                 Constants.Tooltips.VARIABLE_NAME_HEX);
-            else foldoutLabel = Utilities.Texts.ColorizeString($"{targetActionNode.UniqueMapperId} [DISABLED]",
+            else foldoutLabel = Utilities.Texts.ColorizeString($"{id} [DISABLED]",
                 Constants.Tooltips.AND_HEX);
 
             isFoldout = EditorGUI.Foldout(position, isFoldout, 
@@ -62,7 +63,7 @@ namespace com.absence.dialoguesystem.editor
             position.y += EditorGUIUtility.singleLineHeight;
             position.y += s_vertical_spacing;
 
-            EditorGUI.PropertyField(position, eventProp, new GUIContent("Events: "), true);
+            EditorGUI.PropertyField(position, eventProp, new GUIContent("Events"), true);
 
             EditorGUI.EndProperty();
         }

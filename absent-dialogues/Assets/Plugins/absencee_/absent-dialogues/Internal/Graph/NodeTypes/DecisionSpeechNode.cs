@@ -25,7 +25,7 @@ namespace com.absence.dialoguesystem.internals
         public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
-        public override string GetTitle() => "Decision";
+        public override string GetTitle() => "Dialogue";
 
         protected override void Pass_Inline(DialogueFlowContext context)
         {

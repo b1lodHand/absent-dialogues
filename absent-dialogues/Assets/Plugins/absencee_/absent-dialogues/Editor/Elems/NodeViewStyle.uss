@@ -477,7 +477,7 @@
     border-right-color: rgb(139, 119, 190);
     border-top-color: rgb(139, 119, 190);
     border-bottom-color: rgb(139, 119, 190);
-    -unity-background-image-tint-color: rgb(173, 144, 242);
+    -unity-background-image-tint-color: rgb(63, 166, 171);
 }
 
 .dialoguePartNode #node-icon {
@@ -505,6 +505,7 @@
 
 .exitNode #title {
     -unity-text-align: upper-center;
+    -unity-font-style: bold;
 }
 
 .exitNode #node-border {
@@ -569,4 +570,12 @@
 
 .conditionNode #title {
     padding-right: 6px;
+}
+
+.mapped #title {
+    -unity-font-style: bold;
+}
+
+.gotoNode #title {
+    -unity-font-style: bold;
 }

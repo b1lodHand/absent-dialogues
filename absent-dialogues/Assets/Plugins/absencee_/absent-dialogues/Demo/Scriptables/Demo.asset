@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 31.15001, y: -5.0999875}
+  Position: {x: 60, y: 9}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: ActionNode
   m_EditorClassIdentifier: 
   Guid: 1b00f74471196944ebb0794b4dfc1216
-  Position: {x: 947, y: 231}
+  Position: {x: 954, y: 239}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: DialoguePartNode
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
-  Position: {x: 33, y: 116}
+  Position: {x: 57, y: 177}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -565,8 +565,8 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  UsedByMapper: 0
-  UniqueMapperId: 
+  UsedByMapper: 1
+  UniqueMapperId: Take
   VBActions:
   - m_setType: 0
     m_targetBankGuid: b2261a92-cd16-4dc7-b225-4c3a6bd6af9a

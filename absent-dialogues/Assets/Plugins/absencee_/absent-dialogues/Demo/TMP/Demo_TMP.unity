@@ -622,6 +622,8 @@ MonoBehaviour:
     m_context:
       OptionIndex: -1
       State: 0
+      InvokeAction: 0
+      ActionId: 
       Text: 
       OptionIndexPairs: []
       ExtraData:
@@ -675,9 +677,43 @@ MonoBehaviour:
   - TargetActionNode: {fileID: -914008930283711827, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
     AttachedEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 560826869}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: set_layer
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     Enabled: 1
+    BackupId: Commit
     BackupGuid: 1b00f74471196944ebb0794b4dfc1216
+    m_editorProperties:
+      IsFoldout: 1
+  - TargetActionNode: {fileID: 7901140551254700991, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
+    AttachedEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 560826869}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: set_layer
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    Enabled: 1
+    BackupId: Take
+    BackupGuid: 041a83cc15b72f744a1842a686410a85
     m_editorProperties:
       IsFoldout: 1
 --- !u!1 &673667125

@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.internals
         public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "fastSpeechNode";
-        public override string GetTitle() => "Fast";
+        public override string GetTitle() => "Skippable";
 
         protected override void Pass_Inline(DialogueFlowContext context)
         {

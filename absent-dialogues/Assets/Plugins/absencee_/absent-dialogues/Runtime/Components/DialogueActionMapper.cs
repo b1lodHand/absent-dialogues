@@ -29,6 +29,22 @@ namespace com.absence.dialoguesystem.runtime
             Fetch();
         }
 
+        public override void OnProgress(DialogueFlowContext context)
+        {
+            base.OnProgress(context);
+
+            if (!context.InvokeAction) return;
+
+            ActionMapPair targetPair = 
+                m_actionMapPairs.FirstOrDefault(pair => pair.TargetActionNode.UniqueMapperId.Equals(context.ActionId));
+
+            if (targetPair == null) return;
+
+            targetPair.AttachedEvent?.Invoke();
+            context.InvokeAction = false;
+            context.ActionId = string.Empty;
+        }
+
         void Fetch()
         {
             m_actionMapPairs.ForEach(pair =>
@@ -53,7 +69,6 @@ namespace com.absence.dialoguesystem.runtime
                 if (solved) pair.Enabled = true;
             });
         }
-
         void Search()
         {
             m_instance.ReferencedDialogue.AllNodes.ForEach(node =>
@@ -65,14 +80,13 @@ namespace com.absence.dialoguesystem.runtime
                 m_actionMapPairs.Add(new ActionMapPair(actionNode));
             });
         }
-
         void Cleanup()
         {
             for (int i = 0; i < m_actionMapPairs.Count; i++)
             {
                 ActionMapPair pair = m_actionMapPairs[i];   
 
-                if (pair.TargetActionNode == null) m_actionMapPairs.Remove(pair);
+                if (pair.TargetActionNode == null) pair.Enabled = false;
                 if (!pair.TargetActionNode.UsedByMapper) pair.Enabled = false;
             }
         }
@@ -95,6 +109,7 @@ namespace com.absence.dialoguesystem.runtime
             public ActionNode TargetActionNode;
             public UnityEvent AttachedEvent;
             public bool Enabled;
+            public string BackupId;
             public string BackupGuid;
 
 #if UNITY_EDITOR
@@ -106,6 +121,7 @@ namespace com.absence.dialoguesystem.runtime
                 TargetActionNode = targetActionNode;
                 AttachedEvent = new();
                 Enabled = true;
+                BackupId = targetActionNode.UniqueMapperId;
                 BackupGuid = targetActionNode.Guid;
 
                 TargetActionNode.OnValidation -= OnNodeValidate;
@@ -122,6 +138,7 @@ namespace com.absence.dialoguesystem.runtime
 
             private void OnNodeValidate()
             {
+                BackupId = TargetActionNode.UniqueMapperId;
                 Enabled = TargetActionNode.UsedByMapper;
             }
         }
