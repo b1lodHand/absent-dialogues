@@ -509,7 +509,7 @@
 }
 
 .exitNode #node-border {
-    border-top-color: rgb(171, 68, 63);
+    border-top-color: rgb(63, 166, 171);
 }
 
 #person-field {
