@@ -37,7 +37,6 @@ namespace com.absence.dialoguesystem.internals
             if (Options[optionSelected].LeadsTo == null) return;
 
             Options[optionSelected].LeadsTo.Reach(context);
-            SetState(NodeState.Past);
         }
         protected override void Reach_Inline(DialogueFlowContext context)
         {

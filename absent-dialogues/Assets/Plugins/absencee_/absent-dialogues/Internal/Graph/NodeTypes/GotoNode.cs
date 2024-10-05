@@ -23,7 +23,6 @@ namespace com.absence.dialoguesystem.internals
         {
             if (TargetNode == null) throw new System.Exception("Target node of GotoNode is null!");
 
-            SetState(NodeState.Past);
             TargetNode.Reach(context);
         }
         protected override void Reach_Inline(DialogueFlowContext context)

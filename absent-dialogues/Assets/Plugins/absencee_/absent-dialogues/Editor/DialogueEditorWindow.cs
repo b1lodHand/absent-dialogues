@@ -40,7 +40,8 @@ namespace com.absence.dialoguesystem.editor
             DialogueEditorWindow wnd = GetWindow<DialogueEditorWindow>();
             wnd.titleContent = new GUIContent()
             {
-                image = EditorGUIUtility.IconContent("d_Tile Icon").image,
+                //image = EditorGUIUtility.IconContent("d_Tile Icon").image,
+                image = AssetDatabase.LoadAssetAtPath<Texture>("Assets/Plugins/absencee_/absent-dialogues/Editor/Resources/editor-window-icon.png"),
                 text = "Dialogue Graph"
             };
         }

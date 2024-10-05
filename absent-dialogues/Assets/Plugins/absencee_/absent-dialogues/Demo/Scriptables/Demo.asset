@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 6f100eb26c145f149bde5f2b03877dc5
-  Position: {x: 1095.0325, y: 348.15997}
+  Position: {x: 1103, y: 357}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: TitleNode
   m_EditorClassIdentifier: 
   Guid: 185424cce0e60d54d940b5f0986f30fe
-  Position: {x: 436.55005, y: 262.2}
+  Position: {x: -38, y: -208}
   MasterDialogue: {fileID: 11400000}
   Blackboard:
     Bank: {fileID: 3482111983400843739}

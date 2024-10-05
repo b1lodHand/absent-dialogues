@@ -109,7 +109,7 @@ namespace com.absence.dialoguesystem
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
-            TeleportToRoot();
+            Initialize();
             m_state = PlayerState.NoText;
         }
 
@@ -127,7 +127,7 @@ namespace com.absence.dialoguesystem
 
             m_dialogue.OverridePeople(overridePeople);
 
-            TeleportToRoot();
+            Initialize();
             m_state = PlayerState.NoText;
         }
 
@@ -135,6 +135,12 @@ namespace com.absence.dialoguesystem
         /// Teleports the flow to the <see cref="RootNode"/> of the dialogue clone.
         /// </summary>
         public void TeleportToRoot()
+        {
+            m_dialogue.TeleportToRoot(m_context);
+            m_currentNode = m_dialogue.LastOrCurrentNode;
+        }
+
+        public void Initialize()
         {
             m_context = new();
 

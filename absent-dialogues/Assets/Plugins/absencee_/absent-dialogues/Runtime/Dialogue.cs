@@ -152,6 +152,11 @@ namespace com.absence.dialoguesystem
         public void Initialize(DialogueFlowContext context = null)
         {
             AllNodes.ForEach(node => node.SetState(Node.NodeState.Unreached));
+            TeleportToRoot(context);
+        }
+
+        public void TeleportToRoot(DialogueFlowContext context = null)
+        {
             RootNode.Reach(context);
         }
 

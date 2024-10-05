@@ -58,7 +58,6 @@ namespace com.absence.dialoguesystem.internals
             CustomAction();
 
             Next.Reach(context);
-            SetState(NodeState.Past);
         }
         protected override void Reach_Inline(DialogueFlowContext context)
         {

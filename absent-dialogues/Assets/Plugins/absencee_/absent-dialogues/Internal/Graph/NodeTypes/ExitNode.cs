@@ -10,7 +10,6 @@ namespace com.absence.dialoguesystem.internals
 
         protected override void Pass_Inline(DialogueFlowContext context)
         {
-            
         }
 
         protected override void Reach_Inline(DialogueFlowContext context)

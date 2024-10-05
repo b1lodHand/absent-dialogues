@@ -11,7 +11,6 @@ namespace com.absence.dialoguesystem.internals
     public sealed class RootNode : Node, IPerformDelayedClone
     {
         [HideInInspector] public Node Next;
-        public override bool DisplayState => false;
         public override string GetClassName() => "rootNode";
         public override string GetTitle() => "Root";
 

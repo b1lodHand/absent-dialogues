@@ -4,10 +4,10 @@
 }
 
 #selection-border {
-    border-left-color: rgb(255, 170, 0);
-    border-right-color: rgb(255, 170, 0);
-    border-top-color: rgb(255, 170, 0);
-    border-bottom-color: rgb(255, 170, 0);
+    border-left-color: rgb(171, 68, 63);
+    border-right-color: rgb(171, 68, 63);
+    border-top-color: rgb(171, 68, 63);
+    border-bottom-color: rgb(171, 68, 63);
     border-top-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
@@ -144,10 +144,10 @@
     border-right-width: 2px;
     border-bottom-width: 2px;
     border-left-width: 2px;
-    border-left-color: rgb(108, 108, 108);
-    border-right-color: rgb(108, 108, 108);
-    border-top-color: rgb(108, 108, 108);
-    border-bottom-color: rgb(108, 108, 108);
+    border-left-color: rgb(63, 112, 171);
+    border-right-color: rgb(63, 112, 171);
+    border-top-color: rgb(63, 112, 171);
+    border-bottom-color: rgb(63, 112, 171);
 }
 
 .current #state-border {
@@ -155,10 +155,10 @@
     border-right-width: 2px;
     border-bottom-width: 2px;
     border-left-width: 2px;
-    border-left-color: rgb(171, 68, 63);
-    border-right-color: rgb(171, 68, 63);
-    border-top-color: rgb(171, 68, 63);
-    border-bottom-color: rgb(171, 68, 63);
+    border-left-color: rgb(63, 166, 171);
+    border-right-color: rgb(63, 166, 171);
+    border-top-color: rgb(63, 166, 171);
+    border-bottom-color: rgb(63, 166, 171);
 }
 
 .conditionNode {
@@ -445,14 +445,14 @@
     top: 2px;
     width: 16px;
     height: 16px;
-    -unity-background-image-tint-color: rgba(255, 255, 255, 0.76);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
     flex-shrink: 0;
     flex-grow: 0;
     margin-top: 1px;
 }
 
 .mapped #node-icon {
-    -unity-background-image-tint-color: rgba(63, 166, 171, 0.76);
+    -unity-background-image-tint-color: rgb(63, 166, 171);
 }
 
 .gotoNode #node-icon {
@@ -578,4 +578,8 @@
 
 .gotoNode #title {
     -unity-font-style: bold;
+}
+
+.rootNode #node-border {
+    border-top-color: rgb(63, 166, 171);
 }
