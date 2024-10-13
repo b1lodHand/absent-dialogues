@@ -4,10 +4,10 @@
 }
 
 #selection-border {
-    border-left-color: rgb(171, 68, 63);
-    border-right-color: rgb(171, 68, 63);
-    border-top-color: rgb(171, 68, 63);
-    border-bottom-color: rgb(171, 68, 63);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
     border-top-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
