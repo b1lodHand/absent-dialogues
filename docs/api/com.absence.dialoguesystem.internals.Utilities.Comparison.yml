@@ -1,0 +1,350 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison
+  commentId: T:com.absence.dialoguesystem.internals.Utilities.Comparison
+  id: Utilities.Comparison
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon(com.absence.variablesystem.BaseVariableComparer.ComparisonType)
+  - com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString(System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer},com.absence.dialoguesystem.internals.VBProcessType,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: Utilities.Comparison
+  nameWithType: Utilities.Comparison
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Comparison
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static class Utilities.Comparison
+    content.vb: Public Module Utilities.Comparison
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString(System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer},com.absence.dialoguesystem.internals.VBProcessType,System.Boolean)
+  commentId: M:com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString(System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer},com.absence.dialoguesystem.internals.VBProcessType,System.Boolean)
+  id: GetConditionString(System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer},com.absence.dialoguesystem.internals.VBProcessType,System.Boolean)
+  parent: com.absence.dialoguesystem.internals.Utilities.Comparison
+  langs:
+  - csharp
+  - vb
+  name: GetConditionString(List<NodeVariableComparer>, VBProcessType, bool)
+  nameWithType: Utilities.Comparison.GetConditionString(List<NodeVariableComparer>, VBProcessType, bool)
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString(System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableComparer>, com.absence.dialoguesystem.internals.VBProcessType, bool)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetConditionString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static string GetConditionString(List<NodeVariableComparer> comparers, VBProcessType processType, bool richText = false)
+    parameters:
+    - id: comparers
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
+    - id: processType
+      type: com.absence.dialoguesystem.internals.VBProcessType
+    - id: richText
+      type: System.Boolean
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetConditionString(comparers As List(Of NodeVariableComparer), processType As VBProcessType, richText As Boolean = False) As String
+  overload: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString*
+  nameWithType.vb: Utilities.Comparison.GetConditionString(List(Of NodeVariableComparer), VBProcessType, Boolean)
+  fullName.vb: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString(System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableComparer), com.absence.dialoguesystem.internals.VBProcessType, Boolean)
+  name.vb: GetConditionString(List(Of NodeVariableComparer), VBProcessType, Boolean)
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon(com.absence.variablesystem.BaseVariableComparer.ComparisonType)
+  commentId: M:com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon(com.absence.variablesystem.BaseVariableComparer.ComparisonType)
+  id: GetComparisonTypeIcon(com.absence.variablesystem.BaseVariableComparer.ComparisonType)
+  parent: com.absence.dialoguesystem.internals.Utilities.Comparison
+  langs:
+  - csharp
+  - vb
+  name: GetComparisonTypeIcon(ComparisonType)
+  nameWithType: Utilities.Comparison.GetComparisonTypeIcon(BaseVariableComparer.ComparisonType)
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon(com.absence.variablesystem.BaseVariableComparer.ComparisonType)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetComparisonTypeIcon
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+    startLine: 70
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static string GetComparisonTypeIcon(BaseVariableComparer.ComparisonType comparisonType)
+    parameters:
+    - id: comparisonType
+      type: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetComparisonTypeIcon(comparisonType As BaseVariableComparer.ComparisonType) As String
+  overload: com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon*
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString*
+  commentId: Overload:com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString
+  href: com.absence.dialoguesystem.internals.Utilities.Comparison.html#com_absence_dialoguesystem_internals_Utilities_Comparison_GetConditionString_System_Collections_Generic_List_com_absence_dialoguesystem_internals_NodeVariableComparer__com_absence_dialoguesystem_internals_VBProcessType_System_Boolean_
+  name: GetConditionString
+  nameWithType: Utilities.Comparison.GetConditionString
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison.GetConditionString
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<NodeVariableComparer>
+  nameWithType: List<NodeVariableComparer>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.NodeVariableComparer>
+  nameWithType.vb: List(Of NodeVariableComparer)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.NodeVariableComparer)
+  name.vb: List(Of NodeVariableComparer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+    name: NodeVariableComparer
+    href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  - name: )
+- uid: com.absence.dialoguesystem.internals.VBProcessType
+  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.VBProcessType.html
+  name: VBProcessType
+  nameWithType: VBProcessType
+  fullName: com.absence.dialoguesystem.internals.VBProcessType
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon*
+  commentId: Overload:com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon
+  href: com.absence.dialoguesystem.internals.Utilities.Comparison.html#com_absence_dialoguesystem_internals_Utilities_Comparison_GetComparisonTypeIcon_com_absence_variablesystem_BaseVariableComparer_ComparisonType_
+  name: GetComparisonTypeIcon
+  nameWithType: Utilities.Comparison.GetComparisonTypeIcon
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison.GetComparisonTypeIcon
+- uid: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+  commentId: T:com.absence.variablesystem.BaseVariableComparer.ComparisonType
+  parent: com.absence.variablesystem
+  isExternal: true
+  name: BaseVariableComparer.ComparisonType
+  nameWithType: BaseVariableComparer.ComparisonType
+  fullName: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+  spec.csharp:
+  - uid: com.absence.variablesystem.BaseVariableComparer
+    name: BaseVariableComparer
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    isExternal: true
+  spec.vb:
+  - uid: com.absence.variablesystem.BaseVariableComparer
+    name: BaseVariableComparer
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    isExternal: true
+- uid: com.absence.variablesystem
+  commentId: N:com.absence.variablesystem
+  isExternal: true
+  name: com.absence.variablesystem
+  nameWithType: com.absence.variablesystem
+  fullName: com.absence.variablesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem
+    name: variablesystem
+    isExternal: true

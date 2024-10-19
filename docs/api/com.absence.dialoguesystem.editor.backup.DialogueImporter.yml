@@ -5,10 +5,7 @@ items:
   id: DialogueImporter
   parent: com.absence.dialoguesystem.editor.backup
   children:
-  - com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.editor.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
-  - com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData(com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData)
-  - com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData(com.absence.dialoguesystem.editor.backup.data.OptionData)
-  - com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData(com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData)
+  - com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
   langs:
   - csharp
   - vb
@@ -32,16 +29,16 @@ items:
     content.vb: Public Module DialogueImporter
   inheritance:
   - System.Object
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.editor.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.editor.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
-  id: Import(com.absence.dialoguesystem.editor.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
+- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
+  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
+  id: Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData,System.String,System.Action{com.absence.dialoguesystem.Dialogue})
   parent: com.absence.dialoguesystem.editor.backup.DialogueImporter
   langs:
   - csharp
   - vb
   name: Import(DialogueData, string, Action<Dialogue>)
   nameWithType: DialogueImporter.Import(DialogueData, string, Action<Dialogue>)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.editor.backup.data.DialogueData, string, System.Action<com.absence.dialoguesystem.Dialogue>)
+  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData, string, System.Action<com.absence.dialoguesystem.Dialogue>)
   type: Method
   source:
     remote:
@@ -58,7 +55,7 @@ items:
     content: public static void Import(DialogueData data, string pathToCreate, Action<Dialogue> onComplete = null)
     parameters:
     - id: data
-      type: com.absence.dialoguesystem.editor.backup.data.DialogueData
+      type: com.absence.dialoguesystem.runtime.backup.data.DialogueData
     - id: pathToCreate
       type: System.String
     - id: onComplete
@@ -66,101 +63,8 @@ items:
     content.vb: Public Shared Sub Import(data As DialogueData, pathToCreate As String, onComplete As Action(Of Dialogue) = Nothing)
   overload: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import*
   nameWithType.vb: DialogueImporter.Import(DialogueData, String, Action(Of Dialogue))
-  fullName.vb: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.editor.backup.data.DialogueData, String, System.Action(Of com.absence.dialoguesystem.Dialogue))
+  fullName.vb: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import(com.absence.dialoguesystem.runtime.backup.data.DialogueData, String, System.Action(Of com.absence.dialoguesystem.Dialogue))
   name.vb: Import(DialogueData, String, Action(Of Dialogue))
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData(com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData)
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData(com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData)
-  id: ReadComparerData(com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData)
-  parent: com.absence.dialoguesystem.editor.backup.DialogueImporter
-  langs:
-  - csharp
-  - vb
-  name: ReadComparerData(NodeVariableComparerData)
-  nameWithType: DialogueImporter.ReadComparerData(NodeVariableComparerData)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData(com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ReadComparerData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-    startLine: 130
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor.backup
-  syntax:
-    content: public static NodeVariableComparer ReadComparerData(NodeVariableComparerData data)
-    parameters:
-    - id: data
-      type: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-    return:
-      type: com.absence.dialoguesystem.internals.NodeVariableComparer
-    content.vb: Public Shared Function ReadComparerData(data As NodeVariableComparerData) As NodeVariableComparer
-  overload: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData*
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData(com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData)
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData(com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData)
-  id: ReadSetterData(com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData)
-  parent: com.absence.dialoguesystem.editor.backup.DialogueImporter
-  langs:
-  - csharp
-  - vb
-  name: ReadSetterData(NodeVariableSetterData)
-  nameWithType: DialogueImporter.ReadSetterData(NodeVariableSetterData)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData(com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ReadSetterData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-    startLine: 142
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor.backup
-  syntax:
-    content: public static NodeVariableSetter ReadSetterData(NodeVariableSetterData data)
-    parameters:
-    - id: data
-      type: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-    return:
-      type: com.absence.dialoguesystem.internals.NodeVariableSetter
-    content.vb: Public Shared Function ReadSetterData(data As NodeVariableSetterData) As NodeVariableSetter
-  overload: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData*
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData(com.absence.dialoguesystem.editor.backup.data.OptionData)
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData(com.absence.dialoguesystem.editor.backup.data.OptionData)
-  id: ReadOptionData(com.absence.dialoguesystem.editor.backup.data.OptionData)
-  parent: com.absence.dialoguesystem.editor.backup.DialogueImporter
-  langs:
-  - csharp
-  - vb
-  name: ReadOptionData(OptionData)
-  nameWithType: DialogueImporter.ReadOptionData(OptionData)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData(com.absence.dialoguesystem.editor.backup.data.OptionData)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ReadOptionData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueImporter.cs
-    startLine: 154
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor.backup
-  syntax:
-    content: public static Option ReadOptionData(OptionData data)
-    parameters:
-    - id: data
-      type: com.absence.dialoguesystem.editor.backup.data.OptionData
-    return:
-      type: com.absence.dialoguesystem.internals.Option
-    content.vb: Public Shared Function ReadOptionData(data As OptionData) As [Option]
-  overload: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData*
 references:
 - uid: com.absence.dialoguesystem.editor.backup
   commentId: N:com.absence.dialoguesystem.editor.backup
@@ -228,17 +132,17 @@ references:
   fullName: System
 - uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import*
   commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueImporter.Import
-  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html#com_absence_dialoguesystem_editor_backup_DialogueImporter_Import_com_absence_dialoguesystem_editor_backup_data_DialogueData_System_String_System_Action_com_absence_dialoguesystem_Dialogue__
+  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html#com_absence_dialoguesystem_editor_backup_DialogueImporter_Import_com_absence_dialoguesystem_runtime_backup_data_DialogueData_System_String_System_Action_com_absence_dialoguesystem_Dialogue__
   name: Import
   nameWithType: DialogueImporter.Import
   fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.Import
-- uid: com.absence.dialoguesystem.editor.backup.data.DialogueData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.DialogueData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.DialogueData.html
+- uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.DialogueData.html
   name: DialogueData
   nameWithType: DialogueData
-  fullName: com.absence.dialoguesystem.editor.backup.data.DialogueData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DialogueData
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -281,12 +185,12 @@ references:
   - uid: com.absence.dialoguesystem.Dialogue
     name: Dialogue
   - name: )
-- uid: com.absence.dialoguesystem.editor.backup.data
-  commentId: N:com.absence.dialoguesystem.editor.backup.data
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
   href: com.html
-  name: com.absence.dialoguesystem.editor.backup.data
-  nameWithType: com.absence.dialoguesystem.editor.backup.data
-  fullName: com.absence.dialoguesystem.editor.backup.data
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
   spec.csharp:
   - uid: com
     name: com
@@ -300,17 +204,17 @@ references:
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
+  - uid: com.absence.dialoguesystem.runtime.backup
     name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
+    href: com.absence.dialoguesystem.runtime.backup.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.data
+  - uid: com.absence.dialoguesystem.runtime.backup.data
     name: data
-    href: com.absence.dialoguesystem.editor.backup.data.html
+    href: com.absence.dialoguesystem.runtime.backup.data.html
   spec.vb:
   - uid: com
     name: com
@@ -324,17 +228,17 @@ references:
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
+  - uid: com.absence.dialoguesystem.runtime.backup
     name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
+    href: com.absence.dialoguesystem.runtime.backup.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.data
+  - uid: com.absence.dialoguesystem.runtime.backup.data
     name: data
-    href: com.absence.dialoguesystem.editor.backup.data.html
+    href: com.absence.dialoguesystem.runtime.backup.data.html
 - uid: System.Action`1
   commentId: T:System.Action`1
   isExternal: true
@@ -363,101 +267,3 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData*
-  commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData
-  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html#com_absence_dialoguesystem_editor_backup_DialogueImporter_ReadComparerData_com_absence_dialoguesystem_editor_backup_data_NodeVariableComparerData_
-  name: ReadComparerData
-  nameWithType: DialogueImporter.ReadComparerData
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadComparerData
-- uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData.html
-  name: NodeVariableComparerData
-  nameWithType: NodeVariableComparerData
-  fullName: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
-  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
-  name: NodeVariableComparer
-  nameWithType: NodeVariableComparer
-  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
-- uid: com.absence.dialoguesystem.internals
-  commentId: N:com.absence.dialoguesystem.internals
-  href: com.html
-  name: com.absence.dialoguesystem.internals
-  nameWithType: com.absence.dialoguesystem.internals
-  fullName: com.absence.dialoguesystem.internals
-  spec.csharp:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals
-    name: internals
-    href: com.absence.dialoguesystem.internals.html
-  spec.vb:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals
-    name: internals
-    href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData*
-  commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData
-  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html#com_absence_dialoguesystem_editor_backup_DialogueImporter_ReadSetterData_com_absence_dialoguesystem_editor_backup_data_NodeVariableSetterData_
-  name: ReadSetterData
-  nameWithType: DialogueImporter.ReadSetterData
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadSetterData
-- uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData.html
-  name: NodeVariableSetterData
-  nameWithType: NodeVariableSetterData
-  fullName: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
-  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
-  name: NodeVariableSetter
-  nameWithType: NodeVariableSetter
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
-- uid: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData*
-  commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData
-  href: com.absence.dialoguesystem.editor.backup.DialogueImporter.html#com_absence_dialoguesystem_editor_backup_DialogueImporter_ReadOptionData_com_absence_dialoguesystem_editor_backup_data_OptionData_
-  name: ReadOptionData
-  nameWithType: DialogueImporter.ReadOptionData
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueImporter.ReadOptionData
-- uid: com.absence.dialoguesystem.editor.backup.data.OptionData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.OptionData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.OptionData.html
-  name: OptionData
-  nameWithType: OptionData
-  fullName: com.absence.dialoguesystem.editor.backup.data.OptionData
-- uid: com.absence.dialoguesystem.internals.Option
-  commentId: T:com.absence.dialoguesystem.internals.Option
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Option.html
-  name: Option
-  nameWithType: Option
-  fullName: com.absence.dialoguesystem.internals.Option

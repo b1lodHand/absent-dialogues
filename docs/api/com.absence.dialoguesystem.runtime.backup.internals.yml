@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.internals
+  commentId: N:com.absence.dialoguesystem.runtime.backup.internals
+  id: com.absence.dialoguesystem.runtime.backup.internals
+  children:
+  - com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  - com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.runtime.backup.internals
+  nameWithType: com.absence.dialoguesystem.runtime.backup.internals
+  fullName: com.absence.dialoguesystem.runtime.backup.internals
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  commentId: T:com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  href: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.html
+  name: DialogueExportSettings
+  nameWithType: DialogueExportSettings
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings
+  commentId: T:com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings
+  href: com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings.html
+  name: DialogueImportSettings
+  nameWithType: DialogueImportSettings
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings

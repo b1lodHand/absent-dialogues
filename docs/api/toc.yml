@@ -15,10 +15,6 @@ items:
     name: DialogueInputHandler_Legacy
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
-  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    name: DialogueInstance.SpeechEventHandler
-  - uid: com.absence.dialoguesystem.DialogueOptionText
-    name: DialogueOptionText
   - uid: com.absence.dialoguesystem.DialoguePlayer
     name: DialoguePlayer
   - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
@@ -27,9 +23,15 @@ items:
     name: DialogueSoundsPlayer
   - uid: com.absence.dialoguesystem.IUseDialogueInScene
     name: IUseDialogueInScene
+  - uid: com.absence.dialoguesystem.OptionText
+    name: OptionText
+  - uid: com.absence.dialoguesystem.Package
+    name: Package
 - uid: com.absence.dialoguesystem.editor
   name: com.absence.dialoguesystem.editor
   items:
+  - uid: com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
+    name: ActionMapPairPropertyDrawer
   - uid: com.absence.dialoguesystem.editor.BlackboardView
     name: BlackboardView
   - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
@@ -61,44 +63,11 @@ items:
     name: DialogueExporter
   - uid: com.absence.dialoguesystem.editor.backup.DialogueImporter
     name: DialogueImporter
-- uid: com.absence.dialoguesystem.editor.backup.data
-  name: com.absence.dialoguesystem.editor.backup.data
-  items:
-  - uid: com.absence.dialoguesystem.editor.backup.data.BlackboardData
-    name: BlackboardData
-  - uid: com.absence.dialoguesystem.editor.backup.data.BooleanPair
-    name: BooleanPair
-  - uid: com.absence.dialoguesystem.editor.backup.data.DialogueData
-    name: DialogueData
-  - uid: com.absence.dialoguesystem.editor.backup.data.FloatPair
-    name: FloatPair
-  - uid: com.absence.dialoguesystem.editor.backup.data.IntPair
-    name: IntPair
-  - uid: com.absence.dialoguesystem.editor.backup.data.NodeConnectionData
-    name: NodeConnectionData
-  - uid: com.absence.dialoguesystem.editor.backup.data.NodeData
-    name: NodeData
-  - uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-    name: NodeVariableComparerData
-  - uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-    name: NodeVariableSetterData
-  - uid: com.absence.dialoguesystem.editor.backup.data.OptionData
-    name: OptionData
-  - uid: com.absence.dialoguesystem.editor.backup.data.StringPair
-    name: StringPair
 - uid: com.absence.dialoguesystem.editor.backup.internals
   name: com.absence.dialoguesystem.editor.backup.internals
   items:
-  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
-    name: DialogueExportSettings
-  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
-    name: DialogueImportContext
-  - uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
-    name: DialogueImportSettings
   - uid: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
     name: EditorJobsHelper
-  - uid: com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
-    name: NodeExportActions
   - uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
     name: NodeImportActions
 - uid: com.absence.dialoguesystem.editor.backup.utilities
@@ -118,24 +87,32 @@ items:
   items:
   - uid: com.absence.dialoguesystem.internals.ActionNode
     name: ActionNode
-  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    name: AdditionalSpeechData
   - uid: com.absence.dialoguesystem.internals.Blackboard
     name: Blackboard
   - uid: com.absence.dialoguesystem.internals.ConditionNode
     name: ConditionNode
+  - uid: com.absence.dialoguesystem.internals.Constants
+    name: Constants
+  - uid: com.absence.dialoguesystem.internals.Constants.Tooltips
+    name: Constants.Tooltips
   - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
     name: DecisionSpeechNode
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+    name: DialogueFlowContext.ContextState
   - uid: com.absence.dialoguesystem.internals.DialoguePartNode
     name: DialoguePartNode
+  - uid: com.absence.dialoguesystem.internals.ExitNode
+    name: ExitNode
+  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+    name: ExtraDialogueData
   - uid: com.absence.dialoguesystem.internals.FastSpeechNode
     name: FastSpeechNode
   - uid: com.absence.dialoguesystem.internals.GotoNode
     name: GotoNode
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech
-    name: IContainSpeech
-  - uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
-    name: IContainVariableManipulators
+  - uid: com.absence.dialoguesystem.internals.IContainData
+    name: IContainData
   - uid: com.absence.dialoguesystem.internals.Node
     name: Node
   - uid: com.absence.dialoguesystem.internals.Node.NodeState
@@ -148,12 +125,68 @@ items:
     name: Option
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: Option.ShowIf
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
   - uid: com.absence.dialoguesystem.internals.RootNode
     name: RootNode
   - uid: com.absence.dialoguesystem.internals.StickyNoteNode
     name: StickyNoteNode
   - uid: com.absence.dialoguesystem.internals.TitleNode
     name: TitleNode
+  - uid: com.absence.dialoguesystem.internals.Utilities
+    name: Utilities
+  - uid: com.absence.dialoguesystem.internals.Utilities.Comparison
+    name: Utilities.Comparison
+  - uid: com.absence.dialoguesystem.internals.Utilities.Texts
+    name: Utilities.Texts
   - uid: com.absence.dialoguesystem.internals.VBProcessType
     name: VBProcessType
+- uid: com.absence.dialoguesystem.runtime
+  name: com.absence.dialoguesystem.runtime
+  items:
+  - uid: com.absence.dialoguesystem.runtime.DialogueActionMapper
+    name: DialogueActionMapper
+  - uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+    name: DialogueActionMapper.ActionMapPair
+- uid: com.absence.dialoguesystem.runtime.backup
+  name: com.absence.dialoguesystem.runtime.backup
+  items:
+  - uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+    name: DialogueImportContext
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  name: com.absence.dialoguesystem.runtime.backup.data
+  items:
+  - uid: com.absence.dialoguesystem.runtime.backup.data.BlackboardData
+    name: BlackboardData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.BooleanPair
+    name: BooleanPair
+  - uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+    name: DataGenerator
+  - uid: com.absence.dialoguesystem.runtime.backup.data.DataReader
+    name: DataReader
+  - uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+    name: DialogueData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.FloatPair
+    name: FloatPair
+  - uid: com.absence.dialoguesystem.runtime.backup.data.IntPair
+    name: IntPair
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
+    name: NodeConnectionData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+    name: NodeData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+    name: NodeVariableComparerData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+    name: NodeVariableSetterData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.OptionData
+    name: OptionData
+  - uid: com.absence.dialoguesystem.runtime.backup.data.StringPair
+    name: StringPair
+- uid: com.absence.dialoguesystem.runtime.backup.internals
+  name: com.absence.dialoguesystem.runtime.backup.internals
+  items:
+  - uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+    name: DialogueExportSettings
+  - uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings
+    name: DialogueImportSettings
 memberLayout: SamePage

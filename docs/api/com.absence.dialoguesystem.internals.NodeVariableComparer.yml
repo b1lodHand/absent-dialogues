@@ -7,9 +7,11 @@ items:
   children:
   - com.absence.dialoguesystem.internals.NodeVariableComparer.BlackboardBank
   - com.absence.dialoguesystem.internals.NodeVariableComparer.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString(System.Boolean)
   - com.absence.dialoguesystem.internals.NodeVariableComparer.GetRuntimeBank
   - com.absence.dialoguesystem.internals.NodeVariableComparer.HasFixedBank
   - com.absence.dialoguesystem.internals.NodeVariableComparer.SetBlackboardBank(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.NodeVariableComparer.ToString
   langs:
   - csharp
   - vb
@@ -24,7 +26,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeVariableComparer
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -79,7 +81,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: BlackboardBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -110,7 +112,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasFixedBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -141,7 +143,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetRuntimeBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -171,7 +173,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetBlackboardBank
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -203,7 +205,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -220,6 +222,70 @@ items:
       description: The clone.
     content.vb: Public Function Clone(clonedBlackboardBank As VariableBank) As NodeVariableComparer
   overload: com.absence.dialoguesystem.internals.NodeVariableComparer.Clone*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.ToString
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.ToString
+  id: ToString
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: NodeVariableComparer.ToString()
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.ToString()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ToString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 55
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.ToString*
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString(System.Boolean)
+  commentId: M:com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString(System.Boolean)
+  id: GetConditionString(System.Boolean)
+  parent: com.absence.dialoguesystem.internals.NodeVariableComparer
+  langs:
+  - csharp
+  - vb
+  name: GetConditionString(bool)
+  nameWithType: NodeVariableComparer.GetConditionString(bool)
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString(bool)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GetConditionString
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Extensions/NodeVariableComparer.cs
+    startLine: 60
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public string GetConditionString(bool richText = false)
+    parameters:
+    - id: richText
+      type: System.Boolean
+    return:
+      type: System.String
+    content.vb: Public Function GetConditionString(richText As Boolean = False) As String
+  overload: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString*
+  nameWithType.vb: NodeVariableComparer.GetConditionString(Boolean)
+  fullName.vb: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString(Boolean)
+  name.vb: GetConditionString(Boolean)
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -505,3 +571,50 @@ references:
   name: NodeVariableComparer
   nameWithType: NodeVariableComparer
   fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.ToString*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.ToString
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_ToString
+  name: ToString
+  nameWithType: NodeVariableComparer.ToString
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString*
+  commentId: Overload:com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html#com_absence_dialoguesystem_internals_NodeVariableComparer_GetConditionString_System_Boolean_
+  name: GetConditionString
+  nameWithType: NodeVariableComparer.GetConditionString
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer.GetConditionString

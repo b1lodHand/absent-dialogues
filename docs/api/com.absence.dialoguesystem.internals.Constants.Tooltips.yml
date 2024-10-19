@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Constants.Tooltips
+  commentId: T:com.absence.dialoguesystem.internals.Constants.Tooltips
+  id: Constants.Tooltips
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
+  - com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
+  - com.absence.dialoguesystem.internals.Constants.Tooltips.VARIABLE_NAME_HEX
+  langs:
+  - csharp
+  - vb
+  name: Constants.Tooltips
+  nameWithType: Constants.Tooltips
+  fullName: com.absence.dialoguesystem.internals.Constants.Tooltips
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Tooltips
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static class Constants.Tooltips
+    content.vb: Public Module Constants.Tooltips
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.internals.Constants.Tooltips.VARIABLE_NAME_HEX
+  commentId: F:com.absence.dialoguesystem.internals.Constants.Tooltips.VARIABLE_NAME_HEX
+  id: VARIABLE_NAME_HEX
+  parent: com.absence.dialoguesystem.internals.Constants.Tooltips
+  langs:
+  - csharp
+  - vb
+  name: VARIABLE_NAME_HEX
+  nameWithType: Constants.Tooltips.VARIABLE_NAME_HEX
+  fullName: com.absence.dialoguesystem.internals.Constants.Tooltips.VARIABLE_NAME_HEX
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VARIABLE_NAME_HEX
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static readonly string VARIABLE_NAME_HEX
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly VARIABLE_NAME_HEX As String
+- uid: com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
+  commentId: F:com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
+  id: AND_HEX
+  parent: com.absence.dialoguesystem.internals.Constants.Tooltips
+  langs:
+  - csharp
+  - vb
+  name: AND_HEX
+  nameWithType: Constants.Tooltips.AND_HEX
+  fullName: com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AND_HEX
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static readonly string AND_HEX
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly AND_HEX As String
+- uid: com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
+  commentId: F:com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
+  id: OR_HEX
+  parent: com.absence.dialoguesystem.internals.Constants.Tooltips
+  langs:
+  - csharp
+  - vb
+  name: OR_HEX
+  nameWithType: Constants.Tooltips.OR_HEX
+  fullName: com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OR_HEX
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static readonly string OR_HEX
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly OR_HEX As String
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

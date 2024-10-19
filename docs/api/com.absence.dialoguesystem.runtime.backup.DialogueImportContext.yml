@@ -1,0 +1,403 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  commentId: T:com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  id: DialogueImportContext
+  parent: com.absence.dialoguesystem.runtime.backup
+  children:
+  - com.absence.dialoguesystem.runtime.backup.DialogueImportContext.Dialogue
+  - com.absence.dialoguesystem.runtime.backup.DialogueImportContext.DialogueData
+  - com.absence.dialoguesystem.runtime.backup.DialogueImportContext.OldGuidPairs
+  langs:
+  - csharp
+  - vb
+  name: DialogueImportContext
+  nameWithType: DialogueImportContext
+  fullName: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueImportContext
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class DialogueImportContext
+    content.vb: >-
+      <Serializable>
+
+      Public Class DialogueImportContext
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.OldGuidPairs
+  commentId: F:com.absence.dialoguesystem.runtime.backup.DialogueImportContext.OldGuidPairs
+  id: OldGuidPairs
+  parent: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  langs:
+  - csharp
+  - vb
+  name: OldGuidPairs
+  nameWithType: DialogueImportContext.OldGuidPairs
+  fullName: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.OldGuidPairs
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OldGuidPairs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup
+  syntax:
+    content: public Dictionary<string, Node> OldGuidPairs
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,com.absence.dialoguesystem.internals.Node}
+    content.vb: Public OldGuidPairs As Dictionary(Of String, Node)
+- uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.Dialogue
+  commentId: F:com.absence.dialoguesystem.runtime.backup.DialogueImportContext.Dialogue
+  id: Dialogue
+  parent: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  langs:
+  - csharp
+  - vb
+  name: Dialogue
+  nameWithType: DialogueImportContext.Dialogue
+  fullName: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.Dialogue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Dialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup
+  syntax:
+    content: public Dialogue Dialogue
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: Public Dialogue As Dialogue
+- uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.DialogueData
+  commentId: F:com.absence.dialoguesystem.runtime.backup.DialogueImportContext.DialogueData
+  id: DialogueData
+  parent: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  langs:
+  - csharp
+  - vb
+  name: DialogueData
+  nameWithType: DialogueImportContext.DialogueData
+  fullName: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.DialogueData
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/DialogueImportContext.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup
+  syntax:
+    content: public DialogueData DialogueData
+    return:
+      type: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+    content.vb: Public DialogueData As DialogueData
+references:
+- uid: com.absence.dialoguesystem.runtime.backup
+  commentId: N:com.absence.dialoguesystem.runtime.backup
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup
+  nameWithType: com.absence.dialoguesystem.runtime.backup
+  fullName: com.absence.dialoguesystem.runtime.backup
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.Dictionary{System.String,com.absence.dialoguesystem.internals.Node}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,com.absence.dialoguesystem.internals.Node}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, Node>
+  nameWithType: Dictionary<string, Node>
+  fullName: System.Collections.Generic.Dictionary<string, com.absence.dialoguesystem.internals.Node>
+  nameWithType.vb: Dictionary(Of String, Node)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, com.absence.dialoguesystem.internals.Node)
+  name.vb: Dictionary(Of String, Node)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.DialogueData.html
+  name: DialogueData
+  nameWithType: DialogueData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html

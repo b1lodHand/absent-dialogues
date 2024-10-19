@@ -1,0 +1,409 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  commentId: T:com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  id: DialogueExportSettings
+  parent: com.absence.dialoguesystem.runtime.backup.internals
+  children:
+  - com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ComparerDictionary
+  - com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ProcessorDictionary
+  - com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.SetterDictionary
+  langs:
+  - csharp
+  - vb
+  name: DialogueExportSettings
+  nameWithType: DialogueExportSettings
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueExportSettings
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.internals
+  syntax:
+    content: public static class DialogueExportSettings
+    content.vb: Public Module DialogueExportSettings
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ComparerDictionary
+  commentId: F:com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ComparerDictionary
+  id: ComparerDictionary
+  parent: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  langs:
+  - csharp
+  - vb
+  name: ComparerDictionary
+  nameWithType: DialogueExportSettings.ComparerDictionary
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ComparerDictionary
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ComparerDictionary
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.internals
+  syntax:
+    content: public static readonly Dictionary<BaseVariableComparer.ComparisonType, char> ComparerDictionary
+    return:
+      type: System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableComparer.ComparisonType,System.Char}
+    content.vb: Public Shared ReadOnly ComparerDictionary As Dictionary(Of BaseVariableComparer.ComparisonType, Char)
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.SetterDictionary
+  commentId: F:com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.SetterDictionary
+  id: SetterDictionary
+  parent: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  langs:
+  - csharp
+  - vb
+  name: SetterDictionary
+  nameWithType: DialogueExportSettings.SetterDictionary
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.SetterDictionary
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetterDictionary
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.internals
+  syntax:
+    content: public static readonly Dictionary<BaseVariableSetter.SetType, char> SetterDictionary
+    return:
+      type: System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableSetter.SetType,System.Char}
+    content.vb: Public Shared ReadOnly SetterDictionary As Dictionary(Of BaseVariableSetter.SetType, Char)
+- uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ProcessorDictionary
+  commentId: F:com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ProcessorDictionary
+  id: ProcessorDictionary
+  parent: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  langs:
+  - csharp
+  - vb
+  name: ProcessorDictionary
+  nameWithType: DialogueExportSettings.ProcessorDictionary
+  fullName: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings.ProcessorDictionary
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ProcessorDictionary
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Internals/DialogueExportSettings.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.internals
+  syntax:
+    content: public static readonly Dictionary<VBProcessType, char> ProcessorDictionary
+    return:
+      type: System.Collections.Generic.Dictionary{com.absence.dialoguesystem.internals.VBProcessType,System.Char}
+    content.vb: Public Shared ReadOnly ProcessorDictionary As Dictionary(Of VBProcessType, Char)
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.internals
+  commentId: N:com.absence.dialoguesystem.runtime.backup.internals
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup.internals
+  nameWithType: com.absence.dialoguesystem.runtime.backup.internals
+  fullName: com.absence.dialoguesystem.runtime.backup.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.runtime.backup.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.internals
+    name: internals
+    href: com.absence.dialoguesystem.runtime.backup.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableComparer.ComparisonType,System.Char}
+  commentId: T:System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableComparer.ComparisonType,System.Char}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<BaseVariableComparer.ComparisonType, char>
+  nameWithType: Dictionary<BaseVariableComparer.ComparisonType, char>
+  fullName: System.Collections.Generic.Dictionary<com.absence.variablesystem.BaseVariableComparer.ComparisonType, char>
+  nameWithType.vb: Dictionary(Of BaseVariableComparer.ComparisonType, Char)
+  fullName.vb: System.Collections.Generic.Dictionary(Of com.absence.variablesystem.BaseVariableComparer.ComparisonType, Char)
+  name.vb: Dictionary(Of BaseVariableComparer.ComparisonType, Char)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: com.absence.variablesystem.BaseVariableComparer
+    name: BaseVariableComparer
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.BaseVariableComparer
+    name: BaseVariableComparer
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableComparer.ComparisonType
+    name: ComparisonType
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableSetter.SetType,System.Char}
+  commentId: T:System.Collections.Generic.Dictionary{com.absence.variablesystem.BaseVariableSetter.SetType,System.Char}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<BaseVariableSetter.SetType, char>
+  nameWithType: Dictionary<BaseVariableSetter.SetType, char>
+  fullName: System.Collections.Generic.Dictionary<com.absence.variablesystem.BaseVariableSetter.SetType, char>
+  nameWithType.vb: Dictionary(Of BaseVariableSetter.SetType, Char)
+  fullName.vb: System.Collections.Generic.Dictionary(Of com.absence.variablesystem.BaseVariableSetter.SetType, Char)
+  name.vb: Dictionary(Of BaseVariableSetter.SetType, Char)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: com.absence.variablesystem.BaseVariableSetter
+    name: BaseVariableSetter
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableSetter.SetType
+    name: SetType
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.variablesystem.BaseVariableSetter
+    name: BaseVariableSetter
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.BaseVariableSetter.SetType
+    name: SetType
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Collections.Generic.Dictionary{com.absence.dialoguesystem.internals.VBProcessType,System.Char}
+  commentId: T:System.Collections.Generic.Dictionary{com.absence.dialoguesystem.internals.VBProcessType,System.Char}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<VBProcessType, char>
+  nameWithType: Dictionary<VBProcessType, char>
+  fullName: System.Collections.Generic.Dictionary<com.absence.dialoguesystem.internals.VBProcessType, char>
+  nameWithType.vb: Dictionary(Of VBProcessType, Char)
+  fullName.vb: System.Collections.Generic.Dictionary(Of com.absence.dialoguesystem.internals.VBProcessType, Char)
+  name.vb: Dictionary(Of VBProcessType, Char)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.VBProcessType
+    name: VBProcessType
+    href: com.absence.dialoguesystem.internals.VBProcessType.html
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.VBProcessType
+    name: VBProcessType
+    href: com.absence.dialoguesystem.internals.VBProcessType.html
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )

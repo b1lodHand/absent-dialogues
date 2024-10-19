@@ -7,18 +7,20 @@ items:
   children:
   - com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue)
   - com.absence.dialoguesystem.DialoguePlayer.#ctor(com.absence.dialoguesystem.Dialogue,System.Collections.Generic.List{com.absence.personsystem.Person})
-  - com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
   - com.absence.dialoguesystem.DialoguePlayer.ClonedDialogue
-  - com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
+  - com.absence.dialoguesystem.DialoguePlayer.Context
+  - com.absence.dialoguesystem.DialoguePlayer.Continue
+  - com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
   - com.absence.dialoguesystem.DialoguePlayer.HasOptions
   - com.absence.dialoguesystem.DialoguePlayer.HasPerson
-  - com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  - com.absence.dialoguesystem.DialoguePlayer.HasText
+  - com.absence.dialoguesystem.DialoguePlayer.Initialize
   - com.absence.dialoguesystem.DialoguePlayer.OnContinue
-  - com.absence.dialoguesystem.DialoguePlayer.Options
+  - com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
   - com.absence.dialoguesystem.DialoguePlayer.Speaker
-  - com.absence.dialoguesystem.DialoguePlayer.Speech
   - com.absence.dialoguesystem.DialoguePlayer.State
   - com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+  - com.absence.dialoguesystem.DialoguePlayer.Text
   langs:
   - csharp
   - vb
@@ -143,7 +145,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Speaker
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -156,130 +158,159 @@ items:
       type: com.absence.personsystem.Person
     content.vb: Public ReadOnly Property Speaker As Person
   overload: com.absence.dialoguesystem.DialoguePlayer.Speaker*
-- uid: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
-  commentId: P:com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
-  id: AdditionalSpeechData
+- uid: com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
+  id: ExtraDialogueData
   parent: com.absence.dialoguesystem.DialoguePlayer
   langs:
   - csharp
   - vb
-  name: AdditionalSpeechData
-  nameWithType: DialoguePlayer.AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
+  name: ExtraDialogueData
+  nameWithType: DialoguePlayer.ExtraDialogueData
+  fullName: com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
   type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: AdditionalSpeechData
+    id: ExtraDialogueData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Additional data of the current node.
   example: []
   syntax:
-    content: public AdditionalSpeechData AdditionalSpeechData { get; }
+    content: public ExtraDialogueData ExtraDialogueData { get; }
     parameters: []
     return:
-      type: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    content.vb: Public ReadOnly Property AdditionalSpeechData As AdditionalSpeechData
-  overload: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData*
-- uid: com.absence.dialoguesystem.DialoguePlayer.Speech
-  commentId: P:com.absence.dialoguesystem.DialoguePlayer.Speech
-  id: Speech
+      type: com.absence.dialoguesystem.internals.ExtraDialogueData
+    content.vb: Public ReadOnly Property ExtraDialogueData As ExtraDialogueData
+  overload: com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData*
+- uid: com.absence.dialoguesystem.DialoguePlayer.Text
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.Text
+  id: Text
   parent: com.absence.dialoguesystem.DialoguePlayer
   langs:
   - csharp
   - vb
-  name: Speech
-  nameWithType: DialoguePlayer.Speech
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Speech
+  name: Text
+  nameWithType: DialoguePlayer.Text
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Text
   type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Speech
+    id: Text
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Speech of the current node.
   example: []
   syntax:
-    content: public string Speech { get; }
+    content: public string Text { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public ReadOnly Property Speech As String
-  overload: com.absence.dialoguesystem.DialoguePlayer.Speech*
-- uid: com.absence.dialoguesystem.DialoguePlayer.Options
-  commentId: P:com.absence.dialoguesystem.DialoguePlayer.Options
-  id: Options
+    content.vb: Public ReadOnly Property Text As String
+  overload: com.absence.dialoguesystem.DialoguePlayer.Text*
+- uid: com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
+  id: OptionIndexPairs
   parent: com.absence.dialoguesystem.DialoguePlayer
   langs:
   - csharp
   - vb
-  name: Options
-  nameWithType: DialoguePlayer.Options
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Options
+  name: OptionIndexPairs
+  nameWithType: DialoguePlayer.OptionIndexPairs
+  fullName: com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
   type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Options
+    id: OptionIndexPairs
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Options of the current node, if there is any.
   example: []
   syntax:
-    content: public List<Option> Options { get; }
+    content: public List<OptionHandle> OptionIndexPairs { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-    content.vb: Public ReadOnly Property Options As List(Of [Option])
-  overload: com.absence.dialoguesystem.DialoguePlayer.Options*
-- uid: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
-  commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasSpeech
-  id: HasSpeech
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle}
+    content.vb: Public ReadOnly Property OptionIndexPairs As List(Of OptionHandle)
+  overload: com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs*
+- uid: com.absence.dialoguesystem.DialoguePlayer.Context
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.Context
+  id: Context
   parent: com.absence.dialoguesystem.DialoguePlayer
   langs:
   - csharp
   - vb
-  name: HasSpeech
-  nameWithType: DialoguePlayer.HasSpeech
-  fullName: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  name: Context
+  nameWithType: DialoguePlayer.Context
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Context
   type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: HasSpeech
+    id: Context
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 80
+    startLine: 77
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to check if current node is a <xref href="com.absence.dialoguesystem.internals.IContainSpeech" data-throw-if-not-resolved="false"></xref> or not.
+  syntax:
+    content: public DialogueFlowContext Context { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.internals.DialogueFlowContext
+    content.vb: Public ReadOnly Property Context As DialogueFlowContext
+  overload: com.absence.dialoguesystem.DialoguePlayer.Context*
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasText
+  commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasText
+  id: HasText
+  parent: com.absence.dialoguesystem.DialoguePlayer
+  langs:
+  - csharp
+  - vb
+  name: HasText
+  nameWithType: DialoguePlayer.HasText
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasText
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: HasText
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 82
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  summary: Use to check if current node has any text.
   example: []
   syntax:
-    content: public bool HasSpeech { get; }
+    content: public bool HasText { get; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly Property HasSpeech As Boolean
-  overload: com.absence.dialoguesystem.DialoguePlayer.HasSpeech*
+    content.vb: Public ReadOnly Property HasText As Boolean
+  overload: com.absence.dialoguesystem.DialoguePlayer.HasText*
 - uid: com.absence.dialoguesystem.DialoguePlayer.HasOptions
   commentId: P:com.absence.dialoguesystem.DialoguePlayer.HasOptions
   id: HasOptions
@@ -298,7 +329,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasOptions
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 85
+    startLine: 87
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -329,7 +360,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: HasPerson
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 90
+    startLine: 92
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -360,11 +391,11 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnContinue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 96
+    startLine: 98
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Action which will get invoked when <xref href="com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object%5b%5d)" data-throw-if-not-resolved="false"></xref> gets called.
+  summary: Action which will get invoked when DialoguePlayer.Continue(object[]) gets called.
   example: []
   syntax:
     content: public event Action<DialoguePlayer.PlayerState> OnContinue
@@ -389,7 +420,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 102
+    startLine: 104
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -424,7 +455,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 119
+    startLine: 120
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -472,16 +503,42 @@ items:
     content: public void TeleportToRoot()
     content.vb: Public Sub TeleportToRoot()
   overload: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot*
-- uid: com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-  commentId: M:com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-  id: Continue(System.Object[])
+- uid: com.absence.dialoguesystem.DialoguePlayer.Initialize
+  commentId: M:com.absence.dialoguesystem.DialoguePlayer.Initialize
+  id: Initialize
   parent: com.absence.dialoguesystem.DialoguePlayer
   langs:
   - csharp
   - vb
-  name: Continue(params object[])
-  nameWithType: DialoguePlayer.Continue(params object[])
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Continue(params object[])
+  name: Initialize()
+  nameWithType: DialoguePlayer.Initialize()
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Initialize()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Initialize
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
+    startLine: 142
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public void Initialize()
+    content.vb: Public Sub Initialize()
+  overload: com.absence.dialoguesystem.DialoguePlayer.Initialize*
+- uid: com.absence.dialoguesystem.DialoguePlayer.Continue
+  commentId: M:com.absence.dialoguesystem.DialoguePlayer.Continue
+  id: Continue
+  parent: com.absence.dialoguesystem.DialoguePlayer
+  langs:
+  - csharp
+  - vb
+  name: Continue()
+  nameWithType: DialoguePlayer.Continue()
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Continue()
   type: Method
   source:
     remote:
@@ -490,23 +547,16 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Continue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialoguePlayer.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Use to progress in the target dialogue wih some optional data.
   example: []
   syntax:
-    content: public void Continue(params object[] passData)
-    parameters:
-    - id: passData
-      type: System.Object[]
-      description: Anything that you want to pass as data. (e.g. <xref href="com.absence.dialoguesystem.internals.DecisionSpeechNode" data-throw-if-not-resolved="false"></xref> uses the [0] element to get the selected option index.)
-    content.vb: Public Sub [Continue](ParamArray passData As Object())
+    content: public void Continue()
+    content.vb: Public Sub [Continue]()
   overload: com.absence.dialoguesystem.DialoguePlayer.Continue*
-  nameWithType.vb: DialoguePlayer.Continue(ParamArray Object())
-  fullName.vb: com.absence.dialoguesystem.DialoguePlayer.Continue(ParamArray Object())
-  name.vb: Continue(ParamArray Object())
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -641,19 +691,19 @@ references:
   - uid: com.absence.personsystem
     name: personsystem
     isExternal: true
-- uid: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData*
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_AdditionalSpeechData
-  name: AdditionalSpeechData
-  nameWithType: DialoguePlayer.AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.DialoguePlayer.AdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_ExtraDialogueData
+  name: ExtraDialogueData
+  nameWithType: DialoguePlayer.ExtraDialogueData
+  fullName: com.absence.dialoguesystem.DialoguePlayer.ExtraDialogueData
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
   href: com.html
@@ -692,12 +742,12 @@ references:
   - uid: com.absence.dialoguesystem.internals
     name: internals
     href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.DialoguePlayer.Speech*
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Speech
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Speech
-  name: Speech
-  nameWithType: DialoguePlayer.Speech
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Speech
+- uid: com.absence.dialoguesystem.DialoguePlayer.Text*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Text
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Text
+  name: Text
+  nameWithType: DialoguePlayer.Text
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Text
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -709,32 +759,32 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: com.absence.dialoguesystem.DialoguePlayer.Options*
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Options
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Options
-  name: Options
-  nameWithType: DialoguePlayer.Options
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Options
-- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
+- uid: com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_OptionIndexPairs
+  name: OptionIndexPairs
+  nameWithType: DialoguePlayer.OptionIndexPairs
+  fullName: com.absence.dialoguesystem.DialoguePlayer.OptionIndexPairs
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Option>
-  nameWithType: List<Option>
-  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
-  nameWithType.vb: List(Of Option)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
-  name.vb: List(Of Option)
+  name: List<OptionHandle>
+  nameWithType: List<OptionHandle>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.OptionHandle>
+  nameWithType.vb: List(Of OptionHandle)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.OptionHandle)
+  name.vb: List(Of OptionHandle)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -744,9 +794,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
@@ -813,19 +863,25 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: com.absence.dialoguesystem.internals.IContainSpeech
-  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
+- uid: com.absence.dialoguesystem.DialoguePlayer.Context*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Context
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Context
+  name: Context
+  nameWithType: DialoguePlayer.Context
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Context
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html
-  name: IContainSpeech
-  nameWithType: IContainSpeech
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech
-- uid: com.absence.dialoguesystem.DialoguePlayer.HasSpeech*
-  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.HasSpeech
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasSpeech
-  name: HasSpeech
-  nameWithType: DialoguePlayer.HasSpeech
-  fullName: com.absence.dialoguesystem.DialoguePlayer.HasSpeech
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
+- uid: com.absence.dialoguesystem.DialoguePlayer.HasText*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.HasText
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_HasText
+  name: HasText
+  nameWithType: DialoguePlayer.HasText
+  fullName: com.absence.dialoguesystem.DialoguePlayer.HasText
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -869,44 +925,6 @@ references:
   name: Node
   nameWithType: Node
   fullName: com.absence.dialoguesystem.internals.Node
-- uid: com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-  commentId: M:com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-  isExternal: true
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___
-  name: Continue(params object[])
-  nameWithType: DialoguePlayer.Continue(params object[])
-  fullName: com.absence.dialoguesystem.DialoguePlayer.Continue(params object[])
-  nameWithType.vb: DialoguePlayer.Continue(ParamArray Object())
-  fullName.vb: com.absence.dialoguesystem.DialoguePlayer.Continue(ParamArray Object())
-  name.vb: Continue(ParamArray Object())
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-    name: Continue
-    href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___
-  - name: (
-  - name: params
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '['
-  - name: ']'
-  - name: )
-  spec.vb:
-  - uid: com.absence.dialoguesystem.DialoguePlayer.Continue(System.Object[])
-    name: Continue
-    href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___
-  - name: (
-  - name: ParamArray
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: (
-  - name: )
-  - name: )
 - uid: System.Action{com.absence.dialoguesystem.DialoguePlayer.PlayerState}
   commentId: T:System.Action{com.absence.dialoguesystem.DialoguePlayer.PlayerState}
   parent: System
@@ -1038,6 +1056,12 @@ references:
   name: TeleportToRoot
   nameWithType: DialoguePlayer.TeleportToRoot
   fullName: com.absence.dialoguesystem.DialoguePlayer.TeleportToRoot
+- uid: com.absence.dialoguesystem.DialoguePlayer.Initialize*
+  commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Initialize
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Initialize
+  name: Initialize
+  nameWithType: DialoguePlayer.Initialize
+  fullName: com.absence.dialoguesystem.DialoguePlayer.Initialize
 - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
   commentId: T:com.absence.dialoguesystem.internals.DecisionSpeechNode
   href: com.absence.dialoguesystem.internals.DecisionSpeechNode.html
@@ -1046,30 +1070,7 @@ references:
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode
 - uid: com.absence.dialoguesystem.DialoguePlayer.Continue*
   commentId: Overload:com.absence.dialoguesystem.DialoguePlayer.Continue
-  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue_System_Object___
+  href: com.absence.dialoguesystem.DialoguePlayer.html#com_absence_dialoguesystem_DialoguePlayer_Continue
   name: Continue
   nameWithType: DialoguePlayer.Continue
   fullName: com.absence.dialoguesystem.DialoguePlayer.Continue
-- uid: System.Object[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
-  name: object[]
-  nameWithType: object[]
-  fullName: object[]
-  nameWithType.vb: Object()
-  fullName.vb: Object()
-  name.vb: Object()
-  spec.csharp:
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: (
-  - name: )

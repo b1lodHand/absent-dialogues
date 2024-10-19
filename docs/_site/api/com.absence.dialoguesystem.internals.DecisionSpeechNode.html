@@ -114,16 +114,12 @@
   </div>
   <div class="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a></div>
-    <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a></div>
+    <div><a class="xref" href="com.absence.dialoguesystem.internals.IContainData.html">IContainData</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Guid">Node.Guid</a>
-    </div>
-    <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Position">Node.Position</a>
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_MasterDialogue">Node.MasterDialogue</a>
@@ -133,9 +129,6 @@
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_State">Node.State</a>
-    </div>
-    <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards">Node.ExitDialogueAfterwards</a>
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnSetState">Node.OnSetState</a>
@@ -174,10 +167,10 @@
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetNextNodes">Node.GetNextNodes()</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_System_Object___">Node.Pass(params object[])</a>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Pass(DialogueFlowContext)</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach">Node.Reach()</a>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Reach(DialogueFlowContext)</a>
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnRemoval">Node.OnRemoval()</a>
@@ -190,6 +183,12 @@
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Clone">Node.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_">Node.OnImport(NodeData, DialogueImportContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_">Node.OnExport(NodeData)</a>
     </div>
     <div>
       <span class="xref">ScriptableObject.SetDirty()</span>
@@ -209,7 +208,7 @@
   <h5 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HelpURL(&quot;https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html&quot;)]
-public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableManipulators</code></pre>
+public sealed class DecisionSpeechNode : Node, IContainData</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -218,7 +217,7 @@ public sealed class DecisionSpeechNode : Node, IContainSpeech, IContainVariableM
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Options.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L17">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L19">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Options" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Options">Options</h4>
   <div class="markdown level1 summary"></div>
@@ -246,18 +245,18 @@ public List&lt;Option&gt; Options</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Speech.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_m_text.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.m_text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L19">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L21">View Source</a>
   </span>
-  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Speech" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Speech">Speech</h4>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_m_text" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.m_text">m_text</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HideInInspector]
-public string Speech</code></pre>
+public string m_text</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -278,10 +277,70 @@ public string Speech</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_ExtraData.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.ExtraData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L27">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_ExtraData_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.ExtraData*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_ExtraData" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.ExtraData">ExtraData</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtraDialogueData ExtraData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.ExtraDialogueData.html">ExtraDialogueData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_ParentCreationMenu.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.ParentCreationMenu%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L13">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_ParentCreationMenu_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.ParentCreationMenu*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_ParentCreationMenu" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.ParentCreationMenu">ParentCreationMenu</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParentCreationMenu { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_PersonDependent.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.PersonDependent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L21">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L23">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_PersonDependent_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.PersonDependent*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_PersonDependent" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.PersonDependent">PersonDependent</h4>
@@ -309,6 +368,36 @@ public string Speech</code></pre>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_PersonDependent">Node.PersonDependent</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Text.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L25">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Text_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Text*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Text" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Text">Text</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Text { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
@@ -316,7 +405,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L44">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L60">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_AddNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.AddNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">AddNextNode_Inline(Node, int)</h4>
@@ -356,7 +445,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L76">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L92">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_DelayedClone_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.DelayedClone(com.absence.dialoguesystem.Dialogue)">DelayedClone(Dialogue)</h4>
@@ -387,40 +476,10 @@ public string Speech</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetAdditionalSpeechData.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L74">View Source</a>
-  </span>
-  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetAdditionalSpeechData_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetAdditionalSpeechData" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetAdditionalSpeechData">GetAdditionalSpeechData()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AdditionalSpeechData GetAdditionalSpeechData()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.absence.dialoguesystem.internals.AdditionalSpeechData.html">AdditionalSpeechData</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetClassName.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L26">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L29">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetClassName_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetClassName" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetClassName">GetClassName()</h4>
@@ -454,7 +513,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L86">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L104">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetComparers" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetComparers">GetComparers()</h4>
@@ -482,10 +541,40 @@ public string Speech</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetExtraData.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetExtraData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L90">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetExtraData_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetExtraData*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetExtraData" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetExtraData">GetExtraData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtraDialogueData GetExtraData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.ExtraDialogueData.html">ExtraDialogueData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List%7BSystem.ValueTuple%7BSystem.Int32%2Ccom.absence.dialoguesystem.internals.Node%7D%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L52">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L68">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)</h4>
@@ -520,7 +609,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOutputPortNamesForCreation.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L69">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L85">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOutputPortNamesForCreation_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetOutputPortNamesForCreation" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetOutputPortNamesForCreation">GetOutputPortNamesForCreation()</h4>
@@ -554,7 +643,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L101">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L119">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetSetters" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetSetters">GetSetters()</h4>
@@ -585,7 +674,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_GetTitle.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L27">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L30">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetTitle_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_GetTitle" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.GetTitle">GetTitle()</h4>
@@ -619,7 +708,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_OnValidate.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.OnValidate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L103">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L121">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_OnValidate_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.OnValidate*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_OnValidate" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.OnValidate">OnValidate()</h4>
@@ -627,25 +716,25 @@ public string Speech</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnValidate()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnValidate()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L29">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L32">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(System.Object[])">Pass_Inline(params object[])</h4>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)">Pass_Inline(DialogueFlowContext)</h4>
   <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Pass_Inline(params object[] passData)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Pass_Inline(DialogueFlowContext context)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -658,38 +747,55 @@ public string Speech</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">passData</span></td>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.html">DialogueFlowContext</a></td>
+        <td><span class="parametername">context</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___">Node.Pass_Inline(params object[])</a></div>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Pass_Inline(DialogueFlowContext)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L39">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L43">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline">Reach_Inline()</h4>
+  <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)">Reach_Inline(DialogueFlowContext)</h4>
   <div class="markdown level1 summary"><p>Use to write what happens when the dialogue reaches this node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Reach_Inline()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Reach_Inline(DialogueFlowContext context)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.html">DialogueFlowContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline">Node.Reach_Inline()</a></div>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Reach_Inline(DialogueFlowContext)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_RemoveNextNode_Inline_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.RemoveNextNode_Inline(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L48">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L64">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_RemoveNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.RemoveNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.RemoveNextNode_Inline(System.Int32)">RemoveNextNode_Inline(int)</h4>
@@ -724,7 +830,7 @@ public string Speech</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action%7Bcom.absence.dialoguesystem.internals.Node%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L60">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/DecisionSpeechNode.cs/#L76">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse*"></a>
   <h4 id="com_absence_dialoguesystem_internals_DecisionSpeechNode_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__" data-uid="com.absence.dialoguesystem.internals.DecisionSpeechNode.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})">Traverse(Action&lt;Node&gt;)</h4>
@@ -756,10 +862,7 @@ public string Speech</code></pre>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__">Node.Traverse(Action&lt;Node&gt;)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a>
-  </div>
-  <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.IContainVariableManipulators.html">IContainVariableManipulators</a>
+      <a class="xref" href="com.absence.dialoguesystem.internals.IContainData.html">IContainData</a>
   </div>
 
 </article>

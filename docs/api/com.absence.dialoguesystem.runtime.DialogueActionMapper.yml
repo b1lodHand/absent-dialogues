@@ -1,0 +1,375 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper
+  commentId: T:com.absence.dialoguesystem.runtime.DialogueActionMapper
+  id: DialogueActionMapper
+  parent: com.absence.dialoguesystem.runtime
+  children:
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  langs:
+  - csharp
+  - vb
+  name: DialogueActionMapper
+  nameWithType: DialogueActionMapper
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueActionMapper
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: 'public class DialogueActionMapper : DialogueExtensionBase'
+    content.vb: Public Class DialogueActionMapper Inherits DialogueExtensionBase
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  - com.absence.dialoguesystem.DialogueExtensionBase
+  inheritedMembers:
+  - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  - com.absence.dialoguesystem.DialogueExtensionBase.Order
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  - com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  id: OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper
+  langs:
+  - csharp
+  - vb
+  name: OnProgress(DialogueFlowContext)
+  nameWithType: DialogueActionMapper.OnProgress(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnProgress
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  summary: Use to define what to do with the original speech data right before displaying it.
+  example: []
+  syntax:
+    content: public override void OnProgress(DialogueFlowContext context)
+    parameters:
+    - id: context
+      type: com.absence.dialoguesystem.internals.DialogueFlowContext
+    content.vb: Public Overrides Sub OnProgress(context As DialogueFlowContext)
+  overridden: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  overload: com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress*
+references:
+- uid: com.absence.dialoguesystem.runtime
+  commentId: N:com.absence.dialoguesystem.runtime
+  href: com.html
+  name: com.absence.dialoguesystem.runtime
+  nameWithType: com.absence.dialoguesystem.runtime
+  fullName: com.absence.dialoguesystem.runtime
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: com.absence.dialoguesystem.DialogueExtensionBase
+  commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html
+  name: DialogueExtensionBase
+  nameWithType: DialogueExtensionBase
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  commentId: F:com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_m_instance
+  name: m_instance
+  nameWithType: DialogueExtensionBase.m_instance
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.Order
+  commentId: P:com.absence.dialoguesystem.DialogueExtensionBase.Order
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_Order
+  name: Order
+  nameWithType: DialogueExtensionBase.Order
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.Order
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleExtraData_com_absence_dialoguesystem_internals_ExtraDialogueData_
+  name: OnHandleExtraData(ExtraDialogueData)
+  nameWithType: DialogueExtensionBase.OnHandleExtraData(ExtraDialogueData)
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+    name: OnHandleExtraData
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleExtraData_com_absence_dialoguesystem_internals_ExtraDialogueData_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+    name: ExtraDialogueData
+    href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+    name: OnHandleExtraData
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleExtraData_com_absence_dialoguesystem_internals_ExtraDialogueData_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+    name: ExtraDialogueData
+    href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
+  name: OnAfterCloning()
+  nameWithType: DialogueExtensionBase.OnAfterCloning()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+    name: OnAfterCloning
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
+    name: OnAfterCloning
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnAfterCloning
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  name: OnDialogueUpdate()
+  nameWithType: DialogueExtensionBase.OnDialogueUpdate()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+    name: OnDialogueUpdate
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
+    name: OnDialogueUpdate
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnDialogueUpdate
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  name: FindInstance()
+  nameWithType: DialogueExtensionBase.FindInstance()
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
+    name: FindInstance
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_FindInstance
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  parent: com.absence.dialoguesystem.DialogueExtensionBase
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnProgress_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: OnProgress(DialogueFlowContext)
+  nameWithType: DialogueExtensionBase.OnProgress(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+    name: OnProgress
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnProgress_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+    name: OnProgress
+    href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnProgress_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: )
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress*
+  commentId: Overload:com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress
+  href: com.absence.dialoguesystem.runtime.DialogueActionMapper.html#com_absence_dialoguesystem_runtime_DialogueActionMapper_OnProgress_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: OnProgress
+  nameWithType: DialogueActionMapper.OnProgress
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.OnProgress
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html

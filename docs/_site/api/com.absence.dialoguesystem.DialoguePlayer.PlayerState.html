@@ -122,8 +122,13 @@
     <thead>
     </thead></thead><tbody>
       <tr>
-        <td id="com_absence_dialoguesystem_DialoguePlayer_PlayerState_NoSpeech">NoSpeech</td>
-        <td><p>The player is not displaying any dialogue or the current node is not <a class="xref" href="com.absence.dialoguesystem.internals.IContainSpeech.html">IContainSpeech</a>.</p>
+        <td id="com_absence_dialoguesystem_DialoguePlayer_PlayerState_NoText">NoText</td>
+        <td><p>The player is not displaying any dialogue or the current node has no text.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_absence_dialoguesystem_DialoguePlayer_PlayerState_WaitingForInput">WaitingForInput</td>
+        <td><p>The player is displaying a speech without any options and waiting for the player to skip it.</p>
 </td>
       </tr>
       <tr>
@@ -132,13 +137,8 @@
 </td>
       </tr>
       <tr>
-        <td id="com_absence_dialoguesystem_DialoguePlayer_PlayerState_WaitingForSkip">WaitingForSkip</td>
-        <td><p>The player is displaying a speech without any options and waiting for the player to skip it.</p>
-</td>
-      </tr>
-      <tr>
         <td id="com_absence_dialoguesystem_DialoguePlayer_PlayerState_WillExit">WillExit</td>
-        <td><p>The player's last node was a <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards">ExitDialogueAfterwards</a>.</p>
+        <td><p>The player's last node was a Node.ExitDialogueAfterwards.</p>
 </td>
       </tr>
     </tbody>

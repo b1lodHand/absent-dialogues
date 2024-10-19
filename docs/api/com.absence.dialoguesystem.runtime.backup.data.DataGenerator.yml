@@ -1,0 +1,245 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  id: DataGenerator
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  children:
+  - com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  - com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  langs:
+  - csharp
+  - vb
+  name: DataGenerator
+  nameWithType: DataGenerator
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DataGenerator
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public static class DataGenerator
+    content.vb: Public Module DataGenerator
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  commentId: M:com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  id: GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  parent: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateComparerData(NodeVariableComparer)
+  nameWithType: DataGenerator.GenerateComparerData(NodeVariableComparer)
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateComparerData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public static NodeVariableComparerData GenerateComparerData(NodeVariableComparer comparer)
+    parameters:
+    - id: comparer
+      type: com.absence.dialoguesystem.internals.NodeVariableComparer
+    return:
+      type: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+    content.vb: Public Shared Function GenerateComparerData(comparer As NodeVariableComparer) As NodeVariableComparerData
+  overload: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData*
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  commentId: M:com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  id: GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  parent: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateSetterData(NodeVariableSetter)
+  nameWithType: DataGenerator.GenerateSetterData(NodeVariableSetter)
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateSetterData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/DataGenerator.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public static NodeVariableSetterData GenerateSetterData(NodeVariableSetter setter)
+    parameters:
+    - id: setter
+      type: com.absence.dialoguesystem.internals.NodeVariableSetter
+    return:
+      type: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+    content.vb: Public Shared Function GenerateSetterData(setter As NodeVariableSetter) As NodeVariableSetterData
+  overload: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData*
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData*
+  commentId: Overload:com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData
+  href: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.html#com_absence_dialoguesystem_runtime_backup_data_DataGenerator_GenerateComparerData_com_absence_dialoguesystem_internals_NodeVariableComparer_
+  name: GenerateComparerData
+  nameWithType: DataGenerator.GenerateComparerData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateComparerData
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  name: NodeVariableComparer
+  nameWithType: NodeVariableComparer
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData.html
+  name: NodeVariableComparerData
+  nameWithType: NodeVariableComparerData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData*
+  commentId: Overload:com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData
+  href: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.html#com_absence_dialoguesystem_runtime_backup_data_DataGenerator_GenerateSetterData_com_absence_dialoguesystem_internals_NodeVariableSetter_
+  name: GenerateSetterData
+  nameWithType: DataGenerator.GenerateSetterData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.GenerateSetterData
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
+  name: NodeVariableSetter
+  nameWithType: NodeVariableSetter
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.html
+  name: NodeVariableSetterData
+  nameWithType: NodeVariableSetterData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData

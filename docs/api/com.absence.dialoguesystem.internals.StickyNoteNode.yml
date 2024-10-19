@@ -7,18 +7,18 @@ items:
   children:
   - com.absence.dialoguesystem.internals.StickyNoteNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)
   - com.absence.dialoguesystem.internals.StickyNoteNode.DisplayState
-  - com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData
   - com.absence.dialoguesystem.internals.StickyNoteNode.GetClassName
+  - com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData
   - com.absence.dialoguesystem.internals.StickyNoteNode.GetInputPortNameForCreation
   - com.absence.dialoguesystem.internals.StickyNoteNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)
   - com.absence.dialoguesystem.internals.StickyNoteNode.GetOutputPortNamesForCreation
   - com.absence.dialoguesystem.internals.StickyNoteNode.GetTitle
-  - com.absence.dialoguesystem.internals.StickyNoteNode.Options
-  - com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(System.Object[])
-  - com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline
+  - com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
+  - com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  - com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   - com.absence.dialoguesystem.internals.StickyNoteNode.RemoveNextNode_Inline(System.Int32)
   - com.absence.dialoguesystem.internals.StickyNoteNode.ShowInMinimap
-  - com.absence.dialoguesystem.internals.StickyNoteNode.Speech
+  - com.absence.dialoguesystem.internals.StickyNoteNode.m_text
   langs:
   - csharp
   - vb
@@ -43,25 +43,21 @@ items:
     content: >-
       [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
 
-      public sealed class StickyNoteNode : Node, IContainSpeech
+      public sealed class StickyNoteNode : Node
     content.vb: >-
       <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")>
 
-      Public NotInheritable Class StickyNoteNode Inherits Node Implements IContainSpeech
+      Public NotInheritable Class StickyNoteNode Inherits Node
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - com.absence.dialoguesystem.internals.Node
-  implements:
-  - com.absence.dialoguesystem.internals.IContainSpeech
   inheritedMembers:
   - com.absence.dialoguesystem.internals.Node.Guid
-  - com.absence.dialoguesystem.internals.Node.Position
   - com.absence.dialoguesystem.internals.Node.MasterDialogue
   - com.absence.dialoguesystem.internals.Node.Blackboard
   - com.absence.dialoguesystem.internals.Node.State
-  - com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
   - com.absence.dialoguesystem.internals.Node.OnSetState
   - com.absence.dialoguesystem.internals.Node.OnRemove
   - com.absence.dialoguesystem.internals.Node.OnValidation
@@ -73,12 +69,15 @@ items:
   - com.absence.dialoguesystem.internals.Node.AddNextNode(com.absence.dialoguesystem.internals.Node,System.Int32)
   - com.absence.dialoguesystem.internals.Node.RemoveNextNode(System.Int32)
   - com.absence.dialoguesystem.internals.Node.GetNextNodes
-  - com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
-  - com.absence.dialoguesystem.internals.Node.Reach
+  - com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  - com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
   - com.absence.dialoguesystem.internals.Node.OnRemoval
   - com.absence.dialoguesystem.internals.Node.SetState(com.absence.dialoguesystem.internals.Node.NodeState)
   - com.absence.dialoguesystem.internals.Node.Clone
   - com.absence.dialoguesystem.internals.Node.Traverse(System.Action{com.absence.dialoguesystem.internals.Node})
+  - com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+  - com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+  - com.absence.dialoguesystem.internals.Node.OnValidate
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -89,25 +88,54 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Speech
-  commentId: F:com.absence.dialoguesystem.internals.StickyNoteNode.Speech
-  id: Speech
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
+  commentId: P:com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
+  id: ParentCreationMenu
   parent: com.absence.dialoguesystem.internals.StickyNoteNode
   langs:
   - csharp
   - vb
-  name: Speech
-  nameWithType: StickyNoteNode.Speech
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Speech
+  name: ParentCreationMenu
+  nameWithType: StickyNoteNode.ParentCreationMenu
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ParentCreationMenu
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static string ParentCreationMenu { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ParentCreationMenu As String
+  overload: com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu*
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.m_text
+  commentId: F:com.absence.dialoguesystem.internals.StickyNoteNode.m_text
+  id: m_text
+  parent: com.absence.dialoguesystem.internals.StickyNoteNode
+  langs:
+  - csharp
+  - vb
+  name: m_text
+  nameWithType: StickyNoteNode.m_text
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.m_text
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Speech
+    id: m_text
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -115,13 +143,13 @@ items:
     content: >-
       [HideInInspector]
 
-      public string Speech
+      public string m_text
     return:
       type: System.String
     content.vb: >-
       <HideInInspector>
 
-      Public Speech As String
+      Public m_text As String
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -144,7 +172,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: DisplayState
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -176,7 +204,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowInMinimap
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -190,38 +218,6 @@ items:
     content.vb: Public Overrides ReadOnly Property ShowInMinimap As Boolean
   overridden: com.absence.dialoguesystem.internals.Node.ShowInMinimap
   overload: com.absence.dialoguesystem.internals.StickyNoteNode.ShowInMinimap*
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Options
-  commentId: P:com.absence.dialoguesystem.internals.StickyNoteNode.Options
-  id: Options
-  parent: com.absence.dialoguesystem.internals.StickyNoteNode
-  langs:
-  - csharp
-  - vb
-  name: Options
-  nameWithType: StickyNoteNode.Options
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Options
-  type: Property
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Options
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 17
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem.internals
-  example: []
-  syntax:
-    content: public List<Option> Options { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-    content.vb: Public Property Options As List(Of [Option])
-  overload: com.absence.dialoguesystem.internals.StickyNoteNode.Options*
-  implements:
-  - com.absence.dialoguesystem.internals.IContainSpeech.Options
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.GetClassName
   id: GetClassName
@@ -240,7 +236,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -272,7 +268,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetTitle
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -304,7 +300,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -343,7 +339,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetNextNodes_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -361,16 +357,16 @@ items:
   nameWithType.vb: StickyNoteNode.GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
   fullName.vb: com.absence.dialoguesystem.internals.StickyNoteNode.GetNextNodes_Inline(System.Collections.Generic.List(Of (portIndex As Integer, node As com.absence.dialoguesystem.internals.Node)))
   name.vb: GetNextNodes_Inline(List(Of (portIndex As Integer, node As Node)))
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(System.Object[])
-  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(System.Object[])
-  id: Pass_Inline(System.Object[])
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  id: Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.internals.StickyNoteNode
   langs:
   - csharp
   - vb
-  name: Pass_Inline(params object[])
-  nameWithType: StickyNoteNode.Pass_Inline(params object[])
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(params object[])
+  name: Pass_Inline(DialogueFlowContext)
+  nameWithType: StickyNoteNode.Pass_Inline(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   type: Method
   source:
     remote:
@@ -379,34 +375,30 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Pass_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 33
+    startLine: 32
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Use to write what happenswhen the dialogue passes this node.
   example: []
   syntax:
-    content: protected override void Pass_Inline(params object[] passData)
+    content: protected override void Pass_Inline(DialogueFlowContext context)
     parameters:
-    - id: passData
-      type: System.Object[]
-      description: ''
-    content.vb: Protected Overrides Sub Pass_Inline(ParamArray passData As Object())
-  overridden: com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
+    - id: context
+      type: com.absence.dialoguesystem.internals.DialogueFlowContext
+    content.vb: Protected Overrides Sub Pass_Inline(context As DialogueFlowContext)
+  overridden: com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   overload: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline*
-  nameWithType.vb: StickyNoteNode.Pass_Inline(ParamArray Object())
-  fullName.vb: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline(ParamArray Object())
-  name.vb: Pass_Inline(ParamArray Object())
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline
-  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline
-  id: Reach_Inline
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  id: Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.internals.StickyNoteNode
   langs:
   - csharp
   - vb
-  name: Reach_Inline()
-  nameWithType: StickyNoteNode.Reach_Inline()
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline()
+  name: Reach_Inline(DialogueFlowContext)
+  nameWithType: StickyNoteNode.Reach_Inline(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   type: Method
   source:
     remote:
@@ -415,16 +407,19 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Reach_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 38
+    startLine: 37
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Use to write what happens when the dialogue reaches this node.
   example: []
   syntax:
-    content: protected override void Reach_Inline()
-    content.vb: Protected Overrides Sub Reach_Inline()
-  overridden: com.absence.dialoguesystem.internals.Node.Reach_Inline
+    content: protected override void Reach_Inline(DialogueFlowContext context)
+    parameters:
+    - id: context
+      type: com.absence.dialoguesystem.internals.DialogueFlowContext
+    content.vb: Protected Overrides Sub Reach_Inline(context As DialogueFlowContext)
+  overridden: com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   overload: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline*
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode.RemoveNextNode_Inline(System.Int32)
   commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.RemoveNextNode_Inline(System.Int32)
@@ -444,7 +439,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: RemoveNextNode_Inline
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 43
+    startLine: 42
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -480,7 +475,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetInputPortNameForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 48
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -512,7 +507,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetOutputPortNamesForCreation
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 49
+    startLine: 48
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -526,37 +521,34 @@ items:
     content.vb: Public Overrides Function GetOutputPortNamesForCreation() As List(Of String)
   overridden: com.absence.dialoguesystem.internals.Node.GetOutputPortNamesForCreation
   overload: com.absence.dialoguesystem.internals.StickyNoteNode.GetOutputPortNamesForCreation*
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData
-  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData
-  id: GetAdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData
+  commentId: M:com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData
+  id: GetExtraData
   parent: com.absence.dialoguesystem.internals.StickyNoteNode
   langs:
   - csharp
   - vb
-  name: GetAdditionalSpeechData()
-  nameWithType: StickyNoteNode.GetAdditionalSpeechData()
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData()
+  name: GetExtraData()
+  nameWithType: StickyNoteNode.GetExtraData()
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetAdditionalSpeechData
+    id: GetExtraData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/StickyNoteNode.cs
-    startLine: 51
+    startLine: 50
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
-  example: []
   syntax:
-    content: public AdditionalSpeechData GetAdditionalSpeechData()
+    content: public ExtraDialogueData GetExtraData()
     return:
-      type: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    content.vb: Public Function GetAdditionalSpeechData() As AdditionalSpeechData
-  overload: com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData*
-  implements:
-  - com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
+      type: com.absence.dialoguesystem.internals.ExtraDialogueData
+    content.vb: Public Function GetExtraData() As ExtraDialogueData
+  overload: com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData*
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -628,13 +620,6 @@ references:
   name: Node
   nameWithType: Node
   fullName: com.absence.dialoguesystem.internals.Node
-- uid: com.absence.dialoguesystem.internals.IContainSpeech
-  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html
-  name: IContainSpeech
-  nameWithType: IContainSpeech
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech
 - uid: com.absence.dialoguesystem.internals.Node.Guid
   commentId: F:com.absence.dialoguesystem.internals.Node.Guid
   parent: com.absence.dialoguesystem.internals.Node
@@ -642,13 +627,6 @@ references:
   name: Guid
   nameWithType: Node.Guid
   fullName: com.absence.dialoguesystem.internals.Node.Guid
-- uid: com.absence.dialoguesystem.internals.Node.Position
-  commentId: F:com.absence.dialoguesystem.internals.Node.Position
-  parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Position
-  name: Position
-  nameWithType: Node.Position
-  fullName: com.absence.dialoguesystem.internals.Node.Position
 - uid: com.absence.dialoguesystem.internals.Node.MasterDialogue
   commentId: F:com.absence.dialoguesystem.internals.Node.MasterDialogue
   parent: com.absence.dialoguesystem.internals.Node
@@ -670,13 +648,6 @@ references:
   name: State
   nameWithType: Node.State
   fullName: com.absence.dialoguesystem.internals.Node.State
-- uid: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
-  commentId: F:com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
-  parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards
-  name: ExitDialogueAfterwards
-  nameWithType: Node.ExitDialogueAfterwards
-  fullName: com.absence.dialoguesystem.internals.Node.ExitDialogueAfterwards
 - uid: com.absence.dialoguesystem.internals.Node.OnSetState
   commentId: E:com.absence.dialoguesystem.internals.Node.OnSetState
   parent: com.absence.dialoguesystem.internals.Node
@@ -824,63 +795,55 @@ references:
     href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetNextNodes
   - name: (
   - name: )
-- uid: com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
-  commentId: M:com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
+- uid: com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.internals.Node
-  isExternal: true
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_System_Object___
-  name: Pass(params object[])
-  nameWithType: Node.Pass(params object[])
-  fullName: com.absence.dialoguesystem.internals.Node.Pass(params object[])
-  nameWithType.vb: Node.Pass(ParamArray Object())
-  fullName.vb: com.absence.dialoguesystem.internals.Node.Pass(ParamArray Object())
-  name.vb: Pass(ParamArray Object())
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: Pass(DialogueFlowContext)
+  nameWithType: Node.Pass(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
+  - uid: com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Pass
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_System_Object___
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
-  - name: params
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '['
-  - name: ']'
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Pass(System.Object[])
+  - uid: com.absence.dialoguesystem.internals.Node.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Pass
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_System_Object___
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
-  - name: ParamArray
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
-  - name: )
-- uid: com.absence.dialoguesystem.internals.Node.Reach
-  commentId: M:com.absence.dialoguesystem.internals.Node.Reach
+- uid: com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach
-  name: Reach()
-  nameWithType: Node.Reach()
-  fullName: com.absence.dialoguesystem.internals.Node.Reach()
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: Reach(DialogueFlowContext)
+  nameWithType: Node.Reach(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Reach
+  - uid: com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Reach
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Reach
+  - uid: com.absence.dialoguesystem.internals.Node.Reach(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Reach
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
 - uid: com.absence.dialoguesystem.internals.Node.OnRemoval
   commentId: M:com.absence.dialoguesystem.internals.Node.OnRemoval
@@ -987,6 +950,85 @@ references:
     name: Node
     href: com.absence.dialoguesystem.internals.Node.html
   - name: )
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_
+  name: OnImport(NodeData, DialogueImportContext)
+  nameWithType: Node.OnImport(NodeData, DialogueImportContext)
+  fullName: com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData, com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+    name: OnImport
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_
+  - name: (
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.runtime.backup.data.NodeData.html
+  - name: ','
+  - name: " "
+  - uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+    name: DialogueImportContext
+    href: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.html
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)
+    name: OnImport
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_
+  - name: (
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.runtime.backup.data.NodeData.html
+  - name: ','
+  - name: " "
+  - uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+    name: DialogueImportContext
+    href: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.html
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_
+  name: OnExport(NodeData)
+  nameWithType: Node.OnExport(NodeData)
+  fullName: com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+    name: OnExport
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_
+  - name: (
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.runtime.backup.data.NodeData.html
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)
+    name: OnExport
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_
+  - name: (
+  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.runtime.backup.data.NodeData.html
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Node.OnValidate
+  commentId: M:com.absence.dialoguesystem.internals.Node.OnValidate
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  name: OnValidate()
+  nameWithType: Node.OnValidate()
+  fullName: com.absence.dialoguesystem.internals.Node.OnValidate()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node.OnValidate
+    name: OnValidate
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate
+  - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
@@ -1109,6 +1151,12 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu*
+  commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
+  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_ParentCreationMenu
+  name: ParentCreationMenu
+  nameWithType: StickyNoteNode.ParentCreationMenu
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.ParentCreationMenu
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1157,117 +1205,6 @@ references:
   name: ShowInMinimap
   nameWithType: StickyNoteNode.ShowInMinimap
   fullName: com.absence.dialoguesystem.internals.StickyNoteNode.ShowInMinimap
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.Options*
-  commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.Options
-  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_Options
-  name: Options
-  nameWithType: StickyNoteNode.Options
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Options
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.Options
-  commentId: P:com.absence.dialoguesystem.internals.IContainSpeech.Options
-  parent: com.absence.dialoguesystem.internals.IContainSpeech
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_Options
-  name: Options
-  nameWithType: IContainSpeech.Options
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.Options
-- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Option>
-  nameWithType: List<Option>
-  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
-  nameWithType.vb: List(Of Option)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
-  name.vb: List(Of Option)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.Node.GetClassName
   commentId: M:com.absence.dialoguesystem.internals.Node.GetClassName
   parent: com.absence.dialoguesystem.internals.Node
@@ -1532,96 +1469,137 @@ references:
     href: com.absence.dialoguesystem.internals.Node.html
   - name: )
   - name: )
-- uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
-  commentId: M:com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
-  parent: com.absence.dialoguesystem.internals.Node
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___
-  name: Pass_Inline(params object[])
-  nameWithType: Node.Pass_Inline(params object[])
-  fullName: com.absence.dialoguesystem.internals.Node.Pass_Inline(params object[])
-  nameWithType.vb: Node.Pass_Inline(ParamArray Object())
-  fullName.vb: com.absence.dialoguesystem.internals.Node.Pass_Inline(ParamArray Object())
-  name.vb: Pass_Inline(ParamArray Object())
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
-    name: Pass_Inline
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___
-  - name: (
-  - name: params
-  - name: " "
-  - uid: System.Object
-    name: object
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  parent: com.absence.dialoguesystem.internals.Node
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: Pass_Inline(DialogueFlowContext)
+  nameWithType: Node.Pass_Inline(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+    name: Pass_Inline
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(System.Object[])
+  - uid: com.absence.dialoguesystem.internals.Node.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Pass_Inline
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
-  - name: ParamArray
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: (
-  - name: )
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline*
   commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline
-  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_Pass_Inline_System_Object___
+  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
   name: Pass_Inline
   nameWithType: StickyNoteNode.Pass_Inline
   fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Pass_Inline
-- uid: System.Object[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
-  name: object[]
-  nameWithType: object[]
-  fullName: object[]
-  nameWithType.vb: Object()
-  fullName.vb: Object()
-  name.vb: Object()
-  spec.csharp:
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: (
-  - name: )
-- uid: com.absence.dialoguesystem.internals.Node.Reach_Inline
-  commentId: M:com.absence.dialoguesystem.internals.Node.Reach_Inline
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
+- uid: com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.internals.Node
-  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline
-  name: Reach_Inline()
-  nameWithType: Node.Reach_Inline()
-  fullName: com.absence.dialoguesystem.internals.Node.Reach_Inline()
+  href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: Reach_Inline(DialogueFlowContext)
+  nameWithType: Node.Reach_Inline(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
   spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.Node.Reach_Inline
+  - uid: com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Reach_Inline
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
   spec.vb:
-  - uid: com.absence.dialoguesystem.internals.Node.Reach_Inline
+  - uid: com.absence.dialoguesystem.internals.Node.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)
     name: Reach_Inline
-    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline
+    href: com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
   - name: (
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
   - name: )
 - uid: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline*
   commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline
-  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_Reach_Inline
+  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_
   name: Reach_Inline
   nameWithType: StickyNoteNode.Reach_Inline
   fullName: com.absence.dialoguesystem.internals.StickyNoteNode.Reach_Inline
@@ -1747,35 +1725,16 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData*
-  commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData
-  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_GetAdditionalSpeechData
-  name: GetAdditionalSpeechData
-  nameWithType: StickyNoteNode.GetAdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.GetAdditionalSpeechData
-- uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-  commentId: M:com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-  parent: com.absence.dialoguesystem.internals.IContainSpeech
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
-  name: GetAdditionalSpeechData()
-  nameWithType: IContainSpeech.GetAdditionalSpeechData()
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData()
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-    name: GetAdditionalSpeechData
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: com.absence.dialoguesystem.internals.IContainSpeech.GetAdditionalSpeechData
-    name: GetAdditionalSpeechData
-    href: com.absence.dialoguesystem.internals.IContainSpeech.html#com_absence_dialoguesystem_internals_IContainSpeech_GetAdditionalSpeechData
-  - name: (
-  - name: )
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData*
+  commentId: Overload:com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData
+  href: com.absence.dialoguesystem.internals.StickyNoteNode.html#com_absence_dialoguesystem_internals_StickyNoteNode_GetExtraData
+  name: GetExtraData
+  nameWithType: StickyNoteNode.GetExtraData
+  fullName: com.absence.dialoguesystem.internals.StickyNoteNode.GetExtraData
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData

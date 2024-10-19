@@ -1,0 +1,167 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
+  id: com.absence.dialoguesystem.runtime.backup.data
+  children:
+  - com.absence.dialoguesystem.runtime.backup.data.BlackboardData
+  - com.absence.dialoguesystem.runtime.backup.data.BooleanPair
+  - com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  - com.absence.dialoguesystem.runtime.backup.data.DataReader
+  - com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  - com.absence.dialoguesystem.runtime.backup.data.FloatPair
+  - com.absence.dialoguesystem.runtime.backup.data.IntPair
+  - com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
+  - com.absence.dialoguesystem.runtime.backup.data.NodeData
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  - com.absence.dialoguesystem.runtime.backup.data.OptionData
+  - com.absence.dialoguesystem.runtime.backup.data.StringPair
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.DialogueData.html
+  name: DialogueData
+  nameWithType: DialogueData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData.html
+  name: NodeVariableComparerData
+  nameWithType: NodeVariableComparerData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.html
+  name: NodeVariableSetterData
+  nameWithType: NodeVariableSetterData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataReader
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DataReader
+  href: com.absence.dialoguesystem.runtime.backup.data.DataReader.html
+  name: DataReader
+  nameWithType: DataReader
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataReader
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData.html
+  name: NodeConnectionData
+  nameWithType: NodeConnectionData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.NodeData.html
+  name: NodeData
+  nameWithType: NodeData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeData
+- uid: com.absence.dialoguesystem.runtime.backup.data.BlackboardData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.BlackboardData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.BlackboardData.html
+  name: BlackboardData
+  nameWithType: BlackboardData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.BlackboardData
+- uid: com.absence.dialoguesystem.runtime.backup.data.IntPair
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.IntPair
+  href: com.absence.dialoguesystem.runtime.backup.data.IntPair.html
+  name: IntPair
+  nameWithType: IntPair
+  fullName: com.absence.dialoguesystem.runtime.backup.data.IntPair
+- uid: com.absence.dialoguesystem.runtime.backup.data.FloatPair
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.FloatPair
+  href: com.absence.dialoguesystem.runtime.backup.data.FloatPair.html
+  name: FloatPair
+  nameWithType: FloatPair
+  fullName: com.absence.dialoguesystem.runtime.backup.data.FloatPair
+- uid: com.absence.dialoguesystem.runtime.backup.data.StringPair
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.StringPair
+  href: com.absence.dialoguesystem.runtime.backup.data.StringPair.html
+  name: StringPair
+  nameWithType: StringPair
+  fullName: com.absence.dialoguesystem.runtime.backup.data.StringPair
+- uid: com.absence.dialoguesystem.runtime.backup.data.BooleanPair
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.BooleanPair
+  href: com.absence.dialoguesystem.runtime.backup.data.BooleanPair.html
+  name: BooleanPair
+  nameWithType: BooleanPair
+  fullName: com.absence.dialoguesystem.runtime.backup.data.BooleanPair
+- uid: com.absence.dialoguesystem.runtime.backup.data.OptionData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.OptionData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.OptionData.html
+  name: OptionData
+  nameWithType: OptionData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.OptionData
+- uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+  href: com.absence.dialoguesystem.runtime.backup.data.DataGenerator.html
+  name: DataGenerator
+  nameWithType: DataGenerator
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html

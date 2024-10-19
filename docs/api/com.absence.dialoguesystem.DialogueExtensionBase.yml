@@ -7,9 +7,9 @@ items:
   children:
   - com.absence.dialoguesystem.DialogueExtensionBase.FindInstance
   - com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
-  - com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
   - com.absence.dialoguesystem.DialogueExtensionBase.OnDialogueUpdate
-  - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  - com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
   - com.absence.dialoguesystem.DialogueExtensionBase.Order
   - com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   langs:
@@ -65,6 +65,7 @@ items:
   - com.absence.dialoguesystem.DialogueInputHandler_Legacy
   - com.absence.dialoguesystem.DialogueSoundsPlayer
   - com.absence.dialoguesystem.examples.Demo_GUI
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper
   attributes:
   - type: UnityEngine.RequireComponent
     ctor: UnityEngine.RequireComponent.#ctor(System.Type)
@@ -158,58 +159,58 @@ items:
       type: System.SByte
     content.vb: Public ReadOnly Property Order As SByte
   overload: com.absence.dialoguesystem.DialogueExtensionBase.Order*
-- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  id: OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
+  id: OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
   parent: com.absence.dialoguesystem.DialogueExtensionBase
   langs:
   - csharp
   - vb
-  name: OnHandleAdditionalData(AdditionalSpeechData)
-  nameWithType: DialogueExtensionBase.OnHandleAdditionalData(AdditionalSpeechData)
-  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData(com.absence.dialoguesystem.internals.AdditionalSpeechData)
+  name: OnHandleExtraData(ExtraDialogueData)
+  nameWithType: DialogueExtensionBase.OnHandleExtraData(ExtraDialogueData)
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData(com.absence.dialoguesystem.internals.ExtraDialogueData)
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnHandleAdditionalData
+    id: OnHandleExtraData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 36
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: >-
-    Use to define what to do with the current <xref href="com.absence.dialoguesystem.internals.AdditionalSpeechData" data-throw-if-not-resolved="false"></xref>. Gets called when the <xref href="com.absence.dialoguesystem.DialogueExtensionBase.m_instance" data-throw-if-not-resolved="false"></xref>
+    Use to define what to do with the current <xref href="com.absence.dialoguesystem.internals.ExtraDialogueData" data-throw-if-not-resolved="false"></xref>. Gets called when the <xref href="com.absence.dialoguesystem.DialogueExtensionBase.m_instance" data-throw-if-not-resolved="false"></xref>
 
     progresses.
   example: []
   syntax:
-    content: public virtual void OnHandleAdditionalData(AdditionalSpeechData data)
+    content: public virtual void OnHandleExtraData(ExtraDialogueData data)
     parameters:
     - id: data
-      type: com.absence.dialoguesystem.internals.AdditionalSpeechData
+      type: com.absence.dialoguesystem.internals.ExtraDialogueData
       description: ''
-    content.vb: Public Overridable Sub OnHandleAdditionalData(data As AdditionalSpeechData)
-  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*
-- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
-  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
-  id: OnBeforeSpeech(com.absence.personsystem.Person@,System.String@,System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}@)
+    content.vb: Public Overridable Sub OnHandleExtraData(data As ExtraDialogueData)
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData*
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  id: OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
   parent: com.absence.dialoguesystem.DialogueExtensionBase
   langs:
   - csharp
   - vb
-  name: OnBeforeSpeech(ref Person, ref string, ref List<Option>)
-  nameWithType: DialogueExtensionBase.OnBeforeSpeech(ref Person, ref string, ref List<Option>)
-  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(ref com.absence.personsystem.Person, ref string, ref System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>)
+  name: OnProgress(DialogueFlowContext)
+  nameWithType: DialogueExtensionBase.OnProgress(DialogueFlowContext)
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress(com.absence.dialoguesystem.internals.DialogueFlowContext)
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnBeforeSpeech
+    id: OnProgress
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Abstract/DialogueExtensionBase.cs
     startLine: 47
   assemblies:
@@ -218,22 +219,12 @@ items:
   summary: Use to define what to do with the original speech data right before displaying it.
   example: []
   syntax:
-    content: public virtual void OnBeforeSpeech(ref Person speaker, ref string speech, ref List<Option> options)
+    content: public virtual void OnProgress(DialogueFlowContext context)
     parameters:
-    - id: speaker
-      type: com.absence.personsystem.Person
-      description: Speaker of this speech.
-    - id: speech
-      type: System.String
-      description: Speech in context.
-    - id: options
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-      description: Option of this speech.
-    content.vb: Public Overridable Sub OnBeforeSpeech(speaker As Person, speech As String, options As List(Of [Option]))
-  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech*
-  nameWithType.vb: DialogueExtensionBase.OnBeforeSpeech(Person, String, List(Of Option))
-  fullName.vb: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option))
-  name.vb: OnBeforeSpeech(Person, String, List(Of Option))
+    - id: context
+      type: com.absence.dialoguesystem.internals.DialogueFlowContext
+    content.vb: Public Overridable Sub OnProgress(context As DialogueFlowContext)
+  overload: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress*
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   commentId: M:com.absence.dialoguesystem.DialogueExtensionBase.OnAfterCloning
   id: OnAfterCloning
@@ -423,13 +414,13 @@ references:
   nameWithType.vb: SByte
   fullName.vb: SByte
   name.vb: SByte
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
 - uid: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   commentId: F:com.absence.dialoguesystem.DialogueExtensionBase.m_instance
   parent: com.absence.dialoguesystem.DialogueExtensionBase
@@ -437,12 +428,12 @@ references:
   name: m_instance
   nameWithType: DialogueExtensionBase.m_instance
   fullName: com.absence.dialoguesystem.DialogueExtensionBase.m_instance
-- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData*
-  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData
-  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleAdditionalData_com_absence_dialoguesystem_internals_AdditionalSpeechData_
-  name: OnHandleAdditionalData
-  nameWithType: DialogueExtensionBase.OnHandleAdditionalData
-  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnHandleExtraData_com_absence_dialoguesystem_internals_ExtraDialogueData_
+  name: OnHandleExtraData
+  nameWithType: DialogueExtensionBase.OnHandleExtraData
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnHandleExtraData
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
   href: com.html
@@ -488,158 +479,19 @@ references:
   name: DialogueExtensionBase
   nameWithType: DialogueExtensionBase
   fullName: com.absence.dialoguesystem.DialogueExtensionBase
-- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech*
-  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech
-  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnBeforeSpeech_com_absence_personsystem_Person__System_String__System_Collections_Generic_List_com_absence_dialoguesystem_internals_Option___
-  name: OnBeforeSpeech
-  nameWithType: DialogueExtensionBase.OnBeforeSpeech
-  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnBeforeSpeech
-- uid: com.absence.personsystem.Person
-  commentId: T:com.absence.personsystem.Person
-  parent: com.absence.personsystem
-  isExternal: true
-  name: Person
-  nameWithType: Person
-  fullName: com.absence.personsystem.Person
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Option}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Option>
-  nameWithType: List<Option>
-  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.Option>
-  nameWithType.vb: List(Of Option)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.Option)
-  name.vb: List(Of Option)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: com.absence.dialoguesystem.internals.Option
-    name: Option
-    href: com.absence.dialoguesystem.internals.Option.html
-  - name: )
-- uid: com.absence.personsystem
-  commentId: N:com.absence.personsystem
-  isExternal: true
-  name: com.absence.personsystem
-  nameWithType: com.absence.personsystem
-  fullName: com.absence.personsystem
-  spec.csharp:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.personsystem
-    name: personsystem
-    isExternal: true
-  spec.vb:
-  - uid: com
-    name: com
-    isExternal: true
-  - name: .
-  - uid: com.absence
-    name: absence
-    isExternal: true
-  - name: .
-  - uid: com.absence.personsystem
-    name: personsystem
-    isExternal: true
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress*
+  commentId: Overload:com.absence.dialoguesystem.DialogueExtensionBase.OnProgress
+  href: com.absence.dialoguesystem.DialogueExtensionBase.html#com_absence_dialoguesystem_DialogueExtensionBase_OnProgress_com_absence_dialoguesystem_internals_DialogueFlowContext_
+  name: OnProgress
+  nameWithType: DialogueExtensionBase.OnProgress
+  fullName: com.absence.dialoguesystem.DialogueExtensionBase.OnProgress
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
 - uid: com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   commentId: P:com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ReferencedDialogue

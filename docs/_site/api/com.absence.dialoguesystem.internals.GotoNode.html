@@ -118,9 +118,6 @@
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Guid">Node.Guid</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Position">Node.Position</a>
-    </div>
-    <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_MasterDialogue">Node.MasterDialogue</a>
     </div>
     <div>
@@ -128,9 +125,6 @@
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_State">Node.State</a>
-    </div>
-    <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_ExitDialogueAfterwards">Node.ExitDialogueAfterwards</a>
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnSetState">Node.OnSetState</a>
@@ -172,10 +166,10 @@
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetNextNodes">Node.GetNextNodes()</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_System_Object___">Node.Pass(params object[])</a>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Pass(DialogueFlowContext)</a>
     </div>
     <div>
-      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach">Node.Reach()</a>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Reach(DialogueFlowContext)</a>
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnRemoval">Node.OnRemoval()</a>
@@ -191,6 +185,9 @@
     </div>
     <div>
       <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Traverse_System_Action_com_absence_dialoguesystem_internals_Node__">Node.Traverse(Action&lt;Node&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnValidate">Node.OnValidate()</a>
     </div>
     <div>
       <span class="xref">ScriptableObject.SetDirty()</span>
@@ -219,7 +216,7 @@ public sealed class GotoNode : Node</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_TargetNode.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.TargetNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L15">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L19">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_TargetNode" data-uid="com.absence.dialoguesystem.internals.GotoNode.TargetNode">TargetNode</h4>
   <div class="markdown level1 summary"><p>The node which will get reached when this goto node gets passed.</p>
@@ -245,6 +242,38 @@ public DialoguePartNode TargetNode</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_ParentCreationMenu.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.ParentCreationMenu%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L14">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_GotoNode_ParentCreationMenu_" data-uid="com.absence.dialoguesystem.internals.GotoNode.ParentCreationMenu*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_GotoNode_ParentCreationMenu" data-uid="com.absence.dialoguesystem.internals.GotoNode.ParentCreationMenu">ParentCreationMenu</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParentCreationMenu { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
@@ -252,7 +281,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L32">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L35">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_AddNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.AddNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_AddNextNode_Inline_com_absence_dialoguesystem_internals_Node_System_Int32_" data-uid="com.absence.dialoguesystem.internals.GotoNode.AddNextNode_Inline(com.absence.dialoguesystem.internals.Node,System.Int32)">AddNextNode_Inline(Node, int)</h4>
@@ -292,7 +321,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_DelayedClone_com_absence_dialoguesystem_Dialogue_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.DelayedClone(com.absence.dialoguesystem.Dialogue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L50">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L53">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_DelayedClone_" data-uid="com.absence.dialoguesystem.internals.GotoNode.DelayedClone*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_DelayedClone_com_absence_dialoguesystem_Dialogue_" data-uid="com.absence.dialoguesystem.internals.GotoNode.DelayedClone(com.absence.dialoguesystem.Dialogue)">DelayedClone(Dialogue)</h4>
@@ -326,7 +355,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_GetClassName.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.GetClassName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L17">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L21">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_GetClassName_" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetClassName*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_GetClassName" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetClassName">GetClassName()</h4>
@@ -360,7 +389,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.GetNextNodes_Inline(System.Collections.Generic.List%7BSystem.ValueTuple%7BSystem.Int32%2Ccom.absence.dialoguesystem.internals.Node%7D%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L40">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L43">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_GetNextNodes_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetNextNodes_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_GetNextNodes_Inline_System_Collections_Generic_List_System_ValueTuple_System_Int32_com_absence_dialoguesystem_internals_Node____" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetNextNodes_Inline(System.Collections.Generic.List{System.ValueTuple{System.Int32,com.absence.dialoguesystem.internals.Node}}@)">GetNextNodes_Inline(ref List&lt;(int portIndex, Node node)&gt;)</h4>
@@ -395,7 +424,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_GetOutputPortNamesForCreation.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.GetOutputPortNamesForCreation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L45">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L48">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_GetOutputPortNamesForCreation_" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetOutputPortNamesForCreation*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_GetOutputPortNamesForCreation" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetOutputPortNamesForCreation">GetOutputPortNamesForCreation()</h4>
@@ -429,7 +458,7 @@ public DialoguePartNode TargetNode</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_GetTitle.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.GetTitle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L18">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L22">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_GetTitle_" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetTitle*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_GetTitle" data-uid="com.absence.dialoguesystem.internals.GotoNode.GetTitle">GetTitle()</h4>
@@ -460,19 +489,18 @@ public DialoguePartNode TargetNode</code></pre>
   <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_GetTitle">Node.GetTitle()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_System_Object___.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.Pass_Inline(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L20">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L63">View Source</a>
   </span>
-  <a id="com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.Pass_Inline*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_System_Object___" data-uid="com.absence.dialoguesystem.internals.GotoNode.Pass_Inline(System.Object[])">Pass_Inline(params object[])</h4>
-  <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
-</div>
+  <a id="com_absence_dialoguesystem_internals_GotoNode_OnExport_" data-uid="com.absence.dialoguesystem.internals.GotoNode.OnExport*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_GotoNode_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_" data-uid="com.absence.dialoguesystem.internals.GotoNode.OnExport(com.absence.dialoguesystem.runtime.backup.data.NodeData)">OnExport(NodeData)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Pass_Inline(params object[] passData)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnExport(NodeData dataToWrite)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -485,38 +513,129 @@ public DialoguePartNode TargetNode</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">passData</span></td>
+        <td><a class="xref" href="com.absence.dialoguesystem.runtime.backup.data.NodeData.html">NodeData</a></td>
+        <td><span class="parametername">dataToWrite</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_System_Object___">Node.Pass_Inline(params object[])</a></div>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnExport_com_absence_dialoguesystem_runtime_backup_data_NodeData_">Node.OnExport(NodeData)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_Reach_Inline.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.Reach_Inline%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData%2Ccom.absence.dialoguesystem.runtime.backup.DialogueImportContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L27">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L58">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_GotoNode_OnImport_" data-uid="com.absence.dialoguesystem.internals.GotoNode.OnImport*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_GotoNode_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_" data-uid="com.absence.dialoguesystem.internals.GotoNode.OnImport(com.absence.dialoguesystem.runtime.backup.data.NodeData,com.absence.dialoguesystem.runtime.backup.DialogueImportContext)">OnImport(NodeData, DialogueImportContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnImport(NodeData dataToRead, DialogueImportContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.runtime.backup.data.NodeData.html">NodeData</a></td>
+        <td><span class="parametername">dataToRead</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.runtime.backup.DialogueImportContext.html">DialogueImportContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_OnImport_com_absence_dialoguesystem_runtime_backup_data_NodeData_com_absence_dialoguesystem_runtime_backup_DialogueImportContext_">Node.OnImport(NodeData, DialogueImportContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L24">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.Pass_Inline*"></a>
+  <h4 id="com_absence_dialoguesystem_internals_GotoNode_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_" data-uid="com.absence.dialoguesystem.internals.GotoNode.Pass_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)">Pass_Inline(DialogueFlowContext)</h4>
+  <div class="markdown level1 summary"><p>Use to write what happenswhen the dialogue passes this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Pass_Inline(DialogueFlowContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.html">DialogueFlowContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Pass_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Pass_Inline(DialogueFlowContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L30">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_Reach_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.Reach_Inline*"></a>
-  <h4 id="com_absence_dialoguesystem_internals_GotoNode_Reach_Inline" data-uid="com.absence.dialoguesystem.internals.GotoNode.Reach_Inline">Reach_Inline()</h4>
+  <h4 id="com_absence_dialoguesystem_internals_GotoNode_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_" data-uid="com.absence.dialoguesystem.internals.GotoNode.Reach_Inline(com.absence.dialoguesystem.internals.DialogueFlowContext)">Reach_Inline(DialogueFlowContext)</h4>
   <div class="markdown level1 summary"><p>Use to write what happens when the dialogue reaches this node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Reach_Inline()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Reach_Inline(DialogueFlowContext context)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.html">DialogueFlowContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline">Node.Reach_Inline()</a></div>
+  <div><a class="xref" href="com.absence.dialoguesystem.internals.Node.html#com_absence_dialoguesystem_internals_Node_Reach_Inline_com_absence_dialoguesystem_internals_DialogueFlowContext_">Node.Reach_Inline(DialogueFlowContext)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_internals_GotoNode_RemoveNextNode_Inline_System_Int32_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.internals.GotoNode.RemoveNextNode_Inline(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L36">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/NodeTypes/GotoNode.cs/#L39">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_internals_GotoNode_RemoveNextNode_Inline_" data-uid="com.absence.dialoguesystem.internals.GotoNode.RemoveNextNode_Inline*"></a>
   <h4 id="com_absence_dialoguesystem_internals_GotoNode_RemoveNextNode_Inline_System_Int32_" data-uid="com.absence.dialoguesystem.internals.GotoNode.RemoveNextNode_Inline(System.Int32)">RemoveNextNode_Inline(int)</h4>

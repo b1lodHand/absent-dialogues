@@ -1,0 +1,416 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  commentId: T:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  id: DialogueActionMapper.ActionMapPair
+  parent: com.absence.dialoguesystem.runtime
+  children:
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor(com.absence.dialoguesystem.internals.ActionNode)
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.AttachedEvent
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupGuid
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupId
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Enabled
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize
+  - com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.TargetActionNode
+  langs:
+  - csharp
+  - vb
+  name: DialogueActionMapper.ActionMapPair
+  nameWithType: DialogueActionMapper.ActionMapPair
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ActionMapPair
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 93
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class DialogueActionMapper.ActionMapPair
+    content.vb: >-
+      <Serializable>
+
+      Public Class DialogueActionMapper.ActionMapPair
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.TargetActionNode
+  commentId: F:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.TargetActionNode
+  id: TargetActionNode
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: TargetActionNode
+  nameWithType: DialogueActionMapper.ActionMapPair.TargetActionNode
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.TargetActionNode
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TargetActionNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 108
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public ActionNode TargetActionNode
+    return:
+      type: com.absence.dialoguesystem.internals.ActionNode
+    content.vb: Public TargetActionNode As ActionNode
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.AttachedEvent
+  commentId: F:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.AttachedEvent
+  id: AttachedEvent
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: AttachedEvent
+  nameWithType: DialogueActionMapper.ActionMapPair.AttachedEvent
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.AttachedEvent
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AttachedEvent
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 109
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public UnityEvent AttachedEvent
+    return:
+      type: UnityEngine.Events.UnityEvent
+    content.vb: Public AttachedEvent As UnityEvent
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Enabled
+  commentId: F:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Enabled
+  id: Enabled
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: DialogueActionMapper.ActionMapPair.Enabled
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Enabled
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Enabled
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 110
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public bool Enabled
+    return:
+      type: System.Boolean
+    content.vb: Public Enabled As Boolean
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupId
+  commentId: F:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupId
+  id: BackupId
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: BackupId
+  nameWithType: DialogueActionMapper.ActionMapPair.BackupId
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupId
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BackupId
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 111
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public string BackupId
+    return:
+      type: System.String
+    content.vb: Public BackupId As String
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupGuid
+  commentId: F:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupGuid
+  id: BackupGuid
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: BackupGuid
+  nameWithType: DialogueActionMapper.ActionMapPair.BackupGuid
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.BackupGuid
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BackupGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 112
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public string BackupGuid
+    return:
+      type: System.String
+    content.vb: Public BackupGuid As String
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor(com.absence.dialoguesystem.internals.ActionNode)
+  commentId: M:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor(com.absence.dialoguesystem.internals.ActionNode)
+  id: '#ctor(com.absence.dialoguesystem.internals.ActionNode)'
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: ActionMapPair(ActionNode)
+  nameWithType: DialogueActionMapper.ActionMapPair.ActionMapPair(ActionNode)
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.ActionMapPair(com.absence.dialoguesystem.internals.ActionNode)
+  type: Constructor
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: .ctor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 118
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: public ActionMapPair(ActionNode targetActionNode)
+    parameters:
+    - id: targetActionNode
+      type: com.absence.dialoguesystem.internals.ActionNode
+    content.vb: Public Sub New(targetActionNode As ActionNode)
+  overload: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor*
+  nameWithType.vb: DialogueActionMapper.ActionMapPair.New(ActionNode)
+  fullName.vb: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.New(com.absence.dialoguesystem.internals.ActionNode)
+  name.vb: New(ActionNode)
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize
+  commentId: M:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize
+  id: Finalize
+  parent: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
+  langs:
+  - csharp
+  - vb
+  name: ~ActionMapPair()
+  nameWithType: DialogueActionMapper.ActionMapPair.~ActionMapPair()
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.~ActionMapPair()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Finalize
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueActionMapper.cs
+    startLine: 133
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime
+  syntax:
+    content: protected ~ActionMapPair()
+    content.vb: 'Protected '
+  overload: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: com.absence.dialoguesystem.runtime
+  commentId: N:com.absence.dialoguesystem.runtime
+  href: com.html
+  name: com.absence.dialoguesystem.runtime
+  nameWithType: com.absence.dialoguesystem.runtime
+  fullName: com.absence.dialoguesystem.runtime
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.ActionNode
+  commentId: T:com.absence.dialoguesystem.internals.ActionNode
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.ActionNode.html
+  name: ActionNode
+  nameWithType: ActionNode
+  fullName: com.absence.dialoguesystem.internals.ActionNode
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: UnityEngine.Events.UnityEvent
+  commentId: T:UnityEngine.Events.UnityEvent
+  parent: UnityEngine.Events
+  isExternal: true
+  name: UnityEvent
+  nameWithType: UnityEvent
+  fullName: UnityEngine.Events.UnityEvent
+- uid: UnityEngine.Events
+  commentId: N:UnityEngine.Events
+  isExternal: true
+  name: UnityEngine.Events
+  nameWithType: UnityEngine.Events
+  fullName: UnityEngine.Events
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor*
+  commentId: Overload:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.#ctor
+  href: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.html#com_absence_dialoguesystem_runtime_DialogueActionMapper_ActionMapPair__ctor_com_absence_dialoguesystem_internals_ActionNode_
+  name: ActionMapPair
+  nameWithType: DialogueActionMapper.ActionMapPair.ActionMapPair
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.ActionMapPair
+  nameWithType.vb: DialogueActionMapper.ActionMapPair.New
+  fullName.vb: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.New
+  name.vb: New
+- uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize*
+  commentId: Overload:com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize
+  href: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.html#com_absence_dialoguesystem_runtime_DialogueActionMapper_ActionMapPair_Finalize
+  name: ~ActionMapPair
+  nameWithType: DialogueActionMapper.ActionMapPair.~ActionMapPair
+  fullName: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.~ActionMapPair
+  spec.csharp:
+  - name: "~"
+  - uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.Finalize*
+    name: ActionMapPair
+    href: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair.html#com_absence_dialoguesystem_runtime_DialogueActionMapper_ActionMapPair_Finalize

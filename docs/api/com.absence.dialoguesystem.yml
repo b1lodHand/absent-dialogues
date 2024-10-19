@@ -10,12 +10,12 @@ items:
   - com.absence.dialoguesystem.DialogueExtensionBase
   - com.absence.dialoguesystem.DialogueInputHandler_Legacy
   - com.absence.dialoguesystem.DialogueInstance
-  - com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  - com.absence.dialoguesystem.DialogueOptionText
   - com.absence.dialoguesystem.DialoguePlayer
   - com.absence.dialoguesystem.DialoguePlayer.PlayerState
   - com.absence.dialoguesystem.DialogueSoundsPlayer
   - com.absence.dialoguesystem.IUseDialogueInScene
+  - com.absence.dialoguesystem.OptionText
+  - com.absence.dialoguesystem.Package
   langs:
   - csharp
   - vb
@@ -26,12 +26,12 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
 references:
-- uid: com.absence.dialoguesystem.DialogueOptionText
-  commentId: T:com.absence.dialoguesystem.DialogueOptionText
-  href: com.absence.dialoguesystem.DialogueOptionText.html
-  name: DialogueOptionText
-  nameWithType: DialogueOptionText
-  fullName: com.absence.dialoguesystem.DialogueOptionText
+- uid: com.absence.dialoguesystem.Package
+  commentId: T:com.absence.dialoguesystem.Package
+  href: com.absence.dialoguesystem.Package.html
+  name: Package
+  nameWithType: Package
+  fullName: com.absence.dialoguesystem.Package
 - uid: com.absence.dialoguesystem.DialogueSoundsPlayer
   commentId: T:com.absence.dialoguesystem.DialogueSoundsPlayer
   href: com.absence.dialoguesystem.DialogueSoundsPlayer.html
@@ -88,29 +88,12 @@ references:
   name: DialogueInstance
   nameWithType: DialogueInstance
   fullName: com.absence.dialoguesystem.DialogueInstance
-- uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  commentId: T:com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.DialogueInstance.html
-  name: DialogueInstance.SpeechEventHandler
-  nameWithType: DialogueInstance.SpeechEventHandler
-  fullName: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.DialogueInstance
-    name: DialogueInstance
-    href: com.absence.dialoguesystem.DialogueInstance.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    name: SpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.DialogueInstance
-    name: DialogueInstance
-    href: com.absence.dialoguesystem.DialogueInstance.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    name: SpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
+- uid: com.absence.dialoguesystem.OptionText
+  commentId: T:com.absence.dialoguesystem.OptionText
+  href: com.absence.dialoguesystem.OptionText.html
+  name: OptionText
+  nameWithType: OptionText
+  fullName: com.absence.dialoguesystem.OptionText
 - uid: com.absence.dialoguesystem.DialogueExtensionBase
   commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
   parent: com.absence.dialoguesystem

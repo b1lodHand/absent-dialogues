@@ -9,11 +9,12 @@ items:
   - com.absence.dialoguesystem.DialogueInstance.ClonedDialogue
   - com.absence.dialoguesystem.DialogueInstance.EnterDialogue
   - com.absence.dialoguesystem.DialogueInstance.ExitDialogue
+  - com.absence.dialoguesystem.DialogueInstance.ForceContinue
   - com.absence.dialoguesystem.DialogueInstance.InDialogue
   - com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
-  - com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  - com.absence.dialoguesystem.DialogueInstance.OnBeforeProgress
   - com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
-  - com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  - com.absence.dialoguesystem.DialogueInstance.OnHandleExtraData
   - com.absence.dialoguesystem.DialogueInstance.Player
   - com.absence.dialoguesystem.DialogueInstance.ReferencedDialogue
   langs:
@@ -172,23 +173,23 @@ items:
       type: com.absence.dialoguesystem.DialoguePlayer
     content.vb: Public ReadOnly Property Player As DialoguePlayer
   overload: com.absence.dialoguesystem.DialogueInstance.Player*
-- uid: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
-  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
-  id: OnHandleAdditionalData
+- uid: com.absence.dialoguesystem.DialogueInstance.OnHandleExtraData
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnHandleExtraData
+  id: OnHandleExtraData
   parent: com.absence.dialoguesystem.DialogueInstance
   langs:
   - csharp
   - vb
-  name: OnHandleAdditionalData
-  nameWithType: DialogueInstance.OnHandleAdditionalData
-  fullName: com.absence.dialoguesystem.DialogueInstance.OnHandleAdditionalData
+  name: OnHandleExtraData
+  nameWithType: DialogueInstance.OnHandleExtraData
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnHandleExtraData
   type: Event
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnHandleAdditionalData
+    id: OnHandleExtraData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
     startLine: 62
   assemblies:
@@ -197,10 +198,10 @@ items:
   summary: The Action which will get invoked when <xref href="com.absence.dialoguesystem.DialogueInstance.HandleAdditionalData" data-throw-if-not-resolved="false"></xref> gets called.
   example: []
   syntax:
-    content: public event Action<AdditionalSpeechData> OnHandleAdditionalData
+    content: public event Action<ExtraDialogueData> OnHandleExtraData
     return:
-      type: System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
-    content.vb: Public Event OnHandleAdditionalData As Action(Of AdditionalSpeechData)
+      type: System.Action{com.absence.dialoguesystem.internals.ExtraDialogueData}
+    content.vb: Public Event OnHandleExtraData As Action(Of ExtraDialogueData)
 - uid: com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   commentId: E:com.absence.dialoguesystem.DialogueInstance.OnAfterCloning
   id: OnAfterCloning
@@ -230,23 +231,23 @@ items:
     return:
       type: System.Action
     content.vb: Public Event OnAfterCloning As Action
-- uid: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
-  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
-  id: OnBeforeSpeech
+- uid: com.absence.dialoguesystem.DialogueInstance.OnBeforeProgress
+  commentId: E:com.absence.dialoguesystem.DialogueInstance.OnBeforeProgress
+  id: OnBeforeProgress
   parent: com.absence.dialoguesystem.DialogueInstance
   langs:
   - csharp
   - vb
-  name: OnBeforeSpeech
-  nameWithType: DialogueInstance.OnBeforeSpeech
-  fullName: com.absence.dialoguesystem.DialogueInstance.OnBeforeSpeech
+  name: OnBeforeProgress
+  nameWithType: DialogueInstance.OnBeforeProgress
+  fullName: com.absence.dialoguesystem.DialogueInstance.OnBeforeProgress
   type: Event
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnBeforeSpeech
+    id: OnBeforeProgress
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
     startLine: 72
   assemblies:
@@ -255,10 +256,10 @@ items:
   summary: Subscribe to this delegate to override any data will get displayed.
   example: []
   syntax:
-    content: public event DialogueInstance.SpeechEventHandler OnBeforeSpeech
+    content: public event Action<DialogueFlowContext> OnBeforeProgress
     return:
-      type: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    content.vb: Public Event OnBeforeSpeech As DialogueInstance.SpeechEventHandler
+      type: System.Action{com.absence.dialoguesystem.internals.DialogueFlowContext}
+    content.vb: Public Event OnBeforeProgress As Action(Of DialogueFlowContext)
 - uid: com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
   commentId: E:com.absence.dialoguesystem.DialogueInstance.OnExitDialogue
   id: OnExitDialogue
@@ -306,7 +307,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: InDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 92
+    startLine: 84
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -337,7 +338,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: EnterDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 147
+    startLine: 139
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -368,7 +369,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ExitDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 173
+    startLine: 165
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -378,6 +379,32 @@ items:
     content: public void ExitDialogue()
     content.vb: Public Sub ExitDialogue()
   overload: com.absence.dialoguesystem.DialogueInstance.ExitDialogue*
+- uid: com.absence.dialoguesystem.DialogueInstance.ForceContinue
+  commentId: M:com.absence.dialoguesystem.DialogueInstance.ForceContinue
+  id: ForceContinue
+  parent: com.absence.dialoguesystem.DialogueInstance
+  langs:
+  - csharp
+  - vb
+  name: ForceContinue()
+  nameWithType: DialogueInstance.ForceContinue()
+  fullName: com.absence.dialoguesystem.DialogueInstance.ForceContinue()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ForceContinue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
+    startLine: 178
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public void ForceContinue()
+    content.vb: Public Sub ForceContinue()
+  overload: com.absence.dialoguesystem.DialogueInstance.ForceContinue*
 - uid: com.absence.dialoguesystem.DialogueInstance.AddExtension``1
   commentId: M:com.absence.dialoguesystem.DialogueInstance.AddExtension``1
   id: AddExtension``1
@@ -396,7 +423,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AddExtension
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueInstance.cs
-    startLine: 263
+    startLine: 264
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -566,26 +593,26 @@ references:
     href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_HandleAdditionalData
   - name: (
   - name: )
-- uid: System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
-  commentId: T:System.Action{com.absence.dialoguesystem.internals.AdditionalSpeechData}
+- uid: System.Action{com.absence.dialoguesystem.internals.ExtraDialogueData}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.ExtraDialogueData}
   parent: System
   definition: System.Action`1
   href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<AdditionalSpeechData>
-  nameWithType: Action<AdditionalSpeechData>
-  fullName: System.Action<com.absence.dialoguesystem.internals.AdditionalSpeechData>
-  nameWithType.vb: Action(Of AdditionalSpeechData)
-  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.AdditionalSpeechData)
-  name.vb: Action(Of AdditionalSpeechData)
+  name: Action<ExtraDialogueData>
+  nameWithType: Action<ExtraDialogueData>
+  fullName: System.Action<com.absence.dialoguesystem.internals.ExtraDialogueData>
+  nameWithType.vb: Action(Of ExtraDialogueData)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.ExtraDialogueData)
+  name.vb: Action(Of ExtraDialogueData)
   spec.csharp:
   - uid: System.Action`1
     name: Action
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    name: AdditionalSpeechData
-    href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+    name: ExtraDialogueData
+    href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
   - name: '>'
   spec.vb:
   - uid: System.Action`1
@@ -595,9 +622,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    name: AdditionalSpeechData
-    href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+    name: ExtraDialogueData
+    href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
   - name: )
 - uid: System.Action`1
   commentId: T:System.Action`1
@@ -641,29 +668,39 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
-- uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  commentId: T:com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.DialogueInstance.html
-  name: DialogueInstance.SpeechEventHandler
-  nameWithType: DialogueInstance.SpeechEventHandler
-  fullName: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
+- uid: System.Action{com.absence.dialoguesystem.internals.DialogueFlowContext}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.DialogueFlowContext}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<DialogueFlowContext>
+  nameWithType: Action<DialogueFlowContext>
+  fullName: System.Action<com.absence.dialoguesystem.internals.DialogueFlowContext>
+  nameWithType.vb: Action(Of DialogueFlowContext)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.DialogueFlowContext)
+  name.vb: Action(Of DialogueFlowContext)
   spec.csharp:
-  - uid: com.absence.dialoguesystem.DialogueInstance
-    name: DialogueInstance
-    href: com.absence.dialoguesystem.DialogueInstance.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    name: SpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: '>'
   spec.vb:
-  - uid: com.absence.dialoguesystem.DialogueInstance
-    name: DialogueInstance
-    href: com.absence.dialoguesystem.DialogueInstance.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler
-    name: SpeechEventHandler
-    href: com.absence.dialoguesystem.DialogueInstance.SpeechEventHandler.html
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: )
 - uid: com.absence.dialoguesystem.DialogueInstance.InDialogue*
   commentId: Overload:com.absence.dialoguesystem.DialogueInstance.InDialogue
   href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_InDialogue
@@ -699,6 +736,12 @@ references:
   name: ExitDialogue
   nameWithType: DialogueInstance.ExitDialogue
   fullName: com.absence.dialoguesystem.DialogueInstance.ExitDialogue
+- uid: com.absence.dialoguesystem.DialogueInstance.ForceContinue*
+  commentId: Overload:com.absence.dialoguesystem.DialogueInstance.ForceContinue
+  href: com.absence.dialoguesystem.DialogueInstance.html#com_absence_dialoguesystem_DialogueInstance_ForceContinue
+  name: ForceContinue
+  nameWithType: DialogueInstance.ForceContinue
+  fullName: com.absence.dialoguesystem.DialogueInstance.ForceContinue
 - uid: com.absence.dialoguesystem.DialogueExtensionBase
   commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
   parent: com.absence.dialoguesystem

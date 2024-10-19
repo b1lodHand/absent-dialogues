@@ -5,24 +5,32 @@ items:
   id: com.absence.dialoguesystem.internals
   children:
   - com.absence.dialoguesystem.internals.ActionNode
-  - com.absence.dialoguesystem.internals.AdditionalSpeechData
   - com.absence.dialoguesystem.internals.Blackboard
   - com.absence.dialoguesystem.internals.ConditionNode
+  - com.absence.dialoguesystem.internals.Constants
+  - com.absence.dialoguesystem.internals.Constants.Tooltips
   - com.absence.dialoguesystem.internals.DecisionSpeechNode
+  - com.absence.dialoguesystem.internals.DialogueFlowContext
+  - com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
   - com.absence.dialoguesystem.internals.DialoguePartNode
+  - com.absence.dialoguesystem.internals.ExitNode
+  - com.absence.dialoguesystem.internals.ExtraDialogueData
   - com.absence.dialoguesystem.internals.FastSpeechNode
   - com.absence.dialoguesystem.internals.GotoNode
-  - com.absence.dialoguesystem.internals.IContainSpeech
-  - com.absence.dialoguesystem.internals.IContainVariableManipulators
+  - com.absence.dialoguesystem.internals.IContainData
   - com.absence.dialoguesystem.internals.Node
   - com.absence.dialoguesystem.internals.Node.NodeState
   - com.absence.dialoguesystem.internals.NodeVariableComparer
   - com.absence.dialoguesystem.internals.NodeVariableSetter
   - com.absence.dialoguesystem.internals.Option
   - com.absence.dialoguesystem.internals.Option.ShowIf
+  - com.absence.dialoguesystem.internals.OptionHandle
   - com.absence.dialoguesystem.internals.RootNode
   - com.absence.dialoguesystem.internals.StickyNoteNode
   - com.absence.dialoguesystem.internals.TitleNode
+  - com.absence.dialoguesystem.internals.Utilities
+  - com.absence.dialoguesystem.internals.Utilities.Comparison
+  - com.absence.dialoguesystem.internals.Utilities.Texts
   - com.absence.dialoguesystem.internals.VBProcessType
   langs:
   - csharp
@@ -40,13 +48,6 @@ references:
   name: ConditionNode
   nameWithType: ConditionNode
   fullName: com.absence.dialoguesystem.internals.ConditionNode
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
 - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
   commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
   parent: com.absence.dialoguesystem.internals
@@ -62,6 +63,7 @@ references:
   fullName: com.absence.dialoguesystem.internals.DecisionSpeechNode
 - uid: com.absence.dialoguesystem.internals.ActionNode
   commentId: T:com.absence.dialoguesystem.internals.ActionNode
+  parent: com.absence.dialoguesystem.internals
   href: com.absence.dialoguesystem.internals.ActionNode.html
   name: ActionNode
   nameWithType: ActionNode
@@ -73,13 +75,63 @@ references:
   name: NodeVariableSetter
   nameWithType: NodeVariableSetter
   fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
-- uid: com.absence.dialoguesystem.internals.IContainVariableManipulators
-  commentId: T:com.absence.dialoguesystem.internals.IContainVariableManipulators
+- uid: com.absence.dialoguesystem.internals.Utilities
+  commentId: T:com.absence.dialoguesystem.internals.Utilities
+  href: com.absence.dialoguesystem.internals.Utilities.html
+  name: Utilities
+  nameWithType: Utilities
+  fullName: com.absence.dialoguesystem.internals.Utilities
+- uid: com.absence.dialoguesystem.internals.Utilities.Texts
+  commentId: T:com.absence.dialoguesystem.internals.Utilities.Texts
+  href: com.absence.dialoguesystem.internals.Utilities.html
+  name: Utilities.Texts
+  nameWithType: Utilities.Texts
+  fullName: com.absence.dialoguesystem.internals.Utilities.Texts
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Utilities
+    name: Utilities
+    href: com.absence.dialoguesystem.internals.Utilities.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Utilities.Texts
+    name: Texts
+    href: com.absence.dialoguesystem.internals.Utilities.Texts.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Utilities
+    name: Utilities
+    href: com.absence.dialoguesystem.internals.Utilities.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Utilities.Texts
+    name: Texts
+    href: com.absence.dialoguesystem.internals.Utilities.Texts.html
+- uid: com.absence.dialoguesystem.internals.Utilities.Comparison
+  commentId: T:com.absence.dialoguesystem.internals.Utilities.Comparison
+  href: com.absence.dialoguesystem.internals.Utilities.html
+  name: Utilities.Comparison
+  nameWithType: Utilities.Comparison
+  fullName: com.absence.dialoguesystem.internals.Utilities.Comparison
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Utilities
+    name: Utilities
+    href: com.absence.dialoguesystem.internals.Utilities.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Utilities.Comparison
+    name: Comparison
+    href: com.absence.dialoguesystem.internals.Utilities.Comparison.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Utilities
+    name: Utilities
+    href: com.absence.dialoguesystem.internals.Utilities.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Utilities.Comparison
+    name: Comparison
+    href: com.absence.dialoguesystem.internals.Utilities.Comparison.html
+- uid: com.absence.dialoguesystem.internals.IContainData
+  commentId: T:com.absence.dialoguesystem.internals.IContainData
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IContainVariableManipulators.html
-  name: IContainVariableManipulators
-  nameWithType: IContainVariableManipulators
-  fullName: com.absence.dialoguesystem.internals.IContainVariableManipulators
+  href: com.absence.dialoguesystem.internals.IContainData.html
+  name: IContainData
+  nameWithType: IContainData
+  fullName: com.absence.dialoguesystem.internals.IContainData
 - uid: com.absence.dialoguesystem.internals.RootNode
   commentId: T:com.absence.dialoguesystem.internals.RootNode
   parent: com.absence.dialoguesystem.internals
@@ -87,6 +139,40 @@ references:
   name: RootNode
   nameWithType: RootNode
   fullName: com.absence.dialoguesystem.internals.RootNode
+- uid: com.absence.dialoguesystem.internals.Constants
+  commentId: T:com.absence.dialoguesystem.internals.Constants
+  href: com.absence.dialoguesystem.internals.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: com.absence.dialoguesystem.internals.Constants
+- uid: com.absence.dialoguesystem.internals.Constants.Tooltips
+  commentId: T:com.absence.dialoguesystem.internals.Constants.Tooltips
+  href: com.absence.dialoguesystem.internals.Constants.html
+  name: Constants.Tooltips
+  nameWithType: Constants.Tooltips
+  fullName: com.absence.dialoguesystem.internals.Constants.Tooltips
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Constants
+    name: Constants
+    href: com.absence.dialoguesystem.internals.Constants.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Constants.Tooltips
+    name: Tooltips
+    href: com.absence.dialoguesystem.internals.Constants.Tooltips.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Constants
+    name: Constants
+    href: com.absence.dialoguesystem.internals.Constants.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Constants.Tooltips
+    name: Tooltips
+    href: com.absence.dialoguesystem.internals.Constants.Tooltips.html
+- uid: com.absence.dialoguesystem.internals.ExitNode
+  commentId: T:com.absence.dialoguesystem.internals.ExitNode
+  href: com.absence.dialoguesystem.internals.ExitNode.html
+  name: ExitNode
+  nameWithType: ExitNode
+  fullName: com.absence.dialoguesystem.internals.ExitNode
 - uid: com.absence.dialoguesystem.internals.VBProcessType
   commentId: T:com.absence.dialoguesystem.internals.VBProcessType
   parent: com.absence.dialoguesystem.internals
@@ -136,6 +222,42 @@ references:
   - uid: com.absence.dialoguesystem.internals.Node.NodeState
     name: NodeState
     href: com.absence.dialoguesystem.internals.Node.NodeState.html
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
+- uid: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  name: DialogueFlowContext.ContextState
+  nameWithType: DialogueFlowContext.ContextState
+  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState.html
+- uid: com.absence.dialoguesystem.internals.OptionHandle
+  commentId: T:com.absence.dialoguesystem.internals.OptionHandle
+  href: com.absence.dialoguesystem.internals.OptionHandle.html
+  name: OptionHandle
+  nameWithType: OptionHandle
+  fullName: com.absence.dialoguesystem.internals.OptionHandle
 - uid: com.absence.dialoguesystem.internals.Blackboard
   commentId: T:com.absence.dialoguesystem.internals.Blackboard
   parent: com.absence.dialoguesystem.internals
@@ -143,6 +265,13 @@ references:
   name: Blackboard
   nameWithType: Blackboard
   fullName: com.absence.dialoguesystem.internals.Blackboard
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
 - uid: com.absence.dialoguesystem.internals.DialoguePartNode
   commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
   parent: com.absence.dialoguesystem.internals
@@ -180,13 +309,6 @@ references:
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: ShowIf
     href: com.absence.dialoguesystem.internals.Option.ShowIf.html
-- uid: com.absence.dialoguesystem.internals.IContainSpeech
-  commentId: T:com.absence.dialoguesystem.internals.IContainSpeech
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.IContainSpeech.html
-  name: IContainSpeech
-  nameWithType: IContainSpeech
-  fullName: com.absence.dialoguesystem.internals.IContainSpeech
 - uid: com.absence.dialoguesystem.internals.GotoNode
   commentId: T:com.absence.dialoguesystem.internals.GotoNode
   href: com.absence.dialoguesystem.internals.GotoNode.html

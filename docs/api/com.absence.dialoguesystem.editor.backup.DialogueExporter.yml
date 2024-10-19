@@ -6,8 +6,6 @@ items:
   parent: com.absence.dialoguesystem.editor.backup
   children:
   - com.absence.dialoguesystem.editor.backup.DialogueExporter.Export(com.absence.dialoguesystem.Dialogue)
-  - com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
-  - com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
   langs:
   - csharp
   - vb
@@ -59,71 +57,9 @@ items:
     - id: dialogue
       type: com.absence.dialoguesystem.Dialogue
     return:
-      type: com.absence.dialoguesystem.editor.backup.data.DialogueData
+      type: com.absence.dialoguesystem.runtime.backup.data.DialogueData
     content.vb: Public Shared Function Export(dialogue As Dialogue) As DialogueData
   overload: com.absence.dialoguesystem.editor.backup.DialogueExporter.Export*
-- uid: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
-  id: GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
-  parent: com.absence.dialoguesystem.editor.backup.DialogueExporter
-  langs:
-  - csharp
-  - vb
-  name: GenerateComparerData(NodeVariableComparer)
-  nameWithType: DialogueExporter.GenerateComparerData(NodeVariableComparer)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueExporter.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GenerateComparerData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueExporter.cs
-    startLine: 144
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor.backup
-  syntax:
-    content: public static NodeVariableComparerData GenerateComparerData(NodeVariableComparer comparer)
-    parameters:
-    - id: comparer
-      type: com.absence.dialoguesystem.internals.NodeVariableComparer
-    return:
-      type: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-    content.vb: Public Shared Function GenerateComparerData(comparer As NodeVariableComparer) As NodeVariableComparerData
-  overload: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData*
-- uid: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
-  commentId: M:com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
-  id: GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
-  parent: com.absence.dialoguesystem.editor.backup.DialogueExporter
-  langs:
-  - csharp
-  - vb
-  name: GenerateSetterData(NodeVariableSetter)
-  nameWithType: DialogueExporter.GenerateSetterData(NodeVariableSetter)
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueExporter.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GenerateSetterData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/DialogueExporter.cs
-    startLine: 156
-  assemblies:
-  - Assembly-CSharp-Editor-firstpass
-  namespace: com.absence.dialoguesystem.editor.backup
-  syntax:
-    content: public static NodeVariableSetterData GenerateSetterData(NodeVariableSetter setter)
-    parameters:
-    - id: setter
-      type: com.absence.dialoguesystem.internals.NodeVariableSetter
-    return:
-      type: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-    content.vb: Public Shared Function GenerateSetterData(setter As NodeVariableSetter) As NodeVariableSetterData
-  overload: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData*
 references:
 - uid: com.absence.dialoguesystem.editor.backup
   commentId: N:com.absence.dialoguesystem.editor.backup
@@ -202,13 +138,13 @@ references:
   name: Dialogue
   nameWithType: Dialogue
   fullName: com.absence.dialoguesystem.Dialogue
-- uid: com.absence.dialoguesystem.editor.backup.data.DialogueData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.DialogueData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.DialogueData.html
+- uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  href: com.absence.dialoguesystem.runtime.backup.data.DialogueData.html
   name: DialogueData
   nameWithType: DialogueData
-  fullName: com.absence.dialoguesystem.editor.backup.data.DialogueData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.DialogueData
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
   href: com.html
@@ -239,12 +175,12 @@ references:
   - uid: com.absence.dialoguesystem
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
-- uid: com.absence.dialoguesystem.editor.backup.data
-  commentId: N:com.absence.dialoguesystem.editor.backup.data
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
   href: com.html
-  name: com.absence.dialoguesystem.editor.backup.data
-  nameWithType: com.absence.dialoguesystem.editor.backup.data
-  fullName: com.absence.dialoguesystem.editor.backup.data
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
   spec.csharp:
   - uid: com
     name: com
@@ -258,17 +194,17 @@ references:
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
+  - uid: com.absence.dialoguesystem.runtime.backup
     name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
+    href: com.absence.dialoguesystem.runtime.backup.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.data
+  - uid: com.absence.dialoguesystem.runtime.backup.data
     name: data
-    href: com.absence.dialoguesystem.editor.backup.data.html
+    href: com.absence.dialoguesystem.runtime.backup.data.html
   spec.vb:
   - uid: com
     name: com
@@ -282,92 +218,14 @@ references:
     name: dialoguesystem
     href: com.absence.dialoguesystem.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
+  - uid: com.absence.dialoguesystem.runtime.backup
     name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
+    href: com.absence.dialoguesystem.runtime.backup.html
   - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.data
+  - uid: com.absence.dialoguesystem.runtime.backup.data
     name: data
-    href: com.absence.dialoguesystem.editor.backup.data.html
-- uid: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData*
-  commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData
-  href: com.absence.dialoguesystem.editor.backup.DialogueExporter.html#com_absence_dialoguesystem_editor_backup_DialogueExporter_GenerateComparerData_com_absence_dialoguesystem_internals_NodeVariableComparer_
-  name: GenerateComparerData
-  nameWithType: DialogueExporter.GenerateComparerData
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateComparerData
-- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
-  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
-  name: NodeVariableComparer
-  nameWithType: NodeVariableComparer
-  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
-- uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData.html
-  name: NodeVariableComparerData
-  nameWithType: NodeVariableComparerData
-  fullName: com.absence.dialoguesystem.editor.backup.data.NodeVariableComparerData
-- uid: com.absence.dialoguesystem.internals
-  commentId: N:com.absence.dialoguesystem.internals
-  href: com.html
-  name: com.absence.dialoguesystem.internals
-  nameWithType: com.absence.dialoguesystem.internals
-  fullName: com.absence.dialoguesystem.internals
-  spec.csharp:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals
-    name: internals
-    href: com.absence.dialoguesystem.internals.html
-  spec.vb:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.internals
-    name: internals
-    href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData*
-  commentId: Overload:com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData
-  href: com.absence.dialoguesystem.editor.backup.DialogueExporter.html#com_absence_dialoguesystem_editor_backup_DialogueExporter_GenerateSetterData_com_absence_dialoguesystem_internals_NodeVariableSetter_
-  name: GenerateSetterData
-  nameWithType: DialogueExporter.GenerateSetterData
-  fullName: com.absence.dialoguesystem.editor.backup.DialogueExporter.GenerateSetterData
-- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
-  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
-  name: NodeVariableSetter
-  nameWithType: NodeVariableSetter
-  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
-- uid: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-  commentId: T:com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
-  parent: com.absence.dialoguesystem.editor.backup.data
-  href: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData.html
-  name: NodeVariableSetterData
-  nameWithType: NodeVariableSetterData
-  fullName: com.absence.dialoguesystem.editor.backup.data.NodeVariableSetterData
+    href: com.absence.dialoguesystem.runtime.backup.data.html

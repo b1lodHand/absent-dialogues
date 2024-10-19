@@ -4,11 +4,7 @@ items:
   commentId: N:com.absence.dialoguesystem.editor.backup.internals
   id: com.absence.dialoguesystem.editor.backup.internals
   children:
-  - com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
-  - com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
-  - com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
   - com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
-  - com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
   - com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
   langs:
   - csharp
@@ -20,94 +16,15 @@ items:
   assemblies:
   - Assembly-CSharp-Editor-firstpass
 references:
-- uid: com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
-  commentId: T:com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
-  href: com.absence.dialoguesystem.editor.backup.internals.NodeExportActions.html
-  name: NodeExportActions
-  nameWithType: NodeExportActions
-  fullName: com.absence.dialoguesystem.editor.backup.internals.NodeExportActions
-- uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
-  commentId: T:com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
-  href: com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings.html
-  name: DialogueImportSettings
-  nameWithType: DialogueImportSettings
-  fullName: com.absence.dialoguesystem.editor.backup.internals.DialogueImportSettings
 - uid: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
   commentId: T:com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
   href: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper.html
   name: EditorJobsHelper
   nameWithType: EditorJobsHelper
   fullName: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
-- uid: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
-  commentId: T:com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
-  parent: com.absence.dialoguesystem.editor.backup.internals
-  href: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext.html
-  name: DialogueImportContext
-  nameWithType: DialogueImportContext
-  fullName: com.absence.dialoguesystem.editor.backup.internals.DialogueImportContext
-- uid: com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
-  commentId: T:com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
-  href: com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings.html
-  name: DialogueExportSettings
-  nameWithType: DialogueExportSettings
-  fullName: com.absence.dialoguesystem.editor.backup.internals.DialogueExportSettings
 - uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
   commentId: T:com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
   href: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions.html
   name: NodeImportActions
   nameWithType: NodeImportActions
   fullName: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
-- uid: com.absence.dialoguesystem.editor.backup.internals
-  commentId: N:com.absence.dialoguesystem.editor.backup.internals
-  href: com.html
-  name: com.absence.dialoguesystem.editor.backup.internals
-  nameWithType: com.absence.dialoguesystem.editor.backup.internals
-  fullName: com.absence.dialoguesystem.editor.backup.internals
-  spec.csharp:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
-    name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.internals
-    name: internals
-    href: com.absence.dialoguesystem.editor.backup.internals.html
-  spec.vb:
-  - uid: com
-    name: com
-    href: com.html
-  - name: .
-  - uid: com.absence
-    name: absence
-    href: com.absence.html
-  - name: .
-  - uid: com.absence.dialoguesystem
-    name: dialoguesystem
-    href: com.absence.dialoguesystem.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor
-    name: editor
-    href: com.absence.dialoguesystem.editor.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.backup
-    name: backup
-    href: com.absence.dialoguesystem.editor.backup.html
-  - name: .
-  - uid: com.absence.dialoguesystem.editor.backup.internals
-    name: internals
-    href: com.absence.dialoguesystem.editor.backup.internals.html

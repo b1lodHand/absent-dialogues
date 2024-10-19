@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup
+  commentId: N:com.absence.dialoguesystem.runtime.backup
+  id: com.absence.dialoguesystem.runtime.backup
+  children:
+  - com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.runtime.backup
+  nameWithType: com.absence.dialoguesystem.runtime.backup
+  fullName: com.absence.dialoguesystem.runtime.backup
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  commentId: T:com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+  parent: com.absence.dialoguesystem.runtime.backup
+  href: com.absence.dialoguesystem.runtime.backup.DialogueImportContext.html
+  name: DialogueImportContext
+  nameWithType: DialogueImportContext
+  fullName: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
+- uid: com.absence.dialoguesystem.runtime.backup
+  commentId: N:com.absence.dialoguesystem.runtime.backup
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup
+  nameWithType: com.absence.dialoguesystem.runtime.backup
+  fullName: com.absence.dialoguesystem.runtime.backup
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html

@@ -1,0 +1,336 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  commentId: T:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  id: NodeVariableSetterData
+  parent: com.absence.dialoguesystem.runtime.backup.data
+  children:
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.BooleanValue
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.FloatValue
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.IntValue
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.SetType
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.StringValue
+  - com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.TargetVariableName
+  langs:
+  - csharp
+  - vb
+  name: NodeVariableSetterData
+  nameWithType: NodeVariableSetterData
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeVariableSetterData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 2
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class NodeVariableSetterData
+    content.vb: >-
+      <Serializable>
+
+      Public Class NodeVariableSetterData
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.TargetVariableName
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.TargetVariableName
+  id: TargetVariableName
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: TargetVariableName
+  nameWithType: NodeVariableSetterData.TargetVariableName
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.TargetVariableName
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: TargetVariableName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public string TargetVariableName
+    return:
+      type: System.String
+    content.vb: Public TargetVariableName As String
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.SetType
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.SetType
+  id: SetType
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: SetType
+  nameWithType: NodeVariableSetterData.SetType
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.SetType
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public char SetType
+    return:
+      type: System.Char
+    content.vb: Public SetType As Char
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.IntValue
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.IntValue
+  id: IntValue
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: IntValue
+  nameWithType: NodeVariableSetterData.IntValue
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.IntValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IntValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public int IntValue
+    return:
+      type: System.Int32
+    content.vb: Public IntValue As Integer
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.FloatValue
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.FloatValue
+  id: FloatValue
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: FloatValue
+  nameWithType: NodeVariableSetterData.FloatValue
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.FloatValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FloatValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public float FloatValue
+    return:
+      type: System.Single
+    content.vb: Public FloatValue As Single
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.StringValue
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.StringValue
+  id: StringValue
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: StringValue
+  nameWithType: NodeVariableSetterData.StringValue
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.StringValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: StringValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public string StringValue
+    return:
+      type: System.String
+    content.vb: Public StringValue As String
+- uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.BooleanValue
+  commentId: F:com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.BooleanValue
+  id: BooleanValue
+  parent: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
+  langs:
+  - csharp
+  - vb
+  name: BooleanValue
+  nameWithType: NodeVariableSetterData.BooleanValue
+  fullName: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData.BooleanValue
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BooleanValue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Backup System/Data/NodeVariableSetterData.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.runtime.backup.data
+  syntax:
+    content: public bool BooleanValue
+    return:
+      type: System.Boolean
+    content.vb: Public BooleanValue As Boolean
+references:
+- uid: com.absence.dialoguesystem.runtime.backup.data
+  commentId: N:com.absence.dialoguesystem.runtime.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.runtime.backup.data
+  nameWithType: com.absence.dialoguesystem.runtime.backup.data
+  fullName: com.absence.dialoguesystem.runtime.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime
+    name: runtime
+    href: com.absence.dialoguesystem.runtime.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup
+    name: backup
+    href: com.absence.dialoguesystem.runtime.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.runtime.backup.data
+    name: data
+    href: com.absence.dialoguesystem.runtime.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

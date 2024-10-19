@@ -1,0 +1,306 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
+  id: ExtraDialogueData
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+  - com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+  - com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+  - com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+  langs:
+  - csharp
+  - vb
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ExtraDialogueData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Holds some extra data which you can use on the flow.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html")]
+
+      public class ExtraDialogueData
+    content.vb: >-
+      <Serializable>
+
+      <HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html")>
+
+      Public Class ExtraDialogueData
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  - type: UnityEngine.HelpURLAttribute
+    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.AdditionalSpeechData.html
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+  commentId: P:com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+  id: AudioClip
+  parent: com.absence.dialoguesystem.internals.ExtraDialogueData
+  langs:
+  - csharp
+  - vb
+  name: AudioClip
+  nameWithType: ExtraDialogueData.AudioClip
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AudioClip
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public AudioClip AudioClip { get; }
+    parameters: []
+    return:
+      type: UnityEngine.AudioClip
+    content.vb: Public ReadOnly Property AudioClip As AudioClip
+  overload: com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip*
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+  id: AnimatorMemberName
+  parent: com.absence.dialoguesystem.internals.ExtraDialogueData
+  langs:
+  - csharp
+  - vb
+  name: AnimatorMemberName
+  nameWithType: ExtraDialogueData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AnimatorMemberName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public string AnimatorMemberName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AnimatorMemberName As String
+  overload: com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName*
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+  commentId: P:com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+  id: Sprite
+  parent: com.absence.dialoguesystem.internals.ExtraDialogueData
+  langs:
+  - csharp
+  - vb
+  name: Sprite
+  nameWithType: ExtraDialogueData.Sprite
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Sprite
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public Sprite Sprite { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Public ReadOnly Property Sprite As Sprite
+  overload: com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite*
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+  commentId: P:com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+  id: CustomInfo
+  parent: com.absence.dialoguesystem.internals.ExtraDialogueData
+  langs:
+  - csharp
+  - vb
+  name: CustomInfo
+  nameWithType: ExtraDialogueData.CustomInfo
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CustomInfo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/ExtraDialogueData.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public string[] CustomInfo { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public ReadOnly Property CustomInfo As String()
+  overload: com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo*
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip*
+  commentId: Overload:com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html#com_absence_dialoguesystem_internals_ExtraDialogueData_AudioClip
+  name: AudioClip
+  nameWithType: ExtraDialogueData.AudioClip
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.AudioClip
+- uid: UnityEngine.AudioClip
+  commentId: T:UnityEngine.AudioClip
+  parent: UnityEngine
+  isExternal: true
+  name: AudioClip
+  nameWithType: AudioClip
+  fullName: UnityEngine.AudioClip
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName*
+  commentId: Overload:com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html#com_absence_dialoguesystem_internals_ExtraDialogueData_AnimatorMemberName
+  name: AnimatorMemberName
+  nameWithType: ExtraDialogueData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.AnimatorMemberName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite*
+  commentId: Overload:com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html#com_absence_dialoguesystem_internals_ExtraDialogueData_Sprite
+  name: Sprite
+  nameWithType: ExtraDialogueData.Sprite
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.Sprite
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo*
+  commentId: Overload:com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html#com_absence_dialoguesystem_internals_ExtraDialogueData_CustomInfo
+  name: CustomInfo
+  nameWithType: ExtraDialogueData.CustomInfo
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData.CustomInfo
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )

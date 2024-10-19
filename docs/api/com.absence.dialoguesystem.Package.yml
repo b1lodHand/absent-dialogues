@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.Package
+  commentId: T:com.absence.dialoguesystem.Package
+  id: Package
+  parent: com.absence.dialoguesystem
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Package
+  nameWithType: Package
+  fullName: com.absence.dialoguesystem.Package
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Package
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Initial/Package.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static class Package
+    content.vb: Public Module Package
+  inheritance:
+  - System.Object
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

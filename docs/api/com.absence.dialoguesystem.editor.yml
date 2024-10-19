@@ -4,6 +4,7 @@ items:
   commentId: N:com.absence.dialoguesystem.editor
   id: com.absence.dialoguesystem.editor
   children:
+  - com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
   - com.absence.dialoguesystem.editor.BlackboardView
   - com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
   - com.absence.dialoguesystem.editor.DialogueCreationHandler
@@ -107,6 +108,12 @@ references:
   name: DialogueCreationHandler
   nameWithType: DialogueCreationHandler
   fullName: com.absence.dialoguesystem.editor.DialogueCreationHandler
+- uid: com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
+  href: com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer.html
+  name: ActionMapPairPropertyDrawer
+  nameWithType: ActionMapPairPropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
 - uid: com.absence.dialoguesystem.editor.DialogueGraphView
   commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView
   parent: com.absence.dialoguesystem.editor

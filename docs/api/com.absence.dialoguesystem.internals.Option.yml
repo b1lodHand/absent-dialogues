@@ -5,11 +5,11 @@ items:
   id: Option
   parent: com.absence.dialoguesystem.internals
   children:
-  - com.absence.dialoguesystem.internals.Option.AdditionalData
   - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.ExtraData
   - com.absence.dialoguesystem.internals.Option.IsVisible
   - com.absence.dialoguesystem.internals.Option.LeadsTo
-  - com.absence.dialoguesystem.internals.Option.Speech
+  - com.absence.dialoguesystem.internals.Option.Text
   - com.absence.dialoguesystem.internals.Option.UseShowIf
   - com.absence.dialoguesystem.internals.Option.Visibility
   langs:
@@ -26,7 +26,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Option
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -56,25 +56,25 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.html
-- uid: com.absence.dialoguesystem.internals.Option.Speech
-  commentId: F:com.absence.dialoguesystem.internals.Option.Speech
-  id: Speech
+- uid: com.absence.dialoguesystem.internals.Option.Text
+  commentId: F:com.absence.dialoguesystem.internals.Option.Text
+  id: Text
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
-  name: Speech
-  nameWithType: Option.Speech
-  fullName: com.absence.dialoguesystem.internals.Option.Speech
+  name: Text
+  nameWithType: Option.Text
+  fullName: com.absence.dialoguesystem.internals.Option.Text
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Speech
+    id: Text
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -84,46 +84,46 @@ items:
     content: >-
       [HideInInspector]
 
-      public string Speech
+      public string Text
     return:
       type: System.String
     content.vb: >-
       <HideInInspector>
 
-      Public Speech As String
+      Public Text As String
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
     arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.AdditionalData
-  commentId: F:com.absence.dialoguesystem.internals.Option.AdditionalData
-  id: AdditionalData
+- uid: com.absence.dialoguesystem.internals.Option.ExtraData
+  commentId: F:com.absence.dialoguesystem.internals.Option.ExtraData
+  id: ExtraData
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
-  name: AdditionalData
-  nameWithType: Option.AdditionalData
-  fullName: com.absence.dialoguesystem.internals.Option.AdditionalData
+  name: ExtraData
+  nameWithType: Option.ExtraData
+  fullName: com.absence.dialoguesystem.internals.Option.ExtraData
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: AdditionalData
+    id: ExtraData
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Additional speech data this option contains.
   example: []
   syntax:
-    content: public AdditionalSpeechData AdditionalData
+    content: public ExtraDialogueData ExtraData
     return:
-      type: com.absence.dialoguesystem.internals.AdditionalSpeechData
-    content.vb: Public AdditionalData As AdditionalSpeechData
+      type: com.absence.dialoguesystem.internals.ExtraDialogueData
+    content.vb: Public ExtraData As ExtraDialogueData
 - uid: com.absence.dialoguesystem.internals.Option.UseShowIf
   commentId: P:com.absence.dialoguesystem.internals.Option.UseShowIf
   id: UseShowIf
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UseShowIf
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Visibility
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -217,7 +217,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: LeadsTo
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -256,7 +256,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -291,7 +291,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IsVisible
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -372,13 +372,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: com.absence.dialoguesystem.internals.AdditionalSpeechData
-  commentId: T:com.absence.dialoguesystem.internals.AdditionalSpeechData
+- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
+  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.AdditionalSpeechData.html
-  name: AdditionalSpeechData
-  nameWithType: AdditionalSpeechData
-  fullName: com.absence.dialoguesystem.internals.AdditionalSpeechData
+  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
+  name: ExtraDialogueData
+  nameWithType: ExtraDialogueData
+  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
 - uid: com.absence.dialoguesystem.internals.Option.UseShowIf*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.UseShowIf
   href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_UseShowIf
