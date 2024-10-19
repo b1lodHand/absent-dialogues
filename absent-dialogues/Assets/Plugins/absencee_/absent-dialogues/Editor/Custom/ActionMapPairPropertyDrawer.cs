@@ -9,6 +9,8 @@ namespace com.absence.dialoguesystem.editor
     public class ActionMapPairPropertyDrawer : PropertyDrawer
     {
         static readonly int s_vertical_spacing = 2;
+        static readonly int s_vertical_space_count = 1;
+        static readonly int s_vertical_base_size = 36;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
@@ -18,9 +20,9 @@ namespace com.absence.dialoguesystem.editor
             SerializedProperty eventProp = property.FindPropertyRelative("AttachedEvent");
 
             bool isFoldout = foldoutProperty.boolValue;
-            float eventHeight = EditorGUI.GetPropertyHeight(eventProp, new GUIContent("Events: "), true);
+            float eventHeight = EditorGUI.GetPropertyHeight(eventProp, new GUIContent("Events"), true);
 
-            if (isFoldout) return EditorGUI.GetPropertyHeight(property, label, true) + eventHeight + (s_vertical_spacing * 2);
+            if (isFoldout) return s_vertical_base_size + eventHeight + (s_vertical_spacing * s_vertical_space_count);
             else return EditorGUIUtility.singleLineHeight;
         }
 

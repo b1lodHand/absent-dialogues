@@ -11,6 +11,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.GotoNode.html")]
     public sealed class GotoNode : Node, IPerformDelayedClone
     {
+        public static string ParentCreationMenu => "Grouping";
+
         /// <summary>
         /// The node which will get reached when this goto node gets passed.
         /// </summary>

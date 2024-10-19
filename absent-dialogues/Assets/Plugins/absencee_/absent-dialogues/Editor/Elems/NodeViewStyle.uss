@@ -71,7 +71,7 @@
 
 #divider {
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.17);
     visibility: visible;
     display: flex;
 }
@@ -260,12 +260,29 @@
 
 .decisionSpeechNode .removeOptionButton {
     border-radius: 0;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgb(31, 31, 31);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    background-color: rgb(171, 68, 63);
+    color: rgb(255, 255, 255);
+}
+
+.decisionSpeechNode .removeOptionButton:hover {
+    background-color: rgb(194, 95, 91);
 }
 
 .decisionSpeechNode .optionShowIfLabel {
     -unity-font-style: italic;
     -unity-text-align: middle-left;
     color: rgba(207, 207, 207, 0.62);
+}
+
+.decisionSpeechNode .optionShowIfLabel:hover {
+    color: rgba(255, 255, 255, 0.62);
 }
 
 .stickyNoteNode {
@@ -453,6 +470,10 @@
 
 .mapped #node-icon {
     -unity-background-image-tint-color: rgb(63, 166, 171);
+}
+
+.mapped #node-icon:hover {
+    -unity-background-image-tint-color: rgb(91, 190, 194);
 }
 
 .gotoNode #node-icon {

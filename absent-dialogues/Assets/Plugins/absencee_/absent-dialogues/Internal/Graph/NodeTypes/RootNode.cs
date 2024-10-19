@@ -10,6 +10,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.RootNode.html")]
     public sealed class RootNode : Node, IPerformDelayedClone
     {
+        public static string ParentCreationMenu => "Initial";
+
         [HideInInspector] public Node Next;
         public override string GetClassName() => "rootNode";
         public override string GetTitle() => "Root";

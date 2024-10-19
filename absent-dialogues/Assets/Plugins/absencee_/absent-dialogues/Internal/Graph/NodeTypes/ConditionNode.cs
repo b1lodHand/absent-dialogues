@@ -14,6 +14,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
     public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
+        public static string ParentCreationMenu => "Flow";
+
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
 

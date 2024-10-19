@@ -131,6 +131,12 @@ namespace com.absence.dialoguesystem.runtime
                 TargetActionNode.OnRemove += OnNodeRemove;
             }
 
+            ~ActionMapPair()
+            {
+                TargetActionNode.OnValidation -= OnNodeValidate;
+                TargetActionNode.OnRemove -= OnNodeRemove;
+            }
+
             private void OnNodeRemove()
             {
                 Enabled = false;

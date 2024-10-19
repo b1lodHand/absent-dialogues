@@ -12,6 +12,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html")]
     public sealed class DialoguePartNode : Node, IPerformDelayedClone
     {
+        public static string ParentCreationMenu => "Grouping";
+
         [HideInInspector] public Node Next;
         public string DialoguePartName;
         public override bool DisplayState => false;

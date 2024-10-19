@@ -10,6 +10,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
     public sealed class DecisionSpeechNode : Node, IContainData, IPerformDelayedClone, IContainVariableManipulators
     {
+        public static string ParentCreationMenu => "Dialogue";
+
         [SerializeField] private ExtraDialogueData m_extraData;
 
         [Space(10)]

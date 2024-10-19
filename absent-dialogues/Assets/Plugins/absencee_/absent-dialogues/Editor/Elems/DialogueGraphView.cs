@@ -19,6 +19,8 @@ namespace com.absence.dialoguesystem.editor
     {
         public new class UxmlFactory : UxmlFactory<DialogueGraphView, GraphView.UxmlTraits> { }
 
+        static readonly string s_default_parent_creation_menu = "Default";
+
         internal Dialogue m_dialogue;
 
         /// <summary>
@@ -143,13 +145,20 @@ namespace com.absence.dialoguesystem.editor
             var types = TypeCache.GetTypesDerivedFrom<Node>();
             foreach (var type in types)
             {
-                if (type.Equals(typeof(RootNode))) continue;
+                DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
+                if (type.Equals(typeof(RootNode))) status = DropdownMenuAction.Status.Disabled;
+
+                System.Reflection.PropertyInfo parentMenuProp = type.GetProperty("ParentCreationMenu");
+                bool parentMenuSpecified = parentMenuProp != null;
 
                 var mousePos = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
-                evt.menu.AppendAction($"{Helpers.SplitCamelCase(type.Name, " ")}", a =>
+                evt.menu.AppendAction(
+                    $"{(parentMenuSpecified ? parentMenuProp.GetValue(null).ToString() : s_default_parent_creation_menu)}" +
+                    $"/{Helpers.SplitCamelCase(type.Name, " ")}",
+                    a =>
                 {
                     CreateNode(type, mousePos);
-                });
+                }, status);
             }
         }
 

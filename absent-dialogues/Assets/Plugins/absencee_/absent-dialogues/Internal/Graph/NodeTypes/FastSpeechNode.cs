@@ -10,6 +10,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.FastSpeechNode.html")]
     public sealed class FastSpeechNode : Node, IContainData, IPerformDelayedClone
     {
+        public static string ParentCreationMenu => "Dialogue";
+
         [SerializeField] private ExtraDialogueData m_extraData;
 
         [HideInInspector] public Node Next;

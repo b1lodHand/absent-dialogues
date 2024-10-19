@@ -23,6 +23,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
     public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
     {
+        public static string ParentCreationMenu => "Flow";
+
         public bool UsedByMapper = false;
         [ShowIf(nameof(UsedByMapper))] public string UniqueMapperId;
 

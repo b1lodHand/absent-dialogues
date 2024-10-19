@@ -132,6 +132,7 @@ namespace com.absence.dialoguesystem.editor
             VisualElement icon = this.Q<VisualElement>("node-icon");
 
             icon.tooltip = nodeAsCondition.GetConditionString(true);
+
         }
 
         private void RefreshDialoguePartTitle()
@@ -486,7 +487,7 @@ namespace com.absence.dialoguesystem.editor
                 Master.Refresh();
             });
 
-            removeButton.text = "X";
+            removeButton.text = "x";
             removeButton.AddToClassList("removeOptionButton");
 
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));

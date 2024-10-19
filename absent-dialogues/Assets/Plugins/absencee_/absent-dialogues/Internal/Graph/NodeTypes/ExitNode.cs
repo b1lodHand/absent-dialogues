@@ -4,6 +4,8 @@ namespace com.absence.dialoguesystem.internals
 {
     public class ExitNode : Node
     {
+        public static string ParentCreationMenu => "Initial";
+
         public override string GetClassName() => "exitNode";
 
         public override string GetTitle() => "Exit";
