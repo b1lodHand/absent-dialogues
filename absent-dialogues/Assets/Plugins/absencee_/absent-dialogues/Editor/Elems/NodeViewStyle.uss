@@ -514,18 +514,12 @@
 }
 
 .exitNode #node-icon {
-    position: absolute;
-    top: 4px;
-    left: 3px;
-    background-image: resource('node-icon-goto');
-    -unity-background-image-tint-color: rgb(171, 68, 63);
-    display: none;
-    width: 0;
-    height: 0;
+    background-image: resource('node-icon-exit');
+    -unity-background-image-tint-color: rgb(63, 166, 171);
+    display: flex;
 }
 
 .exitNode #title {
-    -unity-text-align: upper-center;
     -unity-font-style: bold;
 }
 

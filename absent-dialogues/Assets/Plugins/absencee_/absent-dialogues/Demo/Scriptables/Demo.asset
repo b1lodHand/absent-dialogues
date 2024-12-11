@@ -335,9 +335,6 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
-  BypassState: 0
-  WasTrueUsed: 0
-  WasFalseUsed: 0
 --- !u!114 &1326889792880528920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,10 +395,13 @@ MonoBehaviour:
   m_booleans:
   - m_name: b_missionPending
     m_value: 0
+    m_bypassEvents: 0
   - m_name: b_missionDone
     m_value: 0
+    m_bypassEvents: 0
   - m_name: b_missionCommitted
     m_value: 0
+    m_bypassEvents: 0
 --- !u!114 &6287193538585539002
 MonoBehaviour:
   m_ObjectHideFlags: 0

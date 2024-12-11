@@ -25,10 +25,6 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
 
-        public bool BypassState = false;
-        public bool WasTrueUsed = false;
-        public bool WasFalseUsed = false;
-
         protected override void Pass_Inline(DialogueFlowContext context)
         {
             bool result = Process();
