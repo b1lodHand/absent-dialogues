@@ -1,6 +1,5 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.variablesystem;
-using System;
+using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 using System.Linq;
 

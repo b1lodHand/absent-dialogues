@@ -1,8 +1,7 @@
 using com.absence.attributes;
-using com.absence.variablesystem;
+using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals

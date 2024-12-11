@@ -1,4 +1,4 @@
-using com.absence.variablesystem;
+using com.absence.variablesystem.banksystembase;
 using System.Text;
 using UnityEngine;
 

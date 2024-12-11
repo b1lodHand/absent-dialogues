@@ -1,5 +1,5 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.variablesystem;
+using com.absence.variablesystem.banksystembase;
 using System.IO;
 using UnityEditor;
 using UnityEditor.ProjectWindowCallback;

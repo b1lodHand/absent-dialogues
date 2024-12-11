@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using com.absence.variablesystem.banksystembase;
+using System.Collections.Generic;
 using System.Text;
 
 namespace com.absence.dialoguesystem.internals
@@ -72,17 +73,17 @@ namespace com.absence.dialoguesystem.internals
             {
                 switch (comparisonType)
                 {
-                    case variablesystem.BaseVariableComparer.ComparisonType.LessThan:
+                    case BaseVariableComparer.ComparisonType.LessThan:
                         return "<";
-                    case variablesystem.BaseVariableComparer.ComparisonType.LessOrEqual:
+                    case BaseVariableComparer.ComparisonType.LessOrEqual:
                         return "≤";
-                    case variablesystem.BaseVariableComparer.ComparisonType.EqualsTo:
+                    case BaseVariableComparer.ComparisonType.EqualsTo:
                         return "=";
-                    case variablesystem.BaseVariableComparer.ComparisonType.NotEquals:
+                    case BaseVariableComparer.ComparisonType.NotEquals:
                         return "≠";
-                    case variablesystem.BaseVariableComparer.ComparisonType.GreaterOrEqual:
+                    case BaseVariableComparer.ComparisonType.GreaterOrEqual:
                         return "≥";
-                    case variablesystem.BaseVariableComparer.ComparisonType.GreaterThan:
+                    case BaseVariableComparer.ComparisonType.GreaterThan:
                         return ">";
                     default:
                         return string.Empty;

@@ -109,7 +109,8 @@ namespace com.absence.dialoguesystem
             else m_player = new DialoguePlayer(m_referencedDialogue);
 
             m_extensionList.ForEach(extension => 
-            { 
+            {
+                if (extension == null) return;
                 if (!extension.enabled) return;
 
                 extension.OnAfterCloning();
@@ -127,6 +128,7 @@ namespace com.absence.dialoguesystem
 
             m_extensionList.ForEach(extension =>
             {
+                if (extension == null) return;
                 if (!extension.enabled) return;
 
                 extension.OnDialogueUpdate();
@@ -237,6 +239,7 @@ namespace com.absence.dialoguesystem
 
             m_extensionList.ForEach(extension =>
             {
+                if (extension == null) return;
                 if (!extension.enabled) return;
 
                 extension.OnHandleExtraData(m_extraData);
@@ -250,6 +253,7 @@ namespace com.absence.dialoguesystem
 
             m_extensionList.ForEach(extension =>
             {
+                if (extension == null) return;
                 if (!extension.enabled) return;
 
                 extension.OnProgress(m_player.Context);

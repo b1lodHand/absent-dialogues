@@ -1,7 +1,7 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
-using com.absence.variablesystem;
+using com.absence.variablesystem.builtin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,24 +30,24 @@ namespace com.absence.dialoguesystem.editor.backup
         }
         static void ReadBlackboardData(BlackboardData data, Blackboard target)
         {
-            List<Variable_Integer> ints = data.Ints.ToList().ConvertAll(intPair =>
+            List<Integer> ints = data.Ints.ToList().ConvertAll(intPair =>
             {
-                return new Variable_Integer(intPair.Key, intPair.Value);
+                return new Integer(intPair.Key, intPair.Value);
             }).ToList();
 
-            List<Variable_Float> floats = data.Floats.ToList().ConvertAll(floatPair =>
+            List<Float> floats = data.Floats.ToList().ConvertAll(floatPair =>
             {
-                return new Variable_Float(floatPair.Key, floatPair.Value);
+                return new Float(floatPair.Key, floatPair.Value);
             }).ToList();
 
-            List<Variable_String> strings = data.Strings.ToList().ConvertAll(stringPair =>
+            List<variablesystem.builtin.String> strings = data.Strings.ToList().ConvertAll(stringPair =>
             {
-                return new Variable_String(stringPair.Key, stringPair.Value);
+                return new variablesystem.builtin.String(stringPair.Key, stringPair.Value);
             }).ToList();
 
-            List<Variable_Boolean> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
+            List<variablesystem.builtin.Boolean> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
             {
-                return new Variable_Boolean(booleanPair.Key, booleanPair.Value);
+                return new variablesystem.builtin.Boolean(booleanPair.Key, booleanPair.Value);
             }).ToList();
 
             target.Bank.Ints = new(ints);

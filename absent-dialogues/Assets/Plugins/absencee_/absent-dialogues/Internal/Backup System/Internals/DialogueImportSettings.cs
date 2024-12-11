@@ -1,6 +1,6 @@
 using com.absence.dialoguesystem.internals;
 using System.Collections.Generic;
-using com.absence.variablesystem;
+using com.absence.variablesystem.banksystembase;
 
 namespace com.absence.dialoguesystem.runtime.backup.internals
 {

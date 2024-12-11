@@ -1,7 +1,8 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.dialoguesystem.runtime.backup.internals;
-using com.absence.variablesystem;
+using com.absence.variablesystem.banksystembase;
+using com.absence.variablesystem.builtin;
 using System.Collections.Generic;
 
 namespace com.absence.dialoguesystem.editor.backup
@@ -89,7 +90,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int i = 0; i < intCount; i++)
             {
                 IntPair intPair = new();
-                Variable_Integer intVariable = bank.Ints[i];
+                Integer intVariable = bank.Ints[i];
 
                 intPair.Key = intVariable.Name;
                 intPair.Value = intVariable.Value;
@@ -100,7 +101,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int f = 0; f < floatCount; f++)
             {
                 FloatPair floatPair = new();
-                Variable_Float floatVariable = bank.Floats[f];
+                Float floatVariable = bank.Floats[f];
 
                 floatPair.Key = floatVariable.Name;
                 floatPair.Value = floatVariable.Value;
@@ -111,7 +112,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int s = 0; s < intCount; s++)
             {
                 StringPair stringPair = new();
-                Variable_String floatVariable = bank.Strings[s];
+                String floatVariable = bank.Strings[s];
 
                 stringPair.Key = floatVariable.Name;
                 stringPair.Value = floatVariable.Value;
@@ -122,7 +123,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int b = 0; b < booleanCount; b++)
             {
                 BooleanPair booleanPair = new();
-                Variable_Boolean booleanVariable = bank.Booleans[b];
+                Boolean booleanVariable = bank.Booleans[b];
 
                 booleanPair.Key = booleanVariable.Name;
                 booleanPair.Value = booleanVariable.Value;
