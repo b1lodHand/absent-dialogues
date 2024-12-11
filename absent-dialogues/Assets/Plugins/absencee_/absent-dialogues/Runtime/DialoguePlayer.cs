@@ -142,10 +142,15 @@ namespace com.absence.dialoguesystem
 
         public void Initialize()
         {
-            m_context = new();
+            ClearContext();
 
             m_dialogue.Initialize(m_context);
             m_currentNode = m_dialogue.LastOrCurrentNode;
+        }
+
+        public void ClearContext()
+        {
+            m_context = new();
         }
 
         /// <summary>

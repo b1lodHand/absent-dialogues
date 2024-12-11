@@ -170,6 +170,7 @@ namespace com.absence.dialoguesystem
             if (!m_inDialogue) return;
 
             m_inDialogue = false;
+            m_player.ClearContext();
 
             DialogueDisplayer.Instance.Release();
 
