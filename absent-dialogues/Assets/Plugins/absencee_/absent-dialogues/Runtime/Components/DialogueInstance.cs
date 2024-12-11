@@ -144,7 +144,9 @@ namespace com.absence.dialoguesystem
             m_inDialogue = true;
 
             m_player.OnContinue += OnPlayerContinue;
-            OnPlayerContinue(m_player.State);
+
+            m_player.TeleportToRoot();
+            m_player.Continue();
 
             return true;
         }
