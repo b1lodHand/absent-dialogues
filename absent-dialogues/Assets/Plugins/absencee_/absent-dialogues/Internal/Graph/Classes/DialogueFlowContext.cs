@@ -1,3 +1,4 @@
+using com.absence.dialoguesystem.runtime;
 using System.Collections.Generic;
 
 namespace com.absence.dialoguesystem.internals
@@ -19,7 +20,7 @@ namespace com.absence.dialoguesystem.internals
 
         public string Text;
         public List<OptionHandle> OptionIndexPairs;
-        public ExtraDialogueData ExtraData;
+        public NodeCustomDataBase CustomData;
 
         public bool WillExit { get; set; }
         public bool HasText => Text != null;
@@ -40,7 +41,7 @@ namespace com.absence.dialoguesystem.internals
         public void ClearSpeech()
         {
             Text = null;
-            ExtraData = null;
+            CustomData = null;
             OptionIndexPairs.Clear();
         }
     }

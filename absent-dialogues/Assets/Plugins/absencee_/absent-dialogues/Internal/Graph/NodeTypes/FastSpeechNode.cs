@@ -1,3 +1,4 @@
+using com.absence.attributes.experimental;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,6 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string ParentCreationMenu => "Dialogue";
 
-        [SerializeField] private ExtraDialogueData m_extraData;
-
         [HideInInspector] public Node Next;
         [HideInInspector] public string m_text;
 
@@ -21,7 +20,6 @@ namespace com.absence.dialoguesystem.internals
 
         public string Text { get => m_text; set { m_text = value; } }
         public List<Option> Options { get => null; set { return; } }
-        public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "fastSpeechNode";
         public override string GetTitle() => "Dialogue (Optionless)";
@@ -57,8 +55,6 @@ namespace com.absence.dialoguesystem.internals
             action?.Invoke(this);
             Next.Traverse(action);
         }
-
-        public ExtraDialogueData GetExtraData() => m_extraData;
 
         public void DelayedClone(Dialogue originalDialogue)
         {

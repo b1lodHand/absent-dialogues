@@ -30,24 +30,24 @@ namespace com.absence.dialoguesystem.editor.backup
         }
         static void ReadBlackboardData(BlackboardData data, Blackboard target)
         {
-            List<Integer> ints = data.Ints.ToList().ConvertAll(intPair =>
+            List<IntegerVariable> ints = data.Ints.ToList().ConvertAll(intPair =>
             {
-                return new Integer(intPair.Key, intPair.Value);
+                return new IntegerVariable(intPair.Key, intPair.Value);
             }).ToList();
 
-            List<Float> floats = data.Floats.ToList().ConvertAll(floatPair =>
+            List<FloatVariable> floats = data.Floats.ToList().ConvertAll(floatPair =>
             {
-                return new Float(floatPair.Key, floatPair.Value);
+                return new FloatVariable(floatPair.Key, floatPair.Value);
             }).ToList();
 
-            List<variablesystem.builtin.String> strings = data.Strings.ToList().ConvertAll(stringPair =>
+            List<variablesystem.builtin.StringVariable> strings = data.Strings.ToList().ConvertAll(stringPair =>
             {
-                return new variablesystem.builtin.String(stringPair.Key, stringPair.Value);
+                return new variablesystem.builtin.StringVariable(stringPair.Key, stringPair.Value);
             }).ToList();
 
-            List<variablesystem.builtin.Boolean> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
+            List<variablesystem.builtin.BooleanVariable> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
             {
-                return new variablesystem.builtin.Boolean(booleanPair.Key, booleanPair.Value);
+                return new variablesystem.builtin.BooleanVariable(booleanPair.Key, booleanPair.Value);
             }).ToList();
 
             target.Bank.Ints = new(ints);

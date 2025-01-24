@@ -1,7 +1,5 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
-using com.absence.personsystem;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -34,7 +32,7 @@ namespace com.absence.dialoguesystem
         /// progresses.
         /// </summary>
         /// <param name="data"></param>
-        public virtual void OnHandleExtraData(ExtraDialogueData data)
+        public virtual void OnHandleCustomData(NodeCustomDataBase data)
         {
 
         }

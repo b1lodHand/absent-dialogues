@@ -1,4 +1,5 @@
 using com.absence.attributes;
+using com.absence.attributes.experimental;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.personsystem;
@@ -31,8 +32,11 @@ namespace com.absence.dialoguesystem.internals
 #endif
 
         [Readonly] public Dialogue MasterDialogue;
-        [HideInInspector] public Blackboard Blackboard;
 
+        [InlineEditor(newButtonId = 1801, delButtonId = 1800)]
+        public NodeCustomDataBase CustomData = null;
+
+        [HideInInspector] public Blackboard Blackboard;
         [HideInInspector] public NodeState State = NodeState.Unreached;
 
         /// <summary>
@@ -132,7 +136,10 @@ namespace com.absence.dialoguesystem.internals
         {
             SetState(NodeState.Past);
 
-            if (context != null) context.State = DialogueFlowContext.ContextState.Pass;
+            if (context != null)
+            {
+                context.State = DialogueFlowContext.ContextState.Pass;
+            }
 
             OnPass?.Invoke();
             Pass_Inline(context);
@@ -142,7 +149,11 @@ namespace com.absence.dialoguesystem.internals
             MasterDialogue.LastOrCurrentNode = this;
             SetState(NodeState.Current);
 
-            if (context != null) context.State = DialogueFlowContext.ContextState.Reach;
+            if (context != null)
+            {
+                context.State = DialogueFlowContext.ContextState.Reach;
+                context.CustomData = CustomData;
+            }
 
             OnReach?.Invoke();
             Reach_Inline(context);

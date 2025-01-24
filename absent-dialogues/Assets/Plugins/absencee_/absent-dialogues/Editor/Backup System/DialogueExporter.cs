@@ -90,7 +90,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int i = 0; i < intCount; i++)
             {
                 IntPair intPair = new();
-                Integer intVariable = bank.Ints[i];
+                IntegerVariable intVariable = bank.Ints[i];
 
                 intPair.Key = intVariable.Name;
                 intPair.Value = intVariable.Value;
@@ -101,7 +101,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int f = 0; f < floatCount; f++)
             {
                 FloatPair floatPair = new();
-                Float floatVariable = bank.Floats[f];
+                FloatVariable floatVariable = bank.Floats[f];
 
                 floatPair.Key = floatVariable.Name;
                 floatPair.Value = floatVariable.Value;
@@ -112,7 +112,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int s = 0; s < intCount; s++)
             {
                 StringPair stringPair = new();
-                String floatVariable = bank.Strings[s];
+                StringVariable floatVariable = bank.Strings[s];
 
                 stringPair.Key = floatVariable.Name;
                 stringPair.Value = floatVariable.Value;
@@ -123,7 +123,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int b = 0; b < booleanCount; b++)
             {
                 BooleanPair booleanPair = new();
-                Boolean booleanVariable = bank.Booleans[b];
+                BooleanVariable booleanVariable = bank.Booleans[b];
 
                 booleanPair.Key = booleanVariable.Name;
                 booleanPair.Value = booleanVariable.Value;

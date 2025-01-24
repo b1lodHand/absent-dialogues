@@ -1,3 +1,4 @@
+using com.absence.attributes.editor;
 using com.absence.dialoguesystem.internals;
 using com.absence.variablesystem.banksystembase;
 using UnityEditor;
@@ -53,7 +54,6 @@ namespace com.absence.dialoguesystem.editor
             SerializedProperty bankProp = blackboardProperty.FindPropertyRelative("Bank");
 
             VariableBank bank = bankProp.objectReferenceValue as VariableBank;
-            SerializedObject bankSO = new SerializedObject(bank);
 
             Undo.RecordObject(dialogue.targetObject, "Dialogue");
 
@@ -61,9 +61,10 @@ namespace com.absence.dialoguesystem.editor
             {
                 EditorGUILayout.ObjectField(bankProp);
                 EditorGUILayout.HelpBox("There is no bank to edit here. Pick one to continue.", MessageType.Warning);
+                return;
             }
 
-            dialogue.ApplyModifiedProperties();
+            SerializedObject bankSO = new SerializedObject(bank);
 
             if (bank == null) return;
 
@@ -78,8 +79,8 @@ namespace com.absence.dialoguesystem.editor
 
             try
             {
-                if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-                else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+                if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, typeof(absentEditorExtension), ref m_blackboardBankEditor);
+                else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, typeof(absentEditorExtension), ref m_blackboardBankEditor);
                 else m_blackboardBankEditor.OnInspectorGUI();
             }
 

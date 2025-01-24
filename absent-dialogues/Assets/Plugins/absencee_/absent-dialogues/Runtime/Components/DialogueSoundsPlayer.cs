@@ -1,6 +1,9 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
+using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem
 {
@@ -15,14 +18,86 @@ namespace com.absence.dialoguesystem
     public class DialogueSoundsPlayer : DialogueExtensionBase
     {
         [SerializeField, Required] private AudioSource m_source;
-        [SerializeField, HideIf(nameof(m_source), null), Range(0f, 10f)] private float m_volume = 1f;
+        [SerializeField, HideIf(nameof(m_source), null), Range(0f, 1f)] private float m_volume = 1f;
 
-        public override void OnHandleExtraData(ExtraDialogueData data)
+        Coroutine m_playingCoroutine;
+        AudioClip m_clip;
+
+        public override void OnAfterCloning()
         {
-            if (data.AudioClip == null) return;
-            if (m_source == null) return;
+            m_playingCoroutine = null;
+            if (m_source != null) m_source.loop = false;
+        }
 
-            m_source.PlayOneShot(data.AudioClip, m_volume);
+        public override void OnProgress(DialogueFlowContext context)
+        {
+            if (context == null)
+            {
+                ForceStop();
+                return;
+            }
+
+            if (context.State == DialogueFlowContext.ContextState.Pass)
+            {
+                return;
+            }
+
+            NodeCustomDataBase data = context.CustomData;
+
+            if (data == null)
+            {
+                ForceStop();
+                return;
+            }
+
+            if (data is not IAudioData audioData)
+            {
+                ForceStop();
+                return;
+            }
+
+            if (m_source == null)
+                return;
+
+            m_clip = audioData.AudioClip;
+            Play();
+        }
+
+        IEnumerator C_PlayAudio()
+        {
+            yield return new WaitWhile(() => m_source.isPlaying);
+            ForceStop();
+        }
+
+        void Play()
+        {
+            if (m_clip == null)
+            {
+                ForceStop();
+                return;
+            }
+
+            if (m_playingCoroutine != null) StopCoroutine(m_playingCoroutine);
+
+            m_source.clip = m_clip;
+            m_source.volume = m_volume;
+            m_source.Play();
+            m_playingCoroutine = StartCoroutine(C_PlayAudio());
+
+            if (m_playingCoroutine != null)
+                ForceStop();
+        }
+
+        [Button("Force Stop")]
+        void ForceStop()
+        {
+            if (m_playingCoroutine != null)
+            {
+                StopCoroutine(m_playingCoroutine);
+                m_playingCoroutine = null;
+            }
+
+            m_source.Stop();
         }
 
 #if UNITY_EDITOR

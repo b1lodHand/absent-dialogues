@@ -9,6 +9,5 @@ namespace com.absence.dialoguesystem.internals
     {
         string Text { get; set; }
         List<Option> Options { get; set; }
-        ExtraDialogueData ExtraData { get; set; }
     }
 }

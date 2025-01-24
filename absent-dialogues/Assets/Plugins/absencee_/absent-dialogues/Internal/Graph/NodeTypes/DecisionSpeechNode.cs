@@ -12,8 +12,6 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string ParentCreationMenu => "Dialogue";
 
-        [SerializeField] private ExtraDialogueData m_extraData;
-
         [Space(10)]
         
         [Tooltip("All of the options of this node.")] public List<Option> Options = new List<Option>();
@@ -24,7 +22,6 @@ namespace com.absence.dialoguesystem.internals
 
         public string Text { get => m_text; set { m_text = value; } }
         List<Option> IContainData.Options { get => Options; set { Options = value; } }
-        public ExtraDialogueData ExtraData { get { return m_extraData; } set { m_extraData = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
         public override string GetTitle() => "Dialogue";
@@ -86,8 +83,6 @@ namespace com.absence.dialoguesystem.internals
         {
             return new List<string>();
         }
-
-        public ExtraDialogueData GetExtraData() => m_extraData;
 
         public void DelayedClone(Dialogue originalDialogue)
         {

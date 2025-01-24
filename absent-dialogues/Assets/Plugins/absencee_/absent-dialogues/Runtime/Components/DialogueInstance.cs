@@ -57,7 +57,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// The Action which will get invoked when <see cref="HandleAdditionalData"/> gets called.
         /// </summary>
-        public event Action<ExtraDialogueData> OnHandleExtraData;
+        public event Action<NodeCustomDataBase> OnHandleCustomData;
 
         /// <summary>
         /// Action which will get invoked right after this instance clons it's <see cref="ReferencedDialogue"/>.
@@ -83,7 +83,7 @@ namespace com.absence.dialoguesystem
 
         Person m_speaker;
         string m_text;
-        ExtraDialogueData m_extraData;
+        NodeCustomDataBase m_customData;
         List<OptionHandle> m_options;
 
         [Button("Refresh Extension List")]
@@ -209,38 +209,34 @@ namespace com.absence.dialoguesystem
 
         private void GatherPlayerData()
         {
-            if(!Player.HasText)
+            m_customData = Player.CustomNodeData;
+
+            if (!Player.HasText)
             {
                 m_speaker = null;
                 m_text = null;
                 m_options = null;
-                m_extraData = null;
                 return;
             }
 
             m_speaker = Player.Speaker;
             m_text = Player.Text;
-            m_extraData = Player.ExtraDialogueData;
             if (Player.HasOptions) m_options = new(Player.OptionIndexPairs);
         }
         private void HandleAdditionalData()
         {
-            if (!Player.HasText) return;
-
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;
                 if (!extension.enabled) return;
 
-                extension.OnHandleExtraData(m_extraData);
+                extension.OnHandleCustomData(m_customData);
             });
 
-            OnHandleExtraData?.Invoke(m_extraData);
+            OnHandleCustomData?.Invoke(m_customData);
         }
         private void InvokeBeforeSpeech()
         {
-            if (!Player.HasText) return;
-
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;

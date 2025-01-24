@@ -65,29 +65,15 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Options:
   - Text: Sure!
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 7901140551254700991}
   - Text: I am not interested in that, actually.
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 0
     Visibility:
       Processor: 0
@@ -133,11 +119,7 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Next: {fileID: -3621898333564505408}
   m_text: Alright! I'll be here when you're done.
 --- !u!114 &-1965666318695130335
@@ -159,11 +141,7 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Next: {fileID: 7873461484329537452}
   m_text: Okay, bud. Do your best.
 --- !u!114 &-1399893973709126951
@@ -185,18 +163,9 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Options:
   - Text: I've done it.
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 1
     Visibility:
       Processor: 0
@@ -210,11 +179,6 @@ MonoBehaviour:
         m_boolValue: 1
     LeadsTo: {fileID: -914008930283711827}
   - Text: I am working on it.
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 0
     Visibility:
       Processor: 0
@@ -394,12 +358,15 @@ MonoBehaviour:
   m_strings: []
   m_booleans:
   - m_name: b_missionPending
+    m_underlyingValue: 0
     m_value: 0
     m_bypassEvents: 0
   - m_name: b_missionDone
+    m_underlyingValue: 0
     m_value: 0
     m_bypassEvents: 0
   - m_name: b_missionCommitted
+    m_underlyingValue: 0
     m_value: 0
     m_bypassEvents: 0
 --- !u!114 &6287193538585539002
@@ -421,11 +388,7 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Next: {fileID: 1839565436388208056}
   m_text: Thank you!
 --- !u!114 &6611807328144254293
@@ -447,29 +410,15 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Options:
   - Text: Do you have missions for me?
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 1239550416686042660}
   - Text: I am here for the mission.
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 1
     Visibility:
       Processor: 0
@@ -601,18 +550,9 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_extraData:
-    m_audioClip: {fileID: 0}
-    m_animMemberName: 
-    m_sprite: {fileID: 0}
-    m_customInfo: []
+  m_customData: {fileID: 0}
   Options:
   - Text: Okay.
-    ExtraData:
-      m_audioClip: {fileID: 0}
-      m_animMemberName: 
-      m_sprite: {fileID: 0}
-      m_customInfo: []
     m_useShowIf: 0
     Visibility:
       Processor: 0

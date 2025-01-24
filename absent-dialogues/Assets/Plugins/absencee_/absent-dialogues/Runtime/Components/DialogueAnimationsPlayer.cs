@@ -31,11 +31,13 @@ namespace com.absence.dialoguesystem
         [SerializeField, ShowIf(nameof(m_workMode), WorkMode.CrossFade), Range(0f, 1f)]
         private float m_transitionTime = 0.15f;
 
-        public override void OnHandleExtraData(ExtraDialogueData data)
+        public override void OnHandleCustomData(NodeCustomDataBase data)
         {
-            if (string.IsNullOrWhiteSpace(data.AnimatorMemberName)) return;
+            if (data is not IAnimatorData animatorData) return;
 
-            int hash = Animator.StringToHash(data.AnimatorMemberName);
+            if (string.IsNullOrWhiteSpace(animatorData.AnimatorMemberName)) return;
+
+            int hash = Animator.StringToHash(animatorData.AnimatorMemberName);
 
             switch (m_workMode)
             {

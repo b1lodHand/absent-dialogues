@@ -63,7 +63,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Additional data of the current node.
         /// </summary>
-        public ExtraDialogueData ExtraDialogueData => m_context.ExtraData;
+        public NodeCustomDataBase CustomNodeData => m_context.CustomData;
 
         /// <summary>
         /// Speech of the current node.
