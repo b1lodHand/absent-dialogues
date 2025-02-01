@@ -138,6 +138,9 @@ namespace com.absence.dialoguesystem
         /// <returns><b>False</b> if the <see cref="DialogueDisplayer"/> is already occupied by any other script. Returns <b>true</b> otherwise.</returns>
         public bool EnterDialogue()
         {
+            if (m_inDialogue)
+                return true;
+
             m_inDialogue = false;
             if (!DialogueDisplayer.Instance.Occupy()) return false;
 
@@ -156,7 +159,8 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void ExitDialogue()
         {
-            if (!m_inDialogue) return;
+            if (!m_inDialogue) 
+                return;
 
             m_inDialogue = false;
             m_player.ClearContext();

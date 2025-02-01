@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 236b3a67c553fdf43a76788b1c90f055
-  Position: {x: 185, y: 13.5}
+  Position: {x: 185, y: 8}
   MasterDialogue: {fileID: 11400000}
   CustomData: {fileID: -1352841623202749854}
   Blackboard:

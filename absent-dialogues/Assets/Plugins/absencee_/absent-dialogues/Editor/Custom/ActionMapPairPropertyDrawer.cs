@@ -14,12 +14,9 @@ namespace com.absence.dialoguesystem.editor
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            SerializedProperty foldoutProperty = property.FindPropertyRelative("m_editorProperties").
-                FindPropertyRelative("IsFoldout");
-
             SerializedProperty eventProp = property.FindPropertyRelative("AttachedEvent");
 
-            bool isFoldout = foldoutProperty.boolValue;
+            bool isFoldout = property.isExpanded;
             float eventHeight = EditorGUI.GetPropertyHeight(eventProp, new GUIContent("Events"), true);
 
             if (isFoldout) return s_vertical_base_size + eventHeight + (s_vertical_spacing * s_vertical_space_count);
@@ -28,10 +25,7 @@ namespace com.absence.dialoguesystem.editor
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            SerializedProperty foldoutProperty = property.FindPropertyRelative("m_editorProperties").
-                FindPropertyRelative("IsFoldout");
-
-            bool isFoldout = foldoutProperty.boolValue;
+            bool isFoldout = property.isExpanded;
 
             SerializedProperty eventProp = property.FindPropertyRelative("AttachedEvent");
             SerializedProperty enabledProp = property.FindPropertyRelative("Enabled");
@@ -59,7 +53,7 @@ namespace com.absence.dialoguesystem.editor
                 foldoutLabel,
                 true, foldoutLabelStyle);
 
-            foldoutProperty.boolValue = isFoldout;
+            property.isExpanded = isFoldout;
             if (!isFoldout) return;
 
             position.y += EditorGUIUtility.singleLineHeight;

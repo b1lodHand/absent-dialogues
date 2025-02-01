@@ -12,14 +12,7 @@ namespace com.absence.dialoguesystem.runtime
     {
         [SerializeField] private List<ActionMapPair> m_actionMapPairs = new();
 
-#if UNITY_EDITOR
-        [UnityEditor.MenuItem("CONTEXT/DialogueInstance/Add Extension/Action Mapper")]
-        static void AddExtensionMenuItem(UnityEditor.MenuCommand command)
-        {
-            DialogueInstance instance = (DialogueInstance)command.context;
-            instance.AddExtension<DialogueActionMapper>();
-        }
-#endif
+
 
         [Button("Seach for new mapped action nodes")]
         void Refresh()
@@ -91,30 +84,23 @@ namespace com.absence.dialoguesystem.runtime
             }
         }
 
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem("CONTEXT/DialogueInstance/Add Extension/Action Mapper")]
+        static void AddExtensionMenuItem(UnityEditor.MenuCommand command)
+        {
+            DialogueInstance instance = (DialogueInstance)command.context;
+            instance.AddExtension<DialogueActionMapper>();
+        }
+#endif
+
         [System.Serializable]
         public class ActionMapPair
         {
-#if UNITY_EDITOR
-            [System.Serializable]
-            public class EditorProps
-            {
-                public bool IsFoldout = false;
-
-                public EditorProps()
-                {
-                    IsFoldout = false;
-                }
-            }
-#endif
             public ActionNode TargetActionNode;
             public UnityEvent AttachedEvent;
             public bool Enabled;
             public string BackupId;
             public string BackupGuid;
-
-#if UNITY_EDITOR
-            [SerializeField] private EditorProps m_editorProperties = new();
-#endif
 
             public ActionMapPair(ActionNode targetActionNode)
             {
