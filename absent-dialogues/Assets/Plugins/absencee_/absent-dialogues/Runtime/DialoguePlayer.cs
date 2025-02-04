@@ -138,6 +138,8 @@ namespace com.absence.dialoguesystem
         {
             m_dialogue.TeleportToRoot(m_context);
             m_currentNode = m_dialogue.LastOrCurrentNode;
+            m_state = PlayerState.NoText;
+            OnContinue?.Invoke(m_state);
         }
 
         public void Initialize()

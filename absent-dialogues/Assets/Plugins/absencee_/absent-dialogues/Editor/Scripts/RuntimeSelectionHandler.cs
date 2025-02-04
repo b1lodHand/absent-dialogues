@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.RuntimeSelectionHandler.html")]
     public static class RuntimeSelectionHandler
     {
+        static IUseDialogueInScene s_lastSelectedUser;
+
         static RuntimeSelectionHandler()
         {
             Selection.selectionChanged -= OnSelectionChanged;
@@ -31,11 +34,20 @@ namespace com.absence.dialoguesystem.editor
 
         private static void OnSelectionChanged()
         {
+            if (s_lastSelectedUser != null)
+            {
+                s_lastSelectedUser.OnValidation -= OnUserValidation;
+                s_lastSelectedUser = null;
+            }
+
             GameObject gameObject = Selection.activeGameObject;
 
             if (!Selection.activeGameObject) return;
             if (!gameObject.TryGetComponent(out IUseDialogueInScene displayer)) return;
             if (displayer.ReferencedDialogue == null) return;
+
+            s_lastSelectedUser = displayer;
+            s_lastSelectedUser.OnValidation += OnUserValidation;
 
             if (Application.isPlaying)
             {
@@ -47,6 +59,15 @@ namespace com.absence.dialoguesystem.editor
                 DialogueEditorWindow.PopulateDialogueView(displayer.ReferencedDialogue);
                 DialogueEditorWindow.SaveLastDialogue();
             }
+        }
+
+        private static void OnUserValidation()
+        {
+            if (Application.isPlaying)
+                return;
+
+            DialogueEditorWindow.PopulateDialogueView(s_lastSelectedUser.ReferencedDialogue);
+            DialogueEditorWindow.SaveLastDialogue();
         }
     }
 }

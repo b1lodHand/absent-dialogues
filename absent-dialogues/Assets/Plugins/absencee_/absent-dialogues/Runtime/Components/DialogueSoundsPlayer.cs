@@ -29,38 +29,21 @@ namespace com.absence.dialoguesystem
             if (m_source != null) m_source.loop = false;
         }
 
+        public override void OnHandleCustomData(NodeCustomDataBase data)
+        {
+            //Debug.Log("1");
+            ForceStop();
+            if(data != null && data is IAudioData audioData)
+            {
+                //Debug.Log("2");
+                m_clip = audioData.AudioClip;
+                Play();
+            }
+        }
+
         public override void OnProgress(DialogueFlowContext context)
         {
-            if (context == null)
-            {
-                ForceStop();
-                return;
-            }
-
-            if (context.State == DialogueFlowContext.ContextState.Pass)
-            {
-                return;
-            }
-
-            NodeCustomDataBase data = context.CustomData;
-
-            if (data == null)
-            {
-                ForceStop();
-                return;
-            }
-
-            if (data is not IAudioData audioData)
-            {
-                ForceStop();
-                return;
-            }
-
-            if (m_source == null)
-                return;
-
-            m_clip = audioData.AudioClip;
-            Play();
+            Debug.Log(context.State);
         }
 
         IEnumerator C_PlayAudio()

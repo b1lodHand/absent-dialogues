@@ -1,3 +1,5 @@
+using System;
+
 namespace com.absence.dialoguesystem
 {
     /// <summary>
@@ -14,5 +16,7 @@ namespace com.absence.dialoguesystem
         /// The original dialogue provided for the script (not the cloned one).
         /// </summary>
         Dialogue ReferencedDialogue { get; }
+
+        event Action OnValidation;
     }
 }

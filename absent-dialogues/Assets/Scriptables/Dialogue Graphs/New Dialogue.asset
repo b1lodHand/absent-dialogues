@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Name: ExitNode
   m_EditorClassIdentifier: 
   Guid: 89d9be7d1ab610e409f0e1dc3225466e
-  Position: {x: 526, y: 16}
+  Position: {x: 449, y: 16}
   MasterDialogue: {fileID: 11400000}
   CustomData: {fileID: 0}
   Blackboard:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: FastSpeechNode
   m_EditorClassIdentifier: 
   Guid: 236b3a67c553fdf43a76788b1c90f055
-  Position: {x: 185, y: 8}
+  Position: {x: 179, y: 8}
   MasterDialogue: {fileID: 11400000}
   CustomData: {fileID: -1352841623202749854}
   Blackboard:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 0, y: 0}
+  Position: {x: 74, y: 16}
   MasterDialogue: {fileID: 11400000}
   CustomData: {fileID: 0}
   Blackboard:

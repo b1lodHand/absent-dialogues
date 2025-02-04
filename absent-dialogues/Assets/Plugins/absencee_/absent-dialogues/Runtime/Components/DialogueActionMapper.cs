@@ -1,6 +1,5 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace com.absence.dialoguesystem.runtime
     {
         [SerializeField] private List<ActionMapPair> m_actionMapPairs = new();
 
-
+        Dialogue m_lastCheckedDialogue;
 
         [Button("Seach for new mapped action nodes")]
         void Refresh()
@@ -36,6 +35,18 @@ namespace com.absence.dialoguesystem.runtime
             targetPair.AttachedEvent?.Invoke();
             context.InvokeAction = false;
             context.ActionId = string.Empty;
+        }
+
+        public override void OnInstanceValidate()
+        {
+            Dialogue newDialogue = m_instance.ReferencedDialogue;
+            if (m_lastCheckedDialogue != newDialogue)
+            {
+                m_actionMapPairs.Clear();
+                Refresh();
+            }
+
+            m_lastCheckedDialogue = newDialogue;
         }
 
         void Fetch()
@@ -77,9 +88,10 @@ namespace com.absence.dialoguesystem.runtime
         {
             for (int i = 0; i < m_actionMapPairs.Count; i++)
             {
-                ActionMapPair pair = m_actionMapPairs[i];   
+                ActionMapPair pair = m_actionMapPairs[i];
+                ActionNode actionNode = pair.TargetActionNode;
 
-                if (pair.TargetActionNode == null) pair.Enabled = false;
+                if (actionNode == null) pair.Enabled = false;
                 if (!pair.TargetActionNode.UsedByMapper) pair.Enabled = false;
             }
         }

@@ -55,7 +55,7 @@ namespace com.absence.dialoguesystem
         public DialoguePlayer Player => m_player;
 
         /// <summary>
-        /// The Action which will get invoked when <see cref="HandleAdditionalData"/> gets called.
+        /// The Action which will get invoked when <see cref="InvokeHandleCustomData"/> gets called.
         /// </summary>
         public event Action<NodeCustomDataBase> OnHandleCustomData;
 
@@ -80,6 +80,8 @@ namespace com.absence.dialoguesystem
         /// Use to check if this instance is in progress right now.
         /// </summary>
         public bool InDialogue => m_inDialogue;
+
+        public event Action OnValidation = delegate { };
 
         Person m_speaker;
         string m_text;
@@ -179,9 +181,15 @@ namespace com.absence.dialoguesystem
 
         private void OnPlayerContinue(DialoguePlayer.PlayerState state)
         {
-            GatherPlayerData();
-            HandleAdditionalData();
-            InvokeBeforeSpeech();
+            if (Player.Context.State == DialogueFlowContext.ContextState.Pass)
+            {
+                InvokeOnProgress();
+                return;
+            }
+
+            FetchPlayerData();
+            InvokeHandleCustomData();
+            InvokeOnProgress();
 
             switch (state)
             {
@@ -211,7 +219,7 @@ namespace com.absence.dialoguesystem
             }
         }
 
-        private void GatherPlayerData()
+        private void FetchPlayerData()
         {
             m_customData = Player.CustomNodeData;
 
@@ -227,8 +235,11 @@ namespace com.absence.dialoguesystem
             m_text = Player.Text;
             if (Player.HasOptions) m_options = new(Player.OptionIndexPairs);
         }
-        private void HandleAdditionalData()
+        private void InvokeHandleCustomData()
         {
+            if (m_player.Context.State == DialogueFlowContext.ContextState.Pass)
+                return;
+
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;
@@ -239,7 +250,7 @@ namespace com.absence.dialoguesystem
 
             OnHandleCustomData?.Invoke(m_customData);
         }
-        private void InvokeBeforeSpeech()
+        private void InvokeOnProgress()
         {
             m_extensionList.ForEach(extension =>
             {
@@ -262,6 +273,19 @@ namespace com.absence.dialoguesystem
 
             T component = gameObject.AddComponent<T>();
             m_extensionList.Add(component);
+        }
+
+        private void OnValidate()
+        {
+            OnValidation?.Invoke();
+
+            m_extensionList.ForEach(extension =>
+            {
+                if (extension == null) return;
+                if (!extension.enabled) return;
+
+                extension.OnInstanceValidate();
+            });
         }
 
         private void OnApplicationQuit()

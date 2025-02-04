@@ -64,6 +64,11 @@ namespace com.absence.dialoguesystem
 
         }
 
+        public virtual void OnInstanceValidate()
+        {
+
+        }
+
         public void FindInstance()
         {
             m_instance = GetComponent<DialogueInstance>();
