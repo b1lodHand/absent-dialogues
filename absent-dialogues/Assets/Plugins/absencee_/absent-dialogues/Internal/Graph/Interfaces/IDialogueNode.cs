@@ -5,7 +5,7 @@ namespace com.absence.dialoguesystem.internals
     /// <summary>
     /// Interface to use if any of your dialogue elements has a speech, has options or has <see cref="ExtraDialogueData"/>.
     /// </summary>
-    public interface IContainData
+    public interface IDialogueNode
     {
         string Text { get; set; }
         List<Option> Options { get; set; }

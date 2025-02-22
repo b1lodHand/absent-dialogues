@@ -25,37 +25,37 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "conditionNode";
         public override string GetTitle() => "Condition";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
             bool result = Process();
             var targetNext = result ? TrueNext : FalseNext;
             if (targetNext != null) targetNext.Reach(context);
         }
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             if (atPort == 0) TrueNext = nextWillBeAdded;
             else if (atPort == 1) FalseNext = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             if (atPort == 0) TrueNext = null;
             else if (atPort == 1) FalseNext = null;
         }
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
             if (TrueNext != null) result.Add((0, TrueNext));
             if (FalseNext != null) result.Add((1, FalseNext));
         }
 
-        public void DelayedClone(Dialogue originalDialogue)
+        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (TrueNext != null) TrueNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
-            if (FalseNext != null) FalseNext = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
+            if (TrueNext != null) TrueNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
+            if (FalseNext != null) FalseNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
 
             Comparers = Comparers.ConvertAll(comparer =>
             {

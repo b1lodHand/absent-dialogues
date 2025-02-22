@@ -21,26 +21,26 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "gotoNode";
         public override string GetTitle() => "Goto";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
             if (TargetNode == null) throw new System.Exception("Target node of GotoNode is null!");
 
             TargetNode.Reach(context);
         }
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             // no impl.
         }
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             // no impl.
         }
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
 
         }
@@ -50,9 +50,9 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public void DelayedClone(Dialogue originalDialogue)
+        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (TargetNode != null) TargetNode = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
+            if (TargetNode != null) TargetNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)

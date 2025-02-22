@@ -70,7 +70,6 @@ namespace com.absence.dialoguesystem
             node.PersonIndex = 0;
 
             node.Blackboard = Blackboard;
-            node.MasterDialogue = this;
 
             AllNodes.Add(node);
             return node;
@@ -135,9 +134,8 @@ namespace com.absence.dialoguesystem
             dialogue.AllNodes.ForEach(node =>
             {
                 node.Blackboard = dialogue.Blackboard;
-                node.MasterDialogue = dialogue;
 
-                if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this);
+                if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this, dialogue);
             });
 
             dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
@@ -168,7 +166,6 @@ namespace com.absence.dialoguesystem
             AllNodes.ForEach(node =>
             {
                 node.Blackboard = Blackboard;
-                node.MasterDialogue = this;
             });
         }
 

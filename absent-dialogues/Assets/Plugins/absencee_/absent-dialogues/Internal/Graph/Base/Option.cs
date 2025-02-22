@@ -13,6 +13,10 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Option.html")]
     public class Option
     {
+#if UNITY_EDITOR
+        [SerializeField] private Vector2 m_scroll = new();
+#endif
+
         /// <summary>
         /// Speech of this option.
         /// </summary>
@@ -21,7 +25,7 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Additional speech data this option contains.
         /// </summary>
-        public ExtraDialogueData ExtraData;
+        public NodeCustomDataBase CustomData;
 
         [Space(10)]
 
@@ -58,7 +62,7 @@ namespace com.absence.dialoguesystem.internals
             clone.m_useShowIf = UseShowIf;
             clone.Visibility = Visibility.Clone(overrideBank);
             clone.LeadsTo = LeadsTo;
-            clone.ExtraData = ExtraData;
+            clone.CustomData = CustomData;
 
             return clone;
         }

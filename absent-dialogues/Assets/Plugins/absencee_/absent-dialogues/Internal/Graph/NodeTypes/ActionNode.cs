@@ -51,7 +51,7 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "actionNode";
         public override string GetTitle() => "Action";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
             if (Next == null) return;
 
@@ -61,7 +61,7 @@ namespace com.absence.dialoguesystem.internals
 
             Next.Reach(context);
         }
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
             if (UsedByMapper)
             {
@@ -72,22 +72,22 @@ namespace com.absence.dialoguesystem.internals
             SetState(NodeState.Current);
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             Next = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             Next = null;
         }
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
             if (Next != null) result.Add((0, Next));
         }
 
-        public void DelayedClone(Dialogue originalDialogue)
+        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
 
             VBActions = VBActions.ConvertAll(action =>
             {

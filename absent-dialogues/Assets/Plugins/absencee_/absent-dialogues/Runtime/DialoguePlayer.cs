@@ -58,7 +58,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Person who speaks.
         /// </summary>
-        public Person Speaker => m_currentNode.Person;
+        public Person Speaker => ClonedDialogue.People[m_currentNode.PersonIndex];
 
         /// <summary>
         /// Additional data of the current node.

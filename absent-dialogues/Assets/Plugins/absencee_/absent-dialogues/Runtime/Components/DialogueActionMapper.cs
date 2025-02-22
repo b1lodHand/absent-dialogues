@@ -122,17 +122,17 @@ namespace com.absence.dialoguesystem.runtime
                 BackupId = targetActionNode.UniqueMapperId;
                 BackupGuid = targetActionNode.Guid;
 
-                TargetActionNode.OnValidation -= OnNodeValidate;
-                TargetActionNode.OnValidation += OnNodeValidate;
+                TargetActionNode.onValidation -= OnNodeValidate;
+                TargetActionNode.onValidation += OnNodeValidate;
 
-                TargetActionNode.OnRemove -= OnNodeRemove;
-                TargetActionNode.OnRemove += OnNodeRemove;
+                TargetActionNode.onRemove -= OnNodeRemove;
+                TargetActionNode.onRemove += OnNodeRemove;
             }
 
             ~ActionMapPair()
             {
-                TargetActionNode.OnValidation -= OnNodeValidate;
-                TargetActionNode.OnRemove -= OnNodeRemove;
+                TargetActionNode.onValidation -= OnNodeValidate;
+                TargetActionNode.onRemove -= OnNodeRemove;
             }
 
             private void OnNodeRemove()

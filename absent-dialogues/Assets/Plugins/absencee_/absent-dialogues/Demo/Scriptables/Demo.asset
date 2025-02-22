@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 
   Position: {x: 60, y: 9}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 0
+  State: 2
   PersonIndex: 0
   Next: {fileID: 6611807328144254293}
 --- !u!114 &-8258285536222529687
@@ -34,7 +34,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 1df79d3e9f9718d4689e74e77c52884d
   Position: {x: -87, y: -119}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -60,20 +60,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 7d72d44870ddbd04abf36ec572209cd1
   Position: {x: 824.7296, y: -570.5626}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Options:
-  - Text: Sure!
+  - m_scroll: {x: 0, y: 0}
+    Text: Sure!
+    CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 7901140551254700991}
-  - Text: I am not interested in that, actually.
+  - m_scroll: {x: 0, y: 0}
+    Text: I am not interested in that, actually.
+    CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
@@ -94,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: cb9c55b9e89ca9e41bc40362f6ff788f
   Position: {x: 1720.7296, y: -451.56262}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -114,12 +117,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 377939230d4fb0a4cb39f57545ec231b
   Position: {x: 1441.7297, y: -474.5626}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Next: {fileID: -3621898333564505408}
   m_text: Alright! I'll be here when you're done.
 --- !u!114 &-1965666318695130335
@@ -136,12 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 6f100eb26c145f149bde5f2b03877dc5
   Position: {x: 1103, y: 357}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Next: {fileID: 7873461484329537452}
   m_text: Okay, bud. Do your best.
 --- !u!114 &-1399893973709126951
@@ -157,15 +158,16 @@ MonoBehaviour:
   m_Name: DecisionSpeechNode
   m_EditorClassIdentifier: 
   Guid: abb4c09c08af7a84d88f489f5c7b8b72
-  Position: {x: 578, y: 168}
-  MasterDialogue: {fileID: 11400000}
+  Position: {x: 587, y: 176}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Options:
-  - Text: I've done it.
+  - m_scroll: {x: 0, y: 0}
+    Text: I've done it.
+    CustomData: {fileID: 0}
     m_useShowIf: 1
     Visibility:
       Processor: 0
@@ -178,7 +180,9 @@ MonoBehaviour:
         m_stringValue: 
         m_boolValue: 1
     LeadsTo: {fileID: -914008930283711827}
-  - Text: I am working on it.
+  - m_scroll: {x: 0, y: 0}
+    Text: I am working on it.
+    CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
@@ -199,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 1b00f74471196944ebb0794b4dfc1216
   Position: {x: 959, y: 237.5}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -268,8 +272,8 @@ MonoBehaviour:
   m_Name: ConditionNode
   m_EditorClassIdentifier: 
   Guid: f929db99f4246614abf25f67c2e1df6e
-  Position: {x: 566.72955, y: -339.56262}
-  MasterDialogue: {fileID: 11400000}
+  Position: {x: 586, y: -337.99997}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -313,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 8dca50b7cca88114f9874835ec6fe676
   Position: {x: 57, y: 177}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -334,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 780f88a861213254c9385f7b9e50d597
   Position: {x: 1403, y: 222}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -383,12 +387,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 6836458d7660a534dbc54e8b999cdf42
   Position: {x: 1101, y: 213.5}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Next: {fileID: 1839565436388208056}
   m_text: Thank you!
 --- !u!114 &6611807328144254293
@@ -405,20 +408,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: ba671a40893b8f04f9cdd1ddc116785f
   Position: {x: 192.99998, y: 5.011313}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
-  State: 0
+  State: 1
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Options:
-  - Text: Do you have missions for me?
+  - m_scroll: {x: 0, y: 0}
+    Text: Do you have missions for me?
+    CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 1239550416686042660}
-  - Text: I am here for the mission.
+  - m_scroll: {x: 0, y: 0}
+    Text: I am here for the mission.
+    CustomData: {fileID: 0}
     m_useShowIf: 1
     Visibility:
       Processor: 0
@@ -453,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: ff39af66e057bbc46bba9a0cab5f57c0
   Position: {x: 1270, y: -261}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -473,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 185424cce0e60d54d940b5f0986f30fe
   Position: {x: -38, y: -208}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -493,7 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 7dabfef6710c9d446ba7ae57cacc4df1
   Position: {x: 1399, y: 365}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -512,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 041a83cc15b72f744a1842a686410a85
   Position: {x: 1261.7295, y: -443.56262}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
@@ -545,14 +551,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: d3b46e06c6cbf8347868f38b7c31d4c3
   Position: {x: 816.7296, y: -200.5626}
-  MasterDialogue: {fileID: 11400000}
+  CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  m_customData: {fileID: 0}
   Options:
-  - Text: Okay.
+  - m_scroll: {x: 0, y: 0}
+    Text: Okay.
+    CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0

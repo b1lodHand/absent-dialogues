@@ -9,6 +9,7 @@
         /// This method will get called right after the dialogue gets cloned.
         /// </summary>
         /// <param name="originalDialogue">This is the dialogue the cloned dialogue had cloned from.</param>
-        void DelayedClone(Dialogue originalDialogue);
+        /// <param name="clonedDialogue">This is the dialogue acquired via cloning the original one.</param>
+        void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue);
     }
 }

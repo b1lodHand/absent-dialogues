@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem.internals
     /// Node which displays a speech with options.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
-    public sealed class DecisionSpeechNode : Node, IContainData, IPerformDelayedClone, IContainVariableManipulators
+    public sealed class DecisionSpeechNode : Node, IDialogueNode, IPerformDelayedClone, IContainVariableManipulators
     {
         public static string ParentCreationMenu => "Dialogue";
 
@@ -21,12 +21,12 @@ namespace com.absence.dialoguesystem.internals
         public override bool PersonDependent => true;
 
         public string Text { get => m_text; set { m_text = value; } }
-        List<Option> IContainData.Options { get => Options; set { Options = value; } }
+        List<Option> IDialogueNode.Options { get => Options; set { Options = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
         public override string GetTitle() => "Dialogue";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
             context.ClearSpeech();
 
@@ -37,7 +37,7 @@ namespace com.absence.dialoguesystem.internals
 
             Options[optionSelected].LeadsTo.Reach(context);
         }
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
             List<OptionHandle> temp = new();
             Options.ForEach(o =>
@@ -54,15 +54,15 @@ namespace com.absence.dialoguesystem.internals
             temp = null;
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             Options[atPort].LeadsTo = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             Options[atPort].LeadsTo = null;
         }
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
             foreach (var o in Options.ToArray())
             {
@@ -84,7 +84,7 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public void DelayedClone(Dialogue originalDialogue)
+        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
             Options = Options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
 
@@ -92,7 +92,7 @@ namespace com.absence.dialoguesystem.internals
             {
                 if (opt.LeadsTo == null) return;
 
-                opt.LeadsTo = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
+                opt.LeadsTo = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
             });
         }
 

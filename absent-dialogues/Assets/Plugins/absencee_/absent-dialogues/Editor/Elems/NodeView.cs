@@ -62,8 +62,9 @@ namespace com.absence.dialoguesystem.editor
         /// Use to construct a node view from a node.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public NodeView(Node node) : base("Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml")
+        public NodeView(Node node, DialogueGraphView master = null) : base("Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml")
         {
+            this.Master = master;
             this.Node = node;
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
@@ -85,34 +86,37 @@ namespace com.absence.dialoguesystem.editor
 
             SetupTextFieldIfExists();
 
-            node.OnSetState -= UpdateState;
-            node.OnSetState += UpdateState;
+            node.onSetState -= UpdateState;
+            node.onSetState += UpdateState;
+
+            node.onValidation -= RefreshCustomDataField;
+            node.onValidation += RefreshCustomDataField;
 
             UpdateState(node.State);
 
             if (node.PersonDependent)
             {
-                node.MasterDialogue.OnValidateAction -= RefreshPersonDropdown;
-                node.MasterDialogue.OnValidateAction += RefreshPersonDropdown;
+                Master.m_dialogue.OnValidateAction -= RefreshPersonDropdown;
+                Master.m_dialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
             if (node is DecisionSpeechNode)
             {
-                node.OnValidation -= RefreshOptionLabels;
-                node.OnValidation += RefreshOptionLabels;
+                node.onValidation -= RefreshOptionLabels;
+                node.onValidation += RefreshOptionLabels;
             }
             else if (node is DialoguePartNode)
             {
-                node.OnValidation -= RefreshDialoguePartFinder;
-                node.OnValidation += RefreshDialoguePartFinder;
+                node.onValidation -= RefreshDialoguePartFinder;
+                node.onValidation += RefreshDialoguePartFinder;
 
-                node.OnValidation += RefreshDialoguePartTitle;
-                node.OnValidation += RefreshDialoguePartTitle;
+                node.onValidation += RefreshDialoguePartTitle;
+                node.onValidation += RefreshDialoguePartTitle;
             }
             else if (node is ActionNode)
             {
-                node.OnValidation -= RefreshActionMapProps;
-                node.OnValidation += RefreshActionMapProps;
+                node.onValidation -= RefreshActionMapProps;
+                node.onValidation += RefreshActionMapProps;
             }
             else if (node is GotoNode)
             {
@@ -121,9 +125,20 @@ namespace com.absence.dialoguesystem.editor
             }
             else if (node is ConditionNode)
             {
-                node.OnValidation -= RefreshConditionTooltip;
-                node.OnValidation += RefreshConditionTooltip;
+                node.onValidation -= RefreshConditionTooltip;
+                node.onValidation += RefreshConditionTooltip;
             }
+        }
+
+        private void RefreshCustomDataField()
+        {
+            //NodeCustomDataBase[] foundCustomDatas = 
+            //    AssetDatabase.LoadAssetAtPath<NodeCustomDataBase>(AssetDatabase.GetAssetPath(Master.m_dialogue));
+
+            //if ()
+            //{
+
+            //}
         }
 
         private void RefreshConditionTooltip()
@@ -189,8 +204,8 @@ namespace com.absence.dialoguesystem.editor
             {
                 Undo.RecordObject(Node, "Node (Person Modified)");
 
-                Person targetPerson = Node.MasterDialogue.People.Where(p => p.Name == evt.newValue).FirstOrDefault();
-                Node.PersonIndex = Node.MasterDialogue.People.IndexOf(targetPerson);
+                Person targetPerson = Master.m_dialogue.People.Where(p => p.Name == evt.newValue).FirstOrDefault();
+                Node.PersonIndex = Master.m_dialogue.People.IndexOf(targetPerson);
 
                 EditorUtility.SetDirty(Node);
 
@@ -234,7 +249,7 @@ namespace com.absence.dialoguesystem.editor
         {
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
 
-            List<string> peopleNameList = Node.MasterDialogue.People.ConvertAll(p =>
+            List<string> peopleNameList = Master.m_dialogue.People.ConvertAll(p =>
             {
                 if (p) return p.Name;
 
@@ -250,17 +265,17 @@ namespace com.absence.dialoguesystem.editor
 
             personDropdown.choices = new List<string>(peopleNameList);
 
-            if (Node.PersonIndex < 0 || Node.PersonIndex > Node.MasterDialogue.People.Count - 1)
+            if (Node.PersonIndex < 0 || Node.PersonIndex > Master.m_dialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
                 return;
             }
 
-            if (Node.MasterDialogue.People[Node.PersonIndex])
+            if (Master.m_dialogue.People[Node.PersonIndex])
             {
-                personDropdown.SetValueWithoutNotify(Node.MasterDialogue.People[Node.PersonIndex].Name);
+                personDropdown.SetValueWithoutNotify(Master.m_dialogue.People[Node.PersonIndex].Name);
                 Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.sprite = Node.MasterDialogue.People[Node.PersonIndex].Icon;
+                personIconPreview.sprite = Master.m_dialogue.People[Node.PersonIndex].Icon;
             }
             else
                 personDropdown.SetValueWithoutNotify("Select a person...");
@@ -271,7 +286,7 @@ namespace com.absence.dialoguesystem.editor
         {
             m_gotoDropdown.choices.Clear();
 
-            Node.MasterDialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
+            Master.m_dialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
             {
                 m_gotoDropdown.choices.Add(dialoguePartNode.DialoguePartName);
             });
@@ -282,7 +297,7 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
-            if (Node.MasterDialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
+            if (Master.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
             else m_gotoDropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
         }
         private void SoftRefreshGotoLabel()
@@ -309,7 +324,7 @@ namespace com.absence.dialoguesystem.editor
             {
                 Undo.RecordObject(m_nodeAsGoto, "Node (Person Modified)");
 
-                DialoguePartNode targetNode = Node.MasterDialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
+                DialoguePartNode targetNode = Master.m_dialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
                 if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
 
                 EditorUtility.SetDirty(m_nodeAsGoto);
@@ -341,7 +356,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void UpdateState(Node.NodeState state)
         {
-            if ((!Node.MasterDialogue.IsClone) || !Application.isPlaying) return;
+            if ((!Master.m_dialogue.IsClone) || !Application.isPlaying) return;
 
             RemoveFromClassList("unreached");
             RemoveFromClassList("current");

@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem.editor
 
         static readonly string s_default_parent_creation_menu = "Default";
 
-        internal Dialogue m_dialogue;
+        [SerializeField] internal Dialogue m_dialogue;
 
         /// <summary>
         /// Gets invoked when a node gets selected.
@@ -245,6 +245,7 @@ namespace com.absence.dialoguesystem.editor
 
             Node node = m_dialogue.CreateNode(type);
             node.Guid = GUID.Generate().ToString();
+            node.name = node.Guid;
             node.Position.x = atPosition.x;
             node.Position.y = atPosition.y;
 
@@ -265,10 +266,13 @@ namespace com.absence.dialoguesystem.editor
 
         void DeleteNode(NodeView view)
         {
-            Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
-            m_dialogue.DeleteNode(view.Node);
-
             OnBeforeNodeDeleted?.Invoke(view.Node);
+
+            NodeCustomDataCreationHandler.DeleteNodeCustomData(view.Node);
+
+            Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
+
+            m_dialogue.DeleteNode(view.Node);
 
             Undo.DestroyObjectImmediate(view.Node);
             AssetDatabase.SaveAssets();
@@ -278,8 +282,8 @@ namespace com.absence.dialoguesystem.editor
         {
             if(node == null) return null;
 
-            NodeView nodeView = new NodeView(node);
-            nodeView.Master = this;
+            NodeView nodeView = new NodeView(node, this);
+            //nodeView.Master = this;
             nodeView.OnNodeSelected = OnNodeSelected;
             AddElement(nodeView);
 

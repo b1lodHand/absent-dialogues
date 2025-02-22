@@ -98,7 +98,7 @@ namespace com.absence.dialoguesystem.editor.backup
             node.Position.y = data.PositionY;
             //node.ExitDialogueAfterwards = data.ExitDialogueAfterwards; deprecated.
 
-            if(node is IContainData speecher)
+            if(node is IDialogueNode speecher)
             {
                 speecher.Text = data.Text;
                 List<Option> options = data.OptionDatas.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();

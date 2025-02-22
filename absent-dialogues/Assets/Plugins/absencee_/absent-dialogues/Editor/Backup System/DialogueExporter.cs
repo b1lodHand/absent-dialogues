@@ -59,7 +59,7 @@ namespace com.absence.dialoguesystem.editor.backup
             data.NodeTypeName = node.GetType().Name;
             data.OldGuid = node.Guid;
 
-            if (node is IContainData speecher)
+            if (node is IDialogueNode speecher)
             {
                 data.Text = speecher.Text;
 

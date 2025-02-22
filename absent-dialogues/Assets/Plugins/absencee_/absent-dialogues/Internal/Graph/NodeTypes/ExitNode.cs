@@ -10,26 +10,26 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetTitle() => "Exit";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
         }
 
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
             context.WillExit = true;
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             
         }
 
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
             
         }
 
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             
         }

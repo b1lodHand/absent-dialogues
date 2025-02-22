@@ -31,8 +31,6 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Vector2 Position = new();
 #endif
 
-        [Readonly] public Dialogue MasterDialogue;
-
         [InlineEditor(newButtonId = 1801, delButtonId = 1800)]
         public NodeCustomDataBase CustomData = null;
 
@@ -42,38 +40,32 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Action which will get invoked when the state of this node gets changed.
         /// </summary>
-        public event Action<NodeState> OnSetState;
+        public event Action<NodeState> onSetState;
 
         /// <summary>
         /// Action which will get invoked when this node gets removed from the dialogue.
         /// </summary>
-        public event Action OnRemove;
+        public event Action onRemove;
 
         /// <summary>
         /// Action which will get invoked when <see cref="OnValidate"/> function gets called.
         /// </summary>
-        public event Action OnValidation;
+        public event Action onValidation;
 
         /// <summary>
         /// Action which will get invoked when this node gets reached on the flow.
         /// </summary>
-        public event Action OnReach;
+        public event Action onReach;
 
         /// <summary>
         /// Action which will get invoked when this node get passed on the flow.
         /// </summary>
-        public event Action OnPass;
+        public event Action onPass;
 
         /// <summary>
-        /// Index of the person this node depends on (if it is <see cref="PersonDependent"/>) on the person list of the
-        /// <see cref="MasterDialogue"/>.
+        /// Index of the person this node depends on (if it is <see cref="PersonDependent"/>).
         /// </summary>
         [HideInInspector] public int PersonIndex;
-
-        /// <summary>
-        /// Property which returns the person with the index of <see cref="PersonIndex"/> from the person list.
-        /// </summary>
-        [HideInInspector] public Person Person { get => MasterDialogue.People[PersonIndex]; }
 
         /// <summary>
         /// Will this node display it's state in editor on the flow.
@@ -109,7 +101,7 @@ namespace com.absence.dialoguesystem.internals
         /// <param name="atPort">The port which hold the connection.</param>
         public void AddNextNode(Node nextWillBeAdded, int atPort)
         {
-            AddNextNode_Inline(nextWillBeAdded, atPort);
+            AddNextNode_Internal(nextWillBeAdded, atPort);
         }
 
         /// <summary>
@@ -118,7 +110,7 @@ namespace com.absence.dialoguesystem.internals
         /// <param name="atPort">The port which handled the disconnection event.</param>
         public void RemoveNextNode(int atPort)
         {
-            RemoveNextNode_Inline(atPort);
+            RemoveNextNode_Internal(atPort);
         }
 
         /// <summary>
@@ -128,7 +120,7 @@ namespace com.absence.dialoguesystem.internals
         public List<(int portIndex, Node node)> GetNextNodes()
         {
             var result = new List<(int portIndex, Node node)>();
-            GetNextNodes_Inline(ref result);
+            GetNextNodes_Internal(ref result);
             return result;
         }
 
@@ -141,12 +133,11 @@ namespace com.absence.dialoguesystem.internals
                 context.State = DialogueFlowContext.ContextState.Pass;
             }
 
-            OnPass?.Invoke();
-            Pass_Inline(context);
+            onPass?.Invoke();
+            OnPass(context);
         }
         public void Reach(DialogueFlowContext context)
         {
-            MasterDialogue.LastOrCurrentNode = this;
             SetState(NodeState.Current);
 
             if (context != null)
@@ -155,12 +146,12 @@ namespace com.absence.dialoguesystem.internals
                 context.CustomData = CustomData;
             }
 
-            OnReach?.Invoke();
-            Reach_Inline(context);
+            onReach?.Invoke();
+            OnReach(context);
         }
         public void OnRemoval()
         {
-            OnRemove?.Invoke();
+            onRemove?.Invoke();
         }
 
         /// <summary>
@@ -168,30 +159,30 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         /// <param name="nextWillBeAdded"></param>
         /// <param name="atPort"></param>
-        protected abstract void AddNextNode_Inline(Node nextWillBeAdded, int atPort);
+        protected abstract void AddNextNode_Internal(Node nextWillBeAdded, int atPort);
 
         /// <summary>
         /// Use to write the functionality of removing the next node of this one.
         /// </summary>
         /// <param name="atPort"></param>
-        protected abstract void RemoveNextNode_Inline(int atPort);
+        protected abstract void RemoveNextNode_Internal(int atPort);
 
         /// <summary>
         /// Use to describe the editor which nodes are the next nodes of this one in the chain by modifying the list.
         /// </summary>
         /// <param name="result"></param>
-        protected abstract void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result);
+        protected abstract void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result);
 
         /// <summary>
         /// Use to write what happenswhen the dialogue passes this node.
         /// </summary>
         /// <param name="passData"></param>
-        protected abstract void Pass_Inline(DialogueFlowContext context);
+        protected abstract void OnPass(DialogueFlowContext context);
 
         /// <summary>
         /// Use to write what happens when the dialogue reaches this node.
         /// </summary>
-        protected abstract void Reach_Inline(DialogueFlowContext context);
+        protected abstract void OnReach(DialogueFlowContext context);
 
         /// <summary>
         /// Use to describe the name of the input port of this node.
@@ -217,7 +208,7 @@ namespace com.absence.dialoguesystem.internals
             if (!DisplayState) return;
 
             this.State = newState;
-            OnSetState?.Invoke(newState);
+            onSetState?.Invoke(newState);
         }
 
         /// <summary>
@@ -249,7 +240,7 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual void OnValidate()
         {
-            OnValidation?.Invoke();
+            onValidation?.Invoke();
         }
     }
 }

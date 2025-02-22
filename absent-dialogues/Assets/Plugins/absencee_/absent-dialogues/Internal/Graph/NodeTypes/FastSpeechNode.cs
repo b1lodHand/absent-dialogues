@@ -9,7 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// Node which displays a speech without options.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.FastSpeechNode.html")]
-    public sealed class FastSpeechNode : Node, IContainData, IPerformDelayedClone
+    public sealed class FastSpeechNode : Node, IDialogueNode, IPerformDelayedClone
     {
         public static string ParentCreationMenu => "Dialogue";
 
@@ -24,7 +24,7 @@ namespace com.absence.dialoguesystem.internals
         public override string GetClassName() => "fastSpeechNode";
         public override string GetTitle() => "Dialogue (Optionless)";
 
-        protected override void Pass_Inline(DialogueFlowContext context)
+        protected override void OnPass(DialogueFlowContext context)
         {
             context.ClearSpeech();
 
@@ -32,20 +32,20 @@ namespace com.absence.dialoguesystem.internals
 
             Next.Reach(context);
         }
-        protected override void Reach_Inline(DialogueFlowContext context)
+        protected override void OnReach(DialogueFlowContext context)
         {
             context.Text = Text;
         }
 
-        protected override void AddNextNode_Inline(Node nextWillBeAdded, int atPort)
+        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
             Next = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Inline(int atPort)
+        protected override void RemoveNextNode_Internal(int atPort)
         {
             Next = null;
         }
-        protected override void GetNextNodes_Inline(ref List<(int portIndex, Node node)> result)
+        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
         {
             if (Next != null) result.Add((0, Next));
         }
@@ -56,9 +56,9 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public void DelayedClone(Dialogue originalDialogue)
+        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (Next != null) Next = MasterDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
     }
 
