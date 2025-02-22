@@ -11,7 +11,8 @@ namespace com.absence.dialoguesystem.editor
     {
         const int k_constantLineCount = 3;
         const float k_customDataHeight = 100f;
-        const float k_buttonWidth = 50f;
+        const float k_buttonWidth = 40f;
+        const float k_customDataPadding = 2f;
 
         Editor lastEditor;
 
@@ -39,7 +40,7 @@ namespace com.absence.dialoguesystem.editor
 
             float addition = 0f;
 
-            if (customData != null) addition += k_customDataHeight;
+            if (customData != null && customDataProp.isExpanded) addition += k_customDataHeight + (k_customDataPadding * 2);
 
             int arraySize = showIfArrayProp.arraySize;
 
@@ -94,6 +95,8 @@ namespace com.absence.dialoguesystem.editor
             float normalWidth = position.width;
             position.width -= k_buttonWidth;
 
+            customDataProp.isExpanded = EditorGUI.Foldout(position, customDataProp.isExpanded, "", true, GUI.skin.label);
+
             EditorGUI.PropertyField(position, customDataProp);
 
             position.x += normalWidth - k_buttonWidth + spacing;
@@ -121,9 +124,15 @@ namespace com.absence.dialoguesystem.editor
             position.y += step;
             position.height = k_customDataHeight;
 
-            if (customData != null)
+            if (customData != null && customDataProp.isExpanded)
             {
+                position.y -= k_customDataPadding / 2;
+                position.height += k_customDataPadding;
+
                 EditorGUI.DrawRect(position, color);
+
+                position.y += k_customDataPadding / 2;
+                position.height -= k_customDataPadding;
 
                 Vector2 scroll = scrollProp.vector2Value;
 
