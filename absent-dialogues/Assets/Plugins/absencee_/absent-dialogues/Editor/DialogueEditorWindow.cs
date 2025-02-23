@@ -210,7 +210,7 @@ namespace com.absence.dialoguesystem.editor
                 {
                     if (m_targetDialogue == null) return;
 
-                    FrameToNode(m_targetDialogue.RootNode);
+                    FrameToNode(m_targetDialogue.Entry);
                 });
 
                 findRootButton.text = "Quick Find Root";

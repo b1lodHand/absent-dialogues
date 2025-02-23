@@ -1,6 +1,5 @@
 using com.absence.attributes.editor;
 using com.absence.dialoguesystem.internals;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,9 +11,11 @@ namespace com.absence.dialoguesystem.editor
         const int k_constantLineCount = 3;
         const float k_customDataHeight = 100f;
         const float k_buttonWidth = 40f;
-        const float k_customDataPadding = 2f;
+        const float k_majorSpacing = 10f;
+        const float k_customDataPadding = 0f;
 
-        Editor lastEditor;
+        protected virtual int NewButtonId => 1803;
+        protected virtual int DelButtonId => 1802;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
@@ -31,7 +32,7 @@ namespace com.absence.dialoguesystem.editor
             UnityEngine.Object customData = customDataProp.objectReferenceValue;
 
             if (customData == null && !showIf)
-                return k_constantLineCount * (spacing + height);
+                return (k_constantLineCount * (spacing + height));
 
             int totalLines = k_constantLineCount;
 
@@ -40,15 +41,15 @@ namespace com.absence.dialoguesystem.editor
 
             float addition = 0f;
 
-            if (customData != null && customDataProp.isExpanded) addition += k_customDataHeight + (k_customDataPadding * 2);
+            if (customData != null && customDataProp.isExpanded) addition += k_customDataHeight + (k_customDataPadding * 2) + spacing + k_majorSpacing;
 
             int arraySize = showIfArrayProp.arraySize;
 
-            if (showIf) totalLines += arraySize + 4;
+            if (showIf) totalLines += 2;
+            if (showIf && showIfArrayProp.isExpanded) totalLines += arraySize + 2;
+            if (showIf && showIfArrayProp.isExpanded && arraySize == 0) totalLines += 1;
 
-            if (arraySize == 0) totalLines += 1;
-
-            return (totalLines * (spacing + height)) + (addition + spacing);
+            return (totalLines * (spacing + height)) + addition;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -70,7 +71,8 @@ namespace com.absence.dialoguesystem.editor
             position.height = EditorGUIUtility.singleLineHeight;
 
             bool foldout = property.isExpanded;
-            foldout = EditorGUI.Foldout(position, foldout, textProp.stringValue, true);
+            foldout = DrawHeaderFoldout(position, property, label, foldout);
+
             property.isExpanded = foldout;
 
             if (!foldout) 
@@ -106,7 +108,12 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (GUI.Button(position, "New"))
                 {
-                    FieldButtonManager.Invoke(1803, property.serializedObject.targetObject, property.boxedValue);
+                    bool success = FieldButtonManager.Invoke(NewButtonId, out object output, property.serializedObject.targetObject, property.boxedValue);
+                    if (success)
+                    {
+                        NodeCustomDataBase realOutput = (NodeCustomDataBase)output;
+                        customDataProp.objectReferenceValue = realOutput;
+                    }
                 }
             }
 
@@ -114,7 +121,11 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (GUI.Button(position, "Del"))
                 {
-                    FieldButtonManager.Invoke(1802, property.serializedObject.targetObject, property.boxedValue);
+                    bool success = FieldButtonManager.Invoke(DelButtonId, property.serializedObject.targetObject, property.boxedValue);
+                    if (success)
+                    {
+                        customDataProp.objectReferenceValue = null;
+                    }
                 }
             }
 
@@ -159,6 +170,7 @@ namespace com.absence.dialoguesystem.editor
                 }
 
                 position.y += k_customDataHeight;
+                position.y += k_majorSpacing;
             }
 
             position.height = height;
@@ -214,6 +226,21 @@ namespace com.absence.dialoguesystem.editor
 
             obj.ApplyModifiedProperties();
             return EditorGUI.EndChangeCheck();
+        }
+
+        protected virtual bool DrawHeaderFoldout(Rect position, SerializedProperty property, GUIContent label, bool foldout)
+        {
+            SerializedProperty textProp = property.FindPropertyRelative("Text");
+
+            string text = textProp.stringValue;
+            if (string.IsNullOrWhiteSpace(text)) text = "<color=grey>||NO TEXT||</color>";
+
+            GUIStyle foldoutStyle = new GUIStyle(EditorStyles.foldout)
+            {
+                richText = true,
+            };
+
+            return EditorGUI.Foldout(position, foldout, text, true, foldoutStyle);
         }
     }
 }

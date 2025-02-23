@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem.internals
     public class Option
     {
 #if UNITY_EDITOR
-        [SerializeField] private Vector2 m_scroll = new();
+        [SerializeField] internal Vector2 m_scroll = new();
 #endif
 
         /// <summary>

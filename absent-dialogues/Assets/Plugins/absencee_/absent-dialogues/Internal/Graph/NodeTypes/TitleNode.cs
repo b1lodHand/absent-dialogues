@@ -1,3 +1,5 @@
+using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.runtime.backup;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,6 +49,16 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetInputPortNameForCreation() => null;
         public override List<string> GetOutputPortNamesForCreation() => new();
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            dataToWrite.Data = m_text;
+        }
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            m_text = dataToRead.Data;
+        }
     }
 
 }

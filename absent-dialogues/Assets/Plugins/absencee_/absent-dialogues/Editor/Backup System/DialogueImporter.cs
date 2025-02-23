@@ -1,7 +1,6 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
-using com.absence.variablesystem.builtin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,35 +24,8 @@ namespace com.absence.dialoguesystem.editor.backup
 
         static void ReadInitialDialogueData(DialogueData data, Dialogue target)
         {
-            ReadBlackboardData(data.BlackboardData, target.Blackboard);
+            DataReader.ReadBlackboardData(data.BlackboardData, target.Blackboard);
             ReadNodeList(data, target);
-        }
-        static void ReadBlackboardData(BlackboardData data, Blackboard target)
-        {
-            List<IntegerVariable> ints = data.Ints.ToList().ConvertAll(intPair =>
-            {
-                return new IntegerVariable(intPair.Key, intPair.Value);
-            }).ToList();
-
-            List<FloatVariable> floats = data.Floats.ToList().ConvertAll(floatPair =>
-            {
-                return new FloatVariable(floatPair.Key, floatPair.Value);
-            }).ToList();
-
-            List<variablesystem.builtin.StringVariable> strings = data.Strings.ToList().ConvertAll(stringPair =>
-            {
-                return new variablesystem.builtin.StringVariable(stringPair.Key, stringPair.Value);
-            }).ToList();
-
-            List<variablesystem.builtin.BooleanVariable> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
-            {
-                return new variablesystem.builtin.BooleanVariable(booleanPair.Key, booleanPair.Value);
-            }).ToList();
-
-            target.Bank.Ints = new(ints);
-            target.Bank.Floats = new(floats);
-            target.Bank.Strings = new(strings);
-            target.Bank.Booleans = new(booleans);
         }
         static void ReadNodeList(DialogueData data, Dialogue target)
         {
@@ -63,7 +35,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int i = 0; i < nodeCount; i++)
             {
                 NodeData nodeData = data.NodeDatas[i];
-                oldGuidPairs.Add(nodeData.OldGuid, ReadNodeData(nodeData, target));
+                oldGuidPairs.Add(nodeData.OldGuid, DataReader.ReadNodeData(nodeData, target));
             }
 
             DialogueImportContext context = new DialogueImportContext()
@@ -88,26 +60,6 @@ namespace com.absence.dialoguesystem.editor.backup
                 from.AddNextNode(to, portIndex);
             });
         }
-        static Node ReadNodeData(NodeData data, Dialogue targetDialogue)
-        {
-            //Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeName];
-            Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
-            Node node = targetDialogue.CreateNode(nodeType);
-            node.Guid = GUID.Generate().ToString();
-            node.Position.x = data.PositionX;
-            node.Position.y = data.PositionY;
-            //node.ExitDialogueAfterwards = data.ExitDialogueAfterwards; deprecated.
-
-            if(node is IDialogueNode speecher)
-            {
-                speecher.Text = data.Text;
-                List<Option> options = data.OptionDatas.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
-                if(options.Count > 0) speecher.Options = new(options);
-            }
-
-            AssetDatabase.AddObjectToAsset(node, targetDialogue);
-            return node;
-        }
         static void UpdateNodes(DialogueImportContext context)
         {
             for (int i = 0; i < context.Dialogue.AllNodes.Count; i++)
@@ -130,6 +82,7 @@ namespace com.absence.dialoguesystem.editor.backup
                 if (setters != null) setters.ForEach(setter => setter.SetBlackboardBank(context.Dialogue.Blackboard.Bank));
             }
         }
+
         internal class ImportDialogueEndNameEditAction : EndNameEditAction
         {
             public DialogueData ImportedData { get; set; }
@@ -139,7 +92,7 @@ namespace com.absence.dialoguesystem.editor.backup
             {
                 Dialogue dialogueCreated = DialogueCreationHandler.CreateDialogue(pathName);
                 ReadInitialDialogueData(ImportedData, dialogueCreated);
-                dialogueCreated.RootNode = dialogueCreated.AllNodes.Find(node => node is RootNode) as RootNode;
+                dialogueCreated.Entry = dialogueCreated.AllNodes.Find(node => node is EntryNode) as EntryNode;
 
                 dialogueCreated.Rebind();
                 dialogueCreated.Initialize();

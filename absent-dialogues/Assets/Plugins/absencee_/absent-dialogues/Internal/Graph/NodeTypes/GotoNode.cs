@@ -13,6 +13,8 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string ParentCreationMenu => "Grouping";
 
+        private const string k_none = "None";
+
         /// <summary>
         /// The node which will get reached when this goto node gets passed.
         /// </summary>
@@ -57,12 +59,26 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            TargetNode = context.OldGuidPairs[dataToRead.GotoTargetGuid] as DialoguePartNode;
+            string data = dataToRead.Data;
+
+            if (data.Equals(k_none))
+            {
+                TargetNode = null;
+                return;
+            }
+
+            TargetNode = context.OldGuidPairs[data] as DialoguePartNode;
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
-            dataToWrite.GotoTargetGuid = TargetNode.Guid;
+            if (TargetNode == null)
+            {
+                dataToWrite.Data = k_none;
+                return;
+            }
+
+            dataToWrite.Data = TargetNode.Guid;
         }
     }
 

@@ -132,7 +132,7 @@ namespace com.absence.dialoguesystem
         }
 
         /// <summary>
-        /// Teleports the flow to the <see cref="RootNode"/> of the dialogue clone.
+        /// Teleports the flow to the <see cref="EntryNode"/> of the dialogue clone.
         /// </summary>
         public void TeleportToRoot()
         {

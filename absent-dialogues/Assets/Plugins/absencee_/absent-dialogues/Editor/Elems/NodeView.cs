@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
@@ -47,6 +47,7 @@ namespace com.absence.dialoguesystem.editor
         private DropdownField m_gotoDropdown;
 
         private List<VisualElement> m_optionElems = new List<VisualElement>();
+        private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
 
         private SerializedObject m_serializedNode;
 
@@ -89,9 +90,6 @@ namespace com.absence.dialoguesystem.editor
             node.onSetState -= UpdateState;
             node.onSetState += UpdateState;
 
-            node.onValidation -= RefreshCustomDataField;
-            node.onValidation += RefreshCustomDataField;
-
             UpdateState(node.State);
 
             if (node.PersonDependent)
@@ -104,6 +102,9 @@ namespace com.absence.dialoguesystem.editor
             {
                 node.onValidation -= RefreshOptionLabels;
                 node.onValidation += RefreshOptionLabels;
+
+                Master.m_dialogue.OnValidateAction -= RefreshGenericOptionElems;
+                Master.m_dialogue.OnValidateAction += RefreshGenericOptionElems;
             }
             else if (node is DialoguePartNode)
             {
@@ -130,15 +131,24 @@ namespace com.absence.dialoguesystem.editor
             }
         }
 
-        private void RefreshCustomDataField()
+        private void RefreshGenericOptionElems()
         {
-            //NodeCustomDataBase[] foundCustomDatas = 
-            //    AssetDatabase.LoadAssetAtPath<NodeCustomDataBase>(AssetDatabase.GetAssetPath(Master.m_dialogue));
+            m_genericOptionElems.ForEach(op =>
+            {
+                Label showIfLabel = op.Q<Label>("show-if-label");
+                TextField textField = op.Q<TextField>();
 
-            //if ()
-            //{
+                int index = m_genericOptionElems.IndexOf(op);
 
-            //}
+                if (index >= Master.m_dialogue.GenericOptions.Count)
+                    return;
+
+                Option target = Master.m_dialogue.GenericOptions[index];
+
+                showIfLabel.visible = target.UseShowIf;
+                showIfLabel.tooltip = target.Visibility.GetConditionString(true);
+                textField.SetValueWithoutNotify(target.Text);
+            });
         }
 
         private void RefreshConditionTooltip()
@@ -147,7 +157,6 @@ namespace com.absence.dialoguesystem.editor
             VisualElement icon = this.Q<VisualElement>("node-icon");
 
             icon.tooltip = nodeAsCondition.GetConditionString(true);
-
         }
 
         private void RefreshDialoguePartTitle()
@@ -259,7 +268,9 @@ namespace com.absence.dialoguesystem.editor
             if (peopleNameList.Count == 0)
             {
                 personDropdown.choices = new List<string>();
-                personDropdown.SetValueWithoutNotify("No person exists in this dialogue.");
+                personDropdown.SetValueWithoutNotify("None");
+                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+                personIconPreview.style.display = DisplayStyle.None;
                 return;
             }
 
@@ -268,6 +279,8 @@ namespace com.absence.dialoguesystem.editor
             if (Node.PersonIndex < 0 || Node.PersonIndex > Master.m_dialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
+                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+                personIconPreview.style.display = DisplayStyle.None;
                 return;
             }
 
@@ -275,10 +288,16 @@ namespace com.absence.dialoguesystem.editor
             {
                 personDropdown.SetValueWithoutNotify(Master.m_dialogue.People[Node.PersonIndex].Name);
                 Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+                personIconPreview.style.display = DisplayStyle.Flex;
                 personIconPreview.sprite = Master.m_dialogue.People[Node.PersonIndex].Icon;
             }
+
             else
+            {
                 personDropdown.SetValueWithoutNotify("Select a person...");
+                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+                personIconPreview.style.display = DisplayStyle.None;
+            }
 
         }
 
@@ -293,7 +312,7 @@ namespace com.absence.dialoguesystem.editor
 
             if (m_gotoDropdown.choices.Count == 0)
             {
-                m_gotoDropdown.SetValueWithoutNotify("There are no DialoguePartNode.");
+                m_gotoDropdown.SetValueWithoutNotify("None");
                 return;
             }
 
@@ -307,11 +326,31 @@ namespace com.absence.dialoguesystem.editor
         private void DrawElems_DecisionSpeechNode()
         {
             m_createNewOptionButton = new Button(CreateOption_DecisionSpeechNode);
-            m_createNewOptionButton.text = "Add New Option";
+            m_createNewOptionButton.text = "Add Option";
             m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
 
             RefreshOptions_DecisionSpeechNode();
+
+            List<Node> temp = m_nodeAsDecisive.GenericOptionLeads;
+            m_nodeAsDecisive.GenericOptionLeads = new List<Node>(Master.m_dialogue.GenericOptions.Count);
+
+            for (int i = 0; i < temp.Count; i++)
+            {
+                m_nodeAsDecisive.GenericOptionLeads[i] = temp[i];
+            }
+
+            EditorUtility.SetDirty(Node);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            for (int i = 0; i < Master.m_dialogue.GenericOptions.Count; i++)
+            {
+                VisualElement elem = Master.CreateGenericOptionElement(this, i);
+                m_genericOptionElems.Add(elem);
+                mainContainer.Add(elem);
+                Outputs.Add(elem.Q<Port>());
+            }
         }
         private void DrawElems_GotoNode()
         {
@@ -502,8 +541,54 @@ namespace com.absence.dialoguesystem.editor
                 Master.Refresh();
             });
 
+            Button moveUpButton = new Button(() =>
+            {
+                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
+
+                int targetIndex = index - 1;
+
+                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
+                Option self = m_nodeAsDecisive.Options[index];
+
+                m_nodeAsDecisive.Options[index] = optionToReplace;
+                m_nodeAsDecisive.Options[targetIndex] = self;
+
+                EditorUtility.SetDirty(m_nodeAsDecisive);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+
+                Master.Refresh();
+            });
+
+            Button moveDownButton = new Button(() =>
+            {
+                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
+
+                int targetIndex = index + 1;
+
+                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
+                Option self = m_nodeAsDecisive.Options[index];
+
+                m_nodeAsDecisive.Options[index] = optionToReplace;
+                m_nodeAsDecisive.Options[targetIndex] = self;
+
+                EditorUtility.SetDirty(m_nodeAsDecisive);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+
+                Master.Refresh();
+            });
+
             removeButton.text = "x";
             removeButton.AddToClassList("removeOptionButton");
+
+            moveUpButton.text = "↑";
+            moveUpButton.AddToClassList("moveOptionUpButton");
+            moveUpButton.SetEnabled(index > 0);
+
+            moveDownButton.text = "↓";
+            moveDownButton.AddToClassList("moveOptionDownButton");
+            moveDownButton.SetEnabled(index < m_nodeAsDecisive.Options.Count - 1);
 
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
@@ -517,12 +602,14 @@ namespace com.absence.dialoguesystem.editor
 
             removeButton.tooltip = "Remove this option.";
 
-            Label showIfLabel = new Label("Show if in use.");
+            Label showIfLabel = new Label("Conditional visibility active.");
             showIfLabel.AddToClassList("optionShowIfLabel");
             showIfLabel.name = "show-if-label";
             showIfLabel.tooltip = "NODATA";
 
             top.Add(removeButton);
+            top.Add(moveUpButton);
+            top.Add(moveDownButton);
             top.Add(showIfLabel);
             RefreshShowIfLabel();
 

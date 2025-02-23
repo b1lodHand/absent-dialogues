@@ -1,7 +1,6 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.internals;
 using System;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,8 +8,11 @@ namespace com.absence.dialoguesystem.editor
 {
     public static class NodeCustomDataCreationHandler
     {
-        public static Type NodeCustomDataTypeToCreate = typeof(NodeCustomData);
-        public static Type OptionCustomDataTypeToCreate = typeof(NodeCustomData);
+        public static Type DefaultDataType = typeof(NodeCustomData);
+
+        public static Type NodeCustomDataTypeToCreate = DefaultDataType;
+        public static Type OptionCustomDataTypeToCreate = DefaultDataType;
+        public static Type GenericOptionCustomDataTypeToCreate = DefaultDataType;
 
         [FieldButtonId(1801, priority = int.MaxValue)]
         static NodeCustomDataBase CreateNodeCustomData_FieldButton(object sender)
@@ -36,6 +38,18 @@ namespace com.absence.dialoguesystem.editor
             DeleteOptionCustomData(sender as Node, option as Option);
         }
 
+        [FieldButtonId(1805, priority = int.MaxValue)]
+        static NodeCustomDataBase CreateGenericOptionCustomData_FieldButton(object sender, object option)
+        {
+            return CreateGenericOptionCustomData(sender as Dialogue, option as Option, GenericOptionCustomDataTypeToCreate);
+        }
+
+        [FieldButtonId(1804, priority = int.MaxValue)]
+        static void DeleteGenericOptionCustomData_FieldButton(object sender, object option)
+        {
+            DeleteGenericOptionCustomData(sender as Dialogue, option as Option);
+        }
+
         public static NodeCustomDataBase CreateNodeCustomData(Node sender, Type type)
         {
             if (!type.BaseType.Equals(typeof(NodeCustomDataBase)))
@@ -56,7 +70,7 @@ namespace com.absence.dialoguesystem.editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 
-            return null;
+            return (NodeCustomDataBase)createdSO;
         }
 
         public static void DeleteNodeCustomData(Node sender)
@@ -91,24 +105,17 @@ namespace com.absence.dialoguesystem.editor
                 return null;
             }
 
-            Option realContext = dialogueNode.Options.First(op => op.Text.Equals(context.Text));
-
-            if (realContext == null)
-                return null;
-
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
             createdSO.name = $"{sender.Guid}_OptionData";
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
-
-            realContext.CustomData = (NodeCustomDataBase)createdSO;
 
             Undo.RegisterCreatedObjectUndo(createdSO, "Node (Create Option Data)");
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 
-            return null;
+            return (NodeCustomDataBase)createdSO;
         }
 
         public static void DeleteOptionCustomData(Node sender, Option context)
@@ -119,16 +126,52 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
-            Option realContext = dialogueNode.Options.First(op => op.Text.Equals(context.Text));
-
-            if (realContext == null)
+            if (context == null)
                 return;
 
             Undo.RecordObject(sender, "Node (Delete Option Data)");
 
-            UnityEngine.Object objectWillGetDeleted = realContext.CustomData;
+            UnityEngine.Object objectWillGetDeleted = context.CustomData;
 
-            realContext.CustomData = null;
+            //AssetDatabase.RemoveObjectFromAsset(objectWillGetDeleted);
+            if (objectWillGetDeleted == null)
+                return;
+
+            Undo.DestroyObjectImmediate(objectWillGetDeleted);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
+        public static NodeCustomDataBase CreateGenericOptionCustomData(Dialogue sender, Option context, Type type)
+        {
+            if (!type.BaseType.Equals(typeof(NodeCustomDataBase)))
+            {
+                Debug.LogError("Target type must derive from 'NodeCustomDataBase'.");
+                return null;
+            }
+
+            ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
+            createdSO.name = $"GenericOptionData";
+
+            AssetDatabase.AddObjectToAsset(createdSO, sender);
+
+            Undo.RegisterCreatedObjectUndo(createdSO, "Dialogue (Create Generic Option Data)");
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            return (NodeCustomDataBase)createdSO;
+        }
+
+        public static void DeleteGenericOptionCustomData(Dialogue sender, Option context)
+        {
+            if (context == null)
+                return;
+
+            Undo.RecordObject(sender, "Dialogue (Delete Generic Option Data)");
+
+            UnityEngine.Object objectWillGetDeleted = context.CustomData;
 
             //AssetDatabase.RemoveObjectFromAsset(objectWillGetDeleted);
             if (objectWillGetDeleted == null)

@@ -260,15 +260,24 @@
 
 .decisionSpeechNode .removeOptionButton {
     border-radius: 0;
-    border-left-width: 1px;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-color: rgb(31, 31, 31);
     -unity-text-align: middle-center;
     -unity-font-style: bold;
     background-color: rgb(171, 68, 63);
     color: rgb(255, 255, 255);
+}
+
+.decisionSpeechNode .moveOptionUpButton {
+    border-radius: 0;
+    width: 21px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.decisionSpeechNode .moveOptionDownButton {
+    border-radius: 0;
+    width: 21px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
 }
 
 .decisionSpeechNode .removeOptionButton:hover {

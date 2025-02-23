@@ -1,5 +1,8 @@
+using com.absence.dialoguesystem.runtime.backup;
+using com.absence.dialoguesystem.runtime.backup.data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals 
@@ -14,10 +17,13 @@ namespace com.absence.dialoguesystem.internals
 
         [Space(10)]
         
-        [Tooltip("All of the options of this node.")] 
+        [HideInInspector, Tooltip("All of the options of this node.")] 
         public List<Option> Options = new List<Option>();
 
         [HideInInspector] public string m_text;
+
+        [HideInInspector] public Node NativeNextNode;
+        [HideInInspector] public List<Node> GenericOptionLeads; 
 
         public override bool PersonDependent => true;
 
@@ -25,7 +31,11 @@ namespace com.absence.dialoguesystem.internals
         List<Option> IDialogueNode.Options { get => Options; set { Options = value; } }
 
         public override string GetClassName() => "decisionSpeechNode";
-        public override string GetTitle() => "Dialogue";
+        public override string GetTitle()
+        {
+            if (Options.Count > 0) return "Prompt";
+            else return "Prompt (Optionless)";
+        }
 
         protected override void OnPass(DialogueFlowContext context)
         {
@@ -33,7 +43,14 @@ namespace com.absence.dialoguesystem.internals
 
             var optionSelected = context.OptionIndex;
 
-            if (Options.Count == 0) return;
+            if (Options.Count == 0)
+            {
+                if (NativeNextNode == null) return;
+
+                NativeNextNode.Reach(context);
+                return;
+            }
+
             if (Options[optionSelected].LeadsTo == null) return;
 
             Options[optionSelected].LeadsTo.Reach(context);
@@ -49,7 +66,8 @@ namespace com.absence.dialoguesystem.internals
             });
 
             context.Text = Text;
-            context.OptionIndexPairs = new(temp);
+            if (Options.Count > 0) context.OptionIndexPairs = new(temp);
+            else context.OptionIndexPairs = null;
 
             temp.Clear();
             temp = null;
@@ -57,10 +75,24 @@ namespace com.absence.dialoguesystem.internals
 
         protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {
+            if (atPort >= Options.Count)
+            {
+                atPort -= Options.Count;
+                GenericOptionLeads[atPort] = nextWillBeAdded;
+                return;
+            }
+
             Options[atPort].LeadsTo = nextWillBeAdded;
         }
         protected override void RemoveNextNode_Internal(int atPort)
         {
+            if (atPort >= Options.Count)
+            {
+                atPort -= Options.Count;
+                GenericOptionLeads[atPort] = null;
+                return;
+            }
+
             Options[atPort].LeadsTo = null;
         }
         protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
@@ -68,6 +100,13 @@ namespace com.absence.dialoguesystem.internals
             foreach (var o in Options.ToArray())
             {
                 if (o != null && o.LeadsTo != null) result.Add((Options.IndexOf(o), o.LeadsTo));
+            }
+
+            for (int i = 0; i < GenericOptionLeads.Count; i++) 
+            { 
+                Node target = GenericOptionLeads[i];
+                    
+                if (target != null) result.Add((Options.Count + i, target));
             }
         }
 
@@ -82,12 +121,17 @@ namespace com.absence.dialoguesystem.internals
 
         public override List<string> GetOutputPortNamesForCreation()
         {
+            if (Options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0)) 
+                return new List<string>() { "To" };
+
             return new List<string>();
         }
 
         public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
             Options = Options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
+            if (NativeNextNode != null) 
+                NativeNextNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(NativeNextNode)];
 
             Options.ForEach(opt =>
             {
@@ -113,6 +157,18 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public List<NodeVariableSetter> GetSetters() => null;
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            m_text = dataToRead.Data;
+            Options = dataToRead.OptionData.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
+        }
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            dataToWrite.Data = m_text;
+            dataToWrite.OptionData = Options.ConvertAll(option => DataGenerator.GenerateOptionData(option)).ToArray();
+        }
 
         public override void OnValidate()
         {

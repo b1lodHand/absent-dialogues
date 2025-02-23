@@ -25,6 +25,8 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string ParentCreationMenu => "Flow";
 
+        protected const string k_none = "None";
+
         public bool UsedByMapper = false;
         [ShowIf(nameof(UsedByMapper))] public string UniqueMapperId;
 
@@ -114,12 +116,18 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            VBActions = dataToRead.SetterDatas.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+            UsedByMapper = (bool)dataToRead.BoxedData[0];
+            UniqueMapperId = dataToRead.Data;
+            VBActions = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
-            dataToWrite.SetterDatas = VBActions.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
+            dataToWrite.BoxedData = new object[1];
+            dataToWrite.BoxedData[0] = (object)UsedByMapper;
+
+            dataToWrite.Data = UniqueMapperId;
+            dataToWrite.SetterData = VBActions.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
         }
     }
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.utilities;
+using System.Reflection;
+using UnityEditor.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -99,7 +101,7 @@ namespace com.absence.dialoguesystem.editor
                     NodeView nodeView = elem as NodeView;
                     if (nodeView != null)
                     {
-                        if (nodeView.Node.Equals(m_dialogue.RootNode)) return;
+                        if (nodeView.Node.Equals(m_dialogue.Entry)) return;
 
                         DeleteNode(nodeView);
                         return;
@@ -146,7 +148,7 @@ namespace com.absence.dialoguesystem.editor
             foreach (var type in types)
             {
                 DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
-                if (type.Equals(typeof(RootNode))) status = DropdownMenuAction.Status.Disabled;
+                if (type.Equals(typeof(EntryNode))) status = DropdownMenuAction.Status.Disabled;
 
                 System.Reflection.PropertyInfo parentMenuProp = type.GetProperty("ParentCreationMenu");
                 bool parentMenuSpecified = parentMenuProp != null;
@@ -180,14 +182,16 @@ namespace com.absence.dialoguesystem.editor
 
             if (m_dialogue == null) return;
 
-            if (m_dialogue.RootNode == null)
+            if (m_dialogue.Entry == null)
             {
-                m_dialogue.RootNode = m_dialogue.CreateNode(typeof(RootNode)) as RootNode;
+                m_dialogue.Entry = m_dialogue.CreateNode(typeof(EntryNode)) as EntryNode;
 
-                AssetDatabase.AddObjectToAsset(m_dialogue.RootNode, m_dialogue);
+                AssetDatabase.AddObjectToAsset(m_dialogue.Entry, m_dialogue);
                 EditorUtility.SetDirty(m_dialogue);
                 AssetDatabase.SaveAssets();
             }
+
+            dialogue.AllNodes.RemoveAll(n => n == null);
 
             dialogue.AllNodes.ForEach(n => CreateNodeView(n));
 
@@ -269,6 +273,16 @@ namespace com.absence.dialoguesystem.editor
             OnBeforeNodeDeleted?.Invoke(view.Node);
 
             NodeCustomDataCreationHandler.DeleteNodeCustomData(view.Node);
+            if (view.Node is IDialogueNode dialogueNode)
+            {
+                foreach (Option option in dialogueNode.Options)
+                {
+                    if (option.CustomData == null)
+                        continue;
+
+                    NodeCustomDataCreationHandler.DeleteOptionCustomData(view.Node, option);
+                }
+            }
 
             Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
 
@@ -301,6 +315,82 @@ namespace com.absence.dialoguesystem.editor
 
             ClearSelection();
             AddToSelection(selectableNode);
+        }
+
+        internal VisualElement CreateGenericOptionElement(NodeView sender, int index)
+        {
+            VisualElement optionElem = new VisualElement();
+
+            VisualElement top = new VisualElement();
+            top.AddToClassList("optionBottom");
+            top.name = "top";
+
+            VisualElement divider = new VisualElement();
+            divider.AddToClassList("optionDivider");
+
+            VisualElement bottom = new VisualElement();
+            bottom.AddToClassList("optionBottom");
+
+            GenericOption target = m_dialogue.GenericOptions[index];
+
+            Button removeButton = new Button(() =>
+            {
+            });
+
+            Button moveUpButton = new Button(() =>
+            {
+            });
+
+            Button moveDownButton = new Button(() =>
+            {
+            });
+
+            removeButton.text = "x";
+            removeButton.AddToClassList("removeOptionButton");
+            removeButton.SetEnabled(false);
+
+            moveUpButton.text = "↑";
+            moveUpButton.AddToClassList("moveOptionUpButton");
+            moveUpButton.SetEnabled(false);
+
+            moveDownButton.text = "↓";
+            moveDownButton.AddToClassList("moveOptionDownButton");
+            moveDownButton.SetEnabled(false);
+
+            Port port = sender.InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+            port.AddToClassList("optionPort");
+            port.portName = "";
+
+            TextField speechField = new TextField();
+            speechField.AddToClassList("optionField");
+            speechField.multiline = true;
+            speechField.SetValueWithoutNotify(target.Text);
+            speechField.SetEnabled(false);
+
+            Label showIfLabel = new Label("Conditional visibility active.");
+            showIfLabel.AddToClassList("optionShowIfLabel");
+            showIfLabel.name = "show-if-label";
+            showIfLabel.tooltip = "NODATA";
+
+            top.Add(removeButton);
+            top.Add(moveUpButton);
+            top.Add(moveDownButton);
+            top.Add(showIfLabel);
+            RefreshShowIfLabel();
+
+            bottom.Add(speechField);
+            bottom.Add(port);
+
+            optionElem.Add(divider);
+            optionElem.Add(top);
+            optionElem.Add(bottom);
+
+            return optionElem;
+
+            void RefreshShowIfLabel()
+            {
+                showIfLabel.visible = target.UseShowIf;
+            }
         }
     }
 

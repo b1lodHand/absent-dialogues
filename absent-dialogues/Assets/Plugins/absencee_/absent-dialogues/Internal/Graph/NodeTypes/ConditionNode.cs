@@ -103,13 +103,13 @@ namespace com.absence.dialoguesystem.internals
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
             Processor = DialogueImportSettings.ProcessorDictionary[dataToRead.ComparerProcessorType];
-            Comparers = dataToRead.ComparerDatas.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
+            Comparers = dataToRead.ComparerData.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
             dataToWrite.ComparerProcessorType = DialogueExportSettings.ProcessorDictionary[Processor];
-            dataToWrite.ComparerDatas = Comparers.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
+            dataToWrite.ComparerData = Comparers.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
         }
 
         public override void OnValidate()

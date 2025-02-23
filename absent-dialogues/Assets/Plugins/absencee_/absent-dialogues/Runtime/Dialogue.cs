@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
+using com.absence.attributes;
 
 namespace com.absence.dialoguesystem
 {
@@ -14,9 +15,9 @@ namespace com.absence.dialoguesystem
     public class Dialogue : ScriptableObject
     {
         /// <summary>
-        /// The <see cref="RootNode"/> of this dialogue.
+        /// The <see cref="EntryNode"/> of this dialogue.
         /// </summary>
-        [HideInInspector] public RootNode RootNode;
+        [HideInInspector] public EntryNode Entry;
 
         /// <summary>
         /// The current node reached while progressing in this dialogue. Or the last one reached before exiting the dialogue.
@@ -33,6 +34,10 @@ namespace com.absence.dialoguesystem
         /// People in this dialogue (might be overridden on clones).
         /// </summary>
         public List<Person> People => m_people;
+
+        [SerializeField] private List<GenericOption> m_genericOptions = new List<GenericOption>();
+
+        public List<GenericOption> GenericOptions => m_genericOptions;
 
         /// <summary>
         /// The original dialogue which is used to create this cloned one. Returns null if this dialogue is not a clone.
@@ -138,7 +143,7 @@ namespace com.absence.dialoguesystem
                 if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this, dialogue);
             });
 
-            dialogue.RootNode = (RootNode)dialogue.AllNodes.Where(node => node is RootNode).FirstOrDefault();
+            dialogue.Entry = (EntryNode)dialogue.AllNodes.Where(node => node is EntryNode).FirstOrDefault();
             dialogue.ClonedFrom = this;
 
             return dialogue;
@@ -155,7 +160,7 @@ namespace com.absence.dialoguesystem
 
         public void TeleportToRoot(DialogueFlowContext context = null)
         {
-            RootNode.Reach(context);
+            Entry.Reach(context);
         }
 
         /// <summary>
@@ -207,6 +212,14 @@ namespace com.absence.dialoguesystem
 
         public void OnValidate()
         {
+            m_genericOptions.ForEach(option =>
+            {
+                option.Visibility.ShowIfList.ForEach(comparer =>
+                {
+                    comparer.SetBlackboardBank(Blackboard.Bank);
+                });
+            });
+
             OnValidateAction?.Invoke();
         }
     }

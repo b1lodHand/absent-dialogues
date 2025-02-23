@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -8,13 +9,14 @@ namespace com.absence.dialoguesystem.internals
     /// Node which is essential if you want to have a dialogue graph.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.RootNode.html")]
-    public sealed class RootNode : Node, IPerformDelayedClone
+    [MovedFrom("RootNode")]
+    public sealed class EntryNode : Node, IPerformDelayedClone
     {
         public static string ParentCreationMenu => "Initial";
 
         [HideInInspector] public Node Next;
         public override string GetClassName() => "rootNode";
-        public override string GetTitle() => "Root";
+        public override string GetTitle() => "Entry";
 
         protected override void OnPass(DialogueFlowContext context)
         {

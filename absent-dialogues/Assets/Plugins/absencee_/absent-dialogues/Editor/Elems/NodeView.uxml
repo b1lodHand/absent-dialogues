@@ -21,7 +21,7 @@
                 <ui:VisualElement name="input" style="-unity-font-style: normal;" />
                 <ui:VisualElement name="output" />
             </ui:VisualElement>
-            <ui:TextField value="INSERT TEXT" focusable="true" name="speech" picking-mode="Ignore" multiline="true" usage-hints="None" class="speech" style="flex-grow: 1; justify-content: flex-start; align-items: center; width: auto; min-width: auto; margin-bottom: 8px;" />
+            <ui:TextField focusable="true" name="speech" picking-mode="Ignore" multiline="true" usage-hints="None" class="speech" style="flex-grow: 1; justify-content: flex-start; align-items: center; width: auto; min-width: auto; margin-bottom: 8px;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="selection-border" picking-mode="Ignore" />

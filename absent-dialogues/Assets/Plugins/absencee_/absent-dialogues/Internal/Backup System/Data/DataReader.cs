@@ -1,6 +1,10 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.dialoguesystem.runtime.backup.internals;
+using com.absence.variablesystem.builtin;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 
 namespace com.absence.dialoguesystem.runtime.backup.data
 {
@@ -29,6 +33,45 @@ namespace com.absence.dialoguesystem.runtime.backup.data
             setter.BooleanValue = data.BooleanValue;
 
             return setter;
+        }
+        public static Node ReadNodeData(NodeData data, Dialogue targetDialogue)
+        {
+            Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
+            Node node = targetDialogue.CreateNode(nodeType);
+            node.Guid = GUID.Generate().ToString();
+            node.name = node.Guid;
+            node.Position.x = data.PositionX;
+            node.Position.y = data.PositionY;
+
+            AssetDatabase.AddObjectToAsset(node, targetDialogue);
+            return node;
+        }
+        public static void ReadBlackboardData(BlackboardData data, Blackboard target)
+        {
+            List<IntegerVariable> ints = data.Ints.ToList().ConvertAll(intPair =>
+            {
+                return new IntegerVariable(intPair.Key, intPair.Value);
+            }).ToList();
+
+            List<FloatVariable> floats = data.Floats.ToList().ConvertAll(floatPair =>
+            {
+                return new FloatVariable(floatPair.Key, floatPair.Value);
+            }).ToList();
+
+            List<StringVariable> strings = data.Strings.ToList().ConvertAll(stringPair =>
+            {
+                return new StringVariable(stringPair.Key, stringPair.Value);
+            }).ToList();
+
+            List<BooleanVariable> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
+            {
+                return new BooleanVariable(booleanPair.Key, booleanPair.Value);
+            }).ToList();
+
+            target.Bank.Ints = new(ints);
+            target.Bank.Floats = new(floats);
+            target.Bank.Strings = new(strings);
+            target.Bank.Booleans = new(booleans);
         }
         public static Option ReadOptionData(OptionData data)
         {

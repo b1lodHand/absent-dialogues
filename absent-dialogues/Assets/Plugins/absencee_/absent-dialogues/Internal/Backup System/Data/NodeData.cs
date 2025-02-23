@@ -1,3 +1,5 @@
+using com.absence.dialoguesystem.internals;
+
 namespace com.absence.dialoguesystem.runtime.backup.data
 {
     [System.Serializable]
@@ -8,15 +10,14 @@ namespace com.absence.dialoguesystem.runtime.backup.data
         public float PositionY;
         public string OldGuid;
 
-        public string GotoTargetGuid;
-        public string DialoguePartName;
-
-        public NodeVariableComparerData[] ComparerDatas;
-        public NodeVariableSetterData[] SetterDatas;
+        public NodeVariableComparerData[] ComparerData;
+        public NodeVariableSetterData[] SetterData;
 
         public char ComparerProcessorType;
 
-        public string Text;
-        public OptionData[] OptionDatas;
+        public string Data;
+        public NodeCustomDataBase CustomData;
+        public OptionData[] OptionData;
+        public object[] BoxedData;
     }
 }
