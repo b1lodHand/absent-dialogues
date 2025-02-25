@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="originalDialogue">This is the dialogue the cloned dialogue had cloned from.</param>
         /// <param name="clonedDialogue">This is the dialogue acquired via cloning the original one.</param>
-        void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue);
+
     }
 }

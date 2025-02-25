@@ -45,7 +45,7 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  Next: {fileID: 6611807328144254293}
+  Next: {fileID: 0}
 --- !u!114 &-3899366801720709168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +224,26 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Next: {fileID: 6287193538585539002}
+--- !u!114 &-283791623062669860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501d7a5ca1d0a344a90ce0af4756c6b7, type: 3}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: 
+  Guid: 
+  Position: {x: 0, y: 0}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 3482111983400843739}
+  State: 0
+  PersonIndex: 0
+  Next: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,26 +256,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
   m_Name: Demo
   m_EditorClassIdentifier: 
-  RootNode: {fileID: -6513287880481736522}
-  LastOrCurrentNode: {fileID: 0}
+  Entry: {fileID: -283791623062669860}
   AllNodes:
-  - {fileID: 6611807328144254293}
   - {fileID: 1326889792880528920}
-  - {fileID: -1399893973709126951}
-  - {fileID: -914008930283711827}
-  - {fileID: 6287193538585539002}
-  - {fileID: -1965666318695130335}
   - {fileID: 1239550416686042660}
-  - {fileID: 9119168445957565552}
   - {fileID: -3621898333564505408}
-  - {fileID: -3899366801720709168}
   - {fileID: 7512322125377748830}
-  - {fileID: -2127933438961997456}
-  - {fileID: 7901140551254700991}
   - {fileID: 1839565436388208056}
   - {fileID: 7873461484329537452}
   - {fileID: 7827530095340408142}
   - {fileID: -6513287880481736522}
+  - {fileID: -283791623062669860}
   m_people:
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
   m_genericOptions: []
@@ -280,8 +291,8 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  TrueNext: {fileID: -3899366801720709168}
-  FalseNext: {fileID: 9119168445957565552}
+  TrueNext: {fileID: 0}
+  FalseNext: {fileID: 0}
   Processor: 0
   Comparers:
   - m_comparisonType: 2
@@ -324,7 +335,7 @@ MonoBehaviour:
     Bank: {fileID: 3482111983400843739}
   State: 0
   PersonIndex: 0
-  Next: {fileID: 6611807328144254293}
+  Next: {fileID: 0}
   DialoguePartName: Loop
 --- !u!114 &1839565436388208056
 MonoBehaviour:

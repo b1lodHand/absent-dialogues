@@ -1,0 +1,13 @@
+#node-icon {
+    background-image: resource('node-icon-exit');
+    -unity-background-image-tint-color: rgb(63, 166, 171);
+    display: flex;
+}
+
+#title {
+    -unity-font-style: bold;
+}
+
+#node-border {
+    border-top-color: rgb(63, 166, 171);
+}

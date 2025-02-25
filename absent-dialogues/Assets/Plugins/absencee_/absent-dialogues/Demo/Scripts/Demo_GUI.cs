@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.examples
         bool m_done = false;      // to cache
         bool m_committed = false; // needed values.
 
-        public override void OnAfterCloning()
+        public override void OnInitialize()
         {
             m_blackboardBank = m_instance.Player.ClonedDialogue.Blackboard.Bank; // we're doing this to easily reach the bank in the future.
 

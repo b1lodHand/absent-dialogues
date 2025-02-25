@@ -8,14 +8,14 @@ using UnityEngine;
 namespace com.absence.dialoguesystem.editor
 {
     [InitializeOnLoad]
-    public static class NodeViewsHandler
+    public static class NodeViewCreationHandler
     {
         const int k_neededArgumentCountForConstructor = 2;
 
         static Dictionary<Type, ConstructorInfo> s_database;
         public static Dictionary<Type, ConstructorInfo> Database => s_database; 
 
-        static NodeViewsHandler()
+        static NodeViewCreationHandler()
         {
             Refresh();
         }
@@ -111,7 +111,17 @@ namespace com.absence.dialoguesystem.editor
             ConstructorInfo constructor = null;
             if (!s_database.TryGetValue(type, out constructor))
             {
-                return new NodeView(node, graph);
+                Type baseType = type;
+                while (baseType != null)
+                {
+                    if (s_database.ContainsKey(baseType))
+                        break;
+
+                    baseType = baseType.BaseType;
+                }
+
+                if (baseType == null) return new NodeView(node, graph);
+                else return DoCreateNodeView(baseType, node, graph);
             }
 
             try

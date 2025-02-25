@@ -11,30 +11,33 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
     public sealed class StickyNoteNode : Node
     {
-        public static string ParentCreationMenu => "Misc";
+        public static string CreationMenuName => "Sticky Note";
 
         [HideInInspector] public string m_text;
 
         public override bool DisplayState => false;
         public override bool ShowInMinimap => false;
 
-        public override string GetClassName() => "stickyNoteNode";
-
         public override string Title => "Sticky Note";
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
+        {
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/StickyNoteNodeView.uss"
+        };
+
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             
         }
 
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
             
         }
 
-        protected override void OnPass(DialogueFlowContext context)
+        protected override Node OnPass(DialogueFlowContext context)
         {
-            
+            return null;
         }
 
         protected override void OnReach(DialogueFlowContext context)
@@ -42,13 +45,13 @@ namespace com.absence.dialoguesystem.internals
             
         }
 
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             
         }
 
-        public override string GetInputPortNameForCreation() => null;
-        public override List<string> GetOutputPortNamesForCreation() => new();
+        public override string GetDefaultInputPortName() => null;
+        public override List<string> GetDefaultOutputPortNames() => new();
 
         public override void OnExport(NodeData dataToWrite)
         {

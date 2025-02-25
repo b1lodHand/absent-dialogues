@@ -10,36 +10,39 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.RootNode.html")]
     [MovedFrom("RootNode")]
-    public sealed class EntryNode : Node, IPerformDelayedClone
+    public sealed class EntryNode : Node
     {
-        public static string ParentCreationMenu => "Initial";
+        public static string CreationMenuName => NaN;
 
         [HideInInspector] public Node Next;
-        public override string GetClassName() => "rootNode";
+
         public override string Title => "Entry";
 
-        protected override void OnPass(DialogueFlowContext context)
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
         {
-            if (Next == null) return;
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/EntryNodeView.uss"
+        };
 
-            Next.Reach(context);
+        protected override Node OnPass(DialogueFlowContext context)
+        {
+            return Next;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             Next = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             Next = null;
         }
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
-            if (Next != null) result.Add((0, Next));
+            result.Add(Next);
         }
         public override void Traverse(Action<Node> action)
         {
@@ -47,16 +50,16 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public override string GetInputPortNameForCreation()
+        public override string GetDefaultInputPortName()
         {
             return null;
         }
-        public override List<string> GetOutputPortNamesForCreation()
+        public override List<string> GetDefaultOutputPortNames()
         {
             return new List<string>() { "Start" };
         }
 
-        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
             if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }

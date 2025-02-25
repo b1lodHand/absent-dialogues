@@ -1,0 +1,31 @@
+#node-icon {
+    background-image: resource('node-icon-goto');
+}
+
+#title {
+    -unity-text-align: upper-right;
+    -unity-font-style: bold;
+}
+
+#goto-dropdown {
+    display: none;
+    visibility: visible;
+    align-self: center;
+}
+
+#goto-dropdown {
+    display: flex;
+}
+
+.unity-popup-field__input {
+    border-radius: 0;
+    text-overflow: clip;
+    white-space: nowrap;
+    position: relative;
+    flex-basis: 0;
+    height: 18px;
+}
+
+.unity-popup-field__label {
+    display: none;
+}

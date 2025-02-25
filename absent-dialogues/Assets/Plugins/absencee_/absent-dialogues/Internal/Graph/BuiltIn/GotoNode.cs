@@ -6,57 +6,62 @@ using UnityEngine;
 namespace com.absence.dialoguesystem.internals
 {
     /// <summary>
-    /// Node which teleports the flow to a specific <see cref="DialoguePartNode"/>.
+    /// Node which teleports the flow to a specific <see cref="SectionNode"/>.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.GotoNode.html")]
-    public sealed class GotoNode : Node, IPerformDelayedClone
+    public sealed class GotoNode : Node
     {
-        public static string ParentCreationMenu => "Grouping";
+        public static string CreationMenuName => "Goto";
 
         private const string k_none = "None";
 
         /// <summary>
         /// The node which will get reached when this goto node gets passed.
         /// </summary>
-        [HideInInspector] public DialoguePartNode TargetNode;
+        [HideInInspector] public SectionNode TargetNode;
 
-        public override string GetClassName() => "gotoNode";
         public override string Title => "Goto";
 
-        protected override void OnPass(DialogueFlowContext context)
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
         {
-            if (TargetNode == null) throw new System.Exception("Target node of GotoNode is null!");
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/GotoNodeView.uss"
+        };
 
-            TargetNode.Reach(context);
+        protected override Node OnPass(DialogueFlowContext context)
+        {
+            if (TargetNode == null) 
+                throw new System.Exception("Target node of GotoNode is null!");
+
+            return TargetNode;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             // no impl.
         }
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             // no impl.
         }
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
 
         }
 
-        public override List<string> GetOutputPortNamesForCreation()
+        public override List<string> GetDefaultOutputPortNames()
         {
             return new List<string>();
         }
 
-        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (TargetNode != null) TargetNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as DialoguePartNode;
+            if (TargetNode != null) 
+                TargetNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as SectionNode;
         }
-
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
             string data = dataToRead.Data;
@@ -67,7 +72,7 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
-            TargetNode = context.OldGuidPairs[data] as DialoguePartNode;
+            TargetNode = context.OldGuidPairs[data] as SectionNode;
         }
 
         public override void OnExport(NodeData dataToWrite)

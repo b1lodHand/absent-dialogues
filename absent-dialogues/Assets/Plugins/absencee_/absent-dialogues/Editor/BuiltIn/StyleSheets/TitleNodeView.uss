@@ -1,0 +1,109 @@
+#node-border {
+    visibility: hidden;
+    opacity: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+#divider {
+    display: flex;
+    padding-top: 20px;
+    background-image: resource('node-icon-title');
+    -unity-slice-left: 1;
+    -unity-slice-top: 1;
+    -unity-slice-right: 1;
+    -unity-slice-bottom: 1;
+    -unity-slice-scale: 1px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    width: 20px;
+    align-self: center;
+    opacity: 0;
+    height: 20px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    overflow: hidden;
+}
+
+#speech {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: upper-center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0;
+    font-size: 30px;
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    -unity-font-style: bold;
+    color: rgba(27, 27, 27, 0);
+}
+
+#speech > TextInput {
+    background-color: rgba(255, 0, 0, 0);
+    border-width: 0;
+    visibility: visible;
+    opacity: 1;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+#title {
+    display: none;
+}
+
+#top {
+    display: none;
+}
+
+#contents {
+    align-self: center;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#selection-border {
+    opacity: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}
+
+NodeView:hover #divider {
+    opacity: 0.6;
+}
+
+NodeView:hover:selected #divider {
+    opacity: 1;
+}
+
+NodeView:selected #divider {
+    opacity: 1;
+}

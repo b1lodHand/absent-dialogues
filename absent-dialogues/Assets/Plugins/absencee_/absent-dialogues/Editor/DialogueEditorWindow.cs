@@ -102,6 +102,11 @@ namespace com.absence.dialoguesystem.editor
             return PopulateDialogueView(m_targetDialogue);
         }
 
+        public static void Refresh()
+        {
+            m_dialogueGraphView.Refresh();
+        }
+
         /// <summary>
         /// Use to display a dialogue in the graph.
         /// </summary>
@@ -258,7 +263,7 @@ namespace com.absence.dialoguesystem.editor
             m_dialoguePartFinder.menu.ClearItems();
             if (m_targetDialogue == null) return;
 
-            m_targetDialogue.GetAllDialogueParts().ForEach(dialogPartNode =>
+            m_targetDialogue.GetAllSections().ForEach(dialogPartNode =>
             {
                 m_dialoguePartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
                 {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [CustomEditor(typeof(DecisionSpeechNode), true, isFallback = false)]
+    [CustomEditor(typeof(PromptNode), true, isFallback = false)]
     public class DecisionSpeechNodeEditor : Editor
     {
         Editor initialEditor;

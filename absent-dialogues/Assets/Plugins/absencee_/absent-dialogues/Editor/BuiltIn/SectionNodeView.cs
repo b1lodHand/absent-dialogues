@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [CustomNodeView(typeof(DialoguePartNode))]
+    [CustomNodeView(typeof(SectionNode))]
     public class SectionNodeView : NodeView
     {
         public SectionNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void RefreshTitle()
         {
-            DialoguePartNode nodeAsDp = Node as DialoguePartNode;
+            SectionNode nodeAsDp = Node as SectionNode;
             Label title = this.Q<Label>("title-label");
 
             string dpName = nodeAsDp.DialoguePartName;

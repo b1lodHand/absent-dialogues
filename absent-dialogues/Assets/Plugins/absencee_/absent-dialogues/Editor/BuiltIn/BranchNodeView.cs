@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [CustomNodeView(typeof(ConditionNode))]
+    [CustomNodeView(typeof(BranchNode))]
     public class BranchNodeView : NodeView
     {
         protected DropdownField m_dropdown;
@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem.editor
 
         protected virtual void RefreshTooltip()
         {
-            ConditionNode nodeAsCondition = Node as ConditionNode;
+            BranchNode nodeAsCondition = Node as BranchNode;
             VisualElement icon = this.Q<VisualElement>("node-icon");
 
             icon.tooltip = nodeAsCondition.GetConditionString(true);

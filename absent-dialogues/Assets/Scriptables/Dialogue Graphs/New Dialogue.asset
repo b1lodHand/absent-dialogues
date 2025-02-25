@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7239745567892279838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501d7a5ca1d0a344a90ce0af4756c6b7, type: 3}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: 
+  Guid: 
+  Position: {x: 0, y: 0}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  Next: {fileID: 0}
+--- !u!114 &-2699834185520781405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 2dfab262f9d55d243a5df1568f4d2fa1
+  m_EditorClassIdentifier: 
+  Guid: 2dfab262f9d55d243a5df1568f4d2fa1
+  Position: {x: 281.37375, y: 388.99997}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  Options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+  GenericOptionLeads: []
+--- !u!114 &-2340202394851542849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 78d7b9905baeb4c4bbd3e613e72fa152
+  m_EditorClassIdentifier: 
+  Guid: 78d7b9905baeb4c4bbd3e613e72fa152
+  Position: {x: 780.8984, y: 213.50005}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  UsedByMapper: 0
+  UniqueMapperId: 
+  BlackboardEvents: []
+  Next: {fileID: 1284734966880310916}
+--- !u!114 &-1057558014365626488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
+  m_Name: 66ef8bd9295a8d241b02812b929678e2
+  m_EditorClassIdentifier: 
+  Guid: 66ef8bd9295a8d241b02812b929678e2
+  Position: {x: 1541.8805, y: 278}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+--- !u!114 &-459062343401789597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: b3438387ffd306b4e9a375c2f9a460c8
+  m_EditorClassIdentifier: 
+  Guid: b3438387ffd306b4e9a375c2f9a460c8
+  Position: {x: 1226.8804, y: 338}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  TrueNext: {fileID: -1057558014365626488}
+  FalseNext: {fileID: 0}
+  Processor: 0
+  Comparers: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue
+  m_EditorClassIdentifier: 
+  Entry: {fileID: -7239745567892279838}
+  AllNodes:
+  - {fileID: -7239745567892279838}
+  - {fileID: -2340202394851542849}
+  - {fileID: 7652330264208049152}
+  - {fileID: 6847736406989798509}
+  - {fileID: 1284734966880310916}
+  - {fileID: -459062343401789597}
+  - {fileID: -1057558014365626488}
+  - {fileID: -2699834185520781405}
+  m_people: []
+  m_genericOptions: []
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+--- !u!114 &1284734966880310916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: d9de7efa1f977de48a0d880345a85933
+  m_EditorClassIdentifier: 
+  Guid: d9de7efa1f977de48a0d880345a85933
+  Position: {x: 935.8805, y: 232.00002}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  TrueNext: {fileID: 7652330264208049152}
+  FalseNext: {fileID: -459062343401789597}
+  Processor: 0
+  Comparers: []
+--- !u!114 &6162779381213504746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: New Dialogue Blackboard VB
+  m_EditorClassIdentifier: 
+  m_guid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
+  m_forExternalUse: 1
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans: []
+--- !u!114 &6847736406989798509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: 6083606b4ec79a34abe5fec89fa1bf45
+  m_EditorClassIdentifier: 
+  Guid: 6083606b4ec79a34abe5fec89fa1bf45
+  Position: {x: 173.95999, y: 234.5}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  Next: {fileID: -2340202394851542849}
+  DialoguePartName: Loop
+--- !u!114 &7652330264208049152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: 31ed87de3fa053947a9aabec1341ea2a
+  m_EditorClassIdentifier: 
+  Guid: 31ed87de3fa053947a9aabec1341ea2a
+  Position: {x: 1259.8804, y: 61.999992}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  TargetNode: {fileID: 6847736406989798509}

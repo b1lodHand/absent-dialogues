@@ -1,0 +1,12 @@
+:root {
+    width: 138px;
+    height: 85px;
+}
+
+#node-icon {
+    background-image: resource('node-icon-condition');
+}
+
+#title {
+    padding-right: 6px;
+}

@@ -23,7 +23,7 @@ namespace com.absence.dialoguesystem.internals
 
         public bool WillExit { get; set; }
         public bool HasText => Text != null;
-        public bool HasOptions => OptionIndexPairs.Count > 0;
+        public bool HasOptions => OptionIndexPairs != null && OptionIndexPairs.Count > 0;
 
         public DialogueFlowContext()
         {

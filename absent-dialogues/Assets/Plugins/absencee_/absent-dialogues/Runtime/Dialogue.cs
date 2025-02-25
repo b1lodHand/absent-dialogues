@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
-using com.absence.attributes;
 
 namespace com.absence.dialoguesystem
 {
@@ -18,11 +17,6 @@ namespace com.absence.dialoguesystem
         /// The <see cref="EntryNode"/> of this dialogue.
         /// </summary>
         [HideInInspector] public EntryNode Entry;
-
-        /// <summary>
-        /// The current node reached while progressing in this dialogue. Or the last one reached before exiting the dialogue.
-        /// </summary>
-        [HideInInspector] public Node LastOrCurrentNode;
 
         /// <summary>
         /// A list of all of the nodes that are in this dialogue.
@@ -59,7 +53,6 @@ namespace com.absence.dialoguesystem
         /// </summary>
         [HideInInspector] public Blackboard Blackboard;
 
-#if UNITY_EDITOR
         /// <summary>
         /// Use to create new nodes. Using runtime is not recommended.
         /// </summary>
@@ -67,8 +60,6 @@ namespace com.absence.dialoguesystem
         /// <returns></returns>
         public Node CreateNode(System.Type type)
         {
-            if (IsClone) throw new Exception("You cannot edit contents (besides of the people of it) of a clone dialogue graph.");
-
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
 
@@ -86,24 +77,21 @@ namespace com.absence.dialoguesystem
         /// <param name="node"></param>
         public void DeleteNode(Node node)
         {
-            if (IsClone) throw new Exception("You cannot edit contents (besides of the people of it) of a clone dialogue graph.");
-
             AllNodes.Remove(node);
-            node.OnRemoval();
+            node.OnRemoveFromDialogue();
         }
-#endif
 
         /// <summary>
-        /// Use to find <see cref="DialoguePartNode"/>s with a specific name.
+        /// Use to find <see cref="SectionNode"/>s with a specific name.
         /// </summary>
         /// <param name="targetName"></param>
-        /// <returns>A list of <see cref="DialoguePartNode"/>s with that specific name. Throws an exception nothing's
+        /// <returns>A list of <see cref="SectionNode"/>s with that specific name. Throws an exception nothing's
         /// found.</returns>
-        public List<DialoguePartNode> GetDialoguePartNodesWithName(string targetName)
+        public List<SectionNode> GetSectionsWithName(string targetName)
         {
             var check = AllNodes.Where(n =>
             {
-                var dialogPartNode = n as DialoguePartNode;
+                var dialogPartNode = n as SectionNode;
                 if (dialogPartNode == null) return false;
                 if (dialogPartNode.DialoguePartName != targetName) return false;
 
@@ -113,16 +101,16 @@ namespace com.absence.dialoguesystem
             if (check.Count == 0) throw new Exception($"There is no dialog part named '{targetName}' in dialog '{this.name}'!");
             else if (check.Count > 1) throw new Exception($"There are multiple dialog parts named '{targetName}' in dialog '{this.name}'!");
 
-            return check.ConvertAll(n => (n as DialoguePartNode)).ToList();
+            return check.ConvertAll(n => (n as SectionNode)).ToList();
         }
 
         /// <summary>
-        /// Use to get a list of all <see cref="DialoguePartNode"/>s in this dialogue.
+        /// Use to get a list of all <see cref="SectionNode"/>s in this dialogue.
         /// </summary>
-        /// <returns>The entire list of <see cref="DialoguePartNode"/>s in the current dialogue.</returns>
-        public List<DialoguePartNode> GetAllDialogueParts()
+        /// <returns>The entire list of <see cref="SectionNode"/>s in the current dialogue.</returns>
+        public List<SectionNode> GetAllSections()
         {
-            return AllNodes.Where(n => n is DialoguePartNode).ToList().ConvertAll(n => (n as DialoguePartNode)).ToList();
+            return AllNodes.Where(n => n is SectionNode).ToList().ConvertAll(n => (n as SectionNode)).ToList();
         }
 
         /// <summary>
@@ -139,8 +127,7 @@ namespace com.absence.dialoguesystem
             dialogue.AllNodes.ForEach(node =>
             {
                 node.Blackboard = dialogue.Blackboard;
-
-                if (node is IPerformDelayedClone delayedCloner) delayedCloner.DelayedClone(this, dialogue);
+                node.OnCloning(this, dialogue);
             });
 
             dialogue.Entry = (EntryNode)dialogue.AllNodes.Where(node => node is EntryNode).FirstOrDefault();
@@ -152,62 +139,20 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// It teleports the flow back to the root node.
         /// </summary>
-        public void Initialize(DialogueFlowContext context = null)
+        public void ResetNodeStates()
         {
             AllNodes.ForEach(node => node.SetState(Node.FlowState.Unreached));
-            TeleportToRoot(context);
-        }
-
-        public void TeleportToRoot(DialogueFlowContext context = null)
-        {
-            Entry.Reach(context);
         }
 
         /// <summary>
         /// It reassigns needed auto-fields to prevent any errors.
         /// </summary>
-        public void Rebind()
+        public void ValidateNodes()
         {
             AllNodes.ForEach(node =>
             {
                 node.Blackboard = Blackboard;
             });
-        }
-
-        /// <summary>
-        /// Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
-        /// object's people list won't be affected by this.
-        /// <br></br>
-        /// <br></br>
-        /// <b>CAUTION!</b> The recommended way is to use this function on clones only.
-        /// </summary>
-        /// <param name="overridePeople"></param>
-        public void OverridePeople(List<Person> overridePeople)
-        {
-            if (!IsClone)
-            {
-                Debug.LogWarning("Overriding people of a non-clone dialogue graph is not recommended.");
-            } 
-
-            if (overridePeople != null)
-            {
-                m_people = new List<Person>(overridePeople);
-            }
-        }
-
-        /// <summary>
-        /// Use to progress to the next node in the dialogue. Using this method directly is not recommended
-        /// if you're not adding an extra functionality. You can consider using <see cref="DialoguePlayer"/> instead.
-        /// </summary>
-        /// <param name="passData"></param>
-        public void Pass(DialogueFlowContext context)
-        {
-            if (!IsClone)
-            {
-                Debug.LogWarning("Progressing in a non-clone dialogue graph is not recommended.");
-            }
-
-            if (LastOrCurrentNode != null) LastOrCurrentNode.Pass(context);
         }
 
         public void OnValidate()

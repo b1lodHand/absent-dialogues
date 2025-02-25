@@ -9,47 +9,55 @@ using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [CustomNodeView(typeof(DecisionSpeechNode))]
+    [CustomNodeView(typeof(PromptNode))]
     public sealed class PromptNodeView : NodeView
     {
-        private DecisionSpeechNode m_nodeAsDecisive;
+        private PromptNode m_nodeAsDecisive;
         private Button m_createNewOptionButton;
         private List<VisualElement> m_optionElems = new List<VisualElement>();
         private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
+        GUID m_assetGuid;
 
         public PromptNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            m_nodeAsDecisive = Node as DecisionSpeechNode;
-
             node.onValidation -= RefreshOptionViews;
             node.onValidation += RefreshOptionViews;
 
             Graph.m_dialogue.OnValidateAction -= RefreshGenericOptionViews;
             Graph.m_dialogue.OnValidateAction += RefreshGenericOptionViews;
+        }
 
-            Refresh();
+        protected override void OnBeforeDraw()
+        {
+            m_nodeAsDecisive = Node as PromptNode;
+
+            if (m_nodeAsDecisive.GenericOptionLeads == null) m_nodeAsDecisive.GenericOptionLeads = new();
+            List<Node> temp = new(m_nodeAsDecisive.GenericOptionLeads);
+            m_nodeAsDecisive.GenericOptionLeads.Clear();
+
+            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
+            {
+                Node target = null;
+
+                if (i < temp.Count) target = temp[i];
+
+                m_nodeAsDecisive.GenericOptionLeads.Add(target);
+            }
+
+            EditorUtility.SetDirty(Node);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
         }
 
         protected override void Draw()
         {
-            m_nodeAsDecisive = Node as DecisionSpeechNode;
+            m_assetGuid = AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(Node));
 
             m_createNewOptionButton = new Button(CreateOption);
             m_createNewOptionButton.text = "Add Option";
             m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
 
-            List<Node> temp = m_nodeAsDecisive.GenericOptionLeads;
-            m_nodeAsDecisive.GenericOptionLeads = new List<Node>(Graph.m_dialogue.GenericOptions.Count);
-
-            for (int i = 0; i < temp.Count; i++)
-            {
-                m_nodeAsDecisive.GenericOptionLeads[i] = temp[i];
-            }
-
-            EditorUtility.SetDirty(Node);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            Refresh();
 
             for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
             {
@@ -107,28 +115,18 @@ namespace com.absence.dialoguesystem.editor
         {
             Option option = new Option();
 
-            Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
+            if (m_nodeAsDecisive.Options.Count == 0) m_nodeAsDecisive.NativeNextNode = null;
+            Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
             m_nodeAsDecisive.Options.Add(option);
 
             EditorUtility.SetDirty(m_nodeAsDecisive);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
             Graph.Refresh();
         }
 
         private void Refresh()
         {
-            m_optionElems.ForEach(v =>
-            {
-                if (mainContainer.Contains(v)) mainContainer.Remove(v);
-
-                var port = v.Q<Port>();
-                if (Outputs.Contains(port)) Outputs.Remove(port);
-            });
-
-            m_optionElems.Clear();
-
             var optionsProp = m_serializedNode.FindProperty("Options").Copy();
 
             optionsProp.Next(true);
@@ -172,13 +170,12 @@ namespace com.absence.dialoguesystem.editor
             {
                 var target = m_nodeAsDecisive.Options[index];
 
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
-                m_nodeAsDecisive.RemoveNextNode(Outputs.IndexOf(optionElem.Q<Port>()));
+                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
+                m_nodeAsDecisive.RemoveOutputConnection(Outputs.IndexOf(optionElem.Q<Port>()));
                 m_nodeAsDecisive.Options.Remove(target);
 
                 EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 m_optionElems.Remove(optionElem);
                 mainContainer.Remove(optionElem);
@@ -188,7 +185,7 @@ namespace com.absence.dialoguesystem.editor
 
             Button moveUpButton = new Button(() =>
             {
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
+                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
 
                 int targetIndex = index - 1;
 
@@ -199,15 +196,14 @@ namespace com.absence.dialoguesystem.editor
                 m_nodeAsDecisive.Options[targetIndex] = self;
 
                 EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 Graph.Refresh();
             });
 
             Button moveDownButton = new Button(() =>
             {
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
+                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
 
                 int targetIndex = index + 1;
 
@@ -218,8 +214,7 @@ namespace com.absence.dialoguesystem.editor
                 m_nodeAsDecisive.Options[targetIndex] = self;
 
                 EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 Graph.Refresh();
             });

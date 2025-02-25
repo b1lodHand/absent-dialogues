@@ -1,0 +1,25 @@
+:root {
+    width: auto;
+    height: auto;
+}
+
+#node-icon {
+    background-image: resource('node-icon-root');
+    border-left-color: rgb(139, 119, 190);
+    border-right-color: rgb(139, 119, 190);
+    border-top-color: rgb(139, 119, 190);
+    border-bottom-color: rgb(139, 119, 190);
+    -unity-background-image-tint-color: rgb(63, 166, 171);
+}
+
+#title {
+    -unity-font-style: bold;
+}
+
+#initial {
+    flex-direction: row-reverse;
+}
+
+#node-border {
+    border-top-color: rgb(63, 166, 171);
+}

@@ -1,6 +1,7 @@
 using com.absence.attributes.experimental;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.Node.html")]
     public abstract class Node : ScriptableObject
     {
+        public const string NaN = "NaN";
+
         /// <summary>
         /// Describes the node's state on the flow. While progressing in the dialogue.
         /// </summary>
@@ -80,12 +83,6 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         public virtual bool PersonDependent => false;
 
-        /// <summary>
-        /// Use if you have a special USS class for this node. If you don't have any, return null.
-        /// </summary>
-        /// <returns>Returns the USS class name of this node type as a string.</returns>
-        public abstract string GetClassName();
-
         public virtual List<string> AdditionalUSSFileLocations => null;
 
         /// <summary>
@@ -99,32 +96,32 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         /// <param name="nextWillBeAdded">The reference value of the node connected.</param>
         /// <param name="atPort">The port which hold the connection.</param>
-        public void AddNextNode(Node nextWillBeAdded, int atPort)
+        public void AddOutputConnection(Node nextWillBeAdded, int atPort)
         {
-            AddNextNode_Internal(nextWillBeAdded, atPort);
+            OnAddOutputConnection(nextWillBeAdded, atPort);
         }
 
         /// <summary>
         /// Use when you disconnect a node from a riht-side port of this node.
         /// </summary>
         /// <param name="atPort">The port which handled the disconnection event.</param>
-        public void RemoveNextNode(int atPort)
+        public void RemoveOutputConnection(int atPort)
         {
-            RemoveNextNode_Internal(atPort);
+            OnRemoveOutputConnection(atPort);
         }
 
         /// <summary>
         /// Use to get all of the nodes which are <b>directly</b> connected to this node <b>(only the right-side ones)</b>.
         /// </summary>
         /// <returns></returns>
-        public List<(int portIndex, Node node)> GetNextNodes()
+        public List<Node> GetOutputConnections()
         {
-            var result = new List<(int portIndex, Node node)>();
-            GetNextNodes_Internal(ref result);
+            var result = new List<Node>();
+            WriteOutputConnections(ref result);
             return result;
         }
 
-        public void Pass(DialogueFlowContext context)
+        public Node Pass(DialogueFlowContext context)
         {
             SetState(FlowState.Past);
 
@@ -134,7 +131,7 @@ namespace com.absence.dialoguesystem.internals
             }
 
             onPass?.Invoke();
-            OnPass(context);
+            return OnPass(context);
         }
         public void Reach(DialogueFlowContext context)
         {
@@ -149,7 +146,7 @@ namespace com.absence.dialoguesystem.internals
             onReach?.Invoke();
             OnReach(context);
         }
-        public void OnRemoval()
+        public void OnRemoveFromDialogue()
         {
             onRemove?.Invoke();
         }
@@ -159,25 +156,25 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         /// <param name="nextWillBeAdded"></param>
         /// <param name="atPort"></param>
-        protected abstract void AddNextNode_Internal(Node nextWillBeAdded, int atPort);
+        protected abstract void OnAddOutputConnection(Node nextWillBeAdded, int atPort);
 
         /// <summary>
         /// Use to write the functionality of removing the next node of this one.
         /// </summary>
         /// <param name="atPort"></param>
-        protected abstract void RemoveNextNode_Internal(int atPort);
+        protected abstract void OnRemoveOutputConnection(int atPort);
 
         /// <summary>
         /// Use to describe the editor which nodes are the next nodes of this one in the chain by modifying the list.
         /// </summary>
         /// <param name="result"></param>
-        protected abstract void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result);
+        protected abstract void WriteOutputConnections(ref List<Node> result);
 
         /// <summary>
         /// Use to write what happenswhen the dialogue passes this node.
         /// </summary>
         /// <param name="passData"></param>
-        protected abstract void OnPass(DialogueFlowContext context);
+        protected abstract Node OnPass(DialogueFlowContext context);
 
         /// <summary>
         /// Use to write what happens when the dialogue reaches this node.
@@ -188,13 +185,13 @@ namespace com.absence.dialoguesystem.internals
         /// Use to describe the name of the input port of this node.
         /// </summary>
         /// <returns>Returns the name as a string. Return null if you don't want any input ports.</returns>
-        public virtual string GetInputPortNameForCreation() => "From";
+        public virtual string GetDefaultInputPortName() => "From";
 
         /// <summary>
         /// Use to describe the dialogue editor how many output ports this node has and what are their names.
         /// </summary>
         /// <returns>Returns the port names as a list of strings. Return an empty list if you want no output ports.</returns>
-        public virtual List<string> GetOutputPortNamesForCreation()
+        public virtual List<string> GetDefaultOutputPortNames()
         {
             return new List<string>() { "To" };
         }
@@ -225,8 +222,15 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         public virtual void Traverse(Action<Node> action)
         {
-
+            GetOutputConnections().ForEach(node =>
+            {
+                if (node != null) 
+                    node.Traverse(action);
+            });
         }
+
+        public virtual Person GetPerson(Dialogue context) => 
+            PersonDependent ? context.People[PersonIndex] : null;
 
         public virtual void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
@@ -234,6 +238,11 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public virtual void OnExport(NodeData dataToWrite)
+        {
+
+        }
+
+        public virtual void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
 
         }

@@ -1,3 +1,4 @@
+using com.absence.dialoguesystem.internals;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem
@@ -9,12 +10,25 @@ namespace com.absence.dialoguesystem
     [AddComponentMenu("absencee_/absent-dialogues/Dialogue Instance Extensions/Dialogue Input Handler (Legacy)")]
     [DisallowMultipleComponent]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.html")]
-    public class DialogueInputHandler_Legacy : DialogueExtensionBase
+    public class DialogueInputHandlerLegacy : DialogueExtensionBase
     {
-        public override void OnDialogueUpdate()
+        bool inputNeeded = false;
+
+        public override void OnInitialize()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && m_instance.Player.State == DialoguePlayer.PlayerState.WaitingForInput)
+            inputNeeded = false;
+        }
+
+        public override void OnInstanceUpdate()
+        {
+            if (inputNeeded && Input.GetKeyDown(KeyCode.Space))
                 m_instance.ForceContinue();
+        }
+
+        public override void OnProgress(Node frame, DialogueFlowContext context)
+        {
+            if (context.HasText && (!context.HasOptions)) inputNeeded = true;
+            else inputNeeded = false;
         }
 
 #if UNITY_EDITOR
@@ -22,7 +36,7 @@ namespace com.absence.dialoguesystem
         static void AddExtensionMenuItem(UnityEditor.MenuCommand command)
         {
             DialogueInstance instance = (DialogueInstance)command.context;
-            instance.AddExtension<DialogueInputHandler_Legacy>();
+            instance.AddExtension<DialogueInputHandlerLegacy>();
         }
 #endif
     }

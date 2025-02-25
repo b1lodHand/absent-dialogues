@@ -15,120 +15,41 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialoguePlayer.html")]
     public class DialoguePlayer
     {
-        /// <summary>
-        /// Shows what state the dialogue player is in.
-        /// </summary>
-        public enum PlayerState
-        {
-            /// <summary>
-            /// The player is not displaying any dialogue or the current node has no text.
-            /// </summary>
-            NoText = 0,
-            /// <summary>
-            /// The player is displaying a speech which has some options and waiting for player to pick an option.
-            /// </summary>     
-            WaitingForOption = 1,
-            /// <summary>
-            /// The player is displaying a speech without any options and waiting for the player to skip it.
-            /// </summary>
-            WaitingForInput = 2,
-            /// <summary>
-            /// The player's last node was a <see cref="Node.ExitDialogueAfterwards"/>.
-            /// </summary>
-            WillExit = 3,
-        }
-
-        [SerializeField, Readonly] private PlayerState m_state;
-        /// <summary>
-        /// Current state of the player.
-        /// </summary>
-        public PlayerState State => m_state;
-
         [SerializeField, Readonly] private Dialogue m_dialogue;
         /// <summary>
         /// The dialogue cloned from the original one from constructor.
         /// </summary>
         public Dialogue ClonedDialogue => m_dialogue;
 
-        [SerializeField, Readonly] private Node m_currentNode;
+        [SerializeField, Readonly] private Node m_frame;
         [SerializeField, Readonly] private VariableBank m_blackboardBank;
         [SerializeField, Readonly] private Blackboard m_blackboard;
         [SerializeField, Readonly] private DialogueFlowContext m_context;
 
-        /// <summary>
-        /// Person who speaks.
-        /// </summary>
-        public Person Speaker => ClonedDialogue.People[m_currentNode.PersonIndex];
-
-        /// <summary>
-        /// Additional data of the current node.
-        /// </summary>
-        public NodeCustomDataBase CustomNodeData => m_context.CustomData;
-
-        /// <summary>
-        /// Speech of the current node.
-        /// </summary>
-        public string Text => m_context.Text;
-
-        /// <summary>
-        /// Options of the current node, if there is any.
-        /// </summary>
-        public List<OptionHandle> OptionIndexPairs => m_context.OptionIndexPairs;
-
         public DialogueFlowContext Context => m_context;
-
-        /// <summary>
-        /// Use to check if current node has any text.
-        /// </summary>
-        public bool HasText => (m_context.HasText);
-
-        /// <summary>
-        /// Use to check if current node is a <see cref="FastSpeechNode"/> or not.
-        /// </summary>
-        public bool HasOptions => (m_context.HasOptions);
-
-        /// <summary>
-        /// Use to check if current node <see cref="Node.PersonDependent"/> or not.
-        /// </summary>
-        public bool HasPerson => (m_currentNode.PersonDependent);
-
+        public Node Frame => m_frame;
 
         /// <summary>
         /// Action which will get invoked when <see cref="DialoguePlayer.Continue(object[])"/> gets called.
         /// </summary>
-        public event Action<PlayerState> OnContinue;
-
-        /// <summary>
-        /// Use to create a new <see cref="DialoguePlayer"/>.
-        /// </summary>
-        /// <param name="dialogue">The original dialogue to clone from.</param>
-        public DialoguePlayer(Dialogue dialogue)
-        {
-            m_dialogue = dialogue.Clone();
-
-            m_blackboard = m_dialogue.Blackboard;
-            m_blackboardBank = m_dialogue.Blackboard.Bank;
-
-            Initialize();
-            m_state = PlayerState.NoText;
-        }
+        public event Action<DialoguePlayer> OnContinue;
 
         /// <summary>
         /// Use to create a new <see cref="DialoguePlayer"/> with an overridden people list.
         /// </summary>
         /// <param name="dialogue">The original dialogue to clone from.</param>
         /// <param name="overridePeople">The list of new people.</param>
-        public DialoguePlayer(Dialogue dialogue, List<Person> overridePeople)
+        public DialoguePlayer(Dialogue dialogue, List<Person> overridePeople = null)
         {
+#if UNITY_EDITOR
             m_dialogue = dialogue.Clone();
-
+#else
+            m_dialogue = dialogue;
+#endif
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
-            m_dialogue.OverridePeople(overridePeople);
-
             Initialize();
-            m_state = PlayerState.NoText;
         }
 
         /// <summary>
@@ -136,18 +57,22 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void TeleportToRoot()
         {
-            m_dialogue.TeleportToRoot(m_context);
-            m_currentNode = m_dialogue.LastOrCurrentNode;
-            m_state = PlayerState.NoText;
-            OnContinue?.Invoke(m_state);
+            DoTeleportToRoot();
+            OnContinue?.Invoke(this);
+        }
+
+        private void DoTeleportToRoot()
+        {
+            m_frame = m_dialogue.Entry;
         }
 
         public void Initialize()
         {
             ClearContext();
 
-            m_dialogue.Initialize(m_context);
-            m_currentNode = m_dialogue.LastOrCurrentNode;
+            m_dialogue.ValidateNodes();
+            m_dialogue.ResetNodeStates();
+            DoTeleportToRoot();
         }
 
         public void ClearContext()
@@ -159,38 +84,31 @@ namespace com.absence.dialoguesystem
         /// Use to progress in the target dialogue wih some optional data.
         /// </summary>
         /// <param name="passData">
-        /// Anything that you want to pass as data. (e.g. <see cref="DecisionSpeechNode"/> uses the [0] element to get the selected option index.)
+        /// Anything that you want to pass as data. (e.g. <see cref="PromptNode"/> uses the [0] element to get the selected option index.)
         /// </param>
         public void Continue()
         {
-            if (m_context.WillExit)
-            {
-                m_state = PlayerState.WillExit;
-                Pass(m_context);
-
-                OnContinue?.Invoke(m_state);
-                return;
-            }
-
-            Pass(m_context);
-
-            if (!m_context.HasText)
-            {
-                m_state = PlayerState.NoText;
-                OnContinue?.Invoke(m_state);
-                return;
-            }
-
-            if (!m_context.HasOptions) m_state = PlayerState.WaitingForInput;
-            else m_state = PlayerState.WaitingForOption;
-
-            OnContinue?.Invoke(m_state);
+            Progress();
         }
 
-        void Pass(DialogueFlowContext context)
+        void Progress()
         {
-            m_dialogue.Pass(context);
-            m_currentNode = m_dialogue.LastOrCurrentNode;
+            switch (m_context.State)
+            {
+                case DialogueFlowContext.ContextState.Reach:
+                    m_frame.Reach(m_context);
+                    break;
+                case DialogueFlowContext.ContextState.Pass:
+                    Node next = m_frame.Pass(m_context);
+                    if (next == null && (!m_context.WillExit))
+                        throw new Exception("There is an empty output port!");
+                    m_frame = next;
+                    break;
+                default:
+                    return;
+            }
+
+            OnContinue?.Invoke(this);
         }
     }
 }

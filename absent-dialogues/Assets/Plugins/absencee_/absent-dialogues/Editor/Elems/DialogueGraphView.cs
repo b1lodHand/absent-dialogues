@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
+using System.Reflection;
 using com.absence.utilities;
 
 namespace com.absence.dialoguesystem.editor
@@ -18,8 +19,6 @@ namespace com.absence.dialoguesystem.editor
     public sealed class DialogueGraphView : GraphView
     {
         public new class UxmlFactory : UxmlFactory<DialogueGraphView, GraphView.UxmlTraits> { }
-
-        static readonly string s_default_parent_creation_menu = "Default";
 
         [SerializeField] internal Dialogue m_dialogue;
 
@@ -111,8 +110,8 @@ namespace com.absence.dialoguesystem.editor
                         NodeView outputView = edge.output.node as NodeView;
                         NodeView inputView = edge.input.node as NodeView;
 
-                        Undo.RecordObject(outputView.Node, "Dialog (Remove Child)");
-                        outputView.Node.RemoveNextNode(outputView.Outputs.IndexOf(edge.output));
+                        Undo.RegisterCompleteObjectUndo(outputView.Node, "Dialogue (Remove Output Connection)");
+                        outputView.Node.RemoveOutputConnection(outputView.Outputs.IndexOf(edge.output));
                         EditorUtility.SetDirty(outputView.Node);
                     }
                 });
@@ -127,8 +126,8 @@ namespace com.absence.dialoguesystem.editor
                     NodeView outputView = edge.output.node as NodeView;
                     NodeView inputView = edge.input.node as NodeView;
 
-                    Undo.RecordObject(outputView.Node, "Dialog (Add Child)");
-                    outputView.Node.AddNextNode(inputView.Node, outputView.Outputs.IndexOf(edge.output));
+                    Undo.RegisterCompleteObjectUndo(outputView.Node, "Dialogue (Add Output Connection)");
+                    outputView.Node.AddOutputConnection(inputView.Node, outputView.Outputs.IndexOf(edge.output));
                     EditorUtility.SetDirty(outputView.Node);
                 });
 
@@ -146,16 +145,17 @@ namespace com.absence.dialoguesystem.editor
             foreach (var type in types)
             {
                 DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
-                if (type.Equals(typeof(EntryNode))) status = DropdownMenuAction.Status.Disabled;
+                PropertyInfo menuProp = type.GetProperty("CreationMenuName");
+                string parentMenuPropValue = menuProp.GetValue(null).ToString();
+                bool menuSpecified = menuProp != null && (!string.IsNullOrWhiteSpace(parentMenuPropValue));
 
-                System.Reflection.PropertyInfo parentMenuProp = type.GetProperty("ParentCreationMenu");
-                bool parentMenuSpecified = parentMenuProp != null;
+                if (menuSpecified && parentMenuPropValue.Equals(Node.NaN))
+                    continue;
 
                 var mousePos = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
-                evt.menu.AppendAction(
-                    $"{(parentMenuSpecified ? parentMenuProp.GetValue(null).ToString() : s_default_parent_creation_menu)}" +
-                    $"/{Helpers.SplitCamelCase(type.Name, " ")}",
-                    a =>
+                string context = menuSpecified ? parentMenuPropValue : Helpers.SplitCamelCase(type.Name, " ");
+
+                evt.menu.AppendAction(context, a =>
                 {
                     CreateNode(type, mousePos);
                 }, status);
@@ -197,15 +197,21 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (n == null) return;
 
-                var nexts = n.GetNextNodes();
-                nexts.ForEach(c =>
-                {
-                    NodeView startView = FindNodeView(n);
-                    NodeView endView = FindNodeView(c.node);
+                List<Node> nexts = n.GetOutputConnections();
 
-                    Edge edge = startView.Outputs[c.portIndex].ConnectTo(endView.Input);
+                for (int i = 0; i < nexts.Count; i++)
+                {
+                    Node n2 = nexts[i];
+
+                    if (n2 == null)
+                        continue;
+
+                    NodeView startView = FindNodeView(n);
+                    NodeView endView = FindNodeView(n2);
+
+                    Edge edge = startView.Outputs[i].ConnectTo(endView.Input);
                     AddElement(edge);
-                });
+                }
             });
 
             dialogue.OnValidate();
@@ -243,7 +249,7 @@ namespace com.absence.dialoguesystem.editor
 
         Node CreateNode(System.Type type, Vector2 atPosition)
         {
-            Undo.RecordObject(m_dialogue, "Dialog (Create Node)");
+            Undo.RecordObject(m_dialogue, "Dialogue (Create Node)");
 
             Node node = m_dialogue.CreateNode(type);
             node.Guid = GUID.Generate().ToString();
@@ -294,7 +300,7 @@ namespace com.absence.dialoguesystem.editor
         {
             if(node == null) return null;
 
-            NodeView nodeView = NodeViewsHandler.CreateNodeView(node.GetType(), node, this);
+            NodeView nodeView = NodeViewCreationHandler.CreateNodeView(node.GetType(), node, this);
             nodeView.OnSelect = OnNodeSelected;
             AddElement(nodeView);
 

@@ -12,9 +12,9 @@ namespace com.absence.dialoguesystem.internals
     /// Node which re-routes the flow under some conditions.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
-    public class ConditionNode : Node, IPerformDelayedClone, IContainVariableManipulators
+    public class BranchNode : Node, IContainVariableManipulators
     {
-        public static string ParentCreationMenu => "Flow";
+        public static string CreationMenuName => "Branch";
 
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
@@ -22,37 +22,42 @@ namespace com.absence.dialoguesystem.internals
         [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public VBProcessType Processor = VBProcessType.All;
         [Tooltip("All of the comparers this node relies on.")] public List<NodeVariableComparer> Comparers = new();
 
-        public override string GetClassName() => "conditionNode";
-        public override string Title => "Condition";
+        public override string Title => "Branch";
 
-        protected override void OnPass(DialogueFlowContext context)
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
+        {
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/BranchNodeView.uss"
+        };
+
+        protected override Node OnPass(DialogueFlowContext context)
         {
             bool result = Process();
-            var targetNext = result ? TrueNext : FalseNext;
-            if (targetNext != null) targetNext.Reach(context);
+            Node targetNext = result ? TrueNext : FalseNext;
+
+            return targetNext;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             if (atPort == 0) TrueNext = nextWillBeAdded;
             else if (atPort == 1) FalseNext = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             if (atPort == 0) TrueNext = null;
             else if (atPort == 1) FalseNext = null;
         }
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
-            if (TrueNext != null) result.Add((0, TrueNext));
-            if (FalseNext != null) result.Add((1, FalseNext));
+            result.Add(TrueNext);
+            result.Add(FalseNext);
         }
 
-        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
             if (TrueNext != null) TrueNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
             if (FalseNext != null) FalseNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
@@ -70,7 +75,7 @@ namespace com.absence.dialoguesystem.internals
             FalseNext.Traverse(action);
         }
 
-        public override List<string> GetOutputPortNamesForCreation()
+        public override List<string> GetDefaultOutputPortNames()
         {
             return new List<string>() { "True", "False" };
         }

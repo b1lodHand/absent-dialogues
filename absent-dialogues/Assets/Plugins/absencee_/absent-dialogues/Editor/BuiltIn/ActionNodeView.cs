@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
-    [CustomNodeView(typeof(ActionNode))]
+    [CustomNodeView(typeof(EventNode))]
     public class ActionNodeView : NodeView
     {
         public ActionNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void Refresh()
         {
-            ActionNode nodeAsAction = Node as ActionNode;
+            EventNode nodeAsAction = Node as EventNode;
             VisualElement icon = this.Q<VisualElement>("node-icon");
             Label title = this.Q<Label>("title-label");
 

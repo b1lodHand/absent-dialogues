@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static com.absence.dialoguesystem.internals.DialogueFlowContext;
+using static UnityEditor.Progress;
 
 namespace com.absence.dialoguesystem
 {
@@ -62,12 +64,12 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Action which will get invoked right after this instance clons it's <see cref="ReferencedDialogue"/>.
         /// </summary>
-        public event Action OnAfterCloning;
+        public event Action OnInitialize;
 
         /// <summary>
         /// Subscribe to this delegate to override any data will get displayed.
         /// </summary>
-        public event Action<DialogueFlowContext> OnBeforeProgress;
+        public event Action<Node, DialogueFlowContext> OnProgress;
 
         /// <summary>
         /// Action which will get invoked when this instance exits dialogue.
@@ -82,11 +84,6 @@ namespace com.absence.dialoguesystem
         public bool InDialogue => m_inDialogue;
 
         public event Action OnValidation = delegate { };
-
-        Person m_speaker;
-        string m_text;
-        NodeCustomDataBase m_customData;
-        List<OptionHandle> m_options;
 
         [Button("Refresh Extension List")]
         void RefreshExtensionList()
@@ -104,7 +101,7 @@ namespace com.absence.dialoguesystem
                 return;
             }
 
-            if(m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
+            if (m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
             else m_player = new DialoguePlayer(m_referencedDialogue);
 
             m_extensionList.ForEach(extension => 
@@ -112,10 +109,10 @@ namespace com.absence.dialoguesystem
                 if (extension == null) return;
                 if (!extension.enabled) return;
 
-                extension.OnAfterCloning();
+                extension.OnInitialize();
             });
             
-            OnAfterCloning?.Invoke();
+            OnInitialize?.Invoke();
         }
         private void Start()
         {
@@ -130,7 +127,7 @@ namespace com.absence.dialoguesystem
                 if (extension == null) return;
                 if (!extension.enabled) return;
 
-                extension.OnDialogueUpdate();
+                extension.OnInstanceUpdate();
             });
         }
 
@@ -179,98 +176,103 @@ namespace com.absence.dialoguesystem
             m_player.Continue();
         }
 
-        private void OnPlayerContinue(DialoguePlayer.PlayerState state)
+        private void OnPlayerContinue(DialoguePlayer player)
         {
-            if (Player.Context.State == DialogueFlowContext.ContextState.Pass)
-            {
-                InvokeOnProgress();
-                return;
-            }
+            DialogueFlowContext context = player.Context;
 
-            FetchPlayerData();
+            switch (context.State)
+            {
+                case ContextState.Reach:
+                    OnReach(player);
+                    break;
+                case ContextState.Pass:
+                    OnPass(player);
+                    break;
+                default:
+                    return;
+            };
+        }
+
+        void OnReach(DialoguePlayer player)
+        {
+            DialogueFlowContext context = player.Context;
+            Node frame = player.Frame;
+
+            // PEOPLE OVERRIDE LOGIC NEEDED!!!
+            Person person = frame.GetPerson(m_player.ClonedDialogue);
+
             InvokeHandleCustomData();
             InvokeOnProgress();
 
-            switch (state)
+            if (!context.HasText)
             {
-                case DialoguePlayer.PlayerState.NoText:
-                    Player.Continue();
-                    break;
-
-                case DialoguePlayer.PlayerState.WaitingForOption:
-                    DialogueDisplayer.Instance.Display(m_speaker, m_text, m_options, i =>
-                    {
-                        Player.Context.OptionIndex = i;
-                        Player.Continue();
-                    });
-                    break;
-
-                case DialoguePlayer.PlayerState.WaitingForInput:
-                    DialogueDisplayer.Instance.Display(m_speaker, m_text);
-                    break;
-
-                case DialoguePlayer.PlayerState.WillExit:
-                    ExitDialogue();
-                    break;
-
-                default:
-                    ExitDialogue();
-                    throw new Exception("An unknown error occurred while displaying the dialogue.");
-            }
-        }
-
-        private void FetchPlayerData()
-        {
-            m_customData = Player.CustomNodeData;
-
-            if (!Player.HasText)
-            {
-                m_speaker = null;
-                m_text = null;
-                m_options = null;
+                player.Continue();
                 return;
             }
 
-            m_speaker = Player.Speaker;
-            m_text = Player.Text;
-            if (Player.HasOptions) m_options = new(Player.OptionIndexPairs);
+            if (context.HasOptions)
+            {
+                DialogueDisplayer.Instance.Display(person, context.Text, context.OptionIndexPairs, i =>
+                {
+                    context.OptionIndex = i;
+                    Player.Continue();
+                });
+            }
+
+            else
+            {
+                DialogueDisplayer.Instance.Display(person, context.Text);
+            }
         }
+
+        void OnPass(DialoguePlayer player)
+        {
+            DialogueFlowContext context = player.Context;
+            Node frame = player.Frame;
+
+            InvokeOnProgress();
+
+            if (context.WillExit)
+                ExitDialogue();
+        }
+
         private void InvokeHandleCustomData()
         {
             if (m_player.Context.State == DialogueFlowContext.ContextState.Pass)
                 return;
 
+            NodeCustomDataBase customData = m_player.Context.CustomData;
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;
                 if (!extension.enabled) return;
 
-                extension.OnHandleCustomData(m_customData);
+                extension.OnHandleCustomData(customData);
             });
 
-            OnHandleCustomData?.Invoke(m_customData);
+            OnHandleCustomData?.Invoke(customData);
         }
         private void InvokeOnProgress()
         {
+            Node frame = m_player.Frame;
+            DialogueFlowContext context = m_player.Context;
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;
                 if (!extension.enabled) return;
 
-                extension.OnProgress(m_player.Context);
+                extension.OnProgress(frame, context);
             });
 
-            OnBeforeProgress?.Invoke(m_player.Context);
+            OnProgress?.Invoke(frame, context);
         }
 
         /// <summary>
-        /// Adds a <see cref="DialogueExtensionBase"/> to the target dialogue instance. <b>Does not work runtime.</b>
+        /// Adds a <see cref="DialogueExtensionBase"/> to the target dialogue instance.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         public void AddExtension<T>() where T : DialogueExtensionBase
         {
-            if (Application.isPlaying) return;
-
             T component = gameObject.AddComponent<T>();
             m_extensionList.Add(component);
         }

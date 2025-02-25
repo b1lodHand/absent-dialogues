@@ -14,8 +14,6 @@ namespace com.absence.dialoguesystem.editor
 
         public GotoNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            m_nodeAsGoto = Node as GotoNode;
-
             DialogueEditorWindow.m_inspectorView.OnNodeValidation -= Refresh;
             DialogueEditorWindow.m_inspectorView.OnNodeValidation += Refresh;
 
@@ -24,6 +22,8 @@ namespace com.absence.dialoguesystem.editor
 
         protected override void Draw()
         {
+            m_nodeAsGoto = Node as GotoNode;
+
             DropdownField gotoDropdown = new DropdownField();
             gotoDropdown.name = "goto-dropdown";
             gotoDropdown.AddToClassList("goto-field");
@@ -33,7 +33,7 @@ namespace com.absence.dialoguesystem.editor
             {
                 Undo.RecordObject(m_nodeAsGoto, "Node (Person Modified)");
 
-                DialoguePartNode targetNode = Graph.m_dialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
+                SectionNode targetNode = Graph.m_dialogue.GetSectionsWithName(evt.newValue).FirstOrDefault();
                 if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
 
                 EditorUtility.SetDirty(m_nodeAsGoto);
@@ -51,7 +51,7 @@ namespace com.absence.dialoguesystem.editor
         {
             m_dropdown.choices.Clear();
 
-            Graph.m_dialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
+            Graph.m_dialogue.GetAllSections().ForEach(dialoguePartNode =>
             {
                 m_dropdown.choices.Add(dialoguePartNode.DialoguePartName);
             });
@@ -62,7 +62,7 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
-            if (Graph.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefresh();
+            if (Graph.m_dialogue.GetAllSections().Contains(m_nodeAsGoto.TargetNode)) SoftRefresh();
             else m_dropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
         }
     }

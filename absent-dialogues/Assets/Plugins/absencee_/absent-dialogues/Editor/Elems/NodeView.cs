@@ -18,6 +18,7 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html")]
     public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
+
         /// <summary>
         /// The USS class name for person dependent nodes.
         /// </summary>
@@ -60,37 +61,21 @@ namespace com.absence.dialoguesystem.editor
         /// <param name="node">Target node.</param>
         public NodeView(Node node, DialogueGraphView graph = null) : base(DefaultUXMLFileLocation)
         {
+            Type nodeType = node.GetType();
+
             this.Graph = graph;
             this.Node = node;
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 
-            if (Node.AdditionalUSSFileLocations != null)
-            {
-                Node.AdditionalUSSFileLocations.ForEach(path =>
-                {
-                    if (string.IsNullOrWhiteSpace(path)) return;
-
-                    StyleSheet uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
-                    this.styleSheets.Add(uss);
-                });
-            }
-            if (AdditionalUSSFileLocations != null)
-            {
-                AdditionalUSSFileLocations.ForEach(path =>
-                {
-                    if (string.IsNullOrWhiteSpace(path)) return;
-
-                    StyleSheet uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
-                    this.styleSheets.Add(uss);
-                });
-            }
+            NodeViewStyles.ApplyStyles(this);
 
             style.left = node.Position.x;
             style.top = node.Position.y;
 
-            if (node.GetClassName() != null) AddToClassList(node.GetClassName());
             if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
+
+            OnBeforeDraw();
 
             this.title = node.Title ?? "Node";
 
@@ -113,6 +98,8 @@ namespace com.absence.dialoguesystem.editor
 
             node.onSetState -= UpdateState;
             node.onSetState += UpdateState;
+
+            OnAfterDraw();
         }
 
         private void DoDraw()
@@ -163,15 +150,15 @@ namespace com.absence.dialoguesystem.editor
         }
         protected virtual void CreateInputPort()
         {
-            if (Node.GetInputPortNameForCreation() == null) return;
+            if (Node.GetDefaultInputPortName() == null) return;
 
             Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
-            Input.portName = Node.GetInputPortNameForCreation();
+            Input.portName = Node.GetDefaultInputPortName();
             inputContainer.Add(Input);
         }
         protected virtual void CreateOutputPorts()
         {
-            Node.GetOutputPortNamesForCreation().ForEach(portName =>
+            Node.GetDefaultOutputPortNames().ForEach(portName =>
             {
                 var port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
 
@@ -259,7 +246,15 @@ namespace com.absence.dialoguesystem.editor
             }
 
         }
+        protected virtual void OnBeforeDraw()
+        {
+
+        }
         protected virtual void Draw()
+        {
+
+        }
+        protected virtual void OnAfterDraw()
         {
 
         }
@@ -269,7 +264,7 @@ namespace com.absence.dialoguesystem.editor
         public override void SetPosition(Rect newPos)
         {
             base.SetPosition(newPos);
-            Undo.RecordObject(Node, "Dialog (Set Position)");
+            Undo.RecordObject(Node, "Dialogue (Set Position)");
             Node.Position.x = newPos.xMin;
             Node.Position.y = newPos.yMin;
             EditorUtility.SetDirty(Node);

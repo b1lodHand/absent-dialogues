@@ -1,0 +1,19 @@
+#node-icon {
+    background-image: resource('node-icon-action');
+}
+
+#title {
+    padding-right: 6px;
+}
+
+.mapped #node-icon {
+    -unity-background-image-tint-color: rgb(63, 166, 171);
+}
+
+.mapped #node-icon:hover {
+    -unity-background-image-tint-color: rgb(91, 190, 194);
+}
+
+.mapped #title {
+    -unity-font-style: bold;
+}

@@ -57,7 +57,7 @@ namespace com.absence.dialoguesystem.editor.backup
 
                 int portIndex = connectionData.FromPortIndex;
 
-                from.AddNextNode(to, portIndex);
+                from.AddOutputConnection(to, portIndex);
             });
         }
         static void UpdateNodes(DialogueImportContext context)
@@ -94,8 +94,8 @@ namespace com.absence.dialoguesystem.editor.backup
                 ReadInitialDialogueData(ImportedData, dialogueCreated);
                 dialogueCreated.Entry = dialogueCreated.AllNodes.Find(node => node is EntryNode) as EntryNode;
 
-                dialogueCreated.Rebind();
-                dialogueCreated.Initialize();
+                dialogueCreated.ValidateNodes();
+                dialogueCreated.ResetNodeStates();
 
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();

@@ -44,6 +44,7 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
+            dialogue.Update();
             SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
             if (blackboardProperty == null) return;
 
@@ -54,8 +55,6 @@ namespace com.absence.dialoguesystem.editor
             SerializedProperty bankProp = blackboardProperty.FindPropertyRelative("Bank");
 
             VariableBank bank = bankProp.objectReferenceValue as VariableBank;
-
-            Undo.RecordObject(dialogue.targetObject, "Dialogue");
 
             if (bank == null)
             {
@@ -71,7 +70,7 @@ namespace com.absence.dialoguesystem.editor
             EditorGUILayout.Space(10);
             EditorGUILayout.LabelField("Bank: ");
 
-            Undo.RecordObject(bank, "Blackboard Bank");
+            //Undo.RecordObject(bank, "Blackboard Bank");
 
             m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
 
@@ -79,8 +78,8 @@ namespace com.absence.dialoguesystem.editor
 
             try
             {
-                if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, typeof(absentEditorExtension), ref m_blackboardBankEditor);
-                else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, typeof(absentEditorExtension), ref m_blackboardBankEditor);
+                if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+                else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
                 else m_blackboardBankEditor.OnInspectorGUI();
             }
 
@@ -88,7 +87,6 @@ namespace com.absence.dialoguesystem.editor
             {
                 Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
             }
-
 
             EditorGUILayout.EndScrollView();
 

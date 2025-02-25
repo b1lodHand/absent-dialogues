@@ -1,0 +1,18 @@
+:root {
+    height: auto;
+    width: auto;
+    min-height: 58px;
+}
+
+#node-icon {
+    background-image: resource('node-icon-root');
+}
+
+#title {
+    -unity-text-align: upper-left;
+    -unity-font-style: bold;
+}
+
+#initial {
+    flex-direction: row-reverse;
+}

@@ -8,13 +8,6 @@ namespace com.absence.dialoguesystem
     /// This is the base class to derive from in order to handle some custom logic
     /// over the system.
     /// </summary>
-    /// <remarks>
-    /// Execution order goes like:
-    /// <code>
-    /// OnHandleAdditionalData(...);
-    /// OnBeforeSpeech(...);
-    /// </code>
-    /// </remarks>
     [RequireComponent(typeof(DialogueInstance))]
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueExtensionBase.html")]
     public abstract class DialogueExtensionBase : MonoBehaviour
@@ -40,10 +33,9 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to define what to do with the original speech data right before displaying it.
         /// </summary>
-        /// <param name="speaker">Speaker of this speech.</param>
-        /// <param name="speech">Speech in context.</param>
-        /// <param name="options">Option of this speech.</param>
-        public virtual void OnProgress(DialogueFlowContext context)
+        /// <param name="frame">.</param>
+        /// <param name="context">.</param>
+        public virtual void OnProgress(Node frame, DialogueFlowContext context)
         {
             
         }
@@ -51,7 +43,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to define what to do right after the target instance clones it's <see cref="DialogueInstance.ReferencedDialogue"/>.
         /// </summary>
-        public virtual void OnAfterCloning()
+        public virtual void OnInitialize()
         {
 
         }
@@ -59,7 +51,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Use to define what to do on each frame when the target instance is <see cref="DialogueInstance.InDialogue"/>
         /// </summary>
-        public virtual void OnDialogueUpdate()
+        public virtual void OnInstanceUpdate()
         {
 
         }

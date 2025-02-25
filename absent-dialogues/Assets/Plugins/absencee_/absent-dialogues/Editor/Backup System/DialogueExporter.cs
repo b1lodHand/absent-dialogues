@@ -31,18 +31,23 @@ namespace com.absence.dialoguesystem.editor.backup
         static void CopyConnections(DialogueData target, Dialogue dialogue)
         {
             List<NodeConnectionData> dynamicData = new();
-            dialogue.AllNodes.ForEach(fromNode =>
+            dialogue.AllNodes.ForEach(node =>
             {
-                List<(int portIndex, Node toNode)> rightSideNodes = fromNode.GetNextNodes();
-                rightSideNodes.ForEach(connection =>
+                List<Node> rightSideNodes = node.GetOutputConnections();
+                for (int i = 0; i < rightSideNodes.Count; i++)
                 {
+                    Node rightSideTarget = rightSideNodes[i];
+
+                    if (rightSideTarget == null)
+                        continue;
+
                     NodeConnectionData newConnectionData = new();
-                    newConnectionData.FromPortIndex = connection.portIndex;
-                    newConnectionData.FromGuid = fromNode.Guid;
-                    newConnectionData.ToGuid = connection.toNode.Guid;
+                    newConnectionData.FromPortIndex = i;
+                    newConnectionData.FromGuid = node.Guid;
+                    newConnectionData.ToGuid = rightSideTarget.Guid;
 
                     dynamicData.Add(newConnectionData);
-                });
+                }
             });
 
             target.ConnectionDatas = dynamicData.ToArray();

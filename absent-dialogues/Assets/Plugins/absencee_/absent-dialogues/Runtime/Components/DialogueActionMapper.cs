@@ -21,10 +21,8 @@ namespace com.absence.dialoguesystem.runtime
             Fetch();
         }
 
-        public override void OnProgress(DialogueFlowContext context)
+        public override void OnProgress(Node frame, DialogueFlowContext context)
         {
-            base.OnProgress(context);
-
             if (!context.InvokeAction) return;
 
             ActionMapPair targetPair = 
@@ -61,7 +59,7 @@ namespace com.absence.dialoguesystem.runtime
                 {
                     Node backupNode = m_instance.ReferencedDialogue.AllNodes.FirstOrDefault(node => node.Guid == pair.BackupGuid);
 
-                    if (backupNode != null) pair.TargetActionNode = backupNode as ActionNode;
+                    if (backupNode != null) pair.TargetActionNode = backupNode as EventNode;
                     else solved = false;
                 }
 
@@ -77,7 +75,7 @@ namespace com.absence.dialoguesystem.runtime
         {
             m_instance.ReferencedDialogue.AllNodes.ForEach(node =>
             {
-                if (node is not ActionNode actionNode) return;
+                if (node is not EventNode actionNode) return;
                 if (!actionNode.UsedByMapper) return;
                 if (m_actionMapPairs.Any(pair => pair.TargetActionNode == actionNode)) return;
 
@@ -89,7 +87,7 @@ namespace com.absence.dialoguesystem.runtime
             for (int i = 0; i < m_actionMapPairs.Count; i++)
             {
                 ActionMapPair pair = m_actionMapPairs[i];
-                ActionNode actionNode = pair.TargetActionNode;
+                EventNode actionNode = pair.TargetActionNode;
 
                 if (actionNode == null) pair.Enabled = false;
                 if (!pair.TargetActionNode.UsedByMapper) pair.Enabled = false;
@@ -108,13 +106,13 @@ namespace com.absence.dialoguesystem.runtime
         [System.Serializable]
         public class ActionMapPair
         {
-            public ActionNode TargetActionNode;
+            public EventNode TargetActionNode;
             public UnityEvent AttachedEvent;
             public bool Enabled;
             public string BackupId;
             public string BackupGuid;
 
-            public ActionMapPair(ActionNode targetActionNode)
+            public ActionMapPair(EventNode targetActionNode)
             {
                 TargetActionNode = targetActionNode;
                 AttachedEvent = new();

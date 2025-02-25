@@ -3,6 +3,7 @@ using com.absence.dialoguesystem.runtime.backup.data;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -10,36 +11,42 @@ namespace com.absence.dialoguesystem.internals
     /// Node which let's you create more and seperate routes.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DialoguePartNode.html")]
-    public sealed class DialoguePartNode : Node, IPerformDelayedClone
+    [MovedFrom("DialoguePartNode")]
+    public sealed class SectionNode : Node
     {
-        public static string ParentCreationMenu => "Grouping";
+        public static string CreationMenuName => "Section";
 
         [HideInInspector] public Node Next;
         public string DialoguePartName;
-        public override bool DisplayState => false;
-        public override string GetClassName() => "dialoguePartNode";
-        public override string Title => $"Dialogue Part";
 
-        protected override void OnPass(DialogueFlowContext context)
+        public override bool DisplayState => false;
+        public override string Title => "Section";
+
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
         {
-            if (Next != null) Next.Reach(context);
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/SectionNodeView.uss"
+        };
+
+        protected override Node OnPass(DialogueFlowContext context)
+        {
+            return Next;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
 
         }
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             Next = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             Next = null;
         }
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
-            if (Next != null) result.Add((0, Next));
+           result.Add(Next);
         }
 
         public override void Traverse(Action<Node> action)
@@ -48,14 +55,15 @@ namespace com.absence.dialoguesystem.internals
             Next.Traverse(action);
         }
 
-        public override string GetInputPortNameForCreation()
+        public override string GetDefaultInputPortName()
         {
             return null;
         }
 
-        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
+            if (Next != null) 
+                Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)

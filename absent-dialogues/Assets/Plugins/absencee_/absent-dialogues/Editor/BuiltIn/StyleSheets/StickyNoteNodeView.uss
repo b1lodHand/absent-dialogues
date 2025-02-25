@@ -1,0 +1,48 @@
+#title {
+    -unity-font-style: italic;
+}
+
+#speech {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    align-self: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: auto;
+    opacity: 1;
+}
+
+:root {
+    min-width: 170px;
+    min-height: 40px;
+    max-height: none;
+    max-width: none;
+    display: flex;
+    visibility: visible;
+    opacity: 0.7;
+}
+
+NodeView:selected {
+    opacity: 1;
+    visibility: visible;
+}
+
+NodeView:hover {
+    opacity: 0.85;
+}
+
+NodeView:hover:selected {
+    opacity: 1;
+}
+
+#selection-border {
+    opacity: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}

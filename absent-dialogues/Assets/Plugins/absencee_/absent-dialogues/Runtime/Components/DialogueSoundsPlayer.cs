@@ -23,7 +23,7 @@ namespace com.absence.dialoguesystem
         Coroutine m_playingCoroutine;
         AudioClip m_clip;
 
-        public override void OnAfterCloning()
+        public override void OnInitialize()
         {
             m_playingCoroutine = null;
             if (m_source != null) m_source.loop = false;
@@ -39,11 +39,6 @@ namespace com.absence.dialoguesystem
                 m_clip = audioData.AudioClip;
                 Play();
             }
-        }
-
-        public override void OnProgress(DialogueFlowContext context)
-        {
-            Debug.Log(context.State);
         }
 
         IEnumerator C_PlayAudio()

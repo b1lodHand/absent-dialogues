@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Scripting.APIUpdating;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -21,9 +21,10 @@ namespace com.absence.dialoguesystem.internals
     /// </code>
     /// </remarks>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
-    public class ActionNode : Node, IPerformDelayedClone, IContainVariableManipulators
+    [MovedFrom("ActionNode")]
+    public class EventNode : Node, IContainVariableManipulators
     {
-        public static string ParentCreationMenu => "Flow";
+        public static string CreationMenuName => "Event";
 
         protected const string k_none = "None";
 
@@ -32,13 +33,10 @@ namespace com.absence.dialoguesystem.internals
 
         [Space(10)]
 
-        [Tooltip("All of the 'VariableBank' based actions of this action node.")]
-        public List<NodeVariableSetter> VBActions = new();
+        [Tooltip("All of the Blackboard based events of this node.")]
+        public List<NodeVariableSetter> BlackboardEvents = new();
 
         [Space(10)]
-
-        [Tooltip("All of the unity based events of this action node.")]
-        public UnityEvent UnityEvents;
 
         [HideInInspector] public Node Next;
 
@@ -50,18 +48,19 @@ namespace com.absence.dialoguesystem.internals
 
         }
 
-        public override string GetClassName() => "actionNode";
-        public override string Title => "Action";
+        public override string Title => "Event";
 
-        protected override void OnPass(DialogueFlowContext context)
+        public override List<string> AdditionalUSSFileLocations => new List<string>()
         {
-            if (Next == null) return;
+            "Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/StyleSheets/EventNodeView.uss"
+        };
 
-            VBActions.ForEach(action => action.Perform());
-            UnityEvents?.Invoke();
+        protected override Node OnPass(DialogueFlowContext context)
+        {
+            BlackboardEvents.ForEach(action => action.Perform());
             CustomAction();
 
-            Next.Reach(context);
+            return Next;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
@@ -74,24 +73,24 @@ namespace com.absence.dialoguesystem.internals
             SetState(FlowState.Current);
         }
 
-        protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
+        protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)
         {
             Next = nextWillBeAdded;
         }
-        protected override void RemoveNextNode_Internal(int atPort)
+        protected override void OnRemoveOutputConnection(int atPort)
         {
             Next = null;
         }
-        protected override void GetNextNodes_Internal(ref List<(int portIndex, Node node)> result)
+        protected override void WriteOutputConnections(ref List<Node> result)
         {
-            if (Next != null) result.Add((0, Next));
+            result.Add(Next);
         }
 
-        public void DelayedClone(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
             if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
 
-            VBActions = VBActions.ConvertAll(action =>
+            BlackboardEvents = BlackboardEvents.ConvertAll(action =>
             {
                 return action.Clone(Blackboard.Bank);
             });
@@ -105,11 +104,11 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableComparer> GetComparers() => null;
 
-        public List<NodeVariableSetter> GetSetters() => new(VBActions);
+        public List<NodeVariableSetter> GetSetters() => new(BlackboardEvents);
 
         public override void OnValidate()
         {
-            VBActions.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
+            BlackboardEvents.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
 
             base.OnValidate();
         }
@@ -118,7 +117,7 @@ namespace com.absence.dialoguesystem.internals
         {
             UsedByMapper = (bool)dataToRead.BoxedData[0];
             UniqueMapperId = dataToRead.Data;
-            VBActions = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+            BlackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
@@ -127,7 +126,7 @@ namespace com.absence.dialoguesystem.internals
             dataToWrite.BoxedData[0] = (object)UsedByMapper;
 
             dataToWrite.Data = UniqueMapperId;
-            dataToWrite.SetterData = VBActions.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
+            dataToWrite.SetterData = BlackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
         }
     }
 
