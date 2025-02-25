@@ -23,10 +23,14 @@ namespace com.absence.dialoguesystem.editor
         /// </summary>
         public static string K_PERSONDEPENDENT_CLASSNAME = "personDependent";
 
+        public const string DefaultUXMLFileLocation = "Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml";
+
+        public virtual List<string> AdditionalUSSFileLocations => null;
+
         /// <summary>
         /// Action gets invoked when this node gets selected or unselected.
         /// </summary>
-        public Action<NodeView> OnNodeSelected;
+        public Action<NodeView> OnSelect;
 
         /// <summary>
         /// The node this view displays.
@@ -44,31 +48,38 @@ namespace com.absence.dialoguesystem.editor
         public List<Port> Outputs = new List<Port>();
 
         private Button m_createNewOptionButton;
-        private DropdownField m_gotoDropdown;
 
         private List<VisualElement> m_optionElems = new List<VisualElement>();
         private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
 
-        private SerializedObject m_serializedNode;
-
-        private DecisionSpeechNode m_nodeAsDecisive;
-        private GotoNode m_nodeAsGoto;
+        protected SerializedObject m_serializedNode;
 
         /// <summary>
         /// The graph we're in.
         /// </summary>
-        public DialogueGraphView Master { get; internal set; }
+        public DialogueGraphView Graph { get; internal set; }
 
         /// <summary>
         /// Use to construct a node view from a node.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public NodeView(Node node, DialogueGraphView master = null) : base("Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml")
+        public NodeView(Node node, DialogueGraphView graph = null) : base(DefaultUXMLFileLocation)
         {
-            this.Master = master;
+            this.Graph = graph;
             this.Node = node;
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
+
+            if (AdditionalUSSFileLocations != null)
+            {
+                AdditionalUSSFileLocations.ForEach(path =>
+                {
+                    if (string.IsNullOrWhiteSpace(path)) return;
+
+                    StyleSheet uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
+                    this.styleSheets.Add(uss);
+                });
+            }
 
             style.left = node.Position.x;
             style.top = node.Position.y;
@@ -76,7 +87,9 @@ namespace com.absence.dialoguesystem.editor
             if (node.GetClassName() != null) AddToClassList(node.GetClassName());
             if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
 
-            this.title = node.GetTitle();
+            this.title = node.Title ?? "Node";
+
+            Draw();
 
             SetupNodeForSerialization();
             SetupPersonDropdownIfExists();
@@ -87,48 +100,16 @@ namespace com.absence.dialoguesystem.editor
 
             SetupTextFieldIfExists();
 
-            node.onSetState -= UpdateState;
-            node.onSetState += UpdateState;
-
             UpdateState(node.State);
 
             if (node.PersonDependent)
             {
-                Master.m_dialogue.OnValidateAction -= RefreshPersonDropdown;
-                Master.m_dialogue.OnValidateAction += RefreshPersonDropdown;
+                Graph.m_dialogue.OnValidateAction -= RefreshPersonDropdown;
+                Graph.m_dialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
-            if (node is DecisionSpeechNode)
-            {
-                node.onValidation -= RefreshOptionLabels;
-                node.onValidation += RefreshOptionLabels;
-
-                Master.m_dialogue.OnValidateAction -= RefreshGenericOptionElems;
-                Master.m_dialogue.OnValidateAction += RefreshGenericOptionElems;
-            }
-            else if (node is DialoguePartNode)
-            {
-                node.onValidation -= RefreshDialoguePartFinder;
-                node.onValidation += RefreshDialoguePartFinder;
-
-                node.onValidation += RefreshDialoguePartTitle;
-                node.onValidation += RefreshDialoguePartTitle;
-            }
-            else if (node is ActionNode)
-            {
-                node.onValidation -= RefreshActionMapProps;
-                node.onValidation += RefreshActionMapProps;
-            }
-            else if (node is GotoNode)
-            {
-                DialogueEditorWindow.m_inspectorView.OnNodeValidation -= RefreshGotoDropdown;
-                DialogueEditorWindow.m_inspectorView.OnNodeValidation += RefreshGotoDropdown;
-            }
-            else if (node is ConditionNode)
-            {
-                node.onValidation -= RefreshConditionTooltip;
-                node.onValidation += RefreshConditionTooltip;
-            }
+            node.onSetState -= UpdateState;
+            node.onSetState += UpdateState;
         }
 
         private void RefreshGenericOptionElems()
@@ -140,25 +121,16 @@ namespace com.absence.dialoguesystem.editor
 
                 int index = m_genericOptionElems.IndexOf(op);
 
-                if (index >= Master.m_dialogue.GenericOptions.Count)
+                if (index >= Graph.m_dialogue.GenericOptions.Count)
                     return;
 
-                Option target = Master.m_dialogue.GenericOptions[index];
+                Option target = Graph.m_dialogue.GenericOptions[index];
 
                 showIfLabel.visible = target.UseShowIf;
                 showIfLabel.tooltip = target.Visibility.GetConditionString(true);
                 textField.SetValueWithoutNotify(target.Text);
             });
         }
-
-        private void RefreshConditionTooltip()
-        {
-            ConditionNode nodeAsCondition = Node as ConditionNode;
-            VisualElement icon = this.Q<VisualElement>("node-icon");
-
-            icon.tooltip = nodeAsCondition.GetConditionString(true);
-        }
-
         private void RefreshDialoguePartTitle()
         {
             DialoguePartNode nodeAsDp = Node as DialoguePartNode;
@@ -166,7 +138,7 @@ namespace com.absence.dialoguesystem.editor
 
             string dpName = nodeAsDp.DialoguePartName;
 
-            if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.GetTitle();
+            if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.Title();
             else title.text = dpName;
         }
 
@@ -185,7 +157,7 @@ namespace com.absence.dialoguesystem.editor
             else
             {
                 RemoveFromClassList("mapped");
-                title.text = nodeAsAction.GetTitle();
+                title.text = nodeAsAction.Title;
             }
 
             if (nodeAsAction.UsedByMapper) icon.tooltip = nodeAsAction.UniqueMapperId;
@@ -197,7 +169,7 @@ namespace com.absence.dialoguesystem.editor
             DialogueEditorWindow.RefreshDialoguePartFinder();
         }
 
-        private void SetupPersonDropdownIfExists()
+        protected virtual void SetupPersonDropdownIfExists()
         {
             if (!Node.PersonDependent) return;
 
@@ -213,8 +185,8 @@ namespace com.absence.dialoguesystem.editor
             {
                 Undo.RecordObject(Node, "Node (Person Modified)");
 
-                Person targetPerson = Master.m_dialogue.People.Where(p => p.Name == evt.newValue).FirstOrDefault();
-                Node.PersonIndex = Master.m_dialogue.People.IndexOf(targetPerson);
+                Person targetPerson = Graph.m_dialogue.People.Where(p => p.Name == evt.newValue).FirstOrDefault();
+                Node.PersonIndex = Graph.m_dialogue.People.IndexOf(targetPerson);
 
                 EditorUtility.SetDirty(Node);
 
@@ -222,25 +194,80 @@ namespace com.absence.dialoguesystem.editor
             });
         }
 
-        private void SetupNodeForSerialization()
+        protected virtual void SetupNodeForSerialization()
         {
             m_serializedNode = new SerializedObject(Node);
             if (Node is DecisionSpeechNode decisiveNode) m_nodeAsDecisive = decisiveNode;
             else if (Node is GotoNode gotoNode) m_nodeAsGoto = gotoNode;
         }
-        private void SetupTextFieldIfExists()
+
+        protected virtual void SetupTextFieldIfExists()
         {
             TextField textField = this.Q<TextField>("speech");
             textField.bindingPath = "m_text";
             textField.Bind(m_serializedNode);
         }
 
+        protected virtual void CreateInputPort()
+        {
+            if (Node.GetInputPortNameForCreation() == null) return;
+
+            Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+            Input.portName = Node.GetInputPortNameForCreation();
+            inputContainer.Add(Input);
+        }
+
+        protected virtual void CreateOutputPorts()
+        {
+            Node.GetOutputPortNamesForCreation().ForEach(portName =>
+            {
+                var port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+
+                port.portName = portName;
+                Outputs.Add(port);
+                outputContainer.Add(port);
+            });
+        }
+
+        protected virtual void UpdateState(Node.FlowState state)
+        {
+            if ((!Graph.m_dialogue.IsClone) || !Application.isPlaying) return;
+
+            RemoveFromClassList("unreached");
+            RemoveFromClassList("current");
+            RemoveFromClassList("past");
+
+            switch (state)
+            {
+                case Node.FlowState.Unreached:
+                    AddToClassList("unreached");
+                    break;
+                case Node.FlowState.Current:
+                    AddToClassList("current");
+                    break;
+                case Node.FlowState.Past:
+                    AddToClassList("past");
+                    break;
+                default:
+                    AddToClassList("unreached");
+                    break;
+            }
+        }
+
+        protected virtual void Draw()
+        {
+            
+        }
+
+        private void DoDraw()
+        {
+            Draw();
+            if (Node.PersonDependent) RefreshPersonDropdown();
+        }
+
         private void DrawElems()
         {
             if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
-            else if (Node is GotoNode) DrawElems_GotoNode();
-
-            if (Node.PersonDependent) RefreshPersonDropdown();
             if (Node is IContainVariableManipulators) RefreshVariableManipulators();
         }
 
@@ -258,7 +285,7 @@ namespace com.absence.dialoguesystem.editor
         {
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
 
-            List<string> peopleNameList = Master.m_dialogue.People.ConvertAll(p =>
+            List<string> peopleNameList = Graph.m_dialogue.People.ConvertAll(p =>
             {
                 if (p) return p.Name;
 
@@ -276,7 +303,7 @@ namespace com.absence.dialoguesystem.editor
 
             personDropdown.choices = new List<string>(peopleNameList);
 
-            if (Node.PersonIndex < 0 || Node.PersonIndex > Master.m_dialogue.People.Count - 1)
+            if (Node.PersonIndex < 0 || Node.PersonIndex > Graph.m_dialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
                 Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
@@ -284,12 +311,12 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
-            if (Master.m_dialogue.People[Node.PersonIndex])
+            if (Graph.m_dialogue.People[Node.PersonIndex])
             {
-                personDropdown.SetValueWithoutNotify(Master.m_dialogue.People[Node.PersonIndex].Name);
+                personDropdown.SetValueWithoutNotify(Graph.m_dialogue.People[Node.PersonIndex].Name);
                 Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
                 personIconPreview.style.display = DisplayStyle.Flex;
-                personIconPreview.sprite = Master.m_dialogue.People[Node.PersonIndex].Icon;
+                personIconPreview.sprite = Graph.m_dialogue.People[Node.PersonIndex].Icon;
             }
 
             else
@@ -301,123 +328,6 @@ namespace com.absence.dialoguesystem.editor
 
         }
 
-        private void RefreshGotoDropdown()
-        {
-            m_gotoDropdown.choices.Clear();
-
-            Master.m_dialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
-            {
-                m_gotoDropdown.choices.Add(dialoguePartNode.DialoguePartName);
-            });
-
-            if (m_gotoDropdown.choices.Count == 0)
-            {
-                m_gotoDropdown.SetValueWithoutNotify("None");
-                return;
-            }
-
-            if (Master.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
-            else m_gotoDropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
-        }
-        private void SoftRefreshGotoLabel()
-        {
-            m_gotoDropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
-        }
-        private void DrawElems_DecisionSpeechNode()
-        {
-            m_createNewOptionButton = new Button(CreateOption_DecisionSpeechNode);
-            m_createNewOptionButton.text = "Add Option";
-            m_createNewOptionButton.AddToClassList("addNewOptionButton");
-            mainContainer.Add(m_createNewOptionButton);
-
-            RefreshOptions_DecisionSpeechNode();
-
-            List<Node> temp = m_nodeAsDecisive.GenericOptionLeads;
-            m_nodeAsDecisive.GenericOptionLeads = new List<Node>(Master.m_dialogue.GenericOptions.Count);
-
-            for (int i = 0; i < temp.Count; i++)
-            {
-                m_nodeAsDecisive.GenericOptionLeads[i] = temp[i];
-            }
-
-            EditorUtility.SetDirty(Node);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-
-            for (int i = 0; i < Master.m_dialogue.GenericOptions.Count; i++)
-            {
-                VisualElement elem = Master.CreateGenericOptionElement(this, i);
-                m_genericOptionElems.Add(elem);
-                mainContainer.Add(elem);
-                Outputs.Add(elem.Q<Port>());
-            }
-        }
-        private void DrawElems_GotoNode()
-        {
-            DropdownField gotoDropdown = new DropdownField();
-            gotoDropdown.name = "goto-dropdown";
-            gotoDropdown.AddToClassList("goto-field");
-            m_gotoDropdown = gotoDropdown;
-
-            gotoDropdown.RegisterValueChangedCallback(evt =>
-            {
-                Undo.RecordObject(m_nodeAsGoto, "Node (Person Modified)");
-
-                DialoguePartNode targetNode = Master.m_dialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
-                if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
-
-                EditorUtility.SetDirty(m_nodeAsGoto);
-            });
-
-            RefreshGotoDropdown();
-            this.Add(gotoDropdown);
-        }
-
-        private void CreateInputPort()
-        {
-            if (Node.GetInputPortNameForCreation() == null) return;
-
-            Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
-            Input.portName = Node.GetInputPortNameForCreation();
-            inputContainer.Add(Input);
-        }
-        private void CreateOutputPorts()
-        {
-            Node.GetOutputPortNamesForCreation().ForEach(portName =>
-            {
-                var port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
-
-                port.portName = portName;
-                Outputs.Add(port);
-                outputContainer.Add(port);
-            });
-        }
-
-        private void UpdateState(Node.NodeState state)
-        {
-            if ((!Master.m_dialogue.IsClone) || !Application.isPlaying) return;
-
-            RemoveFromClassList("unreached");
-            RemoveFromClassList("current");
-            RemoveFromClassList("past");
-
-            switch (state)
-            {
-                case Node.NodeState.Unreached:
-                    AddToClassList("unreached");
-                    break;
-                case Node.NodeState.Current:
-                    AddToClassList("current");
-                    break;
-                case Node.NodeState.Past:
-                    AddToClassList("past");
-                    break;
-                default:
-                    AddToClassList("unreached");
-                    break;
-            }
-        }
-
         public override void SetPosition(Rect newPos)
         {
             base.SetPosition(newPos);
@@ -426,208 +336,18 @@ namespace com.absence.dialoguesystem.editor
             Node.Position.y = newPos.yMin;
             EditorUtility.SetDirty(Node);
         }
+
         public override void OnSelected()
         {
             base.OnSelected();
-            OnNodeSelected?.Invoke(this);
+            OnSelect?.Invoke(this);
         }
+
         public override void OnUnselected()
         {
             base.OnUnselected();
-            if (Master.selection.Count == 1) OnNodeSelected?.Invoke(null); //??
+            if (Graph.selection.Count == 1) OnSelect?.Invoke(null); //??
         }
-
-        #region Decision Speech Node
-        private void RefreshOptionLabels()
-        {
-            try
-            {
-                m_optionElems.ForEach(optionElem =>
-                {
-                    Option targetOption = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)];
-                    Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
-
-                    showIfLabel.visible = targetOption.UseShowIf;
-
-                    if (!showIfLabel.visible) return;
-
-                    showIfLabel.tooltip = targetOption.Visibility.GetConditionString(true);
-                });
-            }
-
-            catch
-            {
-                return;
-            }
-        }
-        private void CreateOption_DecisionSpeechNode()
-        {
-            Option option = new Option();
-
-            Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
-            m_nodeAsDecisive.Options.Add(option);
-
-            EditorUtility.SetDirty(m_nodeAsDecisive);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-
-            Master.Refresh();
-        }
-        private void RefreshOptions_DecisionSpeechNode()
-        {
-            m_optionElems.ForEach(v =>
-            {
-                if (mainContainer.Contains(v)) mainContainer.Remove(v);
-
-                var port = v.Q<Port>();
-                if (Outputs.Contains(port)) Outputs.Remove(port);
-            });
-
-            m_optionElems.Clear();
-
-            var optionsProp = m_serializedNode.FindProperty("Options").Copy();
-
-            optionsProp.Next(true);
-            optionsProp.Next(true);
-
-            var optionArrayLength = optionsProp.intValue;
-            var lastIndex = optionArrayLength - 1;
-
-            optionsProp.Next(true);
-
-            for (int i = 0; i < optionArrayLength; i++)
-            {
-                m_optionElems.Add(CreateOptionElem_DialogPartNode(i, optionsProp));
-                if (i < lastIndex) optionsProp.Next(false);
-            }
-
-            m_optionElems.ForEach(e =>
-            {
-                mainContainer.Add(e);
-                Outputs.Add(e.Q<Port>());
-            });
-        }
-        private VisualElement CreateOptionElem_DialogPartNode(int index, SerializedProperty optionProp)
-        {
-            VisualElement optionElem = new VisualElement();
-
-            VisualElement top = new VisualElement();
-            top.AddToClassList("optionBottom");
-            top.name = "top";
-
-            VisualElement divider = new VisualElement();
-            divider.AddToClassList("optionDivider");
-
-            VisualElement bottom = new VisualElement();
-            bottom.AddToClassList("optionBottom");
-
-            var speechProp = optionProp.FindPropertyRelative("Text");
-
-            Button removeButton = new Button(() =>
-            {
-                var target = m_nodeAsDecisive.Options[index];
-
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
-                m_nodeAsDecisive.RemoveNextNode(Outputs.IndexOf(optionElem.Q<Port>()));
-                m_nodeAsDecisive.Options.Remove(target);
-
-                EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-
-                m_optionElems.Remove(optionElem);
-                mainContainer.Remove(optionElem);
-
-                Master.Refresh();
-            });
-
-            Button moveUpButton = new Button(() =>
-            {
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
-
-                int targetIndex = index - 1;
-
-                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
-                Option self = m_nodeAsDecisive.Options[index];
-
-                m_nodeAsDecisive.Options[index] = optionToReplace;
-                m_nodeAsDecisive.Options[targetIndex] = self;
-
-                EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-
-                Master.Refresh();
-            });
-
-            Button moveDownButton = new Button(() =>
-            {
-                Undo.RecordObject(m_nodeAsDecisive, "Decision Node (Modified)");
-
-                int targetIndex = index + 1;
-
-                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
-                Option self = m_nodeAsDecisive.Options[index];
-
-                m_nodeAsDecisive.Options[index] = optionToReplace;
-                m_nodeAsDecisive.Options[targetIndex] = self;
-
-                EditorUtility.SetDirty(m_nodeAsDecisive);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-
-                Master.Refresh();
-            });
-
-            removeButton.text = "x";
-            removeButton.AddToClassList("removeOptionButton");
-
-            moveUpButton.text = "↑";
-            moveUpButton.AddToClassList("moveOptionUpButton");
-            moveUpButton.SetEnabled(index > 0);
-
-            moveDownButton.text = "↓";
-            moveDownButton.AddToClassList("moveOptionDownButton");
-            moveDownButton.SetEnabled(index < m_nodeAsDecisive.Options.Count - 1);
-
-            Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
-            port.AddToClassList("optionPort");
-            port.portName = "";
-
-            TextField speechField = new TextField();
-            speechField.AddToClassList("optionField");
-            speechField.multiline = true;
-
-            speechField.BindProperty(speechProp);
-
-            removeButton.tooltip = "Remove this option.";
-
-            Label showIfLabel = new Label("Conditional visibility active.");
-            showIfLabel.AddToClassList("optionShowIfLabel");
-            showIfLabel.name = "show-if-label";
-            showIfLabel.tooltip = "NODATA";
-
-            top.Add(removeButton);
-            top.Add(moveUpButton);
-            top.Add(moveDownButton);
-            top.Add(showIfLabel);
-            RefreshShowIfLabel();
-
-            bottom.Add(speechField);
-            bottom.Add(port);
-
-            optionElem.Add(divider);
-            optionElem.Add(top);
-            optionElem.Add(bottom);
-
-            void RefreshShowIfLabel()
-            {
-                showIfLabel.visible = optionProp.FindPropertyRelative("m_useShowIf").boolValue;
-            }
-
-            return optionElem;
-        }
-        #endregion
     }
 
 }

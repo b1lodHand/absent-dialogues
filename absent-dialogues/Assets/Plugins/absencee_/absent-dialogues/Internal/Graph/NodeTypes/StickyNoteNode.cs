@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetClassName() => "stickyNoteNode";
 
-        public override string GetTitle() => "Sticky Note";
+        public override string Title => "Sticky Note";
 
         protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {

@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetClassName() => "exitNode";
 
-        public override string GetTitle() => "Exit";
+        public override string Title => "Exit";
 
         protected override void OnPass(DialogueFlowContext context)
         {

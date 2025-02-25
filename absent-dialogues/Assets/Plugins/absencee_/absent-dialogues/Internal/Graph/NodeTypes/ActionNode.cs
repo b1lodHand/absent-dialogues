@@ -51,7 +51,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public override string GetClassName() => "actionNode";
-        public override string GetTitle() => "Action";
+        public override string Title => "Action";
 
         protected override void OnPass(DialogueFlowContext context)
         {
@@ -71,7 +71,7 @@ namespace com.absence.dialoguesystem.internals
                 context.ActionId = UniqueMapperId;
             }
 
-            SetState(NodeState.Current);
+            SetState(FlowState.Current);
         }
 
         protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)

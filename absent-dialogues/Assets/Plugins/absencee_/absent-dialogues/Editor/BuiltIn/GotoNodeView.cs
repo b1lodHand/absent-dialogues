@@ -1,0 +1,65 @@
+using com.absence.dialoguesystem.internals;
+using UnityEditor;
+using UnityEngine.UIElements;
+
+namespace com.absence.dialoguesystem.editor
+{
+    [CustomNodeView(typeof(GotoNode))]
+    public sealed class GotoNodeView : NodeView
+    {
+        private GotoNode m_nodeAsGoto;
+
+        private DropdownField m_dropdown;
+
+        public GotoNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
+        {
+            DialogueEditorWindow.m_inspectorView.OnNodeValidation -= RefreshGotoDropdown;
+            DialogueEditorWindow.m_inspectorView.OnNodeValidation += RefreshGotoDropdown;
+        }
+
+        protected override void Draw()
+        {
+            DropdownField gotoDropdown = new DropdownField();
+            gotoDropdown.name = "goto-dropdown";
+            gotoDropdown.AddToClassList("goto-field");
+            m_dropdown = gotoDropdown;
+
+            gotoDropdown.RegisterValueChangedCallback(evt =>
+            {
+                Undo.RecordObject(m_nodeAsGoto, "Node (Person Modified)");
+
+                DialoguePartNode targetNode = Graph.m_dialogue.GetDialoguePartNodesWithName(evt.newValue).FirstOrDefault();
+                if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
+
+                EditorUtility.SetDirty(m_nodeAsGoto);
+            });
+
+            RefreshGotoDropdown();
+            this.Add(gotoDropdown);
+        }
+
+        private void SoftRefreshGotoLabel()
+        {
+            m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
+        }
+
+        private void RefreshGotoDropdown()
+        {
+            m_dropdown.choices.Clear();
+
+            Graph.m_dialogue.GetAllDialogueParts().ForEach(dialoguePartNode =>
+            {
+                m_dropdown.choices.Add(dialoguePartNode.DialoguePartName);
+            });
+
+            if (m_dropdown.choices.Count == 0)
+            {
+                m_dropdown.SetValueWithoutNotify("None");
+                return;
+            }
+
+            if (Graph.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
+            else m_dropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
+        }
+    }
+}

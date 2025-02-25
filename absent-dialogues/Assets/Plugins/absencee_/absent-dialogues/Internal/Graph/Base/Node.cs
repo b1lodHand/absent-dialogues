@@ -18,7 +18,7 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Describes the node's state on the flow. While progressing in the dialogue.
         /// </summary>
-        public enum NodeState
+        public enum FlowState
         {
             Unreached = 0,
             Current = 1,
@@ -35,12 +35,12 @@ namespace com.absence.dialoguesystem.internals
         public NodeCustomDataBase CustomData = null;
 
         [HideInInspector] public Blackboard Blackboard;
-        [HideInInspector] public NodeState State = NodeState.Unreached;
+        [HideInInspector] public FlowState State = FlowState.Unreached;
 
         /// <summary>
         /// Action which will get invoked when the state of this node gets changed.
         /// </summary>
-        public event Action<NodeState> onSetState;
+        public event Action<FlowState> onSetState;
 
         /// <summary>
         /// Action which will get invoked when this node gets removed from the dialogue.
@@ -88,11 +88,13 @@ namespace com.absence.dialoguesystem.internals
         /// <returns>Returns the USS class name of this node type as a string.</returns>
         public abstract string GetClassName();
 
+        public virtual List<string> AdditionalUSSFileLocations => null;
+
         /// <summary>
         /// Use to  set the title of this node type in the graph view.
         /// </summary>
         /// <returns>The title as a string.</returns>
-        public abstract string GetTitle();
+        public virtual string Title => null;
 
         /// <summary>
         /// Use when you connect a new node to a right-side port of this node.
@@ -126,7 +128,7 @@ namespace com.absence.dialoguesystem.internals
 
         public void Pass(DialogueFlowContext context)
         {
-            SetState(NodeState.Past);
+            SetState(FlowState.Past);
 
             if (context != null)
             {
@@ -138,7 +140,7 @@ namespace com.absence.dialoguesystem.internals
         }
         public void Reach(DialogueFlowContext context)
         {
-            SetState(NodeState.Current);
+            SetState(FlowState.Current);
 
             if (context != null)
             {
@@ -203,7 +205,7 @@ namespace com.absence.dialoguesystem.internals
         /// Use to set the flow state of this node.
         /// </summary>
         /// <param name="newState"></param>
-        public virtual void SetState(Node.NodeState newState)
+        public virtual void SetState(Node.FlowState newState)
         {
             if (!DisplayState) return;
 

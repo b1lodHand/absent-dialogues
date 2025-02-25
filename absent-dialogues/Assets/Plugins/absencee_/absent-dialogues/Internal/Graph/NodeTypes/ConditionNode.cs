@@ -23,7 +23,7 @@ namespace com.absence.dialoguesystem.internals
         [Tooltip("All of the comparers this node relies on.")] public List<NodeVariableComparer> Comparers = new();
 
         public override string GetClassName() => "conditionNode";
-        public override string GetTitle() => "Condition";
+        public override string Title => "Condition";
 
         protected override void OnPass(DialogueFlowContext context)
         {

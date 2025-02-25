@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetClassName() => "titleNode";
 
-        public override string GetTitle() => "";
+        public override string Title => "";
 
         protected override void AddNextNode_Internal(Node nextWillBeAdded, int atPort)
         {

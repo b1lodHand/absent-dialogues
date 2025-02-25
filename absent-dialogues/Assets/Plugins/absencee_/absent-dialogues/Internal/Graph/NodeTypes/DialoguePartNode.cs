@@ -18,7 +18,7 @@ namespace com.absence.dialoguesystem.internals
         public string DialoguePartName;
         public override bool DisplayState => false;
         public override string GetClassName() => "dialoguePartNode";
-        public override string GetTitle() => $"Dialogue Part";
+        public override string Title => $"Dialogue Part";
 
         protected override void OnPass(DialogueFlowContext context)
         {

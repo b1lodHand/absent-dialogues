@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem.internals
 
         [HideInInspector] public Node Next;
         public override string GetClassName() => "rootNode";
-        public override string GetTitle() => "Entry";
+        public override string Title => "Entry";
 
         protected override void OnPass(DialogueFlowContext context)
         {

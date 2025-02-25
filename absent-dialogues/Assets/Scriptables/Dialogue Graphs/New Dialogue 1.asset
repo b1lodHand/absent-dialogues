@@ -13,13 +13,29 @@ MonoBehaviour:
   m_Name: fdc99f8fa6b8bd548940a6b7e662f5d0
   m_EditorClassIdentifier: 
   Guid: fdc99f8fa6b8bd548940a6b7e662f5d0
-  Position: {x: -118, y: 137}
+  Position: {x: -69, y: 83}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 5591856234808428091}
   State: 0
   PersonIndex: 0
-  Options: []
+  Options:
+  - m_scroll: {x: 0, y: 0}
+    Text: b
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 0}
+  - m_scroll: {x: 0, y: 0}
+    Text: a
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 0}
   m_text: 123
   NativeNextNode: {fileID: 0}
   GenericOptionLeads: []
@@ -325,7 +341,7 @@ MonoBehaviour:
   m_Name: 85cf821ea200b0642b364567899d3371
   m_EditorClassIdentifier: 
   Guid: 85cf821ea200b0642b364567899d3371
-  Position: {x: -542.225, y: 440.3925}
+  Position: {x: -580.99994, y: 456.00003}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 5591856234808428091}
@@ -347,7 +363,7 @@ MonoBehaviour:
   m_Name: d000a1b21782ed44b8f485ad63dee0b5
   m_EditorClassIdentifier: 
   Guid: d000a1b21782ed44b8f485ad63dee0b5
-  Position: {x: -283.00003, y: 525.00006}
+  Position: {x: 210.99997, y: -104.39209}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 5591856234808428091}

@@ -8,8 +8,6 @@ using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.utilities;
-using System.Reflection;
-using UnityEditor.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -296,9 +294,8 @@ namespace com.absence.dialoguesystem.editor
         {
             if(node == null) return null;
 
-            NodeView nodeView = new NodeView(node, this);
-            //nodeView.Master = this;
-            nodeView.OnNodeSelected = OnNodeSelected;
+            NodeView nodeView = NodeViewsHandler.CreateNodeView(node.GetType(), node, this);
+            nodeView.OnSelect = OnNodeSelected;
             AddElement(nodeView);
 
             return nodeView;

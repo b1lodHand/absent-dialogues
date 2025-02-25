@@ -24,7 +24,7 @@ namespace com.absence.dialoguesystem.internals
         public List<Option> Options { get => null; set { return; } }
 
         public override string GetClassName() => "fastSpeechNode";
-        public override string GetTitle() => "Dialogue (Optionless)";
+        public override string Title => "Dialogue (Optionless)";
 
         protected override void OnPass(DialogueFlowContext context)
         {

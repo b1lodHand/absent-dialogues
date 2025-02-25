@@ -30,11 +30,17 @@ namespace com.absence.dialoguesystem.internals
         public string Text { get => m_text; set { m_text = value; } }
         List<Option> IDialogueNode.Options { get => Options; set { Options = value; } }
 
+        public bool NoOptionsOverall => 
+            Options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0);
+
         public override string GetClassName() => "decisionSpeechNode";
-        public override string GetTitle()
+        public override string Title
         {
-            if (Options.Count > 0) return "Prompt";
-            else return "Prompt (Optionless)";
+            get
+            {
+                if (NoOptionsOverall) return "Prompt (Optionless)";
+                else return "Prompt";
+            }
         }
 
         protected override void OnPass(DialogueFlowContext context)
@@ -121,7 +127,7 @@ namespace com.absence.dialoguesystem.internals
 
         public override List<string> GetOutputPortNamesForCreation()
         {
-            if (Options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0)) 
+            if (NoOptionsOverall) 
                 return new List<string>() { "To" };
 
             return new List<string>();
