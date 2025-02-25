@@ -69,8 +69,6 @@ namespace com.absence.dialoguesystem.internals
                 context.InvokeAction = true;
                 context.ActionId = UniqueMapperId;
             }
-
-            SetState(FlowState.Current);
         }
 
         protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)

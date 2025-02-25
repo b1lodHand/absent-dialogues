@@ -31,13 +31,13 @@ namespace com.absence.dialoguesystem.internals
             OptionIndex = -1;
             ActionId = string.Empty;
             InvokeAction = false;
-            State = ContextState.Reach;
+            State = ContextState.Pass;
 
             OptionIndexPairs = new();
-            ClearSpeech();
+            ClearText();
         }
 
-        public void ClearSpeech()
+        public void ClearText()
         {
             Text = null;
             CustomData = null;

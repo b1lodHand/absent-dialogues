@@ -44,11 +44,12 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
+            if (dialogue.targetObject == null)
+                return;
+
             dialogue.Update();
             SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
             if (blackboardProperty == null) return;
-
-            dialogue.Update();
 
             EditorGUILayout.PropertyField(blackboardProperty);
 
@@ -66,9 +67,6 @@ namespace com.absence.dialoguesystem.editor
             SerializedObject bankSO = new SerializedObject(bank);
 
             if (bank == null) return;
-
-            EditorGUILayout.Space(10);
-            EditorGUILayout.LabelField("Bank: ");
 
             //Undo.RecordObject(bank, "Blackboard Bank");
 

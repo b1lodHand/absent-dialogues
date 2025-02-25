@@ -10,8 +10,10 @@ namespace com.absence.dialoguesystem.runtime.backup.data
         public static NodeData GenerateNodeData<T>(T node) where T : Node
         {
             NodeData data = new();
+#if UNITY_EDITOR
             data.PositionX = node.Position.x;
             data.PositionY = node.Position.y;
+#endif
             data.NodeTypeName = node.GetType().Name;
             data.OldGuid = node.Guid;
 

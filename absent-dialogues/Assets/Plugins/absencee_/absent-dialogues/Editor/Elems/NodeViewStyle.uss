@@ -137,10 +137,10 @@
     border-right-width: 2px;
     border-bottom-width: 2px;
     border-left-width: 2px;
-    border-left-color: rgb(63, 112, 171);
-    border-right-color: rgb(63, 112, 171);
-    border-top-color: rgb(63, 112, 171);
-    border-bottom-color: rgb(63, 112, 171);
+    border-left-color: rgb(185, 185, 185);
+    border-right-color: rgb(185, 185, 185);
+    border-top-color: rgb(185, 185, 185);
+    border-bottom-color: rgb(185, 185, 185);
 }
 
 .current #state-border {

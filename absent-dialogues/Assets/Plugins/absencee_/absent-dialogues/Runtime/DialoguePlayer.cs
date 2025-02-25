@@ -41,11 +41,8 @@ namespace com.absence.dialoguesystem
         /// <param name="overridePeople">The list of new people.</param>
         public DialoguePlayer(Dialogue dialogue, List<Person> overridePeople = null)
         {
-#if UNITY_EDITOR
-            m_dialogue = dialogue.Clone();
-#else
             m_dialogue = dialogue;
-#endif
+
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
 
@@ -55,10 +52,10 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// Teleports the flow to the <see cref="EntryNode"/> of the dialogue clone.
         /// </summary>
-        public void TeleportToRoot()
+        public void TeleportToRoot(bool invokeProgressEvent = true)
         {
             DoTeleportToRoot();
-            OnContinue?.Invoke(this);
+            if (invokeProgressEvent) OnContinue?.Invoke(this);
         }
 
         private void DoTeleportToRoot()
@@ -95,10 +92,10 @@ namespace com.absence.dialoguesystem
         {
             switch (m_context.State)
             {
-                case DialogueFlowContext.ContextState.Reach:
+                case DialogueFlowContext.ContextState.Pass:
                     m_frame.Reach(m_context);
                     break;
-                case DialogueFlowContext.ContextState.Pass:
+                case DialogueFlowContext.ContextState.Reach:
                     Node next = m_frame.Pass(m_context);
                     if (next == null && (!m_context.WillExit))
                         throw new Exception("There is an empty output port!");

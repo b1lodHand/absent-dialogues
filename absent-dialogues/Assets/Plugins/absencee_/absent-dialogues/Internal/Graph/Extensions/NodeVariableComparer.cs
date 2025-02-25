@@ -1,6 +1,5 @@
 using com.absence.variablesystem.banksystembase;
 using System.Text;
-using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -25,8 +24,6 @@ namespace com.absence.dialoguesystem.internals
         /// <param name="originalBlackboardBank">Target bank.</param>
         public void SetBlackboardBank(VariableBank originalBlackboardBank)
         {
-            if (Application.isPlaying) return;
-
             BlackboardBank = originalBlackboardBank;
             m_targetBankGuid = BlackboardBank.Guid;
         }

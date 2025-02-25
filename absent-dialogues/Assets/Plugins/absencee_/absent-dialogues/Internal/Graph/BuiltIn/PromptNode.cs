@@ -51,15 +51,16 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            context.ClearSpeech();
+            context.ClearText();
+            context.OptionIndexPairs = null;
 
             int optionSelected = context.OptionIndex;
             int optionCount = Options.Count;
 
-            if (optionCount == 0)
+            if (NoOptionsOverall && optionCount == 0)
                 return NativeNextNode;
 
-            if (optionSelected >= optionCount - 1)
+            if (optionSelected >= optionCount)
                 return GenericOptionLeads[optionSelected - optionCount];
 
             return Options[optionSelected].LeadsTo;

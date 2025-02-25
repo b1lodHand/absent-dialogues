@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static com.absence.dialoguesystem.internals.DialogueFlowContext;
-using static UnityEditor.Progress;
 
 namespace com.absence.dialoguesystem
 {
@@ -36,20 +35,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
 
         public Dialogue ReferencedDialogue => m_referencedDialogue;
-        public Dialogue ClonedDialogue
-        {
-            get
-            {
-                if (Player == null) throw new Exception("You cannot use 'DialogueInstance.ClonedDialogue' before that instance clones it's dialogue!");
-
-                return Player.ClonedDialogue;
-            }
-
-            private set
-            {
-                ClonedDialogue = value;
-            }
-        }
+        public Dialogue ClonedDialogue => Player.ClonedDialogue;
 
         /// <summary>
         /// <see cref="DialoguePlayer"/> of this instance.
@@ -101,8 +87,15 @@ namespace com.absence.dialoguesystem
                 return;
             }
 
-            if (m_overridePeople.Count > 0) m_player = new DialoguePlayer(m_referencedDialogue, m_overridePeople);
-            else m_player = new DialoguePlayer(m_referencedDialogue);
+            Dialogue dialogue = m_referencedDialogue.Clone();
+
+//            Dialogue dialogue = m_referencedDialogue;
+//#if UNITY_EDITOR
+//            dialogue = m_referencedDialogue.Clone();
+//#endif
+
+            if (m_overridePeople.Count > 0) m_player = new DialoguePlayer(dialogue, m_overridePeople);
+            else m_player = new DialoguePlayer(dialogue);
 
             m_extensionList.ForEach(extension => 
             {
@@ -114,10 +107,12 @@ namespace com.absence.dialoguesystem
             
             OnInitialize?.Invoke();
         }
+
         private void Start()
         {
             if (m_startOnAwake) EnterDialogue();
         }
+
         private void Update()
         {
             if (!m_inDialogue) return;
@@ -147,7 +142,7 @@ namespace com.absence.dialoguesystem
 
             m_player.OnContinue += OnPlayerContinue;
 
-            m_player.TeleportToRoot();
+            m_player.TeleportToRoot(false);
             m_player.Continue();
 
             return true;
@@ -206,7 +201,7 @@ namespace com.absence.dialoguesystem
 
             if (!context.HasText)
             {
-                player.Continue();
+                ForceContinue();
                 return;
             }
 
@@ -215,7 +210,7 @@ namespace com.absence.dialoguesystem
                 DialogueDisplayer.Instance.Display(person, context.Text, context.OptionIndexPairs, i =>
                 {
                     context.OptionIndex = i;
-                    Player.Continue();
+                    ForceContinue();
                 });
             }
 
@@ -233,15 +228,21 @@ namespace com.absence.dialoguesystem
             InvokeOnProgress();
 
             if (context.WillExit)
+            {
                 ExitDialogue();
+                return;
+            }
+
+            ForceContinue();
         }
 
         private void InvokeHandleCustomData()
         {
-            if (m_player.Context.State == DialogueFlowContext.ContextState.Pass)
+            NodeCustomDataBase customData = m_player.Context.CustomData;
+
+            if (customData == null)
                 return;
 
-            NodeCustomDataBase customData = m_player.Context.CustomData;
             m_extensionList.ForEach(extension =>
             {
                 if (extension == null) return;

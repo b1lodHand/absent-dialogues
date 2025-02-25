@@ -76,8 +76,11 @@ namespace com.absence.dialoguesystem.editor
 
         private void OnUndoRedo()
         {
+            if (Application.isPlaying)
+                return;
+
             Refresh();
-            AssetDatabase.SaveAssets();
+            AssetDatabase.SaveAssetIfDirty(m_dialogue);
         }
 
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)

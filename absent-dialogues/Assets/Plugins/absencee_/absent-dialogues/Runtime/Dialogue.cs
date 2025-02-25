@@ -124,9 +124,9 @@ namespace com.absence.dialoguesystem
             dialogue.Blackboard = Blackboard.Clone();
 
             dialogue.AllNodes = AllNodes.ConvertAll(node => node.Clone());
+            dialogue.ValidateNodes();
             dialogue.AllNodes.ForEach(node =>
             {
-                node.Blackboard = dialogue.Blackboard;
                 node.OnCloning(this, dialogue);
             });
 

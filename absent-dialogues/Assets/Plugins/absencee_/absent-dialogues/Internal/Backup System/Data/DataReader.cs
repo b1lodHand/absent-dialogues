@@ -4,7 +4,11 @@ using com.absence.variablesystem.builtin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#else
+using System.Reflection;
+#endif
 
 namespace com.absence.dialoguesystem.runtime.backup.data
 {
@@ -36,14 +40,37 @@ namespace com.absence.dialoguesystem.runtime.backup.data
         }
         public static Node ReadNodeData(NodeData data, Dialogue targetDialogue)
         {
+#if UNITY_EDITOR
             Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
+#else
+            Type nodeType = null;
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (Assembly assembly in assemblies) 
+            {
+                foreach (Type type in assembly.GetTypes()) 
+                {
+                    if (type.Name.Equals(data.NodeTypeName))
+                    {
+                        nodeType = type;
+                        break;
+                    }
+                }
+
+                if (nodeType != null) 
+                    break;
+            }
+#endif
+            if (nodeType == null)
+                throw new Exception("Something went wrong while reading node data!");
+
             Node node = targetDialogue.CreateNode(nodeType);
-            node.Guid = GUID.Generate().ToString();
+            node.Guid = Guid.NewGuid().ToString();
             node.name = node.Guid;
+#if UNITY_EDITOR
             node.Position.x = data.PositionX;
             node.Position.y = data.PositionY;
-
             AssetDatabase.AddObjectToAsset(node, targetDialogue);
+#endif
             return node;
         }
         public static void ReadBlackboardData(BlackboardData data, Blackboard target)

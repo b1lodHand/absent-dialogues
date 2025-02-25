@@ -22,7 +22,10 @@ namespace com.absence.dialoguesystem
         public override void OnInstanceUpdate()
         {
             if (inputNeeded && Input.GetKeyDown(KeyCode.Space))
+            {
                 m_instance.ForceContinue();
+                m_instance.ForceContinue();
+            }
         }
 
         public override void OnProgress(Node frame, DialogueFlowContext context)

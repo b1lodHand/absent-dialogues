@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
-  m_referencedDialogue: {fileID: 11400000, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
+  m_referencedDialogue: {fileID: 11400000, guid: 897dfc22b97323241aa34c3fb84e8b6c, type: 2}
   m_overridePeople: []
   m_extensionList:
   - {fileID: 560826872}
@@ -615,9 +615,8 @@ MonoBehaviour:
   - {fileID: 560826873}
   - {fileID: 560826876}
   m_player:
-    m_state: 0
     m_dialogue: {fileID: 0}
-    m_currentNode: {fileID: 0}
+    m_frame: {fileID: 0}
     m_blackboardBank: {fileID: 0}
     m_blackboard:
       Bank: {fileID: 0}
@@ -670,22 +669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
-  m_order: 0
-  m_actionMapPairs:
-  - TargetActionNode: {fileID: -914008930283711827, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
-    AttachedEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    Enabled: 1
-    BackupId: Commit
-    BackupGuid: 1b00f74471196944ebb0794b4dfc1216
-  - TargetActionNode: {fileID: 7901140551254700991, guid: e8395e8a9b7f0ef43bf8d54ee94ca5a4, type: 2}
-    AttachedEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    Enabled: 1
-    BackupId: Take
-    BackupGuid: 041a83cc15b72f744a1842a686410a85
+  m_order: 2
+  m_actionMapPairs: []
 --- !u!82 &560826875
 AudioSource:
   m_ObjectHideFlags: 0

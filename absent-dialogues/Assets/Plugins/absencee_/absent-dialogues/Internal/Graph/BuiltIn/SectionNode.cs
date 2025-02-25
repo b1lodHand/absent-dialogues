@@ -19,7 +19,6 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Node Next;
         public string DialoguePartName;
 
-        public override bool DisplayState => false;
         public override string Title => "Section";
 
         public override List<string> AdditionalUSSFileLocations => new List<string>()

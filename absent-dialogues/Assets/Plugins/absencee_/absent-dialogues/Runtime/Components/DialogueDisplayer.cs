@@ -200,6 +200,15 @@ namespace com.absence.dialoguesystem
             return m_options.IndexOf(m_lastSelectedOption);
         }
 
+        public void Clear()
+        {
+            ClearOptionContainer();
+
+            if (m_speakerIcon != null) m_speakerIcon.sprite = null;
+            if (m_speakerNameText != null) m_speakerNameText.text = string.Empty;
+            m_speechText.text = string.Empty;
+        }
+
         void EnableView()
         {
             m_panel.SetActive(true);
