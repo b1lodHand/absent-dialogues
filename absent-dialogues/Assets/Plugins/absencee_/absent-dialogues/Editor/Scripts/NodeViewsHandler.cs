@@ -54,7 +54,7 @@ namespace com.absence.dialoguesystem.editor
                     if (baseType == null)
                         continue;
 
-                    ConstructorInfo[] constructors = baseType.GetConstructors();
+                    ConstructorInfo[] constructors = type.GetConstructors();
 
                     if (constructors == null || constructors.Length == 0)
                         continue;
@@ -116,13 +116,13 @@ namespace com.absence.dialoguesystem.editor
 
             try
             {
-                NodeView result = (NodeView)constructor.Invoke(new object[] { node, graph });
+                NodeView result = (NodeView)(constructor.Invoke(new object[] { node, graph }));
                 return result;
             }
 
-            catch
+            catch (Exception e)
             {
-                Debug.Log("Something went wrong while calling the NodeView constructor.");
+                Debug.LogException(e);
                 return null;
             }
         }

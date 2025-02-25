@@ -5,31 +5,39 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
     [CustomNodeView(typeof(DecisionSpeechNode))]
-    public class PromptNodeView : NodeView
+    public sealed class PromptNodeView : NodeView
     {
         private DecisionSpeechNode m_nodeAsDecisive;
+        private Button m_createNewOptionButton;
+        private List<VisualElement> m_optionElems = new List<VisualElement>();
+        private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
 
         public PromptNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            node.onValidation -= RefreshOptionLabels;
-            node.onValidation += RefreshOptionLabels;
+            m_nodeAsDecisive = Node as DecisionSpeechNode;
 
-            Graph.m_dialogue.OnValidateAction -= RefreshGenericOptionElems;
-            Graph.m_dialogue.OnValidateAction += RefreshGenericOptionElems;
+            node.onValidation -= RefreshOptionViews;
+            node.onValidation += RefreshOptionViews;
+
+            Graph.m_dialogue.OnValidateAction -= RefreshGenericOptionViews;
+            Graph.m_dialogue.OnValidateAction += RefreshGenericOptionViews;
+
+            Refresh();
         }
 
         protected override void Draw()
         {
-            m_createNewOptionButton = new Button(CreateOption_DecisionSpeechNode);
+            m_nodeAsDecisive = Node as DecisionSpeechNode;
+
+            m_createNewOptionButton = new Button(CreateOption);
             m_createNewOptionButton.text = "Add Option";
             m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
-
-            RefreshOptions_DecisionSpeechNode();
 
             List<Node> temp = m_nodeAsDecisive.GenericOptionLeads;
             m_nodeAsDecisive.GenericOptionLeads = new List<Node>(Graph.m_dialogue.GenericOptions.Count);
@@ -52,7 +60,27 @@ namespace com.absence.dialoguesystem.editor
             }
         }
 
-        private void RefreshOptionLabels()
+        private void RefreshGenericOptionViews()
+        {
+            m_genericOptionElems.ForEach(op =>
+            {
+                Label showIfLabel = op.Q<Label>("show-if-label");
+                TextField textField = op.Q<TextField>();
+
+                int index = m_genericOptionElems.IndexOf(op);
+
+                if (index >= Graph.m_dialogue.GenericOptions.Count)
+                    return;
+
+                Option target = Graph.m_dialogue.GenericOptions[index];
+
+                showIfLabel.visible = target.UseShowIf;
+                showIfLabel.tooltip = target.Visibility.GetConditionString(true);
+                textField.SetValueWithoutNotify(target.Text);
+            });
+        }
+
+        private void RefreshOptionViews()
         {
             try
             {
@@ -89,7 +117,7 @@ namespace com.absence.dialoguesystem.editor
             Graph.Refresh();
         }
 
-        private void RefreshOptions()
+        private void Refresh()
         {
             m_optionElems.ForEach(v =>
             {
@@ -113,7 +141,7 @@ namespace com.absence.dialoguesystem.editor
 
             for (int i = 0; i < optionArrayLength; i++)
             {
-                m_optionElems.Add(CreateOptionElem(i, optionsProp));
+                m_optionElems.Add(CreateOptionView(i, optionsProp));
                 if (i < lastIndex) optionsProp.Next(false);
             }
 
@@ -124,7 +152,7 @@ namespace com.absence.dialoguesystem.editor
             });
         }
 
-        private VisualElement CreateOptionElem(int index, SerializedProperty optionProp)
+        private VisualElement CreateOptionView(int index, SerializedProperty optionProp)
         {
             VisualElement optionElem = new VisualElement();
 

@@ -1,4 +1,5 @@
 using com.absence.dialoguesystem.internals;
+using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 
@@ -13,8 +14,12 @@ namespace com.absence.dialoguesystem.editor
 
         public GotoNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            DialogueEditorWindow.m_inspectorView.OnNodeValidation -= RefreshGotoDropdown;
-            DialogueEditorWindow.m_inspectorView.OnNodeValidation += RefreshGotoDropdown;
+            m_nodeAsGoto = Node as GotoNode;
+
+            DialogueEditorWindow.m_inspectorView.OnNodeValidation -= Refresh;
+            DialogueEditorWindow.m_inspectorView.OnNodeValidation += Refresh;
+
+            Refresh();
         }
 
         protected override void Draw()
@@ -34,16 +39,15 @@ namespace com.absence.dialoguesystem.editor
                 EditorUtility.SetDirty(m_nodeAsGoto);
             });
 
-            RefreshGotoDropdown();
             this.Add(gotoDropdown);
         }
 
-        private void SoftRefreshGotoLabel()
+        private void SoftRefresh()
         {
             m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
         }
 
-        private void RefreshGotoDropdown()
+        private void Refresh()
         {
             m_dropdown.choices.Clear();
 
@@ -58,7 +62,7 @@ namespace com.absence.dialoguesystem.editor
                 return;
             }
 
-            if (Graph.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefreshGotoLabel();
+            if (Graph.m_dialogue.GetAllDialogueParts().Contains(m_nodeAsGoto.TargetNode)) SoftRefresh();
             else m_dropdown.SetValueWithoutNotify("Select a DialoguePartNode.");
         }
     }

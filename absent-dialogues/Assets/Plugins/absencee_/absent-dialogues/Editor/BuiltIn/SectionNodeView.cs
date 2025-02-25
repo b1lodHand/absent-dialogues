@@ -1,4 +1,5 @@
 using com.absence.dialoguesystem.internals;
+using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -7,11 +8,27 @@ namespace com.absence.dialoguesystem.editor
     {
         public SectionNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            node.onValidation -= RefreshDialoguePartFinder;
-            node.onValidation += RefreshDialoguePartFinder;
+            node.onValidation -= RefreshFinder;
+            node.onValidation += RefreshFinder;
 
-            node.onValidation += RefreshDialoguePartTitle;
-            node.onValidation += RefreshDialoguePartTitle;
+            node.onValidation += RefreshTitle;
+            node.onValidation += RefreshTitle;
+        }
+
+        private void RefreshFinder()
+        {
+            DialogueEditorWindow.RefreshDialoguePartFinder();
+        }
+
+        private void RefreshTitle()
+        {
+            DialoguePartNode nodeAsDp = Node as DialoguePartNode;
+            Label title = this.Q<Label>("title-label");
+
+            string dpName = nodeAsDp.DialoguePartName;
+
+            if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.Title;
+            else title.text = dpName;
         }
     }
 }

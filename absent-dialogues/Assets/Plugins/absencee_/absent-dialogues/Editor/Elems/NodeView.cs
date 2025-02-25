@@ -47,11 +47,6 @@ namespace com.absence.dialoguesystem.editor
         /// </summary>
         public List<Port> Outputs = new List<Port>();
 
-        private Button m_createNewOptionButton;
-
-        private List<VisualElement> m_optionElems = new List<VisualElement>();
-        private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
-
         protected SerializedObject m_serializedNode;
 
         /// <summary>
@@ -70,6 +65,16 @@ namespace com.absence.dialoguesystem.editor
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 
+            if (Node.AdditionalUSSFileLocations != null)
+            {
+                Node.AdditionalUSSFileLocations.ForEach(path =>
+                {
+                    if (string.IsNullOrWhiteSpace(path)) return;
+
+                    StyleSheet uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
+                    this.styleSheets.Add(uss);
+                });
+            }
             if (AdditionalUSSFileLocations != null)
             {
                 AdditionalUSSFileLocations.ForEach(path =>
@@ -89,16 +94,14 @@ namespace com.absence.dialoguesystem.editor
 
             this.title = node.Title ?? "Node";
 
-            Draw();
-
             SetupNodeForSerialization();
             SetupPersonDropdownIfExists();
+            SetupTextFieldIfExists();
 
-            DrawElems();
             CreateInputPort();
             CreateOutputPorts();
 
-            SetupTextFieldIfExists();
+            DoDraw();
 
             UpdateState(node.State);
 
@@ -112,63 +115,18 @@ namespace com.absence.dialoguesystem.editor
             node.onSetState += UpdateState;
         }
 
-        private void RefreshGenericOptionElems()
+        private void DoDraw()
         {
-            m_genericOptionElems.ForEach(op =>
-            {
-                Label showIfLabel = op.Q<Label>("show-if-label");
-                TextField textField = op.Q<TextField>();
+            if (Node is IContainVariableManipulators nodeAsManipulator)
+                RefreshVariableManipulators(nodeAsManipulator);
 
-                int index = m_genericOptionElems.IndexOf(op);
+            if (Node.PersonDependent)
+                RefreshPersonDropdown();
 
-                if (index >= Graph.m_dialogue.GenericOptions.Count)
-                    return;
-
-                Option target = Graph.m_dialogue.GenericOptions[index];
-
-                showIfLabel.visible = target.UseShowIf;
-                showIfLabel.tooltip = target.Visibility.GetConditionString(true);
-                textField.SetValueWithoutNotify(target.Text);
-            });
-        }
-        private void RefreshDialoguePartTitle()
-        {
-            DialoguePartNode nodeAsDp = Node as DialoguePartNode;
-            Label title = this.Q<Label>("title-label");
-
-            string dpName = nodeAsDp.DialoguePartName;
-
-            if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.Title();
-            else title.text = dpName;
+            Draw();
         }
 
-        private void RefreshActionMapProps()
-        {
-            ActionNode nodeAsAction = Node as ActionNode;
-            VisualElement icon = this.Q<VisualElement>("node-icon");
-            Label title = this.Q<Label>("title-label");
-
-            if (nodeAsAction.UsedByMapper)
-            {
-                AddToClassList("mapped");
-                title.text = nodeAsAction.UniqueMapperId;
-            }
-
-            else
-            {
-                RemoveFromClassList("mapped");
-                title.text = nodeAsAction.Title;
-            }
-
-            if (nodeAsAction.UsedByMapper) icon.tooltip = nodeAsAction.UniqueMapperId;
-            else icon.tooltip = null;
-        }
-
-        private void RefreshDialoguePartFinder()
-        {
-            DialogueEditorWindow.RefreshDialoguePartFinder();
-        }
-
+        #region Protected API
         protected virtual void SetupPersonDropdownIfExists()
         {
             if (!Node.PersonDependent) return;
@@ -193,21 +151,16 @@ namespace com.absence.dialoguesystem.editor
                 personPreview.sprite = targetPerson.Icon;
             });
         }
-
         protected virtual void SetupNodeForSerialization()
         {
             m_serializedNode = new SerializedObject(Node);
-            if (Node is DecisionSpeechNode decisiveNode) m_nodeAsDecisive = decisiveNode;
-            else if (Node is GotoNode gotoNode) m_nodeAsGoto = gotoNode;
         }
-
         protected virtual void SetupTextFieldIfExists()
         {
             TextField textField = this.Q<TextField>("speech");
             textField.bindingPath = "m_text";
             textField.Bind(m_serializedNode);
         }
-
         protected virtual void CreateInputPort()
         {
             if (Node.GetInputPortNameForCreation() == null) return;
@@ -216,7 +169,6 @@ namespace com.absence.dialoguesystem.editor
             Input.portName = Node.GetInputPortNameForCreation();
             inputContainer.Add(Input);
         }
-
         protected virtual void CreateOutputPorts()
         {
             Node.GetOutputPortNamesForCreation().ForEach(portName =>
@@ -228,7 +180,6 @@ namespace com.absence.dialoguesystem.editor
                 outputContainer.Add(port);
             });
         }
-
         protected virtual void UpdateState(Node.FlowState state)
         {
             if ((!Graph.m_dialogue.IsClone) || !Application.isPlaying) return;
@@ -253,37 +204,20 @@ namespace com.absence.dialoguesystem.editor
                     break;
             }
         }
-
-        protected virtual void Draw()
+        protected virtual void RefreshVariableManipulators(IContainVariableManipulators nodeAsManipulator)
         {
-            
-        }
-
-        private void DoDraw()
-        {
-            Draw();
-            if (Node.PersonDependent) RefreshPersonDropdown();
-        }
-
-        private void DrawElems()
-        {
-            if (Node is DecisionSpeechNode) DrawElems_DecisionSpeechNode();
-            if (Node is IContainVariableManipulators) RefreshVariableManipulators();
-        }
-
-        private void RefreshVariableManipulators()
-        {
-            IContainVariableManipulators nodeAsManipulator = Node as IContainVariableManipulators;
             List<NodeVariableComparer> comparers = nodeAsManipulator.GetComparers();
             List<NodeVariableSetter> setters = nodeAsManipulator.GetSetters();
 
             if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.BlackboardBank = Node.Blackboard.Bank);
             if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.BlackboardBank = Node.Blackboard.Bank);
         }
-
-        private void RefreshPersonDropdown()
+        protected virtual void RefreshPersonDropdown()
         {
             DropdownField personDropdown = this.Q<DropdownField>("person-field");
+
+            if (personDropdown == null)
+                return;
 
             List<string> peopleNameList = Graph.m_dialogue.People.ConvertAll(p =>
             {
@@ -292,12 +226,13 @@ namespace com.absence.dialoguesystem.editor
                 return null;
             });
 
+            Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
+
             if (peopleNameList.Count == 0)
             {
                 personDropdown.choices = new List<string>();
                 personDropdown.SetValueWithoutNotify("None");
-                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.style.display = DisplayStyle.None;
+                if (personIconPreview != null) personIconPreview.style.display = DisplayStyle.None;
                 return;
             }
 
@@ -306,28 +241,31 @@ namespace com.absence.dialoguesystem.editor
             if (Node.PersonIndex < 0 || Node.PersonIndex > Graph.m_dialogue.People.Count - 1)
             {
                 personDropdown.SetValueWithoutNotify("Missing person...");
-                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.style.display = DisplayStyle.None;
+                if (personIconPreview != null) personIconPreview.style.display = DisplayStyle.None;
                 return;
             }
 
             if (Graph.m_dialogue.People[Node.PersonIndex])
             {
                 personDropdown.SetValueWithoutNotify(Graph.m_dialogue.People[Node.PersonIndex].Name);
-                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.style.display = DisplayStyle.Flex;
-                personIconPreview.sprite = Graph.m_dialogue.People[Node.PersonIndex].Icon;
+                if (personIconPreview != null) personIconPreview.style.display = DisplayStyle.Flex;
+                if (personIconPreview != null) personIconPreview.sprite = Graph.m_dialogue.People[Node.PersonIndex].Icon;
             }
 
             else
             {
                 personDropdown.SetValueWithoutNotify("Select a person...");
-                Image personIconPreview = personDropdown.parent.Q<Image>("person-icon-preview");
-                personIconPreview.style.display = DisplayStyle.None;
+                if (personIconPreview != null) personIconPreview.style.display = DisplayStyle.None;
             }
 
         }
+        protected virtual void Draw()
+        {
 
+        }
+        #endregion
+
+        #region Graph-Based Methods
         public override void SetPosition(Rect newPos)
         {
             base.SetPosition(newPos);
@@ -336,18 +274,17 @@ namespace com.absence.dialoguesystem.editor
             Node.Position.y = newPos.yMin;
             EditorUtility.SetDirty(Node);
         }
-
         public override void OnSelected()
         {
             base.OnSelected();
             OnSelect?.Invoke(this);
         }
-
         public override void OnUnselected()
         {
             base.OnUnselected();
             if (Graph.selection.Count == 1) OnSelect?.Invoke(null); //??
         }
+        #endregion
     }
 
 }

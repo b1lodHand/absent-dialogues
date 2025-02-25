@@ -18,7 +18,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 5591856234808428091}
   State: 0
-  PersonIndex: 0
+  PersonIndex: 1
   Options:
   - m_scroll: {x: 0, y: 0}
     Text: b
@@ -36,7 +36,7 @@ MonoBehaviour:
       Processor: 0
       ShowIfList: []
     LeadsTo: {fileID: 0}
-  m_text: 123
+  m_text: grthygtryh
   NativeNextNode: {fileID: 0}
   GenericOptionLeads: []
 --- !u!114 &-5980966363750224252
@@ -179,7 +179,9 @@ MonoBehaviour:
   - {fileID: -3719062126488728725}
   - {fileID: 4423903256932622212}
   - {fileID: -3861894436518224145}
-  m_people: []
+  m_people:
+  - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
+  - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
   m_genericOptions:
   - m_scroll: {x: 0, y: 0}
     Text: This is a generic option.
@@ -226,7 +228,7 @@ MonoBehaviour:
   m_Name: 6863544876594d542bc597c232a04bcb
   m_EditorClassIdentifier: 
   Guid: 6863544876594d542bc597c232a04bcb
-  Position: {x: -149.44249, y: 428.49}
+  Position: {x: -303, y: 427}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 5591856234808428091}

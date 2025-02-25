@@ -7,7 +7,7 @@ namespace com.absence.dialoguesystem.internals
     /// to have the correct reference to the <see cref="Blackboard.Bank"/> of the current <see cref="Dialogue"/> everytime the
     /// editor window refreshes.
     /// </summary>
-    internal interface IContainVariableManipulators
+    public interface IContainVariableManipulators
     {
         /// <summary>
         /// A list of comparers which you want to restrict in terms of <see cref="VariableBank"/> selection

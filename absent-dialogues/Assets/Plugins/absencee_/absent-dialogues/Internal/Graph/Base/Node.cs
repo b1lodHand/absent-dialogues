@@ -1,8 +1,6 @@
-using com.absence.attributes;
 using com.absence.attributes.experimental;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
-using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -223,7 +221,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         /// <summary>
-        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmitthe action to another.
+        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmit the action to another.
         /// </summary>
         public virtual void Traverse(Action<Node> action)
         {
@@ -242,7 +240,23 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual void OnValidate()
         {
+            UpdateManipulators();
+
             onValidation?.Invoke();
+
+            return;
+
+            void UpdateManipulators() 
+            {
+                if (this is IContainVariableManipulators manipulator)
+                {
+                    if (Blackboard == null || Blackboard.Bank == null)
+                        return;
+
+                    manipulator.GetComparers()?.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
+                    manipulator.GetSetters()?.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
+                }
+            }
         }
     }
 }
