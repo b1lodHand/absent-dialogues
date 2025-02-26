@@ -25,10 +25,10 @@ namespace com.absence.dialoguesystem.runtime.backup.internals
             { 'd', BaseVariableSetter.SetType.DivideBy },
         };
 
-        public static readonly Dictionary<char, VBProcessType> ProcessorDictionary = new Dictionary<char, VBProcessType>()
+        public static readonly Dictionary<char, ConditionProcessMode> ProcessorDictionary = new Dictionary<char, ConditionProcessMode>()
         {
-            { 'A', VBProcessType.All },
-            { 'V', VBProcessType.Any },
+            { 'A', ConditionProcessMode.All },
+            { 'V', ConditionProcessMode.Any },
         };
     }
 }

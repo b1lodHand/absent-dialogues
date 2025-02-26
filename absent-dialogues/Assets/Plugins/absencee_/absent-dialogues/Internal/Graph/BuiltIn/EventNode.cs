@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.internals
     /// </remarks>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ActionNode.html")]
     [MovedFrom("ActionNode")]
-    public class EventNode : Node, IContainVariableManipulators
+    public class EventNode : Node
     {
         public static string CreationMenuName => "Event";
 
@@ -89,23 +89,25 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
+            base.OnCloning(originalDialogue, clonedDialogue);
+
             if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
-
-            m_blackboardEvents = m_blackboardEvents.ConvertAll(action =>
-            {
-                return action.Clone(Blackboard.Bank);
-            });
         }
 
-        public override void Traverse(Action<Node> action)
+        public override List<NodeVariableComparer> Comparers => null;
+
+        public override List<NodeVariableSetter> Setters
         {
-            action?.Invoke(this);
-            Next.Traverse(action);
+            get
+            {
+                return m_blackboardEvents;
+            }
+
+            set
+            {
+                m_blackboardEvents = value;
+            }
         }
-
-        public List<NodeVariableComparer> GetComparers() => null;
-
-        public List<NodeVariableSetter> GetSetters() => m_blackboardEvents;
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {

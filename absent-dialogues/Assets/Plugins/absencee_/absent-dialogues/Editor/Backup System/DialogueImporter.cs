@@ -67,19 +67,11 @@ namespace com.absence.dialoguesystem.editor.backup
                 Node node = context.Dialogue.AllNodes[i];
                 NodeData data = context.DialogueData.NodeDatas[i];
 
-                //Type nodeType = DialogueImportSettings.NodeTypeDictionary[data.NodeTypeName];
                 Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
 
-                //DialogueImportSettings.NodeImportActionDictionary[nodeType].Invoke(node, data, context);
+                node.UpdateManipulators();
+
                 node.OnImport(data, context);
-
-                if (node is not IContainVariableManipulators manipulator) continue;
-
-                List<NodeVariableComparer> comparers = manipulator.GetComparers();
-                List<NodeVariableSetter> setters = manipulator.GetSetters();
-
-                if (comparers != null) comparers.ForEach(comparer => comparer.SetBlackboardBank(context.Dialogue.Blackboard.Bank));
-                if (setters != null) setters.ForEach(setter => setter.SetBlackboardBank(context.Dialogue.Blackboard.Bank));
             }
         }
 

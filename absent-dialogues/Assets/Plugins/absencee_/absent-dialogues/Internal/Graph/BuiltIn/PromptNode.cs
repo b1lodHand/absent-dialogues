@@ -13,7 +13,7 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
     [MovedFrom("DecisionSpeechNode")]
-    public sealed class PromptNode : Node, IContainVariableManipulators
+    public sealed class PromptNode : Node
     {
         public static string CreationMenuName => "Prompt";
 
@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector, SerializeField, Tooltip("All of the options of this node.")] 
         private List<Option> m_options = new List<Option>();
 
-        [HideInInspector] public string m_text;
+        [HideInInspector] public string m_text = string.Empty;
 
         [HideInInspector] public Node NativeNextNode;
         [HideInInspector] public List<Node> GenericOptionLeads; 
@@ -134,15 +134,6 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
-        public override void Traverse(Action<Node> action)
-        {
-            action?.Invoke(this);
-            m_options.ForEach(option =>
-            {
-                option.LeadsTo.Traverse(action);
-            });
-        }
-
         public override List<string> GetDefaultOutputPortNames()
         {
             if (NoOptionsOverall) 
@@ -153,34 +144,36 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            m_options = m_options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
+            base.OnCloning(originalDialogue, clonedDialogue);
+
             if (NativeNextNode != null)
                 NativeNextNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(NativeNextNode)];
 
             m_options.ForEach(opt =>
             {
-                if (opt.LeadsTo == null) return;
-
                 opt.LeadsTo = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
             });
         }
 
-        public List<NodeVariableComparer> GetComparers()
+        public override List<NodeVariableComparer> Comparers
         {
-            List<NodeVariableComparer> result = new();
-
-            m_options.ForEach(option =>
+            get
             {
-                option.Visibility.ShowIfList.ForEach(comparer =>
-                {
-                    result.Add(comparer);
-                });
-            });
+                List<NodeVariableComparer> result = new();
 
-            return result;
+                m_options.ForEach(option =>
+                {
+                    option.Visibility.ShowIfList.ForEach(comparer =>
+                    {
+                        result.Add(comparer);
+                    });
+                });
+
+                return result;
+            }
         }
 
-        public List<NodeVariableSetter> GetSetters() => null;
+        public override List<NodeVariableSetter> Setters => null;
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {

@@ -48,12 +48,6 @@ namespace com.absence.dialoguesystem.internals
            result.Add(Next);
         }
 
-        public override void Traverse(Action<Node> action)
-        {
-            action?.Invoke(this);
-            Next.Traverse(action);
-        }
-
         public override string GetDefaultInputPortName()
         {
             return null;

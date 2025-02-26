@@ -1,7 +1,6 @@
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.dialoguesystem.runtime.backup.internals;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,15 +11,15 @@ namespace com.absence.dialoguesystem.internals
     /// Node which re-routes the flow under some conditions.
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
-    public class BranchNode : Node, IContainVariableManipulators
+    public class BranchNode : Node
     {
         public static string CreationMenuName => "Branch";
 
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
 
-        [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public VBProcessType Processor = VBProcessType.All;
-        [Tooltip("All of the comparers this node relies on.")] public List<NodeVariableComparer> Comparers = new();
+        [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public ConditionProcessMode Mode = ConditionProcessMode.All;
+        [SerializeField, Tooltip("All of the comparers this node relies on.")] protected List<NodeVariableComparer> m_conditions = new();
 
         public override string Title => "Branch";
 
@@ -59,20 +58,10 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
+            base.OnCloning(originalDialogue, clonedDialogue);
+
             if (TrueNext != null) TrueNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
             if (FalseNext != null) FalseNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
-
-            Comparers = Comparers.ConvertAll(comparer =>
-            {
-                return comparer.Clone(Blackboard.Bank);
-            });
-        }
-
-        public override void Traverse(Action<Node> action)
-        {
-            action?.Invoke(this);
-            TrueNext.Traverse(action);
-            FalseNext.Traverse(action);
         }
 
         public override List<string> GetDefaultOutputPortNames()
@@ -83,43 +72,48 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Use this to override (if you need) the checking result of this node.
         /// </summary>
-        /// <returns>Normally returns the sum of the results of node's comparer list in a way declared by <see cref="Processor"/></returns>
+        /// <returns>Normally returns the sum of the results of node's comparer list in a way declared by <see cref="Mode"/></returns>
         protected virtual bool Process()
         {
-            if (Comparers.Count == 0) return true;
+            if (m_conditions.Count == 0) return true;
 
             bool result = true;
-            switch (Processor)
+            switch (Mode)
             {
-                case VBProcessType.All:
-                    result = Comparers.All(c => c.GetResult());
+                case ConditionProcessMode.All:
+                    result = m_conditions.All(c => c.GetResult());
                     break;
-                case VBProcessType.Any:
-                    result = Comparers.Any(c => c.GetResult());
+                case ConditionProcessMode.Any:
+                    result = m_conditions.Any(c => c.GetResult());
                     break;
             }
 
             return result;
         }
 
-        public List<NodeVariableComparer> GetComparers() => new(Comparers);
-        public List<NodeVariableSetter> GetSetters() => null;
+        public override List<NodeVariableComparer> Comparers
+        {
+            get { return m_conditions; }
+            set { m_conditions = value; }
+        }
+
+        public override List<NodeVariableSetter> Setters => null;
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            Processor = DialogueImportSettings.ProcessorDictionary[dataToRead.ComparerProcessorType];
-            Comparers = dataToRead.ComparerData.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
+            Mode = DialogueImportSettings.ProcessorDictionary[dataToRead.ComparerProcessorType];
+            m_conditions = dataToRead.ComparerData.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
-            dataToWrite.ComparerProcessorType = DialogueExportSettings.ProcessorDictionary[Processor];
-            dataToWrite.ComparerData = Comparers.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
+            dataToWrite.ComparerProcessorType = DialogueExportSettings.ProcessorDictionary[Mode];
+            dataToWrite.ComparerData = m_conditions.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
         }
 
         public string GetConditionString(bool richText = false)
         {
-            return Utilities.Comparison.GetConditionString(Comparers, Processor, richText);
+            return Utilities.Comparison.GetConditionString(m_conditions, Mode, richText);
         }
     }
 }

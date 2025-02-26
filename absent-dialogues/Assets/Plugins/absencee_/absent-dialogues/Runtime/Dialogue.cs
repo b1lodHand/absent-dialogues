@@ -124,10 +124,12 @@ namespace com.absence.dialoguesystem
             dialogue.Blackboard = Blackboard.Clone();
 
             dialogue.AllNodes = AllNodes.ConvertAll(node => node.Clone());
-            dialogue.ValidateNodes();
+
             dialogue.AllNodes.ForEach(node =>
             {
+                node.Blackboard = dialogue.Blackboard;
                 node.OnCloning(this, dialogue);
+                node.UpdateManipulators();
             });
 
             dialogue.Entry = (EntryNode)dialogue.AllNodes.Where(node => node is EntryNode).FirstOrDefault();
@@ -149,11 +151,13 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public void ValidateNodes()
         {
-            AllNodes.ForEach(node =>
-            {
-                node.Blackboard = Blackboard;
-                node.OnValidate();
-            });
+            AllNodes.ForEach(ValidateNode);
+        }
+
+        internal void ValidateNode(Node node)
+        {
+            node.Blackboard = Blackboard;
+            node.UpdateManipulators();
         }
 
         public void OnValidate()

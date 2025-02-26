@@ -21,9 +21,9 @@ namespace com.absence.dialoguesystem.internals
         
         public static class Comparison
         {
-            public static string GetConditionString(List<NodeVariableComparer> comparers, VBProcessType processType, bool richText = false)
+            public static string GetConditionString(List<NodeVariableComparer> comparers, ConditionProcessMode processType, bool richText = false)
             {
-                bool isAnd = (processType == VBProcessType.All);
+                bool isAnd = (processType == ConditionProcessMode.All);
                 StringBuilder sb = new();
 
                 if (!richText) sb.Append("[");
@@ -61,10 +61,10 @@ namespace com.absence.dialoguesystem.internals
                     else return Utilities.Texts.ColorizeString("&&", Constants.Tooltips.OR_HEX);
                 }
 
-                string GetBracketHex(VBProcessType processType)
+                string GetBracketHex(ConditionProcessMode processType)
                 {
-                    if (processType == VBProcessType.All) return Constants.Tooltips.AND_HEX;
-                    else if (processType == VBProcessType.Any) return Constants.Tooltips.OR_HEX;
+                    if (processType == ConditionProcessMode.All) return Constants.Tooltips.AND_HEX;
+                    else if (processType == ConditionProcessMode.Any) return Constants.Tooltips.OR_HEX;
 
                     return null;
                 }

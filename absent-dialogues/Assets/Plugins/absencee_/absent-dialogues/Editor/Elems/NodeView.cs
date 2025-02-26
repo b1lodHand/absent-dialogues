@@ -104,8 +104,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void DoDraw()
         {
-            if (Node is IContainVariableManipulators nodeAsManipulator)
-                RefreshVariableManipulators(nodeAsManipulator);
+            Node.UpdateManipulators();
 
             if (Node.PersonDependent)
                 RefreshPersonDropdown();
@@ -197,14 +196,6 @@ namespace com.absence.dialoguesystem.editor
                     AddToClassList("unreached");
                     break;
             }
-        }
-        protected virtual void RefreshVariableManipulators(IContainVariableManipulators nodeAsManipulator)
-        {
-            List<NodeVariableComparer> comparers = nodeAsManipulator.GetComparers();
-            List<NodeVariableSetter> setters = nodeAsManipulator.GetSetters();
-
-            if (comparers != null && comparers.Count > 0) comparers.ForEach(comparer => comparer.BlackboardBank = Node.Blackboard.Bank);
-            if (setters != null && setters.Count > 0) setters.ForEach(setter => setter.BlackboardBank = Node.Blackboard.Bank);
         }
         protected virtual void RefreshPersonDropdown()
         {

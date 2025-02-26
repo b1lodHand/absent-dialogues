@@ -93,7 +93,7 @@ namespace com.absence.dialoguesystem
             switch (m_context.State)
             {
                 case DialogueFlowContext.ContextState.Pass:
-                    m_frame.Reach(m_context);
+                    if (m_frame != null) m_frame.Reach(m_context);
                     break;
                 case DialogueFlowContext.ContextState.Reach:
                     Node next = m_frame.Pass(m_context);

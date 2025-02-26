@@ -62,7 +62,7 @@ namespace com.absence.dialoguesystem.internals
             clone.m_useShowIf = UseShowIf;
             clone.Visibility = Visibility.Clone(overrideBank);
             clone.LeadsTo = LeadsTo;
-            clone.CustomData = CustomData;
+            if (CustomData != null) clone.CustomData = NodeCustomDataBase.Instantiate(CustomData);
 
             return clone;
         }
@@ -88,7 +88,7 @@ namespace com.absence.dialoguesystem.internals
             /// <summary>
             /// An enum which defines what to do with multiple comparers in conclusion.
             /// </summary>
-            public VBProcessType Processor = VBProcessType.All;
+            public ConditionProcessMode Processor = ConditionProcessMode.All;
 
             /// <summary>
             /// A list of all <see cref="VariableComparer"/>s which has a role on determining this option's
@@ -119,8 +119,8 @@ namespace com.absence.dialoguesystem.internals
 
                 return Processor switch
                 {
-                    VBProcessType.All => ShowIfList.All(comparer => comparer.GetResult()),
-                    VBProcessType.Any => ShowIfList.Any(comparer => comparer.GetResult()),
+                    ConditionProcessMode.All => ShowIfList.All(comparer => comparer.GetResult()),
+                    ConditionProcessMode.Any => ShowIfList.Any(comparer => comparer.GetResult()),
                     _ => true,
                 };
             }

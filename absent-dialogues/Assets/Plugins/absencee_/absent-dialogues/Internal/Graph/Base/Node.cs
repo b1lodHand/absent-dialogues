@@ -108,6 +108,31 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
+        public virtual List<NodeVariableComparer> Comparers
+        {
+            get
+            {
+                return null;
+            }
+
+            set
+            {
+
+            }
+        }
+        public virtual List<NodeVariableSetter> Setters
+        {
+            get
+            {
+                return null;
+            }
+
+            set
+            {
+
+            }
+        }
+
         public virtual bool HasText => Text != null;
         public virtual bool HasOptions => Options != null;
 
@@ -174,6 +199,36 @@ namespace com.absence.dialoguesystem.internals
             onReach?.Invoke();
             OnReach(context);
         }
+        /// <summary>
+        /// Use to clone this node. 
+        /// </summary>
+        /// <returns>The clone.</returns>
+        internal Node Clone()
+        {
+            Node result = Instantiate(this);
+            if (CustomData != null) result.CustomData = NodeCustomDataBase.Instantiate(CustomData);
+            return result;
+        }
+        public Node Clone(Dialogue originalDialogue, Dialogue cloneDialogue)
+        {
+            Node result = this.Clone();
+            result.OnCloning(originalDialogue, cloneDialogue);
+            return result;
+        }
+
+        /// <summary>
+        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmit the action to another.
+        /// </summary>
+        public void Traverse(Action<Node> action)
+        {
+            action?.Invoke(this);
+            GetOutputConnections().ForEach(node =>
+            {
+                if (node != null)
+                    node.Traverse(action);
+            });
+        }
+
         public void OnRemoveFromDialogue()
         {
             onRemove?.Invoke();
@@ -236,27 +291,6 @@ namespace com.absence.dialoguesystem.internals
             onSetState?.Invoke(newState);
         }
 
-        /// <summary>
-        /// Use to clone this node. 
-        /// </summary>
-        /// <returns>The clone.</returns>
-        public virtual Node Clone()
-        {
-            return Instantiate(this);
-        }
-
-        /// <summary>
-        /// Use to traverse any action on a node chain. Nodes not connected directly won't transmit the action to another.
-        /// </summary>
-        public virtual void Traverse(Action<Node> action)
-        {
-            GetOutputConnections().ForEach(node =>
-            {
-                if (node != null) 
-                    node.Traverse(action);
-            });
-        }
-
         public virtual Person GetPerson(Dialogue context) => 
             PersonDependent ? context.People[PersonIndex] : null;
 
@@ -270,30 +304,39 @@ namespace com.absence.dialoguesystem.internals
 
         }
 
-        public virtual void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
+        public virtual void OnCloning(Dialogue originalDialogue, Dialogue cloneDialogue)
         {
+            if (Options != null)
+            {
+                Options = Options.ConvertAll(opt => opt.Clone(cloneDialogue.Blackboard.Bank));
+            }
 
+            if (Comparers != null)
+            {
+                Comparers = Comparers.ConvertAll(cmp => cmp.Clone(cloneDialogue.Blackboard.Bank));
+            }
+
+            if (Setters != null)
+            {
+                for (int i = 0; i < Setters.Count; i++)
+                {
+                    Setters = Setters.ConvertAll(set => set.Clone(cloneDialogue.Blackboard.Bank));
+                }
+            }
+        }
+
+        public virtual void UpdateManipulators()
+        {
+            Comparers?.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
+            Setters?.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
         }
 
         public virtual void OnValidate()
         {
             UpdateManipulators();
-
             onValidation?.Invoke();
 
             return;
-
-            void UpdateManipulators() 
-            {
-                if (this is IContainVariableManipulators manipulator)
-                {
-                    if (Blackboard == null || Blackboard.Bank == null)
-                        return;
-
-                    manipulator.GetComparers()?.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
-                    manipulator.GetSetters()?.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
-                }
-            }
         }
     }
 }

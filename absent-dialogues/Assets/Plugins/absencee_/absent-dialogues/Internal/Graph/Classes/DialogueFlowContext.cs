@@ -41,7 +41,7 @@ namespace com.absence.dialoguesystem.internals
         {
             Text = null;
             CustomData = null;
-            OptionIndexPairs.Clear();
+            OptionIndexPairs?.Clear();
         }
     }
 }
