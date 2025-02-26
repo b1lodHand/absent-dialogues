@@ -1,6 +1,5 @@
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,7 +12,7 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
     [MovedFrom("DecisionSpeechNode")]
-    public sealed class PromptNode : Node
+    public class PromptNode : Node
     {
         public static string CreationMenuName => "Prompt";
 
@@ -24,16 +23,13 @@ namespace com.absence.dialoguesystem.internals
 
         [HideInInspector] public string m_text = string.Empty;
 
-        [HideInInspector] public Node NativeNextNode;
-        [HideInInspector] public List<Node> GenericOptionLeads; 
+        [HideInInspector] public Node NativeNextNode; 
 
         public override bool PersonDependent => true;
+        public override bool UseGenericOptions => true;
 
         public override string Text { get => m_text; set { m_text = value; } }
         public override List<Option> Options { get => m_options; set { m_options = value; } }
-
-        public bool NoOptionsOverall =>
-            m_options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0);
 
         public override string Title
         {

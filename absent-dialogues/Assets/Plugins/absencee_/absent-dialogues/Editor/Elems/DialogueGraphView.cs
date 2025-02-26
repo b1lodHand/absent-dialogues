@@ -7,8 +7,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
-using System.Reflection;
 using com.absence.utilities;
+using System.Text;
+using System.Reflection;
+using UnityEditor.MemoryProfiler;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -45,9 +47,97 @@ namespace com.absence.dialoguesystem.editor
             AddManipulators();
             AddMiniMap();
             AddStyleSheets();
+            SubscribeToEvents();
+        }
+
+        private void SubscribeToEvents()
+        {
+            canPasteSerializedData += AllowPaste;
+            serializeGraphElements += OnCopy;
+            unserializeAndPaste += OnPaste;
 
             Undo.undoRedoPerformed -= OnUndoRedo;
             Undo.undoRedoPerformed += OnUndoRedo;
+        }
+
+        private string OnCopy(IEnumerable<GraphElement> elements)
+        {
+            StringBuilder sb = new();
+            foreach (GraphElement node in elements) 
+            {
+                if (node is not NodeView view)
+                    continue;
+
+                if (view.Node is EntryNode)
+                    continue;
+
+                sb.Append(view.Node.Guid);
+                sb.Append(";");
+            }
+
+            return sb.ToString();
+        }
+
+        private void OnPaste(string operationName, string data)
+        {
+            string[] guids = data.TrimEnd(';').Split(';');
+            List<Node> nodesToCopy = new List<Node>();
+
+            foreach (string guid in guids)
+            {
+                nodesToCopy.Add(m_dialogue.AllNodes.First(node => node.Guid.Equals(guid)));
+            }
+
+            foreach (Node node in nodesToCopy)
+            {
+                Node nodeCreated = DoCreateNode(node.GetType(), Vector2.zero, node);
+                NodeView viewCreated = FindNodeView(nodeCreated);
+
+                EditorUtility.SetDirty(m_dialogue);
+                AssetDatabase.SaveAssetIfDirty(m_dialogue);
+
+                if (viewCreated.Input != null)
+                {
+                    foreach (Edge connection in viewCreated.Input.connections)
+                    {
+                        Node nodeConnected = (connection.output.node as NodeView).Node;
+
+                        if (!nodesToCopy.Contains(nodeConnected))
+                        {
+                            NodeView viewConnected = FindNodeView(nodeConnected);
+                            nodeConnected.RemoveOutputConnection(viewConnected.Outputs.IndexOf(connection.output));
+                        }
+                    }
+                }
+
+                EditorUtility.SetDirty(nodeCreated);
+                AssetDatabase.SaveAssetIfDirty(nodeCreated);
+
+                if (viewCreated.Outputs != null)
+                {
+                    foreach (Port defaultOutputPort in viewCreated.Outputs)
+                    {
+                        foreach (Edge connection in defaultOutputPort.connections)
+                        {
+                            Node nodeConnected = (connection.input.node as NodeView).Node;
+                            if (!nodesToCopy.Contains(nodeConnected))
+                            {
+                                nodeCreated.RemoveOutputConnection(viewCreated.Outputs.IndexOf(connection.output));
+                            }
+                        }
+                    }
+                }
+
+                EditorUtility.SetDirty(nodeCreated);
+                AssetDatabase.SaveAssetIfDirty(nodeCreated);
+
+                Refresh();
+            }
+        }
+
+        private bool AllowPaste(string data)
+        {
+            return true;
         }
 
         private void AddStyleSheets()
@@ -145,24 +235,46 @@ namespace com.absence.dialoguesystem.editor
             evt.menu.AppendSeparator();
 
             var types = TypeCache.GetTypesDerivedFrom<Node>();
-            foreach (var type in types)
+            List<Type> redrawList = new();
+            foreach (Type type in types)
             {
-                DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
-                PropertyInfo menuProp = type.GetProperty("CreationMenuName");
-                string parentMenuPropValue = menuProp.GetValue(null).ToString();
-                bool menuSpecified = menuProp != null && (!string.IsNullOrWhiteSpace(parentMenuPropValue));
-
-                if (menuSpecified && parentMenuPropValue.Equals(Node.NaN))
-                    continue;
-
-                var mousePos = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
-                string context = menuSpecified ? parentMenuPropValue : Helpers.SplitCamelCase(type.Name, " ");
-
-                evt.menu.AppendAction(context, a =>
-                {
-                    CreateNode(type, mousePos);
-                }, status);
+                bool needsRedraw = CreateMenuItem(type, evt, false);
+                if (needsRedraw) redrawList.Add(type);
             }
+
+            foreach (Type type in redrawList) 
+            { 
+                CreateMenuItem(type, evt, true);
+            }
+        }
+
+        protected override void CollectCopyableGraphElements(IEnumerable<GraphElement> elements, HashSet<GraphElement> elementsToCopySet)
+        {
+            base.CollectCopyableGraphElements(elements, elementsToCopySet);
+        }
+
+        private bool CreateMenuItem(Type type, ContextualMenuPopulateEvent evt, bool force = false)
+        {
+            DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
+            PropertyInfo menuProp = type.GetProperty("CreationMenuName");
+            string menuPropValue = menuProp.GetValue(null).ToString();
+            bool menuSpecified = menuProp != null && (!string.IsNullOrWhiteSpace(menuPropValue));
+
+            if (menuSpecified && menuPropValue.Equals(Node.NaN))
+                return false;
+
+            if (menuSpecified && (!force) && menuPropValue.Contains("Misc/"))
+                return true;
+
+            var mousePos = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
+            string context = menuSpecified ? menuPropValue : Helpers.SplitCamelCase(type.Name, " ");
+
+            evt.menu.AppendAction(context, a =>
+            {
+                CreateNode(type, mousePos);
+            }, status);
+
+            return false;
         }
 
         internal void ClearViewWithoutNotification()
@@ -250,11 +362,26 @@ namespace com.absence.dialoguesystem.editor
             return GetNodeByGuid(node.Guid) as NodeView;
         }
 
-        Node CreateNode(System.Type type, Vector2 atPosition)
+        Node CreateNode(System.Type type, Vector2 atPosition, Node from = null)
+        {
+            Node node = DoCreateNode(type, atPosition, from);
+
+            EditorUtility.SetDirty(m_dialogue);
+            AssetDatabase.SaveAssetIfDirty(m_dialogue);
+
+            Refresh();
+            SelectNode(node);
+
+            OnNodeCreated?.Invoke(node);
+
+            return node;
+        }
+
+        Node DoCreateNode(System.Type type, Vector2 atPosition, Node from = null)
         {
             Undo.RecordObject(m_dialogue, "Dialogue (Create Node)");
 
-            Node node = m_dialogue.CreateNode(type);
+            Node node = m_dialogue.CreateNode(type, from);
             node.Guid = GUID.Generate().ToString();
             node.name = node.Guid;
             node.Position.x = atPosition.x;
@@ -263,14 +390,7 @@ namespace com.absence.dialoguesystem.editor
             AssetDatabase.AddObjectToAsset(node, m_dialogue);
             Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
 
-            AssetDatabase.SaveAssets();
-
             NodeView viewOfNodeCreated = CreateNodeView(node);
-
-            Refresh();
-            SelectNode(node);
-
-            OnNodeCreated?.Invoke(node);
 
             return node;
         }
@@ -296,7 +416,9 @@ namespace com.absence.dialoguesystem.editor
             m_dialogue.DeleteNode(view.Node);
 
             Undo.DestroyObjectImmediate(view.Node);
-            AssetDatabase.SaveAssets();
+
+            EditorUtility.SetDirty(m_dialogue);
+            AssetDatabase.SaveAssetIfDirty(m_dialogue);
         }
 
         NodeView CreateNodeView(Node node)
@@ -366,6 +488,7 @@ namespace com.absence.dialoguesystem.editor
             Port port = sender.InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
             port.portName = "";
+            port.name = "option-direct-port";
 
             TextField speechField = new TextField();
             speechField.AddToClassList("optionField");

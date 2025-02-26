@@ -52,6 +52,8 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action OnInitialize;
 
+        public event Action OnPassOneShot;
+
         /// <summary>
         /// Subscribe to this delegate to override any data will get displayed.
         /// </summary>
@@ -225,6 +227,8 @@ namespace com.absence.dialoguesystem
             Node frame = player.Frame;
 
             InvokeOnProgress();
+            OnPassOneShot?.Invoke();
+            OnPassOneShot = null;
 
             if (context.WillExit)
             {

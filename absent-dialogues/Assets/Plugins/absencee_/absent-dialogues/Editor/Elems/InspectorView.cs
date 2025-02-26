@@ -40,6 +40,8 @@ namespace com.absence.dialoguesystem.editor
             {
                 if (editor.target == null) return;
 
+                if (Application.isPlaying) GUI.enabled = false;
+
                 EditorGUI.BeginChangeCheck();
 
                 EditorGUILayout.BeginVertical(EditorStyles.inspectorFullWidthMargins);
@@ -49,6 +51,8 @@ namespace com.absence.dialoguesystem.editor
                 EditorGUILayout.EndVertical();
 
                 if (EditorGUI.EndChangeCheck()) OnNodeValidation?.Invoke();
+
+                if (Application.isPlaying) GUI.enabled = true;
             });
             Add(container);
         }

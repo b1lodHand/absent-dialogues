@@ -58,9 +58,11 @@ namespace com.absence.dialoguesystem
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public Node CreateNode(System.Type type)
+        public Node CreateNode(System.Type type, Node from = null)
         {
-            Node node = ScriptableObject.CreateInstance(type) as Node;
+            Node node = null;
+            if (from == null) node = ScriptableObject.CreateInstance(type) as Node;
+            else node = Instantiate(from);
             node.name = type.Name;
 
             node.PersonIndex = 0;
@@ -122,6 +124,7 @@ namespace com.absence.dialoguesystem
         {
             Dialogue dialogue = Instantiate(this);
             dialogue.Blackboard = Blackboard.Clone();
+            dialogue.m_genericOptions = GenericOptions.ConvertAll(opt => opt.Clone<GenericOption>(dialogue.Blackboard.Bank));
 
             dialogue.AllNodes = AllNodes.ConvertAll(node => node.Clone());
 

@@ -109,6 +109,9 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
+        [HideInInspector, SerializeField] private List<Node> m_genericOptionLeads = new();
+        public List<Node> GenericOptionLeads { get { return m_genericOptionLeads; } set { m_genericOptionLeads = value; } }
+
         public virtual List<NodeVariableComparer> Comparers
         {
             get
@@ -136,6 +139,9 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual bool HasText => Text != null;
         public virtual bool HasOptions => Options != null;
+        public virtual bool UseGenericOptions => false;
+        public bool NoOptionsOverall =>
+            ((!HasOptions) || Options.Count == 0) && ((!UseGenericOptions) || GenericOptionLeads.Count == 0);
 
         public virtual List<string> AdditionalUSSFileLocations => null;
 
@@ -311,7 +317,7 @@ namespace com.absence.dialoguesystem.internals
             {
                 Options = Options.ConvertAll(opt => 
                 {
-                    Option result = opt.Clone(cloneDialogue.Blackboard.Bank);
+                    Option result = opt.Clone<Option>(cloneDialogue.Blackboard.Bank);
                     //result.LeadsTo = cloneDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(result.LeadsTo)];
                     return result;
                 });

@@ -11,7 +11,7 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.TitleNode.html")]
     public sealed class TitleNode : Node
     {
-        public static string CreationMenuName => "Title";
+        public static string CreationMenuName => "Misc/Title";
 
         [HideInInspector] public string m_text;
 

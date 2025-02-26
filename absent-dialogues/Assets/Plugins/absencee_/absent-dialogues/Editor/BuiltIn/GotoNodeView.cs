@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.editor
             Refresh();
         }
 
-        protected override void Draw()
+        protected override void OnDraw()
         {
             m_nodeAsGoto = Node as GotoNode;
 

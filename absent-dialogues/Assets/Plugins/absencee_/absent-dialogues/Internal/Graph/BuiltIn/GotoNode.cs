@@ -14,8 +14,6 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string CreationMenuName => "Goto";
 
-        private const string k_none = "None";
-
         /// <summary>
         /// The node which will get reached when this goto node gets passed.
         /// </summary>
@@ -62,7 +60,7 @@ namespace com.absence.dialoguesystem.internals
         {
             string data = dataToRead.Data;
 
-            if (data.Equals(k_none))
+            if (data.Equals(NaN))
             {
                 TargetNode = null;
                 return;
@@ -75,7 +73,7 @@ namespace com.absence.dialoguesystem.internals
         {
             if (TargetNode == null)
             {
-                dataToWrite.Data = k_none;
+                dataToWrite.Data = NaN;
                 return;
             }
 

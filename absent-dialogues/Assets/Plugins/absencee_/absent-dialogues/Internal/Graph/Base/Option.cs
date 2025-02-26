@@ -1,4 +1,3 @@
-using com.absence.attributes;
 using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,9 +54,9 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         /// <param name="overrideBank"></param>
         /// <returns></returns>
-        public Option Clone(VariableBank overrideBank)
+        public virtual T Clone<T>(VariableBank overrideBank) where T : Option, new()
         {
-            Option clone = new Option();
+            T clone = new();
             clone.Text = Text;
             clone.m_useShowIf = UseShowIf;
             clone.Visibility = Visibility.Clone(overrideBank);

@@ -5,18 +5,18 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
+using static UnityEngine.Networking.UnityWebRequest;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
     [CustomNodeView(typeof(PromptNode))]
-    public sealed class PromptNodeView : NodeView
+    public class PromptNodeView : NodeView
     {
-        private PromptNode m_nodeAsDecisive;
+        private PromptNode m_nodeAsPrompt;
         private Button m_createNewOptionButton;
         private List<VisualElement> m_optionElems = new List<VisualElement>();
         private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
-        GUID m_assetGuid;
 
         public PromptNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
@@ -27,28 +27,12 @@ namespace com.absence.dialoguesystem.editor
             Graph.m_dialogue.OnValidateAction += RefreshGenericOptionViews;
         }
 
-        protected override void OnBeforeDraw()
+        protected override void OnAfterStylesApplied()
         {
-            m_nodeAsDecisive = Node as PromptNode;
-
-            if (m_nodeAsDecisive.GenericOptionLeads == null) m_nodeAsDecisive.GenericOptionLeads = new();
-            List<Node> temp = new(m_nodeAsDecisive.GenericOptionLeads);
-            m_nodeAsDecisive.GenericOptionLeads.Clear();
-
-            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
-            {
-                Node target = null;
-
-                if (i < temp.Count) target = temp[i];
-
-                m_nodeAsDecisive.GenericOptionLeads.Add(target);
-            }
-
-            EditorUtility.SetDirty(Node);
-            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+            m_nodeAsPrompt = Node as PromptNode;
         }
 
-        protected override void Draw()
+        protected override void OnDraw()
         {
             m_assetGuid = AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(Node));
 
@@ -57,15 +41,8 @@ namespace com.absence.dialoguesystem.editor
             m_createNewOptionButton.AddToClassList("addNewOptionButton");
             mainContainer.Add(m_createNewOptionButton);
 
-            Refresh();
-
-            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
-            {
-                VisualElement elem = Graph.CreateGenericOptionElement(this, i);
-                m_genericOptionElems.Add(elem);
-                mainContainer.Add(elem);
-                Outputs.Add(elem.Q<Port>());
-            }
+            DrawOptions();
+            DrawGenericOptions();
         }
 
         private void RefreshGenericOptionViews()
@@ -87,14 +64,13 @@ namespace com.absence.dialoguesystem.editor
                 textField.SetValueWithoutNotify(target.Text);
             });
         }
-
         private void RefreshOptionViews()
         {
             try
             {
                 m_optionElems.ForEach(optionElem =>
                 {
-                    Option targetOption = m_nodeAsDecisive.Options[m_optionElems.IndexOf(optionElem)];
+                    Option targetOption = m_nodeAsPrompt.Options[m_optionElems.IndexOf(optionElem)];
                     Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
 
                     showIfLabel.visible = targetOption.UseShowIf;
@@ -111,21 +87,7 @@ namespace com.absence.dialoguesystem.editor
             }
         }
 
-        private void CreateOption()
-        {
-            Option option = new Option();
-
-            if (m_nodeAsDecisive.Options.Count == 0) m_nodeAsDecisive.NativeNextNode = null;
-            Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
-            m_nodeAsDecisive.Options.Add(option);
-
-            EditorUtility.SetDirty(m_nodeAsDecisive);
-            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
-
-            Graph.Refresh();
-        }
-
-        private void Refresh()
+        protected virtual void DrawOptions()
         {
             var optionsProp = m_serializedNode.FindProperty("m_options").Copy();
 
@@ -146,11 +108,85 @@ namespace com.absence.dialoguesystem.editor
             m_optionElems.ForEach(e =>
             {
                 mainContainer.Add(e);
-                Outputs.Add(e.Q<Port>());
+
+                Port port = e.Q<Port>("option-direct-port");
+
+                Outputs.Add(port);
             });
         }
+        protected virtual void DrawGenericOptions()
+        {
+            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
+            {
+                VisualElement elem = Graph.CreateGenericOptionElement(this, i);
+                m_genericOptionElems.Add(elem);
+                mainContainer.Add(elem);
 
-        private VisualElement CreateOptionView(int index, SerializedProperty optionProp)
+                Port port = elem.Q<Port>("option-direct-port");
+
+                Outputs.Add(port);
+            }
+        }
+
+        protected override void OnDisconnectAll(ref HashSet<GraphElement> toDelete)
+        {
+            foreach (VisualElement option in m_optionElems)
+            {
+                AddConnectionsToDeleteSet(option, ref toDelete);
+            }
+
+            foreach (VisualElement option in m_genericOptionElems)
+            {
+                AddConnectionsToDeleteSet(option, ref toDelete);
+            }
+        }
+
+        protected override DropdownMenuAction.Status DisconnectAllStatus(DropdownMenuAction action)
+        {
+            DropdownMenuAction.Status result = base.DisconnectAllStatus(action);
+
+            if (result == DropdownMenuAction.Status.Normal) 
+                return result;
+
+            foreach (VisualElement option in m_optionElems)
+            {
+                foreach (Port elem in option.Query<Port>().ToList())
+                {
+                    if (elem.connected)
+                    {
+                        result = DropdownMenuAction.Status.Normal;
+                    }
+                }
+            }
+
+            foreach (VisualElement option in m_genericOptionElems)
+            {
+                foreach (Port elem in option.Query<Port>().ToList())
+                {
+                    if (elem.connected)
+                    {
+                        result = DropdownMenuAction.Status.Normal;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        protected virtual void CreateOption()
+        {
+            Option option = new Option();
+
+            if (m_nodeAsPrompt.Options.Count == 0) m_nodeAsPrompt.NativeNextNode = null;
+            Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
+            m_nodeAsPrompt.Options.Add(option);
+
+            EditorUtility.SetDirty(m_nodeAsPrompt);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+
+            Graph.Refresh();
+        }
+        protected virtual VisualElement CreateOptionView(int index, SerializedProperty optionProp)
         {
             VisualElement optionElem = new VisualElement();
 
@@ -168,13 +204,13 @@ namespace com.absence.dialoguesystem.editor
 
             Button removeButton = new Button(() =>
             {
-                var target = m_nodeAsDecisive.Options[index];
+                var target = m_nodeAsPrompt.Options[index];
 
-                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
-                m_nodeAsDecisive.RemoveOutputConnection(Outputs.IndexOf(optionElem.Q<Port>()));
-                m_nodeAsDecisive.Options.Remove(target);
+                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
+                m_nodeAsPrompt.RemoveOutputConnection(Outputs.IndexOf(optionElem.Q<Port>()));
+                m_nodeAsPrompt.Options.Remove(target);
 
-                EditorUtility.SetDirty(m_nodeAsDecisive);
+                EditorUtility.SetDirty(m_nodeAsPrompt);
                 AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 m_optionElems.Remove(optionElem);
@@ -185,17 +221,17 @@ namespace com.absence.dialoguesystem.editor
 
             Button moveUpButton = new Button(() =>
             {
-                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
+                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
 
                 int targetIndex = index - 1;
 
-                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
-                Option self = m_nodeAsDecisive.Options[index];
+                Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
+                Option self = m_nodeAsPrompt.Options[index];
 
-                m_nodeAsDecisive.Options[index] = optionToReplace;
-                m_nodeAsDecisive.Options[targetIndex] = self;
+                m_nodeAsPrompt.Options[index] = optionToReplace;
+                m_nodeAsPrompt.Options[targetIndex] = self;
 
-                EditorUtility.SetDirty(m_nodeAsDecisive);
+                EditorUtility.SetDirty(m_nodeAsPrompt);
                 AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 Graph.Refresh();
@@ -203,17 +239,17 @@ namespace com.absence.dialoguesystem.editor
 
             Button moveDownButton = new Button(() =>
             {
-                Undo.RegisterCompleteObjectUndo(m_nodeAsDecisive, "Prompt Node (Modified)");
+                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
 
                 int targetIndex = index + 1;
 
-                Option optionToReplace = m_nodeAsDecisive.Options[targetIndex];
-                Option self = m_nodeAsDecisive.Options[index];
+                Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
+                Option self = m_nodeAsPrompt.Options[index];
 
-                m_nodeAsDecisive.Options[index] = optionToReplace;
-                m_nodeAsDecisive.Options[targetIndex] = self;
+                m_nodeAsPrompt.Options[index] = optionToReplace;
+                m_nodeAsPrompt.Options[targetIndex] = self;
 
-                EditorUtility.SetDirty(m_nodeAsDecisive);
+                EditorUtility.SetDirty(m_nodeAsPrompt);
                 AssetDatabase.SaveAssetIfDirty(m_assetGuid);
 
                 Graph.Refresh();
@@ -228,11 +264,12 @@ namespace com.absence.dialoguesystem.editor
 
             moveDownButton.text = "↓";
             moveDownButton.AddToClassList("moveOptionDownButton");
-            moveDownButton.SetEnabled(index < m_nodeAsDecisive.Options.Count - 1);
+            moveDownButton.SetEnabled(index < m_nodeAsPrompt.Options.Count - 1);
 
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
             port.portName = "";
+            port.name = "option-direct-port";
 
             TextField speechField = new TextField();
             speechField.AddToClassList("optionField");

@@ -47,6 +47,8 @@ namespace com.absence.dialoguesystem.editor
             if (dialogue.targetObject == null)
                 return;
 
+            if (Application.isPlaying) GUI.enabled = false;
+
             dialogue.Update();
             SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
             if (blackboardProperty == null) return;
@@ -90,6 +92,8 @@ namespace com.absence.dialoguesystem.editor
 
             bankSO.ApplyModifiedProperties();
             dialogue.ApplyModifiedProperties();
+
+            if (Application.isPlaying) GUI.enabled = true;
         }
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 using UnityEditor;
 using UnityEditor.UIElements;
 using System.Linq;
-using com.absence.dialoguesystem.internals;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.personsystem;
 
@@ -18,7 +17,6 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html")]
     public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
-
         /// <summary>
         /// The USS class name for person dependent nodes.
         /// </summary>
@@ -48,6 +46,7 @@ namespace com.absence.dialoguesystem.editor
         /// </summary>
         public List<Port> Outputs = new List<Port>();
 
+        protected GUID m_assetGuid;
         protected SerializedObject m_serializedNode;
 
         /// <summary>
@@ -62,6 +61,7 @@ namespace com.absence.dialoguesystem.editor
         public NodeView(Node node, DialogueGraphView graph = null) : base(DefaultUXMLFileLocation)
         {
             Type nodeType = node.GetType();
+            m_assetGuid = AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(node));
 
             this.Graph = graph;
             this.Node = node;
@@ -75,7 +75,9 @@ namespace com.absence.dialoguesystem.editor
 
             if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
 
-            OnBeforeDraw();
+            if (Node.UseGenericOptions) FetchGenericOptions();
+
+            OnAfterStylesApplied();
 
             this.title = node.Title ?? "Node";
 
@@ -86,7 +88,11 @@ namespace com.absence.dialoguesystem.editor
             CreateInputPort();
             CreateOutputPorts();
 
-            DoDraw();
+            Node.UpdateManipulators();
+
+            if (Node.PersonDependent) RefreshPersonDropdown();
+
+            OnDraw();
 
             UpdateState(node.State);
 
@@ -98,21 +104,30 @@ namespace com.absence.dialoguesystem.editor
 
             node.onSetState -= UpdateState;
             node.onSetState += UpdateState;
-
-            OnAfterDraw();
-        }
-
-        private void DoDraw()
-        {
-            Node.UpdateManipulators();
-
-            if (Node.PersonDependent)
-                RefreshPersonDropdown();
-
-            Draw();
         }
 
         #region Protected API
+        protected virtual void FetchGenericOptions()
+        {
+            if (Node.GenericOptionLeads == null ||
+                Node.GenericOptionLeads.Count != Graph.m_dialogue.GenericOptions.Count)
+                Node.GenericOptionLeads = new();
+
+            List<Node> temp = new(Node.GenericOptionLeads);
+            Node.GenericOptionLeads.Clear();
+
+            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
+            {
+                Node target = null;
+
+                if (i < temp.Count) target = temp[i];
+
+                Node.GenericOptionLeads.Add(target);
+            }
+
+            EditorUtility.SetDirty(Node);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+        }
         protected virtual void SetupPersonDropdownIfExists()
         {
             if (!Node.PersonDependent) return;
@@ -244,15 +259,15 @@ namespace com.absence.dialoguesystem.editor
             }
 
         }
-        protected virtual void OnBeforeDraw()
+        protected virtual void OnAfterStylesApplied()
         {
 
         }
-        protected virtual void Draw()
+        protected virtual void OnDraw()
         {
 
         }
-        protected virtual void OnAfterDraw()
+        protected virtual void OnDisconnectAll(ref HashSet<GraphElement> toDelete)
         {
 
         }
@@ -276,6 +291,69 @@ namespace com.absence.dialoguesystem.editor
         {
             base.OnUnselected();
             if (Graph.selection.Count == 1) OnSelect?.Invoke(null); //??
+        }
+        public override bool IsCopiable() => true;
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            if (evt.target is NodeView)
+            {
+                evt.menu.AppendAction("Disconnect all", DisconnectAll, DisconnectAllStatus);
+                evt.menu.AppendSeparator();
+            }
+        }
+
+        protected virtual DropdownMenuAction.Status DisconnectAllStatus(DropdownMenuAction action)
+        {
+            VisualElement[] array = new VisualElement[2] { inputContainer, outputContainer };
+            VisualElement[] array2 = array;
+            foreach (VisualElement e in array2)
+            {
+                List<Port> list = e.Query<Port>().ToList();
+                foreach (Port item in list)
+                {
+                    if (item.connected)
+                    {
+                        return DropdownMenuAction.Status.Normal;
+                    }
+                }
+            }
+
+            return DropdownMenuAction.Status.Disabled;
+        }
+        protected void DisconnectAll(DropdownMenuAction action)
+        {
+            HashSet<GraphElement> toDelete = new HashSet<GraphElement>();
+            AddConnectionsToDeleteSet(inputContainer, ref toDelete);
+            AddConnectionsToDeleteSet(outputContainer, ref toDelete);
+            OnDisconnectAll(ref toDelete);
+            toDelete.Remove(null);
+            if (Graph != null)
+            {
+                Graph.DeleteElements(toDelete);
+            }
+            else
+            {
+                Debug.Log("Disconnecting nodes that are not in a GraphView will not work.");
+            }
+        }
+
+        protected void AddConnectionsToDeleteSet(VisualElement container, ref HashSet<GraphElement> toDelete)
+        {
+            List<GraphElement> toDeleteList = new List<GraphElement>();
+            container.Query<Port>().ForEach(delegate (Port elem)
+            {
+                if (elem.connected)
+                {
+                    foreach (Edge connection in elem.connections)
+                    {
+                        if ((connection.capabilities & Capabilities.Deletable) != 0)
+                        {
+                            toDeleteList.Add(connection);
+                        }
+                    }
+                }
+            });
+            toDelete.UnionWith(toDeleteList);
         }
         #endregion
     }

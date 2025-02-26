@@ -11,7 +11,7 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.StickyNoteNode.html")]
     public sealed class StickyNoteNode : Node
     {
-        public static string CreationMenuName => "Sticky Note";
+        public static string CreationMenuName => "Misc/Sticky Note";
 
         [HideInInspector] public string m_text;
 
