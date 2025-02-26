@@ -33,7 +33,7 @@ MonoBehaviour:
   m_Name: EntryNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 302.4617, y: 222.39066}
+  Position: {x: 311.749, y: 223}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 6162779381213504746}

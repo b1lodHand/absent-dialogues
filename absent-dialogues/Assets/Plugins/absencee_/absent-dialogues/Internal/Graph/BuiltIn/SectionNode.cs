@@ -45,18 +45,12 @@ namespace com.absence.dialoguesystem.internals
         }
         protected override void WriteOutputConnections(ref List<Node> result)
         {
-           result.Add(Next);
+            result.Add(Next);
         }
 
         public override string GetDefaultInputPortName()
         {
             return null;
-        }
-
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            if (Next != null) 
-                Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)

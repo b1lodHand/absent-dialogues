@@ -53,13 +53,6 @@ namespace com.absence.dialoguesystem.internals
         {
             return new List<string>() { "Start" };
         }
-
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            base.OnCloning(originalDialogue, clonedDialogue);
-
-            if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
-        }
     }
 
 }

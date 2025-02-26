@@ -142,19 +142,6 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            base.OnCloning(originalDialogue, clonedDialogue);
-
-            if (NativeNextNode != null)
-                NativeNextNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(NativeNextNode)];
-
-            m_options.ForEach(opt =>
-            {
-                opt.LeadsTo = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(opt.LeadsTo)];
-            });
-        }
-
         public override List<NodeVariableComparer> Comparers
         {
             get

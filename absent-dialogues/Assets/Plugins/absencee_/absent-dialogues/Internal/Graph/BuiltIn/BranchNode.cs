@@ -56,14 +56,6 @@ namespace com.absence.dialoguesystem.internals
             result.Add(FalseNext);
         }
 
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            base.OnCloning(originalDialogue, clonedDialogue);
-
-            if (TrueNext != null) TrueNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TrueNext)];
-            if (FalseNext != null) FalseNext = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(FalseNext)];
-        }
-
         public override List<string> GetDefaultOutputPortNames()
         {
             return new List<string>() { "True", "False" };

@@ -4,6 +4,7 @@ using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -308,7 +309,12 @@ namespace com.absence.dialoguesystem.internals
         {
             if (Options != null)
             {
-                Options = Options.ConvertAll(opt => opt.Clone(cloneDialogue.Blackboard.Bank));
+                Options = Options.ConvertAll(opt => 
+                {
+                    Option result = opt.Clone(cloneDialogue.Blackboard.Bank);
+                    //result.LeadsTo = cloneDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(result.LeadsTo)];
+                    return result;
+                });
             }
 
             if (Comparers != null)
@@ -322,6 +328,17 @@ namespace com.absence.dialoguesystem.internals
                 {
                     Setters = Setters.ConvertAll(set => set.Clone(cloneDialogue.Blackboard.Bank));
                 }
+            }
+
+            List<Node> originalConnections = GetOutputConnections();
+            for (int i = 0; i < originalConnections.Count; i++) 
+            {
+                Node originalConnection = originalConnections[i];
+
+                if (originalConnection == null)
+                    continue;
+
+                AddOutputConnection(cloneDialogue.AllNodes.First(nd => nd.Guid.Equals(originalConnection.Guid)), i);
             }
         }
 

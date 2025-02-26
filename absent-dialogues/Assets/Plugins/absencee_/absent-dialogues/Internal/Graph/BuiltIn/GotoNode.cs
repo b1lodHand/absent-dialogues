@@ -1,6 +1,7 @@
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
@@ -57,11 +58,6 @@ namespace com.absence.dialoguesystem.internals
             return new List<string>();
         }
 
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            if (TargetNode != null) 
-                TargetNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(TargetNode)] as SectionNode;
-        }
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
             string data = dataToRead.Data;
@@ -84,6 +80,14 @@ namespace com.absence.dialoguesystem.internals
             }
 
             dataToWrite.Data = TargetNode.Guid;
+        }
+
+        public override void OnCloning(Dialogue originalDialogue, Dialogue cloneDialogue)
+        {
+            base.OnCloning(originalDialogue, cloneDialogue);
+
+            if (TargetNode != null) 
+                TargetNode = cloneDialogue.AllNodes.First(nd => nd.Guid.Equals(TargetNode.Guid)) as SectionNode;
         }
     }
 

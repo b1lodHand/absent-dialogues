@@ -87,13 +87,6 @@ namespace com.absence.dialoguesystem.internals
             result.Add(Next);
         }
 
-        public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
-        {
-            base.OnCloning(originalDialogue, clonedDialogue);
-
-            if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
-        }
-
         public override List<NodeVariableComparer> Comparers => null;
 
         public override List<NodeVariableSetter> Setters
