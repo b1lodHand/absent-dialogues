@@ -13,14 +13,14 @@ namespace com.absence.dialoguesystem.internals
     /// </summary>
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.DecisionSpeechNode.html")]
     [MovedFrom("DecisionSpeechNode")]
-    public sealed class PromptNode : Node, IDialogueNode, IContainVariableManipulators
+    public sealed class PromptNode : Node, IContainVariableManipulators
     {
         public static string CreationMenuName => "Prompt";
 
         [Space(10)]
         
-        [HideInInspector, Tooltip("All of the options of this node.")] 
-        public List<Option> Options = new List<Option>();
+        [HideInInspector, SerializeField, Tooltip("All of the options of this node.")] 
+        private List<Option> m_options = new List<Option>();
 
         [HideInInspector] public string m_text;
 
@@ -29,11 +29,11 @@ namespace com.absence.dialoguesystem.internals
 
         public override bool PersonDependent => true;
 
-        public string Text { get => m_text; set { m_text = value; } }
-        List<Option> IDialogueNode.Options { get => Options; set { Options = value; } }
+        public override string Text { get => m_text; set { m_text = value; } }
+        public override List<Option> Options { get => m_options; set { m_options = value; } }
 
-        public bool NoOptionsOverall => 
-            Options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0);
+        public bool NoOptionsOverall =>
+            m_options.Count == 0 && (GenericOptionLeads == null || GenericOptionLeads.Count == 0);
 
         public override string Title
         {
@@ -55,7 +55,7 @@ namespace com.absence.dialoguesystem.internals
             context.OptionIndexPairs = null;
 
             int optionSelected = context.OptionIndex;
-            int optionCount = Options.Count;
+            int optionCount = m_options.Count;
 
             if (NoOptionsOverall && optionCount == 0)
                 return NativeNextNode;
@@ -63,20 +63,20 @@ namespace com.absence.dialoguesystem.internals
             if (optionSelected >= optionCount)
                 return GenericOptionLeads[optionSelected - optionCount];
 
-            return Options[optionSelected].LeadsTo;
+            return m_options[optionSelected].LeadsTo;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
             List<OptionHandle> handles = new();
-            Options.ForEach(o =>
+            m_options.ForEach(o =>
             {
                 if(!o.IsVisible()) return;
 
-                handles.Add(new OptionHandle(Options.IndexOf(o), o.Text));
+                handles.Add(new OptionHandle(m_options.IndexOf(o), o.Text));
             });
 
             context.Text = Text;
-            if (Options.Count > 0) context.OptionIndexPairs = handles;
+            if (m_options.Count > 0) context.OptionIndexPairs = handles;
             else context.OptionIndexPairs = null;
         }
 
@@ -88,14 +88,14 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
-            if (atPort >= Options.Count)
+            if (atPort >= m_options.Count)
             {
-                atPort -= Options.Count;
+                atPort -= m_options.Count;
                 GenericOptionLeads[atPort] = nextWillBeAdded;
                 return;
             }
 
-            Options[atPort].LeadsTo = nextWillBeAdded;
+            m_options[atPort].LeadsTo = nextWillBeAdded;
         }
         protected override void OnRemoveOutputConnection(int atPort)
         {
@@ -105,14 +105,14 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
-            if (atPort >= Options.Count)
+            if (atPort >= m_options.Count)
             {
-                atPort -= Options.Count;
+                atPort -= m_options.Count;
                 GenericOptionLeads[atPort] = null;
                 return;
             }
 
-            Options[atPort].LeadsTo = null;
+            m_options[atPort].LeadsTo = null;
         }
         protected override void WriteOutputConnections(ref List<Node> result)
         {
@@ -122,7 +122,7 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
-            foreach (Option option in Options)
+            foreach (Option option in m_options)
             {
                 if (option != null) result.Add(option.LeadsTo);
                 else result.Add(null);
@@ -137,7 +137,7 @@ namespace com.absence.dialoguesystem.internals
         public override void Traverse(Action<Node> action)
         {
             action?.Invoke(this);
-            Options.ForEach(option =>
+            m_options.ForEach(option =>
             {
                 option.LeadsTo.Traverse(action);
             });
@@ -153,11 +153,11 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnCloning(Dialogue originalDialogue, Dialogue clonedDialogue)
         {
-            Options = Options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
+            m_options = m_options.ConvertAll(opt => opt.Clone(Blackboard.Bank));
             if (NativeNextNode != null)
                 NativeNextNode = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(NativeNextNode)];
 
-            Options.ForEach(opt =>
+            m_options.ForEach(opt =>
             {
                 if (opt.LeadsTo == null) return;
 
@@ -169,7 +169,7 @@ namespace com.absence.dialoguesystem.internals
         {
             List<NodeVariableComparer> result = new();
 
-            Options.ForEach(option =>
+            m_options.ForEach(option =>
             {
                 option.Visibility.ShowIfList.ForEach(comparer =>
                 {
@@ -185,23 +185,13 @@ namespace com.absence.dialoguesystem.internals
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
             m_text = dataToRead.Data;
-            Options = dataToRead.OptionData.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
+            m_options = dataToRead.OptionData.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
             dataToWrite.Data = m_text;
-            dataToWrite.OptionData = Options.ConvertAll(option => DataGenerator.GenerateOptionData(option)).ToArray();
-        }
-
-        public override void OnValidate()
-        {
-            Options.ForEach(option =>
-            {
-                option.Visibility.ShowIfList.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
-            });
-
-            base.OnValidate();
+            dataToWrite.OptionData = m_options.ConvertAll(option => DataGenerator.GenerateOptionData(option)).ToArray();
         }
     }
 }

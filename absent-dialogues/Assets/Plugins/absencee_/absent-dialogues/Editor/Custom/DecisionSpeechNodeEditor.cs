@@ -27,7 +27,7 @@ namespace com.absence.dialoguesystem.editor
 
             serializedObject.Update();
 
-            SerializedProperty optionListProp = serializedObject.FindProperty("Options");
+            SerializedProperty optionListProp = serializedObject.FindProperty("m_options");
 
             bool foldout = optionListProp.isExpanded;
 

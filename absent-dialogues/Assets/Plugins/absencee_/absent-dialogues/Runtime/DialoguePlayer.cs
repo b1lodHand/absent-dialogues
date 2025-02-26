@@ -19,7 +19,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// The dialogue cloned from the original one from constructor.
         /// </summary>
-        public Dialogue ClonedDialogue => m_dialogue;
+        public Dialogue Target => m_dialogue;
 
         [SerializeField, Readonly] private Node m_frame;
         [SerializeField, Readonly] private VariableBank m_blackboardBank;
@@ -30,16 +30,16 @@ namespace com.absence.dialoguesystem
         public Node Frame => m_frame;
 
         /// <summary>
-        /// Action which will get invoked when <see cref="DialoguePlayer.Continue(object[])"/> gets called.
+        /// Action which will get invoked when <see cref="DialoguePlayer.Continue()"/> gets called.
         /// </summary>
-        public event Action<DialoguePlayer> OnContinue;
+        public event Action<DialoguePlayer> OnProgress;
 
         /// <summary>
         /// Use to create a new <see cref="DialoguePlayer"/> with an overridden people list.
         /// </summary>
         /// <param name="dialogue">The original dialogue to clone from.</param>
         /// <param name="overridePeople">The list of new people.</param>
-        public DialoguePlayer(Dialogue dialogue, List<Person> overridePeople = null)
+        public DialoguePlayer(Dialogue dialogue)
         {
             m_dialogue = dialogue;
 
@@ -55,7 +55,7 @@ namespace com.absence.dialoguesystem
         public void TeleportToRoot(bool invokeProgressEvent = true)
         {
             DoTeleportToRoot();
-            if (invokeProgressEvent) OnContinue?.Invoke(this);
+            if (invokeProgressEvent) OnProgress?.Invoke(this);
         }
 
         private void DoTeleportToRoot()
@@ -105,7 +105,7 @@ namespace com.absence.dialoguesystem
                     return;
             }
 
-            OnContinue?.Invoke(this);
+            OnProgress?.Invoke(this);
         }
     }
 }

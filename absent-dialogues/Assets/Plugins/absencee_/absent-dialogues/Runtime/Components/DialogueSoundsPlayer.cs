@@ -22,6 +22,7 @@ namespace com.absence.dialoguesystem
 
         Coroutine m_playingCoroutine;
         AudioClip m_clip;
+        Node m_frame;
 
         public override void OnInitialize()
         {
@@ -31,14 +32,19 @@ namespace com.absence.dialoguesystem
 
         public override void OnHandleCustomData(NodeCustomDataBase data)
         {
-            //Debug.Log("1");
-            ForceStop();
-            if(data != null && data is IAudioData audioData)
+            if(data is IAudioData audioData)
             {
-                //Debug.Log("2");
                 m_clip = audioData.AudioClip;
+                m_frame = m_instance.Player.Frame;
                 Play();
             }
+        }
+
+        public override void OnProgress(Node frame, DialogueFlowContext context)
+        {
+            if (frame == null) return;
+            if (context.State == DialogueFlowContext.ContextState.Pass && frame.Equals(m_frame))
+                ForceStop();
         }
 
         IEnumerator C_PlayAudio()

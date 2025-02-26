@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// Speech of this option.
         /// </summary>
-        [HideInInspector] public string Text;
+        public string Text;
 
         /// <summary>
         /// Additional speech data this option contains.
@@ -43,12 +43,12 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
-        [SerializeField, ShowIf(nameof(m_useShowIf))] public ShowIf Visibility;
+        public ShowIf Visibility;
 
         /// <summary>
         /// The node this option leads to.
         /// </summary>
-        [HideInInspector] public Node LeadsTo;
+        public Node LeadsTo;
 
         /// <summary>
         /// Use to get a clone of this option.

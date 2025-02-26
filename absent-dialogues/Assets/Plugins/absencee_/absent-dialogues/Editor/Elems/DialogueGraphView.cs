@@ -280,9 +280,9 @@ namespace com.absence.dialoguesystem.editor
             OnBeforeNodeDeleted?.Invoke(view.Node);
 
             NodeCustomDataCreationHandler.DeleteNodeCustomData(view.Node);
-            if (view.Node is IDialogueNode dialogueNode)
+            if (view.Node.HasOptions)
             {
-                foreach (Option option in dialogueNode.Options)
+                foreach (Option option in view.Node.Options)
                 {
                     if (option.CustomData == null)
                         continue;

@@ -93,12 +93,6 @@ namespace com.absence.dialoguesystem.editor
 
         public static NodeCustomDataBase CreateOptionCustomData(Node sender, Option context, Type type)
         {
-            if (sender is not IDialogueNode dialogueNode)
-            {
-                Debug.LogError("Target node must implement the interface 'IDialogueNode'.");
-                return null;
-            }
-
             if (!type.BaseType.Equals(typeof(NodeCustomDataBase)))
             {
                 Debug.LogError("Target type must derive from 'NodeCustomDataBase'.");
@@ -120,12 +114,6 @@ namespace com.absence.dialoguesystem.editor
 
         public static void DeleteOptionCustomData(Node sender, Option context)
         {
-            if (sender is not IDialogueNode dialogueNode)
-            {
-                Debug.LogError("Target node must implement the interface 'IDialogueNode'.");
-                return;
-            }
-
             if (context == null)
                 return;
 

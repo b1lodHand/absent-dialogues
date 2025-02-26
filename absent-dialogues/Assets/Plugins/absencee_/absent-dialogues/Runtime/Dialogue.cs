@@ -152,6 +152,7 @@ namespace com.absence.dialoguesystem
             AllNodes.ForEach(node =>
             {
                 node.Blackboard = Blackboard;
+                node.OnValidate();
             });
         }
 

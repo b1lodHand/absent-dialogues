@@ -24,8 +24,6 @@ namespace com.absence.dialoguesystem.internals
         /// <param name="originalBlackboardBank">Target bank.</param>
         public void SetBlackboardBank(VariableBank originalBlackboardBank)
         {
-            if (Application.isPlaying) return;
-
             BlackboardBank = originalBlackboardBank;
             m_targetBankGuid = BlackboardBank.Guid;
         }

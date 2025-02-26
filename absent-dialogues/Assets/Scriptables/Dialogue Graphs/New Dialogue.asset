@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7536805568938504017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13eb0d4c28dc8541980f8c6a6d20d03, type: 3}
+  m_Name: 0c05aa593e966d04e9109fb56a3be59c
+  m_EditorClassIdentifier: 
+  Guid: 0c05aa593e966d04e9109fb56a3be59c
+  Position: {x: 491.0003, y: 601}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  m_text: 
 --- !u!114 &-7239745567892279838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,6 +40,26 @@ MonoBehaviour:
   State: 2
   PersonIndex: 0
   Next: {fileID: -2699834185520781405}
+--- !u!114 &-2959644193704157750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
+  m_Name: c1f77926268620c459097d315f70dacf
+  m_EditorClassIdentifier: 
+  Guid: c1f77926268620c459097d315f70dacf
+  Position: {x: 860.5, y: 686}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 0
+  PersonIndex: 0
+  m_text: adswed
 --- !u!114 &-2699834185520781405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,15 +73,15 @@ MonoBehaviour:
   m_Name: 2dfab262f9d55d243a5df1568f4d2fa1
   m_EditorClassIdentifier: 
   Guid: 2dfab262f9d55d243a5df1568f4d2fa1
-  Position: {x: 912.01135, y: 164.99995}
+  Position: {x: 918.47906, y: 173}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 6162779381213504746}
-  State: 1
+  State: 2
   PersonIndex: 0
-  Options:
+  m_options:
   - m_scroll: {x: 0, y: 0}
-    Text: a.
+    Text: a
     CustomData: {fileID: 0}
     m_useShowIf: 1
     Visibility:
@@ -56,7 +96,7 @@ MonoBehaviour:
         m_boolValue: 0
     LeadsTo: {fileID: -2340202394851542849}
   - m_scroll: {x: 0, y: 0}
-    Text: b.
+    Text: b
     CustomData: {fileID: 0}
     m_useShowIf: 1
     Visibility:
@@ -70,6 +110,14 @@ MonoBehaviour:
         m_stringValue: 
         m_boolValue: 1
     LeadsTo: {fileID: 6305521419866681520}
+  - m_scroll: {x: 0, y: 0}
+    Text: c
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 1137166588592688482}
   m_text: q?
   NativeNextNode: {fileID: 0}
   GenericOptionLeads: []
@@ -86,7 +134,7 @@ MonoBehaviour:
   m_Name: 78d7b9905baeb4c4bbd3e613e72fa152
   m_EditorClassIdentifier: 
   Guid: 78d7b9905baeb4c4bbd3e613e72fa152
-  Position: {x: 1421.84, y: 274.2275}
+  Position: {x: 1868.0118, y: 274.3957}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 6162779381213504746}
@@ -94,7 +142,7 @@ MonoBehaviour:
   PersonIndex: 0
   UsedByMapper: 0
   UniqueMapperId: 
-  BlackboardEvents:
+  m_blackboardEvents:
   - m_setType: 0
     m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
     m_targetVariableName: 'bool: b'
@@ -123,11 +171,33 @@ MonoBehaviour:
   - {fileID: 6847736406989798509}
   - {fileID: -2699834185520781405}
   - {fileID: 6305521419866681520}
+  - {fileID: 1137166588592688482}
+  - {fileID: -7536805568938504017}
+  - {fileID: -2959644193704157750}
   m_people:
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
   m_genericOptions: []
   Blackboard:
     Bank: {fileID: 6162779381213504746}
+--- !u!114 &1137166588592688482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
+  m_Name: 43f1c399fb8d84d4ea090433c917ff26
+  m_EditorClassIdentifier: 
+  Guid: 43f1c399fb8d84d4ea090433c917ff26
+  Position: {x: 1397.6841, y: 553.5985}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 6162779381213504746}
+  State: 2
+  PersonIndex: 0
 --- !u!114 &6162779381213504746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,8 +217,8 @@ MonoBehaviour:
   m_strings: []
   m_booleans:
   - m_name: b
-    m_underlyingValue: 1
-    m_value: 1
+    m_underlyingValue: 0
+    m_value: 0
     m_bypassEvents: 0
 --- !u!114 &6305521419866681520
 MonoBehaviour:
@@ -163,7 +233,7 @@ MonoBehaviour:
   m_Name: 4bb291acd6c641b4eb0277ab1bde4160
   m_EditorClassIdentifier: 
   Guid: 4bb291acd6c641b4eb0277ab1bde4160
-  Position: {x: 1427.195, y: 369}
+  Position: {x: 1873.0118, y: 369.3957}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 6162779381213504746}
@@ -171,7 +241,7 @@ MonoBehaviour:
   PersonIndex: 0
   UsedByMapper: 0
   UniqueMapperId: 
-  BlackboardEvents:
+  m_blackboardEvents:
   - m_setType: 0
     m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
     m_targetVariableName: 'bool: b'
@@ -214,7 +284,7 @@ MonoBehaviour:
   m_Name: 31ed87de3fa053947a9aabec1341ea2a
   m_EditorClassIdentifier: 
   Guid: 31ed87de3fa053947a9aabec1341ea2a
-  Position: {x: 1676.3225, y: 301.5}
+  Position: {x: 2122.012, y: 302.3957}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 6162779381213504746}

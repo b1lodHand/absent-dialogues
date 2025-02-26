@@ -145,6 +145,13 @@ namespace com.absence.dialoguesystem.editor
         protected virtual void SetupTextFieldIfExists()
         {
             TextField textField = this.Q<TextField>("speech");
+
+            if (!Node.HasText)
+            {
+                textField.style.display = DisplayStyle.None;
+                return;
+            }
+
             textField.bindingPath = "m_text";
             textField.Bind(m_serializedNode);
         }

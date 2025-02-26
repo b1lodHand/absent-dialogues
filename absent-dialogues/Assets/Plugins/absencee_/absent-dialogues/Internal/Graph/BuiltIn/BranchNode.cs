@@ -117,13 +117,6 @@ namespace com.absence.dialoguesystem.internals
             dataToWrite.ComparerData = Comparers.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
         }
 
-        public override void OnValidate()
-        {
-            Comparers.ForEach(comparer => comparer.SetBlackboardBank(Blackboard.Bank));
-
-            base.OnValidate();
-        }
-
         public string GetConditionString(bool richText = false)
         {
             return Utilities.Comparison.GetConditionString(Comparers, Processor, richText);

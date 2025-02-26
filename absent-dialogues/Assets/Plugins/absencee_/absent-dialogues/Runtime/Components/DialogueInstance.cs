@@ -35,7 +35,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Readonly, Runtime] private DialoguePlayer m_player;
 
         public Dialogue ReferencedDialogue => m_referencedDialogue;
-        public Dialogue ClonedDialogue => Player.ClonedDialogue;
+        public Dialogue ClonedDialogue => Player.Target;
 
         /// <summary>
         /// <see cref="DialoguePlayer"/> of this instance.
@@ -87,15 +87,14 @@ namespace com.absence.dialoguesystem
                 return;
             }
 
-            Dialogue dialogue = m_referencedDialogue.Clone();
+            //Dialogue dialogue = m_referencedDialogue.Clone();
 
-//            Dialogue dialogue = m_referencedDialogue;
-//#if UNITY_EDITOR
-//            dialogue = m_referencedDialogue.Clone();
-//#endif
+            Dialogue dialogue = m_referencedDialogue;
+#if UNITY_EDITOR
+            dialogue = m_referencedDialogue.Clone();
+#endif
 
-            if (m_overridePeople.Count > 0) m_player = new DialoguePlayer(dialogue, m_overridePeople);
-            else m_player = new DialoguePlayer(dialogue);
+            m_player = new DialoguePlayer(dialogue);
 
             m_extensionList.ForEach(extension => 
             {
@@ -140,7 +139,7 @@ namespace com.absence.dialoguesystem
 
             m_inDialogue = true;
 
-            m_player.OnContinue += OnPlayerContinue;
+            m_player.OnProgress += OnPlayerContinue;
 
             m_player.TeleportToRoot(false);
             m_player.Continue();
@@ -161,7 +160,7 @@ namespace com.absence.dialoguesystem
 
             DialogueDisplayer.Instance.Release();
 
-            m_player.OnContinue -= OnPlayerContinue;
+            m_player.OnProgress -= OnPlayerContinue;
 
             OnExitDialogue?.Invoke();
         }
@@ -194,10 +193,10 @@ namespace com.absence.dialoguesystem
             Node frame = player.Frame;
 
             // PEOPLE OVERRIDE LOGIC NEEDED!!!
-            Person person = frame.GetPerson(m_player.ClonedDialogue);
+            Person person = frame.GetPerson(m_player.Target);
 
-            InvokeHandleCustomData();
             InvokeOnProgress();
+            InvokeHandleCustomData();
 
             if (!context.HasText)
             {
@@ -294,7 +293,7 @@ namespace com.absence.dialoguesystem
         private void OnApplicationQuit()
         {
             m_inDialogue = false;
-            m_player.OnContinue -= OnPlayerContinue;
+            m_player.OnProgress -= OnPlayerContinue;
 
             m_player = null;
         }

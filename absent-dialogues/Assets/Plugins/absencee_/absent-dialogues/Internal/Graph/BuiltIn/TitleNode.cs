@@ -19,6 +19,7 @@ namespace com.absence.dialoguesystem.internals
         public override bool ShowInMinimap => false;
 
         public override string Title => "";
+        public override string Text { get => m_text; set => m_text = value; }
 
         public override List<string> AdditionalUSSFileLocations => new List<string>()
         {

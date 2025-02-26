@@ -83,6 +83,34 @@ namespace com.absence.dialoguesystem.internals
         /// </summary>
         public virtual bool PersonDependent => false;
 
+        public virtual string Text
+        {
+            get
+            {
+                return null;
+            }
+
+            set
+            {
+
+            }
+        }
+        public virtual List<Option> Options
+        {
+            get
+            {
+                return null;
+            }
+
+            set
+            {
+
+            }
+        }
+
+        public virtual bool HasText => Text != null;
+        public virtual bool HasOptions => Options != null;
+
         public virtual List<string> AdditionalUSSFileLocations => null;
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace com.absence.dialoguesystem.internals
 
         [Space(10)]
 
-        [Tooltip("All of the Blackboard based events of this node.")]
-        public List<NodeVariableSetter> BlackboardEvents = new();
+        [SerializeField, Tooltip("All of the Blackboard based events of this node.")]
+        protected List<NodeVariableSetter> m_blackboardEvents = new();
 
         [Space(10)]
 
@@ -57,13 +57,16 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            BlackboardEvents.ForEach(action => action.Perform());
-            CustomAction();
+            context.InvokeAction = false;
+            context.ActionId = Node.NaN;
 
             return Next;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
+            m_blackboardEvents.ForEach(action => action.Perform());
+            CustomAction();
+
             if (UsedByMapper)
             {
                 context.InvokeAction = true;
@@ -88,7 +91,7 @@ namespace com.absence.dialoguesystem.internals
         {
             if (Next != null) Next = clonedDialogue.AllNodes[originalDialogue.AllNodes.IndexOf(Next)];
 
-            BlackboardEvents = BlackboardEvents.ConvertAll(action =>
+            m_blackboardEvents = m_blackboardEvents.ConvertAll(action =>
             {
                 return action.Clone(Blackboard.Bank);
             });
@@ -102,20 +105,13 @@ namespace com.absence.dialoguesystem.internals
 
         public List<NodeVariableComparer> GetComparers() => null;
 
-        public List<NodeVariableSetter> GetSetters() => new(BlackboardEvents);
-
-        public override void OnValidate()
-        {
-            BlackboardEvents.ForEach(setter => setter.SetBlackboardBank(Blackboard.Bank));
-
-            base.OnValidate();
-        }
+        public List<NodeVariableSetter> GetSetters() => m_blackboardEvents;
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
             UsedByMapper = (bool)dataToRead.BoxedData[0];
             UniqueMapperId = dataToRead.Data;
-            BlackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+            m_blackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
@@ -124,7 +120,7 @@ namespace com.absence.dialoguesystem.internals
             dataToWrite.BoxedData[0] = (object)UsedByMapper;
 
             dataToWrite.Data = UniqueMapperId;
-            dataToWrite.SetterData = BlackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
+            dataToWrite.SetterData = m_blackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
         }
     }
 

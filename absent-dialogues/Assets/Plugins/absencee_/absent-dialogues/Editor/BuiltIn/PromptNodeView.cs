@@ -127,7 +127,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void Refresh()
         {
-            var optionsProp = m_serializedNode.FindProperty("Options").Copy();
+            var optionsProp = m_serializedNode.FindProperty("m_options").Copy();
 
             optionsProp.Next(true);
             optionsProp.Next(true);

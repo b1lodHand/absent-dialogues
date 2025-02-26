@@ -77,7 +77,6 @@
 }
 
 #speech {
-    display: none;
     flex-grow: 1;
     overflow: visible;
     visibility: visible;

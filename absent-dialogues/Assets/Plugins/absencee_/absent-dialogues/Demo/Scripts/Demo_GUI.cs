@@ -22,7 +22,7 @@ namespace com.absence.dialoguesystem.examples
 
         public override void OnInitialize()
         {
-            m_blackboardBank = m_instance.Player.ClonedDialogue.Blackboard.Bank; // we're doing this to easily reach the bank in the future.
+            m_blackboardBank = m_instance.Player.Target.Blackboard.Bank; // we're doing this to easily reach the bank in the future.
 
             // adding listeners to needed variables. This way, we will be notified when the get changed.
             m_blackboardBank.AddValueChangeListenerToBoolean(K_MISSIONPENDING, OnPendingChanged);
