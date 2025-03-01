@@ -84,8 +84,8 @@ namespace com.absence.dialoguesystem
         {
             ClearOptionContainer();
 
-            if (m_speakerIcon != null) m_speakerIcon.sprite = speaker.Icon;
-            if (m_speakerNameText != null) m_speakerNameText.text = speaker.Name;
+            if (m_speakerIcon != null) m_speakerIcon.sprite = speaker != null ? speaker.Icon : null;
+            if (m_speakerNameText != null) m_speakerNameText.text = speaker != null ? speaker.Name : null;
             m_speechText.text = speech;
 
             OnDisplay?.Invoke();

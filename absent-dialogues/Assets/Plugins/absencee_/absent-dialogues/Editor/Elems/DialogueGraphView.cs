@@ -130,10 +130,12 @@ namespace com.absence.dialoguesystem.editor
                     Node outputNode = nodesConnected[i];
                     if (nodesToCopy.Contains(outputNode))
                     {
+                        Undo.RegisterCompleteObjectUndo(node, "Node (Paste Reconnections)");
                         node.AddOutputConnection(nodesCopied.Where(n => n.Guid.Equals(oldGuidPairs[outputNode.Guid])).First(), i);
                         continue;
                     }
 
+                    Undo.RegisterCompleteObjectUndo(node, "Node (Paste Reconnections)");
                     node.RemoveOutputConnection(i);
                 }
 
@@ -390,13 +392,27 @@ namespace com.absence.dialoguesystem.editor
 
         Node DoCreateNode(System.Type type, Vector2 atPosition, Node from = null)
         {
-            Undo.RegisterCompleteObjectUndo(m_dialogue, "Dialogue (Create Node)");
+            Undo.SetCurrentGroupName("Dialogue (Node Created)");
+            int group = Undo.GetCurrentGroup();
+            Undo.IncrementCurrentGroup();
+
+            Undo.RegisterCompleteObjectUndo(m_dialogue, "Dialogue (Node List)");
 
             Node node = m_dialogue.CreateNode(type, from);
+            m_dialogue.AllNodes.Remove(node);
+
             node.Guid = GUID.Generate().ToString();
             node.name = node.Guid;
             node.Position.x = atPosition.x;
             node.Position.y = atPosition.y;
+
+            AssetDatabase.AddObjectToAsset(node, m_dialogue);
+            Undo.RegisterCreatedObjectUndo(node, "Dialogue (Node Asset Created)");
+
+            EditorUtility.SetDirty(m_dialogue);
+
+            Undo.RecordObject(m_dialogue, "Dialogue (Node Added to AllNodes)");
+            m_dialogue.AllNodes.Add(node);
 
             if (from != null && from.CustomData != null)
             {
@@ -404,6 +420,8 @@ namespace com.absence.dialoguesystem.editor
                 newCustomData.name = $"{node.Guid}_CustomData";
                 AssetDatabase.AddObjectToAsset(newCustomData, m_dialogue);
                 Undo.RegisterCreatedObjectUndo(newCustomData, "Dialogue (Create Custom Data)");
+
+                Undo.RecordObject(node, "Node (Creation)");
                 node.CustomData = newCustomData;
             }
 
@@ -412,38 +430,33 @@ namespace com.absence.dialoguesystem.editor
                 List<NodeCustomDataBase> customDatas = new();
                 foreach (Option option in from.Options)
                 {
-                    if (option.CustomData == null)
-                        customDatas.Add(null);
-                    else
-                    {
-                        NodeCustomDataBase newCustomData = ScriptableObject.Instantiate(from.CustomData);
-                        newCustomData.name = $"{node.Guid}_OptionData";
-                        customDatas.Add(newCustomData);
-                    }
-                }
-
-                for (int i = 0; i < customDatas.Count; i++) 
-                {
-                    NodeCustomDataBase optionCustomData = customDatas[i];
-
-                    node.Options[i].CustomData = optionCustomData;
-
+                    NodeCustomDataBase optionCustomData = option.CustomData ? ScriptableObject.Instantiate(option.CustomData) : null;
                     if (optionCustomData != null)
                     {
+                        optionCustomData.name = $"{node.Guid}_OptionData";
                         AssetDatabase.AddObjectToAsset(optionCustomData, m_dialogue);
                         Undo.RegisterCreatedObjectUndo(optionCustomData, "Dialogue (Create Option Data)");
                     }
+                    customDatas.Add(optionCustomData);
+                }
+
+                Undo.RecordObject(node, "Dialogue (Create Option Data)");
+
+                for (int i = 0; i < customDatas.Count; i++)
+                {
+                    node.Options[i].CustomData = customDatas[i];
                 }
             }
 
-            AssetDatabase.AddObjectToAsset(node, m_dialogue);
-            Undo.RegisterCreatedObjectUndo(node, "Dialogue (Create Node)");
+            EditorUtility.SetDirty(node);
 
-            EditorUtility.SetDirty(m_dialogue);
-            AssetDatabase.SaveAssetIfDirty(m_dialogue);
+            Undo.CollapseUndoOperations(group);
+
+            AssetDatabase.SaveAssets();
 
             return node;
         }
+
 
         void DeleteNode(NodeView view)
         {

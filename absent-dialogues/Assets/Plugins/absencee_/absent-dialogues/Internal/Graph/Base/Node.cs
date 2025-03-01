@@ -299,7 +299,7 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public virtual Person GetPerson(Dialogue context) => 
-            PersonDependent ? context.People[PersonIndex] : null;
+            PersonDependent ? (context.People.Count > 0 ? (context.People[PersonIndex]) : (null)) : (null);
 
         public virtual void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
