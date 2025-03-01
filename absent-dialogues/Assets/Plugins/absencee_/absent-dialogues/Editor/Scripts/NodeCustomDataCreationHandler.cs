@@ -14,6 +14,8 @@ namespace com.absence.dialoguesystem.editor
         public static Type OptionCustomDataTypeToCreate = DefaultDataType;
         public static Type GenericOptionCustomDataTypeToCreate = DefaultDataType;
 
+        public static bool BypassUndo = false;
+
         [FieldButtonId(1801, priority = int.MaxValue)]
         static NodeCustomDataBase CreateNodeCustomData_FieldButton(object sender)
         {
@@ -65,7 +67,7 @@ namespace com.absence.dialoguesystem.editor
 
             sender.CustomData = (NodeCustomDataBase)createdSO;
 
-            Undo.RegisterCreatedObjectUndo(createdSO, "Node (Create Custom Data)");
+            if (!BypassUndo) Undo.RegisterCreatedObjectUndo(createdSO, "Node (Create Custom Data)");
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -85,7 +87,7 @@ namespace com.absence.dialoguesystem.editor
             if (objectWillGetDeleted == null)
                 return;
 
-            Undo.DestroyObjectImmediate(objectWillGetDeleted);
+            if (!BypassUndo) Undo.DestroyObjectImmediate(objectWillGetDeleted);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -104,7 +106,7 @@ namespace com.absence.dialoguesystem.editor
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
-            Undo.RegisterCreatedObjectUndo(createdSO, "Node (Create Option Data)");
+            if (!BypassUndo) Undo.RegisterCreatedObjectUndo(createdSO, "Node (Create Option Data)");
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -125,7 +127,7 @@ namespace com.absence.dialoguesystem.editor
             if (objectWillGetDeleted == null)
                 return;
 
-            Undo.DestroyObjectImmediate(objectWillGetDeleted);
+            if (!BypassUndo) Undo.DestroyObjectImmediate(objectWillGetDeleted);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -144,7 +146,7 @@ namespace com.absence.dialoguesystem.editor
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
-            Undo.RegisterCreatedObjectUndo(createdSO, "Dialogue (Create Generic Option Data)");
+            if (!BypassUndo) Undo.RegisterCreatedObjectUndo(createdSO, "Dialogue (Create Generic Option Data)");
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -165,7 +167,7 @@ namespace com.absence.dialoguesystem.editor
             if (objectWillGetDeleted == null)
                 return;
 
-            Undo.DestroyObjectImmediate(objectWillGetDeleted);
+            if (!BypassUndo) Undo.DestroyObjectImmediate(objectWillGetDeleted);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();

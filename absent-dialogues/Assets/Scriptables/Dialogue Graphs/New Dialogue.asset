@@ -1,6 +1,117 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7239745567892279838
+--- !u!114 &-8471803288954734212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 245626ba018a9c546a822531b1e30829
+  m_EditorClassIdentifier: 
+  Guid: 245626ba018a9c546a822531b1e30829
+  Position: {x: 562, y: 468}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-8451988235979917199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 81f5c964f01bc2a49a08558eecaf6b57
+  m_EditorClassIdentifier: 
+  Guid: 81f5c964f01bc2a49a08558eecaf6b57
+  Position: {x: 513, y: 491}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-8009201724269890685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: b5f1f21c135e4364a948f73f4fb4bdaa
+  m_EditorClassIdentifier: 
+  Guid: b5f1f21c135e4364a948f73f4fb4bdaa
+  Position: {x: 1055.8694, y: 197.64203}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-7961789294287027398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 28651fefbf52cd6418c1c77894978f44
+  m_EditorClassIdentifier: 
+  Guid: 28651fefbf52cd6418c1c77894978f44
+  Position: {x: 503, y: 397}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-7036114044362771468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: New Dialogue Blackboard VB
+  m_EditorClassIdentifier: 
+  m_guid: 03b7851c-bd48-4bf9-ad97-a3c991c52e5d
+  m_forExternalUse: 1
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans: []
+--- !u!114 &-5858645762774701939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,37 +124,15 @@ MonoBehaviour:
   m_Name: EntryNode
   m_EditorClassIdentifier: 
   Guid: 
-  Position: {x: 316.8874, y: 251.00002}
+  Position: {x: 0, y: 0}
   CustomData: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
+    Bank: {fileID: -7036114044362771468}
+  State: 0
   PersonIndex: 0
   m_genericOptionLeads: []
-  Next: {fileID: 5867533647778519871}
---- !u!114 &-6516038654383378705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
-  m_Name: fc822cb528dffcd4aba29cb9af625fb3
-  m_EditorClassIdentifier: 
-  Guid: fc822cb528dffcd4aba29cb9af625fb3
-  Position: {x: 630.99994, y: 463.99997}
-  CustomData: {fileID: 0}
-  Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
-  PersonIndex: 0
-  m_genericOptionLeads: []
-  Next: {fileID: 5867533647778519871}
-  DialoguePartName: Loop
---- !u!114 &-2340202394851542849
+  Next: {fileID: -3576740714684273258}
+--- !u!114 &-5563714975097590986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,27 +142,396 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
-  m_Name: 78d7b9905baeb4c4bbd3e613e72fa152
+  m_Name: d41bf9a601fda60469a9dc60095fdb0e
   m_EditorClassIdentifier: 
-  Guid: 78d7b9905baeb4c4bbd3e613e72fa152
-  Position: {x: 1868.0118, y: 274.3957}
+  Guid: d41bf9a601fda60469a9dc60095fdb0e
+  Position: {x: 785.2594, y: 443.37906}
   CustomData: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
+    Bank: {fileID: -7036114044362771468}
+  State: 0
   PersonIndex: 0
   m_genericOptionLeads: []
   UsedByMapper: 0
   UniqueMapperId: 
-  m_blackboardEvents:
-  - m_setType: 0
-    m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
-    m_targetVariableName: 'bool: b'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 1
-  Next: {fileID: 7652330264208049152}
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-5406546080705073861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 6e59dbfd8be5817478de8ee18c206233
+  m_EditorClassIdentifier: 
+  Guid: 6e59dbfd8be5817478de8ee18c206233
+  Position: {x: 929.8694, y: 437.64203}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-5114994277329368954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 47b6db8e6bd63ff4aa9904cc14f0b361
+  m_EditorClassIdentifier: 
+  Guid: 47b6db8e6bd63ff4aa9904cc14f0b361
+  Position: {x: -204.95447, y: 290.60718}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-4553263141848726806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: dbc06a8fd4d0ce7408be3122e864628a
+  m_EditorClassIdentifier: 
+  Guid: dbc06a8fd4d0ce7408be3122e864628a
+  Position: {x: 187.14368, y: 407.51843}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-4414112796148409719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: de74fb477699c7744b45207a66f04bd0
+  m_EditorClassIdentifier: 
+  Guid: de74fb477699c7744b45207a66f04bd0
+  Position: {x: 13.87838, y: 164.22736}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 0}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-4047396917542494731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 19ed92174764c034886f75c83e87833e
+  m_EditorClassIdentifier: 
+  Guid: 19ed92174764c034886f75c83e87833e
+  Position: {x: 342.80524, y: 321.81714}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-3576740714684273258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 4901f895b6b5d754db5118861f2c93d0
+  m_EditorClassIdentifier: 
+  Guid: 4901f895b6b5d754db5118861f2c93d0
+  Position: {x: 554, y: 138}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-3155229571582977374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 7337140f9b1583e4fa68f70317e3d5ec
+  m_EditorClassIdentifier: 
+  Guid: 7337140f9b1583e4fa68f70317e3d5ec
+  Position: {x: 938.17944, y: 444.46655}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-2297919813550679319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: f65e247fe049c42478bf2722260c6df1
+  m_EditorClassIdentifier: 
+  Guid: f65e247fe049c42478bf2722260c6df1
+  Position: {x: 454.7416, y: 405.7694}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-1650775040315380515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 2de6d2a2cfd91354a9dc47856fa83844
+  m_EditorClassIdentifier: 
+  Guid: 2de6d2a2cfd91354a9dc47856fa83844
+  Position: {x: 520, y: 469}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-1251314525801318666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 2f4ff54d13aa17a48abc0bcfcc095d13
+  m_EditorClassIdentifier: 
+  Guid: 2f4ff54d13aa17a48abc0bcfcc095d13
+  Position: {x: 852.9847, y: 388.2837}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-1158021724516193244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 83d4dc7feab7bdd4eba3ba14d98e2c33
+  m_EditorClassIdentifier: 
+  Guid: 83d4dc7feab7bdd4eba3ba14d98e2c33
+  Position: {x: 697.3231, y: 473.985}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &-785860952374451911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 28311da62e91e4541ba7fff4c24f8029
+  m_EditorClassIdentifier: 
+  Guid: 28311da62e91e4541ba7fff4c24f8029
+  Position: {x: -706.82385, y: 230.96515}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -5114994277329368954}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-741466070667193353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: b07d249c70fcfd2439e1db5215bf1f73
+  m_EditorClassIdentifier: 
+  Guid: b07d249c70fcfd2439e1db5215bf1f73
+  Position: {x: 187.14368, y: 407.51843}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: 0}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-602604471804582973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 5ddf4f15fd68a9141ab5cab5aac2d884
+  m_EditorClassIdentifier: 
+  Guid: 5ddf4f15fd68a9141ab5cab5aac2d884
+  Position: {x: 551.8145, y: 362.53833}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,57 +544,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
-  Entry: {fileID: -7239745567892279838}
+  Entry: {fileID: -5858645762774701939}
   AllNodes:
-  - {fileID: -7239745567892279838}
-  - {fileID: -2340202394851542849}
-  - {fileID: 7652330264208049152}
-  - {fileID: 6305521419866681520}
-  - {fileID: 1137166588592688482}
-  - {fileID: 5867533647778519871}
-  - {fileID: -6516038654383378705}
-  m_people:
-  - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
-  m_genericOptions:
-  - m_scroll: {x: 0, y: 0}
-    Text: '||NO TEXT||'
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 0}
-  - m_scroll: {x: 0, y: 0}
-    Text: '||NO TEXT||'
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 0}
+  - {fileID: -5858645762774701939}
+  - {fileID: -3576740714684273258}
+  - {fileID: -8009201724269890685}
+  m_people: []
+  m_genericOptions: []
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
---- !u!114 &1137166588592688482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
-  m_Name: 43f1c399fb8d84d4ea090433c917ff26
-  m_EditorClassIdentifier: 
-  Guid: 43f1c399fb8d84d4ea090433c917ff26
-  Position: {x: 1540, y: 719.5}
-  CustomData: {fileID: 0}
-  Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
-  PersonIndex: 0
-  m_genericOptionLeads: []
---- !u!114 &5867533647778519871
+    Bank: {fileID: -7036114044362771468}
+--- !u!114 &497327675411531480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,82 +563,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
-  m_Name: 5ff0c79651d8da94db46db314786fffc
+  m_Name: 0ed6ce063bdcdf24f975a2deba773c68
   m_EditorClassIdentifier: 
-  Guid: 5ff0c79651d8da94db46db314786fffc
-  Position: {x: 1114.687, y: 211.00005}
+  Guid: 0ed6ce063bdcdf24f975a2deba773c68
+  Position: {x: -131.48157, y: 257.47983}
   CustomData: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
+    Bank: {fileID: -7036114044362771468}
   State: 0
   PersonIndex: 0
-  m_genericOptionLeads:
-  - {fileID: 0}
-  - {fileID: 6305521419866681520}
+  m_genericOptionLeads: []
   m_options:
   - m_scroll: {x: 0, y: 0}
-    Text: a
-    CustomData: {fileID: 0}
-    m_useShowIf: 1
-    Visibility:
-      Processor: 0
-      ShowIfList:
-      - m_comparisonType: 2
-        m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
-        m_targetVariableName: 'bool: b'
-        m_intValue: 0
-        m_floatValue: 0
-        m_stringValue: 
-        m_boolValue: 0
-    LeadsTo: {fileID: -2340202394851542849}
-  - m_scroll: {x: 0, y: 0}
-    Text: b
-    CustomData: {fileID: 0}
-    m_useShowIf: 1
-    Visibility:
-      Processor: 0
-      ShowIfList:
-      - m_comparisonType: 2
-        m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
-        m_targetVariableName: 'bool: b'
-        m_intValue: 0
-        m_floatValue: 0
-        m_stringValue: 
-        m_boolValue: 1
-    LeadsTo: {fileID: 6305521419866681520}
-  - m_scroll: {x: 0, y: 0}
-    Text: c
+    Text: 
     CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
-    LeadsTo: {fileID: 1137166588592688482}
-  m_text: q
+    LeadsTo: {fileID: 0}
+  m_text: 
   NativeNextNode: {fileID: 0}
---- !u!114 &6162779381213504746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
-  m_Name: New Dialogue Blackboard VB
-  m_EditorClassIdentifier: 
-  m_guid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
-  m_forExternalUse: 1
-  m_ints: []
-  m_floats: []
-  m_strings: []
-  m_booleans:
-  - m_name: b
-    m_underlyingValue: 0
-    m_value: 0
-    m_bypassEvents: 0
---- !u!114 &6305521419866681520
+--- !u!114 &600331047052497307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,28 +594,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
-  m_Name: 4bb291acd6c641b4eb0277ab1bde4160
+  m_Name: 15593f19da162164897203d0a314729f
   m_EditorClassIdentifier: 
-  Guid: 4bb291acd6c641b4eb0277ab1bde4160
-  Position: {x: 1876, y: 396.99997}
+  Guid: 15593f19da162164897203d0a314729f
+  Position: {x: 929.8694, y: 437.64203}
   CustomData: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
+    Bank: {fileID: -7036114044362771468}
+  State: 0
   PersonIndex: 0
   m_genericOptionLeads: []
   UsedByMapper: 0
   UniqueMapperId: 
-  m_blackboardEvents:
-  - m_setType: 0
-    m_targetBankGuid: 3f80c8a4-d72f-416b-80d9-e82ba74bd378
-    m_targetVariableName: 'bool: b'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
-  Next: {fileID: 7652330264208049152}
---- !u!114 &7652330264208049152
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &646610181586969461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,15 +617,275 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
-  m_Name: 31ed87de3fa053947a9aabec1341ea2a
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: dd8d4f0751b708b46aeb5a3021b9b087
   m_EditorClassIdentifier: 
-  Guid: 31ed87de3fa053947a9aabec1341ea2a
-  Position: {x: 2122.012, y: 302.3957}
+  Guid: dd8d4f0751b708b46aeb5a3021b9b087
+  Position: {x: 780.8952, y: 402.57993}
   CustomData: {fileID: 0}
   Blackboard:
-    Bank: {fileID: 6162779381213504746}
-  State: 2
+    Bank: {fileID: -7036114044362771468}
+  State: 0
   PersonIndex: 0
   m_genericOptionLeads: []
-  TargetNode: {fileID: 0}
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &744163712256496431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: ed2df9f12aa7ed740b28a150a1dc5940
+  m_EditorClassIdentifier: 
+  Guid: ed2df9f12aa7ed740b28a150a1dc5940
+  Position: {x: 615, y: 516}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &1748685957303097994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 8bd0090cb7d4afc4488f8777d22c13bc
+  m_EditorClassIdentifier: 
+  Guid: 8bd0090cb7d4afc4488f8777d22c13bc
+  Position: {x: 938.17944, y: 444.46655}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &2118948612890529473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 2e7832faa16eb2a4995dbce7fc384f49
+  m_EditorClassIdentifier: 
+  Guid: 2e7832faa16eb2a4995dbce7fc384f49
+  Position: {x: 515.81256, y: 485.74283}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &2223066648952479444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 30ffdfa145bd7504998cc28fd6e27889
+  m_EditorClassIdentifier: 
+  Guid: 30ffdfa145bd7504998cc28fd6e27889
+  Position: {x: 511.18646, y: 383.9681}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &2326005225107378326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 8c4baad087b85fc4b97cad5bf8754045
+  m_EditorClassIdentifier: 
+  Guid: 8c4baad087b85fc4b97cad5bf8754045
+  Position: {x: 428, y: 378}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &3416032603140312862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 6b240e8ab02ad064b9c668d00b640eb0
+  m_EditorClassIdentifier: 
+  Guid: 6b240e8ab02ad064b9c668d00b640eb0
+  Position: {x: 619, y: 505}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options: []
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &3489895038391806190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 10567e278dc4e3348b125cb3a9c05ddb
+  m_EditorClassIdentifier: 
+  Guid: 10567e278dc4e3348b125cb3a9c05ddb
+  Position: {x: 551.8145, y: 362.53833}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}
+--- !u!114 &3742998130498861661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: a64f7a3210d16e84a97a4ae66eb65523
+  m_EditorClassIdentifier: 
+  Guid: a64f7a3210d16e84a97a4ae66eb65523
+  Position: {x: 342.80524, y: 321.81714}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &5470577825051321191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 0c68a9f8546a465409ceaa6d25338d4d
+  m_EditorClassIdentifier: 
+  Guid: 0c68a9f8546a465409ceaa6d25338d4d
+  Position: {x: 428, y: 378}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: 
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadsTo: {fileID: -8009201724269890685}
+  m_text: 
+  NativeNextNode: {fileID: 0}
+--- !u!114 &6683517953565811744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 0e3f76b3fcf581b42b82212baeadb386
+  m_EditorClassIdentifier: 
+  Guid: 0e3f76b3fcf581b42b82212baeadb386
+  Position: {x: 852.9847, y: 388.2837}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -7036114044362771468}
+  State: 0
+  PersonIndex: 0
+  m_genericOptionLeads: []
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 0}

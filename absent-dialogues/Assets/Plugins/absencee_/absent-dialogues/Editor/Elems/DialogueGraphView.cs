@@ -10,7 +10,6 @@ using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.utilities;
 using System.Text;
 using System.Reflection;
-using UnityEditor.MemoryProfiler;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -62,7 +61,7 @@ namespace com.absence.dialoguesystem.editor
 
         private string OnCopy(IEnumerable<GraphElement> elements)
         {
-            StringBuilder sb = new();
+            StringBuilder sb = new(string.Empty);
             foreach (GraphElement node in elements) 
             {
                 if (node is not NodeView view)
@@ -72,7 +71,7 @@ namespace com.absence.dialoguesystem.editor
                     continue;
 
                 sb.Append(view.Node.Guid);
-                sb.Append(";");
+                sb.Append("\n");
             }
 
             return sb.ToString();
@@ -80,7 +79,17 @@ namespace com.absence.dialoguesystem.editor
 
         private void OnPaste(string operationName, string data)
         {
-            string[] guids = data.TrimEnd(';').Split(';');
+            EditorWindow window = DialogueEditorWindow.focusedWindow;
+
+            if (window == null)
+                return;
+
+            Vector2 center = window.position.center;
+            Vector2 worldMousePosition = window.rootVisualElement.
+                ChangeCoordinatesTo(window.rootVisualElement.parent, center - window.position.position);
+            Vector2 localMousePosition = contentViewContainer.WorldToLocal(worldMousePosition);
+
+            string[] guids = data.TrimEnd('\n').Split('\n');
             List<Node> nodesToCopy = new List<Node>();
 
             foreach (string guid in guids)
@@ -88,51 +97,56 @@ namespace com.absence.dialoguesystem.editor
                 nodesToCopy.Add(m_dialogue.AllNodes.First(node => node.Guid.Equals(guid)));
             }
 
-            foreach (Node node in nodesToCopy)
+            if (nodesToCopy.Count == 0)
+                return;
+
+            Undo.SetCurrentGroupName("Dialogue (Paste)");
+            int group = Undo.GetCurrentGroup();
+
+            List<Node> nodesCopied = new();
+            Dictionary<string, string> oldGuidPairs = new();
+            bool isFirst = true;
+            Node firstCopiedNode = null;
+            Node firstNodeToCopy = nodesToCopy[0];
+            foreach (Node node in nodesToCopy) 
             {
-                Node nodeCreated = DoCreateNode(node.GetType(), Vector2.zero, node);
-                NodeView viewCreated = FindNodeView(nodeCreated);
+                Vector2 position = localMousePosition;
+                if (firstCopiedNode != null) position += (node.Position - firstNodeToCopy.Position);
 
-                EditorUtility.SetDirty(m_dialogue);
-                AssetDatabase.SaveAssetIfDirty(m_dialogue);
+                Node nodeCreated = DoCreateNode(node.GetType(), position, node);
+                nodesCopied.Add(nodeCreated);
+                oldGuidPairs.Add(node.Guid, nodeCreated.Guid);
 
-                if (viewCreated.Input != null)
-                {
-                    foreach (Edge connection in viewCreated.Input.connections)
-                    {
-                        Node nodeConnected = (connection.output.node as NodeView).Node;
+                if (isFirst) firstCopiedNode = nodeCreated;
 
-                        if (!nodesToCopy.Contains(nodeConnected))
-                        {
-                            NodeView viewConnected = FindNodeView(nodeConnected);
-                            nodeConnected.RemoveOutputConnection(viewConnected.Outputs.IndexOf(connection.output));
-                        }
-                    }
-                }
-
-                EditorUtility.SetDirty(nodeCreated);
-                AssetDatabase.SaveAssetIfDirty(nodeCreated);
-
-                if (viewCreated.Outputs != null)
-                {
-                    foreach (Port defaultOutputPort in viewCreated.Outputs)
-                    {
-                        foreach (Edge connection in defaultOutputPort.connections)
-                        {
-                            Node nodeConnected = (connection.input.node as NodeView).Node;
-                            if (!nodesToCopy.Contains(nodeConnected))
-                            {
-                                nodeCreated.RemoveOutputConnection(viewCreated.Outputs.IndexOf(connection.output));
-                            }
-                        }
-                    }
-                }
-
-                EditorUtility.SetDirty(nodeCreated);
-                AssetDatabase.SaveAssetIfDirty(nodeCreated);
-
-                Refresh();
+                isFirst = false;
             }
+
+            foreach (Node node in nodesCopied)
+            {
+                List<Node> nodesConnected = node.GetOutputConnections();
+                for (int i = 0; i < nodesConnected.Count; ++i)
+                {
+                    Node outputNode = nodesConnected[i];
+                    if (nodesToCopy.Contains(outputNode))
+                    {
+                        node.AddOutputConnection(nodesCopied.Where(n => n.Guid.Equals(oldGuidPairs[outputNode.Guid])).First(), i);
+                        continue;
+                    }
+
+                    node.RemoveOutputConnection(i);
+                }
+
+                EditorUtility.SetDirty(node);
+                AssetDatabase.SaveAssetIfDirty(node);
+            }
+
+            EditorUtility.SetDirty(m_dialogue);
+            AssetDatabase.SaveAssetIfDirty(m_dialogue);
+
+            Undo.CollapseUndoOperations(group);
+
+            Refresh();
         }
 
         private bool AllowPaste(string data)
@@ -366,9 +380,6 @@ namespace com.absence.dialoguesystem.editor
         {
             Node node = DoCreateNode(type, atPosition, from);
 
-            EditorUtility.SetDirty(m_dialogue);
-            AssetDatabase.SaveAssetIfDirty(m_dialogue);
-
             Refresh();
             SelectNode(node);
 
@@ -379,7 +390,7 @@ namespace com.absence.dialoguesystem.editor
 
         Node DoCreateNode(System.Type type, Vector2 atPosition, Node from = null)
         {
-            Undo.RecordObject(m_dialogue, "Dialogue (Create Node)");
+            Undo.RegisterCompleteObjectUndo(m_dialogue, "Dialogue (Create Node)");
 
             Node node = m_dialogue.CreateNode(type, from);
             node.Guid = GUID.Generate().ToString();
@@ -387,10 +398,49 @@ namespace com.absence.dialoguesystem.editor
             node.Position.x = atPosition.x;
             node.Position.y = atPosition.y;
 
-            AssetDatabase.AddObjectToAsset(node, m_dialogue);
-            Undo.RegisterCreatedObjectUndo(node, "Dialog (Create Node)");
+            if (from != null && from.CustomData != null)
+            {
+                NodeCustomDataBase newCustomData = ScriptableObject.Instantiate(from.CustomData);
+                newCustomData.name = $"{node.Guid}_CustomData";
+                AssetDatabase.AddObjectToAsset(newCustomData, m_dialogue);
+                Undo.RegisterCreatedObjectUndo(newCustomData, "Dialogue (Create Custom Data)");
+                node.CustomData = newCustomData;
+            }
 
-            NodeView viewOfNodeCreated = CreateNodeView(node);
+            if (from != null && from.HasOptions)
+            {
+                List<NodeCustomDataBase> customDatas = new();
+                foreach (Option option in from.Options)
+                {
+                    if (option.CustomData == null)
+                        customDatas.Add(null);
+                    else
+                    {
+                        NodeCustomDataBase newCustomData = ScriptableObject.Instantiate(from.CustomData);
+                        newCustomData.name = $"{node.Guid}_OptionData";
+                        customDatas.Add(newCustomData);
+                    }
+                }
+
+                for (int i = 0; i < customDatas.Count; i++) 
+                {
+                    NodeCustomDataBase optionCustomData = customDatas[i];
+
+                    node.Options[i].CustomData = optionCustomData;
+
+                    if (optionCustomData != null)
+                    {
+                        AssetDatabase.AddObjectToAsset(optionCustomData, m_dialogue);
+                        Undo.RegisterCreatedObjectUndo(optionCustomData, "Dialogue (Create Option Data)");
+                    }
+                }
+            }
+
+            AssetDatabase.AddObjectToAsset(node, m_dialogue);
+            Undo.RegisterCreatedObjectUndo(node, "Dialogue (Create Node)");
+
+            EditorUtility.SetDirty(m_dialogue);
+            AssetDatabase.SaveAssetIfDirty(m_dialogue);
 
             return node;
         }
@@ -411,7 +461,7 @@ namespace com.absence.dialoguesystem.editor
                 }
             }
 
-            Undo.RecordObject(m_dialogue, "Dialog (Delete Node)");
+            Undo.RegisterCompleteObjectUndo(m_dialogue, "Dialog (Delete Node)");
 
             m_dialogue.DeleteNode(view.Node);
 

@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// A list of all of the nodes that are in this dialogue.
         /// </summary>
-        [HideInInspector] public List<Node> AllNodes = new List<Node>();
+        public List<Node> AllNodes = new List<Node>();
 
         [SerializeField] private List<Person> m_people = new List<Person>();
         /// <summary>
