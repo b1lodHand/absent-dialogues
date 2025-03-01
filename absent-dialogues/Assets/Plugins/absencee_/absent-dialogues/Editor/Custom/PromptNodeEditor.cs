@@ -6,7 +6,7 @@ using UnityEngine;
 namespace com.absence.dialoguesystem.editor
 {
     [CustomEditor(typeof(PromptNode), true, isFallback = false)]
-    public class DecisionSpeechNodeEditor : Editor
+    public class PromptNodeEditor : Editor
     {
         Editor initialEditor;
 
@@ -39,7 +39,7 @@ namespace com.absence.dialoguesystem.editor
 
             EditorGUI.BeginChangeCheck();
 
-            Undo.RecordObject(target, "Decision Speech Node (Editor)");
+            Undo.RecordObject(target, "Prompt Node (Editor)");
 
             DrawOptionList();
 

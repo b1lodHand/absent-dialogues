@@ -7,11 +7,7 @@ namespace com.absence.dialoguesystem.editor
     [CustomPropertyDrawer(typeof(GenericOption), true)]
     public class GenericOptionPropertyDrawer : OptionPropertyDrawer
     {
-        const int k_constantLineCount = 3;
-        const float k_customDataHeight = 100f;
-        const float k_buttonWidth = 40f;
-        const float k_majorSpacing = 10f;
-        const float k_customDataPadding = 0f;
+        private const float k_minFieldWidth = 18f;
 
         protected override int NewButtonId => 1805;
         protected override int DelButtonId => 1804;
@@ -33,12 +29,12 @@ namespace com.absence.dialoguesystem.editor
 
             const bool kToggleOnRemainderClick = true;
 
-            GUIStyle normalStyle = new GUIStyle(GUI.skin.label)
+            GUIStyle normalStyle = new GUIStyle(EditorStyles.label)
             {
                 richText = true
             };
 
-            GUIStyle focusedStyle = new GUIStyle(GUI.skin.textField)
+            GUIStyle focusedStyle = new GUIStyle(EditorStyles.textField)
             {
                 richText = true
             };
@@ -50,7 +46,7 @@ namespace com.absence.dialoguesystem.editor
             };
 
             Vector2 size = normalStyle.CalcSize(content);
-            float width = Mathf.Min(size.x, position.width);
+            float width = Mathf.Min(size.x + k_minFieldWidth, position.width);
 
             Rect foldoutFirstHalfPosition = position;
             Rect foldoutSecondHalfPosition = position;

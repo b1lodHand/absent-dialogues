@@ -307,6 +307,7 @@ namespace com.absence.dialoguesystem.editor
 
             ClearViewWithoutNotification();
 
+            if (previousDialogue != null) previousDialogue.OnGenericOptionsChange -= DelayedRefresh;
             if (previousDialogue != m_dialogue) EditorPrefs.SetString("last-node-guid", string.Empty);
 
             if (m_dialogue == null) return;
@@ -345,6 +346,9 @@ namespace com.absence.dialoguesystem.editor
                 }
             });
 
+            dialogue.OnGenericOptionsChange -= DelayedRefresh;
+            dialogue.OnGenericOptionsChange += DelayedRefresh;
+
             dialogue.OnValidate();
             dialogue.AllNodes.ForEach(n =>
             {
@@ -352,6 +356,12 @@ namespace com.absence.dialoguesystem.editor
             });
 
             OnPopulateView?.Invoke();
+        }
+
+        void DelayedRefresh()
+        {
+            EditorApplication.delayCall -= Refresh;
+            EditorApplication.delayCall += Refresh;
         }
 
         /// <summary>
@@ -524,29 +534,30 @@ namespace com.absence.dialoguesystem.editor
 
             GenericOption target = m_dialogue.GenericOptions[index];
 
-            Button removeButton = new Button(() =>
+            Button passButton = new Button(() =>
             {
+
             });
 
-            Button moveUpButton = new Button(() =>
-            {
-            });
+            //Button moveUpButton = new Button(() =>
+            //{
+            //});
 
-            Button moveDownButton = new Button(() =>
-            {
-            });
+            //Button moveDownButton = new Button(() =>
+            //{
+            //});
 
-            removeButton.text = "x";
-            removeButton.AddToClassList("removeOptionButton");
-            removeButton.SetEnabled(false);
+            passButton.text = "◦•✓×";
+            passButton.AddToClassList("removeOptionButton");
+            passButton.SetEnabled(false);
 
-            moveUpButton.text = "↑";
-            moveUpButton.AddToClassList("moveOptionUpButton");
-            moveUpButton.SetEnabled(false);
+            //moveUpButton.text = "↑";
+            //moveUpButton.AddToClassList("moveOptionUpButton");
+            //moveUpButton.SetEnabled(false);
 
-            moveDownButton.text = "↓";
-            moveDownButton.AddToClassList("moveOptionDownButton");
-            moveDownButton.SetEnabled(false);
+            //moveDownButton.text = "↓";
+            //moveDownButton.AddToClassList("moveOptionDownButton");
+            //moveDownButton.SetEnabled(false);
 
             Port port = sender.InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
@@ -564,9 +575,9 @@ namespace com.absence.dialoguesystem.editor
             showIfLabel.name = "show-if-label";
             showIfLabel.tooltip = "NODATA";
 
-            top.Add(removeButton);
-            top.Add(moveUpButton);
-            top.Add(moveDownButton);
+            top.Add(passButton);
+            //top.Add(moveUpButton);
+            //top.Add(moveDownButton);
             top.Add(showIfLabel);
             RefreshShowIfLabel();
 

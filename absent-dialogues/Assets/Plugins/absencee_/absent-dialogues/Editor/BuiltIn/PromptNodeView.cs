@@ -255,16 +255,19 @@ namespace com.absence.dialoguesystem.editor
                 Graph.Refresh();
             });
 
-            removeButton.text = "x";
+            removeButton.text = "×";
             removeButton.AddToClassList("removeOptionButton");
+            removeButton.tooltip = "Remove";
 
             moveUpButton.text = "↑";
             moveUpButton.AddToClassList("moveOptionUpButton");
             moveUpButton.SetEnabled(index > 0);
+            moveUpButton.tooltip = "Move up";
 
             moveDownButton.text = "↓";
             moveDownButton.AddToClassList("moveOptionDownButton");
             moveDownButton.SetEnabled(index < m_nodeAsPrompt.Options.Count - 1);
+            moveDownButton.tooltip = "Move down";
 
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.AddToClassList("optionPort");
@@ -276,8 +279,6 @@ namespace com.absence.dialoguesystem.editor
             speechField.multiline = true;
 
             speechField.BindProperty(speechProp);
-
-            removeButton.tooltip = "Remove this option.";
 
             Label showIfLabel = new Label("Conditional visibility active.");
             showIfLabel.AddToClassList("optionShowIfLabel");

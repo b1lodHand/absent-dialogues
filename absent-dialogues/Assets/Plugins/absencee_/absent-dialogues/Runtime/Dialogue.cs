@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem
         /// <summary>
         /// A list of all of the nodes that are in this dialogue.
         /// </summary>
-        public List<Node> AllNodes = new List<Node>();
+        [HideInInspector] public List<Node> AllNodes = new List<Node>();
 
         [SerializeField] private List<Person> m_people = new List<Person>();
         /// <summary>
@@ -29,7 +29,7 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public List<Person> People => m_people;
 
-        [SerializeField] private List<GenericOption> m_genericOptions = new List<GenericOption>();
+        [HideInInspector, SerializeField] private List<GenericOption> m_genericOptions = new List<GenericOption>();
 
         public List<GenericOption> GenericOptions => m_genericOptions;
 
@@ -48,10 +48,14 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action OnValidateAction;
 
+        public event Action OnGenericOptionsChange;
+
         /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
         [HideInInspector] public Blackboard Blackboard;
+
+        [HideInInspector, SerializeField] private int m_genericOptionCount = 0;
 
         /// <summary>
         /// Use to create new nodes. Using runtime is not recommended.
@@ -161,6 +165,11 @@ namespace com.absence.dialoguesystem
         {
             node.Blackboard = Blackboard;
             node.UpdateManipulators();
+        }
+
+        internal void InvokeOnGenericOptionsChange()
+        {
+            OnGenericOptionsChange?.Invoke();
         }
 
         public void OnValidate()

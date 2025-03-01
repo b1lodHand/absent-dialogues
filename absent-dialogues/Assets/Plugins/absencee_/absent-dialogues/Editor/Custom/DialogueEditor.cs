@@ -1,0 +1,139 @@
+﻿using com.absence.attributes.editor;
+using UnityEditor;
+using UnityEngine;
+
+namespace com.absence.dialoguesystem.editor
+{
+    [CustomEditor(typeof(Dialogue))]
+    public class DialogueEditor : Editor
+    {
+        private const float k_buttonWidth = 21f;
+        Editor initialEditor;
+
+        private void OnEnable()
+        {
+            Editor.CreateCachedEditor(target, typeof(absentEditorExtension), ref initialEditor);
+        }
+
+        private void OnDisable()
+        {
+            Editor.DestroyImmediate(initialEditor);
+            initialEditor = null;
+        }
+
+        public override void OnInspectorGUI()
+        {
+            initialEditor.OnInspectorGUI();
+            Dialogue dialogue = (Dialogue)target;
+
+            serializedObject.Update();
+
+            SerializedProperty optionListProp = serializedObject.FindProperty("m_genericOptions");
+
+            //float height = EditorGUIUtility.singleLineHeight;
+            //float spacing = EditorGUIUtility.standardVerticalSpacing;
+
+            bool foldout = optionListProp.isExpanded;
+
+            GUIContent foldoutContent = new GUIContent()
+            {
+                text = optionListProp.displayName,
+                tooltip = optionListProp.tooltip,
+            };
+
+            GUIStyle buttonStyle = new GUIStyle(GUI.skin.button)
+            {
+                fontStyle = FontStyle.Bold,
+                alignment = TextAnchor.MiddleCenter,
+            };
+
+            EditorGUI.BeginChangeCheck();
+
+            Undo.RecordObject(target, "Dialogue (Editor)");
+
+            DrawOptionList();
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                optionListProp.isExpanded = foldout;
+
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty(target);
+            }
+
+            return;
+
+            void DrawOptionList()
+            {
+                foldout = EditorGUILayout.Foldout(foldout, foldoutContent, true);
+
+                if (!foldout)
+                    return;
+
+                EditorGUI.indentLevel++;
+
+                int arraySize = optionListProp.arraySize;
+                int lastIndex = arraySize > 0 ? arraySize - 1 : 0;
+                for (int i = 0; i < arraySize; i++)
+                {
+                    EditorGUILayout.BeginHorizontal();
+
+                    Color prevColor = GUI.backgroundColor;
+                    GUI.backgroundColor = new Color(171f/255f, 68f/255f, 63f/255f, 255f);
+                    bool remove = GUILayout.Button("×", buttonStyle, GUILayout.Width(k_buttonWidth));
+                    GUI.backgroundColor = prevColor;
+
+                    if (i == 0) GUI.enabled = false;
+                    bool moveUp = GUILayout.Button("↑", buttonStyle, GUILayout.Width(k_buttonWidth));
+                    if (i == 0) GUI.enabled = true;
+
+                    if (i == lastIndex) GUI.enabled = false;
+                    bool moveDown = GUILayout.Button("↓", buttonStyle, GUILayout.Width(k_buttonWidth));
+                    if (i == lastIndex) GUI.enabled = true;
+
+                    if (remove)
+                        optionListProp.DeleteArrayElementAtIndex(i);
+
+                    else if (moveUp)
+                        optionListProp.MoveArrayElement(i, i - 1);
+
+                    else if (moveDown)
+                        optionListProp.MoveArrayElement(i, i + 1);
+
+                    if (remove || moveUp || moveDown)
+                    {
+                        EditorGUILayout.EndHorizontal();
+                        dialogue.InvokeOnGenericOptionsChange();
+                        return;
+                    }
+
+                    EditorGUILayout.PropertyField(optionListProp.GetArrayElementAtIndex(i), true);
+
+                    EditorGUILayout.EndHorizontal();
+                }
+
+                bool addNewOne = GUILayout.Button("+", buttonStyle, GUILayout.Width(k_buttonWidth));
+
+                if (addNewOne)
+                {
+                    optionListProp.InsertArrayElementAtIndex(lastIndex);
+
+                    int newIndex = lastIndex + 1;
+
+                    if (newIndex > arraySize)
+                    {
+                        dialogue.InvokeOnGenericOptionsChange();
+                        return;
+                    }
+
+                    SerializedProperty newOptionProp = optionListProp.GetArrayElementAtIndex(newIndex);
+                    newOptionProp.FindPropertyRelative("CustomData").objectReferenceValue = null;
+
+                    dialogue.InvokeOnGenericOptionsChange();
+                }
+
+                EditorGUI.indentLevel--;
+            }
+        }
+    }
+}
