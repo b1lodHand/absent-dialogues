@@ -8,6 +8,7 @@ using UnityEditor.UIElements;
 using System.Linq;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.personsystem;
+using com.absence.dialoguesystem.internals;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -20,9 +21,9 @@ namespace com.absence.dialoguesystem.editor
         /// <summary>
         /// The USS class name for person dependent nodes.
         /// </summary>
-        public static string K_PERSONDEPENDENT_CLASSNAME = "personDependent";
+        public static string PersonDependentClassName = "personDependent";
 
-        public const string DefaultUXMLFileLocation = "Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml";
+        public const string DEFAULT_XML_LOCATION = "Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml";
 
         public virtual List<string> AdditionalUSSFileLocations => null;
 
@@ -58,7 +59,7 @@ namespace com.absence.dialoguesystem.editor
         /// Use to construct a node view from a node.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public NodeView(Node node, DialogueGraphView graph = null) : base(DefaultUXMLFileLocation)
+        public NodeView(Node node, DialogueGraphView graph = null) : base(DEFAULT_XML_LOCATION)
         {
             Type nodeType = node.GetType();
             m_assetGuid = AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(node));
@@ -73,9 +74,7 @@ namespace com.absence.dialoguesystem.editor
             style.left = node.Position.x;
             style.top = node.Position.y;
 
-            if (Node.PersonDependent) AddToClassList(K_PERSONDEPENDENT_CLASSNAME);
-
-            if (Node.UseGenericOptions) FetchGenericOptions();
+            if (Node.PersonDependent) AddToClassList(PersonDependentClassName);
 
             OnAfterStylesApplied();
 
@@ -102,31 +101,60 @@ namespace com.absence.dialoguesystem.editor
                 Graph.m_dialogue.OnValidateAction += RefreshPersonDropdown;
             }
 
-            node.onSetState -= UpdateState;
-            node.onSetState += UpdateState;
+            Node.onSetState -= UpdateState;
+            Node.onSetState += UpdateState;
         }
 
         #region Protected API
-        protected virtual void FetchGenericOptions()
+        protected void FetchGenericOptions()
         {
-            if (Node.GenericOptionLeads == null ||
-                Node.GenericOptionLeads.Count != Graph.m_dialogue.GenericOptions.Count)
-                Node.GenericOptionLeads = new();
+            List<GenericOption> genericOptions = Graph.m_dialogue.GenericOptions;
 
-            List<Node> temp = new(Node.GenericOptionLeads);
-            Node.GenericOptionLeads.Clear();
-
-            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
+            for (int i = 0; i < genericOptions.Count; i++)
             {
-                Node target = null;
-
-                if (i < temp.Count) target = temp[i];
-
-                Node.GenericOptionLeads.Add(target);
+                Node.GenericOptions[i].Target = genericOptions[i];
             }
+        }
+        internal virtual void OnGenericOptionCreated(int at)
+        {
+            List<GenericOption> genericOptions = Graph.m_dialogue.GenericOptions;
+
+            Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Created)");
+
+            GenericOptionReference reference = new(genericOptions[at]);
+            Node.GenericOptions.Insert(at, reference);
+
+            FetchGenericOptions();
 
             EditorUtility.SetDirty(Node);
             AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+        }
+
+        internal virtual void OnGenericOptionRemoved(int at)
+        {
+            Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Removed)");
+            Node.GenericOptions.RemoveAt(at);
+
+            FetchGenericOptions();
+
+            EditorUtility.SetDirty(Node);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+        }
+        internal virtual void OnGenericOptionsRearranged(int replacer, int replaced)
+        {
+            GenericOptionReference replacerReference = Node.GenericOptions[replacer];
+            GenericOptionReference replacedReference = Node.GenericOptions[replaced];
+
+            bool replacedBypass = replacedReference.Bypass;
+            Node replacedLead = replacedReference.LeadingNode;
+
+            Node.GenericOptions[replaced].Bypass = replacerReference.Bypass;
+            Node.GenericOptions[replaced].LeadingNode = replacerReference.LeadingNode;
+
+            Node.GenericOptions[replacer].Bypass = replacedBypass;
+            Node.GenericOptions[replacer].LeadingNode = replacedLead;
+
+            FetchGenericOptions();
         }
         protected virtual void SetupPersonDropdownIfExists()
         {

@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -109,8 +112,8 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
-        [HideInInspector, SerializeField] private List<Node> m_genericOptionLeads = new();
-        public List<Node> GenericOptionLeads { get { return m_genericOptionLeads; } set { m_genericOptionLeads = value; } }
+        [HideInInspector, SerializeField] private List<GenericOptionReference> m_genericOptions;
+        public List<GenericOptionReference> GenericOptions { get { return m_genericOptions; } set { m_genericOptions = value; } }
 
         public virtual List<NodeVariableComparer> Comparers
         {
@@ -141,7 +144,21 @@ namespace com.absence.dialoguesystem.internals
         public virtual bool HasOptions => Options != null;
         public virtual bool UseGenericOptions => false;
         public bool NoOptionsOverall =>
-            ((!HasOptions) || Options.Count == 0) && ((!UseGenericOptions) || GenericOptionLeads.Count == 0);
+            ((!HasOptions) || Options.Count == 0) && ((!UseGenericOptions) || GenericOptions.Count == 0);
+
+        public bool NoCertainOptions
+        {
+            get
+            {
+                bool noCertainNormalOptions =
+                    HasOptions ? Options.Where(opt => !opt.UseShowIf).Count() == 0 : true;
+
+                bool noCertainGenericOptions =
+                    UseGenericOptions ? GenericOptions.Where(opt => (!opt.Bypass) && (!opt.Target.UseShowIf)).Count() == 0 : true;
+
+                return noCertainNormalOptions && noCertainGenericOptions;
+            }
+        }
 
         public virtual List<string> AdditionalUSSFileLocations => null;
 
@@ -216,6 +233,32 @@ namespace com.absence.dialoguesystem.internals
             if (CustomData != null) result.CustomData = NodeCustomDataBase.Instantiate(CustomData);
             return result;
         }
+
+        internal void FetchGenericOptions(Dialogue dialogue)
+        {
+#if UNITY_EDITOR
+            if (GenericOptions != null)
+                return;
+
+            List<GenericOptionReference> references = new();
+
+            for (int i = 0; i < dialogue.GenericOptions.Count; i++)
+            {
+                references.Add(new GenericOptionReference(dialogue.GenericOptions[i]));
+            }
+
+            int group = Undo.GetCurrentGroup();
+
+            Undo.RegisterCompleteObjectUndo(this, "Node (Fetch Generic Options)");
+            GenericOptions = references;
+
+            Undo.CollapseUndoOperations(group);
+
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssetIfDirty(this);
+#endif
+        }
+
         public Node Clone(Dialogue originalDialogue, Dialogue cloneDialogue)
         {
             Node result = this.Clone();

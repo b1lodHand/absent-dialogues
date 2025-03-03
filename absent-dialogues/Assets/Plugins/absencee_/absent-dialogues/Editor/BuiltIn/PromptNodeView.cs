@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
-using static UnityEngine.Networking.UnityWebRequest;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
@@ -47,22 +46,21 @@ namespace com.absence.dialoguesystem.editor
 
         private void RefreshGenericOptionViews()
         {
-            m_genericOptionElems.ForEach(op =>
+            for (int i = 0; i < m_genericOptionElems.Count; i++)
             {
-                Label showIfLabel = op.Q<Label>("show-if-label");
-                TextField textField = op.Q<TextField>();
+                VisualElement element = m_genericOptionElems[i];
+                Label showIfLabel = element.Q<Label>("show-if-label");
+                TextField textField = element.Q<TextField>();
 
-                int index = m_genericOptionElems.IndexOf(op);
-
-                if (index >= Graph.m_dialogue.GenericOptions.Count)
+                if (i >= Node.GenericOptions.Count)
                     return;
 
-                Option target = Graph.m_dialogue.GenericOptions[index];
+                GenericOptionReference reference = Node.GenericOptions[i];
 
-                showIfLabel.visible = target.UseShowIf;
-                showIfLabel.tooltip = target.Visibility.GetConditionString(true);
-                textField.SetValueWithoutNotify(target.Text);
-            });
+                showIfLabel.visible = reference.Target.UseShowIf;
+                showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
+                textField.SetValueWithoutNotify(reference.Target.Text);
+            }
         }
         private void RefreshOptionViews()
         {
@@ -116,9 +114,9 @@ namespace com.absence.dialoguesystem.editor
         }
         protected virtual void DrawGenericOptions()
         {
-            for (int i = 0; i < Graph.m_dialogue.GenericOptions.Count; i++)
+            for (int i = 0; i < Node.GenericOptions.Count; i++)
             {
-                VisualElement elem = Graph.CreateGenericOptionElement(this, i);
+                VisualElement elem = Graph.CreateGenericOptionElement(this, Node.GenericOptions[i]);
                 m_genericOptionElems.Add(elem);
                 mainContainer.Add(elem);
 

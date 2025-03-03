@@ -21,24 +21,31 @@ MonoBehaviour:
   m_people: []
   m_genericOptions:
   - m_scroll: {x: 0, y: 0}
-    Text: z
+    Text: c
     CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
-    LeadsTo: {fileID: 0}
+    LeadingNode: {fileID: 0}
   - m_scroll: {x: 0, y: 0}
-    Text: b
+    Text: v
     CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
-    LeadsTo: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - m_scroll: {x: 0, y: 0}
+    Text: a
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
-  m_genericOptionCount: 3
 --- !u!114 &4366251987463977943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +65,7 @@ MonoBehaviour:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
-  m_genericOptionLeads: []
+  m_genericOptions: []
   UsedByMapper: 0
   UniqueMapperId: 
   m_blackboardEvents: []
@@ -82,7 +89,7 @@ MonoBehaviour:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
-  m_genericOptionLeads: []
+  m_genericOptions: []
   Next: {fileID: 7535276429833814712}
 --- !u!114 &7102625383665442442
 MonoBehaviour:
@@ -103,7 +110,7 @@ MonoBehaviour:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
-  m_genericOptionLeads: []
+  m_genericOptions: []
   TargetNode: {fileID: 0}
 --- !u!114 &7535276429833814712
 MonoBehaviour:
@@ -118,48 +125,47 @@ MonoBehaviour:
   m_Name: 86dcf618b810b7243bb77ccfe39f95cc
   m_EditorClassIdentifier: 
   Guid: 86dcf618b810b7243bb77ccfe39f95cc
-  Position: {x: 221, y: -65}
+  Position: {x: 203.9, y: -28.65002}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
-  m_genericOptionLeads:
-  - {fileID: 4366251987463977943}
-  - {fileID: 4366251987463977943}
-  m_options:
-  - m_scroll: {x: 0, y: 0}
-    Text: 
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 4366251987463977943}
-  - m_scroll: {x: 0, y: 0}
-    Text: 
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 0}
-  - m_scroll: {x: 0, y: 0}
-    Text: 
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 7102625383665442442}
-  - m_scroll: {x: 0, y: 0}
-    Text: 
-    CustomData: {fileID: 0}
-    m_useShowIf: 0
-    Visibility:
-      Processor: 0
-      ShowIfList: []
-    LeadsTo: {fileID: 0}
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 4366251987463977943}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 4366251987463977943}
+  - Bypass: 1
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: a
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  m_options: []
   m_text: 
   NativeNextNode: {fileID: 0}
 --- !u!114 &9043952714220872817

@@ -307,7 +307,11 @@ namespace com.absence.dialoguesystem.editor
 
             ClearViewWithoutNotification();
 
-            if (previousDialogue != null) previousDialogue.OnGenericOptionsChange -= DelayedRefresh;
+            if (previousDialogue != null)
+            {
+                previousDialogue.ClearCallbacks();
+            }
+
             if (previousDialogue != m_dialogue) EditorPrefs.SetString("last-node-guid", string.Empty);
 
             if (m_dialogue == null) return;
@@ -518,7 +522,24 @@ namespace com.absence.dialoguesystem.editor
             AddToSelection(selectableNode);
         }
 
-        internal VisualElement CreateGenericOptionElement(NodeView sender, int index)
+        internal void RefreshBypassButton(NodeView sender, Button bypassButton, GenericOptionReference reference)
+        {
+            if (reference.Bypass)
+            {
+                bypassButton.text = "◦";
+                bypassButton.RemoveFromClassList("passiveBypassButton");
+                bypassButton.AddToClassList("activeBypassButton");
+            }
+
+            else
+            {
+                bypassButton.text = "✓";
+                bypassButton.AddToClassList("passiveBypassButton");
+                bypassButton.RemoveFromClassList("activeBypassButton");
+            }
+        }
+
+        internal VisualElement CreateGenericOptionElement(NodeView sender, GenericOptionReference reference)
         {
             VisualElement optionElem = new VisualElement();
 
@@ -532,12 +553,31 @@ namespace com.absence.dialoguesystem.editor
             VisualElement bottom = new VisualElement();
             bottom.AddToClassList("optionBottom");
 
-            GenericOption target = m_dialogue.GenericOptions[index];
+            GenericOption target = reference.Target;
 
-            Button passButton = new Button(() =>
+            //"◦•✓"
+            Button bypassButton = new Button();
+            bypassButton.AddToClassList("bypassOptionButton");
+
+            Action action = () =>
             {
+                Node node = sender.Node;
+                bool hasNoCertainOptions = node.NoCertainOptions;
 
-            });
+                Undo.RegisterCompleteObjectUndo(sender.Node, "Node (Generic Option Bypass Button)");
+
+                reference.Bypass = !reference.Bypass;
+
+                EditorUtility.SetDirty(sender.Node);
+
+                if (hasNoCertainOptions != node.NoCertainOptions)
+                    Refresh();
+
+                RefreshBypassButton(sender, bypassButton, reference);
+            };
+
+            RefreshBypassButton(sender, bypassButton, reference);
+            bypassButton.clicked += action;
 
             //Button moveUpButton = new Button(() =>
             //{
@@ -546,10 +586,6 @@ namespace com.absence.dialoguesystem.editor
             //Button moveDownButton = new Button(() =>
             //{
             //});
-
-            passButton.text = "◦•✓×";
-            passButton.AddToClassList("removeOptionButton");
-            passButton.SetEnabled(false);
 
             //moveUpButton.text = "↑";
             //moveUpButton.AddToClassList("moveOptionUpButton");
@@ -575,7 +611,7 @@ namespace com.absence.dialoguesystem.editor
             showIfLabel.name = "show-if-label";
             showIfLabel.tooltip = "NODATA";
 
-            top.Add(passButton);
+            top.Add(bypassButton);
             //top.Add(moveUpButton);
             //top.Add(moveDownButton);
             top.Add(showIfLabel);

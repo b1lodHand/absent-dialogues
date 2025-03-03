@@ -611,8 +611,8 @@ MonoBehaviour:
   m_overridePeople: []
   m_extensionList:
   - {fileID: 560826872}
-  - {fileID: 560826874}
   - {fileID: 560826873}
+  - {fileID: 560826874}
   - {fileID: 560826876}
   m_player:
     m_dialogue: {fileID: 0}

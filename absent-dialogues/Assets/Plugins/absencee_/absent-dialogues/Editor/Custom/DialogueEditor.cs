@@ -1,4 +1,5 @@
 ﻿using com.absence.attributes.editor;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -92,17 +93,108 @@ namespace com.absence.dialoguesystem.editor
                     if (i == lastIndex) GUI.enabled = true;
 
                     if (remove)
+                    {
+                        Undo.SetCurrentGroupName("Dialogue (Generic Option Removed)");
+                        int group = Undo.GetCurrentGroup();
+
+                        Undo.RegisterCompleteObjectUndo(dialogue, "Dialogue (Generic Option Removed)");
                         optionListProp.DeleteArrayElementAtIndex(i);
 
+                        serializedObject.ApplyModifiedProperties();
+
+                        EditorUtility.SetDirty(dialogue);
+                        AssetDatabase.SaveAssetIfDirty(dialogue);
+
+                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
+
+                        if (graph != null)
+                        {
+                            dialogue.AllNodes.ForEach(node =>
+                            {
+                                if (!node.UseGenericOptions)
+                                    return;
+
+                                graph.FindNodeView(node).OnGenericOptionRemoved(i);
+                            });
+                        }
+
+                        Undo.CollapseUndoOperations(group);
+
+                        dialogue.InvokeOnGenericOptionRemoved(i);
+                    }
+
                     else if (moveUp)
+                    {
+                        Undo.SetCurrentGroupName("Dialogue (Generic Options Rearranged)");
+                        int group = Undo.GetCurrentGroup();
+
+                        Undo.RegisterCompleteObjectUndo(dialogue, "Dialogue (Generic Options Rearranged)");
                         optionListProp.MoveArrayElement(i, i - 1);
 
+                        serializedObject.ApplyModifiedProperties();
+
+                        EditorUtility.SetDirty(dialogue);
+                        AssetDatabase.SaveAssetIfDirty(dialogue);
+
+                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
+
+                        if (graph != null)
+                        {
+                            dialogue.AllNodes.ForEach(node =>
+                            {
+                                if (!node.UseGenericOptions)
+                                    return;
+
+                                graph.FindNodeView(node).OnGenericOptionsRearranged(i, i - 1);
+                            });
+                        }
+
+                        Undo.CollapseUndoOperations(group);
+
+                        dialogue.InvokeOnGenericOptionsRearranged(i, i - 1);
+                    }
+
                     else if (moveDown)
+                    {
+                        Undo.SetCurrentGroupName("Dialogue (Generic Options Rearranged)");
+                        int group = Undo.GetCurrentGroup();
+
+                        Undo.RegisterCompleteObjectUndo(dialogue, "Dialogue (Generic Options Rearranged)");
                         optionListProp.MoveArrayElement(i, i + 1);
+
+                        serializedObject.ApplyModifiedProperties();
+
+                        EditorUtility.SetDirty(dialogue);
+                        AssetDatabase.SaveAssetIfDirty(dialogue);
+
+                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
+
+                        if (graph != null)
+                        {
+                            dialogue.AllNodes.ForEach(node =>
+                            {
+                                if (!node.UseGenericOptions)
+                                    return;
+
+                                graph.FindNodeView(node).OnGenericOptionsRearranged(i, i + 1);
+                            });
+                        }
+
+                        Undo.CollapseUndoOperations(group);
+
+                        dialogue.InvokeOnGenericOptionsRearranged(i, i + 1);
+                    }
 
                     if (remove || moveUp || moveDown)
                     {
                         EditorGUILayout.EndHorizontal();
+
+                        serializedObject.ApplyModifiedProperties();
+                        serializedObject.Update();
+
+                        EditorUtility.SetDirty(dialogue);
+                        AssetDatabase.SaveAssetIfDirty(dialogue);
+
                         dialogue.InvokeOnGenericOptionsChange();
                         return;
                     }
@@ -116,19 +208,48 @@ namespace com.absence.dialoguesystem.editor
 
                 if (addNewOne)
                 {
+                    int group = Undo.GetCurrentGroup();
+                    Undo.SetCurrentGroupName("Dialogue (Generic Option Created)");
+
+                    Undo.RegisterCompleteObjectUndo(dialogue, "Dialogue (Generic Option Created)");
                     optionListProp.InsertArrayElementAtIndex(lastIndex);
+
+                    serializedObject.ApplyModifiedProperties();
+
+                    EditorUtility.SetDirty(dialogue);
+                    AssetDatabase.SaveAssetIfDirty(dialogue);
+
+                    DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
 
                     int newIndex = lastIndex + 1;
 
-                    if (newIndex > arraySize)
+                    if (graph != null)
                     {
+                        dialogue.AllNodes.ForEach(node =>
+                        {
+                            if (!node.UseGenericOptions)
+                                return;
+
+                            int index = arraySize == 0 ? 0 : newIndex;
+                            graph.FindNodeView(node).OnGenericOptionCreated(index);
+                        });
+                    }
+
+                    Undo.CollapseUndoOperations(group);
+
+                    if (arraySize == 0)
+                    {
+                        dialogue.InvokeOnGenericOptionCreated(0);
                         dialogue.InvokeOnGenericOptionsChange();
                         return;
                     }
 
+                    serializedObject.Update();
+
                     SerializedProperty newOptionProp = optionListProp.GetArrayElementAtIndex(newIndex);
                     newOptionProp.FindPropertyRelative("CustomData").objectReferenceValue = null;
 
+                    dialogue.InvokeOnGenericOptionCreated(newIndex);
                     dialogue.InvokeOnGenericOptionsChange();
                 }
 

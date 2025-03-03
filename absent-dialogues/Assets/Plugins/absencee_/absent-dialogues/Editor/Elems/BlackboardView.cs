@@ -67,33 +67,53 @@ namespace com.absence.dialoguesystem.editor
             }
 
             SerializedObject bankSO = new SerializedObject(bank);
+            bankSO.Update();
 
-            if (bank == null) return;
-
-            //Undo.RecordObject(bank, "Blackboard Bank");
+            SerializedProperty ints = bankSO.FindProperty("m_ints");
+            SerializedProperty floats = bankSO.FindProperty("m_floats");
+            SerializedProperty strings = bankSO.FindProperty("m_strings");
+            SerializedProperty booleans = bankSO.FindProperty("m_booleans");
 
             m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
 
-            if (bank == null) return;
-
-            try
-            {
-                if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-                else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-                else m_blackboardBankEditor.OnInspectorGUI();
-            }
-
-            catch
-            {
-                Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-            }
+            EditorGUILayout.PropertyField(ints);
+            EditorGUILayout.PropertyField(floats);
+            EditorGUILayout.PropertyField(strings);
+            EditorGUILayout.PropertyField(booleans);
 
             EditorGUILayout.EndScrollView();
 
             bankSO.ApplyModifiedProperties();
             dialogue.ApplyModifiedProperties();
 
-            if (Application.isPlaying) GUI.enabled = true;
+            //SerializedObject bankSO = new SerializedObject(bank);
+
+            //if (bank == null) return;
+
+            ////Undo.RecordObject(bank, "Blackboard Bank");
+
+            //m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
+
+            //if (bank == null) return;
+
+            //try
+            //{
+            //    if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //    else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //    else m_blackboardBankEditor.OnInspectorGUI();
+            //}
+
+            //catch
+            //{
+            //    Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //}
+
+            //EditorGUILayout.EndScrollView();
+
+            //bankSO.ApplyModifiedProperties();
+            //dialogue.ApplyModifiedProperties();
+
+            //if (Application.isPlaying) GUI.enabled = true;
         }
     }
 }

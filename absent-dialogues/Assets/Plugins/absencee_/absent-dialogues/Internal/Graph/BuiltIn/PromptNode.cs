@@ -57,9 +57,9 @@ namespace com.absence.dialoguesystem.internals
                 return NativeNextNode;
 
             if (optionSelected >= optionCount)
-                return GenericOptionLeads[optionSelected - optionCount];
+                return GenericOptions[optionSelected - optionCount].LeadingNode;
 
-            return m_options[optionSelected].LeadsTo;
+            return m_options[optionSelected].LeadingNode;
         }
         protected override void OnReach(DialogueFlowContext context)
         {
@@ -84,14 +84,31 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
+            if (NoCertainOptions)
+            {
+                if (atPort == 0)
+                {
+                    NativeNextNode = nextWillBeAdded;
+                    return;
+                }
+
+                else
+                {
+                    atPort--;
+                }
+            }
+
             if (atPort >= m_options.Count)
             {
                 atPort -= m_options.Count;
-                GenericOptionLeads[atPort] = nextWillBeAdded;
+#if UNITY_EDITOR
+                UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Add Generic Option Connection)");
+#endif
+                GenericOptions[atPort].LeadingNode = nextWillBeAdded;
                 return;
             }
 
-            m_options[atPort].LeadsTo = nextWillBeAdded;
+            m_options[atPort].LeadingNode = nextWillBeAdded;
         }
         protected override void OnRemoveOutputConnection(int atPort)
         {
@@ -101,14 +118,31 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
+            if (NoCertainOptions)
+            {
+                if (atPort == 0)
+                {
+                    NativeNextNode = null;
+                    return;
+                }
+
+                else
+                {
+                    atPort--;
+                }
+            }
+
             if (atPort >= m_options.Count)
             {
                 atPort -= m_options.Count;
-                GenericOptionLeads[atPort] = null;
+#if UNITY_EDITOR
+                UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Remove Generic Option Connection)");
+#endif
+                GenericOptions[atPort].LeadingNode = null;
                 return;
             }
 
-            m_options[atPort].LeadsTo = null;
+            m_options[atPort].LeadingNode = null;
         }
         protected override void WriteOutputConnections(ref List<Node> result)
         {
@@ -118,21 +152,31 @@ namespace com.absence.dialoguesystem.internals
                 return;
             }
 
+            if (NoCertainOptions)
+            {
+                result.Add(NativeNextNode);
+            }
+
             foreach (Option option in m_options)
             {
-                if (option != null) result.Add(option.LeadsTo);
+                if (option != null) result.Add(option.LeadingNode);
                 else result.Add(null);
             }
 
-            foreach (Node target in GenericOptionLeads) 
-            { 
-                result.Add(target);
+            foreach (GenericOptionReference genericOption in GenericOptions) 
+            {
+                if (genericOption != null && genericOption.Target != null)
+                    result.Add(genericOption.LeadingNode);
+                else
+                    result.Add(null);
             }
         }
 
         public override List<string> GetDefaultOutputPortNames()
         {
-            if (NoOptionsOverall) 
+            if (NoOptionsOverall)
+                return new List<string>() { "To" };
+            else if (NoCertainOptions) 
                 return new List<string>() { "To" };
 
             return new List<string>();

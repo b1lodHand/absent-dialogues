@@ -49,13 +49,14 @@ namespace com.absence.dialoguesystem
         public event Action OnValidateAction;
 
         public event Action OnGenericOptionsChange;
+        public event Action<int, int> OnGenericOptionsRearranged;
+        public event Action<int> OnGenericOptionCreated;
+        public event Action<int> OnGenericOptionRemoved;
 
         /// <summary>
         /// The <see cref="Blackboard"/> of this dialogue.
         /// </summary>
         [HideInInspector] public Blackboard Blackboard;
-
-        [HideInInspector, SerializeField] private int m_genericOptionCount = 0;
 
         /// <summary>
         /// Use to create new nodes. Using runtime is not recommended.
@@ -65,10 +66,19 @@ namespace com.absence.dialoguesystem
         public Node CreateNode(System.Type type, Node from = null)
         {
             Node node = null;
-            if (from == null) node = ScriptableObject.CreateInstance(type) as Node;
-            else node = Instantiate(from);
-            node.name = type.Name;
 
+            if (from == null)
+            {
+                node = ScriptableObject.CreateInstance(type) as Node;
+                node.FetchGenericOptions(this);
+            }
+
+            else
+            {
+                node = Instantiate(from);
+            }
+
+            node.name = type.Name;
             node.PersonIndex = 0;
 
             node.Blackboard = Blackboard;
@@ -170,6 +180,30 @@ namespace com.absence.dialoguesystem
         internal void InvokeOnGenericOptionsChange()
         {
             OnGenericOptionsChange?.Invoke();
+        }
+
+        internal void InvokeOnGenericOptionCreated(int at)
+        {
+            OnGenericOptionCreated?.Invoke(at);
+        }
+
+        internal void InvokeOnGenericOptionRemoved(int at)
+        {
+            OnGenericOptionRemoved?.Invoke(at);
+        }
+
+        internal void InvokeOnGenericOptionsRearranged(int replacer, int replaced)
+        {
+            OnGenericOptionsRearranged?.Invoke(replacer, replaced);
+        }
+
+        internal void ClearCallbacks()
+        {
+            OnGenericOptionCreated = null;
+            OnGenericOptionRemoved = null;
+            OnGenericOptionsRearranged = null;
+            OnGenericOptionsChange = null;
+            OnValidateAction = null;
         }
 
         public void OnValidate()

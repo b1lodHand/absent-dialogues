@@ -47,7 +47,7 @@ namespace com.absence.dialoguesystem.internals
         /// <summary>
         /// The node this option leads to.
         /// </summary>
-        public Node LeadsTo;
+        public Node LeadingNode;
 
         /// <summary>
         /// Use to get a clone of this option.
@@ -60,7 +60,7 @@ namespace com.absence.dialoguesystem.internals
             clone.Text = Text;
             clone.m_useShowIf = UseShowIf;
             clone.Visibility = Visibility.Clone(overrideBank);
-            clone.LeadsTo = LeadsTo;
+            clone.LeadingNode = LeadingNode;
             if (CustomData != null) clone.CustomData = NodeCustomDataBase.Instantiate(CustomData);
 
             return clone;

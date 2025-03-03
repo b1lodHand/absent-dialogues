@@ -17,7 +17,7 @@ namespace com.absence.dialoguesystem.editor
         [SerializeField]
         private VisualTreeAsset m_VisualTreeAsset = default;
 
-        static DialogueGraphView m_dialogueGraphView;
+        internal static DialogueGraphView m_dialogueGraphView;
         internal static InspectorView m_inspectorView;
         static BlackboardView m_blackboardView;
         static Toolbar m_toolbar;

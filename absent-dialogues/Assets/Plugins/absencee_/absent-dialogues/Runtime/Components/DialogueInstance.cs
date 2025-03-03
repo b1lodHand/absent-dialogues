@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static com.absence.dialoguesystem.internals.DialogueFlowContext;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace com.absence.dialoguesystem
 {
@@ -78,6 +81,11 @@ namespace com.absence.dialoguesystem
         {
             m_extensionList = gameObject.GetComponents<DialogueExtensionBase>().OrderBy(extension => extension.Order).ToList();
             m_extensionList.ForEach(extension => extension.FindInstance());
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            AssetDatabase.SaveAssetIfDirty(gameObject);
+#endif
         }
 
         private void Awake()
