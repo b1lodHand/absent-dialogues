@@ -197,14 +197,7 @@ MonoBehaviour:
   m_genericOptions: []
   UsedByMapper: 0
   UniqueMapperId: 
-  m_blackboardEvents:
-  - m_setType: 0
-    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'null: null'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
+  m_blackboardEvents: []
   Next: {fileID: 7102625383665442442}
 --- !u!114 &5215409911009714315
 MonoBehaviour:
@@ -381,11 +374,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_guid: fc6230e8-c80f-4600-8b72-939333a006d4
   m_forExternalUse: 1
-  m_ints: []
-  m_floats: []
-  m_strings: []
+  m_ints:
+  - m_name: int
+    m_underlyingValue: 0
+    m_value: 0
+    m_bypassEvents: 0
+  m_floats:
+  - m_name: float
+    m_underlyingValue: 0
+    m_value: 0
+    m_bypassEvents: 0
+  m_strings:
+  - m_name: string
+    m_underlyingValue: 
+    m_value: 
+    m_bypassEvents: 0
   m_booleans:
-  - m_name: dfe
+  - m_name: boolean
     m_underlyingValue: 0
     m_value: 0
     m_bypassEvents: 0

@@ -67,7 +67,7 @@ namespace com.absence.dialoguesystem.internals
                 string boolResult = BooleanValue ? realVarName : $"!{realVarName}";
 
                 if (!richText) return boolResult;
-                else return Utilities.Texts.ColorizeString(boolResult, Constants.Tooltips.VARIABLE_NAME_HEX);
+                else return Utilities.Text.ColorizeString(boolResult, Constants.Tooltips.VARIABLE_NAME_HEX);
             }
 
             StringBuilder sb = new(realVarName);
@@ -80,7 +80,7 @@ namespace com.absence.dialoguesystem.internals
             else if (BlackboardBank.HasString(m_targetVariableName)) sb.Append($"'{StringValue}'");
 
             if (!richText) return sb.ToString();
-            else return Utilities.Texts.ColorizeString(sb.ToString(), Constants.Tooltips.VARIABLE_NAME_HEX);
+            else return Utilities.Text.ColorizeString(sb.ToString(), Constants.Tooltips.VARIABLE_NAME_HEX);
         }
 
         string TrimVariableName(string nameToTrim)

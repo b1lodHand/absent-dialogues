@@ -6,7 +6,7 @@ namespace com.absence.dialoguesystem.internals
 {
     public static class Utilities
     {
-        public static class Texts
+        public static class Text
         {
             public static string ColorizeString(string stringToColorize, string colorHex)
             {
@@ -27,7 +27,7 @@ namespace com.absence.dialoguesystem.internals
                 StringBuilder sb = new();
 
                 if (!richText) sb.Append("[");
-                else sb.Append(Utilities.Texts.ColorizeString("[", GetBracketHex(processType)));
+                else sb.Append(Utilities.Text.ColorizeString("[", GetBracketHex(processType)));
 
                 sb.Append(" ");
 
@@ -45,20 +45,20 @@ namespace com.absence.dialoguesystem.internals
                 });
 
                 if (!richText) sb.Append("]");
-                else sb.Append(Utilities.Texts.ColorizeString("]", GetBracketHex(processType)));
+                else sb.Append(Utilities.Text.ColorizeString("]", GetBracketHex(processType)));
 
                 return sb.ToString();
 
                 string GetAndSymbol(bool richText = false)
                 {
                     if (!richText) return "&&";
-                    else return Utilities.Texts.ColorizeString("&&", Constants.Tooltips.AND_HEX);
+                    else return Utilities.Text.ColorizeString("&&", Constants.Tooltips.AND_HEX);
                 }
 
                 string GetOrSymbol(bool richText = false)
                 {
                     if (!richText) return "||";
-                    else return Utilities.Texts.ColorizeString("||", Constants.Tooltips.OR_HEX);
+                    else return Utilities.Text.ColorizeString("||", Constants.Tooltips.OR_HEX);
                 }
 
                 string GetBracketHex(ConditionProcessMode processType)
@@ -85,6 +85,28 @@ namespace com.absence.dialoguesystem.internals
                         return "≥";
                     case BaseVariableComparer.ComparisonType.GreaterThan:
                         return ">";
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+
+        public static class Setting
+        {
+            public static string GetSetTypeIcon(NodeVariableSetter.SetType setType)
+            {
+                switch (setType)
+                {
+                    case BaseVariableSetter.SetType.SetTo:
+                        return "=";
+                    case BaseVariableSetter.SetType.IncrementBy:
+                        return "+=";
+                    case BaseVariableSetter.SetType.DecrementBy:
+                        return "-=";
+                    case BaseVariableSetter.SetType.MultipltyBy:
+                        return "*=";
+                    case BaseVariableSetter.SetType.DivideBy:
+                        return "/=";
                     default:
                         return string.Empty;
                 }

@@ -44,9 +44,9 @@ namespace com.absence.dialoguesystem.editor
             foldoutLabelStyle.fontStyle = FontStyle.Bold;
 
             string foldoutLabel;
-            if (enabled) foldoutLabel = Utilities.Texts.ColorizeString(id, 
+            if (enabled) foldoutLabel = Utilities.Text.ColorizeString(id, 
                 Constants.Tooltips.VARIABLE_NAME_HEX);
-            else foldoutLabel = Utilities.Texts.ColorizeString($"{id} [DISABLED]",
+            else foldoutLabel = Utilities.Text.ColorizeString($"{id} [DISABLED]",
                 Constants.Tooltips.AND_HEX);
 
             isFoldout = EditorGUI.Foldout(position, isFoldout, 

@@ -1,5 +1,5 @@
 using com.absence.variablesystem.banksystembase;
-using UnityEngine;
+using System.Text;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -26,6 +26,39 @@ namespace com.absence.dialoguesystem.internals
         {
             BlackboardBank = originalBlackboardBank;
             m_targetBankGuid = BlackboardBank.Guid;
+        }
+
+        public string GetSettingString(bool richText = false)
+        {
+            if (BlackboardBank == null) return string.Empty;
+            if (!BlackboardBank.HasAny(m_targetVariableName)) return string.Empty;
+
+            string realVarName = TrimVariableName(m_targetVariableName);
+            string richVarName = Utilities.Text.ColorizeString(realVarName, Constants.Tooltips.VARIABLE_NAME_HEX);
+            string bracketHex = TypeOfSet == SetType.SetTo ?
+                Constants.Tooltips.AND_HEX : Constants.Tooltips.OR_HEX;
+
+            StringBuilder sb = new();
+            sb.Append(richText ? Utilities.Text.ColorizeString("[", bracketHex) : "[");
+            sb.Append(richText ? richVarName : realVarName);
+            sb.Append(" ");
+            sb.Append(richText ? Utilities.Text.ColorizeString(Utilities.Setting.GetSetTypeIcon(m_setType), bracketHex) : Utilities.Setting.GetSetTypeIcon(m_setType));
+            sb.Append(" ");
+
+            if (BlackboardBank.HasInt(m_targetVariableName)) sb.Append(IntValue);
+            else if (BlackboardBank.HasBoolean(m_targetVariableName)) sb.Append(BooleanValue);
+            else if (BlackboardBank.HasFloat(m_targetVariableName)) sb.Append(FloatValue);
+            else if (BlackboardBank.HasString(m_targetVariableName)) sb.Append($"{StringValue}");
+
+            sb.Append(richText ? Utilities.Text.ColorizeString("]", bracketHex) : "]");
+
+            return sb.ToString();
+        }
+
+        string TrimVariableName(string nameToTrim)
+        {
+            if (!nameToTrim.Contains(':')) return nameToTrim;
+            return nameToTrim.Split(':')[1].Trim();
         }
 
         /// <summary>
