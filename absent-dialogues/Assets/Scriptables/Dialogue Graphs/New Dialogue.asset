@@ -221,7 +221,15 @@ MonoBehaviour:
         ShowIfList: []
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
-  m_options: []
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: sg
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 7102625383665442442}
   m_text: tecxt
   NativeNextNode: {fileID: 0}
 --- !u!114 &9043952714220872817

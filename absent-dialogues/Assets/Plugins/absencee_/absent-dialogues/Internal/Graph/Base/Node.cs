@@ -6,8 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
-
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -283,7 +281,7 @@ namespace com.absence.dialoguesystem.internals
 
         internal void FetchGenericOptions(Dialogue dialogue)
         {
-#if UNITY_EDITOR
+
             if (GenericOptions != null)
                 return;
 
@@ -294,13 +292,14 @@ namespace com.absence.dialoguesystem.internals
                 references.Add(new GenericOptionReference(dialogue.GenericOptions[i]));
             }
 
+#if UNITY_EDITOR
             int group = Undo.GetCurrentGroup();
-
             Undo.RegisterCompleteObjectUndo(this, "Node (Fetch Generic Options)");
+#endif
             GenericOptions = references;
 
+#if UNITY_EDITOR
             Undo.CollapseUndoOperations(group);
-
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
 #endif
@@ -403,7 +402,7 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual void OnCloning(Dialogue originalDialogue, Dialogue cloneDialogue)
         {
-            if (Options != null)
+            if (HasOptions)
             {
                 Options = Options.ConvertAll(opt => 
                 {
@@ -412,6 +411,8 @@ namespace com.absence.dialoguesystem.internals
                     return result;
                 });
             }
+
+            FetchGenericOptions(cloneDialogue);
 
             if (Comparers != null)
             {
