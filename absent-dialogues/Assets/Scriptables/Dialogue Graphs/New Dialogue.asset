@@ -38,7 +38,7 @@ MonoBehaviour:
       ShowIfList: []
     LeadingNode: {fileID: 0}
   - m_scroll: {x: 0, y: 0}
-    Text: a
+    Text: iuhkihulkjh
     CustomData: {fileID: 0}
     m_useShowIf: 0
     Visibility:
@@ -213,7 +213,7 @@ MonoBehaviour:
   - Bypass: 1
     Target:
       m_scroll: {x: 0, y: 0}
-      Text: a
+      Text: iuhkihulkjh
       CustomData: {fileID: 0}
       m_useShowIf: 0
       Visibility:

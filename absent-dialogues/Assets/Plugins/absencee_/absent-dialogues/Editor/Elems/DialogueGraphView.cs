@@ -559,26 +559,6 @@ namespace com.absence.dialoguesystem.editor
             Button bypassButton = new Button();
             bypassButton.AddToClassList("bypassOptionButton");
 
-            Action action = () =>
-            {
-                Node node = sender.Node;
-                bool hasNoCertainOptions = node.NoCertainOptions;
-
-                Undo.RegisterCompleteObjectUndo(sender.Node, "Node (Generic Option Bypass Button)");
-
-                reference.Bypass = !reference.Bypass;
-
-                EditorUtility.SetDirty(sender.Node);
-
-                if (hasNoCertainOptions != node.NoCertainOptions)
-                    Refresh();
-
-                RefreshBypassButton(sender, bypassButton, reference);
-            };
-
-            RefreshBypassButton(sender, bypassButton, reference);
-            bypassButton.clicked += action;
-
             //Button moveUpButton = new Button(() =>
             //{
             //});
@@ -611,6 +591,27 @@ namespace com.absence.dialoguesystem.editor
             showIfLabel.name = "show-if-label";
             showIfLabel.tooltip = "NODATA";
 
+            Action action = () =>
+            {
+                Node node = sender.Node;
+                bool hasNoCertainOptions = node.NoCertainOptions;
+
+                Undo.RegisterCompleteObjectUndo(sender.Node, "Node (Generic Option Bypass Button)");
+
+                reference.Bypass = !reference.Bypass;
+
+                EditorUtility.SetDirty(sender.Node);
+
+                if (hasNoCertainOptions != node.NoCertainOptions)
+                    Refresh();
+
+                RefreshBypassButton(sender, bypassButton, reference);
+                RefreshShowIfLabel();
+            };
+
+            RefreshBypassButton(sender, bypassButton, reference);
+            bypassButton.clicked += action;
+
             top.Add(bypassButton);
             //top.Add(moveUpButton);
             //top.Add(moveDownButton);
@@ -628,7 +629,13 @@ namespace com.absence.dialoguesystem.editor
 
             void RefreshShowIfLabel()
             {
-                showIfLabel.visible = target.UseShowIf;
+                bool useShowIf = reference.Target.UseShowIf;
+                bool bypass = reference.Bypass;
+
+                showIfLabel.visible = useShowIf || bypass;
+
+                if (reference.Bypass) showIfLabel.text = "Bypassed.";
+                else if (reference.Target.UseShowIf) showIfLabel.text = "Conditional visibility active.";
             }
         }
     }

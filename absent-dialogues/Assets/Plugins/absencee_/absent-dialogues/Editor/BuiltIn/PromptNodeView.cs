@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
-using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -57,7 +56,14 @@ namespace com.absence.dialoguesystem.editor
 
                 GenericOptionReference reference = Node.GenericOptions[i];
 
-                showIfLabel.visible = reference.Target.UseShowIf;
+                bool useShowIf = reference.Target.UseShowIf;
+                bool bypass = reference.Bypass;
+
+                showIfLabel.visible = useShowIf || bypass;
+
+                if (reference.Bypass) showIfLabel.text = "Bypassed.";
+                else if (reference.Target.UseShowIf) showIfLabel.text = "Conditional visibility active.";
+
                 showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
                 textField.SetValueWithoutNotify(reference.Target.Text);
             }
