@@ -20,6 +20,9 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
     public class DialogueInstance : MonoBehaviour, IUseDialogueInScene
     {
+        [SerializeField]
+        private bool m_cloneDialogueBeforeUsing = true;
+
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;
 
@@ -89,16 +92,21 @@ namespace com.absence.dialoguesystem
             //Dialogue dialogue = m_referencedDialogue.Clone();
 
             Dialogue dialogue = m_referencedDialogue;
+
 #if UNITY_EDITOR
             dialogue = m_referencedDialogue.Clone();
 #else
+            if (m_cloneDialogueBeforeUsing)       
+                dialogue = m_referencedDialogue.Clone();
+
             m_overridePairs = new();
             for (int i = 0; i < m_overridePeople.Count; i++) 
             {
                 PersonOverride ovr = m_overridePeople[i];
-                if (ovr.Override == null) continue;
+                Person resultOfOverride =
+                    ovr.Override != null ? ovr.Override : ovr.Target;
 
-                m_overridePairs.Add(ovr.Target, ovr.Override);
+                m_overridePairs.Add(ovr.Target, resultOfOverride);
             }
 #endif
 
@@ -204,10 +212,7 @@ namespace com.absence.dialoguesystem
             Person person = frame.GetPerson(m_player.Target);
 
 #if !UNITY_EDITOR
-            if (m_overridePairs.TryGetValue(person, out Person person2))
-                overridenPerson = person2;
-            else
-                overridenPerson = person;
+            overridenPerson = m_overridePairs[person];
 #else
             PersonOverride overrideFound = m_overridePeople.FirstOrDefault(ovr => (ovr.Override != null) && (ovr.Target.Equals(person)));
             overridenPerson = overrideFound != null ? overrideFound.Override : person;
