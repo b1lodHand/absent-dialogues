@@ -204,10 +204,13 @@ namespace com.absence.dialoguesystem
             Person person = frame.GetPerson(m_player.Target);
 
 #if !UNITY_EDITOR
-            if (m_overridePairs.TryGetValue(person, out overridenPerson))
+            if (m_overridePairs.TryGetValue(person, out Person person2))
+                overridenPerson = person2;
+            else
+                overridenPerson = person;
 #else
             PersonOverride overrideFound = m_overridePeople.FirstOrDefault(ovr => (ovr.Override != null) && (ovr.Target.Equals(person)));
-            overridenPerson = overrideFound != null ? overridenPerson : person;
+            overridenPerson = overrideFound != null ? overrideFound.Override : person;
 #endif
 
             InvokeOnProgress();
