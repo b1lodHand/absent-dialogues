@@ -15,6 +15,7 @@ namespace com.absence.dialoguesystem.runtime.backup.data
 
         public char ComparerProcessorType;
 
+        public int PersonIndex;
         public bool HasText;
         public bool HasOptions;
         public bool HasGenericOptions;

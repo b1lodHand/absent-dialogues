@@ -608,7 +608,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startOnAwake: 1
   m_referencedDialogue: {fileID: 11400000, guid: 897dfc22b97323241aa34c3fb84e8b6c, type: 2}
-  m_overridePeople: []
+  m_overridePeople:
+  - Target: {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
+    Override: {fileID: 0}
+  - Target: {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
+    Override: {fileID: 0}
   m_extensionList:
   - {fileID: 560826872}
   - {fileID: 560826873}

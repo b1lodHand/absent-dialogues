@@ -131,7 +131,9 @@ MonoBehaviour:
   - {fileID: 5215409911009714315}
   - {fileID: -5246905779991590207}
   - {fileID: -3358797512164180333}
-  m_people: []
+  m_people:
+  - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
+  - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
   m_genericOptions:
   - m_scroll: {x: 0, y: 0}
     Text: c
@@ -298,7 +300,7 @@ MonoBehaviour:
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
-  PersonIndex: 0
+  PersonIndex: 1
   m_genericOptions:
   - Bypass: 0
     Target:

@@ -73,6 +73,9 @@ namespace com.absence.dialoguesystem.runtime
         }
         void Search()
         {
+            if (m_instance.ReferencedDialogue == null)
+                return;
+
             m_instance.ReferencedDialogue.AllNodes.ForEach(node =>
             {
                 if (node is not EventNode actionNode) return;

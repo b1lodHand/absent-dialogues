@@ -28,7 +28,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Required] private Dialogue m_referencedDialogue;
 
         [SerializeField, Tooltip("A new list of people to override the default one which is in the dialogue itself. Keeping list size the same with the original one is highly recommended. \nLeave empty if you won't use it.")] 
-        private List<Person> m_overridePeople;
+        private List<PersonOverride> m_overridePeople = new();
 
         [Space(10)]
 
@@ -67,8 +67,6 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action OnExitDialogue;
 
-        bool m_inDialogue = false;
-
         /// <summary>
         /// Use to check if this instance is in progress right now.
         /// </summary>
@@ -76,17 +74,8 @@ namespace com.absence.dialoguesystem
 
         public event Action OnValidation = delegate { };
 
-        [Button("Refresh Extension List")]
-        void RefreshExtensionList()
-        {
-            m_extensionList = gameObject.GetComponents<DialogueExtensionBase>().OrderBy(extension => extension.Order).ToList();
-            m_extensionList.ForEach(extension => extension.FindInstance());
-
-#if UNITY_EDITOR
-            EditorUtility.SetDirty(gameObject);
-            AssetDatabase.SaveAssetIfDirty(gameObject);
-#endif
-        }
+        bool m_inDialogue = false;
+        Dictionary<Person, Person> m_overridePairs;
 
         private void Awake()
         {
@@ -102,6 +91,15 @@ namespace com.absence.dialoguesystem
             Dialogue dialogue = m_referencedDialogue;
 #if UNITY_EDITOR
             dialogue = m_referencedDialogue.Clone();
+#else
+            m_overridePairs = new();
+            for (int i = 0; i < m_overridePeople.Count; i++) 
+            {
+                PersonOverride ovr = m_overridePeople[i];
+                if (ovr.Override == null) continue;
+
+                m_overridePairs.Add(ovr.Target, ovr.Override);
+            }
 #endif
 
             m_player = new DialoguePlayer(dialogue);
@@ -202,8 +200,15 @@ namespace com.absence.dialoguesystem
             DialogueFlowContext context = player.Context;
             Node frame = player.Frame;
 
-            // PEOPLE OVERRIDE LOGIC NEEDED!!!
+            Person overridenPerson = null;
             Person person = frame.GetPerson(m_player.Target);
+
+#if !UNITY_EDITOR
+            if (m_overridePairs.TryGetValue(person, out overridenPerson))
+#else
+            PersonOverride overrideFound = m_overridePeople.FirstOrDefault(ovr => (ovr.Override != null) && (ovr.Target.Equals(person)));
+            overridenPerson = overrideFound != null ? overridenPerson : person;
+#endif
 
             InvokeOnProgress();
             InvokeHandleCustomData();
@@ -216,7 +221,7 @@ namespace com.absence.dialoguesystem
 
             if (context.HasOptions)
             {
-                DialogueDisplayer.Instance.Display(person, context.Text, context.OptionIndexPairs, i =>
+                DialogueDisplayer.Instance.Display(overridenPerson, context.Text, context.OptionIndexPairs, i =>
                 {
                     context.OptionIndex = i;
                     ForceContinue();
@@ -225,7 +230,7 @@ namespace com.absence.dialoguesystem
 
             else
             {
-                DialogueDisplayer.Instance.Display(person, context.Text);
+                DialogueDisplayer.Instance.Display(overridenPerson, context.Text);
             }
         }
 
@@ -289,8 +294,52 @@ namespace com.absence.dialoguesystem
             m_extensionList.Add(component);
         }
 
+        [Button("Refresh Dialogue")]
+        void Refresh()
+        {
+            RefreshPeopleOverrides();
+        }
+
+        void RefreshPeopleOverrides()
+        {
+            if (m_referencedDialogue == null)
+            {
+                m_overridePeople.Clear();
+                return;
+            }
+
+            List<PersonOverride> newOverrides = new();
+            m_referencedDialogue.People.ForEach(person =>
+            {
+                PersonOverride overrideFound = m_overridePeople.FirstOrDefault(ovr => (ovr.Target == person) && (ovr.Override != null));
+                Person result = overrideFound != null ? overrideFound.Override : null;
+                newOverrides.Add(new PersonOverride() { Target = person, Override = result });
+            });
+
+            m_overridePeople = newOverrides;
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            AssetDatabase.SaveAssetIfDirty(gameObject);
+#endif
+        }
+
+        [Button("Refresh Extension List")]
+        void RefreshExtensionList()
+        {
+            m_extensionList = gameObject.GetComponents<DialogueExtensionBase>().OrderBy(extension => extension.Order).ToList();
+            m_extensionList.ForEach(extension => extension.FindInstance());
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            AssetDatabase.SaveAssetIfDirty(gameObject);
+#endif
+        }
+
         private void OnValidate()
         {
+            RefreshPeopleOverrides();
+
             OnValidation?.Invoke();
 
             m_extensionList.ForEach(extension =>
