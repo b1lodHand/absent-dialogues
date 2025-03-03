@@ -1,9 +1,10 @@
 using com.absence.attributes;
 using com.absence.dialoguesystem.runtime.backup;
 using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.variablesystem.banksystembase;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
@@ -27,6 +28,14 @@ namespace com.absence.dialoguesystem.internals
         public static string CreationMenuName => "Event";
 
         protected const string k_none = "None";
+        protected static readonly Dictionary<BaseVariableSetter.SetType, string> s_setTypeIconPairs = new()
+        {
+            {BaseVariableSetter.SetType.SetTo, "="},
+            {BaseVariableSetter.SetType.IncrementBy, "+="},
+            {BaseVariableSetter.SetType.DecrementBy, "-="},
+            {BaseVariableSetter.SetType.MultipltyBy, "*="},
+            {BaseVariableSetter.SetType.DivideBy, "/="},
+        };
 
         public bool UsedByMapper = false;
         [ShowIf(nameof(UsedByMapper))] public string UniqueMapperId;
@@ -97,6 +106,24 @@ namespace com.absence.dialoguesystem.internals
             {
                 m_blackboardEvents = value;
             }
+        }
+
+        public virtual string GenerateIconTooltip()
+        {
+            StringBuilder sb = new();
+
+            m_blackboardEvents.ForEach(setter =>
+            {
+                sb.Append("[");
+                sb.Append(setter.TargetVariableName);
+                sb.Append(" ");
+                sb.Append(s_setTypeIconPairs[setter.TypeOfSet]);
+                sb.Append(" ");
+                sb.Append("]");
+                sb.Append("\n");
+            });
+
+            return sb.ToString();
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)

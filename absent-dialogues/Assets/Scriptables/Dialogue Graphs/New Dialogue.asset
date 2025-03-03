@@ -183,7 +183,14 @@ MonoBehaviour:
   m_genericOptions: []
   UsedByMapper: 0
   UniqueMapperId: 
-  m_blackboardEvents: []
+  m_blackboardEvents:
+  - m_setType: 0
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'null: null'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
   Next: {fileID: 7102625383665442442}
 --- !u!114 &5215409911009714315
 MonoBehaviour:
