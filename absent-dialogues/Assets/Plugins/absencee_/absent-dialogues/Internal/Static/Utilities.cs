@@ -58,7 +58,7 @@ namespace com.absence.dialoguesystem.internals
                 string GetOrSymbol(bool richText = false)
                 {
                     if (!richText) return "||";
-                    else return Utilities.Texts.ColorizeString("&&", Constants.Tooltips.OR_HEX);
+                    else return Utilities.Texts.ColorizeString("||", Constants.Tooltips.OR_HEX);
                 }
 
                 string GetBracketHex(ConditionProcessMode processType)

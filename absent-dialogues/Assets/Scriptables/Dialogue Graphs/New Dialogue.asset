@@ -55,8 +55,22 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  Mode: 0
-  m_conditions: []
+  Mode: 1
+  m_conditions:
+  - m_comparisonType: 2
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'null: null'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'bool: dfe'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
 --- !u!114 &-3358797512164180333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,4 +384,8 @@ MonoBehaviour:
   m_ints: []
   m_floats: []
   m_strings: []
-  m_booleans: []
+  m_booleans:
+  - m_name: dfe
+    m_underlyingValue: 0
+    m_value: 0
+    m_bypassEvents: 0

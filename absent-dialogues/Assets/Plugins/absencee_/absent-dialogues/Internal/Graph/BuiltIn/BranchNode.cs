@@ -107,7 +107,7 @@ namespace com.absence.dialoguesystem.internals
             //dataToWrite.ComparerData = m_conditions.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
         }
 
-        public string GetConditionString(bool richText = false)
+        public virtual string GetConditionString(bool richText = false)
         {
             return Utilities.Comparison.GetConditionString(m_conditions, Mode, richText);
         }
