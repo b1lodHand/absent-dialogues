@@ -1,5 +1,3 @@
-using com.absence.dialoguesystem.runtime.backup.data;
-using com.absence.dialoguesystem.runtime.backup;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +11,7 @@ namespace com.absence.dialoguesystem.internals
     {
         public static string CreationMenuName => "Misc/Title";
 
-        [HideInInspector] public string m_text;
+        [HideInInspector] public string m_text = "TITLE";
 
         public override bool DisplayState => false;
         public override bool ShowInMinimap => false;
@@ -53,16 +51,6 @@ namespace com.absence.dialoguesystem.internals
 
         public override string GetDefaultInputPortName() => null;
         public override List<string> GetDefaultOutputPortNames() => new();
-
-        public override void OnExport(NodeData dataToWrite)
-        {
-            dataToWrite.Data = m_text;
-        }
-
-        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
-        {
-            m_text = dataToRead.Data;
-        }
     }
 
 }

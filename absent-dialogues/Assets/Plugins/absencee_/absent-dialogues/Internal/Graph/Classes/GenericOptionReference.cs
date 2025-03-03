@@ -11,7 +11,6 @@ namespace com.absence.dialoguesystem.internals
 
         public GenericOptionReference(GenericOption target)
         {
-            if (target == null) Debug.Log("aegh");
             Target = target;
         }
     }

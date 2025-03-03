@@ -31,7 +31,18 @@ namespace com.absence.dialoguesystem
 
         [HideInInspector, SerializeField] private List<GenericOption> m_genericOptions = new List<GenericOption>();
 
-        public List<GenericOption> GenericOptions => m_genericOptions;
+        public List<GenericOption> GenericOptions
+        {
+            get
+            {
+                return m_genericOptions;
+            }
+
+            internal set
+            {
+                m_genericOptions = value;
+            }
+        }
 
         /// <summary>
         /// The original dialogue which is used to create this cloned one. Returns null if this dialogue is not a clone.
@@ -174,6 +185,7 @@ namespace com.absence.dialoguesystem
         internal void ValidateNode(Node node)
         {
             node.Blackboard = Blackboard;
+            //node.FetchGenericOptions(this);
             node.UpdateManipulators();
         }
 

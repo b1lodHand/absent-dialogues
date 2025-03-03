@@ -25,16 +25,17 @@ namespace com.absence.dialoguesystem.editor.backup
         static void ReadInitialDialogueData(DialogueData data, Dialogue target)
         {
             DataReader.ReadBlackboardData(data.BlackboardData, target.Blackboard);
+            DataReader.ReadGenericOptionData(data, target);
             ReadNodeList(data, target);
         }
         static void ReadNodeList(DialogueData data, Dialogue target)
         {
             Dictionary<string, Node> oldGuidPairs = new Dictionary<string, Node>();
-            int nodeCount = data.NodeDatas.Length;
+            int nodeCount = data.NodeData.Length;
 
             for (int i = 0; i < nodeCount; i++)
             {
-                NodeData nodeData = data.NodeDatas[i];
+                NodeData nodeData = data.NodeData[i];
                 oldGuidPairs.Add(nodeData.OldGuid, DataReader.ReadNodeData(nodeData, target));
             }
 
@@ -50,7 +51,7 @@ namespace com.absence.dialoguesystem.editor.backup
         }
         static void ApplyConnections(DialogueImportContext context)
         {
-            context.DialogueData.ConnectionDatas.ToList().ForEach(connectionData =>
+            context.DialogueData.ConnectionData.ToList().ForEach(connectionData =>
             {
                 Node from = context.OldGuidPairs[connectionData.FromGuid];
                 Node to = context.OldGuidPairs[connectionData.ToGuid];
@@ -65,7 +66,7 @@ namespace com.absence.dialoguesystem.editor.backup
             for (int i = 0; i < context.Dialogue.AllNodes.Count; i++)
             {
                 Node node = context.Dialogue.AllNodes[i];
-                NodeData data = context.DialogueData.NodeDatas[i];
+                NodeData data = context.DialogueData.NodeData[i];
 
                 Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
 

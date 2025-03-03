@@ -1,0 +1,463 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8321328686220637194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a6d21dda071847a74a44efdee2461, type: 3}
+  m_Name: d0408941-7c4c-403c-809b-525bb8e9ded0
+  m_EditorClassIdentifier: 
+  Guid: d0408941-7c4c-403c-809b-525bb8e9ded0
+  Position: {x: 1002.5, y: 526}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+--- !u!114 &-6744309108152367022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: 1e828498-0c4a-4080-a718-d3740df34d45
+  m_EditorClassIdentifier: 
+  Guid: 1e828498-0c4a-4080-a718-d3740df34d45
+  Position: {x: 86.00003, y: 304.35748}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  Next: {fileID: -6162856802583537809}
+  DialoguePartName: a
+--- !u!114 &-6162856802583537809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19251f6e4ded2324cb75716d36394977, type: 3}
+  m_Name: 4362bde6-f147-4c4f-8f95-3d7e563635b6
+  m_EditorClassIdentifier: 
+  Guid: 4362bde6-f147-4c4f-8f95-3d7e563635b6
+  Position: {x: 213.52087, y: -23.99996}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: -2115484104416488863}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: -2115484104416488863}
+  - Bypass: 1
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  m_options:
+  - m_scroll: {x: 0, y: 0}
+    Text: sg
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 4986389765177148905}
+  m_text: tecxt
+  NativeNextNode: {fileID: 0}
+--- !u!114 &-2115484104416488863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b6a1f80ef741468c360bc8cc33e9b, type: 3}
+  m_Name: 8b7943d2-0245-40ca-a3ca-bd455ba2bc11
+  m_EditorClassIdentifier: 
+  Guid: 8b7943d2-0245-40ca-a3ca-bd455ba2bc11
+  Position: {x: 914.25006, y: 97.750015}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  UsedByMapper: 0
+  UniqueMapperId: 
+  m_blackboardEvents: []
+  Next: {fileID: 4986389765177148905}
+--- !u!114 &-265093952266838047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: New Dialogue 1 Blackboard VB
+  m_EditorClassIdentifier: 
+  m_guid: 70b5a4f6-d082-4f77-bc24-c971c3c957cf
+  m_forExternalUse: 1
+  m_ints: []
+  m_floats: []
+  m_strings: []
+  m_booleans: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue 1
+  m_EditorClassIdentifier: 
+  Entry: {fileID: 4178295625422936204}
+  AllNodes:
+  - {fileID: 4178295625422936204}
+  - {fileID: -6162856802583537809}
+  - {fileID: -2115484104416488863}
+  - {fileID: 4986389765177148905}
+  - {fileID: -6744309108152367022}
+  - {fileID: 277291513194193659}
+  - {fileID: -8321328686220637194}
+  m_people: []
+  m_genericOptions:
+  - m_scroll: {x: 0, y: 0}
+    Text: c
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 0}
+  - m_scroll: {x: 0, y: 0}
+    Text: v
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 0}
+  - m_scroll: {x: 0, y: 0}
+    Text: iuhkihulkjh
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+--- !u!114 &277291513194193659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b61acb6ea58954a89807992689c3a9, type: 3}
+  m_Name: da16d8d4-26ab-4413-8b07-4316972f4798
+  m_EditorClassIdentifier: 
+  Guid: da16d8d4-26ab-4413-8b07-4316972f4798
+  Position: {x: 603.75006, y: 492.20004}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  TrueNext: {fileID: 0}
+  FalseNext: {fileID: 0}
+  Mode: 0
+  m_conditions: []
+--- !u!114 &4178295625422936204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501d7a5ca1d0a344a90ce0af4756c6b7, type: 3}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: 
+  Guid: 13c66d94-793a-4438-80bf-9eaf1c867abe
+  Position: {x: 0, y: 0}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  Next: {fileID: -6162856802583537809}
+--- !u!114 &4986389765177148905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: 8046a25a-6aa5-43f5-b799-aecd2f9fb894
+  m_EditorClassIdentifier: 
+  Guid: 8046a25a-6aa5-43f5-b799-aecd2f9fb894
+  Position: {x: 1129.5, y: 193.30003}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -265093952266838047}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  TargetNode: {fileID: -6744309108152367022}

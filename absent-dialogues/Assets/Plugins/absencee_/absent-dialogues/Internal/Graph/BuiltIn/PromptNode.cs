@@ -191,17 +191,5 @@ namespace com.absence.dialoguesystem.internals
         }
 
         public override List<NodeVariableSetter> Setters => null;
-
-        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
-        {
-            m_text = dataToRead.Data;
-            m_options = dataToRead.OptionData.ToList().ConvertAll(optionData => DataReader.ReadOptionData(optionData)).ToList();
-        }
-
-        public override void OnExport(NodeData dataToWrite)
-        {
-            dataToWrite.Data = m_text;
-            dataToWrite.OptionData = m_options.ConvertAll(option => DataGenerator.GenerateOptionData(option)).ToArray();
-        }
     }
 }

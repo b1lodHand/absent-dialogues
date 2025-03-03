@@ -55,12 +55,16 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            DialoguePartName = dataToRead.Data;
+            base.OnImport(dataToRead, context);
+
+            DialoguePartName = dataToRead.Text;
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
-            dataToWrite.Data = DialoguePartName;
+            base.OnExport(dataToWrite);
+
+            dataToWrite.Text = DialoguePartName;
         }
     }
 

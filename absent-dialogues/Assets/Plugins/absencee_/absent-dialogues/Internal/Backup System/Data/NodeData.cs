@@ -15,9 +15,16 @@ namespace com.absence.dialoguesystem.runtime.backup.data
 
         public char ComparerProcessorType;
 
-        public string Data;
+        public bool HasText;
+        public bool HasOptions;
+        public bool HasGenericOptions;
+        public bool HasComparers;
+        public bool HasSetters;
+        public bool UsedByMapper;
+
+        public string Text;
         public NodeCustomDataBase CustomData;
         public OptionData[] OptionData;
-        public object[] BoxedData;
+        public GenericOptionReferenceData[] GenericOptionReferenceData;
     }
 }

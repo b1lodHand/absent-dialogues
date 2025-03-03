@@ -101,18 +101,21 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            UsedByMapper = (bool)dataToRead.BoxedData[0];
-            UniqueMapperId = dataToRead.Data;
-            m_blackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+            base.OnImport(dataToRead, context);
+
+            UsedByMapper = dataToRead.UsedByMapper;
+            UniqueMapperId = dataToRead.Text;
+            //m_blackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
-            dataToWrite.BoxedData = new object[1];
-            dataToWrite.BoxedData[0] = (object)UsedByMapper;
+            base.OnExport(dataToWrite);
 
-            dataToWrite.Data = UniqueMapperId;
-            dataToWrite.SetterData = m_blackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
+            dataToWrite.UsedByMapper = UsedByMapper;
+
+            dataToWrite.Text = UniqueMapperId;
+            //dataToWrite.SetterData = m_blackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
         }
     }
 

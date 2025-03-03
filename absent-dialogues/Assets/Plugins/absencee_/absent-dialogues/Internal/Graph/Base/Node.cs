@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
+
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -281,7 +284,6 @@ namespace com.absence.dialoguesystem.internals
 
         internal void FetchGenericOptions(Dialogue dialogue)
         {
-
             if (GenericOptions != null)
                 return;
 
@@ -392,12 +394,125 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
+            Text = dataToRead.HasText ? dataToRead.Text : null;
 
+            if (dataToRead.HasOptions)
+            {
+                Options = new();
+                for (int i = 0; i < dataToRead.OptionData.Length; i++) 
+                {
+                    OptionData optionData = dataToRead.OptionData[i];
+                    Option option = DataReader.ReadOptionData<Option>(optionData);
+
+                    if (!optionData.OldLeadingNodeGuid.Equals(Node.NaN))
+                        option.LeadingNode = context.OldGuidPairs[optionData.OldLeadingNodeGuid];
+
+                    Options.Add(option);
+                }
+            }
+
+            if (dataToRead.HasGenericOptions)
+            {
+                GenericOptions = null; 
+                FetchGenericOptions(context.Dialogue);
+
+                for (int i = 0; i < dataToRead.GenericOptionReferenceData.Length; i++)
+                {
+                    GenericOptionReferenceData referenceData = dataToRead.GenericOptionReferenceData[i];
+
+                    GenericOptions[i].Bypass = referenceData.Bypass;
+                    GenericOptions[i].LeadingNode = referenceData.OldLeadingNodeGuid.Equals(NaN) ?
+                            null : context.OldGuidPairs[referenceData.OldLeadingNodeGuid];
+                }
+            }
+
+            Comparers = new();
+            if (dataToRead.HasComparers)
+            {
+                for (int i = 0; i < dataToRead.ComparerData.Length; i++) 
+                {
+                    Comparers[i] = DataReader.ReadComparerData(dataToRead.ComparerData[i]);
+                }
+            }
+
+            Setters = new();
+            if (dataToRead.HasSetters)
+            {
+                for (int i = 0; i < dataToRead.SetterData.Length; i++)
+                {
+                    Setters[i] = DataReader.ReadSetterData(dataToRead.SetterData[i]);
+                }
+            }
         }
 
         public virtual void OnExport(NodeData dataToWrite)
         {
+            dataToWrite.HasText = HasText;
+            dataToWrite.Text = HasText ? Text : null;
 
+            bool hasOptions = HasOptions && Options.Count > 0;
+            dataToWrite.HasOptions = hasOptions;
+
+            if (hasOptions)
+            {
+                int optionCount = Options.Count;
+                dataToWrite.OptionData = new OptionData[optionCount];
+
+                for (int i = 0; i < optionCount; i++)
+                {
+                    OptionData optionData = DataGenerator.GenerateOptionData(Options[i]);
+                    dataToWrite.OptionData[i] = optionData;
+                }
+            }
+
+            bool hasGenericOptions = UseGenericOptions && GenericOptions.Count > 0;
+            dataToWrite.HasGenericOptions = hasGenericOptions;
+            
+            if (hasGenericOptions)
+            {
+                int genericOptionCount = GenericOptions.Count;
+
+                dataToWrite.GenericOptionReferenceData = new GenericOptionReferenceData[genericOptionCount];
+                for (int i = 0; i < genericOptionCount; i++)
+                {
+                    GenericOptionReference reference = GenericOptions[i];
+
+                    dataToWrite.GenericOptionReferenceData[i] = new GenericOptionReferenceData()
+                    {
+                        Bypass = reference.Bypass,
+                        OldLeadingNodeGuid = reference.LeadingNode != null ?
+                            reference.LeadingNode.Guid : NaN,
+                    };
+                }
+            }
+
+            bool hasComparers = Comparers != null && Comparers.Count > 0;
+            dataToWrite.HasComparers = hasComparers;
+            if (hasComparers)
+            {
+                int comparerCount = Comparers.Count;
+
+                dataToWrite.ComparerData = new NodeVariableComparerData[comparerCount];
+                for (int i = 0; i < comparerCount; i++)
+                {
+                    NodeVariableComparer comparer = Comparers[i];
+                    dataToWrite.ComparerData[i] = DataGenerator.GenerateComparerData(comparer);
+                }
+            }
+            
+            bool hasSetters = Setters != null && Setters.Count > 0;
+            dataToWrite.HasSetters = hasSetters;
+            if (hasSetters)
+            {
+                int setterCount = Setters.Count;
+
+                dataToWrite.SetterData = new NodeVariableSetterData[setterCount];
+                for (int i = 0; i < setterCount; i++)
+                {
+                    NodeVariableSetter setter = Setters[i];
+                    dataToWrite.SetterData[i] = DataGenerator.GenerateSetterData(setter);
+                }
+            }
         }
 
         public virtual void OnCloning(Dialogue originalDialogue, Dialogue cloneDialogue)

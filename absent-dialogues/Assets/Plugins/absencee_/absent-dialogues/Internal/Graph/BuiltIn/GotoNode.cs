@@ -58,7 +58,9 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
-            string data = dataToRead.Data;
+            base.OnImport(dataToRead, context); 
+
+            string data = dataToRead.Text;
 
             if (data.Equals(NaN))
             {
@@ -71,13 +73,15 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnExport(NodeData dataToWrite)
         {
+            base.OnExport(dataToWrite); 
+
             if (TargetNode == null)
             {
-                dataToWrite.Data = NaN;
+                dataToWrite.Text = NaN;
                 return;
             }
 
-            dataToWrite.Data = TargetNode.Guid;
+            dataToWrite.Text = TargetNode.Guid;
         }
 
         public override void OnCloning(Dialogue originalDialogue, Dialogue cloneDialogue)

@@ -1,5 +1,6 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.dialoguesystem.runtime.backup.data;
+using System;
 using System.Collections.Generic;
 
 namespace com.absence.dialoguesystem.editor.backup
@@ -11,6 +12,7 @@ namespace com.absence.dialoguesystem.editor.backup
             DialogueData data = new();
             data.DefaultDialogueName = dialogue.name;
             WriteNodeList(data, dialogue);
+            WriteGenericOptions(data, dialogue);
             CopyConnections(data, dialogue);
 
             data.BlackboardData = DataGenerator.GenerateBlackboardData(dialogue.Blackboard);
@@ -18,14 +20,25 @@ namespace com.absence.dialoguesystem.editor.backup
             return data;
         }
 
+        private static void WriteGenericOptions(DialogueData target, Dialogue dialogue)
+        {
+            int optionCount = dialogue.GenericOptions.Count;
+
+            target.GenericOptionData = new OptionData[optionCount];
+            for (int i = 0; i < dialogue.GenericOptions.Count; i++)
+            {
+                target.GenericOptionData[i] = DataGenerator.GenerateOptionData(dialogue.GenericOptions[i]);
+            }
+        }
+
         static void WriteNodeList(DialogueData target, Dialogue dialogue)
         {
             int nodeCount = dialogue.AllNodes.Count;
 
-            target.NodeDatas = new NodeData[nodeCount];
+            target.NodeData = new NodeData[nodeCount];
             for (int i = 0; i < nodeCount; i++)
             {
-                target.NodeDatas[i] = DataGenerator.GenerateNodeData(dialogue.AllNodes[i]);
+                target.NodeData[i] = DataGenerator.GenerateNodeData(dialogue.AllNodes[i]);
             }
         }
         static void CopyConnections(DialogueData target, Dialogue dialogue)
@@ -50,7 +63,7 @@ namespace com.absence.dialoguesystem.editor.backup
                 }
             });
 
-            target.ConnectionDatas = dynamicData.ToArray();
+            target.ConnectionData = dynamicData.ToArray();
         }
             
     }

@@ -93,14 +93,18 @@ namespace com.absence.dialoguesystem.internals
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
         {
+            base.OnImport(dataToRead, context);
+
             Mode = DialogueImportSettings.ProcessorDictionary[dataToRead.ComparerProcessorType];
-            m_conditions = dataToRead.ComparerData.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
+            //m_conditions = dataToRead.ComparerData.ToList().ConvertAll(comparerData => DataReader.ReadComparerData(comparerData)).ToList();
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
+            base.OnExport(dataToWrite);
+
             dataToWrite.ComparerProcessorType = DialogueExportSettings.ProcessorDictionary[Mode];
-            dataToWrite.ComparerData = m_conditions.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
+            //dataToWrite.ComparerData = m_conditions.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
         }
 
         public string GetConditionString(bool richText = false)

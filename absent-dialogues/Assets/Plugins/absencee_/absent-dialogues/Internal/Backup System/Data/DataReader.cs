@@ -66,6 +66,9 @@ namespace com.absence.dialoguesystem.runtime.backup.data
             Node node = targetDialogue.CreateNode(nodeType);
             node.Guid = Guid.NewGuid().ToString();
             node.name = node.Guid;
+
+            if (node is EntryNode) node.name = "EntryNode";
+
 #if UNITY_EDITOR
             node.Position.x = data.PositionX;
             node.Position.y = data.PositionY;
@@ -100,10 +103,11 @@ namespace com.absence.dialoguesystem.runtime.backup.data
             target.Bank.Strings = new(strings);
             target.Bank.Booleans = new(booleans);
         }
-        public static Option ReadOptionData(OptionData data)
+
+        public static T ReadOptionData<T>(OptionData data) where T : Option, new()
         {
-            Option option = new();
-            option.Text = data.Speech;
+            T option = new();
+            option.Text = data.Text;
             option.UseShowIf = data.ShowIfInUse;
 
             option.Visibility = new Option.ShowIf();
@@ -111,6 +115,15 @@ namespace com.absence.dialoguesystem.runtime.backup.data
             option.Visibility.ShowIfList = data.ShowIfData.ToList().ConvertAll(comparerData => ReadComparerData(comparerData));
 
             return option;
+        }
+
+        public static void ReadGenericOptionData(DialogueData data, Dialogue target)
+        {
+            target.GenericOptions = new();
+            for (int i = 0; i < data.GenericOptionData.Length; i++)
+            {
+                target.GenericOptions.Add(ReadOptionData<GenericOption>(data.GenericOptionData[i]));
+            }
         }
     }
 }

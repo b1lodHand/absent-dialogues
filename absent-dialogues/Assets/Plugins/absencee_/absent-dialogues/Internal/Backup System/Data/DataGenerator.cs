@@ -25,8 +25,10 @@ namespace com.absence.dialoguesystem.runtime.backup.data
             OptionData data = new();
             data.ShowIfInUse = option.UseShowIf;
             data.ShowIfData = option.Visibility.ShowIfList.ConvertAll(comparer => DataGenerator.GenerateComparerData(comparer)).ToArray();
-            data.Speech = option.Text;
+            data.Text = option.Text;
             data.ProcessorType = DialogueExportSettings.ProcessorDictionary[option.Visibility.Processor];
+            data.OldLeadingNodeGuid = option.LeadingNode != null ?
+                option.LeadingNode.Guid : Node.NaN;
 
             return data;
         }
