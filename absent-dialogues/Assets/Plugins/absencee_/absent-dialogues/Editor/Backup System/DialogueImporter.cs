@@ -70,9 +70,10 @@ namespace com.absence.dialoguesystem.editor.backup
 
                 Type nodeType = TypeCache.GetTypesDerivedFrom(typeof(Node)).Where(t => t.Name.Equals(data.NodeTypeName)).FirstOrDefault();
 
-                node.UpdateManipulators();
-
                 node.OnImport(data, context);
+
+                context.Dialogue.ValidateNode(node);
+                node.UpdateManipulators();
             }
         }
 
