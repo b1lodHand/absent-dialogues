@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -208,7 +210,15 @@ namespace com.absence.dialoguesystem.internals
             }
 
             onPass?.Invoke();
-            return OnPass(context);
+
+            Node next = OnPass(context);
+
+            if (context != null)
+            {
+                context.Clear();
+            }
+
+            return next;
         }
         public void Reach(DialogueFlowContext context)
         {
@@ -218,6 +228,43 @@ namespace com.absence.dialoguesystem.internals
             {
                 context.State = DialogueFlowContext.ContextState.Reach;
                 context.CustomData = CustomData;
+
+                List<OptionHandle> handles = new();
+
+                int shift = 0;
+                if (HasOptions)
+                {
+                    for (int i = 0; i < Options.Count; i++)
+                    {
+                        Option option = Options[i];
+
+                        if (!option.IsVisible())
+                            continue;
+
+                        handles.Add(new OptionHandle(i + shift, option.Text));
+                    }
+
+                    shift += Options.Count;
+                }
+
+                if (UseGenericOptions)
+                {
+                    for (int i = 0; i < GenericOptions.Count; i++)
+                    {
+                        GenericOptionReference genericOption = GenericOptions[i];
+
+                        if (genericOption.Bypass)
+                            continue;
+
+                        if (!genericOption.Target.IsVisible())
+                            continue;
+
+                        handles.Add(new OptionHandle(i + shift, genericOption.Target.Text));
+                    }
+                }
+
+                context.Text = HasText ? Text : string.Empty;
+                context.OptionIndexPairs = handles;
             }
 
             onReach?.Invoke();

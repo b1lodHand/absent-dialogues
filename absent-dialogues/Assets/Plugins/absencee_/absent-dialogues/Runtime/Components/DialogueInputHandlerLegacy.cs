@@ -24,7 +24,6 @@ namespace com.absence.dialoguesystem
             if (inputNeeded && Input.GetKeyDown(KeyCode.Space))
             {
                 m_instance.ForceContinue();
-                m_instance.ForceContinue();
             }
         }
 

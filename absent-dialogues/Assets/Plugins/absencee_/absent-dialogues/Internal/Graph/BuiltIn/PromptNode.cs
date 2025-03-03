@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector, SerializeField, Tooltip("All of the options of this node.")] 
         private List<Option> m_options = new List<Option>();
 
-        [HideInInspector] public string m_text = string.Empty;
+        [HideInInspector] public string m_text = "||NO TEXT||";
 
         [HideInInspector] public Node NativeNextNode; 
 
@@ -47,15 +47,15 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            context.ClearText();
-            context.OptionIndexPairs = null;
-
             int optionSelected = context.OptionIndex;
             int optionCount = m_options.Count;
 
-            if (NoOptionsOverall && optionCount == 0)
+            if (NoOptionsOverall)
                 return NativeNextNode;
 
+            if (NoCertainOptions && optionSelected == -1)
+                return NativeNextNode;
+            
             if (optionSelected >= optionCount)
                 return GenericOptions[optionSelected - optionCount].LeadingNode;
 
@@ -63,17 +63,7 @@ namespace com.absence.dialoguesystem.internals
         }
         protected override void OnReach(DialogueFlowContext context)
         {
-            List<OptionHandle> handles = new();
-            m_options.ForEach(o =>
-            {
-                if(!o.IsVisible()) return;
 
-                handles.Add(new OptionHandle(m_options.IndexOf(o), o.Text));
-            });
-
-            context.Text = Text;
-            if (m_options.Count > 0) context.OptionIndexPairs = handles;
-            else context.OptionIndexPairs = null;
         }
 
         protected override void OnAddOutputConnection(Node nextWillBeAdded, int atPort)

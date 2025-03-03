@@ -22,25 +22,23 @@ namespace com.absence.dialoguesystem.internals
         public NodeCustomDataBase CustomData;
 
         public bool WillExit { get; set; }
-        public bool HasText => Text != null;
+        public bool HasText => Text != null && (!string.IsNullOrWhiteSpace(Text));
         public bool HasOptions => OptionIndexPairs != null && OptionIndexPairs.Count > 0;
 
         public DialogueFlowContext()
         {
-            WillExit = false;
-            OptionIndex = -1;
-            ActionId = string.Empty;
-            InvokeAction = false;
-            State = ContextState.Pass;
-
             OptionIndexPairs = new();
-            ClearText();
+            Clear();
         }
 
-        public void ClearText()
+        public void Clear()
         {
             Text = null;
             CustomData = null;
+            InvokeAction = false;
+            ActionId = string.Empty;
+            OptionIndex = -1;
+            WillExit = false;
             OptionIndexPairs?.Clear();
         }
     }

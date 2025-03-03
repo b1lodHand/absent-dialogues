@@ -57,9 +57,6 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            context.InvokeAction = false;
-            context.ActionId = Node.NaN;
-
             return Next;
         }
         protected override void OnReach(DialogueFlowContext context)

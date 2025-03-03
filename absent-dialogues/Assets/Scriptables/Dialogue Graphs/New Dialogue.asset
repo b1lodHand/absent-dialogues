@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 7535276429833814712}
   - {fileID: 4366251987463977943}
   - {fileID: 7102625383665442442}
+  - {fileID: 5215409911009714315}
   m_people: []
   m_genericOptions:
   - m_scroll: {x: 0, y: 0}
@@ -70,6 +71,61 @@ MonoBehaviour:
   UniqueMapperId: 
   m_blackboardEvents: []
   Next: {fileID: 7102625383665442442}
+--- !u!114 &5215409911009714315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: 4faf2a66713092b41b449f9dbcf2914f
+  m_EditorClassIdentifier: 
+  Guid: 4faf2a66713092b41b449f9dbcf2914f
+  Position: {x: 86.00003, y: 304.35748}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 9043952714220872817}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: a
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  Next: {fileID: 7535276429833814712}
+  DialoguePartName: a
 --- !u!114 &6441203632322913861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +167,7 @@ MonoBehaviour:
   State: 0
   PersonIndex: 0
   m_genericOptions: []
-  TargetNode: {fileID: 0}
+  TargetNode: {fileID: 5215409911009714315}
 --- !u!114 &7535276429833814712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +222,7 @@ MonoBehaviour:
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   m_options: []
-  m_text: 
+  m_text: tecxt
   NativeNextNode: {fileID: 0}
 --- !u!114 &9043952714220872817
 MonoBehaviour:
