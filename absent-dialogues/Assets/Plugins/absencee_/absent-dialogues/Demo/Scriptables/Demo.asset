@@ -55,6 +55,14 @@ MonoBehaviour:
   AllNodes:
   - {fileID: -7457775461247709284}
   m_people: []
-  m_genericOptions: []
+  m_genericOptions:
+  - m_scroll: {x: 0, y: 0}
+    Text: gfdgdrf
+    CustomData: {fileID: 0}
+    m_useShowIf: 0
+    Visibility:
+      Processor: 0
+      ShowIfList: []
+    LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: -3748157945484368094}

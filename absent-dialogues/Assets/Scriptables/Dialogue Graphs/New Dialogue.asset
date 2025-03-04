@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11e2258471b984d4ba77d2e1e0bdf1c6
   m_EditorClassIdentifier: 
   Guid: 11e2258471b984d4ba77d2e1e0bdf1c6
-  Position: {x: 603.75006, y: 492.20004}
+  Position: {x: 612.00006, y: 491.49997}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -56,21 +56,7 @@ MonoBehaviour:
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
   Mode: 1
-  m_conditions:
-  - m_comparisonType: 2
-    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'null: null'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
-  - m_comparisonType: 2
-    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'bool: dfe'
-    m_intValue: 0
-    m_floatValue: 0
-    m_stringValue: 
-    m_boolValue: 0
+  m_conditions: []
 --- !u!114 &-3358797512164180333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +324,7 @@ MonoBehaviour:
         ShowIfList: []
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 4366251987463977943}
-  - Bypass: 1
+  - Bypass: 0
     Target:
       m_scroll: {x: 0, y: 0}
       Text: iuhkihulkjh
