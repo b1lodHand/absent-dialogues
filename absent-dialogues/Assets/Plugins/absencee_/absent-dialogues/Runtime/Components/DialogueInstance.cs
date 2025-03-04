@@ -208,6 +208,9 @@ namespace com.absence.dialoguesystem
             DialogueFlowContext context = player.Context;
             Node frame = player.Frame;
 
+            InvokeOnProgress();
+            InvokeHandleCustomData();
+
             Person overridenPerson = null;
             Person person = frame.GetPerson(m_player.Target);
 
@@ -217,9 +220,6 @@ namespace com.absence.dialoguesystem
             PersonOverride overrideFound = m_overridePeople.FirstOrDefault(ovr => (ovr.Override != null) && (ovr.Target.Equals(person)));
             overridenPerson = overrideFound != null ? overrideFound.Override : person;
 #endif
-
-            InvokeOnProgress();
-            InvokeHandleCustomData();
 
             if (!context.HasText)
             {

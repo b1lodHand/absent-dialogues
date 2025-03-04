@@ -20,7 +20,7 @@ namespace com.absence.dialoguesystem.editor
         static void Refresh()
         {
             Reset();
-            DialogueEditorWindow.Refresh();
+            DialogueEditorWindow.Current.Refresh();
         }
 
         static void Reset()

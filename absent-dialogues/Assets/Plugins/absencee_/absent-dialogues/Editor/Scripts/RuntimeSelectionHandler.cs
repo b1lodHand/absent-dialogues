@@ -49,25 +49,31 @@ namespace com.absence.dialoguesystem.editor
             s_lastSelectedUser = displayer;
             s_lastSelectedUser.OnValidation += OnUserValidation;
 
+            if (DialogueEditorWindow.Current == null)
+                return;
+
             if (Application.isPlaying)
             {
-                DialogueEditorWindow.PopulateDialogueView(displayer.ClonedDialogue);
+                DialogueEditorWindow.Current.PopulateDialogueView(displayer.ClonedDialogue);
             }
 
             else
             {
-                DialogueEditorWindow.PopulateDialogueView(displayer.ReferencedDialogue);
-                DialogueEditorWindow.SaveLastDialogue();
+                DialogueEditorWindow.Current.PopulateDialogueView(displayer.ReferencedDialogue);
+                DialogueEditorWindow.Current.SaveLastDialogue();
             }
         }
 
         private static void OnUserValidation()
         {
+            if (DialogueEditorWindow.Current == null)
+                return;
+
             if (Application.isPlaying)
                 return;
 
-            DialogueEditorWindow.PopulateDialogueView(s_lastSelectedUser.ReferencedDialogue);
-            DialogueEditorWindow.SaveLastDialogue();
+            DialogueEditorWindow.Current.PopulateDialogueView(s_lastSelectedUser.ReferencedDialogue);
+            DialogueEditorWindow.Current.SaveLastDialogue();
         }
     }
 }

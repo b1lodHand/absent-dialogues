@@ -17,7 +17,7 @@ namespace com.absence.dialoguesystem.editor
 
         private void RefreshFinder()
         {
-            DialogueEditorWindow.RefreshDialoguePartFinder();
+            DialogueEditorWindow.Current.RefreshDialoguePartFinder();
         }
 
         private void RefreshTitle()

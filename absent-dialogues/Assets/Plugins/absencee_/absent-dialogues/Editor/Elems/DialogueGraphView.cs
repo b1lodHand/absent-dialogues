@@ -314,7 +314,11 @@ namespace com.absence.dialoguesystem.editor
 
             if (previousDialogue != m_dialogue) EditorPrefs.SetString("last-node-guid", string.Empty);
 
-            if (m_dialogue == null) return;
+            if (m_dialogue == null)
+            {
+                OnPopulateView?.Invoke();
+                return;
+            }
 
             if (m_dialogue.Entry == null)
             {

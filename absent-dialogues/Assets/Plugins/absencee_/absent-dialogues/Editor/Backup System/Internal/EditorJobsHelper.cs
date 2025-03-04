@@ -10,13 +10,13 @@ namespace com.absence.dialoguesystem.editor.backup.internals
         [MenuItem("absencee_/absent-dialogues/Export Selected Dialogue")]
         static void Export_DirectMenuItem()
         {
-            Export();
+            ExportSelectedDialogue();
         }
 
         [MenuItem("Assets/absencee_/absent-dialogues/Export Selected Dialogue")]
         static void Export_AssetMenuItem()
         {
-            Export();
+            ExportSelectedDialogue();
         }
 
 
@@ -37,6 +37,11 @@ namespace com.absence.dialoguesystem.editor.backup.internals
 
         [MenuItem("absencee_/absent-dialogues/Import New Dialogue")]
         static void Import()
+        {
+            ImportNewDialogue();
+        }
+
+        public static void ImportNewDialogue()
         {
             string jsonFilePath = EditorUtility.OpenFilePanel("Select a Valid Json File", "", "json");
 
@@ -59,7 +64,7 @@ namespace com.absence.dialoguesystem.editor.backup.internals
             Debug.Log("Imported dialogue successfully!");
         }
 
-        static void Export()
+        public static void ExportSelectedDialogue()
         {
             if (Selection.activeObject == null)
             {
@@ -75,7 +80,18 @@ namespace com.absence.dialoguesystem.editor.backup.internals
                 return;
             }
 
-            DialogueData data = DialogueExporter.Export(dialogue);
+            ExportDialogue(dialogue);
+        }
+
+        public static void ExportDialogue(Dialogue target)
+        {
+            if (target == null)
+            {
+                Debug.LogWarning("The dialogue you wanted to export is null!");
+                return;
+            }
+
+            DialogueData data = DialogueExporter.Export(target);
             string path = EditorUtility.SaveFilePanel("Save Generated Dialogue Data", "", "New Dialogue Data.json", "json");
 
             if (path.Length == 0)

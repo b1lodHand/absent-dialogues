@@ -14,8 +14,8 @@ namespace com.absence.dialoguesystem.editor
 
         public GotoNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
-            DialogueEditorWindow.m_inspectorView.OnNodeValidation -= Refresh;
-            DialogueEditorWindow.m_inspectorView.OnNodeValidation += Refresh;
+            DialogueEditorWindow.Current.m_inspectorView.OnNodeValidation -= Refresh;
+            DialogueEditorWindow.Current.m_inspectorView.OnNodeValidation += Refresh;
 
             Refresh();
         }

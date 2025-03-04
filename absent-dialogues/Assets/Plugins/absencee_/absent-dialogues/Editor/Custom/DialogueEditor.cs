@@ -105,10 +105,9 @@ namespace com.absence.dialoguesystem.editor
                         EditorUtility.SetDirty(dialogue);
                         AssetDatabase.SaveAssetIfDirty(dialogue);
 
-                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
-
-                        if (graph != null)
+                        if (DialogueEditorWindow.Current != null)
                         {
+                            DialogueGraphView graph = DialogueEditorWindow.Current.m_dialogueGraphView;
                             dialogue.AllNodes.ForEach(node =>
                             {
                                 if (!node.UseGenericOptions)
@@ -136,10 +135,9 @@ namespace com.absence.dialoguesystem.editor
                         EditorUtility.SetDirty(dialogue);
                         AssetDatabase.SaveAssetIfDirty(dialogue);
 
-                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
-
-                        if (graph != null)
+                        if (DialogueEditorWindow.Current != null)
                         {
+                            DialogueGraphView graph = DialogueEditorWindow.Current.m_dialogueGraphView;
                             dialogue.AllNodes.ForEach(node =>
                             {
                                 if (!node.UseGenericOptions)
@@ -167,10 +165,9 @@ namespace com.absence.dialoguesystem.editor
                         EditorUtility.SetDirty(dialogue);
                         AssetDatabase.SaveAssetIfDirty(dialogue);
 
-                        DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
-
-                        if (graph != null)
+                        if (DialogueEditorWindow.Current != null)
                         {
+                            DialogueGraphView graph = DialogueEditorWindow.Current.m_dialogueGraphView;
                             dialogue.AllNodes.ForEach(node =>
                             {
                                 if (!node.UseGenericOptions)
@@ -219,12 +216,11 @@ namespace com.absence.dialoguesystem.editor
                     EditorUtility.SetDirty(dialogue);
                     AssetDatabase.SaveAssetIfDirty(dialogue);
 
-                    DialogueGraphView graph = DialogueEditorWindow.m_dialogueGraphView;
-
                     int newIndex = lastIndex + 1;
 
-                    if (graph != null)
+                    if (DialogueEditorWindow.Current != null)
                     {
+                        DialogueGraphView graph = DialogueEditorWindow.Current.m_dialogueGraphView;
                         dialogue.AllNodes.ForEach(node =>
                         {
                             if (!node.UseGenericOptions)

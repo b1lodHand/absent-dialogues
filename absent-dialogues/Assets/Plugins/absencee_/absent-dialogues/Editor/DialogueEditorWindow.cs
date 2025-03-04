@@ -1,3 +1,4 @@
+﻿using com.absence.dialoguesystem.editor.backup.internals;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -17,14 +18,22 @@ namespace com.absence.dialoguesystem.editor
         [SerializeField]
         private VisualTreeAsset m_VisualTreeAsset = default;
 
-        internal static DialogueGraphView m_dialogueGraphView;
-        internal static InspectorView m_inspectorView;
-        static BlackboardView m_blackboardView;
-        static Toolbar m_toolbar;
-        static ToolbarMenu m_dialoguePartFinder;
+        [SerializeField] 
+        public static DialogueEditorWindow Current { get; private set; }
 
-        static SerializedObject m_dialogueObject;
-        static Dialogue m_targetDialogue;
+        internal DialogueGraphView m_dialogueGraphView;
+        internal InspectorView m_inspectorView;
+        internal BlackboardView m_blackboardView;
+        internal Toolbar m_toolbar;
+        internal ToolbarMenu m_dialoguePartFinder;
+        internal ToolbarButton m_findRootButton;
+        internal Button m_infoButton;
+        internal Button m_exportButton;
+        internal Button m_importButton;
+                 
+        internal SerializedObject m_dialogueObject;
+        internal Dialogue m_targetDialogue;
+        internal ObjectField m_dialogueObjectField;
 
         /// <summary>
         /// Gets invoked when <see cref="CreateGUI"/> gets called. <b>Clears itself everytime it gets invoked.</b>
@@ -44,12 +53,40 @@ namespace com.absence.dialoguesystem.editor
                 image = AssetDatabase.LoadAssetAtPath<Texture>("Assets/Plugins/absencee_/absent-dialogues/Editor/Resources/editor-window-icon.png"),
                 text = "Dialogue Graph"
             };
+
+            Current = wnd;
+        }
+
+        /// <summary>
+        /// The method that handles the asset selection events.
+        /// </summary>
+        /// <param name="instanceId"></param>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        [OnOpenAsset]
+        public static bool OnOpenAsset(int instanceId, int line)
+        {
+            if (Selection.activeObject is not Dialogue) return false;
+
+            OpenWindow();
+            return Current.OnOpenAsset();
+        }
+
+        bool OnOpenAsset()
+        {
+            m_targetDialogue = Selection.activeObject as Dialogue;
+
+            var dialogObjectField = m_toolbar.Q<ObjectField>();
+            dialogObjectField.SetValueWithoutNotify(m_targetDialogue);
+
+            SaveLastDialogue();
+            return PopulateDialogueView(m_targetDialogue);
         }
 
         /// <summary>
         /// Use to save the dialogue displayed currently in the editor.
         /// </summary>
-        public static void SaveLastDialogue()
+        public void SaveLastDialogue()
         {
             if (m_targetDialogue == null) return;
             if (!AssetDatabase.Contains(m_targetDialogue)) return;
@@ -60,7 +97,7 @@ namespace com.absence.dialoguesystem.editor
         /// <summary>
         /// Use to load the last dialogue displayed in the editor.
         /// </summary>
-        public static void LoadLastDialogue()
+        public void LoadLastDialogue()
         {
             string lastDialoguePath = EditorPrefs.GetString("LastEditedDialogueBeforePlayMode_AssetPath", "");
             if (string.IsNullOrWhiteSpace(lastDialoguePath))
@@ -80,29 +117,7 @@ namespace com.absence.dialoguesystem.editor
             PopulateDialogueView(lastDialogue);
         }
 
-        /// <summary>
-        /// The method that handles the asset selection events.
-        /// </summary>
-        /// <param name="instanceId"></param>
-        /// <param name="line"></param>
-        /// <returns></returns>
-        [OnOpenAsset]
-        public static bool OnOpenAsset(int instanceId, int line)
-        {
-            if (Selection.activeObject is not Dialogue) return false;
-
-            OpenWindow();
-
-            m_targetDialogue = Selection.activeObject as Dialogue;
-
-            var dialogObjectField = m_toolbar.Q<ObjectField>();
-            dialogObjectField.SetValueWithoutNotify(m_targetDialogue);
-
-            SaveLastDialogue();
-            return PopulateDialogueView(m_targetDialogue);
-        }
-
-        public static void Refresh()
+        public void Refresh()
         {
             m_dialogueGraphView.Refresh();
         }
@@ -112,7 +127,7 @@ namespace com.absence.dialoguesystem.editor
         /// </summary>
         /// <param name="dialogue">Target dialogue.</param>
         /// <returns></returns>
-        public static bool PopulateDialogueView(Dialogue dialogue)
+        public bool PopulateDialogueView(Dialogue dialogue)
         {
             if (dialogue == null)
             {
@@ -121,6 +136,8 @@ namespace com.absence.dialoguesystem.editor
                 m_inspectorView.Clear();
                 m_dialogueGraphView.ClearViewWithoutNotification();
                 m_dialogueGraphView.m_dialogue = null;
+
+                RefreshToolbar();
                 return false;
             }
 
@@ -144,6 +161,8 @@ namespace com.absence.dialoguesystem.editor
 
         public void CreateGUI()
         {
+            Current = this;
+
             // Find the root.
             VisualElement root = rootVisualElement;
 
@@ -197,12 +216,15 @@ namespace com.absence.dialoguesystem.editor
             Create_DialoguePartFinder();
             Create_FindRootButton();
             Create_DialogueObjectField();
+            Create_ShowDialogueButton();
+            Create_ExportButton();
+            Create_ImportButton();
             return;
 
             void Create_DialoguePartFinder()
             {
                 m_dialoguePartFinder = new ToolbarMenu();
-                m_dialoguePartFinder.text = "Quick Find";
+                m_dialoguePartFinder.text = "Find Section";
 
                 RefreshDialoguePartFinder();
 
@@ -218,7 +240,11 @@ namespace com.absence.dialoguesystem.editor
                     FrameToNode(m_targetDialogue.Entry);
                 });
 
-                findRootButton.text = "Quick Find Root";
+                findRootButton.text = "Find Entry";
+                findRootButton.style.unityTextAlign = TextAnchor.MiddleLeft;
+
+                m_findRootButton = findRootButton;
+
                 m_toolbar.Add(findRootButton);
             }
 
@@ -233,6 +259,7 @@ namespace com.absence.dialoguesystem.editor
                 {
                     if (p.newValue == null)
                     {
+                        m_targetDialogue = null;
                         PopulateDialogueView(null);
                         EditorPrefs.SetString("LastEditedDialogueBeforePlayMode_AssetPath", " ");
                         return;
@@ -246,7 +273,67 @@ namespace com.absence.dialoguesystem.editor
                     }
                 });
 
+                m_dialogueObjectField = dialogObjectField;
+
                 m_toolbar.Add(dialogObjectField);
+            }
+
+            void Create_ShowDialogueButton()
+            {
+                Button pingButton = new Button();
+                pingButton.text = "ⓘ";
+                pingButton.style.unityFontStyleAndWeight = FontStyle.Bold;
+                pingButton.style.width = 22f;
+                pingButton.tooltip = "Ping current dialogue.";
+
+                pingButton.clicked += () =>
+                {
+                    if (m_targetDialogue == null)
+                        return;
+
+                    Selection.activeObject = m_targetDialogue;
+                    EditorGUIUtility.PingObject(m_targetDialogue);
+                };
+
+                m_infoButton = pingButton;
+
+                m_toolbar.Add(pingButton);
+            }
+
+            void Create_ImportButton()
+            {
+                Button importButton = new Button();
+                importButton.text = "↧";
+                importButton.style.unityFontStyleAndWeight = FontStyle.Bold;
+                importButton.style.width = 22f;
+                importButton.tooltip = "Import new dialogue.";
+
+                importButton.clicked += () =>
+                {
+                    EditorJobsHelper.ImportNewDialogue();
+                };
+
+                m_importButton = importButton;
+
+                m_toolbar.Add(importButton);
+            }
+
+            void Create_ExportButton()
+            {
+                Button exportButton = new Button();
+                exportButton.text = "↥";
+                exportButton.style.unityFontStyleAndWeight = FontStyle.Bold;
+                exportButton.style.width = 22f;
+                exportButton.tooltip = "Export current dialogue.";
+
+                exportButton.clicked += () =>
+                {
+                    EditorJobsHelper.ExportDialogue(m_targetDialogue);
+                };
+
+                m_exportButton = exportButton;
+
+                m_toolbar.Add(exportButton);
             }
         }
         private void SetupEvents()
@@ -254,16 +341,29 @@ namespace com.absence.dialoguesystem.editor
             m_dialogueGraphView.OnNodeSelected -= OnNodeSelectionChanged;
             m_dialogueGraphView.OnNodeSelected += OnNodeSelectionChanged;
 
-            m_dialogueGraphView.OnPopulateView -= RefreshDialoguePartFinder;
-            m_dialogueGraphView.OnPopulateView += RefreshDialoguePartFinder;
+            m_dialogueGraphView.OnPopulateView -= RefreshToolbar;
+            m_dialogueGraphView.OnPopulateView += RefreshToolbar;
         }
 
-        internal static void RefreshDialoguePartFinder()
+        internal void RefreshToolbar()
+        {
+            RefreshDialoguePartFinder();
+
+            bool hasDialogue = m_dialogueGraphView.m_dialogue != null;
+
+            m_dialoguePartFinder.SetEnabled(hasDialogue);
+            m_infoButton.SetEnabled(hasDialogue);
+            m_exportButton.SetEnabled(hasDialogue);
+            m_findRootButton.SetEnabled(hasDialogue);
+            m_importButton.SetEnabled(true);
+        }
+
+        internal void RefreshDialoguePartFinder()
         {
             m_dialoguePartFinder.menu.ClearItems();
-            if (m_targetDialogue == null) return;
+            if (m_dialogueGraphView.m_dialogue == null) return;
 
-            m_targetDialogue.GetAllSections().ForEach(dialogPartNode =>
+            m_dialogueGraphView.m_dialogue.GetAllSections().ForEach(dialogPartNode =>
             {
                 m_dialoguePartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
                 {
@@ -276,7 +376,7 @@ namespace com.absence.dialoguesystem.editor
         /// Teleports the view to the target node and selects it.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public static void FrameToNode(Node node)
+        public void FrameToNode(Node node)
         {
             SelectNode(node);
             m_dialogueGraphView.FrameSelection();
@@ -286,7 +386,7 @@ namespace com.absence.dialoguesystem.editor
         /// Selects the target node.
         /// </summary>
         /// <param name="node">Target node.</param>
-        public static void SelectNode(Node node)
+        public void SelectNode(Node node)
         {
             m_dialogueGraphView.SelectNode(node);
         }
