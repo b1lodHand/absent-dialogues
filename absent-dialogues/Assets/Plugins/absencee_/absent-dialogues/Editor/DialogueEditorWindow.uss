@@ -14,3 +14,28 @@ GridBackground {
 #mini-map .unity-label {
     display: none;
 }
+
+.panel-label {
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    color: rgb(255, 255, 255);
+    border-bottom-color: rgba(0, 0, 0, 0.17);
+    background-color: rgb(53, 53, 53);
+}
+
+.toolbar-button {
+    width: 22px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.toolbar-toolbar-button {
+    -unity-text-align: middle-left;
+}
+
+.toolbar-right-panel {
+}

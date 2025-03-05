@@ -1,4 +1,5 @@
-﻿using com.absence.dialoguesystem.editor.backup.internals;
+﻿using com.absence.dialoguesystem.editor.backup;
+using com.absence.dialoguesystem.editor.backup.internals;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -215,16 +216,28 @@ namespace com.absence.dialoguesystem.editor
         {
             Create_DialoguePartFinder();
             Create_FindRootButton();
+            //Create_EmptySpace(120f);
             Create_DialogueObjectField();
+            Create_EmptySpace(10f);
             Create_ShowDialogueButton();
             Create_ExportButton();
             Create_ImportButton();
             return;
 
+            void Create_EmptySpace(float width)
+            {
+                ToolbarButton space = new();
+                space.SetEnabled(false);
+                space.style.width = width;
+
+                m_toolbar.Add(space);
+            }
+
             void Create_DialoguePartFinder()
             {
                 m_dialoguePartFinder = new ToolbarMenu();
                 m_dialoguePartFinder.text = "Find Section";
+                m_dialoguePartFinder.tooltip = "Select and frame a section in this dialogue.";
 
                 RefreshDialoguePartFinder();
 
@@ -241,7 +254,9 @@ namespace com.absence.dialoguesystem.editor
                 });
 
                 findRootButton.text = "Find Entry";
-                findRootButton.style.unityTextAlign = TextAnchor.MiddleLeft;
+                findRootButton.tooltip = "Select and frame the entry.";
+
+                findRootButton.AddToClassList("toolbar-toolbar-button");
 
                 m_findRootButton = findRootButton;
 
@@ -252,7 +267,7 @@ namespace com.absence.dialoguesystem.editor
             {
                 ObjectField dialogObjectField = new ObjectField("");
                 dialogObjectField.name = "dialogue-object-field";
-                dialogObjectField.label = "Current Dialogue: ";
+                dialogObjectField.label = "Current Dialogue ";
 
                 dialogObjectField.objectType = typeof(Dialogue);
                 dialogObjectField.RegisterValueChangedCallback(p =>
@@ -282,9 +297,9 @@ namespace com.absence.dialoguesystem.editor
             {
                 Button pingButton = new Button();
                 pingButton.text = "ⓘ";
-                pingButton.style.unityFontStyleAndWeight = FontStyle.Bold;
-                pingButton.style.width = 22f;
                 pingButton.tooltip = "Ping current dialogue.";
+
+                pingButton.AddToClassList("toolbar-button");
 
                 pingButton.clicked += () =>
                 {
@@ -304,13 +319,13 @@ namespace com.absence.dialoguesystem.editor
             {
                 Button importButton = new Button();
                 importButton.text = "↧";
-                importButton.style.unityFontStyleAndWeight = FontStyle.Bold;
-                importButton.style.width = 22f;
                 importButton.tooltip = "Import new dialogue.";
+
+                importButton.AddToClassList("toolbar-button");
 
                 importButton.clicked += () =>
                 {
-                    EditorJobsHelper.ImportNewDialogue();
+                    BackupSystem.ImportNewDialogue();
                 };
 
                 m_importButton = importButton;
@@ -322,13 +337,13 @@ namespace com.absence.dialoguesystem.editor
             {
                 Button exportButton = new Button();
                 exportButton.text = "↥";
-                exportButton.style.unityFontStyleAndWeight = FontStyle.Bold;
-                exportButton.style.width = 22f;
                 exportButton.tooltip = "Export current dialogue.";
+
+                exportButton.AddToClassList("toolbar-button");
 
                 exportButton.clicked += () =>
                 {
-                    EditorJobsHelper.ExportDialogue(m_targetDialogue);
+                    BackupSystem.ExportDialogue(m_targetDialogue);
                 };
 
                 m_exportButton = exportButton;

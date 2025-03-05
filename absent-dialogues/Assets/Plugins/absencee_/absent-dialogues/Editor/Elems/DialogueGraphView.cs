@@ -186,6 +186,10 @@ namespace com.absence.dialoguesystem.editor
                 return;
 
             Refresh();
+
+            if (m_dialogue == null)
+                return;
+
             AssetDatabase.SaveAssetIfDirty(m_dialogue);
         }
 
