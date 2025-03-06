@@ -5,17 +5,17 @@ items:
   id: com.absence.dialoguesystem
   children:
   - com.absence.dialoguesystem.Dialogue
-  - com.absence.dialoguesystem.DialogueAnimationsPlayer
   - com.absence.dialoguesystem.DialogueDisplayer
   - com.absence.dialoguesystem.DialogueExtensionBase
-  - com.absence.dialoguesystem.DialogueInputHandler_Legacy
+  - com.absence.dialoguesystem.DialogueFlowContext
+  - com.absence.dialoguesystem.DialogueFlowContext.ContextState
   - com.absence.dialoguesystem.DialogueInstance
   - com.absence.dialoguesystem.DialoguePlayer
-  - com.absence.dialoguesystem.DialoguePlayer.PlayerState
-  - com.absence.dialoguesystem.DialogueSoundsPlayer
-  - com.absence.dialoguesystem.IUseDialogueInScene
+  - com.absence.dialoguesystem.DialogueSystem
+  - com.absence.dialoguesystem.NodeCustomDataBase
   - com.absence.dialoguesystem.OptionText
   - com.absence.dialoguesystem.Package
+  - com.absence.dialoguesystem.Package.Version
   langs:
   - csharp
   - vb
@@ -26,24 +26,43 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
 references:
-- uid: com.absence.dialoguesystem.Package
-  commentId: T:com.absence.dialoguesystem.Package
-  href: com.absence.dialoguesystem.Package.html
-  name: Package
-  nameWithType: Package
-  fullName: com.absence.dialoguesystem.Package
-- uid: com.absence.dialoguesystem.DialogueSoundsPlayer
-  commentId: T:com.absence.dialoguesystem.DialogueSoundsPlayer
-  href: com.absence.dialoguesystem.DialogueSoundsPlayer.html
-  name: DialogueSoundsPlayer
-  nameWithType: DialogueSoundsPlayer
-  fullName: com.absence.dialoguesystem.DialogueSoundsPlayer
-- uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy
-  commentId: T:com.absence.dialoguesystem.DialogueInputHandler_Legacy
-  href: com.absence.dialoguesystem.DialogueInputHandler_Legacy.html
-  name: DialogueInputHandler_Legacy
-  nameWithType: DialogueInputHandler_Legacy
-  fullName: com.absence.dialoguesystem.DialogueInputHandler_Legacy
+- uid: com.absence.dialoguesystem.NodeCustomDataBase
+  commentId: T:com.absence.dialoguesystem.NodeCustomDataBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html
+  name: NodeCustomDataBase
+  nameWithType: NodeCustomDataBase
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase
+- uid: com.absence.dialoguesystem.DialogueFlowContext
+  commentId: T:com.absence.dialoguesystem.DialogueFlowContext
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueFlowContext.html
+  name: DialogueFlowContext
+  nameWithType: DialogueFlowContext
+  fullName: com.absence.dialoguesystem.DialogueFlowContext
+- uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  commentId: T:com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueFlowContext.html
+  name: DialogueFlowContext.ContextState
+  nameWithType: DialogueFlowContext.ContextState
+  fullName: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.DialogueFlowContext.ContextState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.DialogueFlowContext.ContextState.html
 - uid: com.absence.dialoguesystem.Dialogue
   commentId: T:com.absence.dialoguesystem.Dialogue
   parent: com.absence.dialoguesystem
@@ -58,29 +77,6 @@ references:
   name: DialoguePlayer
   nameWithType: DialoguePlayer
   fullName: com.absence.dialoguesystem.DialoguePlayer
-- uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
-  commentId: T:com.absence.dialoguesystem.DialoguePlayer.PlayerState
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.DialoguePlayer.html
-  name: DialoguePlayer.PlayerState
-  nameWithType: DialoguePlayer.PlayerState
-  fullName: com.absence.dialoguesystem.DialoguePlayer.PlayerState
-  spec.csharp:
-  - uid: com.absence.dialoguesystem.DialoguePlayer
-    name: DialoguePlayer
-    href: com.absence.dialoguesystem.DialoguePlayer.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
-    name: PlayerState
-    href: com.absence.dialoguesystem.DialoguePlayer.PlayerState.html
-  spec.vb:
-  - uid: com.absence.dialoguesystem.DialoguePlayer
-    name: DialoguePlayer
-    href: com.absence.dialoguesystem.DialoguePlayer.html
-  - name: .
-  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
-    name: PlayerState
-    href: com.absence.dialoguesystem.DialoguePlayer.PlayerState.html
 - uid: com.absence.dialoguesystem.DialogueInstance
   commentId: T:com.absence.dialoguesystem.DialogueInstance
   parent: com.absence.dialoguesystem
@@ -94,6 +90,12 @@ references:
   name: OptionText
   nameWithType: OptionText
   fullName: com.absence.dialoguesystem.OptionText
+- uid: com.absence.dialoguesystem.DialogueSystem
+  commentId: T:com.absence.dialoguesystem.DialogueSystem
+  href: com.absence.dialoguesystem.DialogueSystem.html
+  name: DialogueSystem
+  nameWithType: DialogueSystem
+  fullName: com.absence.dialoguesystem.DialogueSystem
 - uid: com.absence.dialoguesystem.DialogueExtensionBase
   commentId: T:com.absence.dialoguesystem.DialogueExtensionBase
   parent: com.absence.dialoguesystem
@@ -101,25 +103,40 @@ references:
   name: DialogueExtensionBase
   nameWithType: DialogueExtensionBase
   fullName: com.absence.dialoguesystem.DialogueExtensionBase
-- uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
-  commentId: T:com.absence.dialoguesystem.DialogueAnimationsPlayer
-  href: com.absence.dialoguesystem.DialogueAnimationsPlayer.html
-  name: DialogueAnimationsPlayer
-  nameWithType: DialogueAnimationsPlayer
-  fullName: com.absence.dialoguesystem.DialogueAnimationsPlayer
+- uid: com.absence.dialoguesystem.Package
+  commentId: T:com.absence.dialoguesystem.Package
+  href: com.absence.dialoguesystem.Package.html
+  name: Package
+  nameWithType: Package
+  fullName: com.absence.dialoguesystem.Package
+- uid: com.absence.dialoguesystem.Package.Version
+  commentId: T:com.absence.dialoguesystem.Package.Version
+  href: com.absence.dialoguesystem.Package.html
+  name: Package.Version
+  nameWithType: Package.Version
+  fullName: com.absence.dialoguesystem.Package.Version
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.Package
+    name: Package
+    href: com.absence.dialoguesystem.Package.html
+  - name: .
+  - uid: com.absence.dialoguesystem.Package.Version
+    name: Version
+    href: com.absence.dialoguesystem.Package.Version.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.Package
+    name: Package
+    href: com.absence.dialoguesystem.Package.html
+  - name: .
+  - uid: com.absence.dialoguesystem.Package.Version
+    name: Version
+    href: com.absence.dialoguesystem.Package.Version.html
 - uid: com.absence.dialoguesystem.DialogueDisplayer
   commentId: T:com.absence.dialoguesystem.DialogueDisplayer
   href: com.absence.dialoguesystem.DialogueDisplayer.html
   name: DialogueDisplayer
   nameWithType: DialogueDisplayer
   fullName: com.absence.dialoguesystem.DialogueDisplayer
-- uid: com.absence.dialoguesystem.IUseDialogueInScene
-  commentId: T:com.absence.dialoguesystem.IUseDialogueInScene
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.IUseDialogueInScene.html
-  name: IUseDialogueInScene
-  nameWithType: IUseDialogueInScene
-  fullName: com.absence.dialoguesystem.IUseDialogueInScene
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
   href: com.html

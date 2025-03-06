@@ -5,7 +5,7 @@ items:
   id: Option.ShowIf
   parent: com.absence.dialoguesystem.internals
   children:
-  - com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.banksystembase.VariableBank)
   - com.absence.dialoguesystem.internals.Option.ShowIf.GetConditionString(System.Boolean)
   - com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
   - com.absence.dialoguesystem.internals.Option.ShowIf.Processor
@@ -20,12 +20,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIf
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 80
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 82
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -68,22 +68,22 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Processor
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 87
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 89
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: An enum which defines what to do with multiple comparers in conclusion.
   example: []
   syntax:
-    content: public VBProcessType Processor
+    content: public ConditionProcessMode Processor
     return:
-      type: com.absence.dialoguesystem.internals.VBProcessType
-    content.vb: Public Processor As VBProcessType
+      type: com.absence.dialoguesystem.internals.ConditionProcessMode
+    content.vb: Public Processor As ConditionProcessMode
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
   commentId: F:com.absence.dialoguesystem.internals.Option.ShowIf.ShowIfList
   id: ShowIfList
@@ -97,12 +97,12 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ShowIfList
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 93
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 95
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -116,25 +116,25 @@ items:
     return:
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
     content.vb: Public ShowIfList As List(Of NodeVariableComparer)
-- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
-  id: Clone(com.absence.variablesystem.VariableBank)
+- uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.banksystembase.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.banksystembase.VariableBank)
+  id: Clone(com.absence.variablesystem.banksystembase.VariableBank)
   parent: com.absence.dialoguesystem.internals.Option.ShowIf
   langs:
   - csharp
   - vb
   name: Clone(VariableBank)
   nameWithType: Option.ShowIf.Clone(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone(com.absence.variablesystem.banksystembase.VariableBank)
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 100
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 102
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -144,7 +144,7 @@ items:
     content: public Option.ShowIf Clone(VariableBank overrideBank)
     parameters:
     - id: overrideBank
-      type: com.absence.variablesystem.VariableBank
+      type: com.absence.variablesystem.banksystembase.VariableBank
       description: ''
     return:
       type: com.absence.dialoguesystem.internals.Option.ShowIf
@@ -164,12 +164,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetResult
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 112
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 114
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -195,12 +195,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ToString
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 124
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 126
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -225,12 +225,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: GetConditionString
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 129
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 131
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -289,7 +289,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -303,13 +302,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: com.absence.dialoguesystem.internals.VBProcessType
-  commentId: T:com.absence.dialoguesystem.internals.VBProcessType
+- uid: com.absence.dialoguesystem.internals.ConditionProcessMode
+  commentId: T:com.absence.dialoguesystem.internals.ConditionProcessMode
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.VBProcessType.html
-  name: VBProcessType
-  nameWithType: VBProcessType
-  fullName: com.absence.dialoguesystem.internals.VBProcessType
+  href: com.absence.dialoguesystem.internals.ConditionProcessMode.html
+  name: ConditionProcessMode
+  nameWithType: ConditionProcessMode
+  fullName: com.absence.dialoguesystem.internals.ConditionProcessMode
 - uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.NodeVariableComparer}
   parent: System.Collections.Generic
@@ -410,17 +409,17 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.Clone
-  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablesystem_VariableBank_
+  href: com.absence.dialoguesystem.internals.Option.ShowIf.html#com_absence_dialoguesystem_internals_Option_ShowIf_Clone_com_absence_variablesystem_banksystembase_VariableBank_
   name: Clone
   nameWithType: Option.ShowIf.Clone
   fullName: com.absence.dialoguesystem.internals.Option.ShowIf.Clone
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
+- uid: com.absence.variablesystem.banksystembase.VariableBank
+  commentId: T:com.absence.variablesystem.banksystembase.VariableBank
+  parent: com.absence.variablesystem.banksystembase
   isExternal: true
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
+  fullName: com.absence.variablesystem.banksystembase.VariableBank
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf
   commentId: T:com.absence.dialoguesystem.internals.Option.ShowIf
   parent: com.absence.dialoguesystem.internals
@@ -444,12 +443,12 @@ references:
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: ShowIf
     href: com.absence.dialoguesystem.internals.Option.ShowIf.html
-- uid: com.absence.variablesystem
-  commentId: N:com.absence.variablesystem
+- uid: com.absence.variablesystem.banksystembase
+  commentId: N:com.absence.variablesystem.banksystembase
   isExternal: true
-  name: com.absence.variablesystem
-  nameWithType: com.absence.variablesystem
-  fullName: com.absence.variablesystem
+  name: com.absence.variablesystem.banksystembase
+  nameWithType: com.absence.variablesystem.banksystembase
+  fullName: com.absence.variablesystem.banksystembase
   spec.csharp:
   - uid: com
     name: com
@@ -462,6 +461,10 @@ references:
   - uid: com.absence.variablesystem
     name: variablesystem
     isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.banksystembase
+    name: banksystembase
+    isExternal: true
   spec.vb:
   - uid: com
     name: com
@@ -473,6 +476,10 @@ references:
   - name: .
   - uid: com.absence.variablesystem
     name: variablesystem
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.banksystembase
+    name: banksystembase
     isExternal: true
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.GetResult*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.ShowIf.GetResult
@@ -495,7 +502,6 @@ references:
   commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   name: ToString()
   nameWithType: object.ToString()
   fullName: object.ToString()
@@ -505,14 +511,12 @@ references:
   - uid: System.Object.ToString
     name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
   spec.vb:
   - uid: System.Object.ToString
     name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
 - uid: com.absence.dialoguesystem.internals.Option.ShowIf.ToString*

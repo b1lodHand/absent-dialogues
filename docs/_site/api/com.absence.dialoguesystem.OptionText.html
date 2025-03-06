@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -78,7 +78,7 @@
                   <div class="sr-items">
                     <p><i class="bi bi-hourglass-split index-loading"></i></p>
                   </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
                 </div>
  
 
@@ -121,23 +121,55 @@
 [HelpURL(&quot;https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html&quot;)]
 public class OptionText : MonoBehaviour</code></pre>
   </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_Handle.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.Handle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L19">View Source</a>
+  </span>
+  <a id="com_absence_dialoguesystem_OptionText_Handle_" data-uid="com.absence.dialoguesystem.OptionText.Handle*"></a>
+  <h4 id="com_absence_dialoguesystem_OptionText_Handle" data-uid="com.absence.dialoguesystem.OptionText.Handle">Handle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OptionHandle Handle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.OptionHandle.html">OptionHandle</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_Initialize_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.Initialize(System.Int32%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_Initialize_com_absence_dialoguesystem_internals_OptionHandle_.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L26">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L29">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_OptionText_Initialize_" data-uid="com.absence.dialoguesystem.OptionText.Initialize*"></a>
-  <h4 id="com_absence_dialoguesystem_OptionText_Initialize_System_Int32_System_String_" data-uid="com.absence.dialoguesystem.OptionText.Initialize(System.Int32,System.String)">Initialize(int, string)</h4>
+  <h4 id="com_absence_dialoguesystem_OptionText_Initialize_com_absence_dialoguesystem_internals_OptionHandle_" data-uid="com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)">Initialize(OptionHandle)</h4>
   <div class="markdown level1 summary"><p>Sets the index and the text of this option.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Initialize(int optionIndex, string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Initialize(OptionHandle handle)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -150,13 +182,8 @@ public class OptionText : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">optionIndex</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
+        <td><a class="xref" href="com.absence.dialoguesystem.internals.OptionHandle.html">OptionHandle</a></td>
+        <td><span class="parametername">handle</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -166,7 +193,7 @@ public class OptionText : MonoBehaviour</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_OnClick.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.OnClick%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L35">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L39">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_OptionText_OnClick_" data-uid="com.absence.dialoguesystem.OptionText.OnClick*"></a>
   <h4 id="com_absence_dialoguesystem_OptionText_OnClick" data-uid="com.absence.dialoguesystem.OptionText.OnClick">OnClick()</h4>
@@ -182,7 +209,7 @@ public class OptionText : MonoBehaviour</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_OnSelect.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.OnSelect%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L40">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L44">View Source</a>
   </span>
   <a id="com_absence_dialoguesystem_OptionText_OnSelect_" data-uid="com.absence.dialoguesystem.OptionText.OnSelect*"></a>
   <h4 id="com_absence_dialoguesystem_OptionText_OnSelect" data-uid="com.absence.dialoguesystem.OptionText.OnSelect">OnSelect()</h4>
@@ -199,14 +226,14 @@ public class OptionText : MonoBehaviour</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_OnClickAction.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.OnClickAction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L18">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L21">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_OptionText_OnClickAction" data-uid="com.absence.dialoguesystem.OptionText.OnClickAction">OnClickAction</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action&lt;int&gt; OnClickAction</code></pre>
+    <pre><code class="lang-csharp hljs">public event Action&lt;OptionHandle&gt; OnClickAction</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-condensed">
@@ -218,7 +245,7 @@ public class OptionText : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="com.absence.dialoguesystem.internals.OptionHandle.html">OptionHandle</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -228,7 +255,7 @@ public class OptionText : MonoBehaviour</code></pre>
     <a href="https://github.com/b1lodHand/absent-dialogues/new/development/apiSpec/new?filename=com_absence_dialoguesystem_OptionText_OnSelectAction.md&amp;value=---%0Auid%3A%20com.absence.dialoguesystem.OptionText.OnSelectAction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L19">View Source</a>
+    <a href="https://github.com/b1lodHand/absent-dialogues/blob/development/absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs/#L22">View Source</a>
   </span>
   <h4 id="com_absence_dialoguesystem_OptionText_OnSelectAction" data-uid="com.absence.dialoguesystem.OptionText.OnSelectAction">OnSelectAction</h4>
   <div class="markdown level1 summary"></div>

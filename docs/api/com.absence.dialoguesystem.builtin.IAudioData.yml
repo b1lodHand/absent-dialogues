@@ -1,0 +1,116 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.builtin.IAudioData
+  commentId: T:com.absence.dialoguesystem.builtin.IAudioData
+  id: IAudioData
+  parent: com.absence.dialoguesystem.builtin
+  children:
+  - com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  langs:
+  - csharp
+  - vb
+  name: IAudioData
+  nameWithType: IAudioData
+  fullName: com.absence.dialoguesystem.builtin.IAudioData
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAudioData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IAudioData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAudioData.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: public interface IAudioData
+    content.vb: Public Interface IAudioData
+- uid: com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  commentId: P:com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  id: AudioClip
+  parent: com.absence.dialoguesystem.builtin.IAudioData
+  langs:
+  - csharp
+  - vb
+  name: AudioClip
+  nameWithType: IAudioData.AudioClip
+  fullName: com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAudioData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AudioClip
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAudioData.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: AudioClip AudioClip { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.AudioClip
+    content.vb: Property AudioClip As AudioClip
+  overload: com.absence.dialoguesystem.builtin.IAudioData.AudioClip*
+references:
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  href: com.html
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+- uid: com.absence.dialoguesystem.builtin.IAudioData.AudioClip*
+  commentId: Overload:com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  href: com.absence.dialoguesystem.builtin.IAudioData.html#com_absence_dialoguesystem_builtin_IAudioData_AudioClip
+  name: AudioClip
+  nameWithType: IAudioData.AudioClip
+  fullName: com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+- uid: UnityEngine.AudioClip
+  commentId: T:UnityEngine.AudioClip
+  parent: UnityEngine
+  isExternal: true
+  name: AudioClip
+  nameWithType: AudioClip
+  fullName: UnityEngine.AudioClip
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

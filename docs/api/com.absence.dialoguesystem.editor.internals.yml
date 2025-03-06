@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.internals
+  commentId: N:com.absence.dialoguesystem.editor.internals
+  id: com.absence.dialoguesystem.editor.internals
+  children:
+  - com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer
+  - com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer
+  - com.absence.dialoguesystem.editor.internals.BlackboardView
+  - com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+  - com.absence.dialoguesystem.editor.internals.BranchNodeView
+  - com.absence.dialoguesystem.editor.internals.DialogueEditor
+  - com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  - com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+  - com.absence.dialoguesystem.editor.internals.EditorJobsHelper
+  - com.absence.dialoguesystem.editor.internals.EventNodeView
+  - com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer
+  - com.absence.dialoguesystem.editor.internals.GotoNodeView
+  - com.absence.dialoguesystem.editor.internals.InspectorView
+  - com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+  - com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer
+  - com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer
+  - com.absence.dialoguesystem.editor.internals.PromptNodeEditor
+  - com.absence.dialoguesystem.editor.internals.PromptNodeView
+  - com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler
+  - com.absence.dialoguesystem.editor.internals.SectionNodeView
+  - com.absence.dialoguesystem.editor.internals.SplitView
+  - com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+  - com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+  - com.absence.dialoguesystem.editor.internals.TitleNodeView
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.editor.internals
+  nameWithType: com.absence.dialoguesystem.editor.internals
+  fullName: com.absence.dialoguesystem.editor.internals
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+references:
+- uid: com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler
+  commentId: T:com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler
+  href: com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler.html
+  name: RuntimeSelectionHandler
+  nameWithType: RuntimeSelectionHandler
+  fullName: com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler
+- uid: com.absence.dialoguesystem.editor.internals.TitleNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.TitleNodeView
+  href: com.absence.dialoguesystem.editor.internals.TitleNodeView.html
+  name: TitleNodeView
+  nameWithType: TitleNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.TitleNodeView
+- uid: com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer
+  href: com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer.html
+  name: PersonOverridePropertyDrawer
+  nameWithType: PersonOverridePropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer
+- uid: com.absence.dialoguesystem.editor.internals.EditorJobsHelper
+  commentId: T:com.absence.dialoguesystem.editor.internals.EditorJobsHelper
+  href: com.absence.dialoguesystem.editor.internals.EditorJobsHelper.html
+  name: EditorJobsHelper
+  nameWithType: EditorJobsHelper
+  fullName: com.absence.dialoguesystem.editor.internals.EditorJobsHelper
+- uid: com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer
+  href: com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer.html
+  name: GenericOptionPropertyDrawer
+  nameWithType: GenericOptionPropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer
+- uid: com.absence.dialoguesystem.editor.internals.PromptNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.PromptNodeView
+  href: com.absence.dialoguesystem.editor.internals.PromptNodeView.html
+  name: PromptNodeView
+  nameWithType: PromptNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.PromptNodeView
+- uid: com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer
+  parent: com.absence.dialoguesystem.editor.internals
+  href: com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer.html
+  name: OptionPropertyDrawer
+  nameWithType: OptionPropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer
+- uid: com.absence.dialoguesystem.editor.internals.SectionNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.SectionNodeView
+  href: com.absence.dialoguesystem.editor.internals.SectionNodeView.html
+  name: SectionNodeView
+  nameWithType: SectionNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.SectionNodeView
+- uid: com.absence.dialoguesystem.editor.internals.PromptNodeEditor
+  commentId: T:com.absence.dialoguesystem.editor.internals.PromptNodeEditor
+  href: com.absence.dialoguesystem.editor.internals.PromptNodeEditor.html
+  name: PromptNodeEditor
+  nameWithType: PromptNodeEditor
+  fullName: com.absence.dialoguesystem.editor.internals.PromptNodeEditor
+- uid: com.absence.dialoguesystem.editor.internals.DialogueEditor
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueEditor
+  href: com.absence.dialoguesystem.editor.internals.DialogueEditor.html
+  name: DialogueEditor
+  nameWithType: DialogueEditor
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueEditor
+- uid: com.absence.dialoguesystem.editor.internals.SplitView
+  commentId: T:com.absence.dialoguesystem.editor.internals.SplitView
+  href: com.absence.dialoguesystem.editor.internals.SplitView.html
+  name: SplitView
+  nameWithType: SplitView
+  fullName: com.absence.dialoguesystem.editor.internals.SplitView
+- uid: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.internals.SplitView.html
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView
+    name: SplitView
+    href: com.absence.dialoguesystem.editor.internals.SplitView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView
+    name: SplitView
+    href: com.absence.dialoguesystem.editor.internals.SplitView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.internals.BlackboardView
+  commentId: T:com.absence.dialoguesystem.editor.internals.BlackboardView
+  href: com.absence.dialoguesystem.editor.internals.BlackboardView.html
+  name: BlackboardView
+  nameWithType: BlackboardView
+  fullName: com.absence.dialoguesystem.editor.internals.BlackboardView
+- uid: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.internals.BlackboardView.html
+  name: BlackboardView.UxmlFactory
+  nameWithType: BlackboardView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.internals.BlackboardView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView
+    name: BlackboardView
+    href: com.absence.dialoguesystem.editor.internals.BlackboardView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.internals.BranchNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.BranchNodeView
+  href: com.absence.dialoguesystem.editor.internals.BranchNodeView.html
+  name: BranchNodeView
+  nameWithType: BranchNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.BranchNodeView
+- uid: com.absence.dialoguesystem.editor.internals.GotoNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.GotoNodeView
+  href: com.absence.dialoguesystem.editor.internals.GotoNodeView.html
+  name: GotoNodeView
+  nameWithType: GotoNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.GotoNodeView
+- uid: com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+  href: com.absence.dialoguesystem.editor.internals.StickyNoteNodeView.html
+  name: StickyNoteNodeView
+  nameWithType: StickyNoteNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+- uid: com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer
+  href: com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer.html
+  name: ActionMapPairPropertyDrawer
+  nameWithType: ActionMapPairPropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer
+- uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  parent: com.absence.dialoguesystem.editor.internals
+  href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  name: DialogueGraphView
+  nameWithType: DialogueGraphView
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+- uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  name: DialogueGraphView.UxmlFactory
+  nameWithType: DialogueGraphView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    name: DialogueGraphView
+    href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    name: DialogueGraphView
+    href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.internals.InspectorView
+  commentId: T:com.absence.dialoguesystem.editor.internals.InspectorView
+  href: com.absence.dialoguesystem.editor.internals.InspectorView.html
+  name: InspectorView
+  nameWithType: InspectorView
+  fullName: com.absence.dialoguesystem.editor.internals.InspectorView
+- uid: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+  commentId: T:com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+  href: com.absence.dialoguesystem.editor.internals.InspectorView.html
+  name: InspectorView.UxmlFactory
+  nameWithType: InspectorView.UxmlFactory
+  fullName: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.internals.InspectorView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView
+    name: InspectorView
+    href: com.absence.dialoguesystem.editor.internals.InspectorView.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+    name: UxmlFactory
+    href: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory.html
+- uid: com.absence.dialoguesystem.editor.internals.EventNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.EventNodeView
+  href: com.absence.dialoguesystem.editor.internals.EventNodeView.html
+  name: EventNodeView
+  nameWithType: EventNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.EventNodeView
+- uid: com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer
+  commentId: T:com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer
+  href: com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer.html
+  name: BlackboardPropertyDrawer
+  nameWithType: BlackboardPropertyDrawer
+  fullName: com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer
+- uid: com.absence.dialoguesystem.editor.internals
+  commentId: N:com.absence.dialoguesystem.editor.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.internals
+  nameWithType: com.absence.dialoguesystem.editor.internals
+  fullName: com.absence.dialoguesystem.editor.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html

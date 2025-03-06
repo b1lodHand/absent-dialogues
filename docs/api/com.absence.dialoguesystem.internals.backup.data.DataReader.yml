@@ -1,0 +1,492 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.DataReader
+  id: DataReader
+  parent: com.absence.dialoguesystem.internals.backup.data
+  children:
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData(com.absence.dialoguesystem.internals.backup.data.BlackboardData,com.absence.dialoguesystem.internals.Blackboard)
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData(com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData)
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData(com.absence.dialoguesystem.internals.backup.data.DialogueData,com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData(com.absence.dialoguesystem.internals.backup.data.NodeData,com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData``1(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  - com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData(com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData)
+  langs:
+  - csharp
+  - vb
+  name: DataReader
+  nameWithType: DataReader
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DataReader
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static class DataReader
+    content.vb: Public Module DataReader
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData(com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData(com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData)
+  id: ReadComparerData(com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadComparerData(NodeVariableComparerData)
+  nameWithType: DataReader.ReadComparerData(NodeVariableComparerData)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData(com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadComparerData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static NodeVariableComparer ReadComparerData(NodeVariableComparerData data)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+    return:
+      type: com.absence.dialoguesystem.internals.NodeVariableComparer
+    content.vb: Public Shared Function ReadComparerData(data As NodeVariableComparerData) As NodeVariableComparer
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData(com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData(com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData)
+  id: ReadSetterData(com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadSetterData(NodeVariableSetterData)
+  nameWithType: DataReader.ReadSetterData(NodeVariableSetterData)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData(com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadSetterData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static NodeVariableSetter ReadSetterData(NodeVariableSetterData data)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+    return:
+      type: com.absence.dialoguesystem.internals.NodeVariableSetter
+    content.vb: Public Shared Function ReadSetterData(data As NodeVariableSetterData) As NodeVariableSetter
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData(com.absence.dialoguesystem.internals.backup.data.NodeData,com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData(com.absence.dialoguesystem.internals.backup.data.NodeData,com.absence.dialoguesystem.Dialogue)
+  id: ReadNodeData(com.absence.dialoguesystem.internals.backup.data.NodeData,com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadNodeData(NodeData, Dialogue)
+  nameWithType: DataReader.ReadNodeData(NodeData, Dialogue)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData(com.absence.dialoguesystem.internals.backup.data.NodeData, com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadNodeData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static Node ReadNodeData(NodeData data, Dialogue targetDialogue)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.NodeData
+    - id: targetDialogue
+      type: com.absence.dialoguesystem.Dialogue
+    return:
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: Public Shared Function ReadNodeData(data As NodeData, targetDialogue As Dialogue) As Node
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData(com.absence.dialoguesystem.internals.backup.data.BlackboardData,com.absence.dialoguesystem.internals.Blackboard)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData(com.absence.dialoguesystem.internals.backup.data.BlackboardData,com.absence.dialoguesystem.internals.Blackboard)
+  id: ReadBlackboardData(com.absence.dialoguesystem.internals.backup.data.BlackboardData,com.absence.dialoguesystem.internals.Blackboard)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadBlackboardData(BlackboardData, Blackboard)
+  nameWithType: DataReader.ReadBlackboardData(BlackboardData, Blackboard)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData(com.absence.dialoguesystem.internals.backup.data.BlackboardData, com.absence.dialoguesystem.internals.Blackboard)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadBlackboardData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 73
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static void ReadBlackboardData(BlackboardData data, Blackboard target)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+    - id: target
+      type: com.absence.dialoguesystem.internals.Blackboard
+    content.vb: Public Shared Sub ReadBlackboardData(data As BlackboardData, target As Blackboard)
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData``1(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData``1(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  id: ReadOptionData``1(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadOptionData<T>(OptionData)
+  nameWithType: DataReader.ReadOptionData<T>(OptionData)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData<T>(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadOptionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 101
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: 'public static T ReadOptionData<T>(OptionData data) where T : Option, new()'
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.OptionData
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function ReadOptionData(Of T As {[Option], New})(data As OptionData) As T
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData*
+  nameWithType.vb: DataReader.ReadOptionData(Of T)(OptionData)
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData(Of T)(com.absence.dialoguesystem.internals.backup.data.OptionData)
+  name.vb: ReadOptionData(Of T)(OptionData)
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData(com.absence.dialoguesystem.internals.backup.data.DialogueData,com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData(com.absence.dialoguesystem.internals.backup.data.DialogueData,com.absence.dialoguesystem.Dialogue)
+  id: ReadGenericOptionData(com.absence.dialoguesystem.internals.backup.data.DialogueData,com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataReader
+  langs:
+  - csharp
+  - vb
+  name: ReadGenericOptionData(DialogueData, Dialogue)
+  nameWithType: DataReader.ReadGenericOptionData(DialogueData, Dialogue)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData(com.absence.dialoguesystem.internals.backup.data.DialogueData, com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadGenericOptionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataReader.cs
+    startLine: 114
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static void ReadGenericOptionData(DialogueData data, Dialogue target)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.DialogueData
+    - id: target
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: Public Shared Sub ReadGenericOptionData(data As DialogueData, target As Dialogue)
+  overload: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData*
+references:
+- uid: com.absence.dialoguesystem.internals.backup.data
+  commentId: N:com.absence.dialoguesystem.internals.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup.data
+  nameWithType: com.absence.dialoguesystem.internals.backup.data
+  fullName: com.absence.dialoguesystem.internals.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadComparerData_com_absence_dialoguesystem_internals_backup_data_NodeVariableComparerData_
+  name: ReadComparerData
+  nameWithType: DataReader.ReadComparerData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadComparerData
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData.html
+  name: NodeVariableComparerData
+  nameWithType: NodeVariableComparerData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  name: NodeVariableComparer
+  nameWithType: NodeVariableComparer
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadSetterData_com_absence_dialoguesystem_internals_backup_data_NodeVariableSetterData_
+  name: ReadSetterData
+  nameWithType: DataReader.ReadSetterData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadSetterData
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData.html
+  name: NodeVariableSetterData
+  nameWithType: NodeVariableSetterData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
+  name: NodeVariableSetter
+  nameWithType: NodeVariableSetter
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadNodeData_com_absence_dialoguesystem_internals_backup_data_NodeData_com_absence_dialoguesystem_Dialogue_
+  name: ReadNodeData
+  nameWithType: DataReader.ReadNodeData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadNodeData
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeData.html
+  name: NodeData
+  nameWithType: NodeData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeData
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadBlackboardData_com_absence_dialoguesystem_internals_backup_data_BlackboardData_com_absence_dialoguesystem_internals_Blackboard_
+  name: ReadBlackboardData
+  nameWithType: DataReader.ReadBlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadBlackboardData
+- uid: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.BlackboardData.html
+  name: BlackboardData
+  nameWithType: BlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+- uid: com.absence.dialoguesystem.internals.Blackboard
+  commentId: T:com.absence.dialoguesystem.internals.Blackboard
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Blackboard.html
+  name: Blackboard
+  nameWithType: Blackboard
+  fullName: com.absence.dialoguesystem.internals.Blackboard
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadOptionData__1_com_absence_dialoguesystem_internals_backup_data_OptionData_
+  name: ReadOptionData
+  nameWithType: DataReader.ReadOptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadOptionData
+- uid: com.absence.dialoguesystem.internals.backup.data.OptionData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.OptionData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.OptionData.html
+  name: OptionData
+  nameWithType: OptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.OptionData
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData
+  href: com.absence.dialoguesystem.internals.backup.data.DataReader.html#com_absence_dialoguesystem_internals_backup_data_DataReader_ReadGenericOptionData_com_absence_dialoguesystem_internals_backup_data_DialogueData_com_absence_dialoguesystem_Dialogue_
+  name: ReadGenericOptionData
+  nameWithType: DataReader.ReadGenericOptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataReader.ReadGenericOptionData
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.DialogueData.html
+  name: DialogueData
+  nameWithType: DialogueData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData

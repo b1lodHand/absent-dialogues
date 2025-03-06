@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Constants
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
-    startLine: 4
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 2
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -71,7 +71,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object

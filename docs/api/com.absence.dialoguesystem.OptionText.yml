@@ -5,7 +5,8 @@ items:
   id: OptionText
   parent: com.absence.dialoguesystem
   children:
-  - com.absence.dialoguesystem.OptionText.Initialize(System.Int32,System.String)
+  - com.absence.dialoguesystem.OptionText.Handle
+  - com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)
   - com.absence.dialoguesystem.OptionText.OnClick
   - com.absence.dialoguesystem.OptionText.OnClickAction
   - com.absence.dialoguesystem.OptionText.OnSelect
@@ -24,7 +25,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OptionText
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -60,6 +61,35 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html
+- uid: com.absence.dialoguesystem.OptionText.Handle
+  commentId: P:com.absence.dialoguesystem.OptionText.Handle
+  id: Handle
+  parent: com.absence.dialoguesystem.OptionText
+  langs:
+  - csharp
+  - vb
+  name: Handle
+  nameWithType: OptionText.Handle
+  fullName: com.absence.dialoguesystem.OptionText.Handle
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Handle
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public OptionHandle Handle { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.internals.OptionHandle
+    content.vb: Public Property Handle As OptionHandle
+  overload: com.absence.dialoguesystem.OptionText.Handle*
 - uid: com.absence.dialoguesystem.OptionText.OnClickAction
   commentId: E:com.absence.dialoguesystem.OptionText.OnClickAction
   id: OnClickAction
@@ -78,15 +108,15 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnClickAction
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   syntax:
-    content: public event Action<int> OnClickAction
+    content: public event Action<OptionHandle> OnClickAction
     return:
-      type: System.Action{System.Int32}
-    content.vb: Public Event OnClickAction As Action(Of Integer)
+      type: System.Action{com.absence.dialoguesystem.internals.OptionHandle}
+    content.vb: Public Event OnClickAction As Action(Of OptionHandle)
 - uid: com.absence.dialoguesystem.OptionText.OnSelectAction
   commentId: E:com.absence.dialoguesystem.OptionText.OnSelectAction
   id: OnSelectAction
@@ -105,7 +135,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelectAction
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -114,16 +144,16 @@ items:
     return:
       type: System.Action
     content.vb: Public Event OnSelectAction As Action
-- uid: com.absence.dialoguesystem.OptionText.Initialize(System.Int32,System.String)
-  commentId: M:com.absence.dialoguesystem.OptionText.Initialize(System.Int32,System.String)
-  id: Initialize(System.Int32,System.String)
+- uid: com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)
+  commentId: M:com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)
+  id: Initialize(com.absence.dialoguesystem.internals.OptionHandle)
   parent: com.absence.dialoguesystem.OptionText
   langs:
   - csharp
   - vb
-  name: Initialize(int, string)
-  nameWithType: OptionText.Initialize(int, string)
-  fullName: com.absence.dialoguesystem.OptionText.Initialize(int, string)
+  name: Initialize(OptionHandle)
+  nameWithType: OptionText.Initialize(OptionHandle)
+  fullName: com.absence.dialoguesystem.OptionText.Initialize(com.absence.dialoguesystem.internals.OptionHandle)
   type: Method
   source:
     remote:
@@ -132,26 +162,19 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Initialize
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Sets the index and the text of this option.
   example: []
   syntax:
-    content: public void Initialize(int optionIndex, string text)
+    content: public void Initialize(OptionHandle handle)
     parameters:
-    - id: optionIndex
-      type: System.Int32
-      description: ''
-    - id: text
-      type: System.String
-      description: ''
-    content.vb: Public Sub Initialize(optionIndex As Integer, text As String)
+    - id: handle
+      type: com.absence.dialoguesystem.internals.OptionHandle
+    content.vb: Public Sub Initialize(handle As OptionHandle)
   overload: com.absence.dialoguesystem.OptionText.Initialize*
-  nameWithType.vb: OptionText.Initialize(Integer, String)
-  fullName.vb: com.absence.dialoguesystem.OptionText.Initialize(Integer, String)
-  name.vb: Initialize(Integer, String)
 - uid: com.absence.dialoguesystem.OptionText.OnClick
   commentId: M:com.absence.dialoguesystem.OptionText.OnClick
   id: OnClick
@@ -170,7 +193,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnClick
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -198,7 +221,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelect
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/OptionText.cs
-    startLine: 39
+    startLine: 43
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -241,7 +264,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -289,27 +311,77 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: System.Action{System.Int32}
-  commentId: T:System.Action{System.Int32}
+- uid: com.absence.dialoguesystem.OptionText.Handle*
+  commentId: Overload:com.absence.dialoguesystem.OptionText.Handle
+  href: com.absence.dialoguesystem.OptionText.html#com_absence_dialoguesystem_OptionText_Handle
+  name: Handle
+  nameWithType: OptionText.Handle
+  fullName: com.absence.dialoguesystem.OptionText.Handle
+- uid: com.absence.dialoguesystem.internals.OptionHandle
+  commentId: T:com.absence.dialoguesystem.internals.OptionHandle
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.OptionHandle.html
+  name: OptionHandle
+  nameWithType: OptionHandle
+  fullName: com.absence.dialoguesystem.internals.OptionHandle
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Action{com.absence.dialoguesystem.internals.OptionHandle}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.OptionHandle}
   parent: System
   definition: System.Action`1
   href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<int>
-  nameWithType: Action<int>
-  fullName: System.Action<int>
-  nameWithType.vb: Action(Of Integer)
-  fullName.vb: System.Action(Of Integer)
-  name.vb: Action(Of Integer)
+  name: Action<OptionHandle>
+  nameWithType: Action<OptionHandle>
+  fullName: System.Action<com.absence.dialoguesystem.internals.OptionHandle>
+  nameWithType.vb: Action(Of OptionHandle)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.OptionHandle)
+  name.vb: Action(Of OptionHandle)
   spec.csharp:
   - uid: System.Action`1
     name: Action
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: '>'
   spec.vb:
   - uid: System.Action`1
@@ -319,10 +391,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: )
 - uid: System.Action`1
   commentId: T:System.Action`1
@@ -362,32 +433,10 @@ references:
   fullName: System.Action
 - uid: com.absence.dialoguesystem.OptionText.Initialize*
   commentId: Overload:com.absence.dialoguesystem.OptionText.Initialize
-  href: com.absence.dialoguesystem.OptionText.html#com_absence_dialoguesystem_OptionText_Initialize_System_Int32_System_String_
+  href: com.absence.dialoguesystem.OptionText.html#com_absence_dialoguesystem_OptionText_Initialize_com_absence_dialoguesystem_internals_OptionHandle_
   name: Initialize
   nameWithType: OptionText.Initialize
   fullName: com.absence.dialoguesystem.OptionText.Initialize
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: com.absence.dialoguesystem.OptionText.OnClickAction
   commentId: E:com.absence.dialoguesystem.OptionText.OnClickAction
   href: com.absence.dialoguesystem.OptionText.html#com_absence_dialoguesystem_OptionText_OnClickAction

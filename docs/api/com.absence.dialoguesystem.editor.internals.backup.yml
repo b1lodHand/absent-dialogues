@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.internals.backup
+  commentId: N:com.absence.dialoguesystem.editor.internals.backup
+  id: com.absence.dialoguesystem.editor.internals.backup
+  children:
+  - com.absence.dialoguesystem.editor.internals.backup.BackupSystem
+  - com.absence.dialoguesystem.editor.internals.backup.DialogueExporter
+  - com.absence.dialoguesystem.editor.internals.backup.DialogueImporter
+  - com.absence.dialoguesystem.editor.internals.backup.FileHelper
+  - com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.editor.internals.backup
+  nameWithType: com.absence.dialoguesystem.editor.internals.backup
+  fullName: com.absence.dialoguesystem.editor.internals.backup
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+references:
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  href: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.html
+  name: JsonHelper
+  nameWithType: JsonHelper
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+- uid: com.absence.dialoguesystem.editor.internals.backup.FileHelper
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.FileHelper
+  href: com.absence.dialoguesystem.editor.internals.backup.FileHelper.html
+  name: FileHelper
+  nameWithType: FileHelper
+  fullName: com.absence.dialoguesystem.editor.internals.backup.FileHelper
+- uid: com.absence.dialoguesystem.editor.internals.backup.DialogueExporter
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.DialogueExporter
+  href: com.absence.dialoguesystem.editor.internals.backup.DialogueExporter.html
+  name: DialogueExporter
+  nameWithType: DialogueExporter
+  fullName: com.absence.dialoguesystem.editor.internals.backup.DialogueExporter
+- uid: com.absence.dialoguesystem.editor.internals.backup.BackupSystem
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.BackupSystem
+  href: com.absence.dialoguesystem.editor.internals.backup.BackupSystem.html
+  name: BackupSystem
+  nameWithType: BackupSystem
+  fullName: com.absence.dialoguesystem.editor.internals.backup.BackupSystem
+- uid: com.absence.dialoguesystem.editor.internals.backup.DialogueImporter
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.DialogueImporter
+  href: com.absence.dialoguesystem.editor.internals.backup.DialogueImporter.html
+  name: DialogueImporter
+  nameWithType: DialogueImporter
+  fullName: com.absence.dialoguesystem.editor.internals.backup.DialogueImporter

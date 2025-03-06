@@ -1,0 +1,577 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  commentId: T:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  id: NodeCustomDataCreationHandler
+  parent: com.absence.dialoguesystem.editor
+  children:
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.BypassUndo
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option,System.Type)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData(com.absence.dialoguesystem.internals.Node,System.Type)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option,System.Type)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DefaultDataType
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option)
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.GenericOptionCustomDataTypeToCreate
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.NodeCustomDataTypeToCreate
+  - com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.OptionCustomDataTypeToCreate
+  langs:
+  - csharp
+  - vb
+  name: NodeCustomDataCreationHandler
+  nameWithType: NodeCustomDataCreationHandler
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeCustomDataCreationHandler
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static class NodeCustomDataCreationHandler
+    content.vb: Public Module NodeCustomDataCreationHandler
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DefaultDataType
+  commentId: F:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DefaultDataType
+  id: DefaultDataType
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: DefaultDataType
+  nameWithType: NodeCustomDataCreationHandler.DefaultDataType
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DefaultDataType
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DefaultDataType
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static Type DefaultDataType
+    return:
+      type: System.Type
+    content.vb: Public Shared DefaultDataType As Type
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.NodeCustomDataTypeToCreate
+  commentId: F:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.NodeCustomDataTypeToCreate
+  id: NodeCustomDataTypeToCreate
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: NodeCustomDataTypeToCreate
+  nameWithType: NodeCustomDataCreationHandler.NodeCustomDataTypeToCreate
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.NodeCustomDataTypeToCreate
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeCustomDataTypeToCreate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static Type NodeCustomDataTypeToCreate
+    return:
+      type: System.Type
+    content.vb: Public Shared NodeCustomDataTypeToCreate As Type
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.OptionCustomDataTypeToCreate
+  commentId: F:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.OptionCustomDataTypeToCreate
+  id: OptionCustomDataTypeToCreate
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: OptionCustomDataTypeToCreate
+  nameWithType: NodeCustomDataCreationHandler.OptionCustomDataTypeToCreate
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.OptionCustomDataTypeToCreate
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OptionCustomDataTypeToCreate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static Type OptionCustomDataTypeToCreate
+    return:
+      type: System.Type
+    content.vb: Public Shared OptionCustomDataTypeToCreate As Type
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.GenericOptionCustomDataTypeToCreate
+  commentId: F:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.GenericOptionCustomDataTypeToCreate
+  id: GenericOptionCustomDataTypeToCreate
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: GenericOptionCustomDataTypeToCreate
+  nameWithType: NodeCustomDataCreationHandler.GenericOptionCustomDataTypeToCreate
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.GenericOptionCustomDataTypeToCreate
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenericOptionCustomDataTypeToCreate
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static Type GenericOptionCustomDataTypeToCreate
+    return:
+      type: System.Type
+    content.vb: Public Shared GenericOptionCustomDataTypeToCreate As Type
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.BypassUndo
+  commentId: F:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.BypassUndo
+  id: BypassUndo
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: BypassUndo
+  nameWithType: NodeCustomDataCreationHandler.BypassUndo
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.BypassUndo
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BypassUndo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static bool BypassUndo
+    return:
+      type: System.Boolean
+    content.vb: Public Shared BypassUndo As Boolean
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData(com.absence.dialoguesystem.internals.Node,System.Type)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData(com.absence.dialoguesystem.internals.Node,System.Type)
+  id: CreateNodeCustomData(com.absence.dialoguesystem.internals.Node,System.Type)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateNodeCustomData(Node, Type)
+  nameWithType: NodeCustomDataCreationHandler.CreateNodeCustomData(Node, Type)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData(com.absence.dialoguesystem.internals.Node, System.Type)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateNodeCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 55
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static NodeCustomDataBase CreateNodeCustomData(Node sender, Type type)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.internals.Node
+    - id: type
+      type: System.Type
+    return:
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public Shared Function CreateNodeCustomData(sender As Node, type As Type) As NodeCustomDataBase
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData*
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData(com.absence.dialoguesystem.internals.Node)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData(com.absence.dialoguesystem.internals.Node)
+  id: DeleteNodeCustomData(com.absence.dialoguesystem.internals.Node)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: DeleteNodeCustomData(Node)
+  nameWithType: NodeCustomDataCreationHandler.DeleteNodeCustomData(Node)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData(com.absence.dialoguesystem.internals.Node)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DeleteNodeCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 78
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void DeleteNodeCustomData(Node sender)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: Public Shared Sub DeleteNodeCustomData(sender As Node)
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData*
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option,System.Type)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option,System.Type)
+  id: CreateOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option,System.Type)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateOptionCustomData(Node, Option, Type)
+  nameWithType: NodeCustomDataCreationHandler.CreateOptionCustomData(Node, Option, Type)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.internals.Option, System.Type)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateOptionCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 96
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static NodeCustomDataBase CreateOptionCustomData(Node sender, Option context, Type type)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.internals.Node
+    - id: context
+      type: com.absence.dialoguesystem.internals.Option
+    - id: type
+      type: System.Type
+    return:
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public Shared Function CreateOptionCustomData(sender As Node, context As [Option], type As Type) As NodeCustomDataBase
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData*
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option)
+  id: DeleteOptionCustomData(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.internals.Option)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: DeleteOptionCustomData(Node, Option)
+  nameWithType: NodeCustomDataCreationHandler.DeleteOptionCustomData(Node, Option)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.internals.Option)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DeleteOptionCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 117
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void DeleteOptionCustomData(Node sender, Option context)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.internals.Node
+    - id: context
+      type: com.absence.dialoguesystem.internals.Option
+    content.vb: Public Shared Sub DeleteOptionCustomData(sender As Node, context As [Option])
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData*
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option,System.Type)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option,System.Type)
+  id: CreateGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option,System.Type)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateGenericOptionCustomData(Dialogue, Option, Type)
+  nameWithType: NodeCustomDataCreationHandler.CreateGenericOptionCustomData(Dialogue, Option, Type)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData(com.absence.dialoguesystem.Dialogue, com.absence.dialoguesystem.internals.Option, System.Type)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateGenericOptionCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 136
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static NodeCustomDataBase CreateGenericOptionCustomData(Dialogue sender, Option context, Type type)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.Dialogue
+    - id: context
+      type: com.absence.dialoguesystem.internals.Option
+    - id: type
+      type: System.Type
+    return:
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public Shared Function CreateGenericOptionCustomData(sender As Dialogue, context As [Option], type As Type) As NodeCustomDataBase
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData*
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option)
+  commentId: M:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option)
+  id: DeleteGenericOptionCustomData(com.absence.dialoguesystem.Dialogue,com.absence.dialoguesystem.internals.Option)
+  parent: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: DeleteGenericOptionCustomData(Dialogue, Option)
+  nameWithType: NodeCustomDataCreationHandler.DeleteGenericOptionCustomData(Dialogue, Option)
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData(com.absence.dialoguesystem.Dialogue, com.absence.dialoguesystem.internals.Option)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DeleteGenericOptionCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeCustomDataCreationHandler.cs
+    startLine: 157
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void DeleteGenericOptionCustomData(Dialogue sender, Option context)
+    parameters:
+    - id: sender
+      type: com.absence.dialoguesystem.Dialogue
+    - id: context
+      type: com.absence.dialoguesystem.internals.Option
+    content.vb: Public Shared Sub DeleteGenericOptionCustomData(sender As Dialogue, context As [Option])
+  overload: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData*
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_CreateNodeCustomData_com_absence_dialoguesystem_internals_Node_System_Type_
+  name: CreateNodeCustomData
+  nameWithType: NodeCustomDataCreationHandler.CreateNodeCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateNodeCustomData
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.NodeCustomDataBase
+  commentId: T:com.absence.dialoguesystem.NodeCustomDataBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html
+  name: NodeCustomDataBase
+  nameWithType: NodeCustomDataBase
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_DeleteNodeCustomData_com_absence_dialoguesystem_internals_Node_
+  name: DeleteNodeCustomData
+  nameWithType: NodeCustomDataCreationHandler.DeleteNodeCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteNodeCustomData
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_CreateOptionCustomData_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_internals_Option_System_Type_
+  name: CreateOptionCustomData
+  nameWithType: NodeCustomDataCreationHandler.CreateOptionCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateOptionCustomData
+- uid: com.absence.dialoguesystem.internals.Option
+  commentId: T:com.absence.dialoguesystem.internals.Option
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option
+  nameWithType: Option
+  fullName: com.absence.dialoguesystem.internals.Option
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_DeleteOptionCustomData_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_internals_Option_
+  name: DeleteOptionCustomData
+  nameWithType: NodeCustomDataCreationHandler.DeleteOptionCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteOptionCustomData
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_CreateGenericOptionCustomData_com_absence_dialoguesystem_Dialogue_com_absence_dialoguesystem_internals_Option_System_Type_
+  name: CreateGenericOptionCustomData
+  nameWithType: NodeCustomDataCreationHandler.CreateGenericOptionCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.CreateGenericOptionCustomData
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData
+  href: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html#com_absence_dialoguesystem_editor_NodeCustomDataCreationHandler_DeleteGenericOptionCustomData_com_absence_dialoguesystem_Dialogue_com_absence_dialoguesystem_internals_Option_
+  name: DeleteGenericOptionCustomData
+  nameWithType: NodeCustomDataCreationHandler.DeleteGenericOptionCustomData
+  fullName: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.DeleteGenericOptionCustomData

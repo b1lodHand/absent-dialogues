@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -78,7 +78,7 @@
                   <div class="sr-items">
                     <p><i class="bi bi-hourglass-split index-loading"></i></p>
                   </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
                 </div>
  
 
@@ -104,37 +104,32 @@
     <h3 id="classes">
 Classes
 </h3>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.ActionNode.html">ActionNode</a></h5>
-      <section><p>Node which invokes some actions on the flow.</p>
-</section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.Blackboard.html">Blackboard</a></h5>
-      <section><p>This is a class for holding any variables in the dialogues. It also contains a <span class="xref">com.absence.variablesystem.VariableBank</span>.</p>
+      <section><p>This is a class for holding any variables in the dialogues. It also contains a <span class="xref">com.absence.variablesystem.banksystembase.VariableBank</span>.</p>
 </section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.ConditionNode.html">ConditionNode</a></h5>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.BranchNode.html">BranchNode</a></h5>
       <section><p>Node which re-routes the flow under some conditions.</p>
 </section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.Constants.html">Constants</a></h5>
       <section></section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Constants.Text.html">Constants.Text</a></h5>
+      <section></section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.Constants.Tooltips.html">Constants.Tooltips</a></h5>
       <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.DecisionSpeechNode.html">DecisionSpeechNode</a></h5>
-      <section><p>Node which displays a speech with options.</p>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.EntryNode.html">EntryNode</a></h5>
+      <section><p>Node which is essential if you want to have a dialogue graph.</p>
 </section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.html">DialogueFlowContext</a></h5>
-      <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.DialoguePartNode.html">DialoguePartNode</a></h5>
-      <section><p>Node which let's you create more and seperate routes.</p>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.EventNode.html">EventNode</a></h5>
+      <section><p>Node which invokes some actions on the flow.</p>
 </section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.ExitNode.html">ExitNode</a></h5>
       <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.ExtraDialogueData.html">ExtraDialogueData</a></h5>
-      <section><p>Holds some extra data which you can use on the flow.</p>
-</section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.FastSpeechNode.html">FastSpeechNode</a></h5>
-      <section><p>Node which displays a speech without options.</p>
-</section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.GenericOption.html">GenericOption</a></h5>
+      <section></section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.GenericOptionReference.html">GenericOptionReference</a></h5>
+      <section></section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.GotoNode.html">GotoNode</a></h5>
-      <section><p>Node which teleports the flow to a specific <a class="xref" href="com.absence.dialoguesystem.internals.DialoguePartNode.html">DialoguePartNode</a>.</p>
+      <section><p>Node which teleports the flow to a specific <a class="xref" href="com.absence.dialoguesystem.internals.SectionNode.html">SectionNode</a>.</p>
 </section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.Node.html">Node</a></h5>
       <section><p>This is the base abstract class to derive from for any new node subtypes.</p>
@@ -153,8 +148,13 @@ Classes
 </section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.OptionHandle.html">OptionHandle</a></h5>
       <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.RootNode.html">RootNode</a></h5>
-      <section><p>Node which is essential if you want to have a dialogue graph.</p>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.PersonOverride.html">PersonOverride</a></h5>
+      <section></section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.PromptNode.html">PromptNode</a></h5>
+      <section><p>Node which displays a speech with options.</p>
+</section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.SectionNode.html">SectionNode</a></h5>
+      <section><p>Node which let's you create more and seperate routes.</p>
 </section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.StickyNoteNode.html">StickyNoteNode</a></h5>
       <section><p>Node which contains a user defined string.</p>
@@ -166,24 +166,24 @@ Classes
       <section></section>
       <h5><a class="xref" href="com.absence.dialoguesystem.internals.Utilities.Comparison.html">Utilities.Comparison</a></h5>
       <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Utilities.Texts.html">Utilities.Texts</a></h5>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Utilities.Setting.html">Utilities.Setting</a></h5>
+      <section></section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Utilities.Text.html">Utilities.Text</a></h5>
       <section></section>
     <h3 id="interfaces">
 Interfaces
 </h3>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.IContainData.html">IContainData</a></h5>
-      <section><p>Interface to use if any of your dialogue elements has a speech, has options or has <a class="xref" href="com.absence.dialoguesystem.internals.ExtraDialogueData.html">ExtraDialogueData</a>.</p>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.IUseDialogueInScene.html">IUseDialogueInScene</a></h5>
+      <section><p>Any game object with a script that implements this interface attached will display it's dialogue when gets selected.</p>
 </section>
     <h3 id="enums">
 Enums
 </h3>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState.html">DialogueFlowContext.ContextState</a></h5>
-      <section></section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Node.NodeState.html">Node.NodeState</a></h5>
-      <section><p>Describes the node's state on the flow. While progressing in the dialogue.</p>
-</section>
-      <h5><a class="xref" href="com.absence.dialoguesystem.internals.VBProcessType.html">VBProcessType</a></h5>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.ConditionProcessMode.html">ConditionProcessMode</a></h5>
       <section><p>An enum used to define the way to handle multiple variable manipulators at once.</p>
+</section>
+      <h5><a class="xref" href="com.absence.dialoguesystem.internals.Node.FlowState.html">Node.FlowState</a></h5>
+      <section><p>Describes the node's state on the flow. While progressing in the dialogue.</p>
 </section>
 
 

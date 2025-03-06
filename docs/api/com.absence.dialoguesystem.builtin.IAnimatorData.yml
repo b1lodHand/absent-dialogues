@@ -1,0 +1,121 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData
+  commentId: T:com.absence.dialoguesystem.builtin.IAnimatorData
+  id: IAnimatorData
+  parent: com.absence.dialoguesystem.builtin
+  children:
+  - com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  langs:
+  - csharp
+  - vb
+  name: IAnimatorData
+  nameWithType: IAnimatorData
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAnimatorData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IAnimatorData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAnimatorData.cs
+    startLine: 2
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: public interface IAnimatorData
+    content.vb: Public Interface IAnimatorData
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  id: AnimatorMemberName
+  parent: com.absence.dialoguesystem.builtin.IAnimatorData
+  langs:
+  - csharp
+  - vb
+  name: AnimatorMemberName
+  nameWithType: IAnimatorData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAnimatorData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AnimatorMemberName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IAnimatorData.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: string AnimatorMemberName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property AnimatorMemberName As String
+  overload: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName*
+references:
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  href: com.html
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName*
+  commentId: Overload:com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  href: com.absence.dialoguesystem.builtin.IAnimatorData.html#com_absence_dialoguesystem_builtin_IAnimatorData_AnimatorMemberName
+  name: AnimatorMemberName
+  nameWithType: IAnimatorData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

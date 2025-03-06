@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.NodeViewStyles
+  commentId: T:com.absence.dialoguesystem.editor.NodeViewStyles
+  id: NodeViewStyles
+  parent: com.absence.dialoguesystem.editor
+  children:
+  - com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles(com.absence.dialoguesystem.editor.NodeView)
+  langs:
+  - csharp
+  - vb
+  name: NodeViewStyles
+  nameWithType: NodeViewStyles
+  fullName: com.absence.dialoguesystem.editor.NodeViewStyles
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewStyles.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeViewStyles
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewStyles.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: >-
+      [InitializeOnLoad]
+
+      public static class NodeViewStyles
+    content.vb: >-
+      <InitializeOnLoad>
+
+      Public Module NodeViewStyles
+  inheritance:
+  - System.Object
+  attributes:
+  - type: UnityEditor.InitializeOnLoadAttribute
+    ctor: UnityEditor.InitializeOnLoadAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles(com.absence.dialoguesystem.editor.NodeView)
+  commentId: M:com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles(com.absence.dialoguesystem.editor.NodeView)
+  id: ApplyStyles(com.absence.dialoguesystem.editor.NodeView)
+  parent: com.absence.dialoguesystem.editor.NodeViewStyles
+  langs:
+  - csharp
+  - vb
+  name: ApplyStyles(NodeView)
+  nameWithType: NodeViewStyles.ApplyStyles(NodeView)
+  fullName: com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles(com.absence.dialoguesystem.editor.NodeView)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewStyles.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ApplyStyles
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewStyles.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void ApplyStyles(NodeView view)
+    parameters:
+    - id: view
+      type: com.absence.dialoguesystem.editor.NodeView
+    content.vb: Public Shared Sub ApplyStyles(view As NodeView)
+  overload: com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles*
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles
+  href: com.absence.dialoguesystem.editor.NodeViewStyles.html#com_absence_dialoguesystem_editor_NodeViewStyles_ApplyStyles_com_absence_dialoguesystem_editor_NodeView_
+  name: ApplyStyles
+  nameWithType: NodeViewStyles.ApplyStyles
+  fullName: com.absence.dialoguesystem.editor.NodeViewStyles.ApplyStyles
+- uid: com.absence.dialoguesystem.editor.NodeView
+  commentId: T:com.absence.dialoguesystem.editor.NodeView
+  parent: com.absence.dialoguesystem.editor
+  href: com.absence.dialoguesystem.editor.NodeView.html
+  name: NodeView
+  nameWithType: NodeView
+  fullName: com.absence.dialoguesystem.editor.NodeView

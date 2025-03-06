@@ -1,0 +1,253 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  commentId: T:com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  id: JsonHelper
+  parent: com.absence.dialoguesystem.editor.internals.backup
+  children:
+  - com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom(com.absence.dialoguesystem.internals.backup.data.DialogueData)
+  - com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson(System.String)
+  langs:
+  - csharp
+  - vb
+  name: JsonHelper
+  nameWithType: JsonHelper
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: JsonHelper
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.internals.backup
+  syntax:
+    content: public static class JsonHelper
+    content.vb: Public Module JsonHelper
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom(com.absence.dialoguesystem.internals.backup.data.DialogueData)
+  commentId: M:com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom(com.absence.dialoguesystem.internals.backup.data.DialogueData)
+  id: GenerateJsonFrom(com.absence.dialoguesystem.internals.backup.data.DialogueData)
+  parent: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: GenerateJsonFrom(DialogueData)
+  nameWithType: JsonHelper.GenerateJsonFrom(DialogueData)
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom(com.absence.dialoguesystem.internals.backup.data.DialogueData)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateJsonFrom
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.internals.backup
+  syntax:
+    content: public static string GenerateJsonFrom(DialogueData data)
+    parameters:
+    - id: data
+      type: com.absence.dialoguesystem.internals.backup.data.DialogueData
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateJsonFrom(data As DialogueData) As String
+  overload: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom*
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson(System.String)
+  commentId: M:com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson(System.String)
+  id: ReadFromJson(System.String)
+  parent: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadFromJson(string)
+  nameWithType: JsonHelper.ReadFromJson(string)
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson(string)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReadFromJson
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Backup System/JsonHelper.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.internals.backup
+  syntax:
+    content: public static DialogueData ReadFromJson(string jsonText)
+    parameters:
+    - id: jsonText
+      type: System.String
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.DialogueData
+    content.vb: Public Shared Function ReadFromJson(jsonText As String) As DialogueData
+  overload: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson*
+  nameWithType.vb: JsonHelper.ReadFromJson(String)
+  fullName.vb: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson(String)
+  name.vb: ReadFromJson(String)
+references:
+- uid: com.absence.dialoguesystem.editor.internals.backup
+  commentId: N:com.absence.dialoguesystem.editor.internals.backup
+  href: com.html
+  name: com.absence.dialoguesystem.editor.internals.backup
+  nameWithType: com.absence.dialoguesystem.editor.internals.backup
+  fullName: com.absence.dialoguesystem.editor.internals.backup
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.internals.backup.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.editor.internals.backup.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom*
+  commentId: Overload:com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom
+  href: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.html#com_absence_dialoguesystem_editor_internals_backup_JsonHelper_GenerateJsonFrom_com_absence_dialoguesystem_internals_backup_data_DialogueData_
+  name: GenerateJsonFrom
+  nameWithType: JsonHelper.GenerateJsonFrom
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.GenerateJsonFrom
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.DialogueData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.DialogueData.html
+  name: DialogueData
+  nameWithType: DialogueData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.internals.backup.data
+  commentId: N:com.absence.dialoguesystem.internals.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup.data
+  nameWithType: com.absence.dialoguesystem.internals.backup.data
+  fullName: com.absence.dialoguesystem.internals.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+- uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson*
+  commentId: Overload:com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson
+  href: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.html#com_absence_dialoguesystem_editor_internals_backup_JsonHelper_ReadFromJson_System_String_
+  name: ReadFromJson
+  nameWithType: JsonHelper.ReadFromJson
+  fullName: com.absence.dialoguesystem.editor.internals.backup.JsonHelper.ReadFromJson

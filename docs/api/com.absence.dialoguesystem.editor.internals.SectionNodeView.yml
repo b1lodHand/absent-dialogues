@@ -1,0 +1,976 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.internals.SectionNodeView
+  commentId: T:com.absence.dialoguesystem.editor.internals.SectionNodeView
+  id: SectionNodeView
+  parent: com.absence.dialoguesystem.editor.internals
+  children:
+  - com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  langs:
+  - csharp
+  - vb
+  name: SectionNodeView
+  nameWithType: SectionNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.SectionNodeView
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/SectionNodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SectionNodeView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/SectionNodeView.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.internals
+  syntax:
+    content: >-
+      [CustomNodeView(typeof(SectionNode), true)]
+
+      public class SectionNodeView : NodeView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+    content.vb: >-
+      <CustomNodeView(GetType(SectionNode), True)>
+
+      Public Class SectionNodeView Inherits NodeView Implements IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+  inheritance:
+  - System.Object
+  - UnityEngine.UIElements.CallbackEventHandler
+  - UnityEngine.UIElements.Focusable
+  - UnityEngine.UIElements.VisualElement
+  - UnityEditor.Experimental.GraphView.GraphElement
+  - UnityEditor.Experimental.GraphView.Node
+  - com.absence.dialoguesystem.editor.NodeView
+  implements:
+  - UnityEngine.UIElements.IEventHandler
+  - UnityEngine.UIElements.IResolvedStyle
+  - UnityEngine.UIElements.ITransform
+  - UnityEngine.UIElements.Experimental.ITransitionAnimations
+  - UnityEngine.UIElements.IExperimentalFeatures
+  - UnityEngine.UIElements.IVisualElementScheduler
+  inheritedMembers:
+  - com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  - com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  - com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  - com.absence.dialoguesystem.editor.NodeView.OnSelect
+  - com.absence.dialoguesystem.editor.NodeView.Node
+  - com.absence.dialoguesystem.editor.NodeView.Input
+  - com.absence.dialoguesystem.editor.NodeView.Outputs
+  - com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  - com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  - com.absence.dialoguesystem.editor.NodeView.Graph
+  - com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  - com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  - com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  - com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  - com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  - com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  - com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  - com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  - com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  - com.absence.dialoguesystem.editor.NodeView.OnDraw
+  - com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  - com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+  - com.absence.dialoguesystem.editor.NodeView.OnSelected
+  - com.absence.dialoguesystem.editor.NodeView.OnUnselected
+  - com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  - com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  - com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  - com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  - com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  attributes:
+  - type: com.absence.dialoguesystem.editor.CustomNodeViewAttribute
+    ctor: com.absence.dialoguesystem.editor.CustomNodeViewAttribute.#ctor(System.Type,System.Boolean)
+    arguments:
+    - type: System.Type
+      value: com.absence.dialoguesystem.internals.SectionNode
+    - type: System.Boolean
+      value: true
+- uid: com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  commentId: M:com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  id: '#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)'
+  parent: com.absence.dialoguesystem.editor.internals.SectionNodeView
+  langs:
+  - csharp
+  - vb
+  name: SectionNodeView(Node, DialogueGraphView)
+  nameWithType: SectionNodeView.SectionNodeView(Node, DialogueGraphView)
+  fullName: com.absence.dialoguesystem.editor.internals.SectionNodeView.SectionNodeView(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  type: Constructor
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/SectionNodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: .ctor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/BuiltIn/SectionNodeView.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor.internals
+  syntax:
+    content: public SectionNodeView(Node node, DialogueGraphView graph = null)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: graph
+      type: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    content.vb: Public Sub New(node As Node, graph As DialogueGraphView = Nothing)
+  overload: com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor*
+  nameWithType.vb: SectionNodeView.New(Node, DialogueGraphView)
+  fullName.vb: com.absence.dialoguesystem.editor.internals.SectionNodeView.New(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  name.vb: New(Node, DialogueGraphView)
+references:
+- uid: com.absence.dialoguesystem.editor.internals
+  commentId: N:com.absence.dialoguesystem.editor.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.internals
+  nameWithType: com.absence.dialoguesystem.editor.internals
+  fullName: com.absence.dialoguesystem.editor.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.UIElements.CallbackEventHandler
+  commentId: T:UnityEngine.UIElements.CallbackEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: CallbackEventHandler
+  nameWithType: CallbackEventHandler
+  fullName: UnityEngine.UIElements.CallbackEventHandler
+- uid: UnityEngine.UIElements.Focusable
+  commentId: T:UnityEngine.UIElements.Focusable
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: Focusable
+  nameWithType: Focusable
+  fullName: UnityEngine.UIElements.Focusable
+- uid: UnityEngine.UIElements.VisualElement
+  commentId: T:UnityEngine.UIElements.VisualElement
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: VisualElement
+  nameWithType: VisualElement
+  fullName: UnityEngine.UIElements.VisualElement
+- uid: UnityEditor.Experimental.GraphView.GraphElement
+  commentId: T:UnityEditor.Experimental.GraphView.GraphElement
+  parent: UnityEditor.Experimental.GraphView
+  isExternal: true
+  name: GraphElement
+  nameWithType: GraphElement
+  fullName: UnityEditor.Experimental.GraphView.GraphElement
+- uid: UnityEditor.Experimental.GraphView.Node
+  commentId: T:UnityEditor.Experimental.GraphView.Node
+  parent: UnityEditor.Experimental.GraphView
+  isExternal: true
+  name: Node
+  nameWithType: Node
+  fullName: UnityEditor.Experimental.GraphView.Node
+- uid: com.absence.dialoguesystem.editor.NodeView
+  commentId: T:com.absence.dialoguesystem.editor.NodeView
+  parent: com.absence.dialoguesystem.editor
+  href: com.absence.dialoguesystem.editor.NodeView.html
+  name: NodeView
+  nameWithType: NodeView
+  fullName: com.absence.dialoguesystem.editor.NodeView
+- uid: UnityEngine.UIElements.IEventHandler
+  commentId: T:UnityEngine.UIElements.IEventHandler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IEventHandler
+  nameWithType: IEventHandler
+  fullName: UnityEngine.UIElements.IEventHandler
+- uid: UnityEngine.UIElements.IResolvedStyle
+  commentId: T:UnityEngine.UIElements.IResolvedStyle
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IResolvedStyle
+  nameWithType: IResolvedStyle
+  fullName: UnityEngine.UIElements.IResolvedStyle
+- uid: UnityEngine.UIElements.ITransform
+  commentId: T:UnityEngine.UIElements.ITransform
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: ITransform
+  nameWithType: ITransform
+  fullName: UnityEngine.UIElements.ITransform
+- uid: UnityEngine.UIElements.Experimental.ITransitionAnimations
+  commentId: T:UnityEngine.UIElements.Experimental.ITransitionAnimations
+  parent: UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: ITransitionAnimations
+  nameWithType: ITransitionAnimations
+  fullName: UnityEngine.UIElements.Experimental.ITransitionAnimations
+- uid: UnityEngine.UIElements.IExperimentalFeatures
+  commentId: T:UnityEngine.UIElements.IExperimentalFeatures
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IExperimentalFeatures
+  nameWithType: IExperimentalFeatures
+  fullName: UnityEngine.UIElements.IExperimentalFeatures
+- uid: UnityEngine.UIElements.IVisualElementScheduler
+  commentId: T:UnityEngine.UIElements.IVisualElementScheduler
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: IVisualElementScheduler
+  nameWithType: IVisualElementScheduler
+  fullName: UnityEngine.UIElements.IVisualElementScheduler
+- uid: com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_PersonDependentClassName
+  name: PersonDependentClassName
+  nameWithType: NodeView.PersonDependentClassName
+  fullName: com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+- uid: com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DEFAULT_XML_LOCATION
+  name: DEFAULT_XML_LOCATION
+  nameWithType: NodeView.DEFAULT_XML_LOCATION
+  fullName: com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+- uid: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  commentId: P:com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AdditionalUSSFileLocations
+  name: AdditionalUSSFileLocations
+  nameWithType: NodeView.AdditionalUSSFileLocations
+  fullName: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+- uid: com.absence.dialoguesystem.editor.NodeView.OnSelect
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.OnSelect
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnSelect
+  name: OnSelect
+  nameWithType: NodeView.OnSelect
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnSelect
+- uid: com.absence.dialoguesystem.editor.NodeView.Node
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.Node
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Node
+  name: Node
+  nameWithType: NodeView.Node
+  fullName: com.absence.dialoguesystem.editor.NodeView.Node
+- uid: com.absence.dialoguesystem.editor.NodeView.Input
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.Input
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Input
+  name: Input
+  nameWithType: NodeView.Input
+  fullName: com.absence.dialoguesystem.editor.NodeView.Input
+- uid: com.absence.dialoguesystem.editor.NodeView.Outputs
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.Outputs
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Outputs
+  name: Outputs
+  nameWithType: NodeView.Outputs
+  fullName: com.absence.dialoguesystem.editor.NodeView.Outputs
+- uid: com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_m_assetGuid
+  name: m_assetGuid
+  nameWithType: NodeView.m_assetGuid
+  fullName: com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+- uid: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_m_serializedNode
+  name: m_serializedNode
+  nameWithType: NodeView.m_serializedNode
+  fullName: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+- uid: com.absence.dialoguesystem.editor.NodeView.Graph
+  commentId: P:com.absence.dialoguesystem.editor.NodeView.Graph
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Graph
+  name: Graph
+  nameWithType: NodeView.Graph
+  fullName: com.absence.dialoguesystem.editor.NodeView.Graph
+- uid: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_FetchGenericOptions
+  name: FetchGenericOptions()
+  nameWithType: NodeView.FetchGenericOptions()
+  fullName: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+    name: FetchGenericOptions
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_FetchGenericOptions
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+    name: FetchGenericOptions
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_FetchGenericOptions
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupPersonDropdownIfExists
+  name: SetupPersonDropdownIfExists()
+  nameWithType: NodeView.SetupPersonDropdownIfExists()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+    name: SetupPersonDropdownIfExists
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupPersonDropdownIfExists
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+    name: SetupPersonDropdownIfExists
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupPersonDropdownIfExists
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupNodeForSerialization
+  name: SetupNodeForSerialization()
+  nameWithType: NodeView.SetupNodeForSerialization()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+    name: SetupNodeForSerialization
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupNodeForSerialization
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+    name: SetupNodeForSerialization
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupNodeForSerialization
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupTextFieldIfExists
+  name: SetupTextFieldIfExists()
+  nameWithType: NodeView.SetupTextFieldIfExists()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+    name: SetupTextFieldIfExists
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupTextFieldIfExists
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+    name: SetupTextFieldIfExists
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupTextFieldIfExists
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateInputPort
+  name: CreateInputPort()
+  nameWithType: NodeView.CreateInputPort()
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateInputPort()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+    name: CreateInputPort
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateInputPort
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+    name: CreateInputPort
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateInputPort
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateOutputPorts
+  name: CreateOutputPorts()
+  nameWithType: NodeView.CreateOutputPorts()
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+    name: CreateOutputPorts
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateOutputPorts
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+    name: CreateOutputPorts
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateOutputPorts
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_UpdateState_com_absence_dialoguesystem_internals_Node_FlowState_
+  name: UpdateState(FlowState)
+  nameWithType: NodeView.UpdateState(Node.FlowState)
+  fullName: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+    name: UpdateState
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_UpdateState_com_absence_dialoguesystem_internals_Node_FlowState_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+    name: UpdateState
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_UpdateState_com_absence_dialoguesystem_internals_Node_FlowState_
+  - name: (
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_RefreshPersonDropdown
+  name: RefreshPersonDropdown()
+  nameWithType: NodeView.RefreshPersonDropdown()
+  fullName: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+    name: RefreshPersonDropdown
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_RefreshPersonDropdown
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+    name: RefreshPersonDropdown
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_RefreshPersonDropdown
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnAfterStylesApplied
+  name: OnAfterStylesApplied()
+  nameWithType: NodeView.OnAfterStylesApplied()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+    name: OnAfterStylesApplied
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnAfterStylesApplied
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+    name: OnAfterStylesApplied
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnAfterStylesApplied
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDraw
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnDraw
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDraw
+  name: OnDraw()
+  nameWithType: NodeView.OnDraw()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDraw()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnDraw
+    name: OnDraw
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDraw
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnDraw
+    name: OnDraw
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDraw
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDisconnectAll_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  name: OnDisconnectAll(ref HashSet<GraphElement>)
+  nameWithType: NodeView.OnDisconnectAll(ref HashSet<GraphElement>)
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(ref System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement>)
+  nameWithType.vb: NodeView.OnDisconnectAll(HashSet(Of GraphElement))
+  fullName.vb: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet(Of UnityEditor.Experimental.GraphView.GraphElement))
+  name.vb: OnDisconnectAll(HashSet(Of GraphElement))
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+    name: OnDisconnectAll
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDisconnectAll_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+    name: OnDisconnectAll
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDisconnectAll_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  - name: (
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: )
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetPosition_UnityEngine_Rect_
+  name: SetPosition(Rect)
+  nameWithType: NodeView.SetPosition(Rect)
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+    name: SetPosition
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetPosition_UnityEngine_Rect_
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+    name: SetPosition
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetPosition_UnityEngine_Rect_
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.OnSelected
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnSelected
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnSelected
+  name: OnSelected()
+  nameWithType: NodeView.OnSelected()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnSelected()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnSelected
+    name: OnSelected
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnSelected
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnSelected
+    name: OnSelected
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnSelected
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.OnUnselected
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnUnselected
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnUnselected
+  name: OnUnselected()
+  nameWithType: NodeView.OnUnselected()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnUnselected()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnUnselected
+    name: OnUnselected
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnUnselected
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.OnUnselected
+    name: OnUnselected
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnUnselected
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  parent: com.absence.dialoguesystem.editor.NodeView
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_IsCopiable
+  name: IsCopiable()
+  nameWithType: NodeView.IsCopiable()
+  fullName: com.absence.dialoguesystem.editor.NodeView.IsCopiable()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.IsCopiable
+    name: IsCopiable
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_IsCopiable
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.IsCopiable
+    name: IsCopiable
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_IsCopiable
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_BuildContextualMenu_UnityEngine_UIElements_ContextualMenuPopulateEvent_
+  name: BuildContextualMenu(ContextualMenuPopulateEvent)
+  nameWithType: NodeView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  fullName: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+    name: BuildContextualMenu
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_BuildContextualMenu_UnityEngine_UIElements_ContextualMenuPopulateEvent_
+  - name: (
+  - uid: UnityEngine.UIElements.ContextualMenuPopulateEvent
+    name: ContextualMenuPopulateEvent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+    name: BuildContextualMenu
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_BuildContextualMenu_UnityEngine_UIElements_ContextualMenuPopulateEvent_
+  - name: (
+  - uid: UnityEngine.UIElements.ContextualMenuPopulateEvent
+    name: ContextualMenuPopulateEvent
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAllStatus_UnityEngine_UIElements_DropdownMenuAction_
+  name: DisconnectAllStatus(DropdownMenuAction)
+  nameWithType: NodeView.DisconnectAllStatus(DropdownMenuAction)
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+    name: DisconnectAllStatus
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAllStatus_UnityEngine_UIElements_DropdownMenuAction_
+  - name: (
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+    name: DisconnectAllStatus
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAllStatus_UnityEngine_UIElements_DropdownMenuAction_
+  - name: (
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAll_UnityEngine_UIElements_DropdownMenuAction_
+  name: DisconnectAll(DropdownMenuAction)
+  nameWithType: NodeView.DisconnectAll(DropdownMenuAction)
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+    name: DisconnectAll
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAll_UnityEngine_UIElements_DropdownMenuAction_
+  - name: (
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+    name: DisconnectAll
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAll_UnityEngine_UIElements_DropdownMenuAction_
+  - name: (
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  isExternal: true
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AddConnectionsToDeleteSet_UnityEngine_UIElements_VisualElement_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  name: AddConnectionsToDeleteSet(VisualElement, ref HashSet<GraphElement>)
+  nameWithType: NodeView.AddConnectionsToDeleteSet(VisualElement, ref HashSet<GraphElement>)
+  fullName: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement, ref System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement>)
+  nameWithType.vb: NodeView.AddConnectionsToDeleteSet(VisualElement, HashSet(Of GraphElement))
+  fullName.vb: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement, System.Collections.Generic.HashSet(Of UnityEditor.Experimental.GraphView.GraphElement))
+  name.vb: AddConnectionsToDeleteSet(VisualElement, HashSet(Of GraphElement))
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+    name: AddConnectionsToDeleteSet
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AddConnectionsToDeleteSet_UnityEngine_UIElements_VisualElement_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  - name: (
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+    name: AddConnectionsToDeleteSet
+    href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AddConnectionsToDeleteSet_UnityEngine_UIElements_VisualElement_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  - name: (
+  - uid: UnityEngine.UIElements.VisualElement
+    name: VisualElement
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.UIElements
+  commentId: N:UnityEngine.UIElements
+  isExternal: true
+  name: UnityEngine.UIElements
+  nameWithType: UnityEngine.UIElements
+  fullName: UnityEngine.UIElements
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+- uid: UnityEditor.Experimental.GraphView
+  commentId: N:UnityEditor.Experimental.GraphView
+  isExternal: true
+  name: UnityEditor.Experimental.GraphView
+  nameWithType: UnityEditor.Experimental.GraphView
+  fullName: UnityEditor.Experimental.GraphView
+  spec.csharp:
+  - uid: UnityEditor
+    name: UnityEditor
+    isExternal: true
+  - name: .
+  - uid: UnityEditor.Experimental
+    name: Experimental
+    isExternal: true
+  - name: .
+  - uid: UnityEditor.Experimental.GraphView
+    name: GraphView
+    isExternal: true
+  spec.vb:
+  - uid: UnityEditor
+    name: UnityEditor
+    isExternal: true
+  - name: .
+  - uid: UnityEditor.Experimental
+    name: Experimental
+    isExternal: true
+  - name: .
+  - uid: UnityEditor.Experimental.GraphView
+    name: GraphView
+    isExternal: true
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: UnityEngine.UIElements.Experimental
+  commentId: N:UnityEngine.UIElements.Experimental
+  isExternal: true
+  name: UnityEngine.UIElements.Experimental
+  nameWithType: UnityEngine.UIElements.Experimental
+  fullName: UnityEngine.UIElements.Experimental
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements
+    name: UIElements
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.Experimental
+    name: Experimental
+    isExternal: true
+- uid: com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor*
+  commentId: Overload:com.absence.dialoguesystem.editor.internals.SectionNodeView.#ctor
+  href: com.absence.dialoguesystem.editor.internals.SectionNodeView.html#com_absence_dialoguesystem_editor_internals_SectionNodeView__ctor_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_internals_DialogueGraphView_
+  name: SectionNodeView
+  nameWithType: SectionNodeView.SectionNodeView
+  fullName: com.absence.dialoguesystem.editor.internals.SectionNodeView.SectionNodeView
+  nameWithType.vb: SectionNodeView.New
+  fullName.vb: com.absence.dialoguesystem.editor.internals.SectionNodeView.New
+  name.vb: New
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  parent: com.absence.dialoguesystem.editor.internals
+  href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  name: DialogueGraphView
+  nameWithType: DialogueGraphView
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html

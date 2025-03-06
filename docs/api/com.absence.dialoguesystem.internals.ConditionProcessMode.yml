@@ -1,0 +1,130 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.ConditionProcessMode
+  commentId: T:com.absence.dialoguesystem.internals.ConditionProcessMode
+  id: ConditionProcessMode
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.ConditionProcessMode.All
+  - com.absence.dialoguesystem.internals.ConditionProcessMode.Any
+  langs:
+  - csharp
+  - vb
+  name: ConditionProcessMode
+  nameWithType: ConditionProcessMode
+  fullName: com.absence.dialoguesystem.internals.ConditionProcessMode
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ConditionProcessMode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: An enum used to define the way to handle multiple variable manipulators at once.
+  example: []
+  syntax:
+    content: public enum ConditionProcessMode
+    content.vb: Public Enum ConditionProcessMode
+- uid: com.absence.dialoguesystem.internals.ConditionProcessMode.All
+  commentId: F:com.absence.dialoguesystem.internals.ConditionProcessMode.All
+  id: All
+  parent: com.absence.dialoguesystem.internals.ConditionProcessMode
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: ConditionProcessMode.All
+  fullName: com.absence.dialoguesystem.internals.ConditionProcessMode.All
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: All
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: All = 0
+    return:
+      type: com.absence.dialoguesystem.internals.ConditionProcessMode
+- uid: com.absence.dialoguesystem.internals.ConditionProcessMode.Any
+  commentId: F:com.absence.dialoguesystem.internals.ConditionProcessMode.Any
+  id: Any
+  parent: com.absence.dialoguesystem.internals.ConditionProcessMode
+  langs:
+  - csharp
+  - vb
+  name: Any
+  nameWithType: ConditionProcessMode.Any
+  fullName: com.absence.dialoguesystem.internals.ConditionProcessMode.Any
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Any
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Enums/ConditionProcessMode.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Any = 1
+    return:
+      type: com.absence.dialoguesystem.internals.ConditionProcessMode
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.ConditionProcessMode
+  commentId: T:com.absence.dialoguesystem.internals.ConditionProcessMode
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.ConditionProcessMode.html
+  name: ConditionProcessMode
+  nameWithType: ConditionProcessMode
+  fullName: com.absence.dialoguesystem.internals.ConditionProcessMode

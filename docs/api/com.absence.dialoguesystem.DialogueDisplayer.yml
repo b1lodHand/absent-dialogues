@@ -5,8 +5,9 @@ items:
   id: DialogueDisplayer
   parent: com.absence.dialoguesystem
   children:
+  - com.absence.dialoguesystem.DialogueDisplayer.Clear
   - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String)
-  - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{System.Int32})
+  - com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{com.absence.dialoguesystem.internals.OptionHandle})
   - com.absence.dialoguesystem.DialogueDisplayer.Occupy
   - com.absence.dialoguesystem.DialogueDisplayer.OnDisplay
   - com.absence.dialoguesystem.DialogueDisplayer.Release
@@ -92,7 +93,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnDisplay
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 42
+    startLine: 51
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -121,7 +122,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Occupy
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 53
+    startLine: 62
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -152,7 +153,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Release
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 67
+    startLine: 76
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -183,7 +184,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 82
+    startLine: 91
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -203,16 +204,16 @@ items:
   nameWithType.vb: DialogueDisplayer.Display(Person, String)
   fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String)
   name.vb: Display(Person, String)
-- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{System.Int32})
-  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{System.Int32})
-  id: Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{System.Int32})
+- uid: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{com.absence.dialoguesystem.internals.OptionHandle})
+  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{com.absence.dialoguesystem.internals.OptionHandle})
+  id: Display(com.absence.personsystem.Person,System.String,System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle},System.Action{com.absence.dialoguesystem.internals.OptionHandle})
   parent: com.absence.dialoguesystem.DialogueDisplayer
   langs:
   - csharp
   - vb
-  name: Display(Person, string, List<OptionHandle>, Action<int>)
-  nameWithType: DialogueDisplayer.Display(Person, string, List<OptionHandle>, Action<int>)
-  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, System.Collections.Generic.List<com.absence.dialoguesystem.internals.OptionHandle>, System.Action<int>)
+  name: Display(Person, string, List<OptionHandle>, Action<OptionHandle>)
+  nameWithType: DialogueDisplayer.Display(Person, string, List<OptionHandle>, Action<OptionHandle>)
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, string, System.Collections.Generic.List<com.absence.dialoguesystem.internals.OptionHandle>, System.Action<com.absence.dialoguesystem.internals.OptionHandle>)
   type: Method
   source:
     remote:
@@ -221,14 +222,14 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Display
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 100
+    startLine: 109
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: Displays a speech with options.
   example: []
   syntax:
-    content: public void Display(Person speaker, string speech, List<OptionHandle> options, Action<int> optionPressAction)
+    content: public void Display(Person speaker, string speech, List<OptionHandle> options, Action<OptionHandle> optionPressAction)
     parameters:
     - id: speaker
       type: com.absence.personsystem.Person
@@ -240,13 +241,13 @@ items:
       type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.OptionHandle}
       description: ''
     - id: optionPressAction
-      type: System.Action{System.Int32}
+      type: System.Action{com.absence.dialoguesystem.internals.OptionHandle}
       description: ''
-    content.vb: Public Sub Display(speaker As Person, speech As String, options As List(Of OptionHandle), optionPressAction As Action(Of Integer))
+    content.vb: Public Sub Display(speaker As Person, speech As String, options As List(Of OptionHandle), optionPressAction As Action(Of OptionHandle))
   overload: com.absence.dialoguesystem.DialogueDisplayer.Display*
-  nameWithType.vb: DialogueDisplayer.Display(Person, String, List(Of OptionHandle), Action(Of Integer))
-  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.OptionHandle), System.Action(Of Integer))
-  name.vb: Display(Person, String, List(Of OptionHandle), Action(Of Integer))
+  nameWithType.vb: DialogueDisplayer.Display(Person, String, List(Of OptionHandle), Action(Of OptionHandle))
+  fullName.vb: com.absence.dialoguesystem.DialogueDisplayer.Display(com.absence.personsystem.Person, String, System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.OptionHandle), System.Action(Of com.absence.dialoguesystem.internals.OptionHandle))
+  name.vb: Display(Person, String, List(Of OptionHandle), Action(Of OptionHandle))
 - uid: com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
   commentId: M:com.absence.dialoguesystem.DialogueDisplayer.ReselectFirstOptionIfExists
   id: ReselectFirstOptionIfExists
@@ -265,7 +266,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ReselectFirstOptionIfExists
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 130
+    startLine: 139
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -293,7 +294,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ReselectLastOptionIfExists
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 143
+    startLine: 152
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -321,7 +322,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TrySelectUpperOption
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 161
+    startLine: 170
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -349,7 +350,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TrySelectLowerOption
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 178
+    startLine: 187
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -377,7 +378,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TryGetCurrentSelectedOptionIndex
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
-    startLine: 195
+    startLine: 204
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -389,6 +390,32 @@ items:
       description: Index of the currently selected option.
     content.vb: Public Function TryGetCurrentSelectedOptionIndex() As Integer
   overload: com.absence.dialoguesystem.DialogueDisplayer.TryGetCurrentSelectedOptionIndex*
+- uid: com.absence.dialoguesystem.DialogueDisplayer.Clear
+  commentId: M:com.absence.dialoguesystem.DialogueDisplayer.Clear
+  id: Clear
+  parent: com.absence.dialoguesystem.DialogueDisplayer
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: DialogueDisplayer.Clear()
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.Clear()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Clear
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Components/DialogueDisplayer.cs
+    startLine: 211
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: com.absence.dialoguesystem.DialogueDisplayer.Clear*
 references:
 - uid: com.absence.dialoguesystem
   commentId: N:com.absence.dialoguesystem
@@ -424,7 +451,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -837,27 +863,26 @@ references:
     name: OptionHandle
     href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: )
-- uid: System.Action{System.Int32}
-  commentId: T:System.Action{System.Int32}
+- uid: System.Action{com.absence.dialoguesystem.internals.OptionHandle}
+  commentId: T:System.Action{com.absence.dialoguesystem.internals.OptionHandle}
   parent: System
   definition: System.Action`1
   href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<int>
-  nameWithType: Action<int>
-  fullName: System.Action<int>
-  nameWithType.vb: Action(Of Integer)
-  fullName.vb: System.Action(Of Integer)
-  name.vb: Action(Of Integer)
+  name: Action<OptionHandle>
+  nameWithType: Action<OptionHandle>
+  fullName: System.Action<com.absence.dialoguesystem.internals.OptionHandle>
+  nameWithType.vb: Action(Of OptionHandle)
+  fullName.vb: System.Action(Of com.absence.dialoguesystem.internals.OptionHandle)
+  name.vb: Action(Of OptionHandle)
   spec.csharp:
   - uid: System.Action`1
     name: Action
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: '>'
   spec.vb:
   - uid: System.Action`1
@@ -867,10 +892,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - uid: com.absence.dialoguesystem.internals.OptionHandle
+    name: OptionHandle
+    href: com.absence.dialoguesystem.internals.OptionHandle.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
@@ -1006,3 +1030,9 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: com.absence.dialoguesystem.DialogueDisplayer.Clear*
+  commentId: Overload:com.absence.dialoguesystem.DialogueDisplayer.Clear
+  href: com.absence.dialoguesystem.DialogueDisplayer.html#com_absence_dialoguesystem_DialogueDisplayer_Clear
+  name: Clear
+  nameWithType: DialogueDisplayer.Clear
+  fullName: com.absence.dialoguesystem.DialogueDisplayer.Clear

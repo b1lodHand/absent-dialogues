@@ -4,7 +4,7 @@ items:
   commentId: N:com.absence.dialoguesystem.examples
   id: com.absence.dialoguesystem.examples
   children:
-  - com.absence.dialoguesystem.examples.Demo_GUI
+  - com.absence.dialoguesystem.examples.DemoGUI
   langs:
   - csharp
   - vb
@@ -15,9 +15,9 @@ items:
   assemblies:
   - Assembly-CSharp-firstpass
 references:
-- uid: com.absence.dialoguesystem.examples.Demo_GUI
-  commentId: T:com.absence.dialoguesystem.examples.Demo_GUI
-  href: com.absence.dialoguesystem.examples.Demo_GUI.html
-  name: Demo_GUI
-  nameWithType: Demo_GUI
-  fullName: com.absence.dialoguesystem.examples.Demo_GUI
+- uid: com.absence.dialoguesystem.examples.DemoGUI
+  commentId: T:com.absence.dialoguesystem.examples.DemoGUI
+  href: com.absence.dialoguesystem.examples.DemoGUI.html
+  name: DemoGUI
+  nameWithType: DemoGUI
+  fullName: com.absence.dialoguesystem.examples.DemoGUI

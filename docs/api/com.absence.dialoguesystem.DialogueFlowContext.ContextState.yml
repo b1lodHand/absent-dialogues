@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  commentId: T:com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  id: DialogueFlowContext.ContextState
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.DialogueFlowContext.ContextState.Pass
+  - com.absence.dialoguesystem.DialogueFlowContext.ContextState.Reach
+  langs:
+  - csharp
+  - vb
+  name: DialogueFlowContext.ContextState
+  nameWithType: DialogueFlowContext.ContextState
+  fullName: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ContextState
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public enum DialogueFlowContext.ContextState
+    content.vb: Public Enum DialogueFlowContext.ContextState
+- uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState.Reach
+  commentId: F:com.absence.dialoguesystem.DialogueFlowContext.ContextState.Reach
+  id: Reach
+  parent: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  langs:
+  - csharp
+  - vb
+  name: Reach
+  nameWithType: DialogueFlowContext.ContextState.Reach
+  fullName: com.absence.dialoguesystem.DialogueFlowContext.ContextState.Reach
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Reach
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: Reach = 0
+    return:
+      type: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+- uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState.Pass
+  commentId: F:com.absence.dialoguesystem.DialogueFlowContext.ContextState.Pass
+  id: Pass
+  parent: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  langs:
+  - csharp
+  - vb
+  name: Pass
+  nameWithType: DialogueFlowContext.ContextState.Pass
+  fullName: com.absence.dialoguesystem.DialogueFlowContext.ContextState.Pass
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Pass
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Classes/DialogueFlowContext.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: Pass = 1
+    return:
+      type: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  commentId: T:com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.DialogueFlowContext.html
+  name: DialogueFlowContext.ContextState
+  nameWithType: DialogueFlowContext.ContextState
+  fullName: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.DialogueFlowContext.ContextState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.DialogueFlowContext
+    name: DialogueFlowContext
+    href: com.absence.dialoguesystem.DialogueFlowContext.html
+  - name: .
+  - uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+    name: ContextState
+    href: com.absence.dialoguesystem.DialogueFlowContext.ContextState.html

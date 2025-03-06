@@ -61,7 +61,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: CreateDialogue
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/DialogueCreationHandler.cs
-    startLine: 44
+    startLine: 15
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -120,7 +120,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object

@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.backup
+  commentId: N:com.absence.dialoguesystem.internals.backup
+  id: com.absence.dialoguesystem.internals.backup
+  children:
+  - com.absence.dialoguesystem.internals.backup.DialogueExportSettings
+  - com.absence.dialoguesystem.internals.backup.DialogueImportContext
+  - com.absence.dialoguesystem.internals.backup.DialogueImportSettings
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.internals.backup
+  nameWithType: com.absence.dialoguesystem.internals.backup
+  fullName: com.absence.dialoguesystem.internals.backup
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.internals.backup.DialogueImportContext
+  commentId: T:com.absence.dialoguesystem.internals.backup.DialogueImportContext
+  parent: com.absence.dialoguesystem.internals.backup
+  href: com.absence.dialoguesystem.internals.backup.DialogueImportContext.html
+  name: DialogueImportContext
+  nameWithType: DialogueImportContext
+  fullName: com.absence.dialoguesystem.internals.backup.DialogueImportContext
+- uid: com.absence.dialoguesystem.internals.backup.DialogueImportSettings
+  commentId: T:com.absence.dialoguesystem.internals.backup.DialogueImportSettings
+  href: com.absence.dialoguesystem.internals.backup.DialogueImportSettings.html
+  name: DialogueImportSettings
+  nameWithType: DialogueImportSettings
+  fullName: com.absence.dialoguesystem.internals.backup.DialogueImportSettings
+- uid: com.absence.dialoguesystem.internals.backup.DialogueExportSettings
+  commentId: T:com.absence.dialoguesystem.internals.backup.DialogueExportSettings
+  href: com.absence.dialoguesystem.internals.backup.DialogueExportSettings.html
+  name: DialogueExportSettings
+  nameWithType: DialogueExportSettings
+  fullName: com.absence.dialoguesystem.internals.backup.DialogueExportSettings
+- uid: com.absence.dialoguesystem.internals.backup
+  commentId: N:com.absence.dialoguesystem.internals.backup
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup
+  nameWithType: com.absence.dialoguesystem.internals.backup
+  fullName: com.absence.dialoguesystem.internals.backup
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html

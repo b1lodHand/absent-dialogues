@@ -9,19 +9,20 @@ items:
   - com.absence.dialoguesystem.Dialogue.Blackboard
   - com.absence.dialoguesystem.Dialogue.Clone
   - com.absence.dialoguesystem.Dialogue.ClonedFrom
-  - com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
-  - com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(System.String)
-  - com.absence.dialoguesystem.Dialogue.Initialize(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  - com.absence.dialoguesystem.Dialogue.Entry
+  - com.absence.dialoguesystem.Dialogue.GenericOptions
+  - com.absence.dialoguesystem.Dialogue.GetAllSections
+  - com.absence.dialoguesystem.Dialogue.GetSectionsWithName(System.String)
   - com.absence.dialoguesystem.Dialogue.IsClone
-  - com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
+  - com.absence.dialoguesystem.Dialogue.OnGenericOptionCreated
+  - com.absence.dialoguesystem.Dialogue.OnGenericOptionRemoved
+  - com.absence.dialoguesystem.Dialogue.OnGenericOptionsChange
+  - com.absence.dialoguesystem.Dialogue.OnGenericOptionsRearranged
   - com.absence.dialoguesystem.Dialogue.OnValidate
   - com.absence.dialoguesystem.Dialogue.OnValidateAction
-  - com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  - com.absence.dialoguesystem.Dialogue.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
   - com.absence.dialoguesystem.Dialogue.People
-  - com.absence.dialoguesystem.Dialogue.Rebind
-  - com.absence.dialoguesystem.Dialogue.RootNode
-  - com.absence.dialoguesystem.Dialogue.TeleportToRoot(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  - com.absence.dialoguesystem.Dialogue.ResetNodeStates
+  - com.absence.dialoguesystem.Dialogue.ValidateNodes
   langs:
   - csharp
   - vb
@@ -66,80 +67,41 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.Dialogue.html
-- uid: com.absence.dialoguesystem.Dialogue.RootNode
-  commentId: F:com.absence.dialoguesystem.Dialogue.RootNode
-  id: RootNode
+- uid: com.absence.dialoguesystem.Dialogue.Entry
+  commentId: F:com.absence.dialoguesystem.Dialogue.Entry
+  id: Entry
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: RootNode
-  nameWithType: Dialogue.RootNode
-  fullName: com.absence.dialoguesystem.Dialogue.RootNode
+  name: Entry
+  nameWithType: Dialogue.Entry
+  fullName: com.absence.dialoguesystem.Dialogue.Entry
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: RootNode
+    id: Entry
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
     startLine: 18
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: The <xref href="com.absence.dialoguesystem.Dialogue.RootNode" data-throw-if-not-resolved="false"></xref> of this dialogue.
+  summary: The <xref href="com.absence.dialoguesystem.internals.EntryNode" data-throw-if-not-resolved="false"></xref> of this dialogue.
   example: []
   syntax:
     content: >-
       [HideInInspector]
 
-      public RootNode RootNode
+      public EntryNode Entry
     return:
-      type: com.absence.dialoguesystem.internals.RootNode
+      type: com.absence.dialoguesystem.internals.EntryNode
     content.vb: >-
       <HideInInspector>
 
-      Public RootNode As RootNode
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
-  commentId: F:com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
-  id: LastOrCurrentNode
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: LastOrCurrentNode
-  nameWithType: Dialogue.LastOrCurrentNode
-  fullName: com.absence.dialoguesystem.Dialogue.LastOrCurrentNode
-  type: Field
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: LastOrCurrentNode
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 23
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: The current node reached while progressing in this dialogue. Or the last one reached before exiting the dialogue.
-  example: []
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public Node LastOrCurrentNode
-    return:
-      type: com.absence.dialoguesystem.internals.Node
-    content.vb: >-
-      <HideInInspector>
-
-      Public LastOrCurrentNode As Node
+      Public Entry As EntryNode
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -162,7 +124,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AllNodes
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 28
+    startLine: 23
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -201,7 +163,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: People
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 34
+    startLine: 29
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -214,6 +176,35 @@ items:
       type: System.Collections.Generic.List{com.absence.personsystem.Person}
     content.vb: Public ReadOnly Property People As List(Of Person)
   overload: com.absence.dialoguesystem.Dialogue.People*
+- uid: com.absence.dialoguesystem.Dialogue.GenericOptions
+  commentId: P:com.absence.dialoguesystem.Dialogue.GenericOptions
+  id: GenericOptions
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: GenericOptions
+  nameWithType: Dialogue.GenericOptions
+  fullName: com.absence.dialoguesystem.Dialogue.GenericOptions
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenericOptions
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public List<GenericOption> GenericOptions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.GenericOption}
+    content.vb: Public Property GenericOptions As List(Of GenericOption)
+  overload: com.absence.dialoguesystem.Dialogue.GenericOptions*
 - uid: com.absence.dialoguesystem.Dialogue.ClonedFrom
   commentId: P:com.absence.dialoguesystem.Dialogue.ClonedFrom
   id: ClonedFrom
@@ -232,7 +223,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: ClonedFrom
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 39
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -263,7 +254,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IsClone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 44
+    startLine: 54
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -294,7 +285,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnValidateAction
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 49
+    startLine: 59
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -305,6 +296,114 @@ items:
     return:
       type: System.Action
     content.vb: Public Event OnValidateAction As Action
+- uid: com.absence.dialoguesystem.Dialogue.OnGenericOptionsChange
+  commentId: E:com.absence.dialoguesystem.Dialogue.OnGenericOptionsChange
+  id: OnGenericOptionsChange
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: OnGenericOptionsChange
+  nameWithType: Dialogue.OnGenericOptionsChange
+  fullName: com.absence.dialoguesystem.Dialogue.OnGenericOptionsChange
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnGenericOptionsChange
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 61
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public event Action OnGenericOptionsChange
+    return:
+      type: System.Action
+    content.vb: Public Event OnGenericOptionsChange As Action
+- uid: com.absence.dialoguesystem.Dialogue.OnGenericOptionsRearranged
+  commentId: E:com.absence.dialoguesystem.Dialogue.OnGenericOptionsRearranged
+  id: OnGenericOptionsRearranged
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: OnGenericOptionsRearranged
+  nameWithType: Dialogue.OnGenericOptionsRearranged
+  fullName: com.absence.dialoguesystem.Dialogue.OnGenericOptionsRearranged
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnGenericOptionsRearranged
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 62
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public event Action<int, int> OnGenericOptionsRearranged
+    return:
+      type: System.Action{System.Int32,System.Int32}
+    content.vb: Public Event OnGenericOptionsRearranged As Action(Of Integer, Integer)
+- uid: com.absence.dialoguesystem.Dialogue.OnGenericOptionCreated
+  commentId: E:com.absence.dialoguesystem.Dialogue.OnGenericOptionCreated
+  id: OnGenericOptionCreated
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: OnGenericOptionCreated
+  nameWithType: Dialogue.OnGenericOptionCreated
+  fullName: com.absence.dialoguesystem.Dialogue.OnGenericOptionCreated
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnGenericOptionCreated
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 63
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public event Action<int> OnGenericOptionCreated
+    return:
+      type: System.Action{System.Int32}
+    content.vb: Public Event OnGenericOptionCreated As Action(Of Integer)
+- uid: com.absence.dialoguesystem.Dialogue.OnGenericOptionRemoved
+  commentId: E:com.absence.dialoguesystem.Dialogue.OnGenericOptionRemoved
+  id: OnGenericOptionRemoved
+  parent: com.absence.dialoguesystem.Dialogue
+  langs:
+  - csharp
+  - vb
+  name: OnGenericOptionRemoved
+  nameWithType: Dialogue.OnGenericOptionRemoved
+  fullName: com.absence.dialoguesystem.Dialogue.OnGenericOptionRemoved
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnGenericOptionRemoved
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
+    startLine: 64
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public event Action<int> OnGenericOptionRemoved
+    return:
+      type: System.Action{System.Int32}
+    content.vb: Public Event OnGenericOptionRemoved As Action(Of Integer)
 - uid: com.absence.dialoguesystem.Dialogue.Blackboard
   commentId: F:com.absence.dialoguesystem.Dialogue.Blackboard
   id: Blackboard
@@ -323,7 +422,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Blackboard
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 54
+    startLine: 69
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -344,77 +443,77 @@ items:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
     arguments: []
-- uid: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(System.String)
-  commentId: M:com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(System.String)
-  id: GetDialoguePartNodesWithName(System.String)
+- uid: com.absence.dialoguesystem.Dialogue.GetSectionsWithName(System.String)
+  commentId: M:com.absence.dialoguesystem.Dialogue.GetSectionsWithName(System.String)
+  id: GetSectionsWithName(System.String)
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: GetDialoguePartNodesWithName(string)
-  nameWithType: Dialogue.GetDialoguePartNodesWithName(string)
-  fullName: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(string)
+  name: GetSectionsWithName(string)
+  nameWithType: Dialogue.GetSectionsWithName(string)
+  fullName: com.absence.dialoguesystem.Dialogue.GetSectionsWithName(string)
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetDialoguePartNodesWithName
+    id: GetSectionsWithName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 97
+    startLine: 77
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to find <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s with a specific name.
+  summary: Use to find <xref href="com.absence.dialoguesystem.internals.SectionNode" data-throw-if-not-resolved="false"></xref>s with a specific name.
   example: []
   syntax:
-    content: public List<DialoguePartNode> GetDialoguePartNodesWithName(string targetName)
+    content: public List<SectionNode> GetSectionsWithName(string targetName)
     parameters:
     - id: targetName
       type: System.String
       description: ''
     return:
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.DialoguePartNode}
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.SectionNode}
       description: >-
-        A list of <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s with that specific name. Throws an exception nothing's
+        A list of <xref href="com.absence.dialoguesystem.internals.SectionNode" data-throw-if-not-resolved="false"></xref>s with that specific name. Throws an exception nothing's
             found.
-    content.vb: Public Function GetDialoguePartNodesWithName(targetName As String) As List(Of DialoguePartNode)
-  overload: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName*
-  nameWithType.vb: Dialogue.GetDialoguePartNodesWithName(String)
-  fullName.vb: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName(String)
-  name.vb: GetDialoguePartNodesWithName(String)
-- uid: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
-  commentId: M:com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
-  id: GetAllDialogueParts
+    content.vb: Public Function GetSectionsWithName(targetName As String) As List(Of SectionNode)
+  overload: com.absence.dialoguesystem.Dialogue.GetSectionsWithName*
+  nameWithType.vb: Dialogue.GetSectionsWithName(String)
+  fullName.vb: com.absence.dialoguesystem.Dialogue.GetSectionsWithName(String)
+  name.vb: GetSectionsWithName(String)
+- uid: com.absence.dialoguesystem.Dialogue.GetAllSections
+  commentId: M:com.absence.dialoguesystem.Dialogue.GetAllSections
+  id: GetAllSections
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: GetAllDialogueParts()
-  nameWithType: Dialogue.GetAllDialogueParts()
-  fullName: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts()
+  name: GetAllSections()
+  nameWithType: Dialogue.GetAllSections()
+  fullName: com.absence.dialoguesystem.Dialogue.GetAllSections()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: GetAllDialogueParts
+    id: GetAllSections
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 118
+    startLine: 98
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
-  summary: Use to get a list of all <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s in this dialogue.
+  summary: Use to get a list of all <xref href="com.absence.dialoguesystem.internals.SectionNode" data-throw-if-not-resolved="false"></xref>s in this dialogue.
   example: []
   syntax:
-    content: public List<DialoguePartNode> GetAllDialogueParts()
+    content: public List<SectionNode> GetAllSections()
     return:
-      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.DialoguePartNode}
-      description: The entire list of <xref href="com.absence.dialoguesystem.internals.DialoguePartNode" data-throw-if-not-resolved="false"></xref>s in the current dialogue.
-    content.vb: Public Function GetAllDialogueParts() As List(Of DialoguePartNode)
-  overload: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts*
+      type: System.Collections.Generic.List{com.absence.dialoguesystem.internals.SectionNode}
+      description: The entire list of <xref href="com.absence.dialoguesystem.internals.SectionNode" data-throw-if-not-resolved="false"></xref>s in the current dialogue.
+    content.vb: Public Function GetAllSections() As List(Of SectionNode)
+  overload: com.absence.dialoguesystem.Dialogue.GetAllSections*
 - uid: com.absence.dialoguesystem.Dialogue.Clone
   commentId: M:com.absence.dialoguesystem.Dialogue.Clone
   id: Clone
@@ -433,7 +532,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 128
+    startLine: 108
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -449,168 +548,62 @@ items:
       description: ''
     content.vb: Public Function Clone() As Dialogue
   overload: com.absence.dialoguesystem.Dialogue.Clone*
-- uid: com.absence.dialoguesystem.Dialogue.Initialize(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  commentId: M:com.absence.dialoguesystem.Dialogue.Initialize(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  id: Initialize(com.absence.dialoguesystem.internals.DialogueFlowContext)
+- uid: com.absence.dialoguesystem.Dialogue.ResetNodeStates
+  commentId: M:com.absence.dialoguesystem.Dialogue.ResetNodeStates
+  id: ResetNodeStates
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: Initialize(DialogueFlowContext)
-  nameWithType: Dialogue.Initialize(DialogueFlowContext)
-  fullName: com.absence.dialoguesystem.Dialogue.Initialize(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  name: ResetNodeStates()
+  nameWithType: Dialogue.ResetNodeStates()
+  fullName: com.absence.dialoguesystem.Dialogue.ResetNodeStates()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Initialize
+    id: ResetNodeStates
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 151
+    startLine: 132
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: It teleports the flow back to the root node.
   example: []
   syntax:
-    content: public void Initialize(DialogueFlowContext context = null)
-    parameters:
-    - id: context
-      type: com.absence.dialoguesystem.internals.DialogueFlowContext
-    content.vb: Public Sub Initialize(context As DialogueFlowContext = Nothing)
-  overload: com.absence.dialoguesystem.Dialogue.Initialize*
-- uid: com.absence.dialoguesystem.Dialogue.TeleportToRoot(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  commentId: M:com.absence.dialoguesystem.Dialogue.TeleportToRoot(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  id: TeleportToRoot(com.absence.dialoguesystem.internals.DialogueFlowContext)
+    content: public void ResetNodeStates()
+    content.vb: Public Sub ResetNodeStates()
+  overload: com.absence.dialoguesystem.Dialogue.ResetNodeStates*
+- uid: com.absence.dialoguesystem.Dialogue.ValidateNodes
+  commentId: M:com.absence.dialoguesystem.Dialogue.ValidateNodes
+  id: ValidateNodes
   parent: com.absence.dialoguesystem.Dialogue
   langs:
   - csharp
   - vb
-  name: TeleportToRoot(DialogueFlowContext)
-  nameWithType: Dialogue.TeleportToRoot(DialogueFlowContext)
-  fullName: com.absence.dialoguesystem.Dialogue.TeleportToRoot(com.absence.dialoguesystem.internals.DialogueFlowContext)
+  name: ValidateNodes()
+  nameWithType: Dialogue.ValidateNodes()
+  fullName: com.absence.dialoguesystem.Dialogue.ValidateNodes()
   type: Method
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: TeleportToRoot
+    id: ValidateNodes
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 157
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  syntax:
-    content: public void TeleportToRoot(DialogueFlowContext context = null)
-    parameters:
-    - id: context
-      type: com.absence.dialoguesystem.internals.DialogueFlowContext
-    content.vb: Public Sub TeleportToRoot(context As DialogueFlowContext = Nothing)
-  overload: com.absence.dialoguesystem.Dialogue.TeleportToRoot*
-- uid: com.absence.dialoguesystem.Dialogue.Rebind
-  commentId: M:com.absence.dialoguesystem.Dialogue.Rebind
-  id: Rebind
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: Rebind()
-  nameWithType: Dialogue.Rebind()
-  fullName: com.absence.dialoguesystem.Dialogue.Rebind()
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Rebind
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 165
+    startLine: 140
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
   summary: It reassigns needed auto-fields to prevent any errors.
   example: []
   syntax:
-    content: public void Rebind()
-    content.vb: Public Sub Rebind()
-  overload: com.absence.dialoguesystem.Dialogue.Rebind*
-- uid: com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  commentId: M:com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  id: OverridePeople(System.Collections.Generic.List{com.absence.personsystem.Person})
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: OverridePeople(List<Person>)
-  nameWithType: Dialogue.OverridePeople(List<Person>)
-  fullName: com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List<com.absence.personsystem.Person>)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OverridePeople
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 182
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: >-
-    Use to override the people in this dialogue. Keeping person count the same is highly recommended. The original scriptable
-
-    object's people list won't be affected by this.
-
-    <br /><br /><b>CAUTION!</b> The recommended way is to use this function on clones only.
-  example: []
-  syntax:
-    content: public void OverridePeople(List<Person> overridePeople)
-    parameters:
-    - id: overridePeople
-      type: System.Collections.Generic.List{com.absence.personsystem.Person}
-      description: ''
-    content.vb: Public Sub OverridePeople(overridePeople As List(Of Person))
-  overload: com.absence.dialoguesystem.Dialogue.OverridePeople*
-  nameWithType.vb: Dialogue.OverridePeople(List(Of Person))
-  fullName.vb: com.absence.dialoguesystem.Dialogue.OverridePeople(System.Collections.Generic.List(Of com.absence.personsystem.Person))
-  name.vb: OverridePeople(List(Of Person))
-- uid: com.absence.dialoguesystem.Dialogue.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  commentId: M:com.absence.dialoguesystem.Dialogue.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  id: Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  parent: com.absence.dialoguesystem.Dialogue
-  langs:
-  - csharp
-  - vb
-  name: Pass(DialogueFlowContext)
-  nameWithType: Dialogue.Pass(DialogueFlowContext)
-  fullName: com.absence.dialoguesystem.Dialogue.Pass(com.absence.dialoguesystem.internals.DialogueFlowContext)
-  type: Method
-  source:
-    remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-      branch: development
-      repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Pass
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 200
-  assemblies:
-  - Assembly-CSharp-firstpass
-  namespace: com.absence.dialoguesystem
-  summary: >-
-    Use to progress to the next node in the dialogue. Using this method directly is not recommended
-
-    if you're not adding an extra functionality. You can consider using <xref href="com.absence.dialoguesystem.DialoguePlayer" data-throw-if-not-resolved="false"></xref> instead.
-  example: []
-  syntax:
-    content: public void Pass(DialogueFlowContext context)
-    parameters:
-    - id: context
-      type: com.absence.dialoguesystem.internals.DialogueFlowContext
-    content.vb: Public Sub Pass(context As DialogueFlowContext)
-  overload: com.absence.dialoguesystem.Dialogue.Pass*
+    content: public void ValidateNodes()
+    content.vb: Public Sub ValidateNodes()
+  overload: com.absence.dialoguesystem.Dialogue.ValidateNodes*
 - uid: com.absence.dialoguesystem.Dialogue.OnValidate
   commentId: M:com.absence.dialoguesystem.Dialogue.OnValidate
   id: OnValidate
@@ -629,7 +622,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnValidate
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Dialogue.cs
-    startLine: 210
+    startLine: 181
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem
@@ -672,7 +665,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -814,19 +806,13 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: com.absence.dialoguesystem.Dialogue.RootNode
-  commentId: F:com.absence.dialoguesystem.Dialogue.RootNode
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_RootNode
-  name: RootNode
-  nameWithType: Dialogue.RootNode
-  fullName: com.absence.dialoguesystem.Dialogue.RootNode
-- uid: com.absence.dialoguesystem.internals.RootNode
-  commentId: T:com.absence.dialoguesystem.internals.RootNode
+- uid: com.absence.dialoguesystem.internals.EntryNode
+  commentId: T:com.absence.dialoguesystem.internals.EntryNode
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.RootNode.html
-  name: RootNode
-  nameWithType: RootNode
-  fullName: com.absence.dialoguesystem.internals.RootNode
+  href: com.absence.dialoguesystem.internals.EntryNode.html
+  name: EntryNode
+  nameWithType: EntryNode
+  fullName: com.absence.dialoguesystem.internals.EntryNode
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
   href: com.html
@@ -865,13 +851,6 @@ references:
   - uid: com.absence.dialoguesystem.internals
     name: internals
     href: com.absence.dialoguesystem.internals.html
-- uid: com.absence.dialoguesystem.internals.Node
-  commentId: T:com.absence.dialoguesystem.internals.Node
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Node.html
-  name: Node
-  nameWithType: Node
-  fullName: com.absence.dialoguesystem.internals.Node
 - uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.Node}
   commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.Node}
   parent: System.Collections.Generic
@@ -1009,6 +988,45 @@ references:
     name: Person
     isExternal: true
   - name: )
+- uid: com.absence.dialoguesystem.Dialogue.GenericOptions*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.GenericOptions
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_GenericOptions
+  name: GenericOptions
+  nameWithType: Dialogue.GenericOptions
+  fullName: com.absence.dialoguesystem.Dialogue.GenericOptions
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.GenericOption}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.GenericOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GenericOption>
+  nameWithType: List<GenericOption>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.GenericOption>
+  nameWithType.vb: List(Of GenericOption)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.GenericOption)
+  name.vb: List(Of GenericOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: com.absence.dialoguesystem.internals.GenericOption
+    name: GenericOption
+    href: com.absence.dialoguesystem.internals.GenericOption.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: com.absence.dialoguesystem.internals.GenericOption
+    name: GenericOption
+    href: com.absence.dialoguesystem.internals.GenericOption.html
+  - name: )
 - uid: com.absence.dialoguesystem.Dialogue.ClonedFrom*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.ClonedFrom
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ClonedFrom
@@ -1065,6 +1083,150 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
+- uid: System.Action{System.Int32,System.Int32}
+  commentId: T:System.Action{System.Int32,System.Int32}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<int, int>
+  nameWithType: Action<int, int>
+  fullName: System.Action<int, int>
+  nameWithType.vb: Action(Of Integer, Integer)
+  fullName.vb: System.Action(Of Integer, Integer)
+  name.vb: Action(Of Integer, Integer)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Action{System.Int32}
+  commentId: T:System.Action{System.Int32}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<int>
+  nameWithType: Action<int>
+  fullName: System.Action<int>
+  nameWithType.vb: Action(Of Integer)
+  fullName.vb: System.Action(Of Integer)
+  name.vb: Action(Of Integer)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: com.absence.dialoguesystem.Dialogue.Blackboard
   commentId: F:com.absence.dialoguesystem.Dialogue.Blackboard
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Blackboard
@@ -1078,19 +1240,19 @@ references:
   name: Blackboard
   nameWithType: Blackboard
   fullName: com.absence.dialoguesystem.internals.Blackboard
-- uid: com.absence.dialoguesystem.internals.DialoguePartNode
-  commentId: T:com.absence.dialoguesystem.internals.DialoguePartNode
+- uid: com.absence.dialoguesystem.internals.SectionNode
+  commentId: T:com.absence.dialoguesystem.internals.SectionNode
   parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.DialoguePartNode.html
-  name: DialoguePartNode
-  nameWithType: DialoguePartNode
-  fullName: com.absence.dialoguesystem.internals.DialoguePartNode
-- uid: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_GetDialoguePartNodesWithName_System_String_
-  name: GetDialoguePartNodesWithName
-  nameWithType: Dialogue.GetDialoguePartNodesWithName
-  fullName: com.absence.dialoguesystem.Dialogue.GetDialoguePartNodesWithName
+  href: com.absence.dialoguesystem.internals.SectionNode.html
+  name: SectionNode
+  nameWithType: SectionNode
+  fullName: com.absence.dialoguesystem.internals.SectionNode
+- uid: com.absence.dialoguesystem.Dialogue.GetSectionsWithName*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.GetSectionsWithName
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_GetSectionsWithName_System_String_
+  name: GetSectionsWithName
+  nameWithType: Dialogue.GetSectionsWithName
+  fullName: com.absence.dialoguesystem.Dialogue.GetSectionsWithName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1102,26 +1264,26 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.DialoguePartNode}
-  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.DialoguePartNode}
+- uid: System.Collections.Generic.List{com.absence.dialoguesystem.internals.SectionNode}
+  commentId: T:System.Collections.Generic.List{com.absence.dialoguesystem.internals.SectionNode}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<DialoguePartNode>
-  nameWithType: List<DialoguePartNode>
-  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.DialoguePartNode>
-  nameWithType.vb: List(Of DialoguePartNode)
-  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.DialoguePartNode)
-  name.vb: List(Of DialoguePartNode)
+  name: List<SectionNode>
+  nameWithType: List<SectionNode>
+  fullName: System.Collections.Generic.List<com.absence.dialoguesystem.internals.SectionNode>
+  nameWithType.vb: List(Of SectionNode)
+  fullName.vb: System.Collections.Generic.List(Of com.absence.dialoguesystem.internals.SectionNode)
+  name.vb: List(Of SectionNode)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: com.absence.dialoguesystem.internals.DialoguePartNode
-    name: DialoguePartNode
-    href: com.absence.dialoguesystem.internals.DialoguePartNode.html
+  - uid: com.absence.dialoguesystem.internals.SectionNode
+    name: SectionNode
+    href: com.absence.dialoguesystem.internals.SectionNode.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -1131,66 +1293,34 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: com.absence.dialoguesystem.internals.DialoguePartNode
-    name: DialoguePartNode
-    href: com.absence.dialoguesystem.internals.DialoguePartNode.html
+  - uid: com.absence.dialoguesystem.internals.SectionNode
+    name: SectionNode
+    href: com.absence.dialoguesystem.internals.SectionNode.html
   - name: )
-- uid: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_GetAllDialogueParts
-  name: GetAllDialogueParts
-  nameWithType: Dialogue.GetAllDialogueParts
-  fullName: com.absence.dialoguesystem.Dialogue.GetAllDialogueParts
+- uid: com.absence.dialoguesystem.Dialogue.GetAllSections*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.GetAllSections
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_GetAllSections
+  name: GetAllSections
+  nameWithType: Dialogue.GetAllSections
+  fullName: com.absence.dialoguesystem.Dialogue.GetAllSections
 - uid: com.absence.dialoguesystem.Dialogue.Clone*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.Clone
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Clone
   name: Clone
   nameWithType: Dialogue.Clone
   fullName: com.absence.dialoguesystem.Dialogue.Clone
-- uid: com.absence.dialoguesystem.Dialogue.Initialize*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Initialize
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Initialize_com_absence_dialoguesystem_internals_DialogueFlowContext_
-  name: Initialize
-  nameWithType: Dialogue.Initialize
-  fullName: com.absence.dialoguesystem.Dialogue.Initialize
-- uid: com.absence.dialoguesystem.internals.DialogueFlowContext
-  commentId: T:com.absence.dialoguesystem.internals.DialogueFlowContext
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.DialogueFlowContext.html
-  name: DialogueFlowContext
-  nameWithType: DialogueFlowContext
-  fullName: com.absence.dialoguesystem.internals.DialogueFlowContext
-- uid: com.absence.dialoguesystem.Dialogue.TeleportToRoot*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.TeleportToRoot
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_TeleportToRoot_com_absence_dialoguesystem_internals_DialogueFlowContext_
-  name: TeleportToRoot
-  nameWithType: Dialogue.TeleportToRoot
-  fullName: com.absence.dialoguesystem.Dialogue.TeleportToRoot
-- uid: com.absence.dialoguesystem.Dialogue.Rebind*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Rebind
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Rebind
-  name: Rebind
-  nameWithType: Dialogue.Rebind
-  fullName: com.absence.dialoguesystem.Dialogue.Rebind
-- uid: com.absence.dialoguesystem.Dialogue.OverridePeople*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.OverridePeople
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OverridePeople_System_Collections_Generic_List_com_absence_personsystem_Person__
-  name: OverridePeople
-  nameWithType: Dialogue.OverridePeople
-  fullName: com.absence.dialoguesystem.Dialogue.OverridePeople
-- uid: com.absence.dialoguesystem.DialoguePlayer
-  commentId: T:com.absence.dialoguesystem.DialoguePlayer
-  parent: com.absence.dialoguesystem
-  href: com.absence.dialoguesystem.DialoguePlayer.html
-  name: DialoguePlayer
-  nameWithType: DialoguePlayer
-  fullName: com.absence.dialoguesystem.DialoguePlayer
-- uid: com.absence.dialoguesystem.Dialogue.Pass*
-  commentId: Overload:com.absence.dialoguesystem.Dialogue.Pass
-  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_Pass_com_absence_dialoguesystem_internals_DialogueFlowContext_
-  name: Pass
-  nameWithType: Dialogue.Pass
-  fullName: com.absence.dialoguesystem.Dialogue.Pass
+- uid: com.absence.dialoguesystem.Dialogue.ResetNodeStates*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.ResetNodeStates
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ResetNodeStates
+  name: ResetNodeStates
+  nameWithType: Dialogue.ResetNodeStates
+  fullName: com.absence.dialoguesystem.Dialogue.ResetNodeStates
+- uid: com.absence.dialoguesystem.Dialogue.ValidateNodes*
+  commentId: Overload:com.absence.dialoguesystem.Dialogue.ValidateNodes
+  href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_ValidateNodes
+  name: ValidateNodes
+  nameWithType: Dialogue.ValidateNodes
+  fullName: com.absence.dialoguesystem.Dialogue.ValidateNodes
 - uid: com.absence.dialoguesystem.Dialogue.OnValidate*
   commentId: Overload:com.absence.dialoguesystem.Dialogue.OnValidate
   href: com.absence.dialoguesystem.Dialogue.html#com_absence_dialoguesystem_Dialogue_OnValidate

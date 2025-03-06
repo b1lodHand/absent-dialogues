@@ -72,6 +72,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueFlowContext.ContextState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueFlowContext.ContextState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueFlowContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueFlowContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.DialogueInputHandler_Legacy.yml",
       "output": {
         ".html": {
@@ -162,6 +182,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.DialogueSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.DialogueSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.IExternalDialogueElement.yml",
       "output": {
         ".html": {
@@ -182,6 +212,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.NodeCustomDataBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.NodeCustomDataBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.OptionText.yml",
       "output": {
         ".html": {
@@ -192,10 +232,120 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.Package.Version.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.Package.Version.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.Package.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.Package.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.DialogueActionMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.DialogueActionMapper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.DialogueSoundsPlayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.DialogueSoundsPlayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.IAnimatorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.IAnimatorData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.IAudioData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.IAudioData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.ISpriteData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.ISpriteData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.NodeCustomData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.NodeCustomData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.builtin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.builtin.html"
         }
       },
       "version": ""
@@ -226,6 +376,16 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.editor.BlackboardView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.CustomNodeViewAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.CustomNodeViewAttribute.html"
         }
       },
       "version": ""
@@ -302,6 +462,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeCustomEditor.yml",
       "output": {
         ".html": {
@@ -316,6 +486,26 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.editor.NodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeViewCreationHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.NodeViewCreationHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.NodeViewStyles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.NodeViewStyles.html"
         }
       },
       "version": ""
@@ -612,10 +802,330 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.BlackboardView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.BranchNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.BranchNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueGraphView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.DialogueGraphView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.EditorJobsHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.EditorJobsHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.EventNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.EventNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.GotoNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.GotoNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.InspectorView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.InspectorView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.PromptNodeEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.PromptNodeEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.PromptNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.PromptNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.SectionNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.SectionNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.SplitView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.SplitView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.StickyNoteNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.StickyNoteNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.TitleNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.TitleNodeView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.BackupSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.BackupSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.DialogueExporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.DialogueExporter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.DialogueImporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.DialogueImporter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.FileHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.FileHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.JsonHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.JsonHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.backup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.editor.internals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.editor.internals.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.editor.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.examples.DemoGUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.examples.DemoGUI.html"
         }
       },
       "version": ""
@@ -672,6 +1182,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.BranchNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.BranchNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.ConditionNode.ProcessType.yml",
       "output": {
         ".html": {
@@ -686,6 +1206,26 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.ConditionNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.ConditionProcessMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.ConditionProcessMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Constants.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Constants.Text.html"
         }
       },
       "version": ""
@@ -752,6 +1292,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.EntryNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.EntryNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.EventNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.EventNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.ExitNode.yml",
       "output": {
         ".html": {
@@ -776,6 +1336,26 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.FastSpeechNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.GenericOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.GenericOption.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.GenericOptionReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.GenericOptionReference.html"
         }
       },
       "version": ""
@@ -826,6 +1406,26 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.IPerformEditorRefresh.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.IUseDialogueInScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.IUseDialogueInScene.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Node.FlowState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Node.FlowState.html"
         }
       },
       "version": ""
@@ -902,10 +1502,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.PersonOverride.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.PersonOverride.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.PromptNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.PromptNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.RootNode.yml",
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.RootNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.SectionNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.SectionNode.html"
         }
       },
       "version": ""
@@ -942,6 +1572,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Utilities.Setting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Utilities.Setting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.Utilities.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.Utilities.Text.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/com.absence.dialoguesystem.internals.Utilities.Texts.yml",
       "output": {
         ".html": {
@@ -966,6 +1616,196 @@
       "output": {
         ".html": {
           "relative_path": "api/com.absence.dialoguesystem.internals.VBProcessType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueExportSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueExportSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueImportContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueImportContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueImportSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.DialogueImportSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.BlackboardData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.BlackboardData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.BooleanPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.BooleanPair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DataGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DataGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DataReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DataReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DialogueData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.DialogueData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.FloatPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.FloatPair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.GenericOptionReferenceData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.GenericOptionReferenceData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.IntPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.IntPair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeConnectionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeConnectionData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.OptionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.OptionData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.StringPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.StringPair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/com.absence.dialoguesystem.internals.backup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.absence.dialoguesystem.internals.backup.html"
         }
       },
       "version": ""

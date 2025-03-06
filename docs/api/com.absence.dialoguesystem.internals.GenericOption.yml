@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.GenericOption
+  commentId: T:com.absence.dialoguesystem.internals.GenericOption
+  id: GenericOption
+  parent: com.absence.dialoguesystem.internals
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: GenericOption
+  nameWithType: GenericOption
+  fullName: com.absence.dialoguesystem.internals.GenericOption
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOption.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenericOption
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOption.cs
+    startLine: 2
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class GenericOption : Option
+    content.vb: >-
+      <Serializable>
+
+      Public Class GenericOption Inherits Option
+  inheritance:
+  - System.Object
+  - com.absence.dialoguesystem.internals.Option
+  inheritedMembers:
+  - com.absence.dialoguesystem.internals.Option.Text
+  - com.absence.dialoguesystem.internals.Option.CustomData
+  - com.absence.dialoguesystem.internals.Option.UseShowIf
+  - com.absence.dialoguesystem.internals.Option.Visibility
+  - com.absence.dialoguesystem.internals.Option.LeadingNode
+  - com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.IsVisible
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: com.absence.dialoguesystem.internals.Option
+  commentId: T:com.absence.dialoguesystem.internals.Option
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option
+  nameWithType: Option
+  fullName: com.absence.dialoguesystem.internals.Option
+- uid: com.absence.dialoguesystem.internals.Option.Text
+  commentId: F:com.absence.dialoguesystem.internals.Option.Text
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Text
+  name: Text
+  nameWithType: Option.Text
+  fullName: com.absence.dialoguesystem.internals.Option.Text
+- uid: com.absence.dialoguesystem.internals.Option.CustomData
+  commentId: F:com.absence.dialoguesystem.internals.Option.CustomData
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_CustomData
+  name: CustomData
+  nameWithType: Option.CustomData
+  fullName: com.absence.dialoguesystem.internals.Option.CustomData
+- uid: com.absence.dialoguesystem.internals.Option.UseShowIf
+  commentId: P:com.absence.dialoguesystem.internals.Option.UseShowIf
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_UseShowIf
+  name: UseShowIf
+  nameWithType: Option.UseShowIf
+  fullName: com.absence.dialoguesystem.internals.Option.UseShowIf
+- uid: com.absence.dialoguesystem.internals.Option.Visibility
+  commentId: F:com.absence.dialoguesystem.internals.Option.Visibility
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Visibility
+  name: Visibility
+  nameWithType: Option.Visibility
+  fullName: com.absence.dialoguesystem.internals.Option.Visibility
+- uid: com.absence.dialoguesystem.internals.Option.LeadingNode
+  commentId: F:com.absence.dialoguesystem.internals.Option.LeadingNode
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_LeadingNode
+  name: LeadingNode
+  nameWithType: Option.LeadingNode
+  fullName: com.absence.dialoguesystem.internals.Option.LeadingNode
+- uid: com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  parent: com.absence.dialoguesystem.internals.Option
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone__1_com_absence_variablesystem_banksystembase_VariableBank_
+  name: Clone<T>(VariableBank)
+  nameWithType: Option.Clone<T>(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone<T>(com.absence.variablesystem.banksystembase.VariableBank)
+  nameWithType.vb: Option.Clone(Of T)(VariableBank)
+  fullName.vb: com.absence.dialoguesystem.internals.Option.Clone(Of T)(com.absence.variablesystem.banksystembase.VariableBank)
+  name.vb: Clone(Of T)(VariableBank)
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone__1_com_absence_variablesystem_banksystembase_VariableBank_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: com.absence.variablesystem.banksystembase.VariableBank
+    name: VariableBank
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+    name: Clone
+    href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone__1_com_absence_variablesystem_banksystembase_VariableBank_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: com.absence.variablesystem.banksystembase.VariableBank
+    name: VariableBank
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.internals.Option.IsVisible
+  commentId: M:com.absence.dialoguesystem.internals.Option.IsVisible
+  parent: com.absence.dialoguesystem.internals.Option
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible
+  name: IsVisible()
+  nameWithType: Option.IsVisible()
+  fullName: com.absence.dialoguesystem.internals.Option.IsVisible()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Option.IsVisible
+    name: IsVisible
+    href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Option.IsVisible
+    name: IsVisible
+    href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

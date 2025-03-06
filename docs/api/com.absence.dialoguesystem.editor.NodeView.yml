@@ -5,16 +5,36 @@ items:
   id: NodeView
   parent: com.absence.dialoguesystem.editor
   children:
-  - com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  - com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  - com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  - com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  - com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  - com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  - com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  - com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  - com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  - com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  - com.absence.dialoguesystem.editor.NodeView.Graph
   - com.absence.dialoguesystem.editor.NodeView.Input
-  - com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
-  - com.absence.dialoguesystem.editor.NodeView.Master
+  - com.absence.dialoguesystem.editor.NodeView.IsCopiable
   - com.absence.dialoguesystem.editor.NodeView.Node
-  - com.absence.dialoguesystem.editor.NodeView.OnNodeSelected
+  - com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  - com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  - com.absence.dialoguesystem.editor.NodeView.OnDraw
+  - com.absence.dialoguesystem.editor.NodeView.OnSelect
   - com.absence.dialoguesystem.editor.NodeView.OnSelected
   - com.absence.dialoguesystem.editor.NodeView.OnUnselected
   - com.absence.dialoguesystem.editor.NodeView.Outputs
+  - com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  - com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
   - com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
+  - com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  - com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  - com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  - com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  - com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  - com.absence.dialoguesystem.editor.NodeView.m_serializedNode
   langs:
   - csharp
   - vb
@@ -29,7 +49,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: NodeView
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -51,6 +71,14 @@ items:
   - UnityEngine.UIElements.VisualElement
   - UnityEditor.Experimental.GraphView.GraphElement
   - UnityEditor.Experimental.GraphView.Node
+  derivedClasses:
+  - com.absence.dialoguesystem.editor.internals.BranchNodeView
+  - com.absence.dialoguesystem.editor.internals.EventNodeView
+  - com.absence.dialoguesystem.editor.internals.GotoNodeView
+  - com.absence.dialoguesystem.editor.internals.PromptNodeView
+  - com.absence.dialoguesystem.editor.internals.SectionNodeView
+  - com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+  - com.absence.dialoguesystem.editor.internals.TitleNodeView
   implements:
   - UnityEngine.UIElements.IEventHandler
   - UnityEngine.UIElements.IResolvedStyle
@@ -64,64 +92,120 @@ items:
     arguments:
     - type: System.String
       value: https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.NodeView.html
-- uid: com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
-  id: K_PERSONDEPENDENT_CLASSNAME
+- uid: com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
+  id: PersonDependentClassName
   parent: com.absence.dialoguesystem.editor.NodeView
   langs:
   - csharp
   - vb
-  name: K_PERSONDEPENDENT_CLASSNAME
-  nameWithType: NodeView.K_PERSONDEPENDENT_CLASSNAME
-  fullName: com.absence.dialoguesystem.editor.NodeView.K_PERSONDEPENDENT_CLASSNAME
+  name: PersonDependentClassName
+  nameWithType: NodeView.PersonDependentClassName
+  fullName: com.absence.dialoguesystem.editor.NodeView.PersonDependentClassName
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: K_PERSONDEPENDENT_CLASSNAME
+    id: PersonDependentClassName
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: The USS class name for person dependent nodes.
   example: []
   syntax:
-    content: public static string K_PERSONDEPENDENT_CLASSNAME
+    content: public static string PersonDependentClassName
     return:
       type: System.String
-    content.vb: Public Shared K_PERSONDEPENDENT_CLASSNAME As String
-- uid: com.absence.dialoguesystem.editor.NodeView.OnNodeSelected
-  commentId: F:com.absence.dialoguesystem.editor.NodeView.OnNodeSelected
-  id: OnNodeSelected
+    content.vb: Public Shared PersonDependentClassName As String
+- uid: com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
+  id: DEFAULT_XML_LOCATION
   parent: com.absence.dialoguesystem.editor.NodeView
   langs:
   - csharp
   - vb
-  name: OnNodeSelected
-  nameWithType: NodeView.OnNodeSelected
-  fullName: com.absence.dialoguesystem.editor.NodeView.OnNodeSelected
+  name: DEFAULT_XML_LOCATION
+  nameWithType: NodeView.DEFAULT_XML_LOCATION
+  fullName: com.absence.dialoguesystem.editor.NodeView.DEFAULT_XML_LOCATION
   type: Field
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: OnNodeSelected
+    id: DEFAULT_XML_LOCATION
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public const string DEFAULT_XML_LOCATION = "Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml"
+    return:
+      type: System.String
+    content.vb: Public Const DEFAULT_XML_LOCATION As String = "Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.uxml"
+- uid: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  commentId: P:com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  id: AdditionalUSSFileLocations
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: AdditionalUSSFileLocations
+  nameWithType: NodeView.AdditionalUSSFileLocations
+  fullName: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AdditionalUSSFileLocations
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
     startLine: 28
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public virtual List<string> AdditionalUSSFileLocations { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Overridable ReadOnly Property AdditionalUSSFileLocations As List(Of String)
+  overload: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations*
+- uid: com.absence.dialoguesystem.editor.NodeView.OnSelect
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.OnSelect
+  id: OnSelect
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: OnSelect
+  nameWithType: NodeView.OnSelect
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnSelect
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnSelect
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: Action gets invoked when this node gets selected or unselected.
   example: []
   syntax:
-    content: public Action<NodeView> OnNodeSelected
+    content: public Action<NodeView> OnSelect
     return:
       type: System.Action{com.absence.dialoguesystem.editor.NodeView}
-    content.vb: Public OnNodeSelected As Action(Of NodeView)
+    content.vb: Public OnSelect As Action(Of NodeView)
 - uid: com.absence.dialoguesystem.editor.NodeView.Node
   commentId: F:com.absence.dialoguesystem.editor.NodeView.Node
   id: Node
@@ -140,7 +224,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Node
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 33
+    startLine: 38
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -169,7 +253,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Input
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 38
+    startLine: 43
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -198,7 +282,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Outputs
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 43
+    startLine: 48
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -209,47 +293,101 @@ items:
     return:
       type: System.Collections.Generic.List{UnityEditor.Experimental.GraphView.Port}
     content.vb: Public Outputs As List(Of Port)
-- uid: com.absence.dialoguesystem.editor.NodeView.Master
-  commentId: P:com.absence.dialoguesystem.editor.NodeView.Master
-  id: Master
+- uid: com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  id: m_assetGuid
   parent: com.absence.dialoguesystem.editor.NodeView
   langs:
   - csharp
   - vb
-  name: Master
-  nameWithType: NodeView.Master
-  fullName: com.absence.dialoguesystem.editor.NodeView.Master
+  name: m_assetGuid
+  nameWithType: NodeView.m_assetGuid
+  fullName: com.absence.dialoguesystem.editor.NodeView.m_assetGuid
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_assetGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 50
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected GUID m_assetGuid
+    return:
+      type: UnityEditor.GUID
+    content.vb: Protected m_assetGuid As GUID
+- uid: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  commentId: F:com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  id: m_serializedNode
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: m_serializedNode
+  nameWithType: NodeView.m_serializedNode
+  fullName: com.absence.dialoguesystem.editor.NodeView.m_serializedNode
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: m_serializedNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 51
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected SerializedObject m_serializedNode
+    return:
+      type: UnityEditor.SerializedObject
+    content.vb: Protected m_serializedNode As SerializedObject
+- uid: com.absence.dialoguesystem.editor.NodeView.Graph
+  commentId: P:com.absence.dialoguesystem.editor.NodeView.Graph
+  id: Graph
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: Graph
+  nameWithType: NodeView.Graph
+  fullName: com.absence.dialoguesystem.editor.NodeView.Graph
   type: Property
   source:
     remote:
       path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: Master
+    id: Graph
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 58
+    startLine: 56
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: The graph we're in.
   example: []
   syntax:
-    content: public DialogueGraphView Master { get; }
+    content: public DialogueGraphView Graph { get; }
     parameters: []
     return:
-      type: com.absence.dialoguesystem.editor.DialogueGraphView
-    content.vb: Public Property Master As DialogueGraphView
-  overload: com.absence.dialoguesystem.editor.NodeView.Master*
-- uid: com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node)
-  commentId: M:com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node)
-  id: '#ctor(com.absence.dialoguesystem.internals.Node)'
+      type: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    content.vb: Public Property Graph As DialogueGraphView
+  overload: com.absence.dialoguesystem.editor.NodeView.Graph*
+- uid: com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  id: '#ctor(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)'
   parent: com.absence.dialoguesystem.editor.NodeView
   langs:
   - csharp
   - vb
-  name: NodeView(Node)
-  nameWithType: NodeView.NodeView(Node)
-  fullName: com.absence.dialoguesystem.editor.NodeView.NodeView(com.absence.dialoguesystem.internals.Node)
+  name: NodeView(Node, DialogueGraphView)
+  nameWithType: NodeView.NodeView(Node, DialogueGraphView)
+  fullName: com.absence.dialoguesystem.editor.NodeView.NodeView(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
   type: Constructor
   source:
     remote:
@@ -258,23 +396,320 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: .ctor
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 64
+    startLine: 62
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
   summary: Use to construct a node view from a node.
   example: []
   syntax:
-    content: public NodeView(Node node)
+    content: public NodeView(Node node, DialogueGraphView graph = null)
     parameters:
     - id: node
       type: com.absence.dialoguesystem.internals.Node
       description: Target node.
-    content.vb: Public Sub New(node As Node)
+    - id: graph
+      type: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    content.vb: Public Sub New(node As Node, graph As DialogueGraphView = Nothing)
   overload: com.absence.dialoguesystem.editor.NodeView.#ctor*
-  nameWithType.vb: NodeView.New(Node)
-  fullName.vb: com.absence.dialoguesystem.editor.NodeView.New(com.absence.dialoguesystem.internals.Node)
-  name.vb: New(Node)
+  nameWithType.vb: NodeView.New(Node, DialogueGraphView)
+  fullName.vb: com.absence.dialoguesystem.editor.NodeView.New(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  name.vb: New(Node, DialogueGraphView)
+- uid: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  id: FetchGenericOptions
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: FetchGenericOptions()
+  nameWithType: NodeView.FetchGenericOptions()
+  fullName: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FetchGenericOptions
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 111
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected void FetchGenericOptions()
+    content.vb: Protected Sub FetchGenericOptions()
+  overload: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions*
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  id: SetupPersonDropdownIfExists
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: SetupPersonDropdownIfExists()
+  nameWithType: NodeView.SetupPersonDropdownIfExists()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetupPersonDropdownIfExists
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 169
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void SetupPersonDropdownIfExists()
+    content.vb: Protected Overridable Sub SetupPersonDropdownIfExists()
+  overload: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists*
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  id: SetupNodeForSerialization
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: SetupNodeForSerialization()
+  nameWithType: NodeView.SetupNodeForSerialization()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetupNodeForSerialization
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 193
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void SetupNodeForSerialization()
+    content.vb: Protected Overridable Sub SetupNodeForSerialization()
+  overload: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization*
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  id: SetupTextFieldIfExists
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: SetupTextFieldIfExists()
+  nameWithType: NodeView.SetupTextFieldIfExists()
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: SetupTextFieldIfExists
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 197
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void SetupTextFieldIfExists()
+    content.vb: Protected Overridable Sub SetupTextFieldIfExists()
+  overload: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists*
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  id: CreateInputPort
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: CreateInputPort()
+  nameWithType: NodeView.CreateInputPort()
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateInputPort()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateInputPort
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 210
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void CreateInputPort()
+    content.vb: Protected Overridable Sub CreateInputPort()
+  overload: com.absence.dialoguesystem.editor.NodeView.CreateInputPort*
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  id: CreateOutputPorts
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: CreateOutputPorts()
+  nameWithType: NodeView.CreateOutputPorts()
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateOutputPorts
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 218
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void CreateOutputPorts()
+    content.vb: Protected Overridable Sub CreateOutputPorts()
+  overload: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts*
+- uid: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  id: UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: UpdateState(FlowState)
+  nameWithType: NodeView.UpdateState(Node.FlowState)
+  fullName: com.absence.dialoguesystem.editor.NodeView.UpdateState(com.absence.dialoguesystem.internals.Node.FlowState)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: UpdateState
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 229
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void UpdateState(Node.FlowState state)
+    parameters:
+    - id: state
+      type: com.absence.dialoguesystem.internals.Node.FlowState
+    content.vb: Protected Overridable Sub UpdateState(state As Node.FlowState)
+  overload: com.absence.dialoguesystem.editor.NodeView.UpdateState*
+- uid: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  id: RefreshPersonDropdown
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: RefreshPersonDropdown()
+  nameWithType: NodeView.RefreshPersonDropdown()
+  fullName: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: RefreshPersonDropdown
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 253
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void RefreshPersonDropdown()
+    content.vb: Protected Overridable Sub RefreshPersonDropdown()
+  overload: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown*
+- uid: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  id: OnAfterStylesApplied
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: OnAfterStylesApplied()
+  nameWithType: NodeView.OnAfterStylesApplied()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnAfterStylesApplied
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 300
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void OnAfterStylesApplied()
+    content.vb: Protected Overridable Sub OnAfterStylesApplied()
+  overload: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied*
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDraw
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnDraw
+  id: OnDraw
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: OnDraw()
+  nameWithType: NodeView.OnDraw()
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDraw()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnDraw
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 304
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void OnDraw()
+    content.vb: Protected Overridable Sub OnDraw()
+  overload: com.absence.dialoguesystem.editor.NodeView.OnDraw*
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  id: OnDisconnectAll(System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: OnDisconnectAll(ref HashSet<GraphElement>)
+  nameWithType: NodeView.OnDisconnectAll(ref HashSet<GraphElement>)
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(ref System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnDisconnectAll
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 308
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual void OnDisconnectAll(ref HashSet<GraphElement> toDelete)
+    parameters:
+    - id: toDelete
+      type: System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}
+    content.vb: Protected Overridable Sub OnDisconnectAll(toDelete As HashSet(Of GraphElement))
+  overload: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll*
+  nameWithType.vb: NodeView.OnDisconnectAll(HashSet(Of GraphElement))
+  fullName.vb: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll(System.Collections.Generic.HashSet(Of UnityEditor.Experimental.GraphView.GraphElement))
+  name.vb: OnDisconnectAll(HashSet(Of GraphElement))
 - uid: com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
   commentId: M:com.absence.dialoguesystem.editor.NodeView.SetPosition(UnityEngine.Rect)
   id: SetPosition(UnityEngine.Rect)
@@ -293,7 +728,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: SetPosition
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 366
+    startLine: 315
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -326,7 +761,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnSelected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 374
+    startLine: 323
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -355,7 +790,7 @@ items:
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OnUnselected
     path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
-    startLine: 379
+    startLine: 328
   assemblies:
   - Assembly-CSharp-Editor-firstpass
   namespace: com.absence.dialoguesystem.editor
@@ -366,6 +801,165 @@ items:
     content.vb: Public Overrides Sub OnUnselected()
   overridden: UnityEditor.Experimental.GraphView.GraphElement.OnUnselected
   overload: com.absence.dialoguesystem.editor.NodeView.OnUnselected*
+- uid: com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  id: IsCopiable
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: IsCopiable()
+  nameWithType: NodeView.IsCopiable()
+  fullName: com.absence.dialoguesystem.editor.NodeView.IsCopiable()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IsCopiable
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 333
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  summary: <p>Checks whether the GraphElement is copiable.</p>
+  example: []
+  syntax:
+    content: public override bool IsCopiable()
+    return:
+      type: System.Boolean
+      description: <p>Returns true if the GraphElement is copiable. Returns false otherwise.</p>
+    content.vb: Public Overrides Function IsCopiable() As Boolean
+  overridden: UnityEditor.Experimental.GraphView.GraphElement.IsCopiable
+  overload: com.absence.dialoguesystem.editor.NodeView.IsCopiable*
+- uid: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  id: BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: BuildContextualMenu(ContextualMenuPopulateEvent)
+  nameWithType: NodeView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  fullName: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BuildContextualMenu
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 334
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  summary: <p>Add menu items to the node contextual menu.</p>
+  example: []
+  syntax:
+    content: public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    parameters:
+    - id: evt
+      type: UnityEngine.UIElements.ContextualMenuPopulateEvent
+      description: The event holding the menu to populate.
+    content.vb: Public Overrides Sub BuildContextualMenu(evt As ContextualMenuPopulateEvent)
+  overridden: UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  overload: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu*
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  id: DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: DisconnectAllStatus(DropdownMenuAction)
+  nameWithType: NodeView.DisconnectAllStatus(DropdownMenuAction)
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus(UnityEngine.UIElements.DropdownMenuAction)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DisconnectAllStatus
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 343
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected virtual DropdownMenuAction.Status DisconnectAllStatus(DropdownMenuAction action)
+    parameters:
+    - id: action
+      type: UnityEngine.UIElements.DropdownMenuAction
+    return:
+      type: UnityEngine.UIElements.DropdownMenuAction.Status
+    content.vb: Protected Overridable Function DisconnectAllStatus(action As DropdownMenuAction) As DropdownMenuAction.Status
+  overload: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus*
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  id: DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: DisconnectAll(DropdownMenuAction)
+  nameWithType: NodeView.DisconnectAll(DropdownMenuAction)
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAll(UnityEngine.UIElements.DropdownMenuAction)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DisconnectAll
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 361
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected void DisconnectAll(DropdownMenuAction action)
+    parameters:
+    - id: action
+      type: UnityEngine.UIElements.DropdownMenuAction
+    content.vb: Protected Sub DisconnectAll(action As DropdownMenuAction)
+  overload: com.absence.dialoguesystem.editor.NodeView.DisconnectAll*
+- uid: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  commentId: M:com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  id: AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement,System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}@)
+  parent: com.absence.dialoguesystem.editor.NodeView
+  langs:
+  - csharp
+  - vb
+  name: AddConnectionsToDeleteSet(VisualElement, ref HashSet<GraphElement>)
+  nameWithType: NodeView.AddConnectionsToDeleteSet(VisualElement, ref HashSet<GraphElement>)
+  fullName: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement, ref System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement>)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AddConnectionsToDeleteSet
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Elems/NodeView.cs
+    startLine: 378
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: protected void AddConnectionsToDeleteSet(VisualElement container, ref HashSet<GraphElement> toDelete)
+    parameters:
+    - id: container
+      type: UnityEngine.UIElements.VisualElement
+    - id: toDelete
+      type: System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}
+    content.vb: Protected Sub AddConnectionsToDeleteSet(container As VisualElement, toDelete As HashSet(Of GraphElement))
+  overload: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet*
+  nameWithType.vb: NodeView.AddConnectionsToDeleteSet(VisualElement, HashSet(Of GraphElement))
+  fullName.vb: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet(UnityEngine.UIElements.VisualElement, System.Collections.Generic.HashSet(Of UnityEditor.Experimental.GraphView.GraphElement))
+  name.vb: AddConnectionsToDeleteSet(VisualElement, HashSet(Of GraphElement))
 references:
 - uid: com.absence.dialoguesystem.editor
   commentId: N:com.absence.dialoguesystem.editor
@@ -409,7 +1003,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -593,6 +1186,112 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AdditionalUSSFileLocations
+  name: AdditionalUSSFileLocations
+  nameWithType: NodeView.AdditionalUSSFileLocations
+  fullName: com.absence.dialoguesystem.editor.NodeView.AdditionalUSSFileLocations
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Action{com.absence.dialoguesystem.editor.NodeView}
   commentId: T:System.Action{com.absence.dialoguesystem.editor.NodeView}
   parent: System
@@ -739,93 +1438,244 @@ references:
     name: Port
     isExternal: true
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: UnityEditor.GUID
+  commentId: T:UnityEditor.GUID
+  parent: UnityEditor
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+  name: GUID
+  nameWithType: GUID
+  fullName: UnityEditor.GUID
+- uid: UnityEditor
+  commentId: N:UnityEditor
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: com.absence.dialoguesystem.editor.NodeView.Master*
-  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.Master
-  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Master
-  name: Master
-  nameWithType: NodeView.Master
-  fullName: com.absence.dialoguesystem.editor.NodeView.Master
-- uid: com.absence.dialoguesystem.editor.DialogueGraphView
-  commentId: T:com.absence.dialoguesystem.editor.DialogueGraphView
-  parent: com.absence.dialoguesystem.editor
-  href: com.absence.dialoguesystem.editor.DialogueGraphView.html
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: UnityEditor.SerializedObject
+  commentId: T:UnityEditor.SerializedObject
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedObject
+  nameWithType: SerializedObject
+  fullName: UnityEditor.SerializedObject
+- uid: com.absence.dialoguesystem.editor.NodeView.Graph*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.Graph
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_Graph
+  name: Graph
+  nameWithType: NodeView.Graph
+  fullName: com.absence.dialoguesystem.editor.NodeView.Graph
+- uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  parent: com.absence.dialoguesystem.editor.internals
+  href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
   name: DialogueGraphView
   nameWithType: DialogueGraphView
-  fullName: com.absence.dialoguesystem.editor.DialogueGraphView
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+- uid: com.absence.dialoguesystem.editor.internals
+  commentId: N:com.absence.dialoguesystem.editor.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.internals
+  nameWithType: com.absence.dialoguesystem.editor.internals
+  fullName: com.absence.dialoguesystem.editor.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
 - uid: com.absence.dialoguesystem.editor.NodeView.#ctor*
   commentId: Overload:com.absence.dialoguesystem.editor.NodeView.#ctor
-  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView__ctor_com_absence_dialoguesystem_internals_Node_
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView__ctor_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_internals_DialogueGraphView_
   name: NodeView
   nameWithType: NodeView.NodeView
   fullName: com.absence.dialoguesystem.editor.NodeView.NodeView
   nameWithType.vb: NodeView.New
   fullName.vb: com.absence.dialoguesystem.editor.NodeView.New
   name.vb: New
+- uid: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_FetchGenericOptions
+  name: FetchGenericOptions
+  nameWithType: NodeView.FetchGenericOptions
+  fullName: com.absence.dialoguesystem.editor.NodeView.FetchGenericOptions
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupPersonDropdownIfExists
+  name: SetupPersonDropdownIfExists
+  nameWithType: NodeView.SetupPersonDropdownIfExists
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupPersonDropdownIfExists
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupNodeForSerialization
+  name: SetupNodeForSerialization
+  nameWithType: NodeView.SetupNodeForSerialization
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupNodeForSerialization
+- uid: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_SetupTextFieldIfExists
+  name: SetupTextFieldIfExists
+  nameWithType: NodeView.SetupTextFieldIfExists
+  fullName: com.absence.dialoguesystem.editor.NodeView.SetupTextFieldIfExists
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateInputPort*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateInputPort
+  name: CreateInputPort
+  nameWithType: NodeView.CreateInputPort
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateInputPort
+- uid: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_CreateOutputPorts
+  name: CreateOutputPorts
+  nameWithType: NodeView.CreateOutputPorts
+  fullName: com.absence.dialoguesystem.editor.NodeView.CreateOutputPorts
+- uid: com.absence.dialoguesystem.editor.NodeView.UpdateState*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.UpdateState
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_UpdateState_com_absence_dialoguesystem_internals_Node_FlowState_
+  name: UpdateState
+  nameWithType: NodeView.UpdateState
+  fullName: com.absence.dialoguesystem.editor.NodeView.UpdateState
+- uid: com.absence.dialoguesystem.internals.Node.FlowState
+  commentId: T:com.absence.dialoguesystem.internals.Node.FlowState
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node.FlowState
+  nameWithType: Node.FlowState
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+    href: com.absence.dialoguesystem.internals.Node.FlowState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+    href: com.absence.dialoguesystem.internals.Node.FlowState.html
+- uid: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_RefreshPersonDropdown
+  name: RefreshPersonDropdown
+  nameWithType: NodeView.RefreshPersonDropdown
+  fullName: com.absence.dialoguesystem.editor.NodeView.RefreshPersonDropdown
+- uid: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnAfterStylesApplied
+  name: OnAfterStylesApplied
+  nameWithType: NodeView.OnAfterStylesApplied
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnAfterStylesApplied
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDraw*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.OnDraw
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDraw
+  name: OnDraw
+  nameWithType: NodeView.OnDraw
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDraw
+- uid: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_OnDisconnectAll_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  name: OnDisconnectAll
+  nameWithType: NodeView.OnDisconnectAll
+  fullName: com.absence.dialoguesystem.editor.NodeView.OnDisconnectAll
+- uid: System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}
+  commentId: T:System.Collections.Generic.HashSet{UnityEditor.Experimental.GraphView.GraphElement}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<GraphElement>
+  nameWithType: HashSet<GraphElement>
+  fullName: System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement>
+  nameWithType.vb: HashSet(Of GraphElement)
+  fullName.vb: System.Collections.Generic.HashSet(Of UnityEditor.Experimental.GraphView.GraphElement)
+  name.vb: HashSet(Of GraphElement)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEditor.Experimental.GraphView.GraphElement
+    name: GraphElement
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: UnityEditor.Experimental.GraphView.Node.SetPosition(UnityEngine.Rect)
   commentId: M:UnityEditor.Experimental.GraphView.Node.SetPosition(UnityEngine.Rect)
   parent: UnityEditor.Experimental.GraphView.Node
@@ -920,3 +1770,125 @@ references:
   name: OnUnselected
   nameWithType: NodeView.OnUnselected
   fullName: com.absence.dialoguesystem.editor.NodeView.OnUnselected
+- uid: UnityEditor.Experimental.GraphView.GraphElement.IsCopiable
+  commentId: M:UnityEditor.Experimental.GraphView.GraphElement.IsCopiable
+  parent: UnityEditor.Experimental.GraphView.GraphElement
+  isExternal: true
+  name: IsCopiable()
+  nameWithType: GraphElement.IsCopiable()
+  fullName: UnityEditor.Experimental.GraphView.GraphElement.IsCopiable()
+  spec.csharp:
+  - uid: UnityEditor.Experimental.GraphView.GraphElement.IsCopiable
+    name: IsCopiable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.Experimental.GraphView.GraphElement.IsCopiable
+    name: IsCopiable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.IsCopiable*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.IsCopiable
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_IsCopiable
+  name: IsCopiable
+  nameWithType: NodeView.IsCopiable
+  fullName: com.absence.dialoguesystem.editor.NodeView.IsCopiable
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  commentId: M:UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  parent: UnityEditor.Experimental.GraphView.Node
+  isExternal: true
+  name: BuildContextualMenu(ContextualMenuPopulateEvent)
+  nameWithType: Node.BuildContextualMenu(ContextualMenuPopulateEvent)
+  fullName: UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+  spec.csharp:
+  - uid: UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+    name: BuildContextualMenu
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.ContextualMenuPopulateEvent
+    name: ContextualMenuPopulateEvent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)
+    name: BuildContextualMenu
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.UIElements.ContextualMenuPopulateEvent
+    name: ContextualMenuPopulateEvent
+    isExternal: true
+  - name: )
+- uid: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_BuildContextualMenu_UnityEngine_UIElements_ContextualMenuPopulateEvent_
+  name: BuildContextualMenu
+  nameWithType: NodeView.BuildContextualMenu
+  fullName: com.absence.dialoguesystem.editor.NodeView.BuildContextualMenu
+- uid: UnityEngine.UIElements.ContextualMenuPopulateEvent
+  commentId: T:UnityEngine.UIElements.ContextualMenuPopulateEvent
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: ContextualMenuPopulateEvent
+  nameWithType: ContextualMenuPopulateEvent
+  fullName: UnityEngine.UIElements.ContextualMenuPopulateEvent
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAllStatus_UnityEngine_UIElements_DropdownMenuAction_
+  name: DisconnectAllStatus
+  nameWithType: NodeView.DisconnectAllStatus
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAllStatus
+- uid: UnityEngine.UIElements.DropdownMenuAction
+  commentId: T:UnityEngine.UIElements.DropdownMenuAction
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: DropdownMenuAction
+  nameWithType: DropdownMenuAction
+  fullName: UnityEngine.UIElements.DropdownMenuAction
+- uid: UnityEngine.UIElements.DropdownMenuAction.Status
+  commentId: T:UnityEngine.UIElements.DropdownMenuAction.Status
+  parent: UnityEngine.UIElements
+  isExternal: true
+  name: DropdownMenuAction.Status
+  nameWithType: DropdownMenuAction.Status
+  fullName: UnityEngine.UIElements.DropdownMenuAction.Status
+  spec.csharp:
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.DropdownMenuAction.Status
+    name: Status
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine.UIElements.DropdownMenuAction
+    name: DropdownMenuAction
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UIElements.DropdownMenuAction.Status
+    name: Status
+    isExternal: true
+- uid: com.absence.dialoguesystem.editor.NodeView.DisconnectAll*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.DisconnectAll
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_DisconnectAll_UnityEngine_UIElements_DropdownMenuAction_
+  name: DisconnectAll
+  nameWithType: NodeView.DisconnectAll
+  fullName: com.absence.dialoguesystem.editor.NodeView.DisconnectAll
+- uid: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet
+  href: com.absence.dialoguesystem.editor.NodeView.html#com_absence_dialoguesystem_editor_NodeView_AddConnectionsToDeleteSet_UnityEngine_UIElements_VisualElement_System_Collections_Generic_HashSet_UnityEditor_Experimental_GraphView_GraphElement___
+  name: AddConnectionsToDeleteSet
+  nameWithType: NodeView.AddConnectionsToDeleteSet
+  fullName: com.absence.dialoguesystem.editor.NodeView.AddConnectionsToDeleteSet

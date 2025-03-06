@@ -1,0 +1,452 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.DialogueSystem
+  commentId: T:com.absence.dialoguesystem.DialogueSystem
+  id: DialogueSystem
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.DialogueSystem.BypassUndo
+  - com.absence.dialoguesystem.DialogueSystem.CreateNode(System.Type,com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.DialogueSystem.CreateNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName(com.absence.dialoguesystem.Dialogue)
+  - com.absence.dialoguesystem.DialogueSystem.GenerateGuid(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.DialogueSystem.GenerateName(com.absence.dialoguesystem.internals.Node)
+  - com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName(com.absence.dialoguesystem.internals.Node)
+  langs:
+  - csharp
+  - vb
+  name: DialogueSystem
+  nameWithType: DialogueSystem
+  fullName: com.absence.dialoguesystem.DialogueSystem
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueSystem
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static class DialogueSystem
+    content.vb: Public Module DialogueSystem
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.DialogueSystem.BypassUndo
+  commentId: F:com.absence.dialoguesystem.DialogueSystem.BypassUndo
+  id: BypassUndo
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: BypassUndo
+  nameWithType: DialogueSystem.BypassUndo
+  fullName: com.absence.dialoguesystem.DialogueSystem.BypassUndo
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BypassUndo
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static bool BypassUndo
+    return:
+      type: System.Boolean
+    content.vb: Public Shared BypassUndo As Boolean
+- uid: com.absence.dialoguesystem.DialogueSystem.CreateNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.CreateNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.Dialogue)
+  id: CreateNode(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: CreateNode(Node, Dialogue)
+  nameWithType: DialogueSystem.CreateNode(Node, Dialogue)
+  fullName: com.absence.dialoguesystem.DialogueSystem.CreateNode(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static Node CreateNode(Node source, Dialogue target)
+    parameters:
+    - id: source
+      type: com.absence.dialoguesystem.internals.Node
+    - id: target
+      type: com.absence.dialoguesystem.Dialogue
+    return:
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: Public Shared Function CreateNode(source As Node, target As Dialogue) As Node
+  overload: com.absence.dialoguesystem.DialogueSystem.CreateNode*
+- uid: com.absence.dialoguesystem.DialogueSystem.CreateNode(System.Type,com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.CreateNode(System.Type,com.absence.dialoguesystem.Dialogue)
+  id: CreateNode(System.Type,com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: CreateNode(Type, Dialogue)
+  nameWithType: DialogueSystem.CreateNode(Type, Dialogue)
+  fullName: com.absence.dialoguesystem.DialogueSystem.CreateNode(System.Type, com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static Node CreateNode(Type type, Dialogue target)
+    parameters:
+    - id: type
+      type: System.Type
+    - id: target
+      type: com.absence.dialoguesystem.Dialogue
+    return:
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: Public Shared Function CreateNode(type As Type, target As Dialogue) As Node
+  overload: com.absence.dialoguesystem.DialogueSystem.CreateNode*
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateGuid(com.absence.dialoguesystem.internals.Node)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.GenerateGuid(com.absence.dialoguesystem.internals.Node)
+  id: GenerateGuid(com.absence.dialoguesystem.internals.Node)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: GenerateGuid(Node)
+  nameWithType: DialogueSystem.GenerateGuid(Node)
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateGuid(com.absence.dialoguesystem.internals.Node)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateGuid
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string GenerateGuid(Node node)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateGuid(node As Node) As String
+  overload: com.absence.dialoguesystem.DialogueSystem.GenerateGuid*
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateName(com.absence.dialoguesystem.internals.Node)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.GenerateName(com.absence.dialoguesystem.internals.Node)
+  id: GenerateName(com.absence.dialoguesystem.internals.Node)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: GenerateName(Node)
+  nameWithType: DialogueSystem.GenerateName(Node)
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateName(com.absence.dialoguesystem.internals.Node)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string GenerateName(Node node)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateName(node As Node) As String
+  overload: com.absence.dialoguesystem.DialogueSystem.GenerateName*
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName(com.absence.dialoguesystem.internals.Node)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName(com.absence.dialoguesystem.internals.Node)
+  id: GenerateCustomDataName(com.absence.dialoguesystem.internals.Node)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: GenerateCustomDataName(Node)
+  nameWithType: DialogueSystem.GenerateCustomDataName(Node)
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName(com.absence.dialoguesystem.internals.Node)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateCustomDataName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 52
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string GenerateCustomDataName(Node node)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateCustomDataName(node As Node) As String
+  overload: com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName*
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName(com.absence.dialoguesystem.internals.Node)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName(com.absence.dialoguesystem.internals.Node)
+  id: GenerateOptionDataName(com.absence.dialoguesystem.internals.Node)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: GenerateOptionDataName(Node)
+  nameWithType: DialogueSystem.GenerateOptionDataName(Node)
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName(com.absence.dialoguesystem.internals.Node)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateOptionDataName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 61
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string GenerateOptionDataName(Node node)
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateOptionDataName(node As Node) As String
+  overload: com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName*
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName(com.absence.dialoguesystem.Dialogue)
+  commentId: M:com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName(com.absence.dialoguesystem.Dialogue)
+  id: GenerateGenericOptionDataName(com.absence.dialoguesystem.Dialogue)
+  parent: com.absence.dialoguesystem.DialogueSystem
+  langs:
+  - csharp
+  - vb
+  name: GenerateGenericOptionDataName(Dialogue)
+  nameWithType: DialogueSystem.GenerateGenericOptionDataName(Dialogue)
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName(com.absence.dialoguesystem.Dialogue)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateGenericOptionDataName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/DialogueSystem.cs
+    startLine: 70
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string GenerateGenericOptionDataName(Dialogue dialogue)
+    parameters:
+    - id: dialogue
+      type: com.absence.dialoguesystem.Dialogue
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateGenericOptionDataName(dialogue As Dialogue) As String
+  overload: com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName*
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.dialoguesystem.DialogueSystem.CreateNode*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.CreateNode
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_CreateNode_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_Dialogue_
+  name: CreateNode
+  nameWithType: DialogueSystem.CreateNode
+  fullName: com.absence.dialoguesystem.DialogueSystem.CreateNode
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateGuid*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.GenerateGuid
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_GenerateGuid_com_absence_dialoguesystem_internals_Node_
+  name: GenerateGuid
+  nameWithType: DialogueSystem.GenerateGuid
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateGuid
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateName*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.GenerateName
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_GenerateName_com_absence_dialoguesystem_internals_Node_
+  name: GenerateName
+  nameWithType: DialogueSystem.GenerateName
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateName
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_GenerateCustomDataName_com_absence_dialoguesystem_internals_Node_
+  name: GenerateCustomDataName
+  nameWithType: DialogueSystem.GenerateCustomDataName
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateCustomDataName
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_GenerateOptionDataName_com_absence_dialoguesystem_internals_Node_
+  name: GenerateOptionDataName
+  nameWithType: DialogueSystem.GenerateOptionDataName
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateOptionDataName
+- uid: com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName*
+  commentId: Overload:com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName
+  href: com.absence.dialoguesystem.DialogueSystem.html#com_absence_dialoguesystem_DialogueSystem_GenerateGenericOptionDataName_com_absence_dialoguesystem_Dialogue_
+  name: GenerateGenericOptionDataName
+  nameWithType: DialogueSystem.GenerateGenericOptionDataName
+  fullName: com.absence.dialoguesystem.DialogueSystem.GenerateGenericOptionDataName

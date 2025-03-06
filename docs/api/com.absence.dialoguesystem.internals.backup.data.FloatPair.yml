@@ -1,0 +1,244 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.FloatPair
+  id: FloatPair
+  parent: com.absence.dialoguesystem.internals.backup.data
+  children:
+  - com.absence.dialoguesystem.internals.backup.data.FloatPair.Key
+  - com.absence.dialoguesystem.internals.backup.data.FloatPair.Value
+  - com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit(System.Single)~com.absence.dialoguesystem.internals.backup.data.FloatPair
+  langs:
+  - csharp
+  - vb
+  name: FloatPair
+  nameWithType: FloatPair
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FloatPair
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class FloatPair
+    content.vb: >-
+      <Serializable>
+
+      Public Class FloatPair
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair.Key
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.FloatPair.Key
+  id: Key
+  parent: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: FloatPair.Key
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair.Key
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Key
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public string Key
+    return:
+      type: System.String
+    content.vb: Public Key As String
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair.Value
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.FloatPair.Value
+  id: Value
+  parent: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: FloatPair.Value
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair.Value
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Value
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public float Value
+    return:
+      type: System.Single
+    content.vb: Public Value As Single
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit(System.Single)~com.absence.dialoguesystem.internals.backup.data.FloatPair
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit(System.Single)~com.absence.dialoguesystem.internals.backup.data.FloatPair
+  id: op_Implicit(System.Single)~com.absence.dialoguesystem.internals.backup.data.FloatPair
+  parent: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  langs:
+  - csharp
+  - vb
+  name: implicit operator FloatPair(float)
+  nameWithType: FloatPair.implicit operator FloatPair(float)
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair.implicit operator com.absence.dialoguesystem.internals.backup.data.FloatPair(float)
+  type: Operator
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: op_Implicit
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/BlackboardData.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static implicit operator FloatPair(float source)
+    parameters:
+    - id: source
+      type: System.Single
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.FloatPair
+    content.vb: Public Shared Widening Operator CType(source As Single) As FloatPair
+  overload: com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit*
+  nameWithType.vb: FloatPair.CType(Single)
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.FloatPair.CType(Single)
+  name.vb: CType(Single)
+references:
+- uid: com.absence.dialoguesystem.internals.backup.data
+  commentId: N:com.absence.dialoguesystem.internals.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup.data
+  nameWithType: com.absence.dialoguesystem.internals.backup.data
+  fullName: com.absence.dialoguesystem.internals.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.FloatPair.op_Implicit
+  name: implicit operator
+  nameWithType: FloatPair.implicit operator
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair.implicit operator
+  nameWithType.vb: FloatPair.CType
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.FloatPair.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: com.absence.dialoguesystem.internals.backup.data.FloatPair
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.FloatPair
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.FloatPair.html
+  name: FloatPair
+  nameWithType: FloatPair
+  fullName: com.absence.dialoguesystem.internals.backup.data.FloatPair

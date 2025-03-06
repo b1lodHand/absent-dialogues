@@ -2,191 +2,350 @@
 items:
 - uid: com.absence.dialoguesystem
   name: com.absence.dialoguesystem
+  type: Namespace
   items:
   - uid: com.absence.dialoguesystem.Dialogue
     name: Dialogue
-  - uid: com.absence.dialoguesystem.DialogueAnimationsPlayer
-    name: DialogueAnimationsPlayer
+    type: Class
   - uid: com.absence.dialoguesystem.DialogueDisplayer
     name: DialogueDisplayer
+    type: Class
   - uid: com.absence.dialoguesystem.DialogueExtensionBase
     name: DialogueExtensionBase
-  - uid: com.absence.dialoguesystem.DialogueInputHandler_Legacy
-    name: DialogueInputHandler_Legacy
+    type: Class
+  - uid: com.absence.dialoguesystem.DialogueFlowContext
+    name: DialogueFlowContext
+    type: Class
+  - uid: com.absence.dialoguesystem.DialogueFlowContext.ContextState
+    name: DialogueFlowContext.ContextState
+    type: Enum
   - uid: com.absence.dialoguesystem.DialogueInstance
     name: DialogueInstance
+    type: Class
   - uid: com.absence.dialoguesystem.DialoguePlayer
     name: DialoguePlayer
-  - uid: com.absence.dialoguesystem.DialoguePlayer.PlayerState
-    name: DialoguePlayer.PlayerState
-  - uid: com.absence.dialoguesystem.DialogueSoundsPlayer
-    name: DialogueSoundsPlayer
-  - uid: com.absence.dialoguesystem.IUseDialogueInScene
-    name: IUseDialogueInScene
+    type: Class
+  - uid: com.absence.dialoguesystem.DialogueSystem
+    name: DialogueSystem
+    type: Class
+  - uid: com.absence.dialoguesystem.NodeCustomDataBase
+    name: NodeCustomDataBase
+    type: Class
   - uid: com.absence.dialoguesystem.OptionText
     name: OptionText
+    type: Class
   - uid: com.absence.dialoguesystem.Package
     name: Package
+    type: Class
+  - uid: com.absence.dialoguesystem.Package.Version
+    name: Package.Version
+    type: Class
+- uid: com.absence.dialoguesystem.builtin
+  name: com.absence.dialoguesystem.builtin
+  type: Namespace
+  items:
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper
+    name: DialogueActionMapper
+    type: Class
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+    name: DialogueActionMapper.ActionMapPair
+    type: Class
+  - uid: com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer
+    name: DialogueAnimationsPlayer
+    type: Class
+  - uid: com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy
+    name: DialogueInputHandlerLegacy
+    type: Class
+  - uid: com.absence.dialoguesystem.builtin.DialogueSoundsPlayer
+    name: DialogueSoundsPlayer
+    type: Class
+  - uid: com.absence.dialoguesystem.builtin.IAnimatorData
+    name: IAnimatorData
+    type: Interface
+  - uid: com.absence.dialoguesystem.builtin.IAudioData
+    name: IAudioData
+    type: Interface
+  - uid: com.absence.dialoguesystem.builtin.ISpriteData
+    name: ISpriteData
+    type: Interface
+  - uid: com.absence.dialoguesystem.builtin.NodeCustomData
+    name: NodeCustomData
+    type: Class
 - uid: com.absence.dialoguesystem.editor
   name: com.absence.dialoguesystem.editor
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.editor.ActionMapPairPropertyDrawer
-    name: ActionMapPairPropertyDrawer
-  - uid: com.absence.dialoguesystem.editor.BlackboardView
-    name: BlackboardView
-  - uid: com.absence.dialoguesystem.editor.BlackboardView.UxmlFactory
-    name: BlackboardView.UxmlFactory
+  - uid: com.absence.dialoguesystem.editor.CustomNodeViewAttribute
+    name: CustomNodeViewAttribute
+    type: Class
   - uid: com.absence.dialoguesystem.editor.DialogueCreationHandler
     name: DialogueCreationHandler
+    type: Class
   - uid: com.absence.dialoguesystem.editor.DialogueEditorWindow
     name: DialogueEditorWindow
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView
-    name: DialogueGraphView
-  - uid: com.absence.dialoguesystem.editor.DialogueGraphView.UxmlFactory
-    name: DialogueGraphView.UxmlFactory
-  - uid: com.absence.dialoguesystem.editor.InspectorView
-    name: InspectorView
-  - uid: com.absence.dialoguesystem.editor.InspectorView.UxmlFactory
-    name: InspectorView.UxmlFactory
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.NodeCustomDataCreationHandler
+    name: NodeCustomDataCreationHandler
+    type: Class
   - uid: com.absence.dialoguesystem.editor.NodeView
     name: NodeView
-  - uid: com.absence.dialoguesystem.editor.RuntimeSelectionHandler
-    name: RuntimeSelectionHandler
-  - uid: com.absence.dialoguesystem.editor.SplitView
-    name: SplitView
-  - uid: com.absence.dialoguesystem.editor.SplitView.UxmlFactory
-    name: SplitView.UxmlFactory
-- uid: com.absence.dialoguesystem.editor.backup
-  name: com.absence.dialoguesystem.editor.backup
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+    name: NodeViewCreationHandler
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.NodeViewStyles
+    name: NodeViewStyles
+    type: Class
+- uid: com.absence.dialoguesystem.editor.internals
+  name: com.absence.dialoguesystem.editor.internals
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.editor.backup.DialogueExporter
-    name: DialogueExporter
-  - uid: com.absence.dialoguesystem.editor.backup.DialogueImporter
-    name: DialogueImporter
-- uid: com.absence.dialoguesystem.editor.backup.internals
-  name: com.absence.dialoguesystem.editor.backup.internals
-  items:
-  - uid: com.absence.dialoguesystem.editor.backup.internals.EditorJobsHelper
+  - uid: com.absence.dialoguesystem.editor.internals.ActionMapPairPropertyDrawer
+    name: ActionMapPairPropertyDrawer
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardPropertyDrawer
+    name: BlackboardPropertyDrawer
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView
+    name: BlackboardView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.BlackboardView.UxmlFactory
+    name: BlackboardView.UxmlFactory
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.BranchNodeView
+    name: BranchNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueEditor
+    name: DialogueEditor
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    name: DialogueGraphView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView.UxmlFactory
+    name: DialogueGraphView.UxmlFactory
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.EditorJobsHelper
     name: EditorJobsHelper
-  - uid: com.absence.dialoguesystem.editor.backup.internals.NodeImportActions
-    name: NodeImportActions
-- uid: com.absence.dialoguesystem.editor.backup.utilities
-  name: com.absence.dialoguesystem.editor.backup.utilities
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.EventNodeView
+    name: EventNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.GenericOptionPropertyDrawer
+    name: GenericOptionPropertyDrawer
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.GotoNodeView
+    name: GotoNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView
+    name: InspectorView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.InspectorView.UxmlFactory
+    name: InspectorView.UxmlFactory
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.OptionPropertyDrawer
+    name: OptionPropertyDrawer
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.PersonOverridePropertyDrawer
+    name: PersonOverridePropertyDrawer
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.PromptNodeEditor
+    name: PromptNodeEditor
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.PromptNodeView
+    name: PromptNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.RuntimeSelectionHandler
+    name: RuntimeSelectionHandler
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.SectionNodeView
+    name: SectionNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView
+    name: SplitView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.SplitView.UxmlFactory
+    name: SplitView.UxmlFactory
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.StickyNoteNodeView
+    name: StickyNoteNodeView
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.TitleNodeView
+    name: TitleNodeView
+    type: Class
+- uid: com.absence.dialoguesystem.editor.internals.backup
+  name: com.absence.dialoguesystem.editor.internals.backup
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.editor.backup.utilities.FileHelper
+  - uid: com.absence.dialoguesystem.editor.internals.backup.BackupSystem
+    name: BackupSystem
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.backup.DialogueExporter
+    name: DialogueExporter
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.backup.DialogueImporter
+    name: DialogueImporter
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.backup.FileHelper
     name: FileHelper
-  - uid: com.absence.dialoguesystem.editor.backup.utilities.JsonHelper
+    type: Class
+  - uid: com.absence.dialoguesystem.editor.internals.backup.JsonHelper
     name: JsonHelper
+    type: Class
 - uid: com.absence.dialoguesystem.examples
   name: com.absence.dialoguesystem.examples
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.examples.Demo_GUI
-    name: Demo_GUI
+  - uid: com.absence.dialoguesystem.examples.DemoGUI
+    name: DemoGUI
+    type: Class
 - uid: com.absence.dialoguesystem.internals
   name: com.absence.dialoguesystem.internals
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.internals.ActionNode
-    name: ActionNode
   - uid: com.absence.dialoguesystem.internals.Blackboard
     name: Blackboard
-  - uid: com.absence.dialoguesystem.internals.ConditionNode
-    name: ConditionNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.BranchNode
+    name: BranchNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.ConditionProcessMode
+    name: ConditionProcessMode
+    type: Enum
   - uid: com.absence.dialoguesystem.internals.Constants
     name: Constants
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.Constants.Text
+    name: Constants.Text
+    type: Class
   - uid: com.absence.dialoguesystem.internals.Constants.Tooltips
     name: Constants.Tooltips
-  - uid: com.absence.dialoguesystem.internals.DecisionSpeechNode
-    name: DecisionSpeechNode
-  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext
-    name: DialogueFlowContext
-  - uid: com.absence.dialoguesystem.internals.DialogueFlowContext.ContextState
-    name: DialogueFlowContext.ContextState
-  - uid: com.absence.dialoguesystem.internals.DialoguePartNode
-    name: DialoguePartNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.EntryNode
+    name: EntryNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.EventNode
+    name: EventNode
+    type: Class
   - uid: com.absence.dialoguesystem.internals.ExitNode
     name: ExitNode
-  - uid: com.absence.dialoguesystem.internals.ExtraDialogueData
-    name: ExtraDialogueData
-  - uid: com.absence.dialoguesystem.internals.FastSpeechNode
-    name: FastSpeechNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.GenericOption
+    name: GenericOption
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.GenericOptionReference
+    name: GenericOptionReference
+    type: Class
   - uid: com.absence.dialoguesystem.internals.GotoNode
     name: GotoNode
-  - uid: com.absence.dialoguesystem.internals.IContainData
-    name: IContainData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.IUseDialogueInScene
+    name: IUseDialogueInScene
+    type: Interface
   - uid: com.absence.dialoguesystem.internals.Node
     name: Node
-  - uid: com.absence.dialoguesystem.internals.Node.NodeState
-    name: Node.NodeState
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: Node.FlowState
+    type: Enum
   - uid: com.absence.dialoguesystem.internals.NodeVariableComparer
     name: NodeVariableComparer
+    type: Class
   - uid: com.absence.dialoguesystem.internals.NodeVariableSetter
     name: NodeVariableSetter
+    type: Class
   - uid: com.absence.dialoguesystem.internals.Option
     name: Option
+    type: Class
   - uid: com.absence.dialoguesystem.internals.Option.ShowIf
     name: Option.ShowIf
+    type: Class
   - uid: com.absence.dialoguesystem.internals.OptionHandle
     name: OptionHandle
-  - uid: com.absence.dialoguesystem.internals.RootNode
-    name: RootNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.PersonOverride
+    name: PersonOverride
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.PromptNode
+    name: PromptNode
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.SectionNode
+    name: SectionNode
+    type: Class
   - uid: com.absence.dialoguesystem.internals.StickyNoteNode
     name: StickyNoteNode
+    type: Class
   - uid: com.absence.dialoguesystem.internals.TitleNode
     name: TitleNode
+    type: Class
   - uid: com.absence.dialoguesystem.internals.Utilities
     name: Utilities
+    type: Class
   - uid: com.absence.dialoguesystem.internals.Utilities.Comparison
     name: Utilities.Comparison
-  - uid: com.absence.dialoguesystem.internals.Utilities.Texts
-    name: Utilities.Texts
-  - uid: com.absence.dialoguesystem.internals.VBProcessType
-    name: VBProcessType
-- uid: com.absence.dialoguesystem.runtime
-  name: com.absence.dialoguesystem.runtime
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.Utilities.Setting
+    name: Utilities.Setting
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.Utilities.Text
+    name: Utilities.Text
+    type: Class
+- uid: com.absence.dialoguesystem.internals.backup
+  name: com.absence.dialoguesystem.internals.backup
+  type: Namespace
   items:
-  - uid: com.absence.dialoguesystem.runtime.DialogueActionMapper
-    name: DialogueActionMapper
-  - uid: com.absence.dialoguesystem.runtime.DialogueActionMapper.ActionMapPair
-    name: DialogueActionMapper.ActionMapPair
-- uid: com.absence.dialoguesystem.runtime.backup
-  name: com.absence.dialoguesystem.runtime.backup
-  items:
-  - uid: com.absence.dialoguesystem.runtime.backup.DialogueImportContext
-    name: DialogueImportContext
-- uid: com.absence.dialoguesystem.runtime.backup.data
-  name: com.absence.dialoguesystem.runtime.backup.data
-  items:
-  - uid: com.absence.dialoguesystem.runtime.backup.data.BlackboardData
-    name: BlackboardData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.BooleanPair
-    name: BooleanPair
-  - uid: com.absence.dialoguesystem.runtime.backup.data.DataGenerator
-    name: DataGenerator
-  - uid: com.absence.dialoguesystem.runtime.backup.data.DataReader
-    name: DataReader
-  - uid: com.absence.dialoguesystem.runtime.backup.data.DialogueData
-    name: DialogueData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.FloatPair
-    name: FloatPair
-  - uid: com.absence.dialoguesystem.runtime.backup.data.IntPair
-    name: IntPair
-  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeConnectionData
-    name: NodeConnectionData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeData
-    name: NodeData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableComparerData
-    name: NodeVariableComparerData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.NodeVariableSetterData
-    name: NodeVariableSetterData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.OptionData
-    name: OptionData
-  - uid: com.absence.dialoguesystem.runtime.backup.data.StringPair
-    name: StringPair
-- uid: com.absence.dialoguesystem.runtime.backup.internals
-  name: com.absence.dialoguesystem.runtime.backup.internals
-  items:
-  - uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueExportSettings
+  - uid: com.absence.dialoguesystem.internals.backup.DialogueExportSettings
     name: DialogueExportSettings
-  - uid: com.absence.dialoguesystem.runtime.backup.internals.DialogueImportSettings
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.DialogueImportContext
+    name: DialogueImportContext
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.DialogueImportSettings
     name: DialogueImportSettings
+    type: Class
+- uid: com.absence.dialoguesystem.internals.backup.data
+  name: com.absence.dialoguesystem.internals.backup.data
+  type: Namespace
+  items:
+  - uid: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+    name: BlackboardData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.BooleanPair
+    name: BooleanPair
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+    name: DataGenerator
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.DataReader
+    name: DataReader
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.DialogueData
+    name: DialogueData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.FloatPair
+    name: FloatPair
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.GenericOptionReferenceData
+    name: GenericOptionReferenceData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.IntPair
+    name: IntPair
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData
+    name: NodeConnectionData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeData
+    name: NodeData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+    name: NodeVariableComparerData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+    name: NodeVariableSetterData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.OptionData
+    name: OptionData
+    type: Class
+  - uid: com.absence.dialoguesystem.internals.backup.data.StringPair
+    name: StringPair
+    type: Class
 memberLayout: SamePage

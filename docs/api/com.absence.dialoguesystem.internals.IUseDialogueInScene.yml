@@ -1,0 +1,225 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene
+  commentId: T:com.absence.dialoguesystem.internals.IUseDialogueInScene
+  id: IUseDialogueInScene
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+  - com.absence.dialoguesystem.internals.IUseDialogueInScene.OnValidation
+  - com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+  langs:
+  - csharp
+  - vb
+  name: IUseDialogueInScene
+  nameWithType: IUseDialogueInScene
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: IUseDialogueInScene
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Any game object with a script that implements this interface attached will display it's dialogue when gets selected.
+  example: []
+  syntax:
+    content: public interface IUseDialogueInScene
+    content.vb: Public Interface IUseDialogueInScene
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+  commentId: P:com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+  id: ClonedDialogue
+  parent: com.absence.dialoguesystem.internals.IUseDialogueInScene
+  langs:
+  - csharp
+  - vb
+  name: ClonedDialogue
+  nameWithType: IUseDialogueInScene.ClonedDialogue
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ClonedDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: The dialogue cloned and in-use.
+  example: []
+  syntax:
+    content: Dialogue ClonedDialogue { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: ReadOnly Property ClonedDialogue As Dialogue
+  overload: com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue*
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+  commentId: P:com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+  id: ReferencedDialogue
+  parent: com.absence.dialoguesystem.internals.IUseDialogueInScene
+  langs:
+  - csharp
+  - vb
+  name: ReferencedDialogue
+  nameWithType: IUseDialogueInScene.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ReferencedDialogue
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: The original dialogue provided for the script (not the cloned one).
+  example: []
+  syntax:
+    content: Dialogue ReferencedDialogue { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.Dialogue
+    content.vb: ReadOnly Property ReferencedDialogue As Dialogue
+  overload: com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue*
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene.OnValidation
+  commentId: E:com.absence.dialoguesystem.internals.IUseDialogueInScene.OnValidation
+  id: OnValidation
+  parent: com.absence.dialoguesystem.internals.IUseDialogueInScene
+  langs:
+  - csharp
+  - vb
+  name: OnValidation
+  nameWithType: IUseDialogueInScene.OnValidation
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene.OnValidation
+  type: Event
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: OnValidation
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/IUseDialogueInScene.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: event Action OnValidation
+    return:
+      type: System.Action
+    content.vb: Event OnValidation As Action
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue*
+  commentId: Overload:com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+  href: com.absence.dialoguesystem.internals.IUseDialogueInScene.html#com_absence_dialoguesystem_internals_IUseDialogueInScene_ClonedDialogue
+  name: ClonedDialogue
+  nameWithType: IUseDialogueInScene.ClonedDialogue
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene.ClonedDialogue
+- uid: com.absence.dialoguesystem.Dialogue
+  commentId: T:com.absence.dialoguesystem.Dialogue
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.Dialogue.html
+  name: Dialogue
+  nameWithType: Dialogue
+  fullName: com.absence.dialoguesystem.Dialogue
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue*
+  commentId: Overload:com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+  href: com.absence.dialoguesystem.internals.IUseDialogueInScene.html#com_absence_dialoguesystem_internals_IUseDialogueInScene_ReferencedDialogue
+  name: ReferencedDialogue
+  nameWithType: IUseDialogueInScene.ReferencedDialogue
+  fullName: com.absence.dialoguesystem.internals.IUseDialogueInScene.ReferencedDialogue
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

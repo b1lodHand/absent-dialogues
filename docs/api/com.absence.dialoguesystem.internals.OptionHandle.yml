@@ -5,7 +5,8 @@ items:
   id: OptionHandle
   parent: com.absence.dialoguesystem.internals
   children:
-  - com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String)
+  - com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String,com.absence.dialoguesystem.NodeCustomDataBase)
+  - com.absence.dialoguesystem.internals.OptionHandle.CustomData
   - com.absence.dialoguesystem.internals.OptionHandle.TargetedIndex
   - com.absence.dialoguesystem.internals.OptionHandle.Text
   langs:
@@ -17,11 +18,11 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OptionHandle
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
     startLine: 2
   assemblies:
   - Assembly-CSharp-firstpass
@@ -54,11 +55,11 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: TargetedIndex
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
     startLine: 5
   assemblies:
   - Assembly-CSharp-firstpass
@@ -83,11 +84,11 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Text
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
     startLine: 6
   assemblies:
   - Assembly-CSharp-firstpass
@@ -99,40 +100,71 @@ items:
       type: System.String
     content.vb: Public Property Text As String
   overload: com.absence.dialoguesystem.internals.OptionHandle.Text*
-- uid: com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String)
-  commentId: M:com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String)
-  id: '#ctor(System.Int32,System.String)'
+- uid: com.absence.dialoguesystem.internals.OptionHandle.CustomData
+  commentId: P:com.absence.dialoguesystem.internals.OptionHandle.CustomData
+  id: CustomData
   parent: com.absence.dialoguesystem.internals.OptionHandle
   langs:
   - csharp
   - vb
-  name: OptionHandle(int, string)
-  nameWithType: OptionHandle.OptionHandle(int, string)
-  fullName: com.absence.dialoguesystem.internals.OptionHandle.OptionHandle(int, string)
-  type: Constructor
+  name: CustomData
+  nameWithType: OptionHandle.CustomData
+  fullName: com.absence.dialoguesystem.internals.OptionHandle.CustomData
+  type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: .ctor
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Classes/OptionHandle.cs
-    startLine: 8
+    id: CustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
+    startLine: 7
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public OptionHandle(int targetIndex, string content)
+    content: public NodeCustomDataBase CustomData { get; }
+    parameters: []
+    return:
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public Property CustomData As NodeCustomDataBase
+  overload: com.absence.dialoguesystem.internals.OptionHandle.CustomData*
+- uid: com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String,com.absence.dialoguesystem.NodeCustomDataBase)
+  commentId: M:com.absence.dialoguesystem.internals.OptionHandle.#ctor(System.Int32,System.String,com.absence.dialoguesystem.NodeCustomDataBase)
+  id: '#ctor(System.Int32,System.String,com.absence.dialoguesystem.NodeCustomDataBase)'
+  parent: com.absence.dialoguesystem.internals.OptionHandle
+  langs:
+  - csharp
+  - vb
+  name: OptionHandle(int, string, NodeCustomDataBase)
+  nameWithType: OptionHandle.OptionHandle(int, string, NodeCustomDataBase)
+  fullName: com.absence.dialoguesystem.internals.OptionHandle.OptionHandle(int, string, com.absence.dialoguesystem.NodeCustomDataBase)
+  type: Constructor
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: .ctor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/OptionHandle.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public OptionHandle(int targetIndex, string content, NodeCustomDataBase customData)
     parameters:
     - id: targetIndex
       type: System.Int32
     - id: content
       type: System.String
-    content.vb: Public Sub New(targetIndex As Integer, content As String)
+    - id: customData
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public Sub New(targetIndex As Integer, content As String, customData As NodeCustomDataBase)
   overload: com.absence.dialoguesystem.internals.OptionHandle.#ctor*
-  nameWithType.vb: OptionHandle.New(Integer, String)
-  fullName.vb: com.absence.dialoguesystem.internals.OptionHandle.New(Integer, String)
-  name.vb: New(Integer, String)
+  nameWithType.vb: OptionHandle.New(Integer, String, NodeCustomDataBase)
+  fullName.vb: com.absence.dialoguesystem.internals.OptionHandle.New(Integer, String, com.absence.dialoguesystem.NodeCustomDataBase)
+  name.vb: New(Integer, String, NodeCustomDataBase)
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -176,7 +208,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -224,9 +255,52 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: com.absence.dialoguesystem.internals.OptionHandle.CustomData*
+  commentId: Overload:com.absence.dialoguesystem.internals.OptionHandle.CustomData
+  href: com.absence.dialoguesystem.internals.OptionHandle.html#com_absence_dialoguesystem_internals_OptionHandle_CustomData
+  name: CustomData
+  nameWithType: OptionHandle.CustomData
+  fullName: com.absence.dialoguesystem.internals.OptionHandle.CustomData
+- uid: com.absence.dialoguesystem.NodeCustomDataBase
+  commentId: T:com.absence.dialoguesystem.NodeCustomDataBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html
+  name: NodeCustomDataBase
+  nameWithType: NodeCustomDataBase
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
 - uid: com.absence.dialoguesystem.internals.OptionHandle.#ctor*
   commentId: Overload:com.absence.dialoguesystem.internals.OptionHandle.#ctor
-  href: com.absence.dialoguesystem.internals.OptionHandle.html#com_absence_dialoguesystem_internals_OptionHandle__ctor_System_Int32_System_String_
+  href: com.absence.dialoguesystem.internals.OptionHandle.html#com_absence_dialoguesystem_internals_OptionHandle__ctor_System_Int32_System_String_com_absence_dialoguesystem_NodeCustomDataBase_
   name: OptionHandle
   nameWithType: OptionHandle.OptionHandle
   fullName: com.absence.dialoguesystem.internals.OptionHandle.OptionHandle

@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference
+  commentId: T:com.absence.dialoguesystem.internals.GenericOptionReference
+  id: GenericOptionReference
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.GenericOptionReference.#ctor(com.absence.dialoguesystem.internals.GenericOption)
+  - com.absence.dialoguesystem.internals.GenericOptionReference.Bypass
+  - com.absence.dialoguesystem.internals.GenericOptionReference.LeadingNode
+  - com.absence.dialoguesystem.internals.GenericOptionReference.Target
+  langs:
+  - csharp
+  - vb
+  name: GenericOptionReference
+  nameWithType: GenericOptionReference
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenericOptionReference
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class GenericOptionReference
+    content.vb: >-
+      <Serializable>
+
+      Public Class GenericOptionReference
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference.Bypass
+  commentId: F:com.absence.dialoguesystem.internals.GenericOptionReference.Bypass
+  id: Bypass
+  parent: com.absence.dialoguesystem.internals.GenericOptionReference
+  langs:
+  - csharp
+  - vb
+  name: Bypass
+  nameWithType: GenericOptionReference.Bypass
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference.Bypass
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Bypass
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public bool Bypass
+    return:
+      type: System.Boolean
+    content.vb: Public Bypass As Boolean
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference.Target
+  commentId: F:com.absence.dialoguesystem.internals.GenericOptionReference.Target
+  id: Target
+  parent: com.absence.dialoguesystem.internals.GenericOptionReference
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: GenericOptionReference.Target
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference.Target
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Target
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public GenericOption Target
+    return:
+      type: com.absence.dialoguesystem.internals.GenericOption
+    content.vb: Public Target As GenericOption
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference.LeadingNode
+  commentId: F:com.absence.dialoguesystem.internals.GenericOptionReference.LeadingNode
+  id: LeadingNode
+  parent: com.absence.dialoguesystem.internals.GenericOptionReference
+  langs:
+  - csharp
+  - vb
+  name: LeadingNode
+  nameWithType: GenericOptionReference.LeadingNode
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference.LeadingNode
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: LeadingNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public Node LeadingNode
+    return:
+      type: com.absence.dialoguesystem.internals.Node
+    content.vb: Public LeadingNode As Node
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference.#ctor(com.absence.dialoguesystem.internals.GenericOption)
+  commentId: M:com.absence.dialoguesystem.internals.GenericOptionReference.#ctor(com.absence.dialoguesystem.internals.GenericOption)
+  id: '#ctor(com.absence.dialoguesystem.internals.GenericOption)'
+  parent: com.absence.dialoguesystem.internals.GenericOptionReference
+  langs:
+  - csharp
+  - vb
+  name: GenericOptionReference(GenericOption)
+  nameWithType: GenericOptionReference.GenericOptionReference(GenericOption)
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference.GenericOptionReference(com.absence.dialoguesystem.internals.GenericOption)
+  type: Constructor
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: .ctor
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/GenericOptionReference.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public GenericOptionReference(GenericOption target)
+    parameters:
+    - id: target
+      type: com.absence.dialoguesystem.internals.GenericOption
+    content.vb: Public Sub New(target As GenericOption)
+  overload: com.absence.dialoguesystem.internals.GenericOptionReference.#ctor*
+  nameWithType.vb: GenericOptionReference.New(GenericOption)
+  fullName.vb: com.absence.dialoguesystem.internals.GenericOptionReference.New(com.absence.dialoguesystem.internals.GenericOption)
+  name.vb: New(GenericOption)
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: com.absence.dialoguesystem.internals.GenericOption
+  commentId: T:com.absence.dialoguesystem.internals.GenericOption
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.GenericOption.html
+  name: GenericOption
+  nameWithType: GenericOption
+  fullName: com.absence.dialoguesystem.internals.GenericOption
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.internals.GenericOptionReference.#ctor*
+  commentId: Overload:com.absence.dialoguesystem.internals.GenericOptionReference.#ctor
+  href: com.absence.dialoguesystem.internals.GenericOptionReference.html#com_absence_dialoguesystem_internals_GenericOptionReference__ctor_com_absence_dialoguesystem_internals_GenericOption_
+  name: GenericOptionReference
+  nameWithType: GenericOptionReference.GenericOptionReference
+  fullName: com.absence.dialoguesystem.internals.GenericOptionReference.GenericOptionReference
+  nameWithType.vb: GenericOptionReference.New
+  fullName.vb: com.absence.dialoguesystem.internals.GenericOptionReference.New
+  name.vb: New

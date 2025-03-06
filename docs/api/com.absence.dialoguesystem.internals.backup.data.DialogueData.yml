@@ -1,0 +1,333 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.DialogueData
+  id: DialogueData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  children:
+  - com.absence.dialoguesystem.internals.backup.data.DialogueData.BlackboardData
+  - com.absence.dialoguesystem.internals.backup.data.DialogueData.ConnectionData
+  - com.absence.dialoguesystem.internals.backup.data.DialogueData.DefaultDialogueName
+  - com.absence.dialoguesystem.internals.backup.data.DialogueData.GenericOptionData
+  - com.absence.dialoguesystem.internals.backup.data.DialogueData.NodeData
+  langs:
+  - csharp
+  - vb
+  name: DialogueData
+  nameWithType: DialogueData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DialogueData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 2
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class DialogueData
+    content.vb: >-
+      <Serializable>
+
+      Public Class DialogueData
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData.DefaultDialogueName
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.DialogueData.DefaultDialogueName
+  id: DefaultDialogueName
+  parent: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  langs:
+  - csharp
+  - vb
+  name: DefaultDialogueName
+  nameWithType: DialogueData.DefaultDialogueName
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData.DefaultDialogueName
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DefaultDialogueName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public string DefaultDialogueName
+    return:
+      type: System.String
+    content.vb: Public DefaultDialogueName As String
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData.NodeData
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.DialogueData.NodeData
+  id: NodeData
+  parent: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  langs:
+  - csharp
+  - vb
+  name: NodeData
+  nameWithType: DialogueData.NodeData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData.NodeData
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public NodeData[] NodeData
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.NodeData[]
+    content.vb: Public NodeData As NodeData()
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData.ConnectionData
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.DialogueData.ConnectionData
+  id: ConnectionData
+  parent: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  langs:
+  - csharp
+  - vb
+  name: ConnectionData
+  nameWithType: DialogueData.ConnectionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData.ConnectionData
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ConnectionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public NodeConnectionData[] ConnectionData
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData[]
+    content.vb: Public ConnectionData As NodeConnectionData()
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData.GenericOptionData
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.DialogueData.GenericOptionData
+  id: GenericOptionData
+  parent: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  langs:
+  - csharp
+  - vb
+  name: GenericOptionData
+  nameWithType: DialogueData.GenericOptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData.GenericOptionData
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenericOptionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public OptionData[] GenericOptionData
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.OptionData[]
+    content.vb: Public GenericOptionData As OptionData()
+- uid: com.absence.dialoguesystem.internals.backup.data.DialogueData.BlackboardData
+  commentId: F:com.absence.dialoguesystem.internals.backup.data.DialogueData.BlackboardData
+  id: BlackboardData
+  parent: com.absence.dialoguesystem.internals.backup.data.DialogueData
+  langs:
+  - csharp
+  - vb
+  name: BlackboardData
+  nameWithType: DialogueData.BlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DialogueData.BlackboardData
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: BlackboardData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DialogueData.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public BlackboardData BlackboardData
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+    content.vb: Public BlackboardData As BlackboardData
+references:
+- uid: com.absence.dialoguesystem.internals.backup.data
+  commentId: N:com.absence.dialoguesystem.internals.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup.data
+  nameWithType: com.absence.dialoguesystem.internals.backup.data
+  fullName: com.absence.dialoguesystem.internals.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeData[]
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.backup.data.NodeData.html
+  name: NodeData[]
+  nameWithType: NodeData[]
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeData[]
+  nameWithType.vb: NodeData()
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.NodeData()
+  name.vb: NodeData()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.internals.backup.data.NodeData.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeData
+    name: NodeData
+    href: com.absence.dialoguesystem.internals.backup.data.NodeData.html
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData[]
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData.html
+  name: NodeConnectionData[]
+  nameWithType: NodeConnectionData[]
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData[]
+  nameWithType.vb: NodeConnectionData()
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData()
+  name.vb: NodeConnectionData()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData
+    name: NodeConnectionData
+    href: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData
+    name: NodeConnectionData
+    href: com.absence.dialoguesystem.internals.backup.data.NodeConnectionData.html
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.backup.data.OptionData[]
+  isExternal: true
+  href: com.absence.dialoguesystem.internals.backup.data.OptionData.html
+  name: OptionData[]
+  nameWithType: OptionData[]
+  fullName: com.absence.dialoguesystem.internals.backup.data.OptionData[]
+  nameWithType.vb: OptionData()
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.OptionData()
+  name.vb: OptionData()
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.backup.data.OptionData
+    name: OptionData
+    href: com.absence.dialoguesystem.internals.backup.data.OptionData.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.backup.data.OptionData
+    name: OptionData
+    href: com.absence.dialoguesystem.internals.backup.data.OptionData.html
+  - name: (
+  - name: )
+- uid: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.BlackboardData.html
+  name: BlackboardData
+  nameWithType: BlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.BlackboardData

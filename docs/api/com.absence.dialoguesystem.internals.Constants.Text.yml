@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Constants.Text
+  commentId: T:com.absence.dialoguesystem.internals.Constants.Text
+  id: Constants.Text
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Constants.Text.NO_TEXT
+  langs:
+  - csharp
+  - vb
+  name: Constants.Text
+  nameWithType: Constants.Text
+  fullName: com.absence.dialoguesystem.internals.Constants.Text
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Text
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public static class Constants.Text
+    content.vb: Public Module Constants.Text
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.internals.Constants.Text.NO_TEXT
+  commentId: F:com.absence.dialoguesystem.internals.Constants.Text.NO_TEXT
+  id: NO_TEXT
+  parent: com.absence.dialoguesystem.internals.Constants.Text
+  langs:
+  - csharp
+  - vb
+  name: NO_TEXT
+  nameWithType: Constants.Text.NO_TEXT
+  fullName: com.absence.dialoguesystem.internals.Constants.Text.NO_TEXT
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NO_TEXT
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public const string NO_TEXT = "||NO TEXT||"
+    return:
+      type: System.String
+    content.vb: Public Const NO_TEXT As String = "||NO TEXT||"
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

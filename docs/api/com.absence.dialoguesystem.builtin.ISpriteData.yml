@@ -1,0 +1,116 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.builtin.ISpriteData
+  commentId: T:com.absence.dialoguesystem.builtin.ISpriteData
+  id: ISpriteData
+  parent: com.absence.dialoguesystem.builtin
+  children:
+  - com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  langs:
+  - csharp
+  - vb
+  name: ISpriteData
+  nameWithType: ISpriteData
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData
+  type: Interface
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/ISpriteData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: ISpriteData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/ISpriteData.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: public interface ISpriteData
+    content.vb: Public Interface ISpriteData
+- uid: com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  commentId: P:com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  id: Sprite
+  parent: com.absence.dialoguesystem.builtin.ISpriteData
+  langs:
+  - csharp
+  - vb
+  name: Sprite
+  nameWithType: ISpriteData.Sprite
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/ISpriteData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Sprite
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Interfaces/ISpriteData.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: Sprite Sprite { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Property Sprite As Sprite
+  overload: com.absence.dialoguesystem.builtin.ISpriteData.Sprite*
+references:
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  href: com.html
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+- uid: com.absence.dialoguesystem.builtin.ISpriteData.Sprite*
+  commentId: Overload:com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  href: com.absence.dialoguesystem.builtin.ISpriteData.html#com_absence_dialoguesystem_builtin_ISpriteData_Sprite
+  name: Sprite
+  nameWithType: ISpriteData.Sprite
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

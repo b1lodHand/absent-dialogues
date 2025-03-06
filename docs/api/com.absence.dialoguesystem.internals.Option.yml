@@ -5,10 +5,10 @@ items:
   id: Option
   parent: com.absence.dialoguesystem.internals
   children:
-  - com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
-  - com.absence.dialoguesystem.internals.Option.ExtraData
+  - com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  - com.absence.dialoguesystem.internals.Option.CustomData
   - com.absence.dialoguesystem.internals.Option.IsVisible
-  - com.absence.dialoguesystem.internals.Option.LeadsTo
+  - com.absence.dialoguesystem.internals.Option.LeadingNode
   - com.absence.dialoguesystem.internals.Option.Text
   - com.absence.dialoguesystem.internals.Option.UseShowIf
   - com.absence.dialoguesystem.internals.Option.Visibility
@@ -21,12 +21,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Option
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 12
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 10
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -47,6 +47,8 @@ items:
       Public Class [Option]
   inheritance:
   - System.Object
+  derivedClasses:
+  - com.absence.dialoguesystem.internals.GenericOption
   attributes:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
@@ -69,61 +71,51 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Text
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 19
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 21
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Speech of this option.
   example: []
   syntax:
-    content: >-
-      [HideInInspector]
-
-      public string Text
+    content: public string Text
     return:
       type: System.String
-    content.vb: >-
-      <HideInInspector>
-
-      Public Text As String
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.ExtraData
-  commentId: F:com.absence.dialoguesystem.internals.Option.ExtraData
-  id: ExtraData
+    content.vb: Public Text As String
+- uid: com.absence.dialoguesystem.internals.Option.CustomData
+  commentId: F:com.absence.dialoguesystem.internals.Option.CustomData
+  id: CustomData
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
-  name: ExtraData
-  nameWithType: Option.ExtraData
-  fullName: com.absence.dialoguesystem.internals.Option.ExtraData
+  name: CustomData
+  nameWithType: Option.CustomData
+  fullName: com.absence.dialoguesystem.internals.Option.CustomData
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: ExtraData
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 24
+    id: CustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 26
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Additional speech data this option contains.
   example: []
   syntax:
-    content: public ExtraDialogueData ExtraData
+    content: public NodeCustomDataBase CustomData
     return:
-      type: com.absence.dialoguesystem.internals.ExtraDialogueData
-    content.vb: Public ExtraData As ExtraDialogueData
+      type: com.absence.dialoguesystem.NodeCustomDataBase
+    content.vb: Public CustomData As NodeCustomDataBase
 - uid: com.absence.dialoguesystem.internals.Option.UseShowIf
   commentId: P:com.absence.dialoguesystem.internals.Option.UseShowIf
   id: UseShowIf
@@ -137,12 +129,12 @@ items:
   type: Property
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: UseShowIf
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 29
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 31
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -166,113 +158,89 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Visibility
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 42
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 44
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: >-
-      [SerializeField]
-
-      [ShowIf("m_useShowIf")]
-
-      public Option.ShowIf Visibility
+    content: public Option.ShowIf Visibility
     return:
       type: com.absence.dialoguesystem.internals.Option.ShowIf
-    content.vb: >-
-      <SerializeField>
-
-      <ShowIf("m_useShowIf")>
-
-      Public Visibility As [Option].ShowIf
-  attributes:
-  - type: UnityEngine.SerializeField
-    ctor: UnityEngine.SerializeField.#ctor
-    arguments: []
-  - type: com.absence.attributes.ShowIfAttribute
-    ctor: com.absence.attributes.ShowIfAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: m_useShowIf
-- uid: com.absence.dialoguesystem.internals.Option.LeadsTo
-  commentId: F:com.absence.dialoguesystem.internals.Option.LeadsTo
-  id: LeadsTo
+    content.vb: Public Visibility As [Option].ShowIf
+- uid: com.absence.dialoguesystem.internals.Option.LeadingNode
+  commentId: F:com.absence.dialoguesystem.internals.Option.LeadingNode
+  id: LeadingNode
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
-  name: LeadsTo
-  nameWithType: Option.LeadsTo
-  fullName: com.absence.dialoguesystem.internals.Option.LeadsTo
+  name: LeadingNode
+  nameWithType: Option.LeadingNode
+  fullName: com.absence.dialoguesystem.internals.Option.LeadingNode
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
-    id: LeadsTo
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 47
+    id: LeadingNode
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 49
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: The node this option leads to.
   example: []
   syntax:
-    content: >-
-      [HideInInspector]
-
-      public Node LeadsTo
+    content: public Node LeadingNode
     return:
       type: com.absence.dialoguesystem.internals.Node
-    content.vb: >-
-      <HideInInspector>
-
-      Public LeadsTo As Node
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
-  commentId: M:com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
-  id: Clone(com.absence.variablesystem.VariableBank)
+    content.vb: Public LeadingNode As Node
+- uid: com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  commentId: M:com.absence.dialoguesystem.internals.Option.Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
+  id: Clone``1(com.absence.variablesystem.banksystembase.VariableBank)
   parent: com.absence.dialoguesystem.internals.Option
   langs:
   - csharp
   - vb
-  name: Clone(VariableBank)
-  nameWithType: Option.Clone(VariableBank)
-  fullName: com.absence.dialoguesystem.internals.Option.Clone(com.absence.variablesystem.VariableBank)
+  name: Clone<T>(VariableBank)
+  nameWithType: Option.Clone<T>(VariableBank)
+  fullName: com.absence.dialoguesystem.internals.Option.Clone<T>(com.absence.variablesystem.banksystembase.VariableBank)
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Clone
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 54
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 56
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   summary: Use to get a clone of this option.
   example: []
   syntax:
-    content: public Option Clone(VariableBank overrideBank)
+    content: 'public virtual T Clone<T>(VariableBank overrideBank) where T : Option, new()'
     parameters:
     - id: overrideBank
-      type: com.absence.variablesystem.VariableBank
+      type: com.absence.variablesystem.banksystembase.VariableBank
       description: ''
+    typeParameters:
+    - id: T
     return:
-      type: com.absence.dialoguesystem.internals.Option
+      type: '{T}'
       description: ''
-    content.vb: Public Function Clone(overrideBank As VariableBank) As [Option]
+    content.vb: Public Overridable Function Clone(Of T As {[Option], New})(overrideBank As VariableBank) As T
   overload: com.absence.dialoguesystem.internals.Option.Clone*
+  nameWithType.vb: Option.Clone(Of T)(VariableBank)
+  fullName.vb: com.absence.dialoguesystem.internals.Option.Clone(Of T)(com.absence.variablesystem.banksystembase.VariableBank)
+  name.vb: Clone(Of T)(VariableBank)
 - uid: com.absence.dialoguesystem.internals.Option.IsVisible
   commentId: M:com.absence.dialoguesystem.internals.Option.IsVisible
   id: IsVisible
@@ -286,12 +254,12 @@ items:
   type: Method
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: IsVisible
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Graph/Base/Option.cs
-    startLine: 70
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Option.cs
+    startLine: 72
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -347,7 +315,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -372,13 +339,43 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: com.absence.dialoguesystem.internals.ExtraDialogueData
-  commentId: T:com.absence.dialoguesystem.internals.ExtraDialogueData
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.ExtraDialogueData.html
-  name: ExtraDialogueData
-  nameWithType: ExtraDialogueData
-  fullName: com.absence.dialoguesystem.internals.ExtraDialogueData
+- uid: com.absence.dialoguesystem.NodeCustomDataBase
+  commentId: T:com.absence.dialoguesystem.NodeCustomDataBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html
+  name: NodeCustomDataBase
+  nameWithType: NodeCustomDataBase
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
 - uid: com.absence.dialoguesystem.internals.Option.UseShowIf*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.UseShowIf
   href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_UseShowIf
@@ -428,30 +425,29 @@ references:
   fullName: com.absence.dialoguesystem.internals.Node
 - uid: com.absence.dialoguesystem.internals.Option.Clone*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.Clone
-  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone_com_absence_variablesystem_VariableBank_
+  href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_Clone__1_com_absence_variablesystem_banksystembase_VariableBank_
   name: Clone
   nameWithType: Option.Clone
   fullName: com.absence.dialoguesystem.internals.Option.Clone
-- uid: com.absence.variablesystem.VariableBank
-  commentId: T:com.absence.variablesystem.VariableBank
-  parent: com.absence.variablesystem
+- uid: com.absence.variablesystem.banksystembase.VariableBank
+  commentId: T:com.absence.variablesystem.banksystembase.VariableBank
+  parent: com.absence.variablesystem.banksystembase
   isExternal: true
   name: VariableBank
   nameWithType: VariableBank
-  fullName: com.absence.variablesystem.VariableBank
-- uid: com.absence.dialoguesystem.internals.Option
-  commentId: T:com.absence.dialoguesystem.internals.Option
-  parent: com.absence.dialoguesystem.internals
-  href: com.absence.dialoguesystem.internals.Option.html
-  name: Option
-  nameWithType: Option
-  fullName: com.absence.dialoguesystem.internals.Option
-- uid: com.absence.variablesystem
-  commentId: N:com.absence.variablesystem
+  fullName: com.absence.variablesystem.banksystembase.VariableBank
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: com.absence.variablesystem.banksystembase
+  commentId: N:com.absence.variablesystem.banksystembase
   isExternal: true
-  name: com.absence.variablesystem
-  nameWithType: com.absence.variablesystem
-  fullName: com.absence.variablesystem
+  name: com.absence.variablesystem.banksystembase
+  nameWithType: com.absence.variablesystem.banksystembase
+  fullName: com.absence.variablesystem.banksystembase
   spec.csharp:
   - uid: com
     name: com
@@ -463,6 +459,10 @@ references:
   - name: .
   - uid: com.absence.variablesystem
     name: variablesystem
+    isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.banksystembase
+    name: banksystembase
     isExternal: true
   spec.vb:
   - uid: com
@@ -476,6 +476,14 @@ references:
   - uid: com.absence.variablesystem
     name: variablesystem
     isExternal: true
+  - name: .
+  - uid: com.absence.variablesystem.banksystembase
+    name: banksystembase
+    isExternal: true
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: com.absence.dialoguesystem.internals.Option.IsVisible*
   commentId: Overload:com.absence.dialoguesystem.internals.Option.IsVisible
   href: com.absence.dialoguesystem.internals.Option.html#com_absence_dialoguesystem_internals_Option_IsVisible

@@ -1,0 +1,408 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  id: DataGenerator
+  parent: com.absence.dialoguesystem.internals.backup.data
+  children:
+  - com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData(com.absence.dialoguesystem.internals.Blackboard)
+  - com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  - com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData``1(``0)
+  - com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData(com.absence.dialoguesystem.internals.Option)
+  - com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  langs:
+  - csharp
+  - vb
+  name: DataGenerator
+  nameWithType: DataGenerator
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: DataGenerator
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 5
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static class DataGenerator
+    content.vb: Public Module DataGenerator
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData``1(``0)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData``1(``0)
+  id: GenerateNodeData``1(``0)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateNodeData<T>(T)
+  nameWithType: DataGenerator.GenerateNodeData<T>(T)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData<T>(T)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateNodeData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: 'public static NodeData GenerateNodeData<T>(T node) where T : Node'
+    parameters:
+    - id: node
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.NodeData
+    content.vb: Public Shared Function GenerateNodeData(Of T As Node)(node As T) As NodeData
+  overload: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData*
+  nameWithType.vb: DataGenerator.GenerateNodeData(Of T)(T)
+  fullName.vb: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData(Of T)(T)
+  name.vb: GenerateNodeData(Of T)(T)
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData(com.absence.dialoguesystem.internals.Option)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData(com.absence.dialoguesystem.internals.Option)
+  id: GenerateOptionData(com.absence.dialoguesystem.internals.Option)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateOptionData(Option)
+  nameWithType: DataGenerator.GenerateOptionData(Option)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData(com.absence.dialoguesystem.internals.Option)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateOptionData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static OptionData GenerateOptionData(Option option)
+    parameters:
+    - id: option
+      type: com.absence.dialoguesystem.internals.Option
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.OptionData
+    content.vb: Public Shared Function GenerateOptionData([option] As [Option]) As OptionData
+  overload: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData(com.absence.dialoguesystem.internals.Blackboard)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData(com.absence.dialoguesystem.internals.Blackboard)
+  id: GenerateBlackboardData(com.absence.dialoguesystem.internals.Blackboard)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateBlackboardData(Blackboard)
+  nameWithType: DataGenerator.GenerateBlackboardData(Blackboard)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData(com.absence.dialoguesystem.internals.Blackboard)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateBlackboardData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static BlackboardData GenerateBlackboardData(Blackboard blackboard)
+    parameters:
+    - id: blackboard
+      type: com.absence.dialoguesystem.internals.Blackboard
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+    content.vb: Public Shared Function GenerateBlackboardData(blackboard As Blackboard) As BlackboardData
+  overload: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  id: GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateComparerData(NodeVariableComparer)
+  nameWithType: DataGenerator.GenerateComparerData(NodeVariableComparer)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData(com.absence.dialoguesystem.internals.NodeVariableComparer)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateComparerData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 93
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static NodeVariableComparerData GenerateComparerData(NodeVariableComparer comparer)
+    parameters:
+    - id: comparer
+      type: com.absence.dialoguesystem.internals.NodeVariableComparer
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+    content.vb: Public Shared Function GenerateComparerData(comparer As NodeVariableComparer) As NodeVariableComparerData
+  overload: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData*
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  commentId: M:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  id: GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  parent: com.absence.dialoguesystem.internals.backup.data.DataGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateSetterData(NodeVariableSetter)
+  nameWithType: DataGenerator.GenerateSetterData(NodeVariableSetter)
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData(com.absence.dialoguesystem.internals.NodeVariableSetter)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: GenerateSetterData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Backup System/Data/DataGenerator.cs
+    startLine: 105
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals.backup.data
+  syntax:
+    content: public static NodeVariableSetterData GenerateSetterData(NodeVariableSetter setter)
+    parameters:
+    - id: setter
+      type: com.absence.dialoguesystem.internals.NodeVariableSetter
+    return:
+      type: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+    content.vb: Public Shared Function GenerateSetterData(setter As NodeVariableSetter) As NodeVariableSetterData
+  overload: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData*
+references:
+- uid: com.absence.dialoguesystem.internals.backup.data
+  commentId: N:com.absence.dialoguesystem.internals.backup.data
+  href: com.html
+  name: com.absence.dialoguesystem.internals.backup.data
+  nameWithType: com.absence.dialoguesystem.internals.backup.data
+  fullName: com.absence.dialoguesystem.internals.backup.data
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup
+    name: backup
+    href: com.absence.dialoguesystem.internals.backup.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.backup.data
+    name: data
+    href: com.absence.dialoguesystem.internals.backup.data.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData
+  href: com.absence.dialoguesystem.internals.backup.data.DataGenerator.html#com_absence_dialoguesystem_internals_backup_data_DataGenerator_GenerateNodeData__1___0_
+  name: GenerateNodeData
+  nameWithType: DataGenerator.GenerateNodeData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateNodeData
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeData.html
+  name: NodeData
+  nameWithType: NodeData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeData
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData
+  href: com.absence.dialoguesystem.internals.backup.data.DataGenerator.html#com_absence_dialoguesystem_internals_backup_data_DataGenerator_GenerateOptionData_com_absence_dialoguesystem_internals_Option_
+  name: GenerateOptionData
+  nameWithType: DataGenerator.GenerateOptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateOptionData
+- uid: com.absence.dialoguesystem.internals.Option
+  commentId: T:com.absence.dialoguesystem.internals.Option
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Option.html
+  name: Option
+  nameWithType: Option
+  fullName: com.absence.dialoguesystem.internals.Option
+- uid: com.absence.dialoguesystem.internals.backup.data.OptionData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.OptionData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.OptionData.html
+  name: OptionData
+  nameWithType: OptionData
+  fullName: com.absence.dialoguesystem.internals.backup.data.OptionData
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData
+  href: com.absence.dialoguesystem.internals.backup.data.DataGenerator.html#com_absence_dialoguesystem_internals_backup_data_DataGenerator_GenerateBlackboardData_com_absence_dialoguesystem_internals_Blackboard_
+  name: GenerateBlackboardData
+  nameWithType: DataGenerator.GenerateBlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateBlackboardData
+- uid: com.absence.dialoguesystem.internals.Blackboard
+  commentId: T:com.absence.dialoguesystem.internals.Blackboard
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Blackboard.html
+  name: Blackboard
+  nameWithType: Blackboard
+  fullName: com.absence.dialoguesystem.internals.Blackboard
+- uid: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.BlackboardData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.BlackboardData.html
+  name: BlackboardData
+  nameWithType: BlackboardData
+  fullName: com.absence.dialoguesystem.internals.backup.data.BlackboardData
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData
+  href: com.absence.dialoguesystem.internals.backup.data.DataGenerator.html#com_absence_dialoguesystem_internals_backup_data_DataGenerator_GenerateComparerData_com_absence_dialoguesystem_internals_NodeVariableComparer_
+  name: GenerateComparerData
+  nameWithType: DataGenerator.GenerateComparerData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateComparerData
+- uid: com.absence.dialoguesystem.internals.NodeVariableComparer
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableComparer
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableComparer.html
+  name: NodeVariableComparer
+  nameWithType: NodeVariableComparer
+  fullName: com.absence.dialoguesystem.internals.NodeVariableComparer
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData.html
+  name: NodeVariableComparerData
+  nameWithType: NodeVariableComparerData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeVariableComparerData
+- uid: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData*
+  commentId: Overload:com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData
+  href: com.absence.dialoguesystem.internals.backup.data.DataGenerator.html#com_absence_dialoguesystem_internals_backup_data_DataGenerator_GenerateSetterData_com_absence_dialoguesystem_internals_NodeVariableSetter_
+  name: GenerateSetterData
+  nameWithType: DataGenerator.GenerateSetterData
+  fullName: com.absence.dialoguesystem.internals.backup.data.DataGenerator.GenerateSetterData
+- uid: com.absence.dialoguesystem.internals.NodeVariableSetter
+  commentId: T:com.absence.dialoguesystem.internals.NodeVariableSetter
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.NodeVariableSetter.html
+  name: NodeVariableSetter
+  nameWithType: NodeVariableSetter
+  fullName: com.absence.dialoguesystem.internals.NodeVariableSetter
+- uid: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+  commentId: T:com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData
+  parent: com.absence.dialoguesystem.internals.backup.data
+  href: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData.html
+  name: NodeVariableSetterData
+  nameWithType: NodeVariableSetterData
+  fullName: com.absence.dialoguesystem.internals.backup.data.NodeVariableSetterData

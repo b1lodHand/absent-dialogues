@@ -1,0 +1,477 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  commentId: T:com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  id: NodeViewCreationHandler
+  parent: com.absence.dialoguesystem.editor
+  children:
+  - com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView(System.Type,com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  - com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView``1(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  - com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+  - com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh
+  langs:
+  - csharp
+  - vb
+  name: NodeViewCreationHandler
+  nameWithType: NodeViewCreationHandler
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeViewCreationHandler
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: >-
+      [InitializeOnLoad]
+
+      public static class NodeViewCreationHandler
+    content.vb: >-
+      <InitializeOnLoad>
+
+      Public Module NodeViewCreationHandler
+  inheritance:
+  - System.Object
+  attributes:
+  - type: UnityEditor.InitializeOnLoadAttribute
+    ctor: UnityEditor.InitializeOnLoadAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+  commentId: P:com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+  id: Database
+  parent: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: Database
+  nameWithType: NodeViewCreationHandler.Database
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Database
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static Dictionary<Type, ConstructorInfo> Database { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,System.Reflection.ConstructorInfo}
+    content.vb: Public Shared ReadOnly Property Database As Dictionary(Of Type, ConstructorInfo)
+  overload: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database*
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh
+  commentId: M:com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh
+  id: Refresh
+  parent: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: NodeViewCreationHandler.Refresh()
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh()
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Refresh
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static void Refresh()
+    content.vb: Public Shared Sub Refresh()
+  overload: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh*
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView``1(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  commentId: M:com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView``1(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  id: CreateNodeView``1(com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  parent: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateNodeView<T>(Node, DialogueGraphView)
+  nameWithType: NodeViewCreationHandler.CreateNodeView<T>(Node, DialogueGraphView)
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView<T>(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateNodeView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+    startLine: 103
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: 'public static NodeView CreateNodeView<T>(Node node, DialogueGraphView graph) where T : Node'
+    parameters:
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: graph
+      type: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    typeParameters:
+    - id: T
+    return:
+      type: com.absence.dialoguesystem.editor.NodeView
+    content.vb: Public Shared Function CreateNodeView(Of T As Node)(node As Node, graph As DialogueGraphView) As NodeView
+  overload: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView*
+  nameWithType.vb: NodeViewCreationHandler.CreateNodeView(Of T)(Node, DialogueGraphView)
+  fullName.vb: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView(Of T)(com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  name.vb: CreateNodeView(Of T)(Node, DialogueGraphView)
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView(System.Type,com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  commentId: M:com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView(System.Type,com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  id: CreateNodeView(System.Type,com.absence.dialoguesystem.internals.Node,com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  parent: com.absence.dialoguesystem.editor.NodeViewCreationHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateNodeView(Type, Node, DialogueGraphView)
+  nameWithType: NodeViewCreationHandler.CreateNodeView(Type, Node, DialogueGraphView)
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView(System.Type, com.absence.dialoguesystem.internals.Node, com.absence.dialoguesystem.editor.internals.DialogueGraphView)
+  type: Method
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: CreateNodeView
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Editor/Scripts/NodeViewCreationHandler.cs
+    startLine: 108
+  assemblies:
+  - Assembly-CSharp-Editor-firstpass
+  namespace: com.absence.dialoguesystem.editor
+  syntax:
+    content: public static NodeView CreateNodeView(Type type, Node node, DialogueGraphView graph)
+    parameters:
+    - id: type
+      type: System.Type
+    - id: node
+      type: com.absence.dialoguesystem.internals.Node
+    - id: graph
+      type: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+    return:
+      type: com.absence.dialoguesystem.editor.NodeView
+    content.vb: Public Shared Function CreateNodeView(type As Type, node As Node, graph As DialogueGraphView) As NodeView
+  overload: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView*
+references:
+- uid: com.absence.dialoguesystem.editor
+  commentId: N:com.absence.dialoguesystem.editor
+  href: com.html
+  name: com.absence.dialoguesystem.editor
+  nameWithType: com.absence.dialoguesystem.editor
+  fullName: com.absence.dialoguesystem.editor
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+  href: com.absence.dialoguesystem.editor.NodeViewCreationHandler.html#com_absence_dialoguesystem_editor_NodeViewCreationHandler_Database
+  name: Database
+  nameWithType: NodeViewCreationHandler.Database
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Database
+- uid: System.Collections.Generic.Dictionary{System.Type,System.Reflection.ConstructorInfo}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Reflection.ConstructorInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, ConstructorInfo>
+  nameWithType: Dictionary<Type, ConstructorInfo>
+  fullName: System.Collections.Generic.Dictionary<System.Type, System.Reflection.ConstructorInfo>
+  nameWithType.vb: Dictionary(Of Type, ConstructorInfo)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Reflection.ConstructorInfo)
+  name.vb: Dictionary(Of Type, ConstructorInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ConstructorInfo
+    name: ConstructorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ConstructorInfo
+    name: ConstructorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh
+  href: com.absence.dialoguesystem.editor.NodeViewCreationHandler.html#com_absence_dialoguesystem_editor_NodeViewCreationHandler_Refresh
+  name: Refresh
+  nameWithType: NodeViewCreationHandler.Refresh
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.Refresh
+- uid: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView*
+  commentId: Overload:com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView
+  href: com.absence.dialoguesystem.editor.NodeViewCreationHandler.html#com_absence_dialoguesystem_editor_NodeViewCreationHandler_CreateNodeView__1_com_absence_dialoguesystem_internals_Node_com_absence_dialoguesystem_editor_internals_DialogueGraphView_
+  name: CreateNodeView
+  nameWithType: NodeViewCreationHandler.CreateNodeView
+  fullName: com.absence.dialoguesystem.editor.NodeViewCreationHandler.CreateNodeView
+- uid: com.absence.dialoguesystem.internals.Node
+  commentId: T:com.absence.dialoguesystem.internals.Node
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node
+  nameWithType: Node
+  fullName: com.absence.dialoguesystem.internals.Node
+- uid: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  commentId: T:com.absence.dialoguesystem.editor.internals.DialogueGraphView
+  parent: com.absence.dialoguesystem.editor.internals
+  href: com.absence.dialoguesystem.editor.internals.DialogueGraphView.html
+  name: DialogueGraphView
+  nameWithType: DialogueGraphView
+  fullName: com.absence.dialoguesystem.editor.internals.DialogueGraphView
+- uid: com.absence.dialoguesystem.editor.NodeView
+  commentId: T:com.absence.dialoguesystem.editor.NodeView
+  parent: com.absence.dialoguesystem.editor
+  href: com.absence.dialoguesystem.editor.NodeView.html
+  name: NodeView
+  nameWithType: NodeView
+  fullName: com.absence.dialoguesystem.editor.NodeView
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.editor.internals
+  commentId: N:com.absence.dialoguesystem.editor.internals
+  href: com.html
+  name: com.absence.dialoguesystem.editor.internals
+  nameWithType: com.absence.dialoguesystem.editor.internals
+  fullName: com.absence.dialoguesystem.editor.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor
+    name: editor
+    href: com.absence.dialoguesystem.editor.html
+  - name: .
+  - uid: com.absence.dialoguesystem.editor.internals
+    name: internals
+    href: com.absence.dialoguesystem.editor.internals.html
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

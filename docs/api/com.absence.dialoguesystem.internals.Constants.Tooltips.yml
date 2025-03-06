@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Tooltips
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
-    startLine: 6
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -44,20 +44,20 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: VARIABLE_NAME_HEX
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
-    startLine: 8
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 11
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public static readonly string VARIABLE_NAME_HEX
+    content: public const string VARIABLE_NAME_HEX = "#3FA6AB"
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly VARIABLE_NAME_HEX As String
+    content.vb: Public Const VARIABLE_NAME_HEX As String = "#3FA6AB"
 - uid: com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
   commentId: F:com.absence.dialoguesystem.internals.Constants.Tooltips.AND_HEX
   id: AND_HEX
@@ -71,20 +71,20 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: AND_HEX
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
-    startLine: 9
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 12
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public static readonly string AND_HEX
+    content: public const string AND_HEX = "#AB443F"
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly AND_HEX As String
+    content.vb: Public Const AND_HEX As String = "#AB443F"
 - uid: com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
   commentId: F:com.absence.dialoguesystem.internals.Constants.Tooltips.OR_HEX
   id: OR_HEX
@@ -98,20 +98,20 @@ items:
   type: Field
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: OR_HEX
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Constants.cs
-    startLine: 10
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Constants.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
   syntax:
-    content: public static readonly string OR_HEX
+    content: public const string OR_HEX = "#70AB3F"
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly OR_HEX As String
+    content.vb: Public Const OR_HEX As String = "#70AB3F"
 references:
 - uid: com.absence.dialoguesystem.internals
   commentId: N:com.absence.dialoguesystem.internals
@@ -155,7 +155,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object

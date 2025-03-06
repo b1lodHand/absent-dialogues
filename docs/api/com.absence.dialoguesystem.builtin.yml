@@ -1,0 +1,137 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  id: com.absence.dialoguesystem.builtin
+  children:
+  - com.absence.dialoguesystem.builtin.DialogueActionMapper
+  - com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+  - com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer
+  - com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy
+  - com.absence.dialoguesystem.builtin.DialogueSoundsPlayer
+  - com.absence.dialoguesystem.builtin.IAnimatorData
+  - com.absence.dialoguesystem.builtin.IAudioData
+  - com.absence.dialoguesystem.builtin.ISpriteData
+  - com.absence.dialoguesystem.builtin.NodeCustomData
+  langs:
+  - csharp
+  - vb
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp-firstpass
+references:
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData
+  commentId: T:com.absence.dialoguesystem.builtin.NodeCustomData
+  href: com.absence.dialoguesystem.builtin.NodeCustomData.html
+  name: NodeCustomData
+  nameWithType: NodeCustomData
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData
+- uid: com.absence.dialoguesystem.builtin.DialogueSoundsPlayer
+  commentId: T:com.absence.dialoguesystem.builtin.DialogueSoundsPlayer
+  href: com.absence.dialoguesystem.builtin.DialogueSoundsPlayer.html
+  name: DialogueSoundsPlayer
+  nameWithType: DialogueSoundsPlayer
+  fullName: com.absence.dialoguesystem.builtin.DialogueSoundsPlayer
+- uid: com.absence.dialoguesystem.builtin.ISpriteData
+  commentId: T:com.absence.dialoguesystem.builtin.ISpriteData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.ISpriteData.html
+  name: ISpriteData
+  nameWithType: ISpriteData
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData
+- uid: com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy
+  commentId: T:com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy
+  href: com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy.html
+  name: DialogueInputHandlerLegacy
+  nameWithType: DialogueInputHandlerLegacy
+  fullName: com.absence.dialoguesystem.builtin.DialogueInputHandlerLegacy
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData
+  commentId: T:com.absence.dialoguesystem.builtin.IAnimatorData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.IAnimatorData.html
+  name: IAnimatorData
+  nameWithType: IAnimatorData
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData
+- uid: com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer
+  commentId: T:com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer
+  href: com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer.html
+  name: DialogueAnimationsPlayer
+  nameWithType: DialogueAnimationsPlayer
+  fullName: com.absence.dialoguesystem.builtin.DialogueAnimationsPlayer
+- uid: com.absence.dialoguesystem.builtin.DialogueActionMapper
+  commentId: T:com.absence.dialoguesystem.builtin.DialogueActionMapper
+  href: com.absence.dialoguesystem.builtin.DialogueActionMapper.html
+  name: DialogueActionMapper
+  nameWithType: DialogueActionMapper
+  fullName: com.absence.dialoguesystem.builtin.DialogueActionMapper
+- uid: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+  commentId: T:com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.DialogueActionMapper.html
+  name: DialogueActionMapper.ActionMapPair
+  nameWithType: DialogueActionMapper.ActionMapPair
+  fullName: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper
+    name: DialogueActionMapper
+    href: com.absence.dialoguesystem.builtin.DialogueActionMapper.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+    name: ActionMapPair
+    href: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper
+    name: DialogueActionMapper
+    href: com.absence.dialoguesystem.builtin.DialogueActionMapper.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair
+    name: ActionMapPair
+    href: com.absence.dialoguesystem.builtin.DialogueActionMapper.ActionMapPair.html
+- uid: com.absence.dialoguesystem.builtin.IAudioData
+  commentId: T:com.absence.dialoguesystem.builtin.IAudioData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.IAudioData.html
+  name: IAudioData
+  nameWithType: IAudioData
+  fullName: com.absence.dialoguesystem.builtin.IAudioData
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  href: com.html
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html

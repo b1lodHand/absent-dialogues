@@ -1,0 +1,472 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData
+  commentId: T:com.absence.dialoguesystem.builtin.NodeCustomData
+  id: NodeCustomData
+  parent: com.absence.dialoguesystem.builtin
+  children:
+  - com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+  - com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+  - com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+  langs:
+  - csharp
+  - vb
+  name: NodeCustomData
+  nameWithType: NodeCustomData
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: NodeCustomData
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  syntax:
+    content: >-
+      [CreateAssetMenu(menuName = "Create/absencee_/absent-dialogues/Node Custom Data", fileName = "New Node Custom Data")]
+
+      public class NodeCustomData : NodeCustomDataBase, IAudioData, IAnimatorData, ISpriteData
+    content.vb: >-
+      <CreateAssetMenu(menuName:="Create/absencee_/absent-dialogues/Node Custom Data", fileName:="New Node Custom Data")>
+
+      Public Class NodeCustomData Inherits NodeCustomDataBase Implements IAudioData, IAnimatorData, ISpriteData
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.ScriptableObject
+  - com.absence.dialoguesystem.NodeCustomDataBase
+  implements:
+  - com.absence.dialoguesystem.builtin.IAudioData
+  - com.absence.dialoguesystem.builtin.IAnimatorData
+  - com.absence.dialoguesystem.builtin.ISpriteData
+  inheritedMembers:
+  - com.absence.dialoguesystem.NodeCustomDataBase.CustomInfo
+  - UnityEngine.ScriptableObject.SetDirty
+  - UnityEngine.ScriptableObject.CreateInstance(System.String)
+  - UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  - UnityEngine.ScriptableObject.CreateInstance``1
+  attributes:
+  - type: UnityEngine.CreateAssetMenuAttribute
+    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: menuName
+      type: System.String
+      value: Create/absencee_/absent-dialogues/Node Custom Data
+    - name: fileName
+      type: System.String
+      value: New Node Custom Data
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+  commentId: P:com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+  id: AudioClip
+  parent: com.absence.dialoguesystem.builtin.NodeCustomData
+  langs:
+  - csharp
+  - vb
+  name: AudioClip
+  nameWithType: NodeCustomData.AudioClip
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AudioClip
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  example: []
+  syntax:
+    content: public AudioClip AudioClip { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.AudioClip
+    content.vb: Public Property AudioClip As AudioClip
+  overload: com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip*
+  implements:
+  - com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+  commentId: P:com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+  id: Sprite
+  parent: com.absence.dialoguesystem.builtin.NodeCustomData
+  langs:
+  - csharp
+  - vb
+  name: Sprite
+  nameWithType: NodeCustomData.Sprite
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Sprite
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  example: []
+  syntax:
+    content: public Sprite Sprite { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Public Property Sprite As Sprite
+  overload: com.absence.dialoguesystem.builtin.NodeCustomData.Sprite*
+  implements:
+  - com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+  id: AnimatorMemberName
+  parent: com.absence.dialoguesystem.builtin.NodeCustomData
+  langs:
+  - csharp
+  - vb
+  name: AnimatorMemberName
+  nameWithType: NodeCustomData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: AnimatorMemberName
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/BuiltIn/NodeCustomData.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.builtin
+  example: []
+  syntax:
+    content: public string AnimatorMemberName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AnimatorMemberName As String
+  overload: com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName*
+  implements:
+  - com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+references:
+- uid: com.absence.dialoguesystem.builtin
+  commentId: N:com.absence.dialoguesystem.builtin
+  href: com.html
+  name: com.absence.dialoguesystem.builtin
+  nameWithType: com.absence.dialoguesystem.builtin
+  fullName: com.absence.dialoguesystem.builtin
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.builtin
+    name: builtin
+    href: com.absence.dialoguesystem.builtin.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: com.absence.dialoguesystem.NodeCustomDataBase
+  commentId: T:com.absence.dialoguesystem.NodeCustomDataBase
+  parent: com.absence.dialoguesystem
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html
+  name: NodeCustomDataBase
+  nameWithType: NodeCustomDataBase
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase
+- uid: com.absence.dialoguesystem.builtin.IAudioData
+  commentId: T:com.absence.dialoguesystem.builtin.IAudioData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.IAudioData.html
+  name: IAudioData
+  nameWithType: IAudioData
+  fullName: com.absence.dialoguesystem.builtin.IAudioData
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData
+  commentId: T:com.absence.dialoguesystem.builtin.IAnimatorData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.IAnimatorData.html
+  name: IAnimatorData
+  nameWithType: IAnimatorData
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData
+- uid: com.absence.dialoguesystem.builtin.ISpriteData
+  commentId: T:com.absence.dialoguesystem.builtin.ISpriteData
+  parent: com.absence.dialoguesystem.builtin
+  href: com.absence.dialoguesystem.builtin.ISpriteData.html
+  name: ISpriteData
+  nameWithType: ISpriteData
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData
+- uid: com.absence.dialoguesystem.NodeCustomDataBase.CustomInfo
+  commentId: F:com.absence.dialoguesystem.NodeCustomDataBase.CustomInfo
+  parent: com.absence.dialoguesystem.NodeCustomDataBase
+  href: com.absence.dialoguesystem.NodeCustomDataBase.html#com_absence_dialoguesystem_NodeCustomDataBase_CustomInfo
+  name: CustomInfo
+  nameWithType: NodeCustomDataBase.CustomInfo
+  fullName: com.absence.dialoguesystem.NodeCustomDataBase.CustomInfo
+- uid: UnityEngine.ScriptableObject.SetDirty
+  commentId: M:UnityEngine.ScriptableObject.SetDirty
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: SetDirty()
+  nameWithType: ScriptableObject.SetDirty()
+  fullName: UnityEngine.ScriptableObject.SetDirty()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateInstance(string)
+  nameWithType: ScriptableObject.CreateInstance(string)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(string)
+  nameWithType.vb: ScriptableObject.CreateInstance(String)
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(String)
+  name.vb: CreateInstance(String)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: CreateInstance(Type)
+  nameWithType: ScriptableObject.CreateInstance(Type)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance``1
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance<T>()
+  nameWithType: ScriptableObject.CreateInstance<T>()
+  fullName: UnityEngine.ScriptableObject.CreateInstance<T>()
+  nameWithType.vb: ScriptableObject.CreateInstance(Of T)()
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip*
+  commentId: Overload:com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+  href: com.absence.dialoguesystem.builtin.NodeCustomData.html#com_absence_dialoguesystem_builtin_NodeCustomData_AudioClip
+  name: AudioClip
+  nameWithType: NodeCustomData.AudioClip
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.AudioClip
+- uid: com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  commentId: P:com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+  parent: com.absence.dialoguesystem.builtin.IAudioData
+  href: com.absence.dialoguesystem.builtin.IAudioData.html#com_absence_dialoguesystem_builtin_IAudioData_AudioClip
+  name: AudioClip
+  nameWithType: IAudioData.AudioClip
+  fullName: com.absence.dialoguesystem.builtin.IAudioData.AudioClip
+- uid: UnityEngine.AudioClip
+  commentId: T:UnityEngine.AudioClip
+  parent: UnityEngine
+  isExternal: true
+  name: AudioClip
+  nameWithType: AudioClip
+  fullName: UnityEngine.AudioClip
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.Sprite*
+  commentId: Overload:com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+  href: com.absence.dialoguesystem.builtin.NodeCustomData.html#com_absence_dialoguesystem_builtin_NodeCustomData_Sprite
+  name: Sprite
+  nameWithType: NodeCustomData.Sprite
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.Sprite
+- uid: com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  commentId: P:com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+  parent: com.absence.dialoguesystem.builtin.ISpriteData
+  href: com.absence.dialoguesystem.builtin.ISpriteData.html#com_absence_dialoguesystem_builtin_ISpriteData_Sprite
+  name: Sprite
+  nameWithType: ISpriteData.Sprite
+  fullName: com.absence.dialoguesystem.builtin.ISpriteData.Sprite
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName*
+  commentId: Overload:com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+  href: com.absence.dialoguesystem.builtin.NodeCustomData.html#com_absence_dialoguesystem_builtin_NodeCustomData_AnimatorMemberName
+  name: AnimatorMemberName
+  nameWithType: NodeCustomData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.builtin.NodeCustomData.AnimatorMemberName
+- uid: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  commentId: P:com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+  parent: com.absence.dialoguesystem.builtin.IAnimatorData
+  href: com.absence.dialoguesystem.builtin.IAnimatorData.html#com_absence_dialoguesystem_builtin_IAnimatorData_AnimatorMemberName
+  name: AnimatorMemberName
+  nameWithType: IAnimatorData.AnimatorMemberName
+  fullName: com.absence.dialoguesystem.builtin.IAnimatorData.AnimatorMemberName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

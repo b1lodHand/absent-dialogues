@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Utilities.cs
       branch: development
       repo: https://github.com/b1lodHand/absent-dialogues.git
     id: Utilities
-    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Internal/Static/Utilities.cs
-    startLine: 5
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Static/Utilities.cs
+    startLine: 6
   assemblies:
   - Assembly-CSharp-firstpass
   namespace: com.absence.dialoguesystem.internals
@@ -71,7 +71,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object

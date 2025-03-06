@@ -1,0 +1,189 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.PersonOverride
+  commentId: T:com.absence.dialoguesystem.internals.PersonOverride
+  id: PersonOverride
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.PersonOverride.Override
+  - com.absence.dialoguesystem.internals.PersonOverride.Target
+  langs:
+  - csharp
+  - vb
+  name: PersonOverride
+  nameWithType: PersonOverride
+  fullName: com.absence.dialoguesystem.internals.PersonOverride
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PersonOverride
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class PersonOverride
+    content.vb: >-
+      <Serializable>
+
+      Public Class PersonOverride
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: com.absence.dialoguesystem.internals.PersonOverride.Target
+  commentId: F:com.absence.dialoguesystem.internals.PersonOverride.Target
+  id: Target
+  parent: com.absence.dialoguesystem.internals.PersonOverride
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: PersonOverride.Target
+  fullName: com.absence.dialoguesystem.internals.PersonOverride.Target
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Target
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public Person Target
+    return:
+      type: com.absence.personsystem.Person
+    content.vb: Public Target As Person
+- uid: com.absence.dialoguesystem.internals.PersonOverride.Override
+  commentId: F:com.absence.dialoguesystem.internals.PersonOverride.Override
+  id: Override
+  parent: com.absence.dialoguesystem.internals.PersonOverride
+  langs:
+  - csharp
+  - vb
+  name: Override
+  nameWithType: PersonOverride.Override
+  fullName: com.absence.dialoguesystem.internals.PersonOverride.Override
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Override
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/PersonOverride.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: public Person Override
+    return:
+      type: com.absence.personsystem.Person
+    content.vb: Public Override As Person
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.personsystem.Person
+  commentId: T:com.absence.personsystem.Person
+  parent: com.absence.personsystem
+  isExternal: true
+  name: Person
+  nameWithType: Person
+  fullName: com.absence.personsystem.Person
+- uid: com.absence.personsystem
+  commentId: N:com.absence.personsystem
+  isExternal: true
+  name: com.absence.personsystem
+  nameWithType: com.absence.personsystem
+  fullName: com.absence.personsystem
+  spec.csharp:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.personsystem
+    name: personsystem
+    isExternal: true
+  spec.vb:
+  - uid: com
+    name: com
+    isExternal: true
+  - name: .
+  - uid: com.absence
+    name: absence
+    isExternal: true
+  - name: .
+  - uid: com.absence.personsystem
+    name: personsystem
+    isExternal: true

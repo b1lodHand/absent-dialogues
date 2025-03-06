@@ -1,0 +1,220 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.Package.Version
+  commentId: T:com.absence.dialoguesystem.Package.Version
+  id: Package.Version
+  parent: com.absence.dialoguesystem
+  children:
+  - com.absence.dialoguesystem.Package.Version.MAJOR
+  - com.absence.dialoguesystem.Package.Version.MINOR
+  - com.absence.dialoguesystem.Package.Version.PATCH
+  - com.absence.dialoguesystem.Package.Version.VERSION
+  langs:
+  - csharp
+  - vb
+  name: Package.Version
+  nameWithType: Package.Version
+  fullName: com.absence.dialoguesystem.Package.Version
+  type: Class
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Version
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static class Package.Version
+    content.vb: Public Module Package.Version
+  inheritance:
+  - System.Object
+- uid: com.absence.dialoguesystem.Package.Version.VERSION
+  commentId: P:com.absence.dialoguesystem.Package.Version.VERSION
+  id: VERSION
+  parent: com.absence.dialoguesystem.Package.Version
+  langs:
+  - csharp
+  - vb
+  name: VERSION
+  nameWithType: Package.Version.VERSION
+  fullName: com.absence.dialoguesystem.Package.Version.VERSION
+  type: Property
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: VERSION
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public static string VERSION { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property VERSION As String
+  overload: com.absence.dialoguesystem.Package.Version.VERSION*
+- uid: com.absence.dialoguesystem.Package.Version.MAJOR
+  commentId: F:com.absence.dialoguesystem.Package.Version.MAJOR
+  id: MAJOR
+  parent: com.absence.dialoguesystem.Package.Version
+  langs:
+  - csharp
+  - vb
+  name: MAJOR
+  nameWithType: Package.Version.MAJOR
+  fullName: com.absence.dialoguesystem.Package.Version.MAJOR
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: MAJOR
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public const uint MAJOR = 1
+    return:
+      type: System.UInt32
+    content.vb: Public Const MAJOR As UInteger = 1
+- uid: com.absence.dialoguesystem.Package.Version.MINOR
+  commentId: F:com.absence.dialoguesystem.Package.Version.MINOR
+  id: MINOR
+  parent: com.absence.dialoguesystem.Package.Version
+  langs:
+  - csharp
+  - vb
+  name: MINOR
+  nameWithType: Package.Version.MINOR
+  fullName: com.absence.dialoguesystem.Package.Version.MINOR
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: MINOR
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public const uint MINOR = 3
+    return:
+      type: System.UInt32
+    content.vb: Public Const MINOR As UInteger = 3
+- uid: com.absence.dialoguesystem.Package.Version.PATCH
+  commentId: F:com.absence.dialoguesystem.Package.Version.PATCH
+  id: PATCH
+  parent: com.absence.dialoguesystem.Package.Version
+  langs:
+  - csharp
+  - vb
+  name: PATCH
+  nameWithType: Package.Version.PATCH
+  fullName: com.absence.dialoguesystem.Package.Version.PATCH
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: PATCH
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Initial/Package.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem
+  syntax:
+    content: public const uint PATCH = 0
+    return:
+      type: System.UInt32
+    content.vb: Public Const PATCH As UInteger = 0
+references:
+- uid: com.absence.dialoguesystem
+  commentId: N:com.absence.dialoguesystem
+  href: com.html
+  name: com.absence.dialoguesystem
+  nameWithType: com.absence.dialoguesystem
+  fullName: com.absence.dialoguesystem
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.absence.dialoguesystem.Package.Version.VERSION*
+  commentId: Overload:com.absence.dialoguesystem.Package.Version.VERSION
+  href: com.absence.dialoguesystem.Package.Version.html#com_absence_dialoguesystem_Package_Version_VERSION
+  name: VERSION
+  nameWithType: Package.Version.VERSION
+  fullName: com.absence.dialoguesystem.Package.Version.VERSION
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger

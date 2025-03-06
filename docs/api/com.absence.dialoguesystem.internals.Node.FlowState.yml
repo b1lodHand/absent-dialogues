@@ -1,0 +1,173 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.absence.dialoguesystem.internals.Node.FlowState
+  commentId: T:com.absence.dialoguesystem.internals.Node.FlowState
+  id: Node.FlowState
+  parent: com.absence.dialoguesystem.internals
+  children:
+  - com.absence.dialoguesystem.internals.Node.FlowState.Current
+  - com.absence.dialoguesystem.internals.Node.FlowState.Past
+  - com.absence.dialoguesystem.internals.Node.FlowState.Unreached
+  langs:
+  - csharp
+  - vb
+  name: Node.FlowState
+  nameWithType: Node.FlowState
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState
+  type: Enum
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: FlowState
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  summary: Describes the node's state on the flow. While progressing in the dialogue.
+  example: []
+  syntax:
+    content: public enum Node.FlowState
+    content.vb: Public Enum Node.FlowState
+- uid: com.absence.dialoguesystem.internals.Node.FlowState.Unreached
+  commentId: F:com.absence.dialoguesystem.internals.Node.FlowState.Unreached
+  id: Unreached
+  parent: com.absence.dialoguesystem.internals.Node.FlowState
+  langs:
+  - csharp
+  - vb
+  name: Unreached
+  nameWithType: Node.FlowState.Unreached
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState.Unreached
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Unreached
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Unreached = 0
+    return:
+      type: com.absence.dialoguesystem.internals.Node.FlowState
+- uid: com.absence.dialoguesystem.internals.Node.FlowState.Current
+  commentId: F:com.absence.dialoguesystem.internals.Node.FlowState.Current
+  id: Current
+  parent: com.absence.dialoguesystem.internals.Node.FlowState
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: Node.FlowState.Current
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState.Current
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Current
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Current = 1
+    return:
+      type: com.absence.dialoguesystem.internals.Node.FlowState
+- uid: com.absence.dialoguesystem.internals.Node.FlowState.Past
+  commentId: F:com.absence.dialoguesystem.internals.Node.FlowState.Past
+  id: Past
+  parent: com.absence.dialoguesystem.internals.Node.FlowState
+  langs:
+  - csharp
+  - vb
+  name: Past
+  nameWithType: Node.FlowState.Past
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState.Past
+  type: Field
+  source:
+    remote:
+      path: absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+      branch: development
+      repo: https://github.com/b1lodHand/absent-dialogues.git
+    id: Past
+    path: ../absent-dialogues/Assets/Plugins/absencee_/absent-dialogues/Runtime/Internals/Classes/Node.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp-firstpass
+  namespace: com.absence.dialoguesystem.internals
+  syntax:
+    content: Past = 2
+    return:
+      type: com.absence.dialoguesystem.internals.Node.FlowState
+references:
+- uid: com.absence.dialoguesystem.internals
+  commentId: N:com.absence.dialoguesystem.internals
+  href: com.html
+  name: com.absence.dialoguesystem.internals
+  nameWithType: com.absence.dialoguesystem.internals
+  fullName: com.absence.dialoguesystem.internals
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.absence
+    name: absence
+    href: com.absence.html
+  - name: .
+  - uid: com.absence.dialoguesystem
+    name: dialoguesystem
+    href: com.absence.dialoguesystem.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals
+    name: internals
+    href: com.absence.dialoguesystem.internals.html
+- uid: com.absence.dialoguesystem.internals.Node.FlowState
+  commentId: T:com.absence.dialoguesystem.internals.Node.FlowState
+  parent: com.absence.dialoguesystem.internals
+  href: com.absence.dialoguesystem.internals.Node.html
+  name: Node.FlowState
+  nameWithType: Node.FlowState
+  fullName: com.absence.dialoguesystem.internals.Node.FlowState
+  spec.csharp:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+    href: com.absence.dialoguesystem.internals.Node.FlowState.html
+  spec.vb:
+  - uid: com.absence.dialoguesystem.internals.Node
+    name: Node
+    href: com.absence.dialoguesystem.internals.Node.html
+  - name: .
+  - uid: com.absence.dialoguesystem.internals.Node.FlowState
+    name: FlowState
+    href: com.absence.dialoguesystem.internals.Node.FlowState.html
