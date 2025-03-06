@@ -3,7 +3,7 @@ using com.absence.dialoguesystem.internals;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomEditor(typeof(PromptNode), true, isFallback = false)]
     public class PromptNodeEditor : Editor

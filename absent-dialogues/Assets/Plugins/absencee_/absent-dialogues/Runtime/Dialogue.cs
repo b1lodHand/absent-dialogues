@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
+using com.absence.dialoguesystem.internals;
 
 namespace com.absence.dialoguesystem
 {

@@ -9,6 +9,7 @@ using System.Linq;
 using Node = com.absence.dialoguesystem.internals.Node;
 using com.absence.personsystem;
 using com.absence.dialoguesystem.internals;
+using com.absence.dialoguesystem.editor.internals;
 
 namespace com.absence.dialoguesystem.editor
 {

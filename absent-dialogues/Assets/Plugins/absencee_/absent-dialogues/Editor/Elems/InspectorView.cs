@@ -1,10 +1,9 @@
-using com.absence.attributes.editor;
 using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     /// <summary>
     /// A visual element subtype which is responsible for rendering a node's inspector properties when selected.

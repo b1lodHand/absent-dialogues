@@ -1,6 +1,6 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime.backup;
-using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.internals.backup;
+using com.absence.dialoguesystem.internals.backup.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor.backup
+namespace com.absence.dialoguesystem.editor.internals.backup
 {
     public static class DialogueImporter
     {

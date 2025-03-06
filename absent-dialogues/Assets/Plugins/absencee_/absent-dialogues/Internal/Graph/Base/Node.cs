@@ -1,11 +1,11 @@
 using com.absence.attributes.experimental;
-using com.absence.dialoguesystem.runtime.backup;
-using com.absence.dialoguesystem.runtime.backup.data;
 using com.absence.personsystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using com.absence.dialoguesystem.internals.backup.data;
+using com.absence.dialoguesystem.internals.backup;
 
 #if UNITY_EDITOR
 using UnityEditor;

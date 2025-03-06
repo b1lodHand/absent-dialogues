@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace com.absence.dialoguesystem.editor.backup.utilities
+namespace com.absence.dialoguesystem.editor.internals.backup
 {
     public static class FileHelper
     {

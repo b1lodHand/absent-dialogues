@@ -3,7 +3,7 @@ using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace com.absence.dialoguesystem.runtime.backup.internals
+namespace com.absence.dialoguesystem.internals.backup
 {
     public static class DialogueExportSettings
     {

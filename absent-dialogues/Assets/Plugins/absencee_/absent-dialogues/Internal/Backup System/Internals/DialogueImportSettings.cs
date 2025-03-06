@@ -2,7 +2,7 @@ using com.absence.dialoguesystem.internals;
 using System.Collections.Generic;
 using com.absence.variablesystem.banksystembase;
 
-namespace com.absence.dialoguesystem.runtime.backup.internals
+namespace com.absence.dialoguesystem.internals.backup
 {
     public static class DialogueImportSettings
     {

@@ -1,3 +1,4 @@
+using com.absence.dialoguesystem.editor.internals;
 using com.absence.dialoguesystem.internals;
 using System;
 using System.Collections.Generic;

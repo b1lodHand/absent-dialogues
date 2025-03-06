@@ -1,6 +1,5 @@
-using com.absence.dialoguesystem.runtime.backup;
-using com.absence.dialoguesystem.runtime.backup.data;
-using com.absence.dialoguesystem.runtime.backup.internals;
+using com.absence.dialoguesystem.internals.backup;
+using com.absence.dialoguesystem.internals.backup.data;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;

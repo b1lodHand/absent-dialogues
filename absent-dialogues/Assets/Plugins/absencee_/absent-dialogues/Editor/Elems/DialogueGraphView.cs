@@ -11,7 +11,7 @@ using com.absence.utilities;
 using System.Text;
 using System.Reflection;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     /// <summary>
     /// The graph view responsible for rendering a dialogue's graph elements.

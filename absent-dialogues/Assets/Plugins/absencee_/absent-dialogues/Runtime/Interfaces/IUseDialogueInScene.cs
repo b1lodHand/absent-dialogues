@@ -1,8 +1,7 @@
 using System;
 
-namespace com.absence.dialoguesystem
-{
-    /// <summary>
+namespace com.absence.dialoguesystem.internals
+{   /// <summary>
     /// Any game object with a script that implements this interface attached will display it's dialogue when gets selected.
     /// </summary>
     public interface IUseDialogueInScene

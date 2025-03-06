@@ -1,9 +1,8 @@
 using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime.backup.data;
-using System;
+using com.absence.dialoguesystem.internals.backup.data;
 using System.Collections.Generic;
 
-namespace com.absence.dialoguesystem.editor.backup
+namespace com.absence.dialoguesystem.editor.internals.backup
 {
     public static class DialogueExporter
     {

@@ -1,4 +1,5 @@
 using com.absence.attributes;
+using com.absence.dialoguesystem.examples;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using com.absence.utilities;

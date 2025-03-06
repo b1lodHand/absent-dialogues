@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem.examples
     /// A simple component to show how to use the system in the recommended way.
     /// </summary>
     [RequireComponent(typeof(DialogueInstance))]
-    public class Demo_GUI : DialogueExtensionBase
+    public class DemoGUI : DialogueExtensionBase
     {
         const string K_MISSIONPENDING = "b_missionPending";     // using constants
         const string K_MISSIONDONE = "b_missionDone";           // to avoid any

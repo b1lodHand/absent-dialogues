@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomNodeView(typeof(PromptNode))]
     public class PromptNodeView : NodeView

@@ -1,5 +1,3 @@
-using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime.backup.internals;
 using com.absence.variablesystem.builtin;
 using System;
 using System.Collections.Generic;
@@ -10,7 +8,7 @@ using UnityEditor;
 using System.Reflection;
 #endif
 
-namespace com.absence.dialoguesystem.runtime.backup.data
+namespace com.absence.dialoguesystem.internals.backup.data
 {
     public static class DataReader
     {

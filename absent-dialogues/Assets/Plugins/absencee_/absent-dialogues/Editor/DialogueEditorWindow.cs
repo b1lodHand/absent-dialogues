@@ -1,5 +1,5 @@
-﻿using com.absence.dialoguesystem.editor.backup;
-using com.absence.dialoguesystem.editor.backup.internals;
+﻿using com.absence.dialoguesystem.editor.internals;
+using com.absence.dialoguesystem.editor.internals.backup;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -162,7 +162,8 @@ namespace com.absence.dialoguesystem.editor
 
         public void CreateGUI()
         {
-            Current = this;
+            if (Current == null) 
+                Current = this;
 
             // Find the root.
             VisualElement root = rootVisualElement;
@@ -214,26 +215,34 @@ namespace com.absence.dialoguesystem.editor
 
         private void SetupToolbar(VisualElement root)
         {
-            Create_DialoguePartFinder();
-            Create_FindRootButton();
-            //Create_EmptySpace(120f);
-            Create_DialogueObjectField();
-            Create_EmptySpace(10f);
-            Create_ShowDialogueButton();
-            Create_ExportButton();
-            Create_ImportButton();
+            VisualElement leftPanel = new VisualElement();
+            VisualElement rightPanel = new VisualElement();
+            leftPanel.AddToClassList("toolbar-left-panel");
+            rightPanel.AddToClassList("toolbar-right-panel");
+            m_toolbar.Add(leftPanel);
+            m_toolbar.Add(rightPanel);
+
+            Create_EmptySpace(10f, leftPanel);
+            Create_DialoguePartFinder(leftPanel);
+            Create_FindRootButton(leftPanel);
+
+            Create_DialogueObjectField(rightPanel);
+            Create_ShowDialogueButton(rightPanel);
+            Create_ExportButton(rightPanel);
+            Create_ImportButton(rightPanel);
+            Create_EmptySpace(10f, rightPanel);
             return;
 
-            void Create_EmptySpace(float width)
+            void Create_EmptySpace(float width, VisualElement panel)
             {
                 ToolbarButton space = new();
                 space.SetEnabled(false);
                 space.style.width = width;
 
-                m_toolbar.Add(space);
+                panel.Add(space);
             }
 
-            void Create_DialoguePartFinder()
+            void Create_DialoguePartFinder(VisualElement panel)
             {
                 m_dialoguePartFinder = new ToolbarMenu();
                 m_dialoguePartFinder.text = "Find Section";
@@ -241,10 +250,10 @@ namespace com.absence.dialoguesystem.editor
 
                 RefreshDialoguePartFinder();
 
-                m_toolbar.Add(m_dialoguePartFinder);
+                panel.Add(m_dialoguePartFinder);
             }
 
-            void Create_FindRootButton()
+            void Create_FindRootButton(VisualElement panel)
             {
                 var findRootButton = new ToolbarButton(() =>
                 {
@@ -260,10 +269,10 @@ namespace com.absence.dialoguesystem.editor
 
                 m_findRootButton = findRootButton;
 
-                m_toolbar.Add(findRootButton);
+                panel.Add(findRootButton);
             }
 
-            void Create_DialogueObjectField()
+            void Create_DialogueObjectField(VisualElement panel)
             {
                 ObjectField dialogObjectField = new ObjectField("");
                 dialogObjectField.name = "dialogue-object-field";
@@ -290,10 +299,10 @@ namespace com.absence.dialoguesystem.editor
 
                 m_dialogueObjectField = dialogObjectField;
 
-                m_toolbar.Add(dialogObjectField);
+                panel.Add(dialogObjectField);
             }
 
-            void Create_ShowDialogueButton()
+            void Create_ShowDialogueButton(VisualElement panel)
             {
                 Button pingButton = new Button();
                 pingButton.text = "ⓘ";
@@ -312,10 +321,10 @@ namespace com.absence.dialoguesystem.editor
 
                 m_infoButton = pingButton;
 
-                m_toolbar.Add(pingButton);
+                panel.Add(pingButton);
             }
 
-            void Create_ImportButton()
+            void Create_ImportButton(VisualElement panel)
             {
                 Button importButton = new Button();
                 importButton.text = "↧";
@@ -325,15 +334,19 @@ namespace com.absence.dialoguesystem.editor
 
                 importButton.clicked += () =>
                 {
-                    BackupSystem.ImportNewDialogue();
+                    BackupSystem.ImportNewDialogue((dialogue) =>
+                    {
+                        Selection.activeObject = dialogue;
+                        PopulateDialogueView(dialogue);
+                    });
                 };
 
                 m_importButton = importButton;
 
-                m_toolbar.Add(importButton);
+                panel.Add(importButton);
             }
 
-            void Create_ExportButton()
+            void Create_ExportButton(VisualElement panel)
             {
                 Button exportButton = new Button();
                 exportButton.text = "↥";
@@ -348,7 +361,7 @@ namespace com.absence.dialoguesystem.editor
 
                 m_exportButton = exportButton;
 
-                m_toolbar.Add(exportButton);
+                panel.Add(exportButton);
             }
         }
         private void SetupEvents()

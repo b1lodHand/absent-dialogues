@@ -1,7 +1,7 @@
-using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.internals.backup.data;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor.backup.utilities
+namespace com.absence.dialoguesystem.editor.internals.backup
 {
     public static class JsonHelper
     {

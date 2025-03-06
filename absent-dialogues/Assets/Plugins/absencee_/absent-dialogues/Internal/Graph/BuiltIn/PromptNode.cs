@@ -1,11 +1,8 @@
-using com.absence.dialoguesystem.runtime.backup;
-using com.absence.dialoguesystem.runtime.backup.data;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
-namespace com.absence.dialoguesystem.internals 
+namespace com.absence.dialoguesystem.internals
 {
     /// <summary>
     /// Node which displays a speech with options.

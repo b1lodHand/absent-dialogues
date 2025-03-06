@@ -15,6 +15,14 @@ GridBackground {
     display: none;
 }
 
+#toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-self: stretch;
+}
+
 .panel-label {
     -unity-font-style: bold;
     -unity-text-align: middle-center;
@@ -38,4 +46,21 @@ GridBackground {
 }
 
 .toolbar-right-panel {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: stretch;
+}
+
+.toolbar-left-panel {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: stretch;
+}
+
+DialogueGraphView {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }

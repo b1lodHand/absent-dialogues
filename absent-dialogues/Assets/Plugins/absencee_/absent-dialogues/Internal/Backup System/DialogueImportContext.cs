@@ -1,8 +1,7 @@
-using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.internals.backup.data;
 using System.Collections.Generic;
 
-namespace com.absence.dialoguesystem.runtime.backup
+namespace com.absence.dialoguesystem.internals.backup
 {
     [System.Serializable]
     public class DialogueImportContext 

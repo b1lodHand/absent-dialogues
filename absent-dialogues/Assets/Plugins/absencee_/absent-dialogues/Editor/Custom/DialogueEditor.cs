@@ -1,9 +1,8 @@
 ﻿using com.absence.attributes.editor;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomEditor(typeof(Dialogue))]
     public class DialogueEditor : Editor

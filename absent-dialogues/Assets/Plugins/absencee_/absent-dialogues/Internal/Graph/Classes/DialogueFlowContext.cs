@@ -1,6 +1,7 @@
+using com.absence.dialoguesystem.internals;
 using System.Collections.Generic;
 
-namespace com.absence.dialoguesystem.internals
+namespace com.absence.dialoguesystem
 {
     [System.Serializable]
     public class DialogueFlowContext

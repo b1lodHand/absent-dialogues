@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace com.absence.dialoguesystem.internals
 {
     public static class Constants

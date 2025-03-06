@@ -3,7 +3,7 @@ using com.absence.dialoguesystem.internals;
 using System;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.examples
 {
     /// <summary>
     /// A small component which is responsible for playing the animations (if there is any) of the dialogue instance

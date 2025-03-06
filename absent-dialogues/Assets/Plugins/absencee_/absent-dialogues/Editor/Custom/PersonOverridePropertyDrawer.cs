@@ -1,8 +1,9 @@
+using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomPropertyDrawer(typeof(PersonOverride), true)]
     public class PersonOverridePropertyDrawer : PropertyDrawer

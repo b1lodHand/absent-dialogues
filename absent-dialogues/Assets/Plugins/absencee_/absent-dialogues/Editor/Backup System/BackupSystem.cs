@@ -1,13 +1,13 @@
-using com.absence.dialoguesystem.editor.backup.utilities;
-using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.internals.backup.data;
+using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor.backup
+namespace com.absence.dialoguesystem.editor.internals.backup
 {
     public static class BackupSystem
     {
-        public static void ImportNewDialogue()
+        public static void ImportNewDialogue(Action<Dialogue> onCreationComplete = null)
         {
             string jsonFilePath = EditorUtility.OpenFilePanel("Select a Valid Json File", "", "json");
 
@@ -25,7 +25,7 @@ namespace com.absence.dialoguesystem.editor.backup
 
             string fullPath = $"{dialogueCreationPath}/{data.DefaultDialogueName}.asset";
 
-            DialogueImporter.Import(data, fullPath);
+            DialogueImporter.Import(data, fullPath, onCreationComplete);
 
             Debug.Log("Imported dialogue successfully!");
         }

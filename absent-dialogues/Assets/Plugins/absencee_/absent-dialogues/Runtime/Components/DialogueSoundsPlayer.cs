@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.examples
 {
     /// <summary>
     /// A small component which is responsible for playing the sounds (if there is any) of the <see cref="DialogueInstance"/>

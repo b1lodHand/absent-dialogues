@@ -2,7 +2,7 @@ using com.absence.dialoguesystem.internals;
 using System.Text;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomNodeView(typeof(EventNode))]
     public class EventNodeView : NodeView

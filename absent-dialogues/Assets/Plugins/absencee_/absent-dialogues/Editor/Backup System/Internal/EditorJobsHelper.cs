@@ -1,9 +1,7 @@
-using com.absence.dialoguesystem.editor.backup.utilities;
-using com.absence.dialoguesystem.runtime.backup.data;
+using com.absence.dialoguesystem.editor.internals.backup;
 using UnityEditor;
-using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor.backup.internals
+namespace com.absence.dialoguesystem.editor.internals
 {
     public static class EditorJobsHelper
     {

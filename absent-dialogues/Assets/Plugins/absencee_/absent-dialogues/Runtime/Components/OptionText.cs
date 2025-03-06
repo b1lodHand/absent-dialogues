@@ -3,7 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.examples
 {
     /// <summary>
     /// A small component that manages the functionality of an option's drawing and input.

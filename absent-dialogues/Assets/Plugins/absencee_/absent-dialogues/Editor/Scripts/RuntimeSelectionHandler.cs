@@ -1,8 +1,8 @@
-using System;
+using com.absence.dialoguesystem.internals;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     /// <summary>
     /// It handles the selection events of <see cref="IUseDialogueInScene"/> game objects.

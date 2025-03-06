@@ -1,9 +1,9 @@
+using com.absence.dialoguesystem.examples;
 using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.examples
 {
     [CustomPropertyDrawer(typeof(DialogueActionMapper.ActionMapPair))]
     public class ActionMapPairPropertyDrawer : PropertyDrawer

@@ -1,4 +1,4 @@
-namespace com.absence.dialoguesystem.runtime.backup.data
+namespace com.absence.dialoguesystem.internals.backup.data
 {
     [System.Serializable]
     public class GenericOptionReferenceData

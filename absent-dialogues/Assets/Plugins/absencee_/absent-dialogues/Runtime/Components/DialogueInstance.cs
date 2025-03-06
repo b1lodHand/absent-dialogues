@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static com.absence.dialoguesystem.internals.DialogueFlowContext;
+using static com.absence.dialoguesystem.DialogueFlowContext;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -20,8 +20,9 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
     public class DialogueInstance : MonoBehaviour, IUseDialogueInScene
     {
-        [SerializeField]
-        private bool m_cloneDialogueBeforeUsing = true;
+#pragma warning disable CS0414
+        [SerializeField] private bool m_cloneDialogueBeforeUsing = true;
+#pragma warning restore CS0414
 
         [SerializeField, Tooltip("When enabled, the referenced dialogue will start automatically when the game starts playing.")] 
         private bool m_startOnAwake = false;

@@ -1,11 +1,10 @@
-using com.absence.attributes.editor;
 using com.absence.dialoguesystem.internals;
 using com.absence.variablesystem.banksystembase;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     /// <summary>
     /// A visual element subtype which is responsible for displaying a <see cref="Blackboard"/>.

@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     public class SplitView : TwoPaneSplitView
     {

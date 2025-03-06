@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.internals
+namespace com.absence.dialoguesystem
 {
     /// <summary>
     /// Holds some extra data which you can use on the flow.

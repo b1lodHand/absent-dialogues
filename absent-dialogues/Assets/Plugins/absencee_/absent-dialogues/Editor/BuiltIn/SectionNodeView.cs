@@ -1,7 +1,7 @@
 using com.absence.dialoguesystem.internals;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomNodeView(typeof(SectionNode))]
     public class SectionNodeView : NodeView

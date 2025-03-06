@@ -2,7 +2,7 @@ using com.absence.dialoguesystem.internals;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomPropertyDrawer(typeof(Blackboard))]
     public class BlackboardPropertyDrawer : PropertyDrawer

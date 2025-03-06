@@ -1,9 +1,7 @@
-using com.absence.dialoguesystem.internals;
-using com.absence.dialoguesystem.runtime.backup.internals;
 using com.absence.variablesystem.banksystembase;
 using com.absence.variablesystem.builtin;
 
-namespace com.absence.dialoguesystem.runtime.backup.data
+namespace com.absence.dialoguesystem.internals.backup.data
 {
     public static class DataGenerator
     {

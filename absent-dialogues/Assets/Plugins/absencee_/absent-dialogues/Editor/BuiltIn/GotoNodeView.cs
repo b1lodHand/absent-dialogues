@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace com.absence.dialoguesystem.editor
+namespace com.absence.dialoguesystem.editor.internals
 {
     [CustomNodeView(typeof(GotoNode))]
     public sealed class GotoNodeView : NodeView
