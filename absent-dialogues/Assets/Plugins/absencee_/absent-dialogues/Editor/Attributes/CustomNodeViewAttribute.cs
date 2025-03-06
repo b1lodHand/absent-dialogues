@@ -7,8 +7,9 @@ namespace com.absence.dialoguesystem.editor
     public class CustomNodeViewAttribute : Attribute
     {
         public Type type;
+        public bool useForChildren;
 
-        public CustomNodeViewAttribute(Type type)
+        public CustomNodeViewAttribute(Type type, bool useForChildren = true)
         {
             Type baseType = type;
             while (baseType != null)
@@ -23,6 +24,7 @@ namespace com.absence.dialoguesystem.editor
                 throw new ArgumentException("Argument must derived from the type: 'Node'.", "type");
 
             this.type = type;
+            this.useForChildren = useForChildren;
         }
     }
 }

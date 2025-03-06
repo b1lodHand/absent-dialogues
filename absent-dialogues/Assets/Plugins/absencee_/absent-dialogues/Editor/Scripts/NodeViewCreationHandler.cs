@@ -14,6 +14,7 @@ namespace com.absence.dialoguesystem.editor
         const int k_neededArgumentCountForConstructor = 2;
 
         static Dictionary<Type, ConstructorInfo> s_database;
+        static Dictionary<ConstructorInfo, bool> s_useForChildrenValuePairs;
         public static Dictionary<Type, ConstructorInfo> Database => s_database; 
 
         static NodeViewCreationHandler()
@@ -24,6 +25,7 @@ namespace com.absence.dialoguesystem.editor
         public static void Refresh()
         {
             s_database = new();
+            s_useForChildrenValuePairs = new();
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             List<Type> types = new List<Type>();
@@ -92,6 +94,8 @@ namespace com.absence.dialoguesystem.editor
                         continue;
                     }
 
+                    bool useForChildren = attribute.useForChildren;
+                    s_useForChildrenValuePairs.Add(resultConstructor, useForChildren);
                     s_database.Add(resultNodeType, resultConstructor);
                 }
             }
@@ -115,8 +119,13 @@ namespace com.absence.dialoguesystem.editor
                 Type baseType = type;
                 while (baseType != null)
                 {
-                    if (s_database.ContainsKey(baseType))
-                        break;
+                    if (s_database.TryGetValue(baseType, out ConstructorInfo temp))
+                    {
+                        if (s_useForChildrenValuePairs[temp])
+                        {
+                            break;
+                        }
+                    }
 
                     baseType = baseType.BaseType;
                 }
