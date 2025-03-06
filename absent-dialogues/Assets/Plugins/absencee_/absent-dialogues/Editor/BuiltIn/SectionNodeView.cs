@@ -25,7 +25,7 @@ namespace com.absence.dialoguesystem.editor.internals
             SectionNode nodeAsDp = Node as SectionNode;
             Label title = this.Q<Label>("title-label");
 
-            string dpName = nodeAsDp.DialoguePartName;
+            string dpName = nodeAsDp.SectionName;
 
             if (string.IsNullOrWhiteSpace(dpName)) title.text = nodeAsDp.Title;
             else title.text = dpName;

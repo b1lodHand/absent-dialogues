@@ -1,5 +1,3 @@
-using com.absence.dialoguesystem.internals;
-
 namespace com.absence.dialoguesystem.internals.backup.data
 {
     [System.Serializable]
@@ -21,7 +19,11 @@ namespace com.absence.dialoguesystem.internals.backup.data
         public bool HasGenericOptions;
         public bool HasComparers;
         public bool HasSetters;
-        public bool UsedByMapper;
+
+        public int[] IntData;
+        public float[] FloatData;
+        public string[] StringData;
+        public bool[] BoolData;
 
         public string Text;
         public NodeCustomDataBase CustomData;

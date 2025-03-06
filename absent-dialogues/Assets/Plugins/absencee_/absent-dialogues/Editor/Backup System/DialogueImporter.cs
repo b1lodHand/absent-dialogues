@@ -84,6 +84,8 @@ namespace com.absence.dialoguesystem.editor.internals.backup
 
             public override void Action(int instanceId, string pathName, string resourceFile)
             {
+                DialogueSystem.BypassUndo = true;
+
                 Dialogue dialogueCreated = DialogueCreationHandler.CreateDialogue(pathName);
                 ReadInitialDialogueData(ImportedData, dialogueCreated);
                 dialogueCreated.Entry = dialogueCreated.AllNodes.Find(node => node is EntryNode) as EntryNode;
@@ -93,6 +95,8 @@ namespace com.absence.dialoguesystem.editor.internals.backup
 
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
+
+                DialogueSystem.BypassUndo = false;
 
                 m_onCompleteAction?.Invoke(dialogueCreated);
             }

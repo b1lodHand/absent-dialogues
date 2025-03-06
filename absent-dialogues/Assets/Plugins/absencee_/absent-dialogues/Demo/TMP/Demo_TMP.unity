@@ -675,7 +675,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
   m_order: 2
-  m_actionMapPairs: []
+  m_actionMapPairs:
+  - TargetActionNode: {fileID: 4366251987463977943, guid: 897dfc22b97323241aa34c3fb84e8b6c, type: 2}
+    AttachedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    Enabled: 1
+    BackupId: a
+    BackupGuid: b4a0fccc5f76ec948ad40d881420ee9b
 --- !u!82 &560826875
 AudioSource:
   m_ObjectHideFlags: 0

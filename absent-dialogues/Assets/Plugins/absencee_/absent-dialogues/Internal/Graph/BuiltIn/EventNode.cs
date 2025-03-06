@@ -115,19 +115,19 @@ namespace com.absence.dialoguesystem.internals
         {
             base.OnImport(dataToRead, context);
 
-            UsedByMapper = dataToRead.UsedByMapper;
-            UniqueMapperId = dataToRead.Text;
-            //m_blackboardEvents = dataToRead.SetterData.ToList().ConvertAll(setterData => DataReader.ReadSetterData(setterData)).ToList();
+            UsedByMapper = dataToRead.BoolData[0];
+            UniqueMapperId = dataToRead.StringData[0];
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
             base.OnExport(dataToWrite);
 
-            dataToWrite.UsedByMapper = UsedByMapper;
+            dataToWrite.BoolData = new bool[1];
+            dataToWrite.BoolData[0] = UsedByMapper;
 
-            dataToWrite.Text = UniqueMapperId;
-            //dataToWrite.SetterData = m_blackboardEvents.ConvertAll(setter => DataGenerator.GenerateSetterData(setter)).ToArray();
+            dataToWrite.StringData = new string[1];
+            dataToWrite.StringData[0] = UniqueMapperId;
         }
     }
 

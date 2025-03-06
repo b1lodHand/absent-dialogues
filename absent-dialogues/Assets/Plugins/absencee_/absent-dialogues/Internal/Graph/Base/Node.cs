@@ -294,12 +294,16 @@ namespace com.absence.dialoguesystem.internals
 
 #if UNITY_EDITOR
             int group = Undo.GetCurrentGroup();
-            Undo.RegisterCompleteObjectUndo(this, "Node (Fetch Generic Options)");
+
+            if (!DialogueSystem.BypassUndo) 
+                Undo.RegisterCompleteObjectUndo(this, "Node (Fetch Generic Options)");
 #endif
             GenericOptions = references;
 
 #if UNITY_EDITOR
-            Undo.CollapseUndoOperations(group);
+            if (!DialogueSystem.BypassUndo)
+                Undo.CollapseUndoOperations(group);
+
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
 #endif

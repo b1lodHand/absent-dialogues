@@ -70,45 +70,6 @@ namespace com.absence.dialoguesystem
         [HideInInspector] public Blackboard Blackboard;
 
         /// <summary>
-        /// Use to create new nodes. Using runtime is not recommended.
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public Node CreateNode(System.Type type, Node from = null)
-        {
-            Node node = null;
-
-            if (from == null)
-            {
-                node = ScriptableObject.CreateInstance(type) as Node;
-                node.FetchGenericOptions(this);
-            }
-
-            else
-            {
-                node = Instantiate(from);
-            }
-
-            node.name = type.Name;
-            node.PersonIndex = 0;
-
-            node.Blackboard = Blackboard;
-
-            AllNodes.Add(node);
-            return node;
-        }
-
-        /// <summary>
-        /// Use to delete existing nodes. Using runtime is not recommended.
-        /// </summary>
-        /// <param name="node"></param>
-        public void DeleteNode(Node node)
-        {
-            AllNodes.Remove(node);
-            node.OnRemoveFromDialogue();
-        }
-
-        /// <summary>
         /// Use to find <see cref="SectionNode"/>s with a specific name.
         /// </summary>
         /// <param name="targetName"></param>
@@ -120,7 +81,7 @@ namespace com.absence.dialoguesystem
             {
                 var dialogPartNode = n as SectionNode;
                 if (dialogPartNode == null) return false;
-                if (dialogPartNode.DialoguePartName != targetName) return false;
+                if (dialogPartNode.SectionName != targetName) return false;
 
                 return true;
             }).ToList();

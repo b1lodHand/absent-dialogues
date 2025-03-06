@@ -18,7 +18,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector, SerializeField, Tooltip("All of the options of this node.")] 
         private List<Option> m_options = new List<Option>();
 
-        [HideInInspector] public string m_text = "||NO TEXT||";
+        [HideInInspector] public string m_text = Constants.Text.NO_TEXT;
 
         [HideInInspector] public Node NativeNextNode; 
 
@@ -89,7 +89,8 @@ namespace com.absence.dialoguesystem.internals
             {
                 atPort -= m_options.Count;
 #if UNITY_EDITOR
-                UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Add Generic Option Connection)");
+                if (!DialogueSystem.BypassUndo) 
+                    UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Add Generic Option Connection)");
 #endif
                 GenericOptions[atPort].LeadingNode = nextWillBeAdded;
                 return;
@@ -123,7 +124,8 @@ namespace com.absence.dialoguesystem.internals
             {
                 atPort -= m_options.Count;
 #if UNITY_EDITOR
-                UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Remove Generic Option Connection)");
+                if (!DialogueSystem.BypassUndo)
+                    UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Prompt Node (Remove Generic Option Connection)");
 #endif
                 GenericOptions[atPort].LeadingNode = null;
                 return;

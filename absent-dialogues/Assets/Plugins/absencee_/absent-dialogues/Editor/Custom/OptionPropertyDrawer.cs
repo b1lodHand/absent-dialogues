@@ -233,7 +233,7 @@ namespace com.absence.dialoguesystem.editor.internals
             SerializedProperty textProp = property.FindPropertyRelative("Text");
 
             string text = textProp.stringValue;
-            if (string.IsNullOrWhiteSpace(text)) text = "<color=grey>||NO TEXT||</color>";
+            if (string.IsNullOrWhiteSpace(text)) text = $"<color=grey>{Constants.Text.NO_TEXT}</color>";
 
             GUIStyle foldoutStyle = new GUIStyle(EditorStyles.foldout)
             {

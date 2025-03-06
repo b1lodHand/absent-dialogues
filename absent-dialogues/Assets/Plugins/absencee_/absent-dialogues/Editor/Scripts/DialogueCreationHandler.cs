@@ -13,35 +13,6 @@ namespace com.absence.dialoguesystem.editor
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.DialogueCreationHandler.html")]
     public static class DialogueCreationHandler
     {
-        [MenuItem("Assets/Create/absencee_/absent-dialogues/Dialogue", priority = 0)]
-        static void CreateDialogue_MenuItem()
-        {
-            string selectedPath = AssetDatabase.GetAssetPath(Selection.activeObject);
-            if (selectedPath == string.Empty) return;
-
-            while ((!AssetDatabase.IsValidFolder(selectedPath)))
-            {
-                TrimLastSlash(ref selectedPath);
-            }
-
-            CreateDialogueEndNameEditAction create = ScriptableObject.CreateInstance<CreateDialogueEndNameEditAction>();
-            var path = Path.Combine(selectedPath, "New Dialogue.asset");
-            var icon = EditorGUIUtility.IconContent("d_ScriptableObject Icon").image as Texture2D;
-
-            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, create, path, icon, null);
-        }
-
-        private static void TrimLastSlash(ref string path)
-        {
-            int lastSlashIndex;
-            for (lastSlashIndex = path.Length - 1; lastSlashIndex > 0; lastSlashIndex--)
-            {
-                if (path[lastSlashIndex] == '/') break;
-            }
-
-            path = path.Remove(lastSlashIndex, (path.Length - lastSlashIndex));
-        }
-
         public static Dialogue CreateDialogue(string pathName)
         {
             var itemCreated = ScriptableObject.CreateInstance<Dialogue>();

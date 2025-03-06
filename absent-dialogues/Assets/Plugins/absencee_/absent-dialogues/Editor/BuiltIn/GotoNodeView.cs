@@ -44,7 +44,7 @@ namespace com.absence.dialoguesystem.editor.internals
 
         private void SoftRefresh()
         {
-            m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.DialoguePartName);
+            m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.SectionName);
         }
 
         private void Refresh()
@@ -53,7 +53,7 @@ namespace com.absence.dialoguesystem.editor.internals
 
             Graph.m_dialogue.GetAllSections().ForEach(dialoguePartNode =>
             {
-                m_dropdown.choices.Add(dialoguePartNode.DialoguePartName);
+                m_dropdown.choices.Add(dialoguePartNode.SectionName);
             });
 
             if (m_dropdown.choices.Count == 0)

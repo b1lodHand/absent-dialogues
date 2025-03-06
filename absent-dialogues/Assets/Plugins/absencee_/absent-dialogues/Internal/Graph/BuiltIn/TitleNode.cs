@@ -1,3 +1,5 @@
+using com.absence.dialoguesystem.internals.backup;
+using com.absence.dialoguesystem.internals.backup.data;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +14,8 @@ namespace com.absence.dialoguesystem.internals
         public static string CreationMenuName => "Misc/Title";
 
         [HideInInspector] public string m_text = "TITLE";
+
+        [SerializeField] internal uint m_fontSize = 30;
 
         public override bool DisplayState => false;
         public override bool ShowInMinimap => false;
@@ -47,6 +51,21 @@ namespace com.absence.dialoguesystem.internals
         protected override void OnRemoveOutputConnection(int atPort)
         {
             
+        }
+
+        public override void OnExport(NodeData dataToWrite)
+        {
+            base.OnExport(dataToWrite);
+
+            dataToWrite.IntData = new int[1];
+            dataToWrite.IntData[0] = (int)m_fontSize;
+        }
+
+        public override void OnImport(NodeData dataToRead, DialogueImportContext context)
+        {
+            base.OnImport(dataToRead, context);
+
+            m_fontSize = (uint)dataToRead.IntData[0];
         }
 
         public override string GetDefaultInputPortName() => null;

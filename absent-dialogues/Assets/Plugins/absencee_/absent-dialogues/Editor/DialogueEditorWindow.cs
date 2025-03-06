@@ -393,7 +393,7 @@ namespace com.absence.dialoguesystem.editor
 
             m_dialogueGraphView.m_dialogue.GetAllSections().ForEach(dialogPartNode =>
             {
-                m_dialoguePartFinder.menu.AppendAction(dialogPartNode.DialoguePartName, action =>
+                m_dialoguePartFinder.menu.AppendAction(dialogPartNode.SectionName, action =>
                 {
                     FrameToNode(dialogPartNode);
                 });

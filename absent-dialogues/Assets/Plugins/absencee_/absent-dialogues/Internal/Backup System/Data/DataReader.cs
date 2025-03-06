@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 #else
 using System.Reflection;
 #endif
@@ -61,11 +62,7 @@ namespace com.absence.dialoguesystem.internals.backup.data
             if (nodeType == null)
                 throw new Exception("Something went wrong while reading node data!");
 
-            Node node = targetDialogue.CreateNode(nodeType);
-            node.Guid = Guid.NewGuid().ToString();
-            node.name = node.Guid;
-
-            if (node is EntryNode) node.name = "EntryNode";
+            Node node = DialogueSystem.CreateNode(nodeType, targetDialogue);
 
 #if UNITY_EDITOR
             node.Position.x = data.PositionX;

@@ -25,7 +25,7 @@ namespace com.absence.dialoguesystem.editor.internals
             };
 
             string text = textProp.stringValue;
-            if (string.IsNullOrWhiteSpace(text)) text = "||NO TEXT||";
+            if (string.IsNullOrWhiteSpace(text)) text = Constants.Text.NO_TEXT;
 
             const bool kToggleOnRemainderClick = true;
 

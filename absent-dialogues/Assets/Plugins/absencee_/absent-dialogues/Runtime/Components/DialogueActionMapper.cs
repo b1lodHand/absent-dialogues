@@ -13,7 +13,7 @@ namespace com.absence.dialoguesystem.examples
 
         Dialogue m_lastCheckedDialogue;
 
-        [Button("Seach for new mapped action nodes")]
+        [Button("Seach for new mapped event nodes")]
         void Refresh()
         {
             Cleanup();

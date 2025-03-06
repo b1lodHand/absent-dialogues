@@ -23,8 +23,24 @@ namespace com.absence.dialoguesystem.editor.internals
 
         public override void OnInspectorGUI()
         {
-            initialEditor.OnInspectorGUI();
             Dialogue dialogue = (Dialogue)target;
+
+            if (DialogueEditorWindow.Current == null ||
+                DialogueEditorWindow.Current.m_targetDialogue != dialogue ||
+                DialogueEditorWindow.Current.m_dialogueGraphView == null ||
+                DialogueEditorWindow.Current.m_dialogueGraphView.m_dialogue != dialogue)
+            {
+                EditorGUILayout.LabelField("You cannot edit a dialogue unless it is open.");
+                if (GUILayout.Button("Open Dialogue in Graph"))
+                {
+                    if (DialogueEditorWindow.Current == null) DialogueEditorWindow.OpenWindow();
+                    DialogueEditorWindow.Current.PopulateDialogueView(dialogue);
+                }
+
+                return;
+            }
+
+            initialEditor.OnInspectorGUI();
 
             serializedObject.Update();
 

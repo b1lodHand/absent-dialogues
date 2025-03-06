@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 7b82aa6df8d660e44b4f58fe65191867
   m_EditorClassIdentifier: 
   Guid: 7b82aa6df8d660e44b4f58fe65191867
-  Position: {x: 1002.5, y: 526}
+  Position: {x: 1011.5, y: 526}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -110,6 +110,61 @@ MonoBehaviour:
         ShowIfList: []
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
+--- !u!114 &-1635607160664361471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c8ce548cb974943982f9c74e464073, type: 3}
+  m_Name: 7ad4f84dcbe27f14d8b78c05ffe110d9
+  m_EditorClassIdentifier: 
+  Guid: 7ad4f84dcbe27f14d8b78c05ffe110d9
+  Position: {x: 481.85004, y: 488.75003}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 9043952714220872817}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  Next: {fileID: 0}
+  SectionName: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +186,9 @@ MonoBehaviour:
   - {fileID: 5215409911009714315}
   - {fileID: -5246905779991590207}
   - {fileID: -3358797512164180333}
+  - {fileID: 2310582383312150496}
+  - {fileID: 7694085399210530787}
+  - {fileID: -1635607160664361471}
   m_people:
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
@@ -161,6 +219,61 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
+--- !u!114 &2310582383312150496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
+  m_Name: d712e45f29ea38b4a98f1ecb226b57ed
+  m_EditorClassIdentifier: 
+  Guid: d712e45f29ea38b4a98f1ecb226b57ed
+  Position: {x: 804, y: 371}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 9043952714220872817}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  m_text: '||NO TEXT||'
+  m_fontSize: 12
 --- !u!114 &4366251987463977943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,15 +287,15 @@ MonoBehaviour:
   m_Name: b4a0fccc5f76ec948ad40d881420ee9b
   m_EditorClassIdentifier: 
   Guid: b4a0fccc5f76ec948ad40d881420ee9b
-  Position: {x: 923, y: 106}
+  Position: {x: 898, y: 85.19998}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
   m_genericOptions: []
-  UsedByMapper: 0
-  UniqueMapperId: 
+  UsedByMapper: 1
+  UniqueMapperId: a
   m_blackboardEvents: []
   Next: {fileID: 7102625383665442442}
 --- !u!114 &5215409911009714315
@@ -239,7 +352,7 @@ MonoBehaviour:
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   Next: {fileID: 7535276429833814712}
-  DialoguePartName: a
+  SectionName: 
 --- !u!114 &6441203632322913861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +459,61 @@ MonoBehaviour:
     LeadingNode: {fileID: 7102625383665442442}
   m_text: tecxt
   NativeNextNode: {fileID: 0}
+--- !u!114 &7694085399210530787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
+  m_Name: b85a23ad222418449bf5a3af3d63c09d
+  m_EditorClassIdentifier: 
+  Guid: b85a23ad222418449bf5a3af3d63c09d
+  Position: {x: 514, y: 395}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 9043952714220872817}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  m_text: TITLE
+  m_fontSize: 30
 --- !u!114 &9043952714220872817
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ namespace com.absence.dialoguesystem.internals
         public static string CreationMenuName => "Section";
 
         [HideInInspector] public Node Next;
-        public string DialoguePartName;
+        public string SectionName;
 
         public override string Title => "Section";
 
@@ -56,14 +56,14 @@ namespace com.absence.dialoguesystem.internals
         {
             base.OnImport(dataToRead, context);
 
-            DialoguePartName = dataToRead.Text;
+            SectionName = dataToRead.Text;
         }
 
         public override void OnExport(NodeData dataToWrite)
         {
             base.OnExport(dataToWrite);
 
-            dataToWrite.Text = DialoguePartName;
+            dataToWrite.Text = SectionName;
         }
     }
 

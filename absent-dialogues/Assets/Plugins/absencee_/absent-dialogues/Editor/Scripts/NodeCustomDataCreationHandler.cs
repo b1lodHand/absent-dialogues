@@ -62,7 +62,7 @@ namespace com.absence.dialoguesystem.editor
             }
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
-            createdSO.name = $"{sender.Guid}_CustomData";
+            createdSO.name = DialogueSystem.GenerateCustomDataName(sender);
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
@@ -103,7 +103,7 @@ namespace com.absence.dialoguesystem.editor
             }
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
-            createdSO.name = $"{sender.Guid}_OptionData";
+            createdSO.name = DialogueSystem.GenerateOptionDataName(sender);
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
@@ -143,7 +143,7 @@ namespace com.absence.dialoguesystem.editor
             }
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
-            createdSO.name = $"GenericOptionData";
+            createdSO.name = DialogueSystem.GenerateGenericOptionDataName(sender);
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
