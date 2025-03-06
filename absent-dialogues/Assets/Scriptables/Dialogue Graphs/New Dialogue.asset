@@ -55,8 +55,24 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  Mode: 1
+  Mode: 0
   m_conditions: []
+--- !u!114 &-3514463440667093514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7984d1f1acdf74996ccf1879921919, type: 3}
+  m_Name: 86dcf618b810b7243bb77ccfe39f95cc_CustomData
+  m_EditorClassIdentifier: 
+  CustomInfo: []
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 7ec8f900b73e9014883e164fa063e76d, type: 3}
+  <Sprite>k__BackingField: {fileID: 0}
+  <AnimatorMemberName>k__BackingField: 
 --- !u!114 &-3358797512164180333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +86,7 @@ MonoBehaviour:
   m_Name: 7b82aa6df8d660e44b4f58fe65191867
   m_EditorClassIdentifier: 
   Guid: 7b82aa6df8d660e44b4f58fe65191867
-  Position: {x: 1011.5, y: 526}
+  Position: {x: 1086.7172, y: 122.49994}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -164,7 +180,7 @@ MonoBehaviour:
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   Next: {fileID: 0}
-  SectionName: 
+  SectionName: Section B
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,12 +198,9 @@ MonoBehaviour:
   - {fileID: 6441203632322913861}
   - {fileID: 7535276429833814712}
   - {fileID: 4366251987463977943}
-  - {fileID: 7102625383665442442}
   - {fileID: 5215409911009714315}
   - {fileID: -5246905779991590207}
   - {fileID: -3358797512164180333}
-  - {fileID: 2310582383312150496}
-  - {fileID: 7694085399210530787}
   - {fileID: -1635607160664361471}
   m_people:
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
@@ -219,7 +232,7 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
---- !u!114 &2310582383312150496
+--- !u!114 &2441988981460068923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,52 +241,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
-  m_Name: d712e45f29ea38b4a98f1ecb226b57ed
+  m_Script: {fileID: 11500000, guid: ae7984d1f1acdf74996ccf1879921919, type: 3}
+  m_Name: 86dcf618b810b7243bb77ccfe39f95cc_OptionData
   m_EditorClassIdentifier: 
-  Guid: d712e45f29ea38b4a98f1ecb226b57ed
-  Position: {x: 804, y: 371}
-  CustomData: {fileID: 0}
-  Blackboard:
-    Bank: {fileID: 9043952714220872817}
-  State: 0
-  PersonIndex: 0
-  m_genericOptions:
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: c
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: v
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: iuhkihulkjh
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  m_text: '||NO TEXT||'
-  m_fontSize: 12
+  CustomInfo: []
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 7ec8f900b73e9014883e164fa063e76d, type: 3}
+  <Sprite>k__BackingField: {fileID: 0}
+  <AnimatorMemberName>k__BackingField: 
 --- !u!114 &4366251987463977943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,17 +261,31 @@ MonoBehaviour:
   m_Name: b4a0fccc5f76ec948ad40d881420ee9b
   m_EditorClassIdentifier: 
   Guid: b4a0fccc5f76ec948ad40d881420ee9b
-  Position: {x: 898, y: 85.19998}
+  Position: {x: 907, y: 93}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
   PersonIndex: 0
   m_genericOptions: []
-  UsedByMapper: 1
+  UsedByMapper: 0
   UniqueMapperId: a
-  m_blackboardEvents: []
-  Next: {fileID: 7102625383665442442}
+  m_blackboardEvents:
+  - m_setType: 3
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'int: int'
+    m_intValue: 3
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_setType: 4
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'float: float'
+    m_intValue: 0
+    m_floatValue: 0.25
+    m_stringValue: 
+    m_boolValue: 0
+  Next: {fileID: -3358797512164180333}
 --- !u!114 &5215409911009714315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +299,7 @@ MonoBehaviour:
   m_Name: 4faf2a66713092b41b449f9dbcf2914f
   m_EditorClassIdentifier: 
   Guid: 4faf2a66713092b41b449f9dbcf2914f
-  Position: {x: 86.00003, y: 304.35748}
+  Position: {x: 46.389996, y: 286.5}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -352,7 +340,7 @@ MonoBehaviour:
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   Next: {fileID: 7535276429833814712}
-  SectionName: 
+  SectionName: Section A
 --- !u!114 &6441203632322913861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,27 +362,6 @@ MonoBehaviour:
   PersonIndex: 0
   m_genericOptions: []
   Next: {fileID: 7535276429833814712}
---- !u!114 &7102625383665442442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
-  m_Name: 174e24f42669d474abf41e1075929158
-  m_EditorClassIdentifier: 
-  Guid: 174e24f42669d474abf41e1075929158
-  Position: {x: 1129.5, y: 193.30003}
-  CustomData: {fileID: 0}
-  Blackboard:
-    Bank: {fileID: 9043952714220872817}
-  State: 0
-  PersonIndex: 0
-  m_genericOptions: []
-  TargetNode: {fileID: 5215409911009714315}
 --- !u!114 &7535276429833814712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Guid: 86dcf618b810b7243bb77ccfe39f95cc
   Position: {x: 203.9, y: -28.65002}
-  CustomData: {fileID: 0}
+  CustomData: {fileID: -3514463440667093514}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
@@ -436,7 +403,7 @@ MonoBehaviour:
         Processor: 0
         ShowIfList: []
       LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 4366251987463977943}
+    LeadingNode: {fileID: 0}
   - Bypass: 0
     Target:
       m_scroll: {x: 0, y: 0}
@@ -447,73 +414,18 @@ MonoBehaviour:
         Processor: 0
         ShowIfList: []
       LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 4366251987463977943}
   m_options:
   - m_scroll: {x: 0, y: 0}
     Text: sg
-    CustomData: {fileID: 0}
+    CustomData: {fileID: 2441988981460068923}
     m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList: []
-    LeadingNode: {fileID: 7102625383665442442}
+    LeadingNode: {fileID: 4366251987463977943}
   m_text: tecxt
   NativeNextNode: {fileID: 0}
---- !u!114 &7694085399210530787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 493e9f4a8ed7d124f8bf823f0bfb7fd7, type: 3}
-  m_Name: b85a23ad222418449bf5a3af3d63c09d
-  m_EditorClassIdentifier: 
-  Guid: b85a23ad222418449bf5a3af3d63c09d
-  Position: {x: 514, y: 395}
-  CustomData: {fileID: 0}
-  Blackboard:
-    Bank: {fileID: 9043952714220872817}
-  State: 0
-  PersonIndex: 0
-  m_genericOptions:
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: c
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: v
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  - Bypass: 0
-    Target:
-      m_scroll: {x: 0, y: 0}
-      Text: iuhkihulkjh
-      CustomData: {fileID: 0}
-      m_useShowIf: 0
-      Visibility:
-        Processor: 0
-        ShowIfList: []
-      LeadingNode: {fileID: 0}
-    LeadingNode: {fileID: 0}
-  m_text: TITLE
-  m_fontSize: 30
 --- !u!114 &9043952714220872817
 MonoBehaviour:
   m_ObjectHideFlags: 0

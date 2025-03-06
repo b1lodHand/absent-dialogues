@@ -40,6 +40,17 @@ namespace com.absence.dialoguesystem.examples
             }
         }
 
+        public override void OnHandleOptionData(NodeCustomDataBase data)
+        {
+            if (data is IAudioData audioData)
+            {
+                m_clip = audioData.AudioClip;
+                Play();
+
+                m_instance.OnReachOneShot += ForceStop;
+            }
+        }
+
         IEnumerator C_PlayAudio()
         {
             yield return new WaitWhile(() => m_source.isPlaying);

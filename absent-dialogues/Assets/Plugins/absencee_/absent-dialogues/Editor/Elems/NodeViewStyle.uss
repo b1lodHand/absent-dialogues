@@ -71,7 +71,7 @@
 
 #divider {
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.17);
+    background-color: rgba(255, 255, 255, 0.11);
     visibility: visible;
     display: flex;
 }
@@ -90,6 +90,10 @@
     flex-wrap: wrap;
     flex-shrink: 1;
     height: auto;
+    margin-top: 2px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    margin-left: 4px;
 }
 
 #speech > TextInput {
@@ -108,6 +112,18 @@
     background-color: rgba(0, 0, 0, 0);
     white-space: normal;
     -unity-text-align: middle-center;
+}
+
+#initial {
+    flex-grow: 1;
+    flex-direction: row;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    background-color: rgba(53, 53, 53, 0);
+}
+
+#person-selector {
+    background-color: rgba(53, 53, 53, 0);
 }
 
 :hover > #selection-border {
@@ -183,9 +199,6 @@
     display: flex;
 }
 
-#initial {
-    flex-grow: 1;
-    flex-direction: row;
-    padding-right: 6px;
-    padding-bottom: 1px;
+#person-field {
+    background-color: rgb(53, 53, 53);
 }

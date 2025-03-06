@@ -35,15 +35,15 @@
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
     overflow: hidden;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
     justify-content: center;
     align-self: center;
     align-items: center;
@@ -96,14 +96,14 @@
     border-bottom-color: rgb(255, 255, 255);
 }
 
-NodeView:hover #divider {
+TitleNodeView:hover #divider {
     opacity: 0.6;
 }
 
-NodeView:hover:selected #divider {
+TitleNodeView:hover:selected #divider {
     opacity: 1;
 }
 
-NodeView:selected #divider {
+TitleNodeView:selected #divider {
     opacity: 1;
 }

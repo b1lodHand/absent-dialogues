@@ -36,6 +36,8 @@ namespace com.absence.dialoguesystem.editor.internals
         public event Action<Node> OnNodeCreated = null;
         public event Action<Node> OnBeforeNodeDeleted = null;
 
+        List<Node> m_cutCache = new();
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -60,8 +62,22 @@ namespace com.absence.dialoguesystem.editor.internals
             Undo.undoRedoPerformed += OnUndoRedo;
         }
 
+        protected override bool canCutSelection => false;
+
+        private void ClearCutCache()
+        {
+            foreach (Node node in m_cutCache)
+            {
+                Node.DestroyImmediate(node);
+            }
+
+            m_cutCache.Clear();
+        }
+
         private string OnCopy(IEnumerable<GraphElement> elements)
         {
+            ClearCutCache();
+
             StringBuilder sb = new(string.Empty);
             foreach (GraphElement node in elements) 
             {
@@ -70,6 +86,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
                 if (view.Node is EntryNode)
                     continue;
+
+                m_cutCache.Add(Node.Instantiate(view.Node));
 
                 sb.Append(view.Node.Guid);
                 sb.Append("\n");
@@ -95,7 +113,9 @@ namespace com.absence.dialoguesystem.editor.internals
 
             foreach (string guid in guids)
             {
-                nodesToCopy.Add(m_dialogue.AllNodes.First(node => node.Guid.Equals(guid)));
+                Node nativeNodeFound = m_dialogue.AllNodes.FirstOrDefault(node => node.Guid.Equals(guid));
+                if (nativeNodeFound == null) nativeNodeFound = m_cutCache.FirstOrDefault(node => node.Guid.Equals(guid));
+                nodesToCopy.Add(nativeNodeFound);
             }
 
             if (nodesToCopy.Count == 0)
@@ -158,6 +178,8 @@ namespace com.absence.dialoguesystem.editor.internals
                 ISelectable selectable = view.GetFirstOfType<ISelectable>();
                 AddToSelection(selectable);
             }
+
+            ClearCutCache();
         }
 
         public override bool canGrabFocus => true;

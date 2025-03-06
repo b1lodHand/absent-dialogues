@@ -26,16 +26,16 @@
     opacity: 0.7;
 }
 
-NodeView:selected {
+StickyNoteNodeView:selected {
     opacity: 1;
     visibility: visible;
 }
 
-NodeView:hover {
+StickyNoteNodeView:hover {
     opacity: 0.85;
 }
 
-NodeView:hover:selected {
+StickyNoteNodeView:hover:selected {
     opacity: 1;
 }
 

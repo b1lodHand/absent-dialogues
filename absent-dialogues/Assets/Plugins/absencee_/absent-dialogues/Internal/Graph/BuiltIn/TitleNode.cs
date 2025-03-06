@@ -15,6 +15,7 @@ namespace com.absence.dialoguesystem.internals
 
         [HideInInspector] public string m_text = "TITLE";
 
+        [SerializeField] internal bool m_richText = false;
         [SerializeField] internal uint m_fontSize = 30;
 
         public override bool DisplayState => false;
@@ -59,6 +60,9 @@ namespace com.absence.dialoguesystem.internals
 
             dataToWrite.IntData = new int[1];
             dataToWrite.IntData[0] = (int)m_fontSize;
+
+            dataToWrite.BoolData = new bool[1];
+            dataToWrite.BoolData[0] = m_richText;
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)
@@ -66,6 +70,7 @@ namespace com.absence.dialoguesystem.internals
             base.OnImport(dataToRead, context);
 
             m_fontSize = (uint)dataToRead.IntData[0];
+            m_richText = dataToRead.BoolData[0];
         }
 
         public override string GetDefaultInputPortName() => null;

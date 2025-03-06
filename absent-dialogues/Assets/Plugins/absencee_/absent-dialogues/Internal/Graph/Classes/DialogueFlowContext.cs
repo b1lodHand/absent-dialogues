@@ -12,23 +12,24 @@ namespace com.absence.dialoguesystem
             Pass = 1,
         }
 
-        public int OptionIndex;
+        public int SelectedOption;
         public ContextState State;
 
         public bool InvokeAction;
         public string ActionId;
 
         public string Text;
-        public List<OptionHandle> OptionIndexPairs;
+        public List<OptionHandle> OptionHandles;
         public NodeCustomDataBase CustomData;
+        public NodeCustomDataBase OptionData;
 
         public bool WillExit { get; set; }
         public bool HasText => Text != null && (!string.IsNullOrWhiteSpace(Text));
-        public bool HasOptions => OptionIndexPairs != null && OptionIndexPairs.Count > 0;
+        public bool HasOptions => OptionHandles != null && OptionHandles.Count > 0;
 
         public DialogueFlowContext()
         {
-            OptionIndexPairs = new();
+            OptionHandles = new();
             Clear();
         }
 
@@ -38,9 +39,8 @@ namespace com.absence.dialoguesystem
             CustomData = null;
             InvokeAction = false;
             ActionId = string.Empty;
-            OptionIndex = -1;
-            WillExit = false;
-            OptionIndexPairs?.Clear();
+            SelectedOption = -1;
+            OptionHandles?.Clear();
         }
     }
 }

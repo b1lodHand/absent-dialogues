@@ -240,7 +240,7 @@ namespace com.absence.dialoguesystem.internals
                         if (!option.IsVisible())
                             continue;
 
-                        handles.Add(new OptionHandle(i + shift, option.Text));
+                        handles.Add(new OptionHandle(i + shift, option.Text, option.CustomData));
                     }
 
                     shift += Options.Count;
@@ -258,12 +258,12 @@ namespace com.absence.dialoguesystem.internals
                         if (!genericOption.Target.IsVisible())
                             continue;
 
-                        handles.Add(new OptionHandle(i + shift, genericOption.Target.Text));
+                        handles.Add(new OptionHandle(i + shift, genericOption.Target.Text, genericOption.Target.CustomData));
                     }
                 }
 
                 context.Text = HasText ? Text : string.Empty;
-                context.OptionIndexPairs = handles;
+                context.OptionHandles = handles;
             }
 
             onReach?.Invoke();

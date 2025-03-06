@@ -29,6 +29,11 @@ namespace com.absence.dialoguesystem
         {
 
         }
+        
+        public virtual void OnHandleOptionData(NodeCustomDataBase data)
+        {
+
+        }
 
         /// <summary>
         /// Use to define what to do with the original speech data right before displaying it.

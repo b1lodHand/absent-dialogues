@@ -44,7 +44,7 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            int optionSelected = context.OptionIndex;
+            int optionSelected = context.SelectedOption;
             int optionCount = m_options.Count;
 
             if (NoOptionsOverall)

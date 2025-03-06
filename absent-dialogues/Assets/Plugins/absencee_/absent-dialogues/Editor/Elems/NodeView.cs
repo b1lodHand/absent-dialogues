@@ -143,6 +143,8 @@ namespace com.absence.dialoguesystem.editor
         }
         internal virtual void OnGenericOptionsRearranged(int replacer, int replaced)
         {
+            Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Removed)");
+
             GenericOptionReference replacerReference = Node.GenericOptions[replacer];
             GenericOptionReference replacedReference = Node.GenericOptions[replaced];
 
@@ -156,6 +158,9 @@ namespace com.absence.dialoguesystem.editor
             Node.GenericOptions[replacer].LeadingNode = replacedLead;
 
             FetchGenericOptions();
+
+            EditorUtility.SetDirty(Node);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
         }
         protected virtual void SetupPersonDropdownIfExists()
         {

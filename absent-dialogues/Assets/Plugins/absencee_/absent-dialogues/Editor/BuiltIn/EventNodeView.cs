@@ -42,8 +42,14 @@ namespace com.absence.dialoguesystem.editor.internals
                 StringBuilder sb = new();
 
                 sb.Append(m_nodeAsEvent.UniqueMapperId);
-                sb.Append("\n\n");
-                sb.Append(m_nodeAsEvent.GenerateIconTooltip());
+
+                string defaultDescription = m_nodeAsEvent.GenerateIconTooltip();
+
+                if (!string.IsNullOrWhiteSpace(defaultDescription))
+                {
+                    sb.Append("\n\n");
+                    sb.Append(defaultDescription);
+                }
 
                 icon.tooltip = sb.ToString();
             }

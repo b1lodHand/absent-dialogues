@@ -108,7 +108,7 @@ namespace com.absence.dialoguesystem.internals
                 sb.Append("\n");
             });
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd('\n');
         }
 
         public override void OnImport(NodeData dataToRead, DialogueImportContext context)

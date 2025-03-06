@@ -13,6 +13,8 @@ namespace com.absence.dialoguesystem.internals
 
         [HideInInspector] public string m_text = "Insert text...";
 
+        [SerializeField] internal bool m_richText = true;
+
         public override bool DisplayState => false;
         public override bool ShowInMinimap => false;
 

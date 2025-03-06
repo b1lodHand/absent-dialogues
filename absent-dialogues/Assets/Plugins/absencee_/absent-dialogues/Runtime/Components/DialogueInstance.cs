@@ -54,12 +54,16 @@ namespace com.absence.dialoguesystem
         /// </summary>
         public event Action<NodeCustomDataBase> OnHandleCustomData;
 
+        public event Action<NodeCustomDataBase> OnHandleOptionData;
+
         /// <summary>
         /// Action which will get invoked right after this instance clons it's <see cref="ReferencedDialogue"/>.
         /// </summary>
         public event Action OnInitialize;
 
+        public event Action OnReachOneShot;
         public event Action OnPassOneShot;
+        public event Action OnProgressOneShot;
 
         /// <summary>
         /// Subscribe to this delegate to override any data will get displayed.
@@ -212,6 +216,12 @@ namespace com.absence.dialoguesystem
             InvokeOnProgress();
             InvokeHandleCustomData();
 
+            OnReachOneShot?.Invoke();
+            OnReachOneShot = null;
+
+            OnProgressOneShot?.Invoke();
+            OnProgressOneShot = null;
+
             Person overridenPerson = null;
             Person person = frame.GetPerson(m_player.Target);
 
@@ -230,9 +240,10 @@ namespace com.absence.dialoguesystem
 
             if (context.HasOptions)
             {
-                DialogueDisplayer.Instance.Display(overridenPerson, context.Text, context.OptionIndexPairs, i =>
+                DialogueDisplayer.Instance.Display(overridenPerson, context.Text, context.OptionHandles, handle =>
                 {
-                    context.OptionIndex = i;
+                    context.SelectedOption = handle.TargetedIndex;
+                    context.OptionData = handle.CustomData;
                     ForceContinue();
                 });
             }
@@ -249,8 +260,13 @@ namespace com.absence.dialoguesystem
             Node frame = player.Frame;
 
             InvokeOnProgress();
+            InvokeHandleOptionData();
+
             OnPassOneShot?.Invoke();
             OnPassOneShot = null;
+
+            OnProgressOneShot?.Invoke();
+            OnProgressOneShot = null;
 
             if (context.WillExit)
             {
@@ -259,6 +275,24 @@ namespace com.absence.dialoguesystem
             }
 
             ForceContinue();
+        }
+
+        private void InvokeHandleOptionData()
+        {
+            NodeCustomDataBase optionData = m_player.Context.OptionData;
+
+            if (optionData == null)
+                return;
+
+            m_extensionList.ForEach(extension =>
+            {
+                if (extension == null) return;
+                if (!extension.enabled) return;
+
+                extension.OnHandleOptionData(optionData);
+            });
+
+            OnHandleOptionData?.Invoke(optionData);
         }
 
         private void InvokeHandleCustomData()

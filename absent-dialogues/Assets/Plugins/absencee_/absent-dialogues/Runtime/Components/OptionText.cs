@@ -1,4 +1,5 @@
 using com.absence.attributes;
+using com.absence.dialoguesystem.internals;
 using System;
 using TMPro;
 using UnityEngine;
@@ -12,10 +13,12 @@ namespace com.absence.dialoguesystem.examples
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueOptionText.html")]
     public class OptionText : MonoBehaviour
     {
-        [SerializeField, Required, Tooltip("The text that will show the option speech.")] private TMP_Text m_text;
-        int m_index;
+        [SerializeField, Required, Tooltip("The text that will show the option speech.")] 
+        private TMP_Text m_text;
 
-        public event Action<int> OnClickAction;
+        public OptionHandle Handle { get; private set; }
+
+        public event Action<OptionHandle> OnClickAction;
         public event Action OnSelectAction;
 
         /// <summary>
@@ -23,10 +26,11 @@ namespace com.absence.dialoguesystem.examples
         /// </summary>
         /// <param name="optionIndex"></param>
         /// <param name="text"></param>
-        public void Initialize(int optionIndex, string text)
+        public void Initialize(OptionHandle handle)
         {
-            m_index = optionIndex;
-            m_text.text = text;
+            Handle = handle;
+
+            m_text.text = Handle.Text;
         }
 
         /// <summary>
@@ -34,7 +38,7 @@ namespace com.absence.dialoguesystem.examples
         /// </summary>
         public void OnClick()
         {
-            OnClickAction?.Invoke(m_index);
+            OnClickAction?.Invoke(Handle);
         }
 
         public void OnSelect()

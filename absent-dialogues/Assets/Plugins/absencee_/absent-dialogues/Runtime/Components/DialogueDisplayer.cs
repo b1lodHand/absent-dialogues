@@ -99,7 +99,7 @@ namespace com.absence.dialoguesystem
         /// <param name="speech"></param>
         /// <param name="options"></param>
         /// <param name="optionPressAction"></param>
-        public void Display(Person speaker, string speech, List<OptionHandle> options, Action<int> optionPressAction)
+        public void Display(Person speaker, string speech, List<OptionHandle> options, Action<OptionHandle> optionPressAction)
         {
             ClearOptionContainer();
 
@@ -108,7 +108,7 @@ namespace com.absence.dialoguesystem
             options.ForEach(option =>
             {
                 OptionText optionText = Instantiate(m_optionPrefab, m_optionContainer);
-                optionText.Initialize(option.TargetedIndex, option.Text);
+                optionText.Initialize(option);
 
                 optionText.OnClickAction += optionPressAction;
 
