@@ -5,10 +5,13 @@ namespace com.absence.dialoguesystem
 {
     public static class Package
     {
-        const uint VERSION_MAJOR = 1;
-        const uint VERSION_MINOR = 3;
-        const uint VERSION_PATCH = 0;
+        public static class Version
+        {
+            public static string VERSION => $"{MAJOR}.{MINOR}.{PATCH}";
 
-        static string VERSION => $"{VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_PATCH}";
+            public const uint MAJOR = 1;
+            public const uint MINOR = 3;
+            public const uint PATCH = 0;
+        }
     }
 }

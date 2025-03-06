@@ -238,20 +238,7 @@ namespace com.absence.dialoguesystem
                 return;
             }
 
-            if (context.HasOptions)
-            {
-                DialogueDisplayer.Instance.Display(overridenPerson, context.Text, context.OptionHandles, handle =>
-                {
-                    context.SelectedOption = handle.TargetedIndex;
-                    context.OptionData = handle.CustomData;
-                    ForceContinue();
-                });
-            }
-
-            else
-            {
-                DialogueDisplayer.Instance.Display(overridenPerson, context.Text);
-            }
+            OnDisplayPrompt(overridenPerson, context, frame);
         }
 
         void OnPass(DialoguePlayer player)
@@ -325,6 +312,24 @@ namespace com.absence.dialoguesystem
             });
 
             OnProgress?.Invoke(frame, context);
+        }
+
+        protected virtual void OnDisplayPrompt(Person person, DialogueFlowContext context, Node frame)
+        {
+            if (context.HasOptions)
+            {
+                DialogueDisplayer.Instance.Display(person, context.Text, context.OptionHandles, handle =>
+                {
+                    context.SelectedOption = handle.TargetedIndex;
+                    context.OptionData = handle.CustomData;
+                    ForceContinue();
+                });
+            }
+
+            else
+            {
+                DialogueDisplayer.Instance.Display(person, context.Text);
+            }
         }
 
         /// <summary>
