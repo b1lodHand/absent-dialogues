@@ -1,4 +1,7 @@
 #node-icon {
+    transition-property: -unity-background-image-tint-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-circ;
     background-image: resource('node-icon-action');
 }
 

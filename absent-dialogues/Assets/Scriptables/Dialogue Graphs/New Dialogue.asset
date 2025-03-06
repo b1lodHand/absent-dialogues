@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: b4a0fccc5f76ec948ad40d881420ee9b
   m_EditorClassIdentifier: 
   Guid: b4a0fccc5f76ec948ad40d881420ee9b
-  Position: {x: 914.25006, y: 97.750015}
+  Position: {x: 923, y: 106}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
