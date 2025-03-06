@@ -1,7 +1,6 @@
-using com.absence.dialoguesystem.internals;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.examples
+namespace com.absence.dialoguesystem.builtin
 {
     [CreateAssetMenu(menuName = "Create/absencee_/absent-dialogues/Node Custom Data", fileName = "New Node Custom Data")]
     public class NodeCustomData : NodeCustomDataBase, IAudioData, IAnimatorData, ISpriteData

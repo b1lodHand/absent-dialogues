@@ -1,5 +1,4 @@
 using com.absence.attributes;
-using com.absence.dialoguesystem.examples;
 using com.absence.dialoguesystem.internals;
 using com.absence.personsystem;
 using com.absence.utilities;
@@ -19,24 +18,33 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueDisplayer.html")]
     public class DialogueDisplayer : Singleton<DialogueDisplayer>
     {
-        [Header("Speaker Fields")]
+        [Header("Utilities")]
 
-        [SerializeField, Tooltip("The image used to display look of the speaker. This field is optional.")] private Image m_speakerIcon;
-        [SerializeField, Tooltip("The text used to display name of the speaker. This field is optional.")] private TMP_Text m_speakerNameText;
-        [SerializeField, Required, Tooltip("The text used to display the speech.")] private TMP_Text m_speechText;
-
-        [Space(10)]
-
-        [Header("Utility Fields")]
-
-        [SerializeField, Required, Tooltip("The panel that gets activated/deactivated with the dialogue state.")] private GameObject m_panel;
+        [SerializeField, Required, Tooltip("The panel that gets activated/deactivated with the dialogue state.")]
+        private GameObject m_panel;
 
         [Space(10)]
 
-        [Header("Option Fields")]
+        [Header("Prompt")]
 
-        [SerializeField, Required, Tooltip("The container for option boxes.")] private Transform m_optionContainer;
-        [SerializeField, Required, Tooltip("The prefab of the option box.")] private OptionText m_optionPrefab;
+        [SerializeField, Tooltip("The image used to display look of the speaker. This field is optional.")]
+        private Image m_speakerIcon;
+
+        [SerializeField, Tooltip("The text used to display name of the speaker. This field is optional.")]
+        private TMP_Text m_speakerNameText;
+
+        [SerializeField, Required, Tooltip("The text used to display the speech.")]
+        private TMP_Text m_speechText;
+
+        [Space(10)]
+
+        [Header("Options")]
+
+        [SerializeField, Required, Tooltip("The container for option boxes.")] 
+        private Transform m_optionContainer;
+
+        [SerializeField, Required, Tooltip("The prefab of the option box.")] 
+        private OptionText m_optionPrefab;
 
         /// <summary>
         /// Action which will get invoked when displayer refreshes.

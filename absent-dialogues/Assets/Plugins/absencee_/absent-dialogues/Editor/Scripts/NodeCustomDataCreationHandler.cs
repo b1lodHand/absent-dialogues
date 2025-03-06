@@ -1,5 +1,5 @@
 using com.absence.attributes;
-using com.absence.dialoguesystem.examples;
+using com.absence.dialoguesystem.builtin;
 using com.absence.dialoguesystem.internals;
 using System;
 using UnityEditor;

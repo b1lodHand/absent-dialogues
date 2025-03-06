@@ -570,7 +570,7 @@ namespace com.absence.dialoguesystem.editor.internals
         {
             if (reference.Bypass)
             {
-                bypassButton.text = "◦";
+                bypassButton.text = "—";
                 bypassButton.RemoveFromClassList("passiveBypassButton");
                 bypassButton.AddToClassList("activeBypassButton");
             }
@@ -678,8 +678,17 @@ namespace com.absence.dialoguesystem.editor.internals
 
                 showIfLabel.visible = useShowIf || bypass;
 
-                if (reference.Bypass) showIfLabel.text = "Bypassed.";
-                else if (reference.Target.UseShowIf) showIfLabel.text = "Conditional visibility active.";
+                if (bypass)
+                {
+                    showIfLabel.text = "Bypassed.";
+                    showIfLabel.tooltip = "This option won't be displayed.";
+                }
+
+                else if (useShowIf)
+                {
+                    showIfLabel.text = "Conditional visibility active.";
+                    showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
+                }
             }
         }
     }

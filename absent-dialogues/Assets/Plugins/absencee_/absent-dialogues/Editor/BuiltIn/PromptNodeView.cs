@@ -61,10 +61,18 @@ namespace com.absence.dialoguesystem.editor.internals
 
                 showIfLabel.visible = useShowIf || bypass;
 
-                if (reference.Bypass) showIfLabel.text = "Bypassed.";
-                else if (reference.Target.UseShowIf) showIfLabel.text = "Conditional visibility active.";
+                if (reference.Bypass)
+                {
+                    showIfLabel.text = "Bypassed.";
+                    showIfLabel.tooltip = "This option won't be displayed.";
+                }
 
-                showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
+                else if (reference.Target.UseShowIf)
+                {
+                    showIfLabel.text = "Conditional visibility active.";
+                    showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
+                }
+
                 textField.SetValueWithoutNotify(reference.Target.Text);
             }
         }

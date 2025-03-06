@@ -1,7 +1,7 @@
 using com.absence.dialoguesystem.internals;
 using UnityEngine;
 
-namespace com.absence.dialoguesystem.examples
+namespace com.absence.dialoguesystem.builtin
 {
     /// <summary>
     /// A small component with the responsibility of using the input comes from player (uses legacy input system of unity) on the dialogue.

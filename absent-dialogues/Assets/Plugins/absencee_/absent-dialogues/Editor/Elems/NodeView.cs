@@ -70,6 +70,8 @@ namespace com.absence.dialoguesystem.editor
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 
+            FetchGenericOptions();
+
             NodeViewStyles.ApplyStyles(this);
 
             style.left = node.Position.x;
@@ -109,6 +111,9 @@ namespace com.absence.dialoguesystem.editor
         #region Protected API
         protected void FetchGenericOptions()
         {
+            if (!Node.UseGenericOptions)
+                return;
+
             List<GenericOption> genericOptions = Graph.m_dialogue.GenericOptions;
 
             for (int i = 0; i < genericOptions.Count; i++)

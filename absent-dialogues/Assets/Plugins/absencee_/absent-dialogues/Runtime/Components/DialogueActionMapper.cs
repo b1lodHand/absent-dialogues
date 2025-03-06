@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace com.absence.dialoguesystem.examples
+namespace com.absence.dialoguesystem.builtin
 {
     public class DialogueActionMapper : DialogueExtensionBase
     {

@@ -1,4 +1,4 @@
-namespace com.absence.dialoguesystem.examples
+namespace com.absence.dialoguesystem.builtin
 {
     public interface IAnimatorData
     {
