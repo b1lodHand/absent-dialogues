@@ -5,6 +5,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace com.absence.dialoguesystem.builtin
 {
     public class DialogueActionMapper : DialogueExtensionBase
@@ -13,12 +17,16 @@ namespace com.absence.dialoguesystem.builtin
 
         Dialogue m_lastCheckedDialogue;
 
-        [Button("Seach for new mapped event nodes")]
+        [Button("Search for new mapped event nodes")]
         void Refresh()
         {
             Cleanup();
             Search();
             Fetch();
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+            AssetDatabase.SaveAssetIfDirty(gameObject);
+#endif
         }
 
         public override void OnProgress(Node frame, DialogueFlowContext context)

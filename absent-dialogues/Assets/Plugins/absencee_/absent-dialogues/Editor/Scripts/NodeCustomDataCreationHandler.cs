@@ -1,5 +1,4 @@
 using com.absence.attributes;
-using com.absence.dialoguesystem.builtin;
 using com.absence.dialoguesystem.internals;
 using System;
 using UnityEditor;
@@ -9,18 +8,12 @@ namespace com.absence.dialoguesystem.editor
 {
     public static class NodeCustomDataCreationHandler
     {
-        public static Type DefaultDataType = typeof(NodeCustomData);
-
-        public static Type NodeCustomDataTypeToCreate = DefaultDataType;
-        public static Type OptionCustomDataTypeToCreate = DefaultDataType;
-        public static Type GenericOptionCustomDataTypeToCreate = DefaultDataType;
-
         public static bool BypassUndo = false;
 
         [FieldButtonId(1801, priority = int.MaxValue)]
         static NodeCustomDataBase CreateNodeCustomData_FieldButton(object sender)
         {
-            return CreateNodeCustomData(sender as Node, NodeCustomDataTypeToCreate);
+            return CreateNodeCustomData(sender as Node, CustomData.NodeDataType);
         }
 
         [FieldButtonId(1800, priority = int.MaxValue)]
@@ -32,7 +25,7 @@ namespace com.absence.dialoguesystem.editor
         [FieldButtonId(1803, priority = int.MaxValue)]
         static NodeCustomDataBase CreateOptionCustomData_FieldButton(object sender, object option)
         {
-            return CreateOptionCustomData(sender as Node, option as Option, OptionCustomDataTypeToCreate);
+            return CreateOptionCustomData(sender as Node, option as Option, CustomData.OptionDataType);
         }
 
         [FieldButtonId(1802, priority = int.MaxValue)]
@@ -44,7 +37,7 @@ namespace com.absence.dialoguesystem.editor
         [FieldButtonId(1805, priority = int.MaxValue)]
         static NodeCustomDataBase CreateGenericOptionCustomData_FieldButton(object sender, object option)
         {
-            return CreateGenericOptionCustomData(sender as Dialogue, option as Option, GenericOptionCustomDataTypeToCreate);
+            return CreateGenericOptionCustomData(sender as Dialogue, option as Option, CustomData.GenericOptionDataType);
         }
 
         [FieldButtonId(1804, priority = int.MaxValue)]
