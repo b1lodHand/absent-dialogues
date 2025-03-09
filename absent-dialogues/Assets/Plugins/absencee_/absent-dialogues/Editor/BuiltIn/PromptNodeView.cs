@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor.internals
 {
@@ -23,6 +24,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
             Graph.m_dialogue.OnValidateAction -= RefreshGenericOptionViews;
             Graph.m_dialogue.OnValidateAction += RefreshGenericOptionViews;
+
+            ApplyHardcodedStyle(EditorSettings.instance);
         }
 
         protected override void OnAfterStylesApplied()
@@ -140,6 +143,27 @@ namespace com.absence.dialoguesystem.editor.internals
             }
         }
 
+        internal override void ApplyHardcodedStyle(EditorSettings settings)
+        {
+            for (int i = 0; i < m_optionElems.Count; i++)
+            {
+                VisualElement optionView = m_optionElems[i];
+                //Option target = m_nodeAsPrompt.Options[i];
+                optionView.Q<Button>().style.backgroundColor = settings.NegativeColor;
+                optionView.Q<Button>().style.color = settings.TextColor;
+            }
+
+            for (int i = 0; i < m_genericOptionElems.Count; i++)
+            {
+                VisualElement genericOptionView = m_genericOptionElems[i];
+                GenericOptionReference reference = m_nodeAsPrompt.GenericOptions[i];
+                genericOptionView.Q<Button>().style.backgroundColor = reference.Bypass ? 
+                    settings.NeutralColor : settings.PositiveColor;
+                genericOptionView.Q<Button>().style.color = reference.Bypass ?
+                    settings.TextColor : settings.AlternativeTextColor;
+            }
+        }
+
         protected override void OnDisconnectAll(ref HashSet<GraphElement> toDelete)
         {
             foreach (VisualElement option in m_optionElems)
@@ -152,7 +176,6 @@ namespace com.absence.dialoguesystem.editor.internals
                 AddConnectionsToDeleteSet(option, ref toDelete);
             }
         }
-
         protected override DropdownMenuAction.Status DisconnectAllStatus(DropdownMenuAction action)
         {
             DropdownMenuAction.Status result = base.DisconnectAllStatus(action);
@@ -229,6 +252,22 @@ namespace com.absence.dialoguesystem.editor.internals
                 mainContainer.Remove(optionElem);
 
                 Graph.Refresh();
+            });
+
+            removeButton.RegisterCallback<MouseEnterEvent>(evt =>
+            {
+                Color layerColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
+
+                Color defaultColor = EditorSettings.instance.NegativeColor;
+
+                removeButton.style.backgroundColor = defaultColor + layerColor;
+            });
+
+            removeButton.RegisterCallback<MouseOutEvent>(evt =>
+            {
+                Color defaultColor = EditorSettings.instance.NegativeColor;
+
+                removeButton.style.backgroundColor = defaultColor;
             });
 
             Button moveUpButton = new Button(() =>

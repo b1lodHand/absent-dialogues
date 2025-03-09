@@ -81,6 +81,8 @@ namespace com.absence.dialoguesystem.editor
 
             OnAfterStylesApplied();
 
+            ApplyHardcodedStyle(EditorSettings.instance);
+
             this.title = node.Title ?? "Node";
 
             SetupNodeForSerialization();
@@ -307,6 +309,10 @@ namespace com.absence.dialoguesystem.editor
 
         }
         protected virtual void OnDisconnectAll(ref HashSet<GraphElement> toDelete)
+        {
+
+        }
+        internal virtual void ApplyHardcodedStyle(EditorSettings settings)
         {
 
         }

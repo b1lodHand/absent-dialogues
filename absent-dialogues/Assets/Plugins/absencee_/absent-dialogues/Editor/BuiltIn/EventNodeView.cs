@@ -1,5 +1,6 @@
 using com.absence.dialoguesystem.internals;
 using System.Text;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor.internals
@@ -18,6 +19,12 @@ namespace com.absence.dialoguesystem.editor.internals
         protected override void OnAfterStylesApplied()
         {
             m_nodeAsEvent = Node as EventNode;
+        }
+
+        internal override void ApplyHardcodedStyle(EditorSettings settings)
+        {
+            this.Q("node-icon").style.unityBackgroundImageTintColor = m_nodeAsEvent.UsedByMapper ?
+                settings.ThemeColor : Color.white;
         }
 
         private void Refresh()
@@ -58,6 +65,8 @@ namespace com.absence.dialoguesystem.editor.internals
             {
                 icon.tooltip = m_nodeAsEvent.GenerateIconTooltip();
             }
+
+            ApplyHardcodedStyle(EditorSettings.instance);
         }
     }
 }

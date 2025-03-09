@@ -37,6 +37,7 @@ namespace com.absence.dialoguesystem.editor.internals
         public event Action<Node> OnBeforeNodeDeleted = null;
 
         List<Node> m_cutCache = new();
+        List<NodeView> views = new();
 
         /// <summary>
         /// Default constructor.
@@ -301,6 +302,14 @@ namespace com.absence.dialoguesystem.editor.internals
             }
         }
 
+        internal void ReapplyHardcodedStyles(EditorSettings settings)
+        {
+            foreach (NodeView view in views)
+            {
+                view.ApplyHardcodedStyle(settings);
+            }
+        }
+
         protected override void CollectCopyableGraphElements(IEnumerable<GraphElement> elements, HashSet<GraphElement> elementsToCopySet)
         {
             base.CollectCopyableGraphElements(elements, elementsToCopySet);
@@ -332,6 +341,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
         internal void ClearViewWithoutNotification()
         {
+            views.Clear();
+
             graphViewChanged -= OnGraphViewChanged;
             DeleteElements(graphElements);
             graphViewChanged += OnGraphViewChanged;
@@ -369,7 +380,10 @@ namespace com.absence.dialoguesystem.editor.internals
 
             dialogue.AllNodes.RemoveAll(n => n == null);
 
-            dialogue.AllNodes.ForEach(n => CreateNodeView(n));
+            dialogue.AllNodes.ForEach(n =>
+            {
+                views.Add(CreateNodeView(n));
+            });
 
             dialogue.AllNodes.ForEach(n =>
             {
@@ -570,6 +584,8 @@ namespace com.absence.dialoguesystem.editor.internals
         {
             if (reference.Bypass)
             {
+                bypassButton.style.backgroundColor = EditorSettings.instance.NeutralColor;
+                bypassButton.style.color = EditorSettings.instance.TextColor;
                 bypassButton.text = "—";
                 bypassButton.RemoveFromClassList("passiveBypassButton");
                 bypassButton.AddToClassList("activeBypassButton");
@@ -577,6 +593,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
             else
             {
+                bypassButton.style.backgroundColor = EditorSettings.instance.PositiveColor;
+                bypassButton.style.color = EditorSettings.instance.AlternativeTextColor;
                 bypassButton.text = "✓";
                 bypassButton.AddToClassList("passiveBypassButton");
                 bypassButton.RemoveFromClassList("activeBypassButton");
@@ -655,6 +673,24 @@ namespace com.absence.dialoguesystem.editor.internals
 
             RefreshBypassButton(sender, bypassButton, reference);
             bypassButton.clicked += action;
+
+            bypassButton.RegisterCallback<MouseEnterEvent>(evt =>
+            {
+                Color layerColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
+
+                Color defaultColor = reference.Bypass ?
+                    EditorSettings.instance.NeutralColor : EditorSettings.instance.PositiveColor;
+
+                bypassButton.style.backgroundColor = defaultColor + layerColor;
+            });
+
+            bypassButton.RegisterCallback<MouseOutEvent>(evt =>
+            {
+                Color defaultColor = reference.Bypass ?
+                    EditorSettings.instance.NeutralColor : EditorSettings.instance.PositiveColor;
+
+                bypassButton.style.backgroundColor = defaultColor;
+            });
 
             top.Add(bypassButton);
             //top.Add(moveUpButton);
