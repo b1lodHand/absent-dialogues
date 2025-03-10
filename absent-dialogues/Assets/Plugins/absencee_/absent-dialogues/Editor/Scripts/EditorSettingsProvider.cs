@@ -72,8 +72,6 @@ namespace com.absence.dialoguesystem.editor
                 settings.TextColor = textColor;
                 settings.AlternativeTextColor = alternativeTextColor;
 
-                settings.Save();
-
                 if (DialogueEditorWindow.Current != null)
                     DialogueEditorWindow.Current.m_dialogueGraphView.ReapplyHardcodedStyles(settings);
             }
@@ -81,6 +79,12 @@ namespace com.absence.dialoguesystem.editor
 
         public override void OnTitleBarGUI()
         {
+        }
+
+        public override void OnDeactivate()
+        {
+            EditorSettings settings = EditorSettings.instance;
+            settings.Save();
         }
 
         public override void OnFooterBarGUI()
@@ -94,6 +98,11 @@ namespace com.absence.dialoguesystem.editor
 
                 if (DialogueEditorWindow.Current != null)
                     DialogueEditorWindow.Current.m_dialogueGraphView.ReapplyHardcodedStyles(settings);
+            }
+
+            if (GUILayout.Button("Save"))
+            {
+                settings.Save();
             }
         }
     }

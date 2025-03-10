@@ -143,6 +143,7 @@ namespace com.absence.dialoguesystem.editor
         public void Refresh()
         {
             m_showIfLabel.visible = m_target.UseShowIf;
+            m_showIfLabel.tooltip = Utilities.Comparison.GetConditionString(m_target.Visibility.ShowIfList, m_target.Visibility.Processor, true, true);
             ApplyHardcodedStyle(EditorSettings.instance);
             onRefresh?.Invoke(this);
         }
