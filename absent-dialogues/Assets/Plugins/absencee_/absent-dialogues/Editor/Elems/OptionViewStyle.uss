@@ -1,0 +1,85 @@
+#option {
+    display: flex;
+}
+
+.optionShowIf .unity-popup-field__input {
+    border-radius: 0;
+}
+
+.optionShowIf #comparison {
+    border-radius: 0;
+}
+
+.optionDivider {
+    height: 1px;
+    background-color: rgb(45, 45, 45);
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.optionBottom {
+    flex-direction: row;
+    align-items: stretch;
+    align-self: stretch;
+    width: var(--decisionSpeechNodeWidth);
+    margin-right: 10px;
+}
+
+.optionPort {
+    width: var(--optionPortWidth);
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 10px;
+}
+
+.optionField {
+    width: 180px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+    white-space: normal;
+}
+
+.optionField > TextInput {
+    border-radius: 0;
+}
+
+.addNewOptionButton {
+    border-radius: 0;
+}
+
+.removeOptionButton {
+    border-radius: 0;
+    width: 21px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+/*     background-color: rgb(171, 68, 63);
+    color: rgb(255, 255, 255); */
+}
+
+.moveOptionUpButton {
+    border-radius: 0;
+    width: 21px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.moveOptionDownButton {
+    border-radius: 0;
+    width: 21px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.removeOptionButton:hover {
+    /* background-color: rgb(194, 95, 91); */
+}
+
+.optionShowIfLabel {
+    -unity-font-style: italic;
+    -unity-text-align: middle-left;
+    color: rgba(207, 207, 207, 0.62);
+}
+
+.optionShowIfLabel:hover {
+    color: rgba(255, 255, 255, 0.62);
+}

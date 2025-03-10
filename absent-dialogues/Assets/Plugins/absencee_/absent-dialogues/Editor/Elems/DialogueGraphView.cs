@@ -199,6 +199,9 @@ namespace com.absence.dialoguesystem.editor.internals
         {
             var mapFoldout = new Foldout() { focusable = false, value = true, text = "Minimap" };
             var miniMap = new MiniMap() { anchored = true };
+            mapFoldout.style.alignSelf = Align.FlexStart;
+            mapFoldout.style.alignItems = Align.FlexStart;
+            mapFoldout.style.alignContent = Align.FlexStart;
             miniMap.name = "mini-map";
 
             mapFoldout.Add(miniMap);
@@ -578,154 +581,6 @@ namespace com.absence.dialoguesystem.editor.internals
 
             ClearSelection();
             AddToSelection(selectableNode);
-        }
-
-        internal void RefreshBypassButton(NodeView sender, Button bypassButton, GenericOptionReference reference)
-        {
-            if (reference.Bypass)
-            {
-                bypassButton.style.backgroundColor = EditorSettings.instance.NeutralColor;
-                bypassButton.style.color = EditorSettings.instance.TextColor;
-                bypassButton.text = "—";
-                bypassButton.RemoveFromClassList("passiveBypassButton");
-                bypassButton.AddToClassList("activeBypassButton");
-            }
-
-            else
-            {
-                bypassButton.style.backgroundColor = EditorSettings.instance.PositiveColor;
-                bypassButton.style.color = EditorSettings.instance.AlternativeTextColor;
-                bypassButton.text = "✓";
-                bypassButton.AddToClassList("passiveBypassButton");
-                bypassButton.RemoveFromClassList("activeBypassButton");
-            }
-        }
-
-        internal VisualElement CreateGenericOptionElement(NodeView sender, GenericOptionReference reference)
-        {
-            VisualElement optionElem = new VisualElement();
-
-            VisualElement top = new VisualElement();
-            top.AddToClassList("optionBottom");
-            top.name = "top";
-
-            VisualElement divider = new VisualElement();
-            divider.AddToClassList("optionDivider");
-
-            VisualElement bottom = new VisualElement();
-            bottom.AddToClassList("optionBottom");
-
-            GenericOption target = reference.Target;
-
-            //"◦•✓"
-            Button bypassButton = new Button();
-            bypassButton.AddToClassList("bypassOptionButton");
-
-            //Button moveUpButton = new Button(() =>
-            //{
-            //});
-
-            //Button moveDownButton = new Button(() =>
-            //{
-            //});
-
-            //moveUpButton.text = "↑";
-            //moveUpButton.AddToClassList("moveOptionUpButton");
-            //moveUpButton.SetEnabled(false);
-
-            //moveDownButton.text = "↓";
-            //moveDownButton.AddToClassList("moveOptionDownButton");
-            //moveDownButton.SetEnabled(false);
-
-            Port port = sender.InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
-            port.AddToClassList("optionPort");
-            port.portName = "";
-            port.name = "option-direct-port";
-
-            TextField speechField = new TextField();
-            speechField.AddToClassList("optionField");
-            speechField.multiline = true;
-            speechField.SetValueWithoutNotify(target.Text);
-            speechField.SetEnabled(false);
-
-            Label showIfLabel = new Label("Conditional visibility active.");
-            showIfLabel.AddToClassList("optionShowIfLabel");
-            showIfLabel.name = "show-if-label";
-            showIfLabel.tooltip = "NODATA";
-
-            Action action = () =>
-            {
-                Node node = sender.Node;
-                bool hasNoCertainOptions = node.NoCertainOptions;
-
-                Undo.RegisterCompleteObjectUndo(sender.Node, "Node (Generic Option Bypass Button)");
-
-                reference.Bypass = !reference.Bypass;
-
-                EditorUtility.SetDirty(sender.Node);
-
-                if (hasNoCertainOptions != node.NoCertainOptions)
-                    Refresh();
-
-                RefreshBypassButton(sender, bypassButton, reference);
-                RefreshShowIfLabel();
-            };
-
-            RefreshBypassButton(sender, bypassButton, reference);
-            bypassButton.clicked += action;
-
-            bypassButton.RegisterCallback<MouseEnterEvent>(evt =>
-            {
-                Color layerColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
-
-                Color defaultColor = reference.Bypass ?
-                    EditorSettings.instance.NeutralColor : EditorSettings.instance.PositiveColor;
-
-                bypassButton.style.backgroundColor = defaultColor + layerColor;
-            });
-
-            bypassButton.RegisterCallback<MouseOutEvent>(evt =>
-            {
-                Color defaultColor = reference.Bypass ?
-                    EditorSettings.instance.NeutralColor : EditorSettings.instance.PositiveColor;
-
-                bypassButton.style.backgroundColor = defaultColor;
-            });
-
-            top.Add(bypassButton);
-            //top.Add(moveUpButton);
-            //top.Add(moveDownButton);
-            top.Add(showIfLabel);
-            RefreshShowIfLabel();
-
-            bottom.Add(speechField);
-            bottom.Add(port);
-
-            optionElem.Add(divider);
-            optionElem.Add(top);
-            optionElem.Add(bottom);
-
-            return optionElem;
-
-            void RefreshShowIfLabel()
-            {
-                bool useShowIf = reference.Target.UseShowIf;
-                bool bypass = reference.Bypass;
-
-                showIfLabel.visible = useShowIf || bypass;
-
-                if (bypass)
-                {
-                    showIfLabel.text = "Bypassed.";
-                    showIfLabel.tooltip = "This option won't be displayed.";
-                }
-
-                else if (useShowIf)
-                {
-                    showIfLabel.text = "Conditional visibility active.";
-                    showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
-                }
-            }
         }
     }
 

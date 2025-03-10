@@ -6,6 +6,29 @@ namespace com.absence.dialoguesystem
     [FilePath("ProjectSettings/absent-dialogues-settings.asset", FilePathAttribute.Location.ProjectFolder)]
     public class EditorSettings : ScriptableSingleton<EditorSettings>
     {
+        // window color
+        // window label color
+        // edge color -> idle
+        // edge color -> selected
+        // port color
+        // label color
+        // inactive label color
+        // button color
+        // node background color
+        // node border color
+        // text field background color
+        // divider color
+        // alternative divider color
+        // grid background color
+        // grid line color
+        // grid thick line color
+        // option remove button color
+        // option remove button text color
+        // generic option bypass button color -> passive
+        // generic option bypass button color -> active
+        // generic option bypass button text color -> passive
+        // generic option bypass button text color -> active
+
         static readonly Color s_defaultThemeColor = new(63f / 255f, 166f / 255f, 171f / 255f);
         static readonly Color s_defaultPositiveColor = new(112f / 255f, 171f / 255f, 63f / 255f);
         static readonly Color s_defaultNegativeColor = new(171f/255f, 68f/255f, 63f/255f);

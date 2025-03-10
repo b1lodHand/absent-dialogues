@@ -23,25 +23,22 @@ namespace com.absence.dialoguesystem.editor.internals
 
         internal override void ApplyHardcodedStyle(EditorSettings settings)
         {
-            this.Q("node-icon").style.unityBackgroundImageTintColor = m_nodeAsEvent.UsedByMapper ?
+            m_nodeIcon.style.unityBackgroundImageTintColor = m_nodeAsEvent.UsedByMapper ?
                 settings.ThemeColor : Color.white;
         }
 
         private void Refresh()
         {
-            VisualElement icon = this.Q<VisualElement>("node-icon");
-            Label title = this.Q<Label>("title-label");
-
             if (m_nodeAsEvent.UsedByMapper)
             {
                 AddToClassList("mapped");
-                title.text = m_nodeAsEvent.UniqueMapperId;
+                m_titleText.text = m_nodeAsEvent.UniqueMapperId;
             }
 
             else
             {
                 RemoveFromClassList("mapped");
-                title.text = m_nodeAsEvent.Title;
+                m_titleText.text = m_nodeAsEvent.Title;
             }
 
             if (m_nodeAsEvent.UsedByMapper)
@@ -58,12 +55,12 @@ namespace com.absence.dialoguesystem.editor.internals
                     sb.Append(defaultDescription);
                 }
 
-                icon.tooltip = sb.ToString();
+                m_nodeIcon.tooltip = sb.ToString();
             }
 
             else
             {
-                icon.tooltip = m_nodeAsEvent.GenerateIconTooltip();
+                m_nodeIcon.tooltip = m_nodeAsEvent.GenerateIconTooltip();
             }
 
             ApplyHardcodedStyle(EditorSettings.instance);

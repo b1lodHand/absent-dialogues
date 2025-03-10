@@ -1,0 +1,26 @@
+.bypassOptionButton {
+    border-radius: 0;
+    width: 21px;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out-circ;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    /* color: rgb(255, 255, 255); */
+}
+
+.activeBypassButton {
+    /* background-color: rgb(88, 88, 88); */
+}
+
+.passiveBypassButton {
+    /* background-color: rgb(112, 171, 63); */
+}
+
+.activeBypassButton:hover {
+    /* background-color: rgb(121, 121, 121); */
+}
+
+.passiveBypassButton:hover {
+    /* background-color: rgb(121, 185, 68); */
+}

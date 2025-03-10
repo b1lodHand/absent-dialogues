@@ -45,10 +45,12 @@ namespace com.absence.dialoguesystem.internals
             sb.Append(richText ? Utilities.Text.ColorizeString(Utilities.Setting.GetSetTypeIcon(m_setType), bracketHex) : Utilities.Setting.GetSetTypeIcon(m_setType));
             sb.Append(" ");
 
+            if (richText) sb.Append($"<color={Constants.Tooltips.VARIABLE_NAME_HEX}>");
             if (BlackboardBank.HasInt(m_targetVariableName)) sb.Append(IntValue);
             else if (BlackboardBank.HasBoolean(m_targetVariableName)) sb.Append(BooleanValue);
             else if (BlackboardBank.HasFloat(m_targetVariableName)) sb.Append(FloatValue);
             else if (BlackboardBank.HasString(m_targetVariableName)) sb.Append($"{StringValue}");
+            if (richText) sb.Append("</color>");
 
             sb.Append(richText ? Utilities.Text.ColorizeString("]", bracketHex) : "]");
 

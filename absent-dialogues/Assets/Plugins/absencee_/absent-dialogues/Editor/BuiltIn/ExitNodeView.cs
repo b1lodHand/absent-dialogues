@@ -12,8 +12,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
         internal override void ApplyHardcodedStyle(EditorSettings settings)
         {
-            this.Q("node-border").style.borderTopColor = settings.ThemeColor;
-            this.Q("node-icon").style.unityBackgroundImageTintColor = settings.ThemeColor;
+            m_nodeBorder.style.borderTopColor = settings.ThemeColor;
+            m_nodeIcon.style.unityBackgroundImageTintColor = settings.ThemeColor;
         }
     }
 }

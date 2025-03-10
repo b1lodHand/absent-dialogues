@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 using Node = com.absence.dialoguesystem.internals.Node;
-using UnityEngine;
 
 namespace com.absence.dialoguesystem.editor.internals
 {
@@ -14,8 +12,8 @@ namespace com.absence.dialoguesystem.editor.internals
     {
         private PromptNode m_nodeAsPrompt;
         private Button m_createNewOptionButton;
-        private List<VisualElement> m_optionElems = new List<VisualElement>();
-        private List<VisualElement> m_genericOptionElems = new List<VisualElement>();
+        private List<OptionView> m_optionElems = new List<OptionView>();
+        private List<GenericOptionReferenceView> m_genericOptionElems = new List<GenericOptionReferenceView>();
 
         public PromptNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
@@ -48,35 +46,17 @@ namespace com.absence.dialoguesystem.editor.internals
 
         private void RefreshGenericOptionViews()
         {
-            for (int i = 0; i < m_genericOptionElems.Count; i++)
+            try
             {
-                VisualElement element = m_genericOptionElems[i];
-                Label showIfLabel = element.Q<Label>("show-if-label");
-                TextField textField = element.Q<TextField>();
-
-                if (i >= Node.GenericOptions.Count)
-                    return;
-
-                GenericOptionReference reference = Node.GenericOptions[i];
-
-                bool useShowIf = reference.Target.UseShowIf;
-                bool bypass = reference.Bypass;
-
-                showIfLabel.visible = useShowIf || bypass;
-
-                if (reference.Bypass)
+                m_genericOptionElems.ForEach(genericOptionElem =>
                 {
-                    showIfLabel.text = "Bypassed.";
-                    showIfLabel.tooltip = "This option won't be displayed.";
-                }
+                    genericOptionElem.Refresh();
+                });
+            }
 
-                else if (reference.Target.UseShowIf)
-                {
-                    showIfLabel.text = "Conditional visibility active.";
-                    showIfLabel.tooltip = reference.Target.Visibility.GetConditionString(true);
-                }
-
-                textField.SetValueWithoutNotify(reference.Target.Text);
+            catch
+            {
+                return;
             }
         }
         private void RefreshOptionViews()
@@ -85,14 +65,7 @@ namespace com.absence.dialoguesystem.editor.internals
             {
                 m_optionElems.ForEach(optionElem =>
                 {
-                    Option targetOption = m_nodeAsPrompt.Options[m_optionElems.IndexOf(optionElem)];
-                    Label showIfLabel = optionElem.Q<VisualElement>("top").Q<Label>("show-if-label");
-
-                    showIfLabel.visible = targetOption.UseShowIf;
-
-                    if (!showIfLabel.visible) return;
-
-                    showIfLabel.tooltip = targetOption.Visibility.GetConditionString(true);
+                    optionElem.Refresh();
                 });
             }
 
@@ -116,30 +89,15 @@ namespace com.absence.dialoguesystem.editor.internals
 
             for (int i = 0; i < optionArrayLength; i++)
             {
-                m_optionElems.Add(CreateOptionView(i, optionsProp));
+                CreateOptionView(i, optionsProp);
                 if (i < lastIndex) optionsProp.Next(false);
             }
-
-            m_optionElems.ForEach(e =>
-            {
-                mainContainer.Add(e);
-
-                Port port = e.Q<Port>("option-direct-port");
-
-                Outputs.Add(port);
-            });
         }
         protected virtual void DrawGenericOptions()
         {
             for (int i = 0; i < Node.GenericOptions.Count; i++)
             {
-                VisualElement elem = Graph.CreateGenericOptionElement(this, Node.GenericOptions[i]);
-                m_genericOptionElems.Add(elem);
-                mainContainer.Add(elem);
-
-                Port port = elem.Q<Port>("option-direct-port");
-
-                Outputs.Add(port);
+                CreateGenericOptionView(i);
             }
         }
 
@@ -221,140 +179,123 @@ namespace com.absence.dialoguesystem.editor.internals
 
             Graph.Refresh();
         }
-        protected virtual VisualElement CreateOptionView(int index, SerializedProperty optionProp)
+        protected virtual OptionView CreateOptionView(int index, SerializedProperty optionProp)
         {
-            VisualElement optionElem = new VisualElement();
+            OptionView view = 
+                OptionView.Create(m_nodeAsPrompt.Options[index], optionProp, 
+                () => InstantiatePort(Orientation.Horizontal, Direction.Output, 
+                Port.Capacity.Single, typeof(bool)));
 
-            VisualElement top = new VisualElement();
-            top.AddToClassList("optionBottom");
-            top.name = "top";
+            view.OnRefresh(OnOptionViewRefresh);
+            view.OnRemoveButtonClicked(OnOptionViewRemoveButtonClicked);
+            view.OnMoveUpButtonClicked(OnOptionViewMoveUpButtonClicked);
+            view.OnMoveDownButtonClicked(OnOptionViewMoveDownButtonClicked);
 
-            VisualElement divider = new VisualElement();
-            divider.AddToClassList("optionDivider");
+            view.SetEnabledOfMoveUpButton(index > 0);
+            view.SetEnabledOfMoveDownButton(index < m_nodeAsPrompt.Options.Count - 1);
 
-            VisualElement bottom = new VisualElement();
-            bottom.AddToClassList("optionBottom");
+            m_optionElems.Add(view);
+            Outputs.Add(view.Port);
+            mainContainer.Add(view);
+            return view;
+        }
+        protected virtual GenericOptionReferenceView CreateGenericOptionView(int index)
+        {
+            GenericOptionReferenceView view =
+                GenericOptionReferenceView.Create(m_nodeAsPrompt.GenericOptions[index],
+                () => InstantiatePort(Orientation.Horizontal, Direction.Output,
+                Port.Capacity.Single, typeof(bool)));
 
-            var speechProp = optionProp.FindPropertyRelative("Text");
+            view.OnRefresh(OnGenericOptionRefresh);
+            view.OnBypassButtonClicked(OnGenericOptionBypassButtonClicked);
 
-            Button removeButton = new Button(() =>
+            m_genericOptionElems.Add(view);
+            Outputs.Add(view.Port);
+            mainContainer.Add(view);
+            return view;
+        }
+
+        private void OnGenericOptionBypassButtonClicked(GenericOptionReferenceView view)
+        {
+            GenericOptionReference reference = view.Reference;
+            bool hasNoCertainOptions = Node.NoCertainOptions;
+
+            Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Bypass Button)");
+
+            reference.Bypass = !reference.Bypass;
+
+            EditorUtility.SetDirty(Node);
+
+            if (hasNoCertainOptions != Node.NoCertainOptions)
             {
-                var target = m_nodeAsPrompt.Options[index];
-
-                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
-                m_nodeAsPrompt.RemoveOutputConnection(Outputs.IndexOf(optionElem.Q<Port>()));
-                m_nodeAsPrompt.Options.Remove(target);
-
-                EditorUtility.SetDirty(m_nodeAsPrompt);
-                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
-
-                m_optionElems.Remove(optionElem);
-                mainContainer.Remove(optionElem);
-
                 Graph.Refresh();
-            });
-
-            removeButton.RegisterCallback<MouseEnterEvent>(evt =>
-            {
-                Color layerColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
-
-                Color defaultColor = EditorSettings.instance.NegativeColor;
-
-                removeButton.style.backgroundColor = defaultColor + layerColor;
-            });
-
-            removeButton.RegisterCallback<MouseOutEvent>(evt =>
-            {
-                Color defaultColor = EditorSettings.instance.NegativeColor;
-
-                removeButton.style.backgroundColor = defaultColor;
-            });
-
-            Button moveUpButton = new Button(() =>
-            {
-                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
-
-                int targetIndex = index - 1;
-
-                Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
-                Option self = m_nodeAsPrompt.Options[index];
-
-                m_nodeAsPrompt.Options[index] = optionToReplace;
-                m_nodeAsPrompt.Options[targetIndex] = self;
-
-                EditorUtility.SetDirty(m_nodeAsPrompt);
-                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
-
-                Graph.Refresh();
-            });
-
-            Button moveDownButton = new Button(() =>
-            {
-                Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
-
-                int targetIndex = index + 1;
-
-                Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
-                Option self = m_nodeAsPrompt.Options[index];
-
-                m_nodeAsPrompt.Options[index] = optionToReplace;
-                m_nodeAsPrompt.Options[targetIndex] = self;
-
-                EditorUtility.SetDirty(m_nodeAsPrompt);
-                AssetDatabase.SaveAssetIfDirty(m_assetGuid);
-
-                Graph.Refresh();
-            });
-
-            removeButton.text = "×";
-            removeButton.AddToClassList("removeOptionButton");
-            removeButton.tooltip = "Remove";
-
-            moveUpButton.text = "↑";
-            moveUpButton.AddToClassList("moveOptionUpButton");
-            moveUpButton.SetEnabled(index > 0);
-            moveUpButton.tooltip = "Move up";
-
-            moveDownButton.text = "↓";
-            moveDownButton.AddToClassList("moveOptionDownButton");
-            moveDownButton.SetEnabled(index < m_nodeAsPrompt.Options.Count - 1);
-            moveDownButton.tooltip = "Move down";
-
-            Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
-            port.AddToClassList("optionPort");
-            port.portName = "";
-            port.name = "option-direct-port";
-
-            TextField speechField = new TextField();
-            speechField.AddToClassList("optionField");
-            speechField.multiline = true;
-
-            speechField.BindProperty(speechProp);
-
-            Label showIfLabel = new Label("Conditional visibility active.");
-            showIfLabel.AddToClassList("optionShowIfLabel");
-            showIfLabel.name = "show-if-label";
-            showIfLabel.tooltip = "NODATA";
-
-            top.Add(removeButton);
-            top.Add(moveUpButton);
-            top.Add(moveDownButton);
-            top.Add(showIfLabel);
-            RefreshShowIfLabel();
-
-            bottom.Add(speechField);
-            bottom.Add(port);
-
-            optionElem.Add(divider);
-            optionElem.Add(top);
-            optionElem.Add(bottom);
-
-            void RefreshShowIfLabel()
-            {
-                showIfLabel.visible = optionProp.FindPropertyRelative("m_useShowIf").boolValue;
+                return;
             }
 
-            return optionElem;
+            view.Refresh();
+        }
+
+        private void OnGenericOptionRefresh(GenericOptionReferenceView view)
+        {
+
+        }
+
+        private void OnOptionViewMoveDownButtonClicked(OptionView view)
+        {
+            Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
+
+            int index = m_optionElems.IndexOf(view);
+            int targetIndex = index + 1;
+
+            Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
+            Option self = m_nodeAsPrompt.Options[index];
+
+            m_nodeAsPrompt.Options[index] = optionToReplace;
+            m_nodeAsPrompt.Options[targetIndex] = self;
+
+            EditorUtility.SetDirty(m_nodeAsPrompt);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+
+            Graph.Refresh();
+        }
+
+        private void OnOptionViewMoveUpButtonClicked(OptionView view)
+        {
+            Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
+
+            int index = m_optionElems.IndexOf(view);
+            int targetIndex = index - 1;
+
+            Option optionToReplace = m_nodeAsPrompt.Options[targetIndex];
+            Option self = m_nodeAsPrompt.Options[index];
+
+            m_nodeAsPrompt.Options[index] = optionToReplace;
+            m_nodeAsPrompt.Options[targetIndex] = self;
+
+            EditorUtility.SetDirty(m_nodeAsPrompt);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+
+            Graph.Refresh();
+        }
+
+        private void OnOptionViewRemoveButtonClicked(OptionView view)
+        {
+            Undo.RegisterCompleteObjectUndo(m_nodeAsPrompt, "Prompt Node (Modified)");
+            m_nodeAsPrompt.RemoveOutputConnection(Outputs.IndexOf(view.Port));
+            m_nodeAsPrompt.Options.Remove(view.Target);
+
+            EditorUtility.SetDirty(m_nodeAsPrompt);
+            AssetDatabase.SaveAssetIfDirty(m_assetGuid);
+
+            m_optionElems.Remove(view);
+            mainContainer.Remove(view);
+
+            Graph.Refresh();
+        }
+
+        private void OnOptionViewRefresh(OptionView view)
+        {
+            
         }
     }
 }

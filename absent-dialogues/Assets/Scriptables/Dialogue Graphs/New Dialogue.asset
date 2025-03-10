@@ -55,7 +55,7 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  Mode: 0
+  Mode: 1
   m_conditions: []
 --- !u!114 &-3514463440667093514
 MonoBehaviour:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 86dcf618b810b7243bb77ccfe39f95cc
   m_EditorClassIdentifier: 
   Guid: 86dcf618b810b7243bb77ccfe39f95cc
-  Position: {x: 203.9, y: -28.65002}
+  Position: {x: 214.30005, y: -24.449993}
   CustomData: {fileID: -3514463440667093514}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -419,7 +419,7 @@ MonoBehaviour:
   - m_scroll: {x: 0, y: 0}
     Text: a
     CustomData: {fileID: 0}
-    m_useShowIf: 0
+    m_useShowIf: 1
     Visibility:
       Processor: 0
       ShowIfList: []

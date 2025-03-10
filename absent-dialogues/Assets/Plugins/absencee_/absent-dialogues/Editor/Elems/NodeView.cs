@@ -50,6 +50,15 @@ namespace com.absence.dialoguesystem.editor
 
         protected GUID m_assetGuid;
         protected SerializedObject m_serializedNode;
+        protected Label m_titleText;
+        protected TextField m_defaultTextField;
+        protected TextElement m_defaultTextFieldTextElement;
+        protected VisualElement m_nodeIcon;
+        protected VisualElement m_nodeBorder;
+        protected VisualElement m_selectionBorder;
+        protected VisualElement m_stateBorder;
+        protected Label m_personDropdownLabel;
+        protected VisualElement m_personDropdown;
 
         /// <summary>
         /// The graph we're in.
@@ -70,6 +79,7 @@ namespace com.absence.dialoguesystem.editor
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 
+            FindDefaultElements();
             FetchGenericOptions();
 
             NodeViewStyles.ApplyStyles(this);
@@ -111,6 +121,35 @@ namespace com.absence.dialoguesystem.editor
         }
 
         #region Protected API
+        protected void SetPortColor(Port target, Color connectedColor, Color notConnectedColor)
+        {
+            VisualElement connector = target.Q("connector");
+            VisualElement cap = connector.Q("cap");
+            
+            Color color = target.connected ? connectedColor : notConnectedColor;
+
+            cap.style.backgroundColor = color;
+            connector.style.borderTopColor = color;
+            connector.style.borderRightColor = color;
+            connector.style.borderBottomColor = color;
+            connector.style.borderLeftColor = color;
+        }
+        protected void SetPortLabelColor(Port target, Color color)
+        {
+            VisualElement label = target.Q("type");
+
+            label.style.color = color;
+        }
+        protected virtual void FindDefaultElements()
+        {
+            m_nodeBorder = this.Q("node-border");
+            m_selectionBorder = this.Q("selection-border");
+            m_stateBorder = this.Q("state-border");
+            m_nodeIcon = this.Q("node-icon");
+            m_titleText = this.Q("title").Q<Label>("title-label");
+            m_defaultTextField = this.Q<TextField>("speech");
+            m_defaultTextFieldTextElement = m_defaultTextField.Q("unity-text-input").Q<TextElement>();
+        }
         protected void FetchGenericOptions()
         {
             if (!Node.UseGenericOptions)
