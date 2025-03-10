@@ -1,6 +1,6 @@
 :root {
-    width: 138px;
-    height: 85px;
+    min-width: 138px;
+    min-height: 85px;
 }
 
 #node-icon {
@@ -9,4 +9,8 @@
 
 #title {
     padding-right: 6px;
+}
+
+#title-label {
+    white-space: nowrap;
 }

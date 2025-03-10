@@ -12,13 +12,24 @@ namespace com.absence.dialoguesystem.internals
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.internals.ConditionNode.html")]
     public class BranchNode : Node
     {
+        public enum TitleTextMode
+        {
+            None,
+            Horizontal,
+            Vertical,
+            External,
+        }
+
         public static string CreationMenuName => "Branch";
 
         [HideInInspector] public Node TrueNext;
         [HideInInspector] public Node FalseNext;
 
+        public TitleTextMode TitleMode = TitleTextMode.None;
+
         [Tooltip("Use to declare what to do with the sum of the results of comparers.")] public ConditionProcessMode Mode = ConditionProcessMode.All;
         [SerializeField, Tooltip("All of the comparers this node relies on.")] protected List<NodeVariableComparer> m_conditions = new();
+
 
         public override string Title => "Branch";
 
@@ -108,7 +119,17 @@ namespace com.absence.dialoguesystem.internals
 
         public virtual string GetConditionString(bool richText = false)
         {
-            return Utilities.Comparison.GetConditionString(m_conditions, Mode, richText);
+            return Utilities.Comparison.GetConditionString(m_conditions, Mode, TitleMode == TitleTextMode.Vertical, richText);
+        }
+
+        public virtual string GetHorizontalConditionString(bool richText = false)
+        {
+            return Utilities.Comparison.GetConditionString(m_conditions, Mode, false, richText);
+        }
+
+        public virtual string GetVerticalConditionString(bool richText = false)
+        {
+            return Utilities.Comparison.GetConditionString(m_conditions, Mode, true, richText);
         }
     }
 }

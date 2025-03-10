@@ -21,7 +21,7 @@ namespace com.absence.dialoguesystem.internals
         
         public static class Comparison
         {
-            public static string GetConditionString(List<NodeVariableComparer> comparers, ConditionProcessMode processType, bool richText = false)
+            public static string GetConditionString(List<NodeVariableComparer> comparers, ConditionProcessMode processType, bool vertical, bool richText = false)
             {
                 bool isAnd = (processType == ConditionProcessMode.All);
                 StringBuilder sb = new();
@@ -40,7 +40,8 @@ namespace com.absence.dialoguesystem.internals
                     if (comparers.IndexOf(comparer) != (comparers.Count - 1))
                     {
                         sb.Append(isAnd ? GetAndSymbol(richText) : GetOrSymbol(richText));
-                        sb.Append(" ");
+                        if (vertical) sb.Append("\n");
+                        else sb.Append(" ");
                     }
                 });
 
@@ -78,7 +79,7 @@ namespace com.absence.dialoguesystem.internals
                     case BaseVariableComparer.ComparisonType.LessOrEqual:
                         return "≤";
                     case BaseVariableComparer.ComparisonType.EqualsTo:
-                        return "=";
+                        return "==";
                     case BaseVariableComparer.ComparisonType.NotEquals:
                         return "≠";
                     case BaseVariableComparer.ComparisonType.GreaterOrEqual:

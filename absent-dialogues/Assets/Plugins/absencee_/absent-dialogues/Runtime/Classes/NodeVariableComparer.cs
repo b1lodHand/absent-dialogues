@@ -64,7 +64,10 @@ namespace com.absence.dialoguesystem.internals
 
             if (BlackboardBank.HasBoolean(m_targetVariableName))
             {
-                string boolResult = BooleanValue ? realVarName : $"!{realVarName}";
+                string exclamationMark = richText ?
+                    Utilities.Text.ColorizeString("!", Constants.Tooltips.NEGATIVE_HEX) : "!";
+
+                string boolResult = BooleanValue ? realVarName : $"{exclamationMark}{realVarName}";
 
                 if (!richText) return boolResult;
                 else return Utilities.Text.ColorizeString(boolResult, Constants.Tooltips.VARIABLE_NAME_HEX);

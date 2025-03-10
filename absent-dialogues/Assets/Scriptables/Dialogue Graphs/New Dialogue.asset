@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11e2258471b984d4ba77d2e1e0bdf1c6
   m_EditorClassIdentifier: 
   Guid: 11e2258471b984d4ba77d2e1e0bdf1c6
-  Position: {x: 612.00006, y: 491.49997}
+  Position: {x: 790, y: 439}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -55,8 +55,23 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  Mode: 1
-  m_conditions: []
+  TitleMode: 0
+  Mode: 0
+  m_conditions:
+  - m_comparisonType: 2
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'string: string'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: ValueValueValue
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'bool: boolean'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: ValueValueValue
+    m_boolValue: 0
 --- !u!114 &-3514463440667093514
 MonoBehaviour:
   m_ObjectHideFlags: 0

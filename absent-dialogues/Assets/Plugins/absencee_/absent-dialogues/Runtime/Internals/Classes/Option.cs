@@ -131,7 +131,7 @@ namespace com.absence.dialoguesystem.internals
 
             public string GetConditionString(bool richText = false)
             {
-                return Utilities.Comparison.GetConditionString(ShowIfList, Processor, richText);
+                return Utilities.Comparison.GetConditionString(ShowIfList, Processor, false, richText);
             }
         }
     }
