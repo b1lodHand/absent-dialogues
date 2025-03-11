@@ -68,6 +68,7 @@ namespace com.absence.dialoguesystem.editor
             bypassButton.AddToClassList("bypassOptionButton");
             bypassButton.RegisterCallback<MouseEnterEvent>(evt => ApplyHardcodedStyle(EditorSettings.instance));
             bypassButton.RegisterCallback<MouseOutEvent>(evt => ApplyHardcodedStyle(EditorSettings.instance));
+            bypassButton.tooltip = "Bypass";
 
             Port port = portCreator.Invoke();
             port.AddToClassList("optionPort");

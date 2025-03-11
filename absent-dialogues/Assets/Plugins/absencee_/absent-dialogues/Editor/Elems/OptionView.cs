@@ -140,10 +140,17 @@ namespace com.absence.dialoguesystem.editor
 
         }
 
-        public void Refresh()
+        public void Refresh(bool expandDetails = false)
         {
             m_showIfLabel.visible = m_target.UseShowIf;
-            m_showIfLabel.tooltip = Utilities.Comparison.GetConditionString(m_target.Visibility.ShowIfList, m_target.Visibility.Processor, true, true);
+
+            string info = Utilities.Comparison.GetConditionString(m_target.Visibility.ShowIfList, m_target.Visibility.Processor, true, true);
+
+            m_showIfLabel.tooltip = info;
+
+            if (!expandDetails) m_showIfLabel.text = "Conditional visibility active.";
+            else m_showIfLabel.text = info;
+
             ApplyHardcodedStyle(EditorSettings.instance);
             onRefresh?.Invoke(this);
         }

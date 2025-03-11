@@ -5,6 +5,10 @@ GridBackground {
     --spacing: 15;
 }
 
+Edge {
+    --selected-edge-color: rgb(0.247, 0.650, 0.670);
+}
+
 #mini-map {
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0.18);

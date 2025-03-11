@@ -65,7 +65,7 @@ namespace com.absence.dialoguesystem.editor.internals
             {
                 m_optionElems.ForEach(optionElem =>
                 {
-                    optionElem.Refresh();
+                    optionElem.Refresh(Graph.m_displayDetails);
                 });
             }
 
@@ -296,6 +296,14 @@ namespace com.absence.dialoguesystem.editor.internals
         private void OnOptionViewRefresh(OptionView view)
         {
             
+        }
+
+        internal override void RefreshTopInfo()
+        {
+            base.RefreshTopInfo();
+
+            RefreshOptionViews();
+            RefreshGenericOptionViews();
         }
     }
 }

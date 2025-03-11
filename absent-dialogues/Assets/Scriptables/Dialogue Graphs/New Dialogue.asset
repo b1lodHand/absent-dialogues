@@ -238,10 +238,17 @@ MonoBehaviour:
   - m_scroll: {x: 0, y: 0}
     Text: v
     CustomData: {fileID: 0}
-    m_useShowIf: 0
+    m_useShowIf: 1
     Visibility:
       Processor: 0
-      ShowIfList: []
+      ShowIfList:
+      - m_comparisonType: 2
+        m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+        m_targetVariableName: 'bool: b_missionCommitted'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 0
     LeadingNode: {fileID: 0}
   - m_scroll: {x: 0, y: 0}
     Text: iuhkihulkjh
@@ -282,7 +289,7 @@ MonoBehaviour:
   m_Name: b4a0fccc5f76ec948ad40d881420ee9b
   m_EditorClassIdentifier: 
   Guid: b4a0fccc5f76ec948ad40d881420ee9b
-  Position: {x: 907, y: 93}
+  Position: {x: 865.5, y: 87}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -433,10 +440,17 @@ MonoBehaviour:
       m_scroll: {x: 0, y: 0}
       Text: v
       CustomData: {fileID: 0}
-      m_useShowIf: 0
+      m_useShowIf: 1
       Visibility:
         Processor: 0
-        ShowIfList: []
+        ShowIfList:
+        - m_comparisonType: 2
+          m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+          m_targetVariableName: 'bool: b_missionCommitted'
+          m_intValue: 0
+          m_floatValue: 0
+          m_stringValue: 
+          m_boolValue: 0
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   - Bypass: 0
@@ -454,13 +468,20 @@ MonoBehaviour:
   - m_scroll: {x: 0, y: 0}
     Text: rthdfrh
     CustomData: {fileID: 0}
-    m_useShowIf: 0
+    m_useShowIf: 1
     Visibility:
       Processor: 0
       ShowIfList:
-      - m_comparisonType: 0
+      - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-        m_targetVariableName: 'int: int'
+        m_targetVariableName: 'bool: b_missionDone'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 0
+      - m_comparisonType: 2
+        m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+        m_targetVariableName: 'bool: b_missionCommitted'
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
