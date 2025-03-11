@@ -235,8 +235,7 @@ namespace com.absence.dialoguesystem.editor
 
             void Create_EmptySpace(float width, VisualElement panel)
             {
-                ToolbarButton space = new();
-                space.SetEnabled(false);
+                ToolbarSpacer space = new();
                 space.style.width = width;
 
                 panel.Add(space);
@@ -304,7 +303,7 @@ namespace com.absence.dialoguesystem.editor
 
             void Create_ShowDialogueButton(VisualElement panel)
             {
-                Button pingButton = new Button();
+                ToolbarButton pingButton = new ToolbarButton();
                 pingButton.text = "ⓘ";
                 pingButton.tooltip = "Ping current dialogue.";
 
@@ -326,7 +325,7 @@ namespace com.absence.dialoguesystem.editor
 
             void Create_ImportButton(VisualElement panel)
             {
-                Button importButton = new Button();
+                ToolbarButton importButton = new ToolbarButton();
                 importButton.text = "↧";
                 importButton.tooltip = "Import new dialogue.";
 
@@ -348,7 +347,7 @@ namespace com.absence.dialoguesystem.editor
 
             void Create_ExportButton(VisualElement panel)
             {
-                Button exportButton = new Button();
+                ToolbarButton exportButton = new ToolbarButton();
                 exportButton.text = "↥";
                 exportButton.tooltip = "Export current dialogue.";
 

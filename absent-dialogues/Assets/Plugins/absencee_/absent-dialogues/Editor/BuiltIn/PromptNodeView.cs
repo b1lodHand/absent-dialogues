@@ -50,7 +50,7 @@ namespace com.absence.dialoguesystem.editor.internals
             {
                 m_genericOptionElems.ForEach(genericOptionElem =>
                 {
-                    genericOptionElem.Refresh();
+                    genericOptionElem.Refresh(Graph.m_displayDetails);
                 });
             }
 
@@ -232,7 +232,7 @@ namespace com.absence.dialoguesystem.editor.internals
                 return;
             }
 
-            view.Refresh();
+            view.Refresh(Graph.m_displayDetails);
         }
 
         private void OnGenericOptionRefresh(GenericOptionReferenceView view)

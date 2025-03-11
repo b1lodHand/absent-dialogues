@@ -1,4 +1,5 @@
 using com.absence.dialoguesystem.internals;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor.internals
@@ -9,7 +10,7 @@ namespace com.absence.dialoguesystem.editor.internals
         protected BranchNode m_nodeAsBranch;
         protected DropdownField m_dropdown;
 
-        public BranchNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
+        public BranchNodeView(dialoguesystem.internals.Node node, DialogueGraphView graph = null) : base(node, graph)
         {
             node.onValidation -= RefreshTooltip;
             node.onValidation += RefreshTooltip;
@@ -27,6 +28,12 @@ namespace com.absence.dialoguesystem.editor.internals
             m_titleText.parent.tooltip = info;
 
             RefreshTopInfo();
+        }
+
+        internal override void ApplyHardcodedStyle(EditorSettings settings)
+        {
+            //SetPortColor(Outputs[0], settings.PositiveColor, settings.NeutralColor);
+            //SetPortColor(Outputs[1], settings.NegativeColor, settings.NeutralColor);
         }
 
         internal override bool HasTopInfo => true;

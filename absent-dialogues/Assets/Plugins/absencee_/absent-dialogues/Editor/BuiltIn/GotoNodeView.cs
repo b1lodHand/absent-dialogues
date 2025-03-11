@@ -36,6 +36,8 @@ namespace com.absence.dialoguesystem.editor.internals
                 SectionNode targetNode = Graph.m_dialogue.GetSectionsWithName(evt.newValue).FirstOrDefault();
                 if (targetNode != null) m_nodeAsGoto.TargetNode = targetNode;
 
+                m_dropdown.tooltip = m_nodeAsGoto.TargetNode.SectionName;
+
                 EditorUtility.SetDirty(m_nodeAsGoto);
             });
 
@@ -45,6 +47,7 @@ namespace com.absence.dialoguesystem.editor.internals
         private void SoftRefresh()
         {
             m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.SectionName);
+            m_dropdown.tooltip = m_nodeAsGoto.TargetNode.SectionName;
         }
 
         private void Refresh()

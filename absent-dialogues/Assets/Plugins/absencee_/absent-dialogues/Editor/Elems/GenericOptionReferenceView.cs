@@ -127,7 +127,7 @@ namespace com.absence.dialoguesystem.editor
             }
         }
 
-        public void Refresh()
+        public void Refresh(bool showDetails = false)
         {
             bool useShowIf = m_reference.Target.UseShowIf;
             bool bypass = m_reference.Bypass;
@@ -142,8 +142,12 @@ namespace com.absence.dialoguesystem.editor
 
             else if (useShowIf)
             {
-                m_showIfLabel.text = "Conditional visibility active.";
-                m_showIfLabel.tooltip = m_reference.Target.Visibility.GetConditionString(true);
+                string info = m_reference.Target.Visibility.GetConditionString(true);
+
+                if (!showDetails) m_showIfLabel.text = "Conditional visibility active.";
+                else m_showIfLabel.text = info;
+
+                m_showIfLabel.tooltip = info;
             }
 
             m_textField.SetValueWithoutNotify(m_reference.Target.Text);

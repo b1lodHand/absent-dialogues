@@ -202,6 +202,7 @@ namespace com.absence.dialoguesystem.editor.internals
             VisualElement topPanel = new VisualElement();
             topPanel.style.justifyContent = Justify.SpaceBetween;
             topPanel.style.flexDirection = FlexDirection.Row;
+            topPanel.style.backgroundColor = new Color(0f, 0f, 0f, 0.1f);
 
             var mapFoldout = new Foldout() { focusable = false, value = true, text = "Minimap" };
             var miniMap = new MiniMap() { anchored = true };

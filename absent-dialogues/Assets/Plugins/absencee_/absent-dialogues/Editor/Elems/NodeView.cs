@@ -94,18 +94,18 @@ namespace com.absence.dialoguesystem.editor
 
             OnAfterStylesApplied();
 
-            SetTopInfoVisibility(Graph.m_displayDetails);
-            RefreshTopInfo();
-            ApplyHardcodedStyle(EditorSettings.instance);
-
-            this.title = node.Title ?? "Node";
+            CreateInputPort();
+            CreateOutputPorts();
 
             SetupNodeForSerialization();
             SetupPersonDropdownIfExists();
             SetupTextFieldIfExists();
 
-            CreateInputPort();
-            CreateOutputPorts();
+            SetTopInfoVisibility(Graph.m_displayDetails);
+            RefreshTopInfo();
+            ApplyHardcodedStyle(EditorSettings.instance);
+
+            this.title = node.Title ?? "Node";
 
             Node.UpdateManipulators();
 
@@ -134,10 +134,10 @@ namespace com.absence.dialoguesystem.editor
             Color color = target.connected ? connectedColor : notConnectedColor;
 
             cap.style.backgroundColor = color;
-            connector.style.borderTopColor = color;
-            connector.style.borderRightColor = color;
-            connector.style.borderBottomColor = color;
-            connector.style.borderLeftColor = color;
+            connector.style.borderTopColor = connectedColor;
+            connector.style.borderRightColor = connectedColor;
+            connector.style.borderBottomColor = connectedColor;
+            connector.style.borderLeftColor = connectedColor;
         }
         protected void SetPortLabelColor(Port target, Color color)
         {

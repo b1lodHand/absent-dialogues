@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11e2258471b984d4ba77d2e1e0bdf1c6
   m_EditorClassIdentifier: 
   Guid: 11e2258471b984d4ba77d2e1e0bdf1c6
-  Position: {x: 777, y: 437}
+  Position: {x: 693, y: 423}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -78,6 +78,85 @@ MonoBehaviour:
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+--- !u!114 &-4653978156242869564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ce8885f39a79d4ebaed92579263051, type: 3}
+  m_Name: a93e5a9b-8be0-46e0-a396-ee8398b266b2
+  m_EditorClassIdentifier: 
+  Guid: a93e5a9b-8be0-46e0-a396-ee8398b266b2
+  Position: {x: 1088.0002, y: 213.75006}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 9043952714220872817}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions:
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: c
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: v
+      CustomData: {fileID: 0}
+      m_useShowIf: 1
+      Visibility:
+        Processor: 0
+        ShowIfList:
+        - m_comparisonType: 2
+          m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+          m_targetVariableName: 'bool: b_missionCommitted'
+          m_intValue: 0
+          m_floatValue: 0
+          m_stringValue: 
+          m_boolValue: 0
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 0
+      Visibility:
+        Processor: 0
+        ShowIfList: []
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 1
+      Visibility:
+        Processor: 0
+        ShowIfList:
+        - m_comparisonType: 2
+          m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+          m_targetVariableName: 'bool: b_missionPending'
+          m_intValue: 0
+          m_floatValue: 0
+          m_stringValue: 
+          m_boolValue: 1
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
+  TargetNode: {fileID: -1635607160664361471}
 --- !u!114 &-3514463440667093514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +302,7 @@ MonoBehaviour:
   - {fileID: -5246905779991590207}
   - {fileID: -3358797512164180333}
   - {fileID: -1635607160664361471}
+  - {fileID: -4653978156242869564}
   m_people:
   - {fileID: 11400000, guid: 496fab14f3980984980ce152a83bcb7d, type: 2}
   - {fileID: 11400000, guid: 6dd39627fe7f1da4987ee9bf445749a7, type: 2}
@@ -257,6 +337,21 @@ MonoBehaviour:
     Visibility:
       Processor: 0
       ShowIfList: []
+    LeadingNode: {fileID: 0}
+  - m_scroll: {x: 0, y: 0}
+    Text: iuhkihulkjh
+    CustomData: {fileID: 0}
+    m_useShowIf: 1
+    Visibility:
+      Processor: 0
+      ShowIfList:
+      - m_comparisonType: 2
+        m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+        m_targetVariableName: 'bool: b_missionPending'
+        m_intValue: 0
+        m_floatValue: 0
+        m_stringValue: 
+        m_boolValue: 1
     LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -464,6 +559,24 @@ MonoBehaviour:
         ShowIfList: []
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 4366251987463977943}
+  - Bypass: 0
+    Target:
+      m_scroll: {x: 0, y: 0}
+      Text: iuhkihulkjh
+      CustomData: {fileID: 0}
+      m_useShowIf: 1
+      Visibility:
+        Processor: 0
+        ShowIfList:
+        - m_comparisonType: 2
+          m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+          m_targetVariableName: 'bool: b_missionPending'
+          m_intValue: 0
+          m_floatValue: 0
+          m_stringValue: 
+          m_boolValue: 1
+      LeadingNode: {fileID: 0}
+    LeadingNode: {fileID: 0}
   m_options:
   - m_scroll: {x: 0, y: 0}
     Text: rthdfrh
