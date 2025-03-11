@@ -370,6 +370,8 @@ namespace com.absence.dialoguesystem.internals
         /// <returns>Returns the name as a string. Return null if you don't want any input ports.</returns>
         public virtual string GetDefaultInputPortName() => "From";
 
+        public virtual string GenerateTopInfoText() => string.Empty;
+
         /// <summary>
         /// Use to describe the dialogue editor how many output ports this node has and what are their names.
         /// </summary>

@@ -98,13 +98,18 @@ namespace com.absence.dialoguesystem.internals
             }
         }
 
-        public virtual string GenerateIconTooltip()
+        public override string GenerateTopInfoText()
+        {
+            return GenerateIconTooltip(true);
+        }
+
+        public virtual string GenerateIconTooltip(bool richText = false)
         {
             StringBuilder sb = new();
 
             m_blackboardEvents.ForEach(setter =>
             {
-                sb.Append(setter.GetSettingString(true));
+                sb.Append(setter.GetSettingString(richText));
                 sb.Append("\n");
             });
 

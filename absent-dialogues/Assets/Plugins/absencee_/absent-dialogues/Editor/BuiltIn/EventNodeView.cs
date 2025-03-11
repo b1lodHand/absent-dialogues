@@ -8,7 +8,7 @@ namespace com.absence.dialoguesystem.editor.internals
     [CustomNodeView(typeof(EventNode))]
     public class EventNodeView : NodeView
     {
-        EventNode m_nodeAsEvent;
+        protected EventNode m_nodeAsEvent;
 
         public EventNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
@@ -47,7 +47,7 @@ namespace com.absence.dialoguesystem.editor.internals
 
                 sb.Append(m_nodeAsEvent.UniqueMapperId);
 
-                string defaultDescription = m_nodeAsEvent.GenerateIconTooltip();
+                string defaultDescription = m_nodeAsEvent.GenerateIconTooltip(true);
 
                 if (!string.IsNullOrWhiteSpace(defaultDescription))
                 {
@@ -60,10 +60,15 @@ namespace com.absence.dialoguesystem.editor.internals
 
             else
             {
-                m_nodeIcon.tooltip = m_nodeAsEvent.GenerateIconTooltip();
+                m_nodeIcon.tooltip = m_nodeAsEvent.GenerateIconTooltip(true);
             }
 
+            RefreshTopInfo();
             ApplyHardcodedStyle(EditorSettings.instance);
         }
+
+        internal override bool HasTopInfo => true;
+        internal override float TopInfoBottomPosition => 62f;
+        internal override float TopInfoRightPosition => -32f;
     }
 }

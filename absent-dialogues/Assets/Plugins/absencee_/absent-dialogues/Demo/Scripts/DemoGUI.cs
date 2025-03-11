@@ -1,5 +1,5 @@
 using com.absence.variablesystem.banksystembase;
-using com.absence.variablesystem.internals;
+using com.absence.variablesystem;
 using UnityEngine;
 
 namespace com.absence.dialoguesystem.examples

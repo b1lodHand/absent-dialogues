@@ -1,3 +1,4 @@
+using com.absence.variablesystem.banksystembase;
 using com.absence.variablesystem.builtin;
 using System;
 using System.Collections.Generic;
@@ -73,24 +74,40 @@ namespace com.absence.dialoguesystem.internals.backup.data
         }
         public static void ReadBlackboardData(BlackboardData data, Blackboard target)
         {
-            List<IntegerVariable> ints = data.Ints.ToList().ConvertAll(intPair =>
+            var ints = data.Ints.ToList().ConvertAll(intPair =>
             {
-                return new IntegerVariable(intPair.Key, intPair.Value);
+                return new VariableNamePair<int, IntegerVariable>()
+                {
+                    Name = intPair.Key,
+                    Variable = new(intPair.Value),
+                };
             }).ToList();
 
-            List<FloatVariable> floats = data.Floats.ToList().ConvertAll(floatPair =>
+            var floats = data.Floats.ToList().ConvertAll(floatPair =>
             {
-                return new FloatVariable(floatPair.Key, floatPair.Value);
+                return new VariableNamePair<float, FloatVariable>()
+                {
+                    Name = floatPair.Key,
+                    Variable = new(floatPair.Value),
+                };
             }).ToList();
 
-            List<StringVariable> strings = data.Strings.ToList().ConvertAll(stringPair =>
+            var strings = data.Strings.ToList().ConvertAll(stringPair =>
             {
-                return new StringVariable(stringPair.Key, stringPair.Value);
+                return new VariableNamePair<string, StringVariable>()
+                {
+                    Name = stringPair.Key,
+                    Variable = new(stringPair.Value), 
+                };
             }).ToList();
 
-            List<BooleanVariable> booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
+            var booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
             {
-                return new BooleanVariable(booleanPair.Key, booleanPair.Value);
+                return new VariableNamePair<bool, BooleanVariable>()
+                {
+                    Name = booleanPair.Key,
+                    Variable = new(booleanPair.Value),
+                };
             }).ToList();
 
             target.Bank.Ints = new(ints);

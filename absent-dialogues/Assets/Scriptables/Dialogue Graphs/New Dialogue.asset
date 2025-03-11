@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11e2258471b984d4ba77d2e1e0bdf1c6
   m_EditorClassIdentifier: 
   Guid: 11e2258471b984d4ba77d2e1e0bdf1c6
-  Position: {x: 790, y: 439}
+  Position: {x: 777, y: 437}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -55,22 +55,28 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  TitleMode: 0
   Mode: 0
   m_conditions:
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'string: string'
+    m_targetVariableName: 'bool: b_missionCommitted'
     m_intValue: 0
     m_floatValue: 0
-    m_stringValue: ValueValueValue
+    m_stringValue: 
     m_boolValue: 0
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'bool: boolean'
+    m_targetVariableName: 'bool: b_missionDone'
     m_intValue: 0
     m_floatValue: 0
-    m_stringValue: ValueValueValue
+    m_stringValue: 
+    m_boolValue: 0
+  - m_comparisonType: 2
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
     m_boolValue: 0
 --- !u!114 &-3514463440667093514
 MonoBehaviour:
@@ -286,18 +292,32 @@ MonoBehaviour:
   UsedByMapper: 0
   UniqueMapperId: a
   m_blackboardEvents:
-  - m_setType: 3
+  - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'int: int'
-    m_intValue: 3
+    m_targetVariableName: 'bool: b_missionCommitted'
+    m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
-  - m_setType: 4
+  - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
-    m_targetVariableName: 'float: float'
+    m_targetVariableName: 'bool: b_missionDone'
     m_intValue: 0
-    m_floatValue: 0.25
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_setType: 0
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
+    m_stringValue: 
+    m_boolValue: 0
+  - m_setType: 0
+    m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
+    m_targetVariableName: 'bool: b_missionPending'
+    m_intValue: 0
+    m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
   Next: {fileID: -3358797512164180333}
@@ -432,9 +452,9 @@ MonoBehaviour:
     LeadingNode: {fileID: 4366251987463977943}
   m_options:
   - m_scroll: {x: 0, y: 0}
-    Text: a
+    Text: rthdfrh
     CustomData: {fileID: 0}
-    m_useShowIf: 1
+    m_useShowIf: 0
     Visibility:
       Processor: 0
       ShowIfList:
@@ -462,23 +482,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_guid: fc6230e8-c80f-4600-8b72-939333a006d4
   m_forExternalUse: 1
-  m_ints:
-  - m_name: int
-    m_underlyingValue: 0
-    m_value: 0
-    m_bypassEvents: 0
-  m_floats:
-  - m_name: float
-    m_underlyingValue: 0
-    m_value: 0
-    m_bypassEvents: 0
-  m_strings:
-  - m_name: string
-    m_underlyingValue: 
-    m_value: 
-    m_bypassEvents: 0
+  m_ints: []
+  m_floats: []
+  m_strings: []
   m_booleans:
-  - m_name: boolean
-    m_underlyingValue: 0
-    m_value: 0
-    m_bypassEvents: 0
+  - Name: b_missionPending
+    Variable:
+      m_underlyingValue: 0
+      m_value: 0
+      m_bypassEvents: 0
+  - Name: b_missionDone
+    Variable:
+      m_underlyingValue: 0
+      m_value: 0
+      m_bypassEvents: 0
+  - Name: b_missionCommitted
+    Variable:
+      m_underlyingValue: 0
+      m_value: 0
+      m_bypassEvents: 0

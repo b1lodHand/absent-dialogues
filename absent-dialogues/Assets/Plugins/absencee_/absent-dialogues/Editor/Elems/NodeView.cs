@@ -59,6 +59,8 @@ namespace com.absence.dialoguesystem.editor
         protected VisualElement m_stateBorder;
         protected Label m_personDropdownLabel;
         protected VisualElement m_personDropdown;
+        protected VisualElement m_infoBoxElement;
+        protected Label m_infoBoxText;
 
         /// <summary>
         /// The graph we're in.
@@ -79,6 +81,7 @@ namespace com.absence.dialoguesystem.editor
             this.viewDataKey = node.Guid;
             this.showInMiniMap = node.ShowInMinimap;
 
+            CreateDynamicElements();
             FindDefaultElements();
             FetchGenericOptions();
 
@@ -91,6 +94,8 @@ namespace com.absence.dialoguesystem.editor
 
             OnAfterStylesApplied();
 
+            SetTopInfoVisibility(Graph.m_displayDetails);
+            RefreshTopInfo();
             ApplyHardcodedStyle(EditorSettings.instance);
 
             this.title = node.Title ?? "Node";
@@ -140,6 +145,23 @@ namespace com.absence.dialoguesystem.editor
 
             label.style.color = color;
         }
+        protected virtual void CreateDynamicElements()
+        {
+            m_infoBoxElement = new VisualElement();
+            m_infoBoxText = new Label();
+            m_infoBoxElement.pickingMode = PickingMode.Ignore;
+            m_infoBoxElement.style.position = Position.Absolute;
+            m_infoBoxElement.style.maxWidth = this.style.maxWidth;
+            m_infoBoxElement.style.minWidth = this.style.minWidth;
+            m_infoBoxElement.style.width = this.style.width;
+            m_infoBoxText.style.unityTextAlign = TextAnchor.UpperCenter;
+            m_infoBoxText.pickingMode = PickingMode.Ignore;
+            m_infoBoxText.style.whiteSpace = WhiteSpace.Normal;
+            m_infoBoxText.enableRichText = true;
+
+            m_infoBoxElement.Add(m_infoBoxText);
+            this.Insert(0, m_infoBoxElement);
+        }
         protected virtual void FindDefaultElements()
         {
             m_nodeBorder = this.Q("node-border");
@@ -162,7 +184,7 @@ namespace com.absence.dialoguesystem.editor
                 Node.GenericOptions[i].Target = genericOptions[i];
             }
         }
-        internal virtual void OnGenericOptionCreated(int at)
+        internal void OnGenericOptionCreated(int at)
         {
             List<GenericOption> genericOptions = Graph.m_dialogue.GenericOptions;
 
@@ -177,7 +199,7 @@ namespace com.absence.dialoguesystem.editor
             AssetDatabase.SaveAssetIfDirty(m_assetGuid);
         }
 
-        internal virtual void OnGenericOptionRemoved(int at)
+        internal void OnGenericOptionRemoved(int at)
         {
             Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Removed)");
             Node.GenericOptions.RemoveAt(at);
@@ -187,7 +209,7 @@ namespace com.absence.dialoguesystem.editor
             EditorUtility.SetDirty(Node);
             AssetDatabase.SaveAssetIfDirty(m_assetGuid);
         }
-        internal virtual void OnGenericOptionsRearranged(int replacer, int replaced)
+        internal void OnGenericOptionsRearranged(int replacer, int replaced)
         {
             Undo.RegisterCompleteObjectUndo(Node, "Node (Generic Option Removed)");
 
@@ -208,7 +230,7 @@ namespace com.absence.dialoguesystem.editor
             EditorUtility.SetDirty(Node);
             AssetDatabase.SaveAssetIfDirty(m_assetGuid);
         }
-        protected virtual void SetupPersonDropdownIfExists()
+        protected void SetupPersonDropdownIfExists()
         {
             if (!Node.PersonDependent) return;
 
@@ -232,11 +254,11 @@ namespace com.absence.dialoguesystem.editor
                 personPreview.sprite = targetPerson.Icon;
             });
         }
-        protected virtual void SetupNodeForSerialization()
+        protected void SetupNodeForSerialization()
         {
             m_serializedNode = new SerializedObject(Node);
         }
-        protected virtual void SetupTextFieldIfExists()
+        protected void SetupTextFieldIfExists()
         {
             TextField textField = this.Q<TextField>("speech");
 
@@ -355,6 +377,28 @@ namespace com.absence.dialoguesystem.editor
         {
 
         }
+        internal virtual void RefreshTopInfo()
+        {
+            if (!HasTopInfo)
+            {
+                SetTopInfoVisibility(false); 
+                return;
+            }
+
+            string info = Node.GenerateTopInfoText();
+            m_infoBoxElement.style.bottom = TopInfoBottomPosition;
+            m_infoBoxElement.style.right = TopInfoRightPosition;
+            m_infoBoxText.text = info;
+        }
+        internal virtual void SetTopInfoVisibility(bool visibility)
+        {
+            m_infoBoxElement.style.display = visibility ? 
+                DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        internal virtual bool HasTopInfo => false;
+        internal virtual float TopInfoRightPosition => 0f;
+        internal virtual float TopInfoBottomPosition => 0f;
         #endregion
 
         #region Graph-Based Methods

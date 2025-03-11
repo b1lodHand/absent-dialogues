@@ -48,10 +48,10 @@ namespace com.absence.dialoguesystem.internals.backup.data
             for (int i = 0; i < intCount; i++)
             {
                 IntPair intPair = new();
-                IntegerVariable intVariable = bank.Ints[i];
+                var intVariable = bank.Ints[i];
 
                 intPair.Key = intVariable.Name;
-                intPair.Value = intVariable.Value;
+                intPair.Value = intVariable.Variable.Value;
 
                 data.Ints[i] = intPair;
             }
@@ -59,10 +59,10 @@ namespace com.absence.dialoguesystem.internals.backup.data
             for (int f = 0; f < floatCount; f++)
             {
                 FloatPair floatPair = new();
-                FloatVariable floatVariable = bank.Floats[f];
+                var floatVariable = bank.Floats[f];
 
                 floatPair.Key = floatVariable.Name;
-                floatPair.Value = floatVariable.Value;
+                floatPair.Value = floatVariable.Variable.Value;
 
                 data.Floats[f] = floatPair;
             }
@@ -70,10 +70,10 @@ namespace com.absence.dialoguesystem.internals.backup.data
             for (int s = 0; s < intCount; s++)
             {
                 StringPair stringPair = new();
-                StringVariable floatVariable = bank.Strings[s];
+                var floatVariable = bank.Strings[s];
 
                 stringPair.Key = floatVariable.Name;
-                stringPair.Value = floatVariable.Value;
+                stringPair.Value = floatVariable.Variable.Value;
 
                 data.Strings[s] = stringPair;
             }
@@ -81,10 +81,10 @@ namespace com.absence.dialoguesystem.internals.backup.data
             for (int b = 0; b < booleanCount; b++)
             {
                 BooleanPair booleanPair = new();
-                BooleanVariable booleanVariable = bank.Booleans[b];
+                var booleanVariable = bank.Booleans[b];
 
                 booleanPair.Key = booleanVariable.Name;
-                booleanPair.Value = booleanVariable.Value;
+                booleanPair.Value = booleanVariable.Variable.Value;
 
                 data.Booleans[b] = booleanPair;
             }

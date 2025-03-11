@@ -39,6 +39,8 @@ namespace com.absence.dialoguesystem.editor.internals
         List<Node> m_cutCache = new();
         List<NodeView> views = new();
 
+        [SerializeField] internal bool m_displayDetails;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -48,7 +50,7 @@ namespace com.absence.dialoguesystem.editor.internals
             this.focusable = true;
 
             AddManipulators();
-            AddMiniMap();
+            AddTopPanel();
             AddStyleSheets();
             SubscribeToEvents();
         }
@@ -195,8 +197,12 @@ namespace com.absence.dialoguesystem.editor.internals
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Plugins/absencee_/absent-dialogues/Editor/DialogueEditorWindow.uss");
             styleSheets.Add(styleSheet);
         }
-        private void AddMiniMap()
+        private void AddTopPanel()
         {
+            VisualElement topPanel = new VisualElement();
+            topPanel.style.justifyContent = Justify.SpaceBetween;
+            topPanel.style.flexDirection = FlexDirection.Row;
+
             var mapFoldout = new Foldout() { focusable = false, value = true, text = "Minimap" };
             var miniMap = new MiniMap() { anchored = true };
             mapFoldout.style.alignSelf = Align.FlexStart;
@@ -204,9 +210,23 @@ namespace com.absence.dialoguesystem.editor.internals
             mapFoldout.style.alignContent = Align.FlexStart;
             miniMap.name = "mini-map";
 
-            mapFoldout.Add(miniMap);
-            this.Add(mapFoldout);
+            Toggle toggle = new Toggle("Display Details");
+            toggle.RegisterValueChangedCallback(evt =>
+            {
+                m_displayDetails = evt.newValue;
 
+                if (m_dialogue != null)
+                    RefreshTopInfos(m_displayDetails);
+            });
+
+            OnPopulateView -= () => toggle.SetValueWithoutNotify(m_displayDetails);
+            OnPopulateView += () => toggle.SetValueWithoutNotify(m_displayDetails);
+
+            mapFoldout.Add(miniMap);
+            topPanel.Add(mapFoldout);
+            topPanel.Add(toggle);
+
+            this.Add(topPanel);
             miniMap.SetPosition(new Rect(0, 0, 192, 108));
         }
         private void AddManipulators()
@@ -305,6 +325,15 @@ namespace com.absence.dialoguesystem.editor.internals
             }
         }
 
+        internal void RefreshTopInfos(bool display)
+        {
+            foreach (NodeView view in views)
+            {
+                view.SetTopInfoVisibility(display);
+                view.RefreshTopInfo();
+            }
+        }
+
         internal void ReapplyHardcodedStyles(EditorSettings settings)
         {
             foreach (NodeView view in views)
@@ -385,7 +414,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
             dialogue.AllNodes.ForEach(n =>
             {
-                views.Add(CreateNodeView(n));
+                NodeView view = CreateNodeView(n);
+                views.Add(view);
             });
 
             dialogue.AllNodes.ForEach(n =>
