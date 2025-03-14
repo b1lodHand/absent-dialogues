@@ -60,6 +60,8 @@ MonoBehaviour:
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionCommitted'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -67,6 +69,8 @@ MonoBehaviour:
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionDone'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -74,10 +78,17 @@ MonoBehaviour:
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionPending'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &-4653978156242869564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +132,8 @@ MonoBehaviour:
         - m_comparisonType: 2
           m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
           m_targetVariableName: 'bool: b_missionCommitted'
+          m_targetVariableNamePair:
+            rid: -2
           m_intValue: 0
           m_floatValue: 0
           m_stringValue: 
@@ -150,6 +163,8 @@ MonoBehaviour:
         - m_comparisonType: 2
           m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
           m_targetVariableName: 'bool: b_missionPending'
+          m_targetVariableNamePair:
+            rid: -2
           m_intValue: 0
           m_floatValue: 0
           m_stringValue: 
@@ -157,6 +172,11 @@ MonoBehaviour:
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   TargetNode: {fileID: -1635607160664361471}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &-3514463440667093514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +246,9 @@ MonoBehaviour:
         ShowIfList: []
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &-1635607160664361471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +304,9 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   Next: {fileID: 0}
   SectionName: Section B
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +351,8 @@ MonoBehaviour:
       - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
         m_targetVariableName: 'bool: b_missionCommitted'
+        m_targetVariableNamePair:
+          rid: -2
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
@@ -348,6 +376,8 @@ MonoBehaviour:
       - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
         m_targetVariableName: 'bool: b_missionPending'
+        m_targetVariableNamePair:
+          rid: -2
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
@@ -355,6 +385,11 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &2441988981460068923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +432,8 @@ MonoBehaviour:
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionCommitted'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -404,6 +441,8 @@ MonoBehaviour:
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionDone'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -411,6 +450,8 @@ MonoBehaviour:
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionPending'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
@@ -418,11 +459,18 @@ MonoBehaviour:
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionPending'
+    m_targetVariableNamePair:
+      rid: -2
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
     m_boolValue: 0
   Next: {fileID: -3358797512164180333}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5215409911009714315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +526,9 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   Next: {fileID: 7535276429833814712}
   SectionName: Section A
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &6441203632322913861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +550,9 @@ MonoBehaviour:
   PersonIndex: 0
   m_genericOptions: []
   Next: {fileID: 7535276429833814712}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &7535276429833814712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +596,8 @@ MonoBehaviour:
         - m_comparisonType: 2
           m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
           m_targetVariableName: 'bool: b_missionCommitted'
+          m_targetVariableNamePair:
+            rid: -2
           m_intValue: 0
           m_floatValue: 0
           m_stringValue: 
@@ -571,6 +627,8 @@ MonoBehaviour:
         - m_comparisonType: 2
           m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
           m_targetVariableName: 'bool: b_missionPending'
+          m_targetVariableNamePair:
+            rid: -2
           m_intValue: 0
           m_floatValue: 0
           m_stringValue: 
@@ -588,6 +646,8 @@ MonoBehaviour:
       - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
         m_targetVariableName: 'bool: b_missionDone'
+        m_targetVariableNamePair:
+          rid: -2
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
@@ -595,6 +655,8 @@ MonoBehaviour:
       - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
         m_targetVariableName: 'bool: b_missionCommitted'
+        m_targetVariableNamePair:
+          rid: -2
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
@@ -602,6 +664,11 @@ MonoBehaviour:
     LeadingNode: {fileID: 4366251987463977943}
   m_text: tecxt
   NativeNextNode: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &9043952714220872817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,7 +683,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_guid: fc6230e8-c80f-4600-8b72-939333a006d4
   m_forExternalUse: 1
-  m_ints: []
+  m_ints:
+  - Name: rfg
+    Variable:
+      m_underlyingValue: 0
+      m_value: 0
+      m_bypassEvents: 0
   m_floats: []
   m_strings: []
   m_booleans:

@@ -352,8 +352,9 @@ namespace com.absence.dialoguesystem.editor.internals
         {
             DropdownMenuAction.Status status = DropdownMenuAction.Status.Normal;
             PropertyInfo menuProp = type.GetProperty("CreationMenuName");
-            string menuPropValue = menuProp.GetValue(null).ToString();
-            bool menuSpecified = menuProp != null && (!string.IsNullOrWhiteSpace(menuPropValue));
+            bool hasMenuProp = menuProp != null;
+            string menuPropValue = hasMenuProp ? menuProp.GetValue(null).ToString() : string.Empty;
+            bool menuSpecified = hasMenuProp && (!string.IsNullOrWhiteSpace(menuPropValue));
 
             if (menuSpecified && menuPropValue.Equals(Node.NaN))
                 return false;

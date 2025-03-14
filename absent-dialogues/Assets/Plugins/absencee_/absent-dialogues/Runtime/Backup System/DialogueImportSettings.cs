@@ -6,26 +6,26 @@ namespace com.absence.dialoguesystem.internals.backup
 {
     public static class DialogueImportSettings
     {
-        public static readonly Dictionary<char, BaseVariableComparer.ComparisonType> ComparerDictionary = new Dictionary<char, BaseVariableComparer.ComparisonType>()
+        public static readonly Dictionary<char, VariableComparerBase.ComparisonType> ComparerDictionary = new()
         {
-            { 'L', BaseVariableComparer.ComparisonType.LessThan },
-            { 'l', BaseVariableComparer.ComparisonType.LessOrEqual },
-            { 'e', BaseVariableComparer.ComparisonType.EqualsTo },
-            { 'n', BaseVariableComparer.ComparisonType.NotEquals },
-            { 'g', BaseVariableComparer.ComparisonType.GreaterOrEqual },
-            { 'G', BaseVariableComparer.ComparisonType.GreaterThan },
+            { 'L', VariableComparerBase.ComparisonType.LessThan },
+            { 'l', VariableComparerBase.ComparisonType.LessOrEqual },
+            { 'e', VariableComparerBase.ComparisonType.EqualsTo },
+            { 'n', VariableComparerBase.ComparisonType.NotEquals },
+            { 'g', VariableComparerBase.ComparisonType.GreaterOrEqual },
+            { 'G', VariableComparerBase.ComparisonType.GreaterThan },
         };
 
-        public static readonly Dictionary<char, BaseVariableSetter.SetType> SetterDictionary = new Dictionary<char, BaseVariableSetter.SetType>()
+        public static readonly Dictionary<char, VariableSetterBase.SetType> SetterDictionary = new()
         {
-            { 's', BaseVariableSetter.SetType.SetTo },
-            { 'i', BaseVariableSetter.SetType.IncrementBy },
-            { 'l', BaseVariableSetter.SetType.DecrementBy },
-            { 'm', BaseVariableSetter.SetType.MultipltyBy },
-            { 'd', BaseVariableSetter.SetType.DivideBy },
+            { 's', VariableSetterBase.SetType.SetTo },
+            { 'i', VariableSetterBase.SetType.IncrementBy },
+            { 'l', VariableSetterBase.SetType.DecrementBy },
+            { 'm', VariableSetterBase.SetType.MultipltyBy },
+            { 'd', VariableSetterBase.SetType.DivideBy },
         };
 
-        public static readonly Dictionary<char, ConditionProcessMode> ProcessorDictionary = new Dictionary<char, ConditionProcessMode>()
+        public static readonly Dictionary<char, ConditionProcessMode> ProcessorDictionary = new()
         {
             { 'A', ConditionProcessMode.All },
             { 'V', ConditionProcessMode.Any },

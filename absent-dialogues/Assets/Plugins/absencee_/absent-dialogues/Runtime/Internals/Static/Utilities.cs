@@ -74,17 +74,17 @@ namespace com.absence.dialoguesystem.internals
             {
                 switch (comparisonType)
                 {
-                    case BaseVariableComparer.ComparisonType.LessThan:
+                    case VariableComparerBase.ComparisonType.LessThan:
                         return "<";
-                    case BaseVariableComparer.ComparisonType.LessOrEqual:
+                    case VariableComparerBase.ComparisonType.LessOrEqual:
                         return "≤";
-                    case BaseVariableComparer.ComparisonType.EqualsTo:
+                    case VariableComparerBase.ComparisonType.EqualsTo:
                         return "==";
-                    case BaseVariableComparer.ComparisonType.NotEquals:
+                    case VariableComparerBase.ComparisonType.NotEquals:
                         return "≠";
-                    case BaseVariableComparer.ComparisonType.GreaterOrEqual:
+                    case VariableComparerBase.ComparisonType.GreaterOrEqual:
                         return "≥";
-                    case BaseVariableComparer.ComparisonType.GreaterThan:
+                    case VariableComparerBase.ComparisonType.GreaterThan:
                         return ">";
                     default:
                         return string.Empty;
@@ -98,15 +98,15 @@ namespace com.absence.dialoguesystem.internals
             {
                 switch (setType)
                 {
-                    case BaseVariableSetter.SetType.SetTo:
+                    case VariableSetterBase.SetType.SetTo:
                         return "=";
-                    case BaseVariableSetter.SetType.IncrementBy:
+                    case VariableSetterBase.SetType.IncrementBy:
                         return "+=";
-                    case BaseVariableSetter.SetType.DecrementBy:
+                    case VariableSetterBase.SetType.DecrementBy:
                         return "-=";
-                    case BaseVariableSetter.SetType.MultipltyBy:
+                    case VariableSetterBase.SetType.MultipltyBy:
                         return "*=";
-                    case BaseVariableSetter.SetType.DivideBy:
+                    case VariableSetterBase.SetType.DivideBy:
                         return "/=";
                     default:
                         return string.Empty;

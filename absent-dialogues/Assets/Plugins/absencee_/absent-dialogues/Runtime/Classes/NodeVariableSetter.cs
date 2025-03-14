@@ -1,5 +1,7 @@
 using com.absence.variablesystem.banksystembase;
+using System;
 using System.Text;
+using UnityEngine;
 
 namespace com.absence.dialoguesystem.internals
 {
@@ -7,7 +9,7 @@ namespace com.absence.dialoguesystem.internals
     /// The setter specifically designed for working with dialogue nodes.
     /// </summary>
     [System.Serializable]
-    public class NodeVariableSetter : BaseVariableSetter
+    public class NodeVariableSetter : VariableSetterBase
     {
         /// <summary>
         /// Bank of the blackboard in context.
@@ -16,7 +18,7 @@ namespace com.absence.dialoguesystem.internals
 
         public override bool HasFixedBank => true;
 
-        protected override VariableBank GetRuntimeBank() => BlackboardBank;
+        protected override IPrimitiveVariableContainer GetRuntimeBank() => BlackboardBank;
 
         /// <summary>
         /// Use to set the blackboard bank of this setter.
