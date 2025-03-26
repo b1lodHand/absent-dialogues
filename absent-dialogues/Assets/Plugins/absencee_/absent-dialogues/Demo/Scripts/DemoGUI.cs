@@ -14,7 +14,7 @@ namespace com.absence.dialoguesystem.examples
         const string K_MISSIONDONE = "b_missionDone";           // to avoid any
         const string K_MISSIONCOMMITTED = "b_missionCommitted"; // string-prone issues.
 
-        VariableBank m_blackboardBank; // holding a reference to our blackboard's bank.
+        IPrimitiveVariableContainer m_bankHandle; // holding a reference to our blackboard's bank.
 
         bool m_pending = false;   // using variables
         bool m_done = false;      // to cache
@@ -22,17 +22,17 @@ namespace com.absence.dialoguesystem.examples
 
         public override void OnInitialize()
         {
-            m_blackboardBank = m_instance.Player.Target.Blackboard.Bank; // we're doing this to easily reach the bank in the future.
+            m_bankHandle = m_instance.Player.BankHandle; // we're doing this to easily reach the bank in the future.
 
             // adding listeners to needed variables. This way, we will be notified when the get changed.
-            m_blackboardBank.AddValueChangeListenerToBoolean(K_MISSIONPENDING, OnPendingChanged);
-            m_blackboardBank.AddValueChangeListenerToBoolean(K_MISSIONDONE, OnDoneChanged);
-            m_blackboardBank.AddValueChangeListenerToBoolean(K_MISSIONCOMMITTED, OnCommitChanged);
+            m_bankHandle.AddValueChangeListenerToBoolean(K_MISSIONPENDING, OnPendingChanged);
+            m_bankHandle.AddValueChangeListenerToBoolean(K_MISSIONDONE, OnDoneChanged);
+            m_bankHandle.AddValueChangeListenerToBoolean(K_MISSIONCOMMITTED, OnCommitChanged);
 
             // we're setting the initial values of the our variables.
-            m_blackboardBank.TryGetBoolean(K_MISSIONPENDING, out m_pending);
-            m_blackboardBank.TryGetBoolean(K_MISSIONDONE, out m_done);
-            m_blackboardBank.TryGetBoolean(K_MISSIONCOMMITTED, out m_committed);
+            m_bankHandle.TryGetBoolean(K_MISSIONPENDING, out m_pending);
+            m_bankHandle.TryGetBoolean(K_MISSIONDONE, out m_done);
+            m_bankHandle.TryGetBoolean(K_MISSIONCOMMITTED, out m_committed);
         }
 
         /* methods for handling the value change events */
@@ -67,7 +67,7 @@ namespace com.absence.dialoguesystem.examples
             // drawing the 'Get apples' button to let users complete the mission easily.
             if (GUILayout.Button("Get apples."))
             {
-                m_blackboardBank.SetBoolean(K_MISSIONDONE, true);
+                m_bankHandle.SetBoolean(K_MISSIONDONE, true);
             }
 
             /* WE'RE DONE! */

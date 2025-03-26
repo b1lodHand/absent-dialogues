@@ -24,6 +24,9 @@ namespace com.absence.dialoguesystem
         [SerializeField, Readonly] private Blackboard m_blackboard;
         [SerializeField, Readonly] private DialogueFlowContext m_context;
 
+        IPrimitiveVariableContainer m_bankHandle;
+
+        public IPrimitiveVariableContainer BankHandle => m_bankHandle;
         public DialogueFlowContext Context => m_context;
         public Node Frame => m_frame;
 
@@ -43,6 +46,7 @@ namespace com.absence.dialoguesystem
 
             m_blackboard = m_dialogue.Blackboard;
             m_blackboardBank = m_dialogue.Blackboard.Bank;
+            m_bankHandle = m_blackboardBank;
 
             Initialize();
         }
@@ -70,9 +74,16 @@ namespace com.absence.dialoguesystem
             DoTeleportToRoot();
         }
 
+        public void Optimize()
+        {
+            m_bankHandle = m_blackboardBank.CreateOptimizedHandle();
+            if (m_context != null) m_context.BankHandle = m_bankHandle;
+        }
+
         public void ClearContext()
         {
             m_context = new();
+            m_context.BankHandle = m_bankHandle;
         }
 
         /// <summary>

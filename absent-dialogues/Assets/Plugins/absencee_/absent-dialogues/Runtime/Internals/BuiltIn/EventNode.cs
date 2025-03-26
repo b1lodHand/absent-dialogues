@@ -60,7 +60,7 @@ namespace com.absence.dialoguesystem.internals
         }
         protected override void OnReach(DialogueFlowContext context)
         {
-            m_blackboardEvents.ForEach(action => action.Perform());
+            m_blackboardEvents.ForEach(action => action.Perform(context.BankHandle));
             CustomAction();
 
             if (UsedByMapper)

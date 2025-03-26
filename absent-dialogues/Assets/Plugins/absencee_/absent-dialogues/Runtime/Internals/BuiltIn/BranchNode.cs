@@ -1,5 +1,6 @@
 using com.absence.dialoguesystem.internals.backup;
 using com.absence.dialoguesystem.internals.backup.data;
+using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace com.absence.dialoguesystem.internals
 
         protected override Node OnPass(DialogueFlowContext context)
         {
-            bool result = Process();
+            bool result = Process(context.BankHandle);
             Node targetNext = result ? TrueNext : FalseNext;
 
             return targetNext;
@@ -64,7 +65,7 @@ namespace com.absence.dialoguesystem.internals
         /// Use this to override (if you need) the checking result of this node.
         /// </summary>
         /// <returns>Normally returns the sum of the results of node's comparer list in a way declared by <see cref="Mode"/></returns>
-        protected virtual bool Process()
+        protected virtual bool Process(IPrimitiveVariableContainer bankHandle)
         {
             if (m_conditions.Count == 0) return true;
 
@@ -72,10 +73,10 @@ namespace com.absence.dialoguesystem.internals
             switch (Mode)
             {
                 case ConditionProcessMode.All:
-                    result = m_conditions.All(c => c.GetResult());
+                    result = m_conditions.All(c => c.GetResult(bankHandle));
                     break;
                 case ConditionProcessMode.Any:
-                    result = m_conditions.Any(c => c.GetResult());
+                    result = m_conditions.Any(c => c.GetResult(bankHandle));
                     break;
             }
 

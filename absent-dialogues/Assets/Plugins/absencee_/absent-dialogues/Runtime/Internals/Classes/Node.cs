@@ -237,7 +237,7 @@ namespace com.absence.dialoguesystem.internals
                     {
                         Option option = Options[i];
 
-                        if (!option.IsVisible())
+                        if (!option.IsVisible(context.BankHandle))
                             continue;
 
                         handles.Add(new OptionHandle(i + shift, option.Text, option.CustomData));
@@ -255,7 +255,7 @@ namespace com.absence.dialoguesystem.internals
                         if (genericOption.Bypass)
                             continue;
 
-                        if (!genericOption.Target.IsVisible())
+                        if (!genericOption.Target.IsVisible(context.BankHandle))
                             continue;
 
                         handles.Add(new OptionHandle(i + shift, genericOption.Target.Text, genericOption.Target.CustomData));

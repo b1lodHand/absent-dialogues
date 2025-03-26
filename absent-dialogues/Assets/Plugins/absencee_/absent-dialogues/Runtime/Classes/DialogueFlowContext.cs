@@ -1,4 +1,5 @@
 using com.absence.dialoguesystem.internals;
+using com.absence.variablesystem.banksystembase;
 using System.Collections.Generic;
 
 namespace com.absence.dialoguesystem
@@ -22,6 +23,8 @@ namespace com.absence.dialoguesystem
         public List<OptionHandle> OptionHandles;
         public NodeCustomDataBase CustomData;
         public NodeCustomDataBase OptionData;
+
+        public IPrimitiveVariableContainer BankHandle;
 
         public bool WillExit { get; set; }
         public bool HasText => Text != null && (!string.IsNullOrWhiteSpace(Text));

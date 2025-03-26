@@ -70,11 +70,11 @@ namespace com.absence.dialoguesystem.internals
         /// Calculates the visibility of this option.
         /// </summary>
         /// <returns>Returns true if the option is visible, returns false otherwise.</returns>
-        public bool IsVisible()
+        public bool IsVisible(IPrimitiveVariableContainer bankHandle)
         {
             if (!m_useShowIf) return true;
 
-            return Visibility.GetResult();
+            return Visibility.GetResult(bankHandle);
         }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace com.absence.dialoguesystem.internals
             /// Use to get the composite result of all of the comparers of this instance.
             /// </summary>
             /// <returns></returns>
-            public bool GetResult()
+            public bool GetResult(IPrimitiveVariableContainer bankHandle)
             {
                 if (ShowIfList.Count == 0) return true;
 
                 return Processor switch
                 {
-                    ConditionProcessMode.All => ShowIfList.All(comparer => comparer.GetResult()),
-                    ConditionProcessMode.Any => ShowIfList.Any(comparer => comparer.GetResult()),
+                    ConditionProcessMode.All => ShowIfList.All(comparer => comparer.GetResult(bankHandle)),
+                    ConditionProcessMode.Any => ShowIfList.Any(comparer => comparer.GetResult(bankHandle)),
                     _ => true,
                 };
             }

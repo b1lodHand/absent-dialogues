@@ -437,7 +437,7 @@ MonoBehaviour:
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
-    m_boolValue: 0
+    m_boolValue: 1
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionDone'
@@ -446,7 +446,7 @@ MonoBehaviour:
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
-    m_boolValue: 0
+    m_boolValue: 1
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
     m_targetVariableName: 'bool: b_missionPending'
@@ -455,7 +455,7 @@ MonoBehaviour:
     m_intValue: 0
     m_floatValue: 0
     m_stringValue: 
-    m_boolValue: 0
+    m_boolValue: 1
   Next: {fileID: -3358797512164180333}
   references:
     version: 2
@@ -642,7 +642,7 @@ MonoBehaviour:
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
-        m_boolValue: 0
+        m_boolValue: 1
       - m_comparisonType: 2
         m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
         m_targetVariableName: 'bool: b_missionCommitted'
