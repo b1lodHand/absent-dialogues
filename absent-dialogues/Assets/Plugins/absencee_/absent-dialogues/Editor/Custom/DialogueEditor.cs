@@ -96,15 +96,34 @@ namespace com.absence.dialoguesystem.editor.internals
 
                     Color prevColor = GUI.backgroundColor;
                     GUI.backgroundColor = new Color(171f/255f, 68f/255f, 63f/255f, 255f);
-                    bool remove = GUILayout.Button("×", buttonStyle, GUILayout.Width(k_buttonWidth));
+
+                    GUIContent removeContent = new GUIContent()
+                    {
+                        text = "×",
+                        tooltip = "Remove",
+                    };
+
+                    GUIContent moveUpContent = new GUIContent()
+                    {
+                        text = "↑",
+                        tooltip = "Move up",
+                    };
+
+                    GUIContent moveDownContent = new GUIContent()
+                    {
+                        text = "↓",
+                        tooltip = "Move down",
+                    };
+
+                    bool remove = GUILayout.Button(removeContent, buttonStyle, GUILayout.Width(k_buttonWidth));
                     GUI.backgroundColor = prevColor;
 
                     if (i == 0) GUI.enabled = false;
-                    bool moveUp = GUILayout.Button("↑", buttonStyle, GUILayout.Width(k_buttonWidth));
+                    bool moveUp = GUILayout.Button(moveUpContent, buttonStyle, GUILayout.Width(k_buttonWidth));
                     if (i == 0) GUI.enabled = true;
 
                     if (i == lastIndex) GUI.enabled = false;
-                    bool moveDown = GUILayout.Button("↓", buttonStyle, GUILayout.Width(k_buttonWidth));
+                    bool moveDown = GUILayout.Button(moveDownContent, buttonStyle, GUILayout.Width(k_buttonWidth));
                     if (i == lastIndex) GUI.enabled = true;
 
                     if (remove)
