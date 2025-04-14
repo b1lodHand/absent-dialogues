@@ -6,6 +6,8 @@ using System.Linq;
 using UnityEngine;
 using com.absence.dialoguesystem.internals.backup.data;
 using com.absence.dialoguesystem.internals.backup;
+using com.absence.attributes;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -37,7 +39,7 @@ namespace com.absence.dialoguesystem.internals
         [HideInInspector] public Vector2 Position = new();
 #endif
 
-        [InlineEditor(newButtonId = 1801, delButtonId = 1800)]
+        [Readonly, InlineEditor(newButtonId = 1801, delButtonId = 1800)]
         public NodeCustomDataBase CustomData = null;
 
         [HideInInspector] public Blackboard Blackboard;
@@ -197,6 +199,20 @@ namespace com.absence.dialoguesystem.internals
             var result = new List<Node>();
             WriteOutputConnections(ref result);
             return result;
+        }
+
+        internal void RefreshHideFlags()
+        {
+            hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
+
+            if (CustomData != null) 
+                CustomData.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
+
+            if (HasOptions) Options.ForEach(opt =>
+            {
+                if (opt.CustomData != null)
+                    opt.CustomData.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
+            });
         }
 
         public Node Pass(DialogueFlowContext context)

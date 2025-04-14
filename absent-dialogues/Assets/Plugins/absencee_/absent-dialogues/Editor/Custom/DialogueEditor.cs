@@ -235,7 +235,13 @@ namespace com.absence.dialoguesystem.editor.internals
                     EditorGUILayout.EndHorizontal();
                 }
 
-                bool addNewOne = GUILayout.Button("+", buttonStyle, GUILayout.Width(k_buttonWidth));
+                GUIContent addContent = new()
+                {
+                    text = "+",
+                    tooltip = "Add new generic option.",
+                };
+
+                bool addNewOne = GUILayout.Button(addContent, buttonStyle, GUILayout.Width(k_buttonWidth));
 
                 if (addNewOne)
                 {

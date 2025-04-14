@@ -55,8 +55,8 @@ namespace com.absence.dialoguesystem.editor
             }
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
-            //createdSO.hideFlags = HideFlags.HideInInspector;
             createdSO.name = DialogueSystem.GenerateCustomDataName(sender);
+            createdSO.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
@@ -98,6 +98,7 @@ namespace com.absence.dialoguesystem.editor
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
             createdSO.name = DialogueSystem.GenerateOptionDataName(sender);
+            createdSO.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 
@@ -138,6 +139,7 @@ namespace com.absence.dialoguesystem.editor
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
             createdSO.name = DialogueSystem.GenerateGenericOptionDataName(sender);
+            createdSO.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
 

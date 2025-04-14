@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &-5246905779991590207
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11e2258471b984d4ba77d2e1e0bdf1c6
   m_EditorClassIdentifier: 
   Guid: 11e2258471b984d4ba77d2e1e0bdf1c6
-  Position: {x: 693, y: 423}
+  Position: {x: 702, y: 431}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -55,7 +55,7 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   TrueNext: {fileID: 0}
   FalseNext: {fileID: 0}
-  Mode: 0
+  Mode: 1
   m_conditions:
   - m_comparisonType: 2
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4
@@ -89,9 +89,25 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+--- !u!114 &-5221989729497686666
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7984d1f1acdf74996ccf1879921919, type: 3}
+  m_Name: GenericOptionData
+  m_EditorClassIdentifier: 
+  CustomInfo: []
+  <AudioClip>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: 0}
+  <AnimatorMemberName>k__BackingField: 
 --- !u!114 &-4653978156242869564
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -171,31 +187,15 @@ MonoBehaviour:
           m_boolValue: 1
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
-  TargetNode: {fileID: -1635607160664361471}
+  TargetNode: {fileID: 5215409911009714315}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
---- !u!114 &-3514463440667093514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7984d1f1acdf74996ccf1879921919, type: 3}
-  m_Name: 86dcf618b810b7243bb77ccfe39f95cc_CustomData
-  m_EditorClassIdentifier: 
-  CustomInfo: []
-  <AudioClip>k__BackingField: {fileID: 8300000, guid: 7ec8f900b73e9014883e164fa063e76d, type: 3}
-  <Sprite>k__BackingField: {fileID: 0}
-  <AnimatorMemberName>k__BackingField: 
 --- !u!114 &-3358797512164180333
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -249,9 +249,25 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &-3328510436334625006
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7984d1f1acdf74996ccf1879921919, type: 3}
+  m_Name: 86dcf618b810b7243bb77ccfe39f95cc_CustomData
+  m_EditorClassIdentifier: 
+  CustomInfo: []
+  <AudioClip>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: 0}
+  <AnimatorMemberName>k__BackingField: 
 --- !u!114 &-1635607160664361471
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -368,7 +384,7 @@ MonoBehaviour:
     LeadingNode: {fileID: 0}
   - m_scroll: {x: 0, y: 0}
     Text: iuhkihulkjh
-    CustomData: {fileID: 0}
+    CustomData: {fileID: -5221989729497686666}
     m_useShowIf: 1
     Visibility:
       Processor: 0
@@ -408,7 +424,7 @@ MonoBehaviour:
   <AnimatorMemberName>k__BackingField: 
 --- !u!114 &4366251987463977943
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -419,7 +435,7 @@ MonoBehaviour:
   m_Name: b4a0fccc5f76ec948ad40d881420ee9b
   m_EditorClassIdentifier: 
   Guid: b4a0fccc5f76ec948ad40d881420ee9b
-  Position: {x: 865.5, y: 87}
+  Position: {x: 848, y: 119.000015}
   CustomData: {fileID: 0}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
@@ -464,7 +480,7 @@ MonoBehaviour:
       type: {class: , ns: , asm: }
 --- !u!114 &5215409911009714315
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -522,7 +538,7 @@ MonoBehaviour:
     RefIds: []
 --- !u!114 &6441203632322913861
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -546,7 +562,7 @@ MonoBehaviour:
     RefIds: []
 --- !u!114 &7535276429833814712
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -557,8 +573,8 @@ MonoBehaviour:
   m_Name: 86dcf618b810b7243bb77ccfe39f95cc
   m_EditorClassIdentifier: 
   Guid: 86dcf618b810b7243bb77ccfe39f95cc
-  Position: {x: 214.30005, y: -24.449993}
-  CustomData: {fileID: -3514463440667093514}
+  Position: {x: 222, y: -15}
+  CustomData: {fileID: -3328510436334625006}
   Blackboard:
     Bank: {fileID: 9043952714220872817}
   State: 0
@@ -610,7 +626,7 @@ MonoBehaviour:
     Target:
       m_scroll: {x: 0, y: 0}
       Text: iuhkihulkjh
-      CustomData: {fileID: 0}
+      CustomData: {fileID: -5221989729497686666}
       m_useShowIf: 1
       Visibility:
         Processor: 0
@@ -662,7 +678,7 @@ MonoBehaviour:
       type: {class: , ns: , asm: }
 --- !u!114 &9043952714220872817
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

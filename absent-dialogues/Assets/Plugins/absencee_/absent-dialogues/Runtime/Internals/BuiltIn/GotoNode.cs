@@ -91,6 +91,13 @@ namespace com.absence.dialoguesystem.internals
             if (TargetNode != null) 
                 TargetNode = cloneDialogue.AllNodes.First(nd => nd.Guid.Equals(TargetNode.Guid)) as SectionNode;
         }
+
+        public override string GenerateTopInfoText()
+        {
+            string targetSection = TargetNode != null ? TargetNode.SectionName : "None";
+
+            return Utilities.Text.ColorizeString($"-> {targetSection}", Constants.Tooltips.VARIABLE_NAME_HEX);
+        }
     }
 
 }

@@ -7,6 +7,7 @@ namespace com.absence.dialoguesystem
 {
     public static class DialogueSystem
     {
+        public const HideFlags DIALOGUE_SUB_ASSET_FLAGS = HideFlags.HideInInspector;
         public static bool BypassUndo = false;
 
         public static Node CreateNode(Node source, Dialogue target)
@@ -29,6 +30,7 @@ namespace com.absence.dialoguesystem
         {
             instance.Guid = GenerateGuid(instance);
             instance.name = GenerateName(instance);
+            instance.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
 
             instance.FetchGenericOptions(target);
             target.ValidateNode(instance);

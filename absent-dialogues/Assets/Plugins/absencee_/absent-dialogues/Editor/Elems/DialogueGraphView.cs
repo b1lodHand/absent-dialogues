@@ -416,6 +416,9 @@ namespace com.absence.dialoguesystem.editor.internals
 
             dialogue.AllNodes.ForEach(n =>
             {
+                n.Blackboard.Bank.hideFlags = DialogueSystem.DIALOGUE_SUB_ASSET_FLAGS;
+                n.RefreshHideFlags();
+
                 NodeView view = CreateNodeView(n);
                 views.Add(view);
             });

@@ -12,6 +12,10 @@ namespace com.absence.dialoguesystem.editor.internals
 
         private DropdownField m_dropdown;
 
+        internal override bool HasTopInfo => true;
+        internal override float TopInfoBottomPosition => 81f;
+        internal override float TopInfoRightPosition => 0f;
+
         public GotoNodeView(Node node, DialogueGraphView graph = null) : base(node, graph)
         {
             DialogueEditorWindow.Current.m_inspectorView.OnNodeValidation -= Refresh;
@@ -38,6 +42,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
                 m_dropdown.tooltip = m_nodeAsGoto.TargetNode.SectionName;
 
+                RefreshTopInfo();
+
                 EditorUtility.SetDirty(m_nodeAsGoto);
             });
 
@@ -48,6 +54,8 @@ namespace com.absence.dialoguesystem.editor.internals
         {
             m_dropdown.SetValueWithoutNotify(m_nodeAsGoto.TargetNode.SectionName);
             m_dropdown.tooltip = m_nodeAsGoto.TargetNode.SectionName;
+
+            RefreshTopInfo();
         }
 
         private void Refresh()

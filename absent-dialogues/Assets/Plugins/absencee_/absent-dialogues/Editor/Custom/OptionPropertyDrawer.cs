@@ -99,7 +99,12 @@ namespace com.absence.dialoguesystem.editor.internals
 
             customDataProp.isExpanded = EditorGUI.Foldout(position, customDataProp.isExpanded, "", true, GUI.skin.label);
 
-            EditorGUI.PropertyField(position, customDataProp);
+            bool enabledPreviously = GUI.enabled;
+
+            using (new EditorGUI.DisabledGroupScope(true))
+            {
+                EditorGUI.PropertyField(position, customDataProp);
+            }
 
             position.x += normalWidth - k_buttonWidth + spacing;
             position.width = k_buttonWidth - spacing;
