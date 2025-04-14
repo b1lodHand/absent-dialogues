@@ -3,6 +3,7 @@ using System;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 namespace com.absence.dialoguesystem.editor
 {
@@ -108,7 +109,9 @@ namespace com.absence.dialoguesystem.editor
 
         public void ApplyHardcodedStyle(EditorSettings settings)
         {
-            if (m_reference.Bypass)
+            bool bypassed = m_reference.Bypass;
+
+            if (bypassed)
             {
                 m_bypassButton.style.backgroundColor = settings.NeutralColor;
                 m_bypassButton.style.color = settings.TextColor;
@@ -125,6 +128,12 @@ namespace com.absence.dialoguesystem.editor
                 m_bypassButton.AddToClassList("passiveBypassButton");
                 m_bypassButton.RemoveFromClassList("activeBypassButton");
             }
+
+            //bool conditional = m_reference.Target.UseShowIf;
+
+            //if (bypassed) m_leadingPort.SetPortColor(settings.NeutralColor, settings.NeutralColor);
+            //else if (conditional) m_leadingPort.SetPortColor(settings.TextColor, settings.NeutralColor);
+            //else m_leadingPort.SetPortColor(settings.TextColor, settings.NegativeColor);
         }
 
         public void Refresh(bool showDetails = false)

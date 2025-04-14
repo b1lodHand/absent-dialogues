@@ -126,25 +126,7 @@ namespace com.absence.dialoguesystem.editor
         }
 
         #region Protected API
-        protected void SetPortColor(Port target, Color connectedColor, Color notConnectedColor)
-        {
-            VisualElement connector = target.Q("connector");
-            VisualElement cap = connector.Q("cap");
-            
-            Color color = target.connected ? connectedColor : notConnectedColor;
 
-            cap.style.backgroundColor = color;
-            connector.style.borderTopColor = connectedColor;
-            connector.style.borderRightColor = connectedColor;
-            connector.style.borderBottomColor = connectedColor;
-            connector.style.borderLeftColor = connectedColor;
-        }
-        protected void SetPortLabelColor(Port target, Color color)
-        {
-            VisualElement label = target.Q("type");
-
-            label.style.color = color;
-        }
         protected virtual void CreateDynamicElements()
         {
             m_infoBoxElement = new VisualElement();

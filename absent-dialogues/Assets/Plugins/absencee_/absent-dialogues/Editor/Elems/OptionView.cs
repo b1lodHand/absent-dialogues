@@ -3,6 +3,7 @@ using System;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace com.absence.dialoguesystem.editor
@@ -137,7 +138,10 @@ namespace com.absence.dialoguesystem.editor
 
         public void ApplyHardcodedStyle(EditorSettings settings)
         {
+            //bool conditional = Target.UseShowIf;
 
+            //if (conditional) m_leadingPort.SetPortColor(settings.TextColor, settings.NeutralColor);
+            //else m_leadingPort.SetPortColor(settings.TextColor, settings.NegativeColor);
         }
 
         public void Refresh(bool expandDetails = false)

@@ -22,6 +22,7 @@ namespace com.absence.dialoguesystem
         [SerializeField, Readonly] private Node m_frame;
         [SerializeField, Readonly] private VariableBank m_blackboardBank;
         [SerializeField, Readonly] private Blackboard m_blackboard;
+        [SerializeField, Readonly] private OptimizedVariableBankHandle m_virtualHandle;
         [SerializeField, Readonly] private DialogueFlowContext m_context;
 
         IPrimitiveVariableContainer m_bankHandle;
@@ -65,7 +66,7 @@ namespace com.absence.dialoguesystem
             m_frame = m_dialogue.Entry;
         }
 
-        public void Initialize()
+        void Initialize()
         {
             ClearContext();
 
@@ -76,8 +77,12 @@ namespace com.absence.dialoguesystem
 
         public void Optimize()
         {
-            m_bankHandle = m_blackboardBank.CreateOptimizedHandle();
+            m_virtualHandle = m_blackboardBank.CreateOptimizedHandle();
+            m_bankHandle = m_virtualHandle;
             if (m_context != null) m_context.BankHandle = m_bankHandle;
+
+            if (m_context.BankHandle.TryGetBoolean("b_missionPending", out bool a)) 
+                Debug.Log(a);
         }
 
         public void ClearContext()
