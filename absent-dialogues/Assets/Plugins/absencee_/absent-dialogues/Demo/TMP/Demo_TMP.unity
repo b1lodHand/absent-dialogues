@@ -677,7 +677,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_instance: {fileID: 560826871}
   m_order: 2
-  m_actionMapPairs: []
+  m_actionMapPairs:
+  - TargetActionNode: {fileID: 4366251987463977943, guid: 897dfc22b97323241aa34c3fb84e8b6c, type: 2}
+    AttachedEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    Enabled: 1
+    BackupId: EVENENT
+    BackupGuid: b4a0fccc5f76ec948ad40d881420ee9b
 --- !u!82 &560826875
 AudioSource:
   m_ObjectHideFlags: 0

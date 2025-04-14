@@ -426,8 +426,8 @@ MonoBehaviour:
   State: 0
   PersonIndex: 0
   m_genericOptions: []
-  UsedByMapper: 0
-  UniqueMapperId: a
+  UsedByMapper: 1
+  UniqueMapperId: EVENENT
   m_blackboardEvents:
   - m_setType: 0
     m_targetBankGuid: fc6230e8-c80f-4600-8b72-939333a006d4

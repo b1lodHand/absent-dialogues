@@ -55,6 +55,7 @@ namespace com.absence.dialoguesystem.editor
             }
 
             ScriptableObject createdSO = ScriptableObject.CreateInstance(type);
+            //createdSO.hideFlags = HideFlags.HideInInspector;
             createdSO.name = DialogueSystem.GenerateCustomDataName(sender);
 
             AssetDatabase.AddObjectToAsset(createdSO, sender);
