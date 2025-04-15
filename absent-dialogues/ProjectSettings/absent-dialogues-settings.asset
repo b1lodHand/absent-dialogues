@@ -18,3 +18,5 @@ MonoBehaviour:
   NeutralColor: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
   TextColor: {r: 1, g: 1, b: 1, a: 1}
   AlternativeTextColor: {r: 1, g: 1, b: 1, a: 1}
+  InformationKey: 308
+  InformationKeyHold: 1

@@ -41,6 +41,8 @@ namespace com.absence.dialoguesystem.editor.internals
 
         [SerializeField] internal bool m_displayDetails;
 
+        private Toggle m_detailsToggle;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -63,6 +65,43 @@ namespace com.absence.dialoguesystem.editor.internals
 
             Undo.undoRedoPerformed -= OnUndoRedo;
             Undo.undoRedoPerformed += OnUndoRedo;
+
+            RegisterCallback<KeyDownEvent>(OnKeyDown);
+            RegisterCallback<KeyUpEvent>(OnKeyUp);
+        }
+
+        private void OnKeyUp(KeyUpEvent evt)
+        {
+            EditorSettings settings = EditorSettings.instance;
+            KeyCode targetKey = settings.InformationKey;
+            bool hold = settings.InformationKeyHold;
+
+            if (evt.keyCode != targetKey)
+                return;
+
+            if (!hold)
+                return;
+
+            m_displayDetails = false;
+
+            m_detailsToggle.SetValueWithoutNotify(m_displayDetails);
+            RefreshTopInfos(m_displayDetails);
+        }
+
+        private void OnKeyDown(KeyDownEvent evt)
+        {
+            EditorSettings settings = EditorSettings.instance;
+            KeyCode targetKey = settings.InformationKey;
+            bool hold = settings.InformationKeyHold;
+
+            if (evt.keyCode != targetKey)
+                return;
+
+            if (hold) m_displayDetails = true;
+            else m_displayDetails = !m_displayDetails;
+
+            m_detailsToggle.SetValueWithoutNotify(m_displayDetails);
+            RefreshTopInfos(m_displayDetails);
         }
 
         protected override bool canCutSelection => false;
@@ -211,8 +250,8 @@ namespace com.absence.dialoguesystem.editor.internals
             mapFoldout.style.alignContent = Align.FlexStart;
             miniMap.name = "mini-map";
 
-            Toggle toggle = new Toggle("Display Details");
-            toggle.RegisterValueChangedCallback(evt =>
+            m_detailsToggle = new Toggle("Display Details");
+            m_detailsToggle.RegisterValueChangedCallback(evt =>
             {
                 m_displayDetails = evt.newValue;
 
@@ -220,12 +259,12 @@ namespace com.absence.dialoguesystem.editor.internals
                     RefreshTopInfos(m_displayDetails);
             });
 
-            OnPopulateView -= () => toggle.SetValueWithoutNotify(m_displayDetails);
-            OnPopulateView += () => toggle.SetValueWithoutNotify(m_displayDetails);
+            OnPopulateView -= () => m_detailsToggle.SetValueWithoutNotify(m_displayDetails);
+            OnPopulateView += () => m_detailsToggle.SetValueWithoutNotify(m_displayDetails);
 
             mapFoldout.Add(miniMap);
             topPanel.Add(mapFoldout);
-            topPanel.Add(toggle);
+            topPanel.Add(m_detailsToggle);
 
             this.Add(topPanel);
             miniMap.SetPosition(new Rect(0, 0, 192, 108));

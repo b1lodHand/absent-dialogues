@@ -29,6 +29,10 @@ namespace com.absence.dialoguesystem.editor
         {
             EditorSettings settings = EditorSettings.instance;
 
+            KeyCode infoKey = settings.InformationKey;
+            bool infoKeyHold = settings.InformationKeyHold;
+            int infoKeyHoldIndex = infoKeyHold ? 0 : 1;
+
             Color themeColor = settings.ThemeColor;
             Color positiveColor = settings.PositiveColor;
             Color negativeColor = settings.NegativeColor;
@@ -45,11 +49,42 @@ namespace com.absence.dialoguesystem.editor
             GUIContent textColorContent = new("Text Color");
             GUIContent alternativeTextColorContent = new("Alternative Text Color");
 
+            GUIStyle headerStyle = new(EditorStyles.boldLabel);
+
+            GUILayoutOption[] keyHoldPopupOptions =
+            {
+                GUILayout.Width(150)
+            };
+
+            GUIContent infoKeyContent = new()
+            {
+                text = "Information Key",
+            };
+
+            GUIContent[] holdPopupOptions =
+            {
+                new("Hold"),
+                new("Toggle"),
+            };
+
             EditorGUILayout.Space();
 
             EditorGUI.BeginChangeCheck();
 
             EditorGUILayout.BeginVertical(EditorStyles.inspectorDefaultMargins);
+
+            EditorGUILayout.LabelField("Keys", headerStyle);
+
+            EditorGUILayout.BeginHorizontal();
+
+            infoKey = (KeyCode)EditorGUILayout.EnumPopup(infoKeyContent, infoKey);
+            infoKeyHoldIndex = EditorGUILayout.Popup(infoKeyHoldIndex, holdPopupOptions, keyHoldPopupOptions);
+
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.Space();
+
+            EditorGUILayout.LabelField("Colors", headerStyle);
 
             themeColor = EditorGUILayout.ColorField(themeColorContent, themeColor);
             positiveColor = EditorGUILayout.ColorField(positiveColorContent, positiveColor);
@@ -64,6 +99,9 @@ namespace com.absence.dialoguesystem.editor
             if (EditorGUI.EndChangeCheck()) 
             {
                 Undo.RecordObject(settings, "Dialogue System (Project Settings)");
+
+                settings.InformationKey = infoKey;
+                settings.InformationKeyHold = infoKeyHoldIndex == 1 ? false : true;
 
                 settings.ThemeColor = themeColor;
                 settings.PositiveColor = positiveColor;

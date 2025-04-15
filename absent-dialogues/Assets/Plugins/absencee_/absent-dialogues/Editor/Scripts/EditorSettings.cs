@@ -29,6 +29,9 @@ namespace com.absence.dialoguesystem
         // generic option bypass button text color -> passive
         // generic option bypass button text color -> active
 
+        const KeyCode INFORMATION_KEY_DEFAULT = KeyCode.LeftAlt;
+        const bool INFORMATION_KEY_HOLD_DEFAULT = true;
+
         static readonly Color s_defaultThemeColor = new(63f / 255f, 166f / 255f, 171f / 255f);
         static readonly Color s_defaultPositiveColor = new(112f / 255f, 171f / 255f, 63f / 255f);
         static readonly Color s_defaultNegativeColor = new(171f/255f, 68f/255f, 63f/255f);
@@ -45,8 +48,14 @@ namespace com.absence.dialoguesystem
         public Color TextColor = s_defaultTextColor;
         public Color AlternativeTextColor = s_defaultAlternativeTextColor;
 
+        public KeyCode InformationKey = INFORMATION_KEY_DEFAULT;
+        public bool InformationKeyHold = INFORMATION_KEY_HOLD_DEFAULT;
+
         public void Reset()
         {
+            InformationKey = INFORMATION_KEY_DEFAULT;
+            InformationKeyHold = INFORMATION_KEY_HOLD_DEFAULT;
+
             ThemeColor = s_defaultThemeColor;
             PositiveColor = s_defaultPositiveColor;
             NegativeColor = s_defaultNegativeColor;
