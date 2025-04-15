@@ -104,7 +104,7 @@ namespace com.absence.dialoguesystem.editor.internals
             RefreshTopInfos(m_displayDetails);
         }
 
-        protected override bool canCutSelection => false;
+        protected override bool canCutSelection => EditorSettings.instance.ExperimentalCut;
 
         private void ClearCutCache()
         {
@@ -129,7 +129,9 @@ namespace com.absence.dialoguesystem.editor.internals
                 if (view.Node is EntryNode)
                     continue;
 
-                m_cutCache.Add(Node.Instantiate(view.Node));
+                Node cutBackup = Node.Instantiate(view.Node);
+                //cutBackup.AddOutputConnection();
+                //m_cutCache.Add();
 
                 sb.Append(view.Node.Guid);
                 sb.Append("\n");

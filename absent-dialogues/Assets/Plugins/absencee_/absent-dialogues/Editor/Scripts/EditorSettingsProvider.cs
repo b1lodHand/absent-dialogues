@@ -29,6 +29,8 @@ namespace com.absence.dialoguesystem.editor
         {
             EditorSettings settings = EditorSettings.instance;
 
+            bool experimentalCut = settings.ExperimentalCut;
+
             KeyCode infoKey = settings.InformationKey;
             bool infoKeyHold = settings.InformationKeyHold;
             int infoKeyHoldIndex = infoKeyHold ? 0 : 1;
@@ -54,6 +56,11 @@ namespace com.absence.dialoguesystem.editor
             GUILayoutOption[] keyHoldPopupOptions =
             {
                 GUILayout.Width(150)
+            };
+
+            GUIContent experimentalCutContent = new()
+            {
+                text = "Cut Nodes (Ctrl+X)",
             };
 
             GUIContent infoKeyContent = new()
@@ -94,11 +101,19 @@ namespace com.absence.dialoguesystem.editor
             textColor = EditorGUILayout.ColorField(textColorContent, textColor);
             alternativeTextColor = EditorGUILayout.ColorField(alternativeTextColorContent, alternativeTextColor);
 
+            EditorGUILayout.Space();
+
+            EditorGUILayout.LabelField("Experimental", headerStyle);
+
+            experimentalCut = EditorGUILayout.Toggle(experimentalCutContent, experimentalCut);
+
             EditorGUILayout.EndVertical();
 
             if (EditorGUI.EndChangeCheck()) 
             {
                 Undo.RecordObject(settings, "Dialogue System (Project Settings)");
+
+                settings.ExperimentalCut = experimentalCut;
 
                 settings.InformationKey = infoKey;
                 settings.InformationKeyHold = infoKeyHoldIndex == 1 ? false : true;

@@ -31,6 +31,7 @@ namespace com.absence.dialoguesystem
 
         const KeyCode INFORMATION_KEY_DEFAULT = KeyCode.LeftAlt;
         const bool INFORMATION_KEY_HOLD_DEFAULT = true;
+        const bool EXPERIMENTALS_DEFAULT_VALUE = false;
 
         static readonly Color s_defaultThemeColor = new(63f / 255f, 166f / 255f, 171f / 255f);
         static readonly Color s_defaultPositiveColor = new(112f / 255f, 171f / 255f, 63f / 255f);
@@ -51,6 +52,8 @@ namespace com.absence.dialoguesystem
         public KeyCode InformationKey = INFORMATION_KEY_DEFAULT;
         public bool InformationKeyHold = INFORMATION_KEY_HOLD_DEFAULT;
 
+        public bool ExperimentalCut = EXPERIMENTALS_DEFAULT_VALUE;
+
         public void Reset()
         {
             InformationKey = INFORMATION_KEY_DEFAULT;
@@ -63,6 +66,8 @@ namespace com.absence.dialoguesystem
 
             TextColor = s_defaultTextColor;
             AlternativeTextColor = s_defaultAlternativeTextColor;
+
+            ExperimentalCut = EXPERIMENTALS_DEFAULT_VALUE;
 
             Save();
         }
