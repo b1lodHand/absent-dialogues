@@ -20,9 +20,6 @@ namespace com.absence.dialoguesystem
     [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.DialogueInstance.html")]
     public class DialogueInstance : MonoBehaviour, IUseDialogueInScene
     {
-        [SerializeField, Tooltip("When enabled, this instance will optimize its dialogue player.")]
-        private bool m_optimize = true;
-
 #pragma warning disable CS0414
         [SerializeField] private bool m_cloneDialogueBeforeUsing = true;
 #pragma warning restore CS0414
@@ -119,7 +116,6 @@ namespace com.absence.dialoguesystem
 #endif
 
             m_player = new DialoguePlayer(dialogue);
-            if (m_optimize) m_player.Optimize();
 
             m_extensionList.ForEach(extension => 
             {

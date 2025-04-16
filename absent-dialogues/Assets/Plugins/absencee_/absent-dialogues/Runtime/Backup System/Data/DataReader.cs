@@ -74,46 +74,26 @@ namespace com.absence.dialoguesystem.internals.backup.data
         }
         public static void ReadBlackboardData(BlackboardData data, Blackboard target)
         {
-            var ints = data.Ints.ToList().ConvertAll(intPair =>
-            {
-                return new VariableNamePair<int, IntegerVariable>()
-                {
-                    Name = intPair.Key,
-                    Variable = new(intPair.Value),
-                };
-            }).ToList();
+            var ints = data.Ints
+                .ToDictionary(intPair => intPair.Key, 
+                intPair => new IntegerVariable(intPair.Value));
 
-            var floats = data.Floats.ToList().ConvertAll(floatPair =>
-            {
-                return new VariableNamePair<float, FloatVariable>()
-                {
-                    Name = floatPair.Key,
-                    Variable = new(floatPair.Value),
-                };
-            }).ToList();
+            var floats = data.Floats
+                .ToDictionary(floatPair => floatPair.Key, 
+                floatPair => new FloatVariable(floatPair.Value));
 
-            var strings = data.Strings.ToList().ConvertAll(stringPair =>
-            {
-                return new VariableNamePair<string, StringVariable>()
-                {
-                    Name = stringPair.Key,
-                    Variable = new(stringPair.Value), 
-                };
-            }).ToList();
+            var strings = data.Strings
+                .ToDictionary(stringPair => stringPair.Key, 
+                stringPair => new StringVariable(stringPair.Value));
 
-            var booleans = data.Booleans.ToList().ConvertAll(booleanPair =>
-            {
-                return new VariableNamePair<bool, BooleanVariable>()
-                {
-                    Name = booleanPair.Key,
-                    Variable = new(booleanPair.Value),
-                };
-            }).ToList();
+            var booleans = data.Booleans
+                .ToDictionary(booleanPair => booleanPair.Key,
+                booleanPair => new BooleanVariable(booleanPair.Value));
 
-            target.Bank.Ints = new(ints);
-            target.Bank.Floats = new(floats);
-            target.Bank.Strings = new(strings);
-            target.Bank.Booleans = new(booleans);
+            target.Bank.Ints = ints;
+            target.Bank.Floats = floats;
+            target.Bank.Strings = strings;
+            target.Bank.Booleans = booleans;
         }
 
         public static T ReadOptionData<T>(OptionData data) where T : Option, new()

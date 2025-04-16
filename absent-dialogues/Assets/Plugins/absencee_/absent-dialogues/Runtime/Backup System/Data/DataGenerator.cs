@@ -1,5 +1,6 @@
 using com.absence.variablesystem.banksystembase;
 using com.absence.variablesystem.builtin;
+using System.Linq;
 
 namespace com.absence.dialoguesystem.internals.backup.data
 {
@@ -45,46 +46,50 @@ namespace com.absence.dialoguesystem.internals.backup.data
             data.Strings = new StringPair[stringCount];
             data.Booleans = new BooleanPair[booleanCount];
 
+            var intList = bank.Ints.ToList();
             for (int i = 0; i < intCount; i++)
             {
                 IntPair intPair = new();
-                var intVariable = bank.Ints[i];
+                var intVariable = intList[i];
 
-                intPair.Key = intVariable.Name;
-                intPair.Value = intVariable.Variable.Value;
+                intPair.Key = intVariable.Key;
+                intPair.Value = intVariable.Value.Value;
 
                 data.Ints[i] = intPair;
             }
 
+            var floatlist = bank.Floats.ToList();
             for (int f = 0; f < floatCount; f++)
             {
                 FloatPair floatPair = new();
-                var floatVariable = bank.Floats[f];
+                var floatVariable = floatlist[f];
 
-                floatPair.Key = floatVariable.Name;
-                floatPair.Value = floatVariable.Variable.Value;
+                floatPair.Key = floatVariable.Key;
+                floatPair.Value = floatVariable.Value.Value;
 
                 data.Floats[f] = floatPair;
             }
 
+            var stringList = bank.Strings.ToList();
             for (int s = 0; s < intCount; s++)
             {
                 StringPair stringPair = new();
-                var floatVariable = bank.Strings[s];
+                var floatVariable = stringList[s];
 
-                stringPair.Key = floatVariable.Name;
-                stringPair.Value = floatVariable.Variable.Value;
+                stringPair.Key = floatVariable.Key;
+                stringPair.Value = floatVariable.Value.Value;
 
                 data.Strings[s] = stringPair;
             }
 
+            var booleanList = bank.Booleans.ToList();
             for (int b = 0; b < booleanCount; b++)
             {
                 BooleanPair booleanPair = new();
-                var booleanVariable = bank.Booleans[b];
+                var booleanVariable = booleanList[b];
 
-                booleanPair.Key = booleanVariable.Name;
-                booleanPair.Value = booleanVariable.Variable.Value;
+                booleanPair.Key = booleanVariable.Key;
+                booleanPair.Value = booleanVariable.Value.Value;
 
                 data.Booleans[b] = booleanPair;
             }
