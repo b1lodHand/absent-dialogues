@@ -21,9 +21,6 @@ MonoBehaviour:
   PersonIndex: 0
   m_genericOptions: []
   Next: {fileID: 0}
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &-3748157945484368094
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -39,29 +36,23 @@ MonoBehaviour:
   m_guid: 4c2a7fa6-994d-4e22-bfb3-fe354b1189e0
   m_forExternalUse: 1
   m_ints:
-  - Name: 
-    Variable:
-      m_underlyingValue: 0
-      m_value: 0
-      m_bypassEvents: 0
-  m_floats: []
+    _serializedList:
+    - Key: dsf
+      Value:
+        m_underlyingValue: 0
+        m_value: 0
+        m_bypassEvents: 0
+    - Key: rehgth
+      Value:
+        m_underlyingValue: 0
+        m_value: 0
+        m_bypassEvents: 0
+  m_floats:
+    _serializedList: []
   m_strings:
-  - Name: 
-    Variable:
-      m_underlyingValue: 
-      m_value: 
-      m_bypassEvents: 0
+    _serializedList: []
   m_booleans:
-  - Name: 
-    Variable:
-      m_underlyingValue: 0
-      m_value: 0
-      m_bypassEvents: 0
-  - Name: 
-    Variable:
-      m_underlyingValue: 0
-      m_value: 0
-      m_bypassEvents: 0
+    _serializedList: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,20 +81,14 @@ MonoBehaviour:
       - m_comparisonType: 0
         m_targetBankGuid: 4c2a7fa6-994d-4e22-bfb3-fe354b1189e0
         m_targetVariableName: 'null: null'
-        m_targetVariableNamePair:
-          rid: -2
         m_intValue: 0
         m_floatValue: 0
         m_stringValue: 
         m_boolValue: 0
+        m_cachedBank: {fileID: 0}
     LeadingNode: {fileID: 0}
   Blackboard:
     Bank: {fileID: -3748157945484368094}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &6186827806669676803
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -136,19 +121,13 @@ MonoBehaviour:
         - m_comparisonType: 0
           m_targetBankGuid: 4c2a7fa6-994d-4e22-bfb3-fe354b1189e0
           m_targetVariableName: 'null: null'
-          m_targetVariableNamePair:
-            rid: -2
           m_intValue: 0
           m_floatValue: 0
           m_stringValue: 
           m_boolValue: 0
+          m_cachedBank: {fileID: 0}
       LeadingNode: {fileID: 0}
     LeadingNode: {fileID: 0}
   m_options: []
   m_text: '||NO TEXT||'
   NativeNextNode: {fileID: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }

@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0ae7e62f51adf1d9442561133fa7262136ebe22f"
+      "hash": "b0aefb011bd27f1e3a0c95cebc911461348decca"
     },
     "com.absence.editor": {
       "version": "https://github.com/b1lodHand/absent-editor.git",
@@ -33,7 +33,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "79d22a3068d70aeee49f82bb1a784d351a9bab87"
+      "hash": "ad3d46f5add9aaea052c66ff5ebfb89f56fecde5"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

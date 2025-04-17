@@ -150,7 +150,7 @@ namespace com.absence.dialoguesystem.editor
             if (Application.isPlaying) m_dialogueGraphView.PopulateView(dialogue);
             else if (AssetDatabase.CanOpenAssetInEditor(dialogue.GetInstanceID())) m_dialogueGraphView.PopulateView(dialogue);
 
-            m_blackboardView.Initialize(m_dialogueObject);
+            m_blackboardView.Initialize(m_targetDialogue);
 
             ObjectField dialogueObjectField = m_toolbar.Q<ObjectField>("dialogue-object-field");
             if (dialogueObjectField == null) return true;

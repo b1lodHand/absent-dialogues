@@ -1,5 +1,7 @@
 using com.absence.dialoguesystem.internals;
 using com.absence.variablesystem.banksystembase;
+using com.absence.variablesystem.editor;
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -19,23 +21,29 @@ namespace com.absence.dialoguesystem.editor.internals
         }
 
         Vector2 m_blackboardViewScrollPos;
+        Dialogue m_dialogue;
+        IMGUIContainer m_container;
         Editor m_blackboardBankEditor;
 
-        internal void Initialize(SerializedObject dialogue)
+        internal void Initialize(Dialogue dialogue)
         {
             Clear();
 
+            m_dialogue = dialogue;
+
             if (dialogue == null) return;
 
-            IMGUIContainer container = new IMGUIContainer(() =>
+            m_container = new IMGUIContainer(() =>
             {
                 DrawGUI(dialogue);
             });
 
-            Add(container);
+            Editor.CreateCachedEditorWithContext(dialogue.Blackboard.Bank, dialogue, null, ref m_blackboardBankEditor);
+
+            Add(m_container);
         }
 
-        void DrawGUI(SerializedObject dialogue)
+        void DrawGUI(Dialogue dialogue)
         {
             if (dialogue == null)
             {
@@ -43,13 +51,13 @@ namespace com.absence.dialoguesystem.editor.internals
                 return;
             }
 
-            if (dialogue.targetObject == null)
-                return;
+            if (Application.isPlaying) 
+                GUI.enabled = false;
 
-            if (Application.isPlaying) GUI.enabled = false;
+            SerializedObject dialogueSO = new SerializedObject(dialogue);
 
-            dialogue.Update();
-            SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
+            dialogueSO.Update();
+            SerializedProperty blackboardProperty = dialogueSO.FindProperty("Blackboard");
             if (blackboardProperty == null) return;
 
             EditorGUILayout.PropertyField(blackboardProperty);
@@ -65,54 +73,15 @@ namespace com.absence.dialoguesystem.editor.internals
                 return;
             }
 
-            SerializedObject bankSO = new SerializedObject(bank);
-            bankSO.Update();
-
-            SerializedProperty ints = bankSO.FindProperty("m_ints");
-            SerializedProperty floats = bankSO.FindProperty("m_floats");
-            SerializedProperty strings = bankSO.FindProperty("m_strings");
-            SerializedProperty booleans = bankSO.FindProperty("m_booleans");
-
             m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
 
-            EditorGUILayout.PropertyField(ints);
-            EditorGUILayout.PropertyField(floats);
-            EditorGUILayout.PropertyField(strings);
-            EditorGUILayout.PropertyField(booleans);
+            (m_blackboardBankEditor as VariableBankEditorBase).DrawIMGUI(false);
 
             EditorGUILayout.EndScrollView();
 
-            bankSO.ApplyModifiedProperties();
-            dialogue.ApplyModifiedProperties();
+            dialogueSO.ApplyModifiedProperties();
 
-            //SerializedObject bankSO = new SerializedObject(bank);
-
-            //if (bank == null) return;
-
-            ////Undo.RecordObject(bank, "Blackboard Bank");
-
-            //m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
-
-            //if (bank == null) return;
-
-            //try
-            //{
-            //    if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-            //    else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-            //    else m_blackboardBankEditor.OnInspectorGUI();
-            //}
-
-            //catch
-            //{
-            //    Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
-            //}
-
-            //EditorGUILayout.EndScrollView();
-
-            //bankSO.ApplyModifiedProperties();
-            //dialogue.ApplyModifiedProperties();
-
-            //if (Application.isPlaying) GUI.enabled = true;
+            if (Application.isPlaying) GUI.enabled = true;
         }
     }
 }

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
+  m_Name: New Dialogue
+  m_EditorClassIdentifier: 
+  Entry: {fileID: 4323975892494329671}
+  AllNodes:
+  - {fileID: 4323975892494329671}
+  m_people: []
+  m_genericOptions: []
+  Blackboard:
+    Bank: {fileID: 4990544144018116316}
+--- !u!114 &4323975892494329671
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501d7a5ca1d0a344a90ce0af4756c6b7, type: 3}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: 
+  Guid: EntryNode
+  Position: {x: 0, y: 0}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: 4990544144018116316}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions: []
+  Next: {fileID: 0}
+--- !u!114 &4990544144018116316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb8071ce93f6a49bf6cd8d49b7bc65, type: 3}
+  m_Name: New Dialogue Blackboard VB
+  m_EditorClassIdentifier: 
+  m_guid: fcace249-bb1d-41a7-af46-f4e5e7c0266c
+  m_forExternalUse: 1
+  m_ints:
+    _serializedList: []
+  m_floats:
+    _serializedList: []
+  m_strings:
+    _serializedList: []
+  m_booleans:
+    _serializedList: []
